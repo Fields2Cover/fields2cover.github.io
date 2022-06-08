@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class PathObjective &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class SwathLength" href="classf2c_1_1obj_1_1SwathLength.html" />
+    <link rel="prev" title="Class Overlaps" href="classf2c_1_1obj_1_1Overlaps.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="f2c_library.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="f2c_library.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="f2c_library.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cell.html">Struct Cell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cells.html">Struct Cells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Field.html">Struct Field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries.html">Template Struct Geometries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1ConstIterator_1_1Private.html">Struct ConstIterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1Iterator_1_1Private.html">Struct Iterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometry.html">Template Struct Geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LinearRing.html">Struct LinearRing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LineString.html">Struct LineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiLineString.html">Struct MultiLineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiPoint.html">Struct MultiPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1OptimizationParams.html">Struct OptimizationParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Path.html">Struct Path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Point.html">Struct Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Robot.html">Struct Robot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Route.html">Struct Route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swath.html">Struct Swath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html">Struct Swaths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1ConstHL.html">Template Class ConstHL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html">Template Class HeadlandGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1CompleteTurnPathObj.html">Template Class CompleteTurnPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1DirectDistPathObj.html">Class DirectDistPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1FieldCoverage.html">Class FieldCoverage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1GlobalObjective.html">Class GlobalObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1NSwath.html">Class NSwath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1OptimizationClass.html">Template Class OptimizationClass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1Overlaps.html">Class Overlaps</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Class PathObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1SwathLength.html">Class SwathLength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Parser.html">Class Parser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurves.html">Class DubinsCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurvesCC.html">Class DubinsCurvesCC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1PathPlanning.html">Class PathPlanning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurves.html">Class ReedsSheppCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurvesHC.html">Class ReedsSheppCurvesHC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1TurningBase.html">Class TurningBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Random.html">Class Random</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1BoustrophedonOrder.html">Class BoustrophedonOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SingleCellSwathsOrderBase.html">Class SingleCellSwathsOrderBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SnakeOrder.html">Class SnakeOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1BruteForce.html">Template Class BruteForce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1SwathGeneratorBase.html">Template Class SwathGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Transform.html">Class Transform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1EmptyDestructor.html">Class EmptyDestructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1ConstIterator.html">Class Geometries::ConstIterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1Iterator.html">Class Geometries::Iterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Visualizer.html">Class Visualizer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#defines">Defines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="f2c_library.html">API</a> &raquo;</li>
+      <li>Class PathObjective</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/classf2c_1_1obj_1_1PathObjective.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="class-pathobjective">
+<span id="exhale-class-classf2c-1-1obj-1-1pathobjective"></span><h1>Class PathObjective<a class="headerlink" href="#class-pathobjective" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_fields2cover_objectives_path_objective.h.html#file-fields2cover-objectives-path-objective-h"><span class="std std-ref">File path_objective.h</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline"></a></h2>
+<div class="section" id="derived-types">
+<h3>Derived Types<a class="headerlink" href="#derived-types" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">f2c::obj::CompleteTurnPathObj&lt;</span> <span class="pre">T,</span> <span class="pre">R</span> <span class="pre">&gt;</span></code> (<a class="reference internal" href="classf2c_1_1obj_1_1CompleteTurnPathObj.html#exhale-class-classf2c-1-1obj-1-1completeturnpathobj"><span class="std std-ref">Template Class CompleteTurnPathObj</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">f2c::obj::DirectDistPathObj</span></code> (<a class="reference internal" href="classf2c_1_1obj_1_1DirectDistPathObj.html#exhale-class-classf2c-1-1obj-1-1directdistpathobj"><span class="std std-ref">Class DirectDistPathObj</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline"></a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjectiveE">
+<span id="_CPPv3N3f2c3obj13PathObjectiveE"></span><span id="_CPPv2N3f2c3obj13PathObjectiveE"></span><span id="f2c::obj::PathObjective"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">f2c</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">PathObjective</span></span></span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjectiveE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Base class for objectives that are affected by the final path. </p>
+<p>There are some cost functions that do not change once a swaths are generated. For example, the number of swaths or the sum of the length of those swaths. The cost functions that inherit from this class should be modified by the swath coverage order and/or turns. </p>
+<p>Subclassed by <a class="reference internal" href="classf2c_1_1obj_1_1CompleteTurnPathObj.html#classf2c_1_1obj_1_1CompleteTurnPathObj"><span class="std std-ref">f2c::obj::CompleteTurnPathObj&lt; T, R &gt;</span></a>, <a class="reference internal" href="classf2c_1_1obj_1_1DirectDistPathObj.html#classf2c_1_1obj_1_1DirectDistPathObj"><span class="std std-ref">f2c::obj::DirectDistPathObj</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4IDpEN3f2c3obj13PathObjective29computeCostWithMinimizingSignEdDpK2Ts">
+<span id="_CPPv3IDpEN3f2c3obj13PathObjective29computeCostWithMinimizingSignEDpK2Ts"></span><span id="_CPPv2IDpEN3f2c3obj13PathObjective29computeCostWithMinimizingSignEDpK2Ts"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Ts</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a0cfba6efd889a6377112fb9f75ab6f54"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCostWithMinimizingSign</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4IDpEN3f2c3obj13PathObjective29computeCostWithMinimizingSignEdDpK2Ts" title="f2c::obj::PathObjective::computeCostWithMinimizingSign::Ts"><span class="n"><span class="pre">Ts</span></span></a><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN3f2c3obj13PathObjective29computeCostWithMinimizingSignEdDpK2Ts" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Compute the cost function with minimizing sign. </p>
+<p>If the objective is to maximize the cost function, the cost is multiplied by -1. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c3obj13PathObjective12isMinimizingEv">
+<span id="_CPPv3NK3f2c3obj13PathObjective12isMinimizingEv"></span><span id="_CPPv2NK3f2c3obj13PathObjective12isMinimizingEv"></span><span id="f2c::obj::PathObjective::isMinimizing__voidC"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1ad8cde8a562cbdfbfea04ee3fc5b24301"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isMinimizing</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c3obj13PathObjective12isMinimizingEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return true if the objective is to minimize the cost function. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c3obj13PathObjective12isMaximizingEv">
+<span id="_CPPv3NK3f2c3obj13PathObjective12isMaximizingEv"></span><span id="_CPPv2NK3f2c3obj13PathObjective12isMaximizingEv"></span><span id="f2c::obj::PathObjective::isMaximizing__voidC"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a627333c11148056608769cf3af6b848b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isMaximizing</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c3obj13PathObjective12isMaximizingEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return true if the objective is to maximize the cost function. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CPointRK8F2CPoint">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK8F2CPointRK8F2CPoint"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK8F2CPointRK8F2CPoint"></span><span id="f2c::obj::PathObjective::computeCost__F2CPointCR.F2CPointCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1ab620f8c4b8e4f3876f716268e8176d1b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1ac1c5048c49678b873241ff14059734a8.html#_CPPv48F2CPoint" title="F2CPoint"><span class="n"><span class="pre">F2CPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1ac1c5048c49678b873241ff14059734a8.html#_CPPv48F2CPoint" title="F2CPoint"><span class="n"><span class="pre">F2CPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CPointRK8F2CPoint" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of going from point p1 to point p2. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> – Start point </p></li>
+<li><p><strong>p2</strong> – End point </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CPointdRK8F2CPoint">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK8F2CPointdRK8F2CPoint"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK8F2CPointdRK8F2CPoint"></span><span id="f2c::obj::PathObjective::computeCost__F2CPointCR.double.F2CPointCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a22865eeac8f3a69dbe6e16df0428ee1d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1ac1c5048c49678b873241ff14059734a8.html#_CPPv48F2CPoint" title="F2CPoint"><span class="n"><span class="pre">F2CPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p1</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ang1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1ac1c5048c49678b873241ff14059734a8.html#_CPPv48F2CPoint" title="F2CPoint"><span class="n"><span class="pre">F2CPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CPointdRK8F2CPoint" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of going from point p1 to point p2. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> – Start point </p></li>
+<li><p><strong>ang1</strong> – Angle of the robot in p1 </p></li>
+<li><p><strong>p2</strong> – End point </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CPointdRK8F2CPointd">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK8F2CPointdRK8F2CPointd"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK8F2CPointdRK8F2CPointd"></span><span id="f2c::obj::PathObjective::computeCost__F2CPointCR.double.F2CPointCR.double"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a5d80362cf20217b8a3424be9582803f2"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1ac1c5048c49678b873241ff14059734a8.html#_CPPv48F2CPoint" title="F2CPoint"><span class="n"><span class="pre">F2CPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p1</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ang1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1ac1c5048c49678b873241ff14059734a8.html#_CPPv48F2CPoint" title="F2CPoint"><span class="n"><span class="pre">F2CPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p2</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ang2</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CPointdRK8F2CPointd" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of going from point p1 to point p2. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> – Start point </p></li>
+<li><p><strong>ang1</strong> – Angle of the robot in p1 </p></li>
+<li><p><strong>p2</strong> – End point </p></li>
+<li><p><strong>ang2</strong> – Angle of the robot in p2 </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CPointRK8F2CPointd">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK8F2CPointRK8F2CPointd"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK8F2CPointRK8F2CPointd"></span><span id="f2c::obj::PathObjective::computeCost__F2CPointCR.F2CPointCR.double"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1ac14217fdac6c2e87935059a91a18e654"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1ac1c5048c49678b873241ff14059734a8.html#_CPPv48F2CPoint" title="F2CPoint"><span class="n"><span class="pre">F2CPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1ac1c5048c49678b873241ff14059734a8.html#_CPPv48F2CPoint" title="F2CPoint"><span class="n"><span class="pre">F2CPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p2</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ang2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CPointRK8F2CPointd" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of going from point p1 to point p2. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> – Start point </p></li>
+<li><p><strong>p2</strong> – End point </p></li>
+<li><p><strong>ang2</strong> – Angle of the robot in p2 </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK8F2CPoint">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK8F2CPoint"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK8F2CPoint"></span><span id="f2c::obj::PathObjective::computeCost__F2CSwathCR.F2CPointCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1ab8f30dbfecb64963cbe274d0d1a9d426"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a045626a37297f2789b1c415cf2ca2f8e.html#_CPPv48F2CSwath" title="F2CSwath"><span class="n"><span class="pre">F2CSwath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1ac1c5048c49678b873241ff14059734a8.html#_CPPv48F2CPoint" title="F2CPoint"><span class="n"><span class="pre">F2CPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK8F2CPoint" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of going from swath s to point p. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> – Start point (end of the swath) </p></li>
+<li><p><strong>p</strong> – End point </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK8F2CSwath">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK8F2CSwath"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK8F2CSwath"></span><span id="f2c::obj::PathObjective::computeCost__F2CSwathCR.F2CSwathCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a81664d41e439a57bcebfac96b454c98e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a045626a37297f2789b1c415cf2ca2f8e.html#_CPPv48F2CSwath" title="F2CSwath"><span class="n"><span class="pre">F2CSwath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a045626a37297f2789b1c415cf2ca2f8e.html#_CPPv48F2CSwath" title="F2CSwath"><span class="n"><span class="pre">F2CSwath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK8F2CSwath" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of going from swath s to point p. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s1</strong> – Start point (end of the swath) </p></li>
+<li><p><strong>s2</strong> – End point (start of the swath) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK8F2CPointd">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK8F2CPointd"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK8F2CPointd"></span><span id="f2c::obj::PathObjective::computeCost__F2CSwathCR.F2CPointCR.double"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a3c40fb8484bbf43930ef9f0e80e0597a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a045626a37297f2789b1c415cf2ca2f8e.html#_CPPv48F2CSwath" title="F2CSwath"><span class="n"><span class="pre">F2CSwath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1ac1c5048c49678b873241ff14059734a8.html#_CPPv48F2CPoint" title="F2CPoint"><span class="n"><span class="pre">F2CPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ang</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK8F2CPointd" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of going from swath s to point p. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> – Start point (end of the swath) </p></li>
+<li><p><strong>p</strong> – End point </p></li>
+<li><p><strong>ang</strong> – Angle of the robot in p </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CPointRK8F2CSwath">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK8F2CPointRK8F2CSwath"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK8F2CPointRK8F2CSwath"></span><span id="f2c::obj::PathObjective::computeCost__F2CPointCR.F2CSwathCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1ac819c97a91cfcde4b45a1603835265c4"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1ac1c5048c49678b873241ff14059734a8.html#_CPPv48F2CPoint" title="F2CPoint"><span class="n"><span class="pre">F2CPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a045626a37297f2789b1c415cf2ca2f8e.html#_CPPv48F2CSwath" title="F2CSwath"><span class="n"><span class="pre">F2CSwath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CPointRK8F2CSwath" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of going from point p to swath s. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> – Start point </p></li>
+<li><p><strong>s</strong> – End point (start of the swath) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CPointdRK8F2CSwath">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK8F2CPointdRK8F2CSwath"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK8F2CPointdRK8F2CSwath"></span><span id="f2c::obj::PathObjective::computeCost__F2CPointCR.double.F2CSwathCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a6de1b12d4f3a248171654fa407679bed"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1ac1c5048c49678b873241ff14059734a8.html#_CPPv48F2CPoint" title="F2CPoint"><span class="n"><span class="pre">F2CPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ang</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a045626a37297f2789b1c415cf2ca2f8e.html#_CPPv48F2CSwath" title="F2CSwath"><span class="n"><span class="pre">F2CSwath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CPointdRK8F2CSwath" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of going from point p to swath s. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> – Start point </p></li>
+<li><p><strong>ang</strong> – Angle of the robot in p </p></li>
+<li><p><strong>s</strong> – End point (start of the swath) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERKNSt6vectorI8F2CPointEE">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERKNSt6vectorI8F2CPointEE"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERKNSt6vectorI8F2CPointEE"></span><span id="f2c::obj::PathObjective::computeCost__std::vector:F2CPoint:CR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a4be3eefed4c3b175c98f3cc7dd743f82"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="typedef_types_8h_1ac1c5048c49678b873241ff14059734a8.html#_CPPv48F2CPoint" title="F2CPoint"><span class="n"><span class="pre">F2CPoint</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ps</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERKNSt6vectorI8F2CPointEE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of covering all the points of ps. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ps</strong> – vector of points </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK13F2CMultiPoint">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK13F2CMultiPoint"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK13F2CMultiPoint"></span><span id="f2c::obj::PathObjective::computeCost__F2CMultiPointCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1ab2efe902c89032ab91b1d042fc8c29d7"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1afc330e77c2ab819399401bf2ce1ec469.html#_CPPv413F2CMultiPoint" title="F2CMultiPoint"><span class="n"><span class="pre">F2CMultiPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ps</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK13F2CMultiPoint" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of covering all the points of ps. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ps</strong> – vector of points </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK13F2CMultiPoint">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK13F2CMultiPoint"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK13F2CMultiPoint"></span><span id="f2c::obj::PathObjective::computeCost__F2CSwathCR.F2CMultiPointCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a5c4c076bfac5dd9286aa353ab4926f03"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a045626a37297f2789b1c415cf2ca2f8e.html#_CPPv48F2CSwath" title="F2CSwath"><span class="n"><span class="pre">F2CSwath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1afc330e77c2ab819399401bf2ce1ec469.html#_CPPv413F2CMultiPoint" title="F2CMultiPoint"><span class="n"><span class="pre">F2CMultiPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ps</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CSwathRK13F2CMultiPoint" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of going from swath s to the first point of ps. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> – Start point (end of the swath) </p></li>
+<li><p><strong>ps</strong> – vector of points </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK9F2CSwathsRK13F2CMultiPoint">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK9F2CSwathsRK13F2CMultiPoint"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK9F2CSwathsRK13F2CMultiPoint"></span><span id="f2c::obj::PathObjective::computeCost__F2CSwathsCR.F2CMultiPointCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a6c08fe9048e5d93333815ce0e7a0b6f2"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a8a5943a58548e51fcfd65dd0df970d36.html#_CPPv49F2CSwaths" title="F2CSwaths"><span class="n"><span class="pre">F2CSwaths</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1afc330e77c2ab819399401bf2ce1ec469.html#_CPPv413F2CMultiPoint" title="F2CMultiPoint"><span class="n"><span class="pre">F2CMultiPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ps</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK9F2CSwathsRK13F2CMultiPoint" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of going from the last swath of s to the first point of ps. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> – Start point (end of the last swath) </p></li>
+<li><p><strong>ps</strong> – vector of points (first point) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK13F2CMultiPointRK8F2CSwath">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK13F2CMultiPointRK8F2CSwath"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK13F2CMultiPointRK8F2CSwath"></span><span id="f2c::obj::PathObjective::computeCost__F2CMultiPointCR.F2CSwathCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a5751449f47b6b778e4100d41f4d1934c"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1afc330e77c2ab819399401bf2ce1ec469.html#_CPPv413F2CMultiPoint" title="F2CMultiPoint"><span class="n"><span class="pre">F2CMultiPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ps</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a045626a37297f2789b1c415cf2ca2f8e.html#_CPPv48F2CSwath" title="F2CSwath"><span class="n"><span class="pre">F2CSwath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK13F2CMultiPointRK8F2CSwath" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of going from the last point of ps to the swath s. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ps</strong> – vector of points (end point) </p></li>
+<li><p><strong>s</strong> – Start point (start of the swath) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK13F2CMultiPointRK9F2CSwaths">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK13F2CMultiPointRK9F2CSwaths"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK13F2CMultiPointRK9F2CSwaths"></span><span id="f2c::obj::PathObjective::computeCost__F2CMultiPointCR.F2CSwathsCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a4df8e05a10ffef4df27e1ce434c7938f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1afc330e77c2ab819399401bf2ce1ec469.html#_CPPv413F2CMultiPoint" title="F2CMultiPoint"><span class="n"><span class="pre">F2CMultiPoint</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ps</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a8a5943a58548e51fcfd65dd0df970d36.html#_CPPv49F2CSwaths" title="F2CSwaths"><span class="n"><span class="pre">F2CSwaths</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK13F2CMultiPointRK9F2CSwaths" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of going from the last point of ps to the first swath of s. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ps</strong> – vector of points (end point) </p></li>
+<li><p><strong>s</strong> – Start point (start of the first swath) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CSwath">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK8F2CSwath"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK8F2CSwath"></span><span id="f2c::obj::PathObjective::computeCost__F2CSwathCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a4ad66dc2b173b21b1625d8f22dcadeb4"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a045626a37297f2789b1c415cf2ca2f8e.html#_CPPv48F2CSwath" title="F2CSwath"><span class="n"><span class="pre">F2CSwath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CSwath" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of covering a swath. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>s</strong> – Swath </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK9F2CSwaths">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK9F2CSwaths"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK9F2CSwaths"></span><span id="f2c::obj::PathObjective::computeCost__F2CSwathsCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1aedba8aa2b8d6604cdd39ee40366652ae"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a8a5943a58548e51fcfd65dd0df970d36.html#_CPPv49F2CSwaths" title="F2CSwaths"><span class="n"><span class="pre">F2CSwaths</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">swaths</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK9F2CSwaths" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of covering a vector of swaths. </p>
+<p>Costs of each swath + Cost of going from one to another. The order may affect the cost. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>s</strong> – Swaths </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CRoute">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK8F2CRoute"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK8F2CRoute"></span><span id="f2c::obj::PathObjective::computeCost__F2CRouteCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a1b75f68d5b054fdaeebb37b3edd8b268"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a2852a1a1b97a0ac7ddd9557fe56c8cd3.html#_CPPv48F2CRoute" title="F2CRoute"><span class="n"><span class="pre">F2CRoute</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">r</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK8F2CRoute" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of covering a Route. </p>
+<p>Costs of each swath + Cost of going from one to another. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>r</strong> – Route </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c3obj13PathObjective11computeCostERK7F2CPath">
+<span id="_CPPv3N3f2c3obj13PathObjective11computeCostERK7F2CPath"></span><span id="_CPPv2N3f2c3obj13PathObjective11computeCostERK7F2CPath"></span><span id="f2c::obj::PathObjective::computeCost__F2CPathCR"></span><span class="target" id="classf2c_1_1obj_1_1PathObjective_1a4f691bd52b4892b41238088b4254ae1d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeCost</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a30f41350082e59db78114f3287199056.html#_CPPv47F2CPath" title="F2CPath"><span class="n"><span class="pre">F2CPath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c3obj13PathObjective11computeCostERK7F2CPath" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the cost of covering a path. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>p</strong> – Path </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cost value </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classf2c_1_1obj_1_1Overlaps.html" class="btn btn-neutral float-left" title="Class Overlaps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classf2c_1_1obj_1_1SwathLength.html" class="btn btn-neutral float-right" title="Class SwathLength" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>
