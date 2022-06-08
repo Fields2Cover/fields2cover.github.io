@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 5: Route planning &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Part 6: Path planning" href="path_planning.html" />
+    <link rel="prev" title="Part 4: Swath generator" href="swath_generator.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic_types.html">Part 1: Basic types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="objective_functions.html">Part 2: Objective functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="headland_generator.html">Part 3: Headland generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swath_generator.html">Part 4: Swath generator</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Part 5: Route planning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#boustrophedon-order">Boustrophedon order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#snake-order">Snake order</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="path_planning.html">Part 6: Path planning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
+      <li>Part 5: Route planning</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/source/tutorials/route_planning.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="part-5-route-planning">
+<h1>Part 5: Route planning<a class="headerlink" href="#part-5-route-planning" title="Permalink to this headline"></a></h1>
+<p>A route planner searches the best order to cover previously generated swaths.
+Usually, metaheuristics are used in the search.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this version of Fields2Cover, no metaheuristic is provided, only predefined patterns.
+Route patterns do not return <code class="docutils literal notranslate"><span class="pre">F2CRoute</span></code>, but <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code> instead.
+In the next version, route planners will support metaheuristics, <code class="docutils literal notranslate"><span class="pre">F2CCells</span></code> as inputs, and <code class="docutils literal notranslate"><span class="pre">F2CRoute</span></code> as output.</p>
+</div>
+<p>For these examples, we will continue from the previous tutorial:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">Random</span> <span class="n">rand</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+<span class="n">F2CRobot</span> <span class="nf">robot</span> <span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">);</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">hg</span><span class="o">::</span><span class="n">ConstHL</span> <span class="n">const_hl</span><span class="p">;</span>
+<span class="n">F2CCells</span> <span class="n">cells</span> <span class="o">=</span> <span class="n">rand</span><span class="p">.</span><span class="n">generateRandField</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">1e4</span><span class="p">).</span><span class="n">field</span><span class="p">;</span>
+<span class="n">F2CCells</span> <span class="n">no_hl</span> <span class="o">=</span> <span class="n">const_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="n">robot</span><span class="p">.</span><span class="n">robot_width</span><span class="p">);</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">sg</span><span class="o">::</span><span class="n">BruteForce</span><span class="o">&lt;</span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">NSwath</span><span class="o">&gt;</span> <span class="n">bf</span><span class="p">;</span>
+<span class="n">F2CSwaths</span> <span class="n">swaths</span> <span class="o">=</span> <span class="n">bf</span><span class="p">.</span><span class="n">generateSwaths</span><span class="p">(</span><span class="n">M_PI</span><span class="p">,</span> <span class="n">robot</span><span class="p">.</span><span class="n">op_width</span><span class="p">,</span> <span class="n">no_hl</span><span class="p">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Once planned the swaths, it would be awesome to find the best order to cover the field.
+To plot the order, we have used green for earlier covered swaths and black for last covered.
+The direction of swaths is also green dot to black cross.</p>
+<img alt="../../_images/Tutorial_4_1_Brute_force_Angle.png" src="../../_images/Tutorial_4_1_Brute_force_Angle.png" />
+<div class="section" id="boustrophedon-order">
+<h2>Boustrophedon order<a class="headerlink" href="#boustrophedon-order" title="Permalink to this headline"></a></h2>
+<p>Boustrophedon pattern is one of the most known patterns to cover a field.
+Swaths are traveled in the simplest order, covering first the first swath, then the second, and so on.
+This pattern can have 4 results on the same field, depending on the start point.</p>
+<p>With the next code, swaths are order as the first image.
+Calling again <code class="docutils literal notranslate"><span class="pre">genSortedSwaths</span></code> produces the other variants.
+Once it has been called 4 times, the loop starts over.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">BoustrophedonOrder</span> <span class="n">boustrophedon_sorter</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span>
+<span class="n">swaths</span> <span class="o">=</span> <span class="n">boustrophedon_sorter</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">();</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../_images/Tutorial_5_1_Boustrophedon_1.png"><img alt="boustrophedon1" src="../../_images/Tutorial_5_1_Boustrophedon_1.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/Tutorial_5_1_Boustrophedon_2.png"><img alt="boustrophedon2" src="../../_images/Tutorial_5_1_Boustrophedon_2.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../_images/Tutorial_5_1_Boustrophedon_3.png"><img alt="boustrophedon3" src="../../_images/Tutorial_5_1_Boustrophedon_3.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/Tutorial_5_1_Boustrophedon_4.png"><img alt="boustrophedon4" src="../../_images/Tutorial_5_1_Boustrophedon_4.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="snake-order">
+<h2>Snake order<a class="headerlink" href="#snake-order" title="Permalink to this headline"></a></h2>
+<p>Snake order covers the field skipping one swath each turn, and then coming back using uncovered swaths. This pattern, compared to boustrophedon, reduces the number of sharp turns.</p>
+<p>As with boustrophedon pattern, snake pattern also has 4 variants:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">SnakeOrder</span> <span class="n">snake_sorter</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span>
+<span class="n">swaths</span> <span class="o">=</span> <span class="n">snake_sorter</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">();</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../_images/Tutorial_5_2_Snake_1.png"><img alt="snake1" src="../../_images/Tutorial_5_2_Snake_1.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/Tutorial_5_2_Snake_2.png"><img alt="snake2" src="../../_images/Tutorial_5_2_Snake_2.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../_images/Tutorial_5_2_Snake_3.png"><img alt="snake3" src="../../_images/Tutorial_5_2_Snake_3.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/Tutorial_5_2_Snake_4.png"><img alt="snake4" src="../../_images/Tutorial_5_2_Snake_4.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="swath_generator.html" class="btn btn-neutral float-left" title="Part 4: Swath generator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="path_planning.html" class="btn btn-neutral float-right" title="Part 6: Path planning" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

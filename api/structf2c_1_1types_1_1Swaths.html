@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Struct Swaths &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Template Class ConstHL" href="classf2c_1_1hg_1_1ConstHL.html" />
+    <link rel="prev" title="Struct Swath" href="structf2c_1_1types_1_1Swath.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="f2c_library.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="f2c_library.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="f2c_library.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cell.html">Struct Cell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cells.html">Struct Cells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Field.html">Struct Field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries.html">Template Struct Geometries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1ConstIterator_1_1Private.html">Struct ConstIterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1Iterator_1_1Private.html">Struct Iterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometry.html">Template Struct Geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LinearRing.html">Struct LinearRing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LineString.html">Struct LineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiLineString.html">Struct MultiLineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiPoint.html">Struct MultiPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1OptimizationParams.html">Struct OptimizationParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Path.html">Struct Path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Point.html">Struct Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Robot.html">Struct Robot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Route.html">Struct Route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swath.html">Struct Swath</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Struct Swaths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1ConstHL.html">Template Class ConstHL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html">Template Class HeadlandGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1CompleteTurnPathObj.html">Template Class CompleteTurnPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1DirectDistPathObj.html">Class DirectDistPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1FieldCoverage.html">Class FieldCoverage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1GlobalObjective.html">Class GlobalObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1NSwath.html">Class NSwath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1OptimizationClass.html">Template Class OptimizationClass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1Overlaps.html">Class Overlaps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1PathObjective.html">Class PathObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1SwathLength.html">Class SwathLength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Parser.html">Class Parser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurves.html">Class DubinsCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurvesCC.html">Class DubinsCurvesCC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1PathPlanning.html">Class PathPlanning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurves.html">Class ReedsSheppCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurvesHC.html">Class ReedsSheppCurvesHC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1TurningBase.html">Class TurningBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Random.html">Class Random</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1BoustrophedonOrder.html">Class BoustrophedonOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SingleCellSwathsOrderBase.html">Class SingleCellSwathsOrderBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SnakeOrder.html">Class SnakeOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1BruteForce.html">Template Class BruteForce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1SwathGeneratorBase.html">Template Class SwathGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Transform.html">Class Transform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1EmptyDestructor.html">Class EmptyDestructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1ConstIterator.html">Class Geometries::ConstIterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1Iterator.html">Class Geometries::Iterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Visualizer.html">Class Visualizer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#defines">Defines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="f2c_library.html">API</a> &raquo;</li>
+      <li>Struct Swaths</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/structf2c_1_1types_1_1Swaths.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="struct-swaths">
+<span id="exhale-struct-structf2c-1-1types-1-1swaths"></span><h1>Struct Swaths<a class="headerlink" href="#struct-swaths" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_fields2cover_types_Swaths.h.html#file-fields2cover-types-swaths-h"><span class="std std-ref">File Swaths.h</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline"></a></h2>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6SwathsE">
+<span id="_CPPv3N3f2c5types6SwathsE"></span><span id="_CPPv2N3f2c5types6SwathsE"></span><span id="f2c::types::Swaths"></span><span class="target" id="structf2c_1_1types_1_1Swaths"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">f2c</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">types</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Swaths</span></span></span><a class="headerlink" href="#_CPPv4N3f2c5types6SwathsE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths6SwathsEv">
+<span id="_CPPv3N3f2c5types6Swaths6SwathsEv"></span><span id="_CPPv2N3f2c5types6Swaths6SwathsEv"></span><span id="f2c::types::Swaths::Swaths"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a7f3948037913810062079d67909080e5"></span><span class="sig-name descname"><span class="n"><span class="pre">Swaths</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths6SwathsEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths6SwathsEi">
+<span id="_CPPv3N3f2c5types6Swaths6SwathsEi"></span><span id="_CPPv2N3f2c5types6Swaths6SwathsEi"></span><span id="f2c::types::Swaths::Swaths__i"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a61dd51c58501039f44c635ed95d383a8"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Swaths</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths6SwathsEi" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths6SwathsERKNSt16initializer_listI5SwathEE">
+<span id="_CPPv3N3f2c5types6Swaths6SwathsERKNSt16initializer_listI5SwathEE"></span><span id="_CPPv2N3f2c5types6Swaths6SwathsERKNSt16initializer_listI5SwathEE"></span><span id="f2c::types::Swaths::Swaths__std::initializer_list:Swath:CR"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1aacce4499f386d977ff92772199238ac7"></span><span class="sig-name descname"><span class="n"><span class="pre">Swaths</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">initializer_list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="structf2c_1_1types_1_1Swath.html#_CPPv4N3f2c5types5SwathE" title="f2c::types::Swath"><span class="n"><span class="pre">Swath</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths6SwathsERKNSt16initializer_listI5SwathEE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6SwathsD0Ev">
+<span id="_CPPv3N3f2c5types6SwathsD0Ev"></span><span id="_CPPv2N3f2c5types6SwathsD0Ev"></span><span id="f2c::types::Swaths::~Swaths"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1adde7a614579f30e69d69b56110155bd8"></span><span class="sig-name descname"><span class="n"><span class="pre">~Swaths</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6SwathsD0Ev" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths12emplace_backERK5Swath">
+<span id="_CPPv3N3f2c5types6Swaths12emplace_backERK5Swath"></span><span id="_CPPv2N3f2c5types6Swaths12emplace_backERK5Swath"></span><span id="f2c::types::Swaths::emplace_back__SwathCR"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a4409f50482a9fc079f35a82a47c61a05"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">emplace_back</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1Swath.html#_CPPv4N3f2c5types5SwathE" title="f2c::types::Swath"><span class="n"><span class="pre">Swath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths12emplace_backERK5Swath" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths12emplace_backERK10LineStringdi">
+<span id="_CPPv3N3f2c5types6Swaths12emplace_backERK10LineStringdi"></span><span id="_CPPv2N3f2c5types6Swaths12emplace_backERK10LineStringdi"></span><span id="f2c::types::Swaths::emplace_back__LineStringCR.double.i"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a804c0e764789e23af4bfd31694c98f79"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">emplace_back</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1LineString.html#_CPPv4N3f2c5types10LineStringE" title="f2c::types::LineString"><span class="n"><span class="pre">LineString</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_l</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">_w</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">_id</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths12emplace_backERK10LineStringdi" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths9push_backERK5Swath">
+<span id="_CPPv3N3f2c5types6Swaths9push_backERK5Swath"></span><span id="_CPPv2N3f2c5types6Swaths9push_backERK5Swath"></span><span id="f2c::types::Swaths::push_back__SwathCR"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a977a8d55767f5eb4c66858459ae0a04a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">push_back</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1Swath.html#_CPPv4N3f2c5types5SwathE" title="f2c::types::Swath"><span class="n"><span class="pre">Swath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths9push_backERK5Swath" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths5beginEv">
+<span id="_CPPv3N3f2c5types6Swaths5beginEv"></span><span id="_CPPv2N3f2c5types6Swaths5beginEv"></span><span id="f2c::types::Swaths::begin"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1ab9534c3d29437934c2cbcf76cce89b55"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="structf2c_1_1types_1_1Swath.html#_CPPv4N3f2c5types5SwathE" title="f2c::types::Swath"><span class="n"><span class="pre">Swath</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">iterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths5beginEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths3endEv">
+<span id="_CPPv3N3f2c5types6Swaths3endEv"></span><span id="_CPPv2N3f2c5types6Swaths3endEv"></span><span id="f2c::types::Swaths::end"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1ad791cb9cd351cc18d8b86304e0ec21fd"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="structf2c_1_1types_1_1Swath.html#_CPPv4N3f2c5types5SwathE" title="f2c::types::Swath"><span class="n"><span class="pre">Swath</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">iterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths3endEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types6Swaths5beginEv">
+<span id="_CPPv3NK3f2c5types6Swaths5beginEv"></span><span id="_CPPv2NK3f2c5types6Swaths5beginEv"></span><span id="f2c::types::Swaths::beginC"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a38931fd0413906ea28d61849d659ee41"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="structf2c_1_1types_1_1Swath.html#_CPPv4N3f2c5types5SwathE" title="f2c::types::Swath"><span class="n"><span class="pre">Swath</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">const_iterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types6Swaths5beginEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types6Swaths3endEv">
+<span id="_CPPv3NK3f2c5types6Swaths3endEv"></span><span id="_CPPv2NK3f2c5types6Swaths3endEv"></span><span id="f2c::types::Swaths::endC"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a3ea410ba1325c79dcd1b509b5c345e29"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="structf2c_1_1types_1_1Swath.html#_CPPv4N3f2c5types5SwathE" title="f2c::types::Swath"><span class="n"><span class="pre">Swath</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">const_iterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types6Swaths3endEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths7reverseEv">
+<span id="_CPPv3N3f2c5types6Swaths7reverseEv"></span><span id="_CPPv2N3f2c5types6Swaths7reverseEv"></span><span id="f2c::types::Swaths::reverse"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a71e689fb79bab731d389766f1a56edc1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reverse</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths7reverseEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths4backEv">
+<span id="_CPPv3N3f2c5types6Swaths4backEv"></span><span id="_CPPv2N3f2c5types6Swaths4backEv"></span><span id="f2c::types::Swaths::back"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1ad06e3854e4c513f478608fd59e505258"></span><a class="reference internal" href="structf2c_1_1types_1_1Swath.html#_CPPv4N3f2c5types5SwathE" title="f2c::types::Swath"><span class="n"><span class="pre">Swath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">back</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths4backEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types6Swaths4backEv">
+<span id="_CPPv3NK3f2c5types6Swaths4backEv"></span><span id="_CPPv2NK3f2c5types6Swaths4backEv"></span><span id="f2c::types::Swaths::backC"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a0a5310cfb1fc39e56c4573075ede4f21"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1Swath.html#_CPPv4N3f2c5types5SwathE" title="f2c::types::Swath"><span class="n"><span class="pre">Swath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">back</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types6Swaths4backEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths2atE6size_t">
+<span id="_CPPv3N3f2c5types6Swaths2atE6size_t"></span><span id="_CPPv2N3f2c5types6Swaths2atE6size_t"></span><span id="f2c::types::Swaths::at__s"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a361518aab3a31eedd0f8412fa8174b9e"></span><a class="reference internal" href="structf2c_1_1types_1_1Swath.html#_CPPv4N3f2c5types5SwathE" title="f2c::types::Swath"><span class="n"><span class="pre">Swath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">at</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths2atE6size_t" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types6Swaths4sizeEv">
+<span id="_CPPv3NK3f2c5types6Swaths4sizeEv"></span><span id="_CPPv2NK3f2c5types6Swaths4sizeEv"></span><span id="f2c::types::Swaths::sizeC"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a7783e07574519b2db3d08678689f7443"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types6Swaths4sizeEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6SwathsixEi">
+<span id="_CPPv3N3f2c5types6SwathsixEi"></span><span id="_CPPv2N3f2c5types6SwathsixEi"></span><span id="f2c::types::Swaths::subscript-operator__i"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1ae60266a9d9203d9ec7f638d1a14b1b78"></span><a class="reference internal" href="structf2c_1_1types_1_1Swath.html#_CPPv4N3f2c5types5SwathE" title="f2c::types::Swath"><span class="n"><span class="pre">Swath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">[]</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6SwathsixEi" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types6SwathsixEi">
+<span id="_CPPv3NK3f2c5types6SwathsixEi"></span><span id="_CPPv2NK3f2c5types6SwathsixEi"></span><span id="f2c::types::Swaths::subscript-operator__iC"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1ac376266decf8e2b4b57a038882a6339a"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1Swath.html#_CPPv4N3f2c5types5SwathE" title="f2c::types::Swath"><span class="n"><span class="pre">Swath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">[]</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types6SwathsixEi" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths6appendERK10LineStringd">
+<span id="_CPPv3N3f2c5types6Swaths6appendERK10LineStringd"></span><span id="_CPPv2N3f2c5types6Swaths6appendERK10LineStringd"></span><span id="f2c::types::Swaths::append__LineStringCR.double"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1ac9b1b60cacd657b7d217419abe9c03d8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">append</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1LineString.html#_CPPv4N3f2c5types10LineStringE" title="f2c::types::LineString"><span class="n"><span class="pre">LineString</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_line</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">_width</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths6appendERK10LineStringd" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths6appendERK15MultiLineStringd">
+<span id="_CPPv3N3f2c5types6Swaths6appendERK15MultiLineStringd"></span><span id="_CPPv2N3f2c5types6Swaths6appendERK15MultiLineStringd"></span><span id="f2c::types::Swaths::append__MultiLineStringCR.double"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a2c91014b52e52979593e6a5b9a1a1ee2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">append</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1MultiLineString.html#_CPPv4N3f2c5types15MultiLineStringE" title="f2c::types::MultiLineString"><span class="n"><span class="pre">MultiLineString</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_line</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">_width</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths6appendERK15MultiLineStringd" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths6appendERK10LineStringRK4Celld">
+<span id="_CPPv3N3f2c5types6Swaths6appendERK10LineStringRK4Celld"></span><span id="_CPPv2N3f2c5types6Swaths6appendERK10LineStringRK4Celld"></span><span id="f2c::types::Swaths::append__LineStringCR.CellCR.double"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a51c2c47dd52c1a00a76a568e38c2caa7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">append</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1LineString.html#_CPPv4N3f2c5types10LineStringE" title="f2c::types::LineString"><span class="n"><span class="pre">LineString</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_line</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1Cell.html#_CPPv4N3f2c5types4CellE" title="f2c::types::Cell"><span class="n"><span class="pre">Cell</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_poly</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">_width</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths6appendERK10LineStringRK4Celld" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths6appendERK15MultiLineStringRK4Celld">
+<span id="_CPPv3N3f2c5types6Swaths6appendERK15MultiLineStringRK4Celld"></span><span id="_CPPv2N3f2c5types6Swaths6appendERK15MultiLineStringRK4Celld"></span><span id="f2c::types::Swaths::append__MultiLineStringCR.CellCR.double"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a925b496eac25a98c8b116c69b04e3fe0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">append</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1MultiLineString.html#_CPPv4N3f2c5types15MultiLineStringE" title="f2c::types::MultiLineString"><span class="n"><span class="pre">MultiLineString</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_lines</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1Cell.html#_CPPv4N3f2c5types4CellE" title="f2c::types::Cell"><span class="n"><span class="pre">Cell</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_poly</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">_width</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths6appendERK15MultiLineStringRK4Celld" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths6appendERK10LineStringRK5Cellsd">
+<span id="_CPPv3N3f2c5types6Swaths6appendERK10LineStringRK5Cellsd"></span><span id="_CPPv2N3f2c5types6Swaths6appendERK10LineStringRK5Cellsd"></span><span id="f2c::types::Swaths::append__LineStringCR.CellsCR.double"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1ab48b73faf344126409aefe64c829f7bf"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">append</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1LineString.html#_CPPv4N3f2c5types10LineStringE" title="f2c::types::LineString"><span class="n"><span class="pre">LineString</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_line</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1Cells.html#_CPPv4N3f2c5types5CellsE" title="f2c::types::Cells"><span class="n"><span class="pre">Cells</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_polys</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">_width</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths6appendERK10LineStringRK5Cellsd" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths6appendERK15MultiLineStringRK5Cellsd">
+<span id="_CPPv3N3f2c5types6Swaths6appendERK15MultiLineStringRK5Cellsd"></span><span id="_CPPv2N3f2c5types6Swaths6appendERK15MultiLineStringRK5Cellsd"></span><span id="f2c::types::Swaths::append__MultiLineStringCR.CellsCR.double"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a2d60e0622e78dd0f00c5a16d23b8ed63"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">append</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1MultiLineString.html#_CPPv4N3f2c5types15MultiLineStringE" title="f2c::types::MultiLineString"><span class="n"><span class="pre">MultiLineString</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_lines</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1Cells.html#_CPPv4N3f2c5types5CellsE" title="f2c::types::Cells"><span class="n"><span class="pre">Cells</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_poly</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">_width</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths6appendERK15MultiLineStringRK5Cellsd" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths4sortEv">
+<span id="_CPPv3N3f2c5types6Swaths4sortEv"></span><span id="_CPPv2N3f2c5types6Swaths4sortEv"></span><span id="f2c::types::Swaths::sort"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a780972f939ce9867079803ce7707ddc8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths4sortEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types6Swaths19reverseDirOddSwathsEv">
+<span id="_CPPv3N3f2c5types6Swaths19reverseDirOddSwathsEv"></span><span id="_CPPv2N3f2c5types6Swaths19reverseDirOddSwathsEv"></span><span id="f2c::types::Swaths::reverseDirOddSwaths"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a4b6f88d86bfc21c727932c2e41eaaa9a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reverseDirOddSwaths</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types6Swaths19reverseDirOddSwathsEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types6Swaths5cloneEv">
+<span id="_CPPv3NK3f2c5types6Swaths5cloneEv"></span><span id="_CPPv2NK3f2c5types6Swaths5cloneEv"></span><span id="f2c::types::Swaths::cloneC"></span><span class="target" id="structf2c_1_1types_1_1Swaths_1a0db4ca1b6e8d3a32aaa02d0fc48cb763"></span><a class="reference internal" href="#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clone</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types6Swaths5cloneEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="structf2c_1_1types_1_1Swath.html" class="btn btn-neutral float-left" title="Struct Swath" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classf2c_1_1hg_1_1ConstHL.html" class="btn btn-neutral float-right" title="Template Class ConstHL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

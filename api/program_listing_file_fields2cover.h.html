@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File fields2cover.h &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Program Listing for File fields2cover.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_fields2cover.h.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="program-listing-for-file-fields2cover-h">
+<span id="program-listing-file-fields2cover-h"></span><h1>Program Listing for File fields2cover.h<a class="headerlink" href="#program-listing-for-file-fields2cover-h" title="Permalink to this headline"></a></h1>
+<p>↰ <a class="reference internal" href="file_fields2cover.h.html#file-fields2cover-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">fields2cover.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//=============================================================================</span>
+<span class="c1">//    Copyright (C) 2021-2022 Wageningen University - All Rights Reserved</span>
+<span class="c1">//                     Author: Gonzalo Mier</span>
+<span class="c1">//                        BSD-3 License</span>
+<span class="c1">//=============================================================================</span>
+
+<span class="cp">#pragma once</span>
+<span class="cp">#ifndef FIELDS2COVER_H_</span>
+<span class="cp">#define FIELDS2COVER_H_</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/types.h&quot;</span><span class="cp"></span>
+
+
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/utils/random.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/utils/transformation.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/utils/parser.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/utils/visualizer.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/path_objective.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/direct_dist_path_obj.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/complete_turn_path_obj.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/global_objective.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/optimization_class.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/n_swath.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/field_coverage.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/overlaps.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/swath_length.h&quot;</span><span class="cp"></span>
+
+
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/headland_generator/headland_generator_base.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/headland_generator/constant_headland.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/swath_generator/swath_generator_base.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/swath_generator/brute_force.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/route_planning/single_cell_swaths_order_base.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/route_planning/boustrophedon_order.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/route_planning/snake_order.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/path_planning/turning_base.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/path_planning/dubins_curves.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/path_planning/dubins_curves_cc.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/path_planning/reeds_shepp_curves.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/path_planning/reeds_shepp_curves_hc.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/path_planning/path_planning.h&quot;</span><span class="cp"></span>
+
+
+<span class="k">namespace</span> <span class="n">f2c</span> <span class="p">{</span>
+
+<span class="k">namespace</span> <span class="n">types</span> <span class="p">{}</span>
+
+<span class="k">namespace</span> <span class="n">sg</span> <span class="p">{}</span>
+
+<span class="k">namespace</span> <span class="n">rp</span> <span class="p">{}</span>
+
+<span class="k">namespace</span> <span class="n">pp</span> <span class="p">{}</span>
+
+<span class="k">namespace</span> <span class="n">obj</span> <span class="p">{}</span>
+
+<span class="k">namespace</span> <span class="n">hg</span> <span class="p">{}</span>
+
+<span class="k">namespace</span> <span class="n">decomp</span> <span class="p">{}</span>
+
+<span class="p">}</span>  <span class="c1">// namespace f2c</span>
+
+<span class="cp">#endif  </span><span class="c1">// FIELDS2COVER_H_</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

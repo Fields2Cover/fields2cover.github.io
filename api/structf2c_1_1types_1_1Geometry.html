@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template Struct Geometry &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Struct LinearRing" href="structf2c_1_1types_1_1LinearRing.html" />
+    <link rel="prev" title="Struct Iterator::Private" href="structf2c_1_1types_1_1Geometries_1_1Iterator_1_1Private.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="f2c_library.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="f2c_library.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="f2c_library.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cell.html">Struct Cell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cells.html">Struct Cells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Field.html">Struct Field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries.html">Template Struct Geometries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1ConstIterator_1_1Private.html">Struct ConstIterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1Iterator_1_1Private.html">Struct Iterator::Private</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Template Struct Geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LinearRing.html">Struct LinearRing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LineString.html">Struct LineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiLineString.html">Struct MultiLineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiPoint.html">Struct MultiPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1OptimizationParams.html">Struct OptimizationParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Path.html">Struct Path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Point.html">Struct Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Robot.html">Struct Robot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Route.html">Struct Route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swath.html">Struct Swath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html">Struct Swaths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1ConstHL.html">Template Class ConstHL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html">Template Class HeadlandGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1CompleteTurnPathObj.html">Template Class CompleteTurnPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1DirectDistPathObj.html">Class DirectDistPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1FieldCoverage.html">Class FieldCoverage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1GlobalObjective.html">Class GlobalObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1NSwath.html">Class NSwath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1OptimizationClass.html">Template Class OptimizationClass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1Overlaps.html">Class Overlaps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1PathObjective.html">Class PathObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1SwathLength.html">Class SwathLength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Parser.html">Class Parser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurves.html">Class DubinsCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurvesCC.html">Class DubinsCurvesCC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1PathPlanning.html">Class PathPlanning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurves.html">Class ReedsSheppCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurvesHC.html">Class ReedsSheppCurvesHC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1TurningBase.html">Class TurningBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Random.html">Class Random</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1BoustrophedonOrder.html">Class BoustrophedonOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SingleCellSwathsOrderBase.html">Class SingleCellSwathsOrderBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SnakeOrder.html">Class SnakeOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1BruteForce.html">Template Class BruteForce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1SwathGeneratorBase.html">Template Class SwathGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Transform.html">Class Transform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1EmptyDestructor.html">Class EmptyDestructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1ConstIterator.html">Class Geometries::ConstIterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1Iterator.html">Class Geometries::Iterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Visualizer.html">Class Visualizer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#defines">Defines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="f2c_library.html">API</a> &raquo;</li>
+      <li>Template Struct Geometry</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/structf2c_1_1types_1_1Geometry.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="template-struct-geometry">
+<span id="exhale-struct-structf2c-1-1types-1-1geometry"></span><h1>Template Struct Geometry<a class="headerlink" href="#template-struct-geometry" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_fields2cover_types_Geometry.h.html#file-fields2cover-types-geometry-h"><span class="std std-ref">File Geometry.h</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline"></a></h2>
+<div class="section" id="derived-type">
+<h3>Derived Type<a class="headerlink" href="#derived-type" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">f2c::types::Geometries&lt;</span> <span class="pre">SAMETYPE,</span> <span class="pre">T,</span> <span class="pre">R,</span> <span class="pre">CHILDRENTYPE</span> <span class="pre">&gt;</span></code> (<a class="reference internal" href="structf2c_1_1types_1_1Geometries.html#exhale-struct-structf2c-1-1types-1-1geometries"><span class="std std-ref">Template Struct Geometries</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline"></a></h2>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE">
+<span id="_CPPv3I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE"></span><span id="_CPPv2I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">OGRwkbGeometryType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">R</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structf2c_1_1types_1_1Geometry"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">f2c</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">types</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">Geometry</span></span></span><a class="headerlink" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="structf2c_1_1types_1_1Geometries.html#structf2c_1_1types_1_1Geometries"><span class="std std-ref">f2c::types::Geometries&lt; SAMETYPE, T, R, CHILDRENTYPE &gt;</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8Geometry8GeometryEv">
+<span id="_CPPv3N3f2c5types8Geometry8GeometryEv"></span><span id="_CPPv2N3f2c5types8Geometry8GeometryEv"></span><span id="f2c::types::Geometry::Geometry"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a4029d72b661013d95d89af62a826144e"></span><span class="sig-name descname"><span class="n"><span class="pre">Geometry</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8Geometry8GeometryEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8Geometry8GeometryERK1T">
+<span id="_CPPv3N3f2c5types8Geometry8GeometryERK1T"></span><span id="_CPPv2N3f2c5types8Geometry8GeometryERK1T"></span><span id="f2c::types::Geometry::Geometry__TCR"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a5333e73d645917b1e8464124344782ce"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Geometry</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">g</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8Geometry8GeometryERK1T" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8Geometry8GeometryENSt10shared_ptrI1TEE">
+<span id="_CPPv3N3f2c5types8Geometry8GeometryENSt10shared_ptrI1TEE"></span><span id="_CPPv2N3f2c5types8Geometry8GeometryENSt10shared_ptrI1TEE"></span><span id="f2c::types::Geometry::Geometry__std::shared_ptr:T:"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a64a1643e420558046d09e45199eb47db"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Geometry</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">g</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8Geometry8GeometryENSt10shared_ptrI1TEE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8Geometry8GeometryEP1T15EmptyDestructor">
+<span id="_CPPv3N3f2c5types8Geometry8GeometryEP1T15EmptyDestructor"></span><span id="_CPPv2N3f2c5types8Geometry8GeometryEP1T15EmptyDestructor"></span><span id="f2c::types::Geometry::Geometry__TP.EmptyDestructor"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1af3a2fed10c92a4bc76e1a674fca07ffc"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Geometry</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">g</span></span>, <a class="reference internal" href="classf2c_1_1types_1_1EmptyDestructor.html#_CPPv4N3f2c5types15EmptyDestructorE" title="f2c::types::EmptyDestructor"><span class="n"><span class="pre">EmptyDestructor</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8Geometry8GeometryEP1T15EmptyDestructor" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8Geometry8GeometryEPK1T">
+<span id="_CPPv3N3f2c5types8Geometry8GeometryEPK1T"></span><span id="_CPPv2N3f2c5types8Geometry8GeometryEPK1T"></span><span id="f2c::types::Geometry::Geometry__TCP"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1af6b5e285cf5e0e4ee36599a88ad01264"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Geometry</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">g</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8Geometry8GeometryEPK1T" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8GeometryD0Ev">
+<span id="_CPPv3N3f2c5types8GeometryD0Ev"></span><span id="_CPPv2N3f2c5types8GeometryD0Ev"></span><span id="f2c::types::Geometry::~Geometry"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a4d5621106dade9959af589d2388fd255"></span><span class="sig-name descname"><span class="n"><span class="pre">~Geometry</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8GeometryD0Ev" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8Geometry8GeometryERK8Geometry">
+<span id="_CPPv3N3f2c5types8Geometry8GeometryERK8Geometry"></span><span id="_CPPv2N3f2c5types8Geometry8GeometryERK8Geometry"></span><span id="f2c::types::Geometry::Geometry__GeometryCR"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1ad482fa6b098685743b457a308882aea6"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Geometry</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3f2c5types8Geometry8GeometryERK8Geometry" title="f2c::types::Geometry::Geometry"><span class="n"><span class="pre">Geometry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">g</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8Geometry8GeometryERK8Geometry" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8Geometry8GeometryERR8Geometry">
+<span id="_CPPv3N3f2c5types8Geometry8GeometryERR8Geometry"></span><span id="_CPPv2N3f2c5types8Geometry8GeometryERR8Geometry"></span><span id="f2c::types::Geometry::Geometry__GeometryRR"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a16b9792cebb991c11fe4290a760e36bd"></span><span class="sig-name descname"><span class="n"><span class="pre">Geometry</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3f2c5types8Geometry8GeometryERR8Geometry" title="f2c::types::Geometry::Geometry"><span class="n"><span class="pre">Geometry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">g</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8Geometry8GeometryERR8Geometry" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8GeometryaSERR8Geometry">
+<span id="_CPPv3N3f2c5types8GeometryaSERR8Geometry"></span><span id="_CPPv2N3f2c5types8GeometryaSERR8Geometry"></span><span id="f2c::types::Geometry::assign-operator__GeometryRR"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1ab35e04facc6885b0e3c09302599aeeaa"></span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry"><span class="n"><span class="pre">Geometry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry"><span class="n"><span class="pre">Geometry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">g</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8GeometryaSERR8Geometry" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8GeometryaSERK8Geometry">
+<span id="_CPPv3N3f2c5types8GeometryaSERK8Geometry"></span><span id="_CPPv2N3f2c5types8GeometryaSERK8Geometry"></span><span id="f2c::types::Geometry::assign-operator__GeometryCR"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a28f9892cbaa0db56b41410e47af85d9b"></span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry"><span class="n"><span class="pre">Geometry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry"><span class="n"><span class="pre">Geometry</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">g</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8GeometryaSERK8Geometry" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8GeometryptEv">
+<span id="_CPPv3N3f2c5types8GeometryptEv"></span><span id="_CPPv2N3f2c5types8GeometryptEv"></span><span id="f2c::types::Geometry::pointer-operator"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1ae5f481680c964000f911a03a4a40d7ae"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8GeometryptEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8GeometryptEv">
+<span id="_CPPv3NK3f2c5types8GeometryptEv"></span><span id="_CPPv2NK3f2c5types8GeometryptEv"></span><span id="f2c::types::Geometry::pointer-operatorC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a48b39d180b42bb6e5f84e07d413baf37"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8GeometryptEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry3getEv">
+<span id="_CPPv3NK3f2c5types8Geometry3getEv"></span><span id="_CPPv2NK3f2c5types8Geometry3getEv"></span><span id="f2c::types::Geometry::getC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1aab2899c3ec6e97db9ef460ff52039f08"></span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry3getEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8GeometryneERK8GeometryI1T1RE">
+<span id="_CPPv3NK3f2c5types8GeometryneERK8GeometryI1T1RE"></span><span id="_CPPv2NK3f2c5types8GeometryneERK8GeometryI1T1RE"></span><span id="f2c::types::Geometry::neq-operator__Geometry:T.R:CRC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1aacaead31a96d918d7e6715124d9b40cc"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">!=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry"><span class="n"><span class="pre">Geometry</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry::R"><span class="n"><span class="pre">R</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">geom2</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8GeometryneERK8GeometryI1T1RE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8GeometryeqERK8GeometryI1T1RE">
+<span id="_CPPv3NK3f2c5types8GeometryeqERK8GeometryI1T1RE"></span><span id="_CPPv2NK3f2c5types8GeometryeqERK8GeometryI1T1RE"></span><span id="f2c::types::Geometry::eq-operator__Geometry:T.R:CRC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1afc8da5518f4be44d0fbee4f0b7238913"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry"><span class="n"><span class="pre">Geometry</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry::R"><span class="n"><span class="pre">R</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">geom2</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8GeometryeqERK8GeometryI1T1RE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry10getDimMinXEv">
+<span id="_CPPv3NK3f2c5types8Geometry10getDimMinXEv"></span><span id="_CPPv2NK3f2c5types8Geometry10getDimMinXEv"></span><span id="f2c::types::Geometry::getDimMinXC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a3d26eba77ea816cd0eaaeaf0ee21ddcc"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDimMinX</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry10getDimMinXEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the minimum x value of the geometry. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry10getDimMaxXEv">
+<span id="_CPPv3NK3f2c5types8Geometry10getDimMaxXEv"></span><span id="_CPPv2NK3f2c5types8Geometry10getDimMaxXEv"></span><span id="f2c::types::Geometry::getDimMaxXC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1ab26f6d28d439a3293e20458355d82236"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDimMaxX</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry10getDimMaxXEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the maximum x value of the geometry. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry10getDimMinYEv">
+<span id="_CPPv3NK3f2c5types8Geometry10getDimMinYEv"></span><span id="_CPPv2NK3f2c5types8Geometry10getDimMinYEv"></span><span id="f2c::types::Geometry::getDimMinYC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1aa4f35f960e851dec7a883541c4b0da32"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDimMinY</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry10getDimMinYEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the minimum y value of the geometry. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry10getDimMaxYEv">
+<span id="_CPPv3NK3f2c5types8Geometry10getDimMaxYEv"></span><span id="_CPPv2NK3f2c5types8Geometry10getDimMaxYEv"></span><span id="f2c::types::Geometry::getDimMaxYC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a77d1774c5e170a24fad70b6ee6fcfc53"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDimMaxY</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry10getDimMaxYEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the maximum y value of the geometry. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry9getHeightEv">
+<span id="_CPPv3NK3f2c5types8Geometry9getHeightEv"></span><span id="_CPPv2NK3f2c5types8Geometry9getHeightEv"></span><span id="f2c::types::Geometry::getHeightC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a19d0131359edfc6aa450e867ae076e01"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getHeight</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry9getHeightEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the height of the geometry. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry8getWidthEv">
+<span id="_CPPv3NK3f2c5types8Geometry8getWidthEv"></span><span id="_CPPv2NK3f2c5types8Geometry8getWidthEv"></span><span id="f2c::types::Geometry::getWidthC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1ad5080258a488d83afe6859e14218cdb7"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getWidth</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry8getWidthEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the width of the geometry. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry16getMinSafeLengthEv">
+<span id="_CPPv3NK3f2c5types8Geometry16getMinSafeLengthEv"></span><span id="_CPPv2NK3f2c5types8Geometry16getMinSafeLengthEv"></span><span id="f2c::types::Geometry::getMinSafeLengthC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1ac5aca261143bfc9be470f9e479c5872b"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMinSafeLength</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry16getMinSafeLengthEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the manhattan distance of the diagonal of the rectangle that cover the geometry. </p>
+<p>A circle from any point of the geometry and with this distance as radius can be created and it will, at least, crosses the geometry. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry8DistanceEdRK8GeometryI2T22R2E">
+<span id="_CPPv3I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry8DistanceERK8GeometryI2T22R2E"></span><span id="_CPPv2I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry8DistanceERK8GeometryI2T22R2E"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T2</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">OGRwkbGeometryType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">R2</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structf2c_1_1types_1_1Geometry_1ac0f29b5dcc3b06a8d5973004b8416a42"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Distance</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry"><span class="n"><span class="pre">Geometry</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry8DistanceEdRK8GeometryI2T22R2E" title="f2c::types::Geometry::Distance::T2"><span class="n"><span class="pre">T2</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry8DistanceEdRK8GeometryI2T22R2E" title="f2c::types::Geometry::Distance::R2"><span class="n"><span class="pre">R2</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry8DistanceEdRK8GeometryI2T22R2E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Compute shortest distance between this and another geometry. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry8DisjointEbRK8GeometryI2T22R2E">
+<span id="_CPPv3I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry8DisjointERK8GeometryI2T22R2E"></span><span id="_CPPv2I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry8DisjointERK8GeometryI2T22R2E"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T2</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">OGRwkbGeometryType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">R2</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structf2c_1_1types_1_1Geometry_1a4ced393ebce449447f5a34209f6082a9"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Disjoint</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry"><span class="n"><span class="pre">Geometry</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry8DisjointEbRK8GeometryI2T22R2E" title="f2c::types::Geometry::Disjoint::T2"><span class="n"><span class="pre">T2</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry8DisjointEbRK8GeometryI2T22R2E" title="f2c::types::Geometry::Disjoint::R2"><span class="n"><span class="pre">R2</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_geom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry8DisjointEbRK8GeometryI2T22R2E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Check if this and another geometry are disjoint. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry8DisjointEPK11OGRGeometry">
+<span id="_CPPv3NK3f2c5types8Geometry8DisjointEPK11OGRGeometry"></span><span id="_CPPv2NK3f2c5types8Geometry8DisjointEPK11OGRGeometry"></span><span id="f2c::types::Geometry::Disjoint__OGRGeometryCPC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a4552afd672e5cb58d87278efc1d464b6"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Disjoint</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">OGRGeometry</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">_geom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry8DisjointEPK11OGRGeometry" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Check if this and another geometry are disjoint. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry7CrossesEbRK8GeometryI2T22R2E">
+<span id="_CPPv3I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry7CrossesERK8GeometryI2T22R2E"></span><span id="_CPPv2I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry7CrossesERK8GeometryI2T22R2E"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T2</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">OGRwkbGeometryType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">R2</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structf2c_1_1types_1_1Geometry_1a396e5011b42e2f777a9c5c84767e3ad5"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Crosses</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry"><span class="n"><span class="pre">Geometry</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry7CrossesEbRK8GeometryI2T22R2E" title="f2c::types::Geometry::Crosses::T2"><span class="n"><span class="pre">T2</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry7CrossesEbRK8GeometryI2T22R2E" title="f2c::types::Geometry::Crosses::R2"><span class="n"><span class="pre">R2</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_geom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry7CrossesEbRK8GeometryI2T22R2E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Check if this and another geometry cross. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry7CrossesEPK11OGRGeometry">
+<span id="_CPPv3NK3f2c5types8Geometry7CrossesEPK11OGRGeometry"></span><span id="_CPPv2NK3f2c5types8Geometry7CrossesEPK11OGRGeometry"></span><span id="f2c::types::Geometry::Crosses__OGRGeometryCPC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1afe2d8632527886210b65f237d4953f82"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Crosses</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">OGRGeometry</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">_geom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry7CrossesEPK11OGRGeometry" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Check if this and another geometry cross. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry7TouchesEbRK8GeometryI2T22R2E">
+<span id="_CPPv3I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry7TouchesERK8GeometryI2T22R2E"></span><span id="_CPPv2I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry7TouchesERK8GeometryI2T22R2E"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T2</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">OGRwkbGeometryType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">R2</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structf2c_1_1types_1_1Geometry_1ae6695e0aabae27b5c5f77fe43bdd8797"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Touches</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry"><span class="n"><span class="pre">Geometry</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry7TouchesEbRK8GeometryI2T22R2E" title="f2c::types::Geometry::Touches::T2"><span class="n"><span class="pre">T2</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry7TouchesEbRK8GeometryI2T22R2E" title="f2c::types::Geometry::Touches::R2"><span class="n"><span class="pre">R2</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_geom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry7TouchesEbRK8GeometryI2T22R2E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Check if this and another geometry touch each other. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry7TouchesEPK11OGRGeometry">
+<span id="_CPPv3NK3f2c5types8Geometry7TouchesEPK11OGRGeometry"></span><span id="_CPPv2NK3f2c5types8Geometry7TouchesEPK11OGRGeometry"></span><span id="f2c::types::Geometry::Touches__OGRGeometryCPC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a9bda44d2412f12293bfb5bf953296ec1"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Touches</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">OGRGeometry</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">_geom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry7TouchesEPK11OGRGeometry" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Check if this and another geometry touch each other. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry6WithinEbRK8GeometryI2T22R2E">
+<span id="_CPPv3I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry6WithinERK8GeometryI2T22R2E"></span><span id="_CPPv2I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry6WithinERK8GeometryI2T22R2E"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T2</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">OGRwkbGeometryType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">R2</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structf2c_1_1types_1_1Geometry_1a9a7ba31b4d308e35a34bc5fe2d1e078d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Within</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry"><span class="n"><span class="pre">Geometry</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry6WithinEbRK8GeometryI2T22R2E" title="f2c::types::Geometry::Within::T2"><span class="n"><span class="pre">T2</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry6WithinEbRK8GeometryI2T22R2E" title="f2c::types::Geometry::Within::R2"><span class="n"><span class="pre">R2</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_geom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry6WithinEbRK8GeometryI2T22R2E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Check if this geometry is inside another geometry. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry6WithinEPK11OGRGeometry">
+<span id="_CPPv3NK3f2c5types8Geometry6WithinEPK11OGRGeometry"></span><span id="_CPPv2NK3f2c5types8Geometry6WithinEPK11OGRGeometry"></span><span id="f2c::types::Geometry::Within__OGRGeometryCPC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a1456a684b3a7d3db65a4da4690b31fdd"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Within</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">OGRGeometry</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">_geom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry6WithinEPK11OGRGeometry" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Check if this geometry is inside another geometry. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry10IntersectsEbRK8GeometryI2T22R2E">
+<span id="_CPPv3I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry10IntersectsERK8GeometryI2T22R2E"></span><span id="_CPPv2I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry10IntersectsERK8GeometryI2T22R2E"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T2</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">OGRwkbGeometryType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">R2</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structf2c_1_1types_1_1Geometry_1a5610189f46f69a4af3007049de233f64"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Intersects</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeEN3f2c5types8GeometryE" title="f2c::types::Geometry"><span class="n"><span class="pre">Geometry</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry10IntersectsEbRK8GeometryI2T22R2E" title="f2c::types::Geometry::Intersects::T2"><span class="n"><span class="pre">T2</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry10IntersectsEbRK8GeometryI2T22R2E" title="f2c::types::Geometry::Intersects::R2"><span class="n"><span class="pre">R2</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_geom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I0_18OGRwkbGeometryTypeENK3f2c5types8Geometry10IntersectsEbRK8GeometryI2T22R2E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Check if this and another geometry intersects. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry10IntersectsEPK11OGRGeometry">
+<span id="_CPPv3NK3f2c5types8Geometry10IntersectsEPK11OGRGeometry"></span><span id="_CPPv2NK3f2c5types8Geometry10IntersectsEPK11OGRGeometry"></span><span id="f2c::types::Geometry::Intersects__OGRGeometryCPC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a190dfc1147ffbfae447f6b4dbad2d8ef"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Intersects</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">OGRGeometry</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">_geom</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry10IntersectsEPK11OGRGeometry" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Check if this and another geometry intersects. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry7isEmptyEv">
+<span id="_CPPv3NK3f2c5types8Geometry7isEmptyEv"></span><span id="_CPPv2NK3f2c5types8Geometry7isEmptyEv"></span><span id="f2c::types::Geometry::isEmptyC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1ac5d17334e4246f0493c1138600a87248"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isEmpty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry7isEmptyEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry11exportToWktEv">
+<span id="_CPPv3NK3f2c5types8Geometry11exportToWktEv"></span><span id="_CPPv2NK3f2c5types8Geometry11exportToWktEv"></span><span id="f2c::types::Geometry::exportToWktC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1ade248ac7f95c8767c397f5efd7e30120"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exportToWkt</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry11exportToWktEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8Geometry13importFromWktERKNSt6stringE">
+<span id="_CPPv3N3f2c5types8Geometry13importFromWktERKNSt6stringE"></span><span id="_CPPv2N3f2c5types8Geometry13importFromWktERKNSt6stringE"></span><span id="f2c::types::Geometry::importFromWkt__ssCR"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a6e7911afa2484a335fecfad24c287677"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">importFromWkt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">text</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8Geometry13importFromWktERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry11exportToGMLEv">
+<span id="_CPPv3NK3f2c5types8Geometry11exportToGMLEv"></span><span id="_CPPv2NK3f2c5types8Geometry11exportToGMLEv"></span><span id="f2c::types::Geometry::exportToGMLC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1af89d01f1f09df33362cac0ed1bf83782"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exportToGML</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry11exportToGMLEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry11exportToKMLEv">
+<span id="_CPPv3NK3f2c5types8Geometry11exportToKMLEv"></span><span id="_CPPv2NK3f2c5types8Geometry11exportToKMLEv"></span><span id="f2c::types::Geometry::exportToKMLC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a9cdf3f49e79da389e3ab7f2e0cb00f2b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exportToKML</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry11exportToKMLEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types8Geometry12exportToJsonEv">
+<span id="_CPPv3NK3f2c5types8Geometry12exportToJsonEv"></span><span id="_CPPv2NK3f2c5types8Geometry12exportToJsonEv"></span><span id="f2c::types::Geometry::exportToJsonC"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a0f7b2ddb18cb7873f79e53b0c9c9e03f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exportToJson</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types8Geometry12exportToJsonEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8Geometry7mod_2piEd">
+<span id="_CPPv3N3f2c5types8Geometry7mod_2piEd"></span><span id="_CPPv2N3f2c5types8Geometry7mod_2piEd"></span><span id="f2c::types::Geometry::mod_2pi__double"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a19214da4150b8933d157eaf0fd13bc0e"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mod_2pi</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8Geometry7mod_2piEd" title="Permalink to this definition"></a><br /></dt>
+<dd><p><a class="reference internal" href="classf2c_1_1Transform.html#classf2c_1_1Transform"><span class="std std-ref">Transform</span></a> from <span class="math notranslate nohighlight">\( [-\inf, \inf) \)</span> to <span class="math notranslate nohighlight">\( [0, 2\pi) \)</span> applying <span class="math notranslate nohighlight">\(2\pi\)</span> modulus. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>value modulus in the range of <span class="math notranslate nohighlight">\( [0, 2\pi) \)</span> </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8Geometry16getAngContinuityEdd">
+<span id="_CPPv3N3f2c5types8Geometry16getAngContinuityEdd"></span><span id="_CPPv2N3f2c5types8Geometry16getAngContinuityEdd"></span><span id="f2c::types::Geometry::getAngContinuity__double.double"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1ab5bbe2046f409d2c1762d60206a18e30"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAngContinuity</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">prev_val</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8Geometry16getAngContinuityEdd" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8Geometry16getAngContinuityERKNSt6vectorIdEE">
+<span id="_CPPv3N3f2c5types8Geometry16getAngContinuityERKNSt6vectorIdEE"></span><span id="_CPPv2N3f2c5types8Geometry16getAngContinuityERKNSt6vectorIdEE"></span><span id="f2c::types::Geometry::getAngContinuity__std::vector:double:CR"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1a539b1b4f133cee2dac3e0fc0419ba61c"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAngContinuity</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8Geometry16getAngContinuityERKNSt6vectorIdEE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types8Geometry15getAngleDiffAbsEdd">
+<span id="_CPPv3N3f2c5types8Geometry15getAngleDiffAbsEdd"></span><span id="_CPPv2N3f2c5types8Geometry15getAngleDiffAbsEdd"></span><span id="f2c::types::Geometry::getAngleDiffAbs__double.double"></span><span class="target" id="structf2c_1_1types_1_1Geometry_1ac59175fb8522670b3e4a770e94b476ba"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAngleDiffAbs</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types8Geometry15getAngleDiffAbsEdd" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Compute the smallest difference between two angles. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – first angle </p></li>
+<li><p><strong>b</strong> – second angle </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>difference between both angles </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="structf2c_1_1types_1_1Geometries_1_1Iterator_1_1Private.html" class="btn btn-neutral float-left" title="Struct Iterator::Private" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="structf2c_1_1types_1_1LinearRing.html" class="btn btn-neutral float-right" title="Struct LinearRing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>
