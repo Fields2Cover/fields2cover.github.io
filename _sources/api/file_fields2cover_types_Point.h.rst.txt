@@ -106,13 +106,13 @@ Functions
 
 - :ref:`exhale_function_Point_8h_1a7d209507eee6d7bbd50e254c6aeabc3d`
 
-- :ref:`exhale_function_Point_8h_1a54e44110e93c21811a07ac9cd312efbe`
-
 - :ref:`exhale_function_Point_8h_1adad3d26cbedd9555626af7a61fac9dba`
+
+- :ref:`exhale_function_Point_8h_1a619bd2bd532e2e1d16fc39dc2fd8bd28`
 
 - :ref:`exhale_function_Point_8h_1af618dd383bf1bd3256e6a06d8fd2bab4`
 
-- :ref:`exhale_function_Point_8h_1a619bd2bd532e2e1d16fc39dc2fd8bd28`
+- :ref:`exhale_function_Point_8h_1a54e44110e93c21811a07ac9cd312efbe`
 
 
 Defines
