@@ -81,95 +81,95 @@
 <span class="cp">#ifndef FIELDS2COVER_TYPES_GEOMETRIES_H_</span>
 <span class="cp">#define FIELDS2COVER_TYPES_GEOMETRIES_H_</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;gdal/ogr_geometry.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;type_traits&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iterator&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;cstddef&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/types/Geometry.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gdal/ogr_geometry.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;type_traits&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iterator&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstddef&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Geometry.h&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">f2c</span> <span class="p">{</span>
-<span class="k">namespace</span> <span class="n">types</span> <span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">f2c</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">types</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">SAMETYPE</span><span class="p">,</span> <span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="n">OGRwkbGeometryType</span> <span class="n">R</span><span class="p">,</span> <span class="k">class</span> <span class="nc">CHILDRENTYPE</span><span class="o">&gt;</span>
-<span class="k">struct</span> <span class="nl">Geometries</span> <span class="p">:</span> <span class="k">public</span> <span class="n">Geometry</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">R</span><span class="o">&gt;</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-  <span class="k">using</span> <span class="n">Geometry</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">R</span><span class="o">&gt;::</span><span class="n">Geometry</span><span class="p">;</span>
-  <span class="kt">double</span> <span class="nf">getArea</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-  <span class="n">SAMETYPE</span> <span class="nf">clone</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">SAMETYPE</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="n">OGRwkbGeometryType</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CHILDRENTYPE</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Geometries</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Geometry</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">Geometry</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="o">&gt;::</span><span class="n">Geometry</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getArea</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">SAMETYPE</span><span class="w"> </span><span class="nf">clone</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 
-  <span class="cp">#ifndef SWIG</span>
-  <span class="c1">// Code adapted from OGRCurve::Iterator</span>
-  <span class="k">class</span> <span class="nc">Iterator</span> <span class="p">{</span>
-    <span class="k">struct</span> <span class="n">Private</span> <span class="p">{</span>
-      <span class="n">Private</span><span class="p">();</span>
-      <span class="o">~</span><span class="n">Private</span><span class="p">();</span>
-      <span class="n">Private</span><span class="p">(</span><span class="k">const</span> <span class="n">Private</span> <span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
-      <span class="n">Private</span> <span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Private</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+<span class="w">  </span><span class="cp">#ifndef SWIG</span>
+<span class="w">  </span><span class="c1">// Code adapted from OGRCurve::Iterator</span>
+<span class="w">  </span><span class="k">class</span><span class="w"> </span><span class="nc">Iterator</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Private</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">Private</span><span class="p">();</span><span class="w"></span>
+<span class="w">      </span><span class="o">~</span><span class="n">Private</span><span class="p">();</span><span class="w"></span>
+<span class="w">      </span><span class="n">Private</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Private</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="n">Private</span><span class="w"> </span><span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Private</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"></span>
 
-      <span class="kt">bool</span> <span class="n">m_bUpdateChecked</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-      <span class="n">CHILDRENTYPE</span> <span class="n">m_oChild</span><span class="p">{};</span>
-      <span class="n">Geometries</span><span class="o">&lt;</span><span class="n">SAMETYPE</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">CHILDRENTYPE</span><span class="o">&gt;*</span> <span class="n">m_poSelf</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
-      <span class="kt">int</span> <span class="n">m_nPos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">};</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Private</span><span class="o">&gt;</span> <span class="n">m_poPrivate</span><span class="p">;</span>
+<span class="w">      </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bUpdateChecked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="n">CHILDRENTYPE</span><span class="w"> </span><span class="n">m_oChild</span><span class="p">{};</span><span class="w"></span>
+<span class="w">      </span><span class="n">Geometries</span><span class="o">&lt;</span><span class="n">SAMETYPE</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">CHILDRENTYPE</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">m_poSelf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">m_nPos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Private</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_poPrivate</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kt">void</span> <span class="nf">update</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">update</span><span class="p">();</span><span class="w"></span>
 
-   <span class="k">public</span><span class="o">:</span>
-    <span class="n">Iterator</span><span class="p">(</span><span class="n">Geometries</span><span class="o">&lt;</span><span class="n">SAMETYPE</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">CHILDRENTYPE</span><span class="o">&gt;*</span> <span class="n">poSelf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nPos</span><span class="p">);</span>
-    <span class="o">~</span><span class="n">Iterator</span><span class="p">();</span>
+<span class="w">   </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">Iterator</span><span class="p">(</span><span class="n">Geometries</span><span class="o">&lt;</span><span class="n">SAMETYPE</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">CHILDRENTYPE</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">poSelf</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nPos</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="o">~</span><span class="n">Iterator</span><span class="p">();</span><span class="w"></span>
 
-    <span class="n">CHILDRENTYPE</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">();</span>
+<span class="w">    </span><span class="n">CHILDRENTYPE</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">*</span><span class="p">();</span><span class="w"></span>
 
-    <span class="n">Iterator</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">++</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">++</span><span class="p">();</span><span class="w"></span>
 
-    <span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="k">const</span> <span class="n">Iterator</span><span class="o">&amp;</span> <span class="n">it</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
-  <span class="p">};</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">};</span><span class="w"></span>
 
-  <span class="c1">// Code adapted from OGRCurve::ConstIterator</span>
-  <span class="k">class</span> <span class="nc">ConstIterator</span> <span class="p">{</span>
-    <span class="k">struct</span> <span class="n">Private</span> <span class="p">{</span>
-      <span class="n">Private</span><span class="p">();</span>
-      <span class="n">Private</span><span class="p">(</span><span class="k">const</span> <span class="n">Private</span> <span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
-      <span class="n">Private</span> <span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Private</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">// Code adapted from OGRCurve::ConstIterator</span>
+<span class="w">  </span><span class="k">class</span><span class="w"> </span><span class="nc">ConstIterator</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Private</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">Private</span><span class="p">();</span><span class="w"></span>
+<span class="w">      </span><span class="n">Private</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Private</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="n">Private</span><span class="w"> </span><span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Private</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"></span>
 
 
-      <span class="n">CHILDRENTYPE</span> <span class="n">m_oChild</span><span class="p">{};</span>
-      <span class="k">const</span> <span class="n">Geometries</span><span class="o">&lt;</span><span class="n">SAMETYPE</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">CHILDRENTYPE</span><span class="o">&gt;*</span> <span class="n">m_poSelf</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
-      <span class="kt">int</span> <span class="n">m_nPos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">};</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Private</span><span class="o">&gt;</span> <span class="n">m_poPrivate</span><span class="p">;</span>
+<span class="w">      </span><span class="n">CHILDRENTYPE</span><span class="w"> </span><span class="n">m_oChild</span><span class="p">{};</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">Geometries</span><span class="o">&lt;</span><span class="n">SAMETYPE</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">CHILDRENTYPE</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">m_poSelf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">m_nPos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Private</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_poPrivate</span><span class="p">;</span><span class="w"></span>
 
-   <span class="k">public</span><span class="o">:</span>
-    <span class="n">ConstIterator</span><span class="p">(</span><span class="n">ConstIterator</span><span class="o">&amp;</span> <span class="n">oOther</span><span class="p">);</span>
-    <span class="n">ConstIterator</span><span class="p">(</span><span class="k">const</span> <span class="n">Geometries</span><span class="o">&lt;</span><span class="n">SAMETYPE</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">CHILDRENTYPE</span><span class="o">&gt;*</span> <span class="n">poSelf</span><span class="p">,</span>
-        <span class="kt">int</span> <span class="n">nPos</span><span class="p">);</span>
+<span class="w">   </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">ConstIterator</span><span class="p">(</span><span class="n">ConstIterator</span><span class="o">&amp;</span><span class="w"> </span><span class="n">oOther</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">ConstIterator</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Geometries</span><span class="o">&lt;</span><span class="n">SAMETYPE</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">CHILDRENTYPE</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">poSelf</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">nPos</span><span class="p">);</span><span class="w"></span>
 
-    <span class="o">~</span><span class="n">ConstIterator</span><span class="p">();</span>
+<span class="w">    </span><span class="o">~</span><span class="n">ConstIterator</span><span class="p">();</span><span class="w"></span>
 
-    <span class="k">const</span> <span class="n">CHILDRENTYPE</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">CHILDRENTYPE</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">*</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 
-    <span class="n">ConstIterator</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">++</span><span class="p">();</span>
+<span class="w">    </span><span class="n">ConstIterator</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">++</span><span class="p">();</span><span class="w"></span>
 
-    <span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="k">const</span> <span class="n">ConstIterator</span><span class="o">&amp;</span> <span class="n">it</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ConstIterator</span><span class="o">&amp;</span><span class="w"> </span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">Iterator</span><span class="o">&amp;</span> <span class="n">it</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
-  <span class="p">};</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Iterator</span><span class="o">&amp;</span><span class="w"> </span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">};</span><span class="w"></span>
 
-  <span class="n">Iterator</span> <span class="nf">begin</span><span class="p">();</span>
-  <span class="n">Iterator</span> <span class="nf">end</span><span class="p">();</span>
-  <span class="n">ConstIterator</span> <span class="nf">begin</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-  <span class="n">ConstIterator</span> <span class="nf">end</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-  <span class="n">ConstIterator</span> <span class="nf">begin</span><span class="p">(</span><span class="k">const</span> <span class="n">SAMETYPE</span><span class="o">*</span> <span class="n">poSelf</span><span class="p">);</span>
-  <span class="n">ConstIterator</span> <span class="nf">end</span><span class="p">(</span><span class="k">const</span> <span class="n">SAMETYPE</span><span class="o">*</span> <span class="n">poSelf</span><span class="p">);</span>
-  <span class="cp">#endif</span>
-<span class="p">};</span>
+<span class="w">  </span><span class="n">Iterator</span><span class="w"> </span><span class="nf">begin</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">Iterator</span><span class="w"> </span><span class="nf">end</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">ConstIterator</span><span class="w"> </span><span class="nf">begin</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">ConstIterator</span><span class="w"> </span><span class="nf">end</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">ConstIterator</span><span class="w"> </span><span class="nf">begin</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">SAMETYPE</span><span class="o">*</span><span class="w"> </span><span class="n">poSelf</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">ConstIterator</span><span class="w"> </span><span class="nf">end</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">SAMETYPE</span><span class="o">*</span><span class="w"> </span><span class="n">poSelf</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="cp">#endif</span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="p">}</span>  <span class="c1">// namespace types</span>
-<span class="p">}</span>  <span class="c1">// namespace f2c</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace types</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c</span>
 
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/types/Geometries_impl.hpp&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Geometries_impl.hpp&quot;</span><span class="cp"></span>
 
 
 <span class="cp">#endif  </span><span class="c1">// FIELDS2COVER_TYPES_GEOMETRIES_H_</span>

@@ -81,31 +81,31 @@
 <span class="cp">#ifndef FIELDS2COVER_PATH_PLANNING_REEDS_SHEPP_CURVES_H_</span>
 <span class="cp">#define FIELDS2COVER_PATH_PLANNING_REEDS_SHEPP_CURVES_H_</span>
 
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/types.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/path_planning/turning_base.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/path_planning/turning_base.h&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">f2c</span> <span class="p">{</span>
-<span class="k">namespace</span> <span class="n">pp</span> <span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">f2c</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">pp</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-<span class="k">class</span> <span class="nc">ReedsSheppCurves</span> <span class="o">:</span> <span class="k">public</span> <span class="n">TurningBase</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-  <span class="k">explicit</span> <span class="n">ReedsSheppCurves</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CRobot</span><span class="o">&amp;</span> <span class="n">_params</span><span class="p">);</span>
-  <span class="o">~</span><span class="n">ReedsSheppCurves</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-  <span class="n">ReedsSheppCurves</span><span class="p">(</span><span class="n">ReedsSheppCurves</span> <span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-  <span class="n">ReedsSheppCurves</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-  <span class="n">ReedsSheppCurves</span><span class="p">(</span><span class="k">const</span> <span class="n">ReedsSheppCurves</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-  <span class="n">ReedsSheppCurves</span> <span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">ReedsSheppCurves</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-  <span class="n">ReedsSheppCurves</span> <span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">ReedsSheppCurves</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ReedsSheppCurves</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">TurningBase</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">ReedsSheppCurves</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CRobot</span><span class="o">&amp;</span><span class="w"> </span><span class="n">params</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="o">~</span><span class="n">ReedsSheppCurves</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">ReedsSheppCurves</span><span class="p">(</span><span class="n">ReedsSheppCurves</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">ReedsSheppCurves</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">ReedsSheppCurves</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ReedsSheppCurves</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">ReedsSheppCurves</span><span class="w"> </span><span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ReedsSheppCurves</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">ReedsSheppCurves</span><span class="w"> </span><span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">ReedsSheppCurves</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
 
-  <span class="n">F2CPath</span> <span class="nf">createSimpleTurn</span><span class="p">(</span><span class="kt">double</span> <span class="n">_dist_start_pos</span><span class="p">,</span> <span class="kt">double</span> <span class="n">_start_angle</span><span class="p">,</span>
-      <span class="kt">double</span> <span class="n">_end_angle</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="w">  </span><span class="n">F2CPath</span><span class="w"> </span><span class="nf">createSimpleTurn</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">dist_start_pos</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">start_angle</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">end_angle</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
 
- <span class="k">public</span><span class="o">:</span>
-  <span class="kt">double</span> <span class="n">discretization_</span> <span class="p">{</span><span class="mf">0.01</span><span class="p">};</span>
-<span class="p">};</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">discretization</span><span class="w"> </span><span class="p">{</span><span class="mf">0.01</span><span class="p">};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="p">}</span>  <span class="c1">// namespace pp</span>
-<span class="p">}</span>  <span class="c1">// namespace f2c</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace pp</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c</span>
 
 <span class="cp">#endif  </span><span class="c1">// FIELDS2COVER_PATH_PLANNING_REEDS_SHEPP_CURVES_H_</span>
 </pre></div>

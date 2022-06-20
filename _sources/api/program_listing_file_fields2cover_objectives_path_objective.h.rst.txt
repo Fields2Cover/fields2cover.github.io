@@ -29,22 +29,14 @@ Program Listing for File path_objective.h
    
    class PathObjective {
     public:
-     virtual ~PathObjective() = default;
-     PathObjective() = default;
-     PathObjective(const PathObjective& copyFrom) = default;
-     PathObjective& operator=(const PathObjective& copyFrom) = default;
-     PathObjective(PathObjective &&) = default;
-     PathObjective& operator=(PathObjective &&) = default;
-   
-    public:
      template <typename... Ts>
      double computeCostWithMinimizingSign(const Ts... args) {
        return (isMinimizing() ? 1.0 : -1.0) * computeCost(args...);
      }
    
     public:
-     virtual bool isMinimizing(void) const { return true;}
-     virtual bool isMaximizing(void) const { return !isMinimizing();}
+     virtual bool isMinimizing() const { return true;}
+     virtual bool isMaximizing() const { return !isMinimizing();}
    
    
     public:

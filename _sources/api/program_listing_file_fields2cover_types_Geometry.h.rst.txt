@@ -72,29 +72,29 @@ Program Listing for File Geometry.h
      double Distance(const Geometry<T2, R2>& p) const;
    
      template <class T2, OGRwkbGeometryType R2>
-     bool Disjoint(const Geometry<T2, R2>& _geom) const;
+     bool Disjoint(const Geometry<T2, R2>& geom) const;
    
-     bool Disjoint(const OGRGeometry* _geom) const;
-   
-     template <class T2, OGRwkbGeometryType R2>
-     bool Crosses(const Geometry<T2, R2>& _geom) const;
-   
-     bool Crosses(const OGRGeometry* _geom) const;
+     bool Disjoint(const OGRGeometry* geom) const;
    
      template <class T2, OGRwkbGeometryType R2>
-     bool Touches(const Geometry<T2, R2>& _geom) const;
+     bool Crosses(const Geometry<T2, R2>& geom) const;
    
-     bool Touches(const OGRGeometry* _geom) const;
-   
-     template <class T2, OGRwkbGeometryType R2>
-     bool Within(const Geometry<T2, R2>& _geom) const;
-   
-     bool Within(const OGRGeometry* _geom) const;
+     bool Crosses(const OGRGeometry* geom) const;
    
      template <class T2, OGRwkbGeometryType R2>
-     bool Intersects(const Geometry<T2, R2>& _geom) const;
+     bool Touches(const Geometry<T2, R2>& geom) const;
    
-     bool Intersects(const OGRGeometry* _geom) const;
+     bool Touches(const OGRGeometry* geom) const;
+   
+     template <class T2, OGRwkbGeometryType R2>
+     bool Within(const Geometry<T2, R2>& geom) const;
+   
+     bool Within(const OGRGeometry* geom) const;
+   
+     template <class T2, OGRwkbGeometryType R2>
+     bool Intersects(const Geometry<T2, R2>& geom) const;
+   
+     bool Intersects(const OGRGeometry* geom) const;
    
      static double mod_2pi(double val);
    

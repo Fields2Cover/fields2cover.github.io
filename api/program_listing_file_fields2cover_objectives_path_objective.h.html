@@ -81,79 +81,71 @@
 <span class="cp">#ifndef FIELDS2COVER_OBJECTIVES_PATH_OBJECTIVE_H_</span>
 <span class="cp">#define FIELDS2COVER_OBJECTIVES_PATH_OBJECTIVE_H_</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/types.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types.h&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">f2c</span> <span class="p">{</span>
-<span class="k">namespace</span> <span class="n">obj</span> <span class="p">{</span>
-
-
-<span class="k">class</span> <span class="nc">PathObjective</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="o">~</span><span class="n">PathObjective</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-  <span class="n">PathObjective</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-  <span class="n">PathObjective</span><span class="p">(</span><span class="k">const</span> <span class="n">PathObjective</span><span class="o">&amp;</span> <span class="n">copyFrom</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-  <span class="n">PathObjective</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">PathObjective</span><span class="o">&amp;</span> <span class="n">copyFrom</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-  <span class="n">PathObjective</span><span class="p">(</span><span class="n">PathObjective</span> <span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-  <span class="n">PathObjective</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">PathObjective</span> <span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-
- <span class="k">public</span><span class="o">:</span>
-  <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-  <span class="kt">double</span> <span class="n">computeCostWithMinimizingSign</span><span class="p">(</span><span class="k">const</span> <span class="n">Ts</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">isMinimizing</span><span class="p">()</span> <span class="o">?</span> <span class="mf">1.0</span> <span class="o">:</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">computeCost</span><span class="p">(</span><span class="n">args</span><span class="p">...);</span>
-  <span class="p">}</span>
-
- <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="kt">bool</span> <span class="n">isMinimizing</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;}</span>
-  <span class="k">virtual</span> <span class="kt">bool</span> <span class="n">isMaximizing</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!</span><span class="n">isMinimizing</span><span class="p">();}</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">f2c</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">obj</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
 
- <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="n">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">);</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PathObjective</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">computeCostWithMinimizingSign</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ts</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">isMinimizing</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">-1.0</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">computeCost</span><span class="p">(</span><span class="n">args</span><span class="p">...);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span>
-      <span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">ang1</span><span class="p">,</span> <span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span>
-      <span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">ang1</span><span class="p">,</span> <span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">ang2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span>
-      <span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">p2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">ang2</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CSwath</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CSwath</span><span class="o">&amp;</span> <span class="n">s1</span><span class="p">,</span> <span class="k">const</span> <span class="n">F2CSwath</span><span class="o">&amp;</span> <span class="n">s2</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CSwath</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">,</span> <span class="kt">double</span> <span class="n">ang</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">,</span> <span class="k">const</span> <span class="n">F2CSwath</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">,</span> <span class="kt">double</span> <span class="n">ang</span><span class="p">,</span> <span class="k">const</span> <span class="n">F2CSwath</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">F2CPoint</span><span class="o">&gt;&amp;</span> <span class="n">ps</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CMultiPoint</span><span class="o">&amp;</span> <span class="n">ps</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CSwath</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="k">const</span> <span class="n">F2CMultiPoint</span><span class="o">&amp;</span> <span class="n">ps</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CSwaths</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="k">const</span> <span class="n">F2CMultiPoint</span><span class="o">&amp;</span> <span class="n">ps</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CMultiPoint</span><span class="o">&amp;</span> <span class="n">ps</span><span class="p">,</span> <span class="k">const</span> <span class="n">F2CSwath</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CMultiPoint</span><span class="o">&amp;</span> <span class="n">ps</span><span class="p">,</span> <span class="k">const</span> <span class="n">F2CSwaths</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CSwath</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CSwaths</span><span class="o">&amp;</span> <span class="n">swaths</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CRoute</span><span class="o">&amp;</span> <span class="n">r</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="kt">double</span> <span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CPath</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">);</span>
-<span class="p">};</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">isMinimizing</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">isMaximizing</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="n">isMinimizing</span><span class="p">();}</span><span class="w"></span>
 
 
-<span class="p">}</span>  <span class="c1">// namespace obj</span>
-<span class="p">}</span>  <span class="c1">// namespace f2c</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p2</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ang1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p2</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ang1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ang2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ang2</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CSwath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CSwath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CSwath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s2</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CSwath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ang</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CSwath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ang</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CSwath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">F2CPoint</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">ps</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CMultiPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ps</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CSwath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CMultiPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ps</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CMultiPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ps</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CMultiPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ps</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CSwath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CMultiPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ps</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CSwath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="n">swaths</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CRoute</span><span class="o">&amp;</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">computeCost</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CPath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace obj</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c</span>
 
 <span class="cp">#endif  </span><span class="c1">// FIELDS2COVER_OBJECTIVES_PATH_OBJECTIVE_H_</span>
 </pre></div>

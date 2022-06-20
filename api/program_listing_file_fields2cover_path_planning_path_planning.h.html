@@ -81,24 +81,24 @@
 <span class="cp">#ifndef FIELDS2COVER_PATH_PLANNING_PATH_PLANNING_H_</span>
 <span class="cp">#define FIELDS2COVER_PATH_PLANNING_PATH_PLANNING_H_</span>
 
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/types.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/path_objective.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/optimization_class.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/path_planning/turning_base.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/objectives/path_objective.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/objectives/optimization_class.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/path_planning/turning_base.h&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">f2c</span> <span class="p">{</span>
-<span class="k">namespace</span> <span class="n">pp</span> <span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">f2c</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">pp</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-<span class="k">class</span> <span class="nc">PathPlanning</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-  <span class="n">F2CPath</span> <span class="n">searchBestPath</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CSwaths</span><span class="o">&amp;</span> <span class="n">swaths</span><span class="p">,</span> <span class="n">TurningBase</span><span class="o">&amp;</span> <span class="n">turn</span><span class="p">);</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PathPlanning</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">F2CPath</span><span class="w"> </span><span class="n">searchBestPath</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="n">swaths</span><span class="p">,</span><span class="w"> </span><span class="n">TurningBase</span><span class="o">&amp;</span><span class="w"> </span><span class="n">turn</span><span class="p">);</span><span class="w"></span>
 
- <span class="k">public</span><span class="o">:</span>
-  <span class="kt">double</span> <span class="n">turn_point_dist</span> <span class="p">{</span><span class="mf">0.1</span><span class="p">};</span>
-<span class="p">};</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">turn_point_dist</span><span class="w"> </span><span class="p">{</span><span class="mf">0.1</span><span class="p">};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="p">}</span>  <span class="c1">// namespace pp</span>
-<span class="p">}</span>  <span class="c1">// namespace f2c</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace pp</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c</span>
 
 <span class="cp">#endif  </span><span class="c1">// FIELDS2COVER_PATH_PLANNING_PATH_PLANNING_H_</span>
 </pre></div>

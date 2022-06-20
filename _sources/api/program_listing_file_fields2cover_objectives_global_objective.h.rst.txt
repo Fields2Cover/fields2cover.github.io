@@ -27,14 +27,6 @@ Program Listing for File global_objective.h
    
    class GlobalObjective {
     public:
-     virtual ~GlobalObjective() = default;
-     GlobalObjective() = default;
-     GlobalObjective(const GlobalObjective& copyFrom) = default;
-     GlobalObjective& operator=(const GlobalObjective& copyFrom) = default;
-     GlobalObjective(GlobalObjective &&) = default;
-     GlobalObjective& operator=(GlobalObjective &&) = default;
-   
-    public:
      template <typename... Ts>
      double computeCostWithMinimizingSign(const Ts... args) const {
        return (isMinimizing() ? 1.0 : -1.0) * computeCost(args...);

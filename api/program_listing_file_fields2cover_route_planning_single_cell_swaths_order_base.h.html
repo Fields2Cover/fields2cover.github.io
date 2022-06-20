@@ -81,36 +81,36 @@
 <span class="cp">#ifndef FIELDS2COVER_ROUTE_PLANNING_SINGLE_CELL_SWATHS_ORDER_BASE_H_</span>
 <span class="cp">#define FIELDS2COVER_ROUTE_PLANNING_SINGLE_CELL_SWATHS_ORDER_BASE_H_</span>
 
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/types.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types.h&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">f2c</span> <span class="p">{</span>
-<span class="k">namespace</span> <span class="n">rp</span> <span class="p">{</span>
-
-
-<span class="k">class</span> <span class="nc">SingleCellSwathsOrderBase</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-  <span class="k">explicit</span> <span class="n">SingleCellSwathsOrderBase</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="o">&amp;</span> <span class="n">_swaths</span><span class="p">);</span>
-  <span class="k">virtual</span> <span class="o">~</span><span class="n">SingleCellSwathsOrderBase</span><span class="p">();</span>
-
-  <span class="k">virtual</span> <span class="n">F2CSwaths</span><span class="o">&amp;</span> <span class="n">genSortedSwaths</span><span class="p">();</span>
-
-  <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">setSwaths</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="o">&amp;</span> <span class="n">_swaths</span><span class="p">);</span>
-  <span class="k">virtual</span> <span class="n">F2CSwaths</span><span class="o">&amp;</span> <span class="n">getSwaths</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="n">swaths_</span><span class="p">;}</span>
-  <span class="kt">void</span> <span class="n">setCounter</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">new_count</span><span class="p">)</span> <span class="p">{</span><span class="n">counter_</span> <span class="o">=</span> <span class="n">new_count</span><span class="p">;}</span>
-
- <span class="k">protected</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">sortSwaths</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">changeStartPoint</span><span class="p">();</span>
-
- <span class="k">protected</span><span class="o">:</span>
-  <span class="n">F2CSwaths</span> <span class="n">swaths_</span><span class="p">;</span>
-  <span class="kt">uint32_t</span> <span class="n">counter_</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
-<span class="p">};</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">f2c</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">rp</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
 
+<span class="k">class</span><span class="w"> </span><span class="nc">SingleCellSwathsOrderBase</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">SingleCellSwathsOrderBase</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="n">swaths</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">SingleCellSwathsOrderBase</span><span class="p">();</span><span class="w"></span>
 
-<span class="p">}</span>  <span class="c1">// namespace rp</span>
-<span class="p">}</span>  <span class="c1">// namespace f2c</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">genSortedSwaths</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setSwaths</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="n">swaths</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getSwaths</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">swaths_</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setCounter</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">new_count</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="n">counter_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_count</span><span class="p">;}</span><span class="w"></span>
+
+<span class="w"> </span><span class="k">protected</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">sortSwaths</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">changeStartPoint</span><span class="p">();</span><span class="w"></span>
+
+<span class="w"> </span><span class="k">protected</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">F2CSwaths</span><span class="w"> </span><span class="n">swaths_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">counter_</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+
+
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace rp</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c</span>
 
 <span class="cp">#endif  </span><span class="c1">// FIELDS2COVER_ROUTE_PLANNING_SINGLE_CELL_SWATHS_ORDER_BASE_H_</span>
 </pre></div>

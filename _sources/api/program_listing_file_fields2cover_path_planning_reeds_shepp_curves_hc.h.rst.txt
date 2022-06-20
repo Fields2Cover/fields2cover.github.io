@@ -28,7 +28,7 @@ Program Listing for File reeds_shepp_curves_hc.h
    
    class ReedsSheppCurvesHC : public TurningBase {
     public:
-     explicit ReedsSheppCurvesHC(const F2CRobot& _params);
+     explicit ReedsSheppCurvesHC(const F2CRobot& params);
      ~ReedsSheppCurvesHC() = default;
      ReedsSheppCurvesHC(ReedsSheppCurvesHC &&) = default;
      ReedsSheppCurvesHC() = default;
@@ -36,11 +36,11 @@ Program Listing for File reeds_shepp_curves_hc.h
      ReedsSheppCurvesHC &operator=(const ReedsSheppCurvesHC&) = default;
      ReedsSheppCurvesHC &operator=(ReedsSheppCurvesHC&&) = default;
    
-     F2CPath createSimpleTurn(double _dist_start_pos, double _start_angle,
-         double _end_angle) override;
+     F2CPath createSimpleTurn(double dist_start_pos, double start_angle,
+         double end_angle) override;
    
     public:
-     double discretization_ {0.01};
+     double discretization {0.01};
    };
    
    }  // namespace pp

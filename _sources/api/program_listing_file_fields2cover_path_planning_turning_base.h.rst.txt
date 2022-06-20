@@ -39,30 +39,30 @@ Program Listing for File turning_base.h
    
    
     public:
-     void setRobotParams(const F2CRobot& _params);
+     void setRobotParams(const F2CRobot& params);
    
-     F2CPath createTurn(const F2CPoint& _start_pos, double _start_angle,
-         const F2CPoint& _end_pos, double _end_angle);
+     F2CPath createTurn(const F2CPoint& start_pos, double start_angle,
+         const F2CPoint& end_pos, double end_angle);
    
-     F2CPath createTurnIfNotCached(double _dist_start_pos,
-         double _start_angle, double _end_angle);
+     F2CPath createTurnIfNotCached(double dist_start_pos,
+         double start_angle, double end_angle);
    
-     virtual F2CPath createSimpleTurn(double _dist_start_pos, double _start_angle,
-         double _end_angle) = 0;
+     virtual F2CPath createSimpleTurn(double dist_start_pos, double start_angle,
+         double end_angle) = 0;
    
-     static std::vector<double> transformToNormalTurn(const F2CPoint& _start_pos,
-         double _start_angle, const F2CPoint& _end_pos, double _end_angle);
+     static std::vector<double> transformToNormalTurn(const F2CPoint& start_pos,
+         double start_angle, const F2CPoint& end_pos, double end_angle);
    
-     static bool isTurnValid(const F2CPath& _path, double _dist_start_end,
-         double _end_angle, double _max_dist_error = 0.05,
-         double _max_rot_error = 0.1);
+     static bool isTurnValid(const F2CPath& path, double dist_start_end,
+         double end_angle, double max_dist_error = 0.05,
+         double max_rot_error = 0.1);
    
    
     private:
-     static void correctPath(F2CPath& _path,
-         const F2CPoint& _start_pos,
-         const F2CPoint& _end_pos,
-         float _max_error_dist = 0.05);
+     static void correctPath(F2CPath& path,
+         const F2CPoint& start_pos,
+         const F2CPoint& end_pos,
+         float max_error_dist = 0.05);
    
     public:
      F2CRobot robot;

@@ -13,7 +13,7 @@ Program Listing for File random.h
    //=============================================================================
    //    Copyright (C) 2021-2022 Wageningen University - All Rights Reserved
    //                     Author: Gonzalo Mier
-   //                        BSD-3 License
+   //                           BSD-3 License
    //=============================================================================
    
    #pragma once
@@ -33,8 +33,8 @@ Program Listing for File random.h
    
    class Random {
     public:
-     explicit Random(uint32_t _seed = static_cast<uint32_t>(time(NULL))) :
-       seed_(_seed) {}
+     explicit Random(uint32_t seed = static_cast<uint32_t>(time(NULL))) :
+       seed_(seed) {}
    
      ~Random() = default;
      Random(const Random&) = default;
@@ -43,20 +43,20 @@ Program Listing for File random.h
      Random &operator=(Random&&) = default;
    
     public:
-     double getRandomDouble(void);
+     double getRandomDouble();
    
-     double getRandomLinear(double _min, double _max);
+     double getRandomLinear(double min, double max);
    
-     double getRandomExp(double _min, double _max);
+     double getRandomExp(double min, double max);
    
-     double getAngleRandom(void);
+     double getAngleRandom();
    
-     f2c::types::Field generateRandField(int _n_sides, double _area,
-         double _min_width = 0.5, double _max_width = 1.0);
+     f2c::types::Field generateRandField(int n_sides, double area,
+         double min_width = 0.5, double max_width = 1.0);
    
-     f2c::types::Field genConvexField(double _area);
+     f2c::types::Field genConvexField(double area);
    
-     f2c::types::Field genNonConvexField(double _area);
+     f2c::types::Field genNonConvexField(double area);
    
     private:
      uint32_t seed_;

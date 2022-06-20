@@ -30,49 +30,49 @@ Program Listing for File visualizer.h
    
    class Visualizer {
     public:
-     static void plot(const std::vector<F2CPoint>& _points,
-         const std::string& _opts = "");
-     static void plot(const F2CPath& _path);
-     static void plot(const F2CMultiLineString& _lines);
-     static void plot(const F2CCell& _cell);
-     static void plot(const F2CCells& _cells);
-     static void plot(const F2CSwaths& _swaths);
-     static void plot(const F2CSwath& _swath, std::string opt = "");
-     static void plot(const F2CField& _field);
-     static void plot(const F2CFields& _fields);
-     static void plot(const F2CRobot& _robot);
-     static void plot(const F2CRobots& _robots);
+     static void plot(const std::vector<F2CPoint>& points,
+         const std::string& opts = "");
+     static void plot(const F2CPath& path);
+     static void plot(const F2CMultiLineString& lines);
+     static void plot(const F2CCell& cell);
+     static void plot(const F2CCells& cells);
+     static void plot(const F2CSwaths& swaths);
+     static void plot(const F2CSwath& swath, std::string opt = "");
+     static void plot(const F2CField& field);
+     static void plot(const F2CFields& fields);
+     static void plot(const F2CRobot& robot);
+     static void plot(const F2CRobots& robots);
    
-     static void plot(const std::vector<double>& _t,
-         const std::vector<double>& _d, const std::string& _opts = "");
+     static void plot(const std::vector<double>& t,
+         const std::vector<double>& d, const std::string& opts = "");
      static void plot(
-         const std::vector<double>& _d, const std::string& _opts = "");
+         const std::vector<double>& d, const std::string& opts = "");
    
      template<class T>
-     static void plot(const T& _t, const std::string& _opts);
+     static void plot(const T& t, const std::string& opts);
    
      template<class T>
-     static void plot(const std::vector<T>& _t);
+     static void plot(const std::vector<T>& v_t);
    
      template<class T>
-     static void plot(const T& _t);
+     static void plot(const T& t);
    
-     static void figure(void);
+     static void figure();
    
-     static void figure(int _id);
+     static void figure(int id);
    
-     static void show(bool _block = true);
+     static void show(bool block = true);
    
-     static void save(const std::string& _file);
+     static void save(const std::string& file);
    
     private:
      template<class T>
-     static std::vector<F2CPoint> data2vector(const T& _t);
+     static std::vector<F2CPoint> data2vector(const T& t);
    
-     static std::vector<F2CPoint> data2vector(const F2CPoint& _t);
+     static std::vector<F2CPoint> data2vector(const F2CPoint& t);
    
      static std::vector<std::vector<double>> getComponents(
-         const std::vector<F2CPoint>& _points);
+         const std::vector<F2CPoint>& points);
    
      static std::vector<double> linspace(double min, double max, size_t N);
      static std::string color2hex(uint32_t r, uint32_t g, uint32_t b);
@@ -83,9 +83,9 @@ Program Listing for File visualizer.h
    };
    
    template<class T>
-   std::vector<F2CPoint> Visualizer::data2vector(const T& _t) {
+   std::vector<F2CPoint> Visualizer::data2vector(const T& t) {
      std::vector<F2CPoint> res;
-     for (auto&& i : _t) {
+     for (auto&& i : t) {
        auto v = data2vector(i);
        res.insert(res.end(), v.begin(), v.end());
      }
@@ -93,20 +93,20 @@ Program Listing for File visualizer.h
    }
    
    template<class T>
-   void Visualizer::plot(const std::vector<T>& _t) {
-     for (auto&& t : _t) {
+   void Visualizer::plot(const std::vector<T>& v_t) {
+     for (auto&& t : v_t) {
        plot(t);
      }
    }
    
    template<class T>
-   void Visualizer::plot(const T& _t, const std::string& _opts) {
-     plot(data2vector(_t), _opts);
+   void Visualizer::plot(const T& t, const std::string& opts) {
+     plot(data2vector(t), opts);
    }
    
    template<class T>
-   void Visualizer::plot(const T& _t) {
-     plot(_t, "");
+   void Visualizer::plot(const T& t) {
+     plot(t, "");
    }
    
    }  // namespace f2c

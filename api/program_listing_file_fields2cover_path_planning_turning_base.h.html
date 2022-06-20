@@ -81,64 +81,64 @@
 <span class="cp">#ifndef FIELDS2COVER_PATH_PLANNING_TURNING_BASE_H_</span>
 <span class="cp">#define FIELDS2COVER_PATH_PLANNING_TURNING_BASE_H_</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;map&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/types.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/optimization_class.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/utils/random.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;map&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/objectives/optimization_class.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/utils/random.h&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">f2c</span> <span class="p">{</span>
-<span class="k">namespace</span> <span class="n">pp</span> <span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">f2c</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">pp</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-<span class="k">class</span> <span class="nc">TurningBase</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-  <span class="k">virtual</span> <span class="o">~</span><span class="n">TurningBase</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-
-
- <span class="k">public</span><span class="o">:</span>
-  <span class="kt">void</span> <span class="n">setRobotParams</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CRobot</span><span class="o">&amp;</span> <span class="n">_params</span><span class="p">);</span>
-
-  <span class="n">F2CPath</span> <span class="nf">createTurn</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">_start_pos</span><span class="p">,</span> <span class="kt">double</span> <span class="n">_start_angle</span><span class="p">,</span>
-      <span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">_end_pos</span><span class="p">,</span> <span class="kt">double</span> <span class="n">_end_angle</span><span class="p">);</span>
-
-  <span class="n">F2CPath</span> <span class="nf">createTurnIfNotCached</span><span class="p">(</span><span class="kt">double</span> <span class="n">_dist_start_pos</span><span class="p">,</span>
-      <span class="kt">double</span> <span class="n">_start_angle</span><span class="p">,</span> <span class="kt">double</span> <span class="n">_end_angle</span><span class="p">);</span>
-
-  <span class="k">virtual</span> <span class="n">F2CPath</span> <span class="nf">createSimpleTurn</span><span class="p">(</span><span class="kt">double</span> <span class="n">_dist_start_pos</span><span class="p">,</span> <span class="kt">double</span> <span class="n">_start_angle</span><span class="p">,</span>
-      <span class="kt">double</span> <span class="n">_end_angle</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-  <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">transformToNormalTurn</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">_start_pos</span><span class="p">,</span>
-      <span class="kt">double</span> <span class="n">_start_angle</span><span class="p">,</span> <span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">_end_pos</span><span class="p">,</span> <span class="kt">double</span> <span class="n">_end_angle</span><span class="p">);</span>
-
-  <span class="k">static</span> <span class="kt">bool</span> <span class="nf">isTurnValid</span><span class="p">(</span><span class="k">const</span> <span class="n">F2CPath</span><span class="o">&amp;</span> <span class="n">_path</span><span class="p">,</span> <span class="kt">double</span> <span class="n">_dist_start_end</span><span class="p">,</span>
-      <span class="kt">double</span> <span class="n">_end_angle</span><span class="p">,</span> <span class="kt">double</span> <span class="n">_max_dist_error</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span>
-      <span class="kt">double</span> <span class="n">_max_rot_error</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">);</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TurningBase</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">TurningBase</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
 
 
- <span class="k">private</span><span class="o">:</span>
-  <span class="k">static</span> <span class="kt">void</span> <span class="n">correctPath</span><span class="p">(</span><span class="n">F2CPath</span><span class="o">&amp;</span> <span class="n">_path</span><span class="p">,</span>
-      <span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">_start_pos</span><span class="p">,</span>
-      <span class="k">const</span> <span class="n">F2CPoint</span><span class="o">&amp;</span> <span class="n">_end_pos</span><span class="p">,</span>
-      <span class="kt">float</span> <span class="n">_max_error_dist</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">);</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">setRobotParams</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CRobot</span><span class="o">&amp;</span><span class="w"> </span><span class="n">params</span><span class="p">);</span><span class="w"></span>
 
- <span class="k">public</span><span class="o">:</span>
-  <span class="n">F2CRobot</span> <span class="n">robot</span><span class="p">;</span>
-  <span class="kt">double</span> <span class="n">max_headland_width</span> <span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">()};</span>
-  <span class="kt">bool</span> <span class="n">using_cache</span> <span class="p">{</span><span class="nb">true</span><span class="p">};</span>
+<span class="w">  </span><span class="n">F2CPath</span><span class="w"> </span><span class="nf">createTurn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">start_pos</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">start_angle</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">end_pos</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">end_angle</span><span class="p">);</span><span class="w"></span>
 
- <span class="k">protected</span><span class="o">:</span>
-  <span class="c1">// To prevent memory consumption and comparative errors because of doubles</span>
-  <span class="c1">// ints are used multiplied by 1000.</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">F2CPath</span><span class="o">&gt;</span> <span class="n">path_cache_</span><span class="p">;</span>
-  <span class="n">Random</span> <span class="n">rand_</span><span class="p">;</span>
-<span class="p">};</span>
+<span class="w">  </span><span class="n">F2CPath</span><span class="w"> </span><span class="nf">createTurnIfNotCached</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">dist_start_pos</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">start_angle</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">end_angle</span><span class="p">);</span><span class="w"></span>
 
-<span class="p">}</span>  <span class="c1">// namespace pp</span>
-<span class="p">}</span>  <span class="c1">// namespace f2c</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="n">F2CPath</span><span class="w"> </span><span class="nf">createSimpleTurn</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">dist_start_pos</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">start_angle</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">end_angle</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">transformToNormalTurn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">start_pos</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">start_angle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">end_pos</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">end_angle</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isTurnValid</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CPath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dist_start_end</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">end_angle</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">max_dist_error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">max_rot_error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span><span class="w"></span>
+
+
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">correctPath</span><span class="p">(</span><span class="n">F2CPath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">start_pos</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">F2CPoint</span><span class="o">&amp;</span><span class="w"> </span><span class="n">end_pos</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="kt">float</span><span class="w"> </span><span class="n">max_error_dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">);</span><span class="w"></span>
+
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">F2CRobot</span><span class="w"> </span><span class="n">robot</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">max_headland_width</span><span class="w"> </span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">()};</span><span class="w"></span>
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">using_cache</span><span class="w"> </span><span class="p">{</span><span class="nb">true</span><span class="p">};</span><span class="w"></span>
+
+<span class="w"> </span><span class="k">protected</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// To prevent memory consumption and comparative errors because of doubles</span>
+<span class="w">  </span><span class="c1">// ints are used multiplied by 1000.</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">F2CPath</span><span class="o">&gt;</span><span class="w"> </span><span class="n">path_cache_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">Random</span><span class="w"> </span><span class="n">rand_</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace pp</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c</span>
 
 <span class="cp">#endif  </span><span class="c1">// FIELDS2COVER_PATH_PLANNING_TURNING_BASE_H_</span>
 </pre></div>

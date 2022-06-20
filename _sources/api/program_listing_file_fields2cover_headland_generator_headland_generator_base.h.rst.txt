@@ -32,8 +32,8 @@ Program Listing for File headland_generator_base.h
      virtual ~HeadlandGeneratorBase() = default;
    
     public:
-     virtual F2CCells generateHeadlands(const F2CCells& _field,
-         double _dist_headland) = 0;
+     virtual F2CCells generateHeadlands(const F2CCells& field,
+         double dist_headland) = 0;
    };
    
    }  // namespace hg

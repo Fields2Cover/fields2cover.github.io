@@ -81,61 +81,61 @@
 <span class="cp">#ifndef FIELDS2COVER_H_</span>
 <span class="cp">#define FIELDS2COVER_H_</span>
 
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/types.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types.h&quot;</span><span class="cp"></span>
 
 
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/utils/random.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/utils/transformation.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/utils/parser.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/utils/visualizer.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/utils/random.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/utils/transformation.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/utils/parser.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/utils/visualizer.h&quot;</span><span class="cp"></span>
 
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/path_objective.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/direct_dist_path_obj.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/complete_turn_path_obj.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/objectives/path_objective.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/objectives/direct_dist_path_obj.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/objectives/complete_turn_path_obj.h&quot;</span><span class="cp"></span>
 
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/global_objective.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/optimization_class.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/n_swath.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/field_coverage.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/overlaps.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/objectives/swath_length.h&quot;</span><span class="cp"></span>
-
-
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/headland_generator/headland_generator_base.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/headland_generator/constant_headland.h&quot;</span><span class="cp"></span>
-
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/swath_generator/swath_generator_base.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/swath_generator/brute_force.h&quot;</span><span class="cp"></span>
-
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/route_planning/single_cell_swaths_order_base.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/route_planning/boustrophedon_order.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/route_planning/snake_order.h&quot;</span><span class="cp"></span>
-
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/path_planning/turning_base.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/path_planning/dubins_curves.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/path_planning/dubins_curves_cc.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/path_planning/reeds_shepp_curves.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/path_planning/reeds_shepp_curves_hc.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;fields2cover/path_planning/path_planning.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/objectives/global_objective.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/objectives/optimization_class.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/objectives/n_swath.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/objectives/field_coverage.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/objectives/overlaps.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/objectives/swath_length.h&quot;</span><span class="cp"></span>
 
 
-<span class="k">namespace</span> <span class="n">f2c</span> <span class="p">{</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/headland_generator/headland_generator_base.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/headland_generator/constant_headland.h&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">types</span> <span class="p">{}</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/swath_generator/swath_generator_base.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/swath_generator/brute_force.h&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">sg</span> <span class="p">{}</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/route_planning/single_cell_swaths_order_base.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/route_planning/boustrophedon_order.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/route_planning/snake_order.h&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">rp</span> <span class="p">{}</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/path_planning/turning_base.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/path_planning/dubins_curves.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/path_planning/dubins_curves_cc.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/path_planning/reeds_shepp_curves.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/path_planning/reeds_shepp_curves_hc.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/path_planning/path_planning.h&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="n">pp</span> <span class="p">{}</span>
 
-<span class="k">namespace</span> <span class="n">obj</span> <span class="p">{}</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">f2c</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-<span class="k">namespace</span> <span class="n">hg</span> <span class="p">{}</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">types</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 
-<span class="k">namespace</span> <span class="n">decomp</span> <span class="p">{}</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">sg</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 
-<span class="p">}</span>  <span class="c1">// namespace f2c</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">rp</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">pp</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">obj</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">hg</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">decomp</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c</span>
 
 <span class="cp">#endif  </span><span class="c1">// FIELDS2COVER_H_</span>
 </pre></div>
