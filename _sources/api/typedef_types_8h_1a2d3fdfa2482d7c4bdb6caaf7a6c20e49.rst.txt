@@ -1,0 +1,14 @@
+.. _exhale_typedef_types_8h_1a2d3fdfa2482d7c4bdb6caaf7a6c20e49:
+
+Typedef F2CMultiLineString
+==========================
+
+- Defined in :ref:`file_fields2cover_types.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: F2CMultiLineString
+   :project: Fields2Cover

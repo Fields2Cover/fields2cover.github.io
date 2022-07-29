@@ -25,8 +25,7 @@ Program Listing for File path_planning.h
    #include "fields2cover/objectives/optimization_class.h"
    #include "fields2cover/path_planning/turning_base.h"
    
-   namespace f2c {
-   namespace pp {
+   namespace f2c::pp {
    
    class PathPlanning {
     public:
@@ -36,7 +35,6 @@ Program Listing for File path_planning.h
      double turn_point_dist {0.1};
    };
    
-   }  // namespace pp
-   }  // namespace f2c
+   }  // namespace f2c::pp
    
    #endif  // FIELDS2COVER_PATH_PLANNING_PATH_PLANNING_H_

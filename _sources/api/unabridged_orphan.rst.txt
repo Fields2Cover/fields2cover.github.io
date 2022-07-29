@@ -75,6 +75,11 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_CODE_OF_CONDUCT.md.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_fields2cover_objectives_complete_turn_path_obj.h.rst
 
 .. toctree::
@@ -235,6 +240,11 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_fields2cover_route_planning_spiral_order.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_fields2cover_types_Swath.h.rst
 
 .. toctree::
@@ -271,3 +281,12 @@ Files
    :maxdepth: 5
 
    file_fields2cover_utils_visualizer.h.rst
+
+Pages
+*****
+
+
+.. toctree::
+   :maxdepth: 5
+
+   page_md__home_sanson_catkin_ws_src_public__fields2cover__public_CODE_OF_CONDUCT.rst

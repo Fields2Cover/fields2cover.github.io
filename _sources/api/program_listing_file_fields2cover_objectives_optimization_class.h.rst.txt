@@ -25,8 +25,7 @@ Program Listing for File optimization_class.h
    #include "fields2cover/types.h"
    #include "fields2cover/objectives/global_objective.h"
    
-   namespace f2c {
-   namespace obj {
+   namespace f2c::obj {
    
    template <typename T>
    class OptimizationClass {
@@ -48,7 +47,6 @@ Program Listing for File optimization_class.h
      T objective_;
    };
    
-   }  // namespace obj
-   }  // namespace f2c
+   }  // namespace f2c::obj
    
    #endif  // FIELDS2COVER_OBJECTIVES_OPTIMIZATION_CLASS_H_

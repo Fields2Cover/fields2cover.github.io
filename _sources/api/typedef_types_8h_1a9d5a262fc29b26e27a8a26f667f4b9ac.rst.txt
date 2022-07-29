@@ -1,0 +1,14 @@
+.. _exhale_typedef_types_8h_1a9d5a262fc29b26e27a8a26f667f4b9ac:
+
+Typedef F2CCells
+================
+
+- Defined in :ref:`file_fields2cover_types.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: F2CCells
+   :project: Fields2Cover

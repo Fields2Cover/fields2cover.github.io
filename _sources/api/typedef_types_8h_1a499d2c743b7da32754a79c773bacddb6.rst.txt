@@ -1,0 +1,14 @@
+.. _exhale_typedef_types_8h_1a499d2c743b7da32754a79c773bacddb6:
+
+Typedef F2CSwath
+================
+
+- Defined in :ref:`file_fields2cover_types.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: F2CSwath
+   :project: Fields2Cover

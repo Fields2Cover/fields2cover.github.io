@@ -41,6 +41,8 @@ Included By
 
 - :ref:`file_fields2cover_route_planning_snake_order.h`
 
+- :ref:`file_fields2cover_route_planning_spiral_order.h`
+
 - :ref:`file_fields2cover.h`
 
 

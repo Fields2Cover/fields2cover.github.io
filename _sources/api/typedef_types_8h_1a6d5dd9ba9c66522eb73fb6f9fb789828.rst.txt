@@ -1,0 +1,14 @@
+.. _exhale_typedef_types_8h_1a6d5dd9ba9c66522eb73fb6f9fb789828:
+
+Typedef F2CLineString
+=====================
+
+- Defined in :ref:`file_fields2cover_types.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: F2CLineString
+   :project: Fields2Cover

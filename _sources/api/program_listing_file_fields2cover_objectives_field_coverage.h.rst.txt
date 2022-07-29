@@ -25,8 +25,7 @@ Program Listing for File field_coverage.h
    #include "fields2cover/types.h"
    #include "fields2cover/objectives/global_objective.h"
    
-   namespace f2c {
-   namespace obj {
+   namespace f2c::obj {
    
    // Works only if all the swaths have same width
    class FieldCoverage : public GlobalObjective {
@@ -41,7 +40,6 @@ Program Listing for File field_coverage.h
      bool isMinimizing(void) const override;
    };
    
-   }  // namespace obj
-   }  // namespace f2c
+   }  // namespace f2c::obj
    
    #endif  // FIELDS2COVER_OBJECTIVES_FIELD_COVERAGE_H_

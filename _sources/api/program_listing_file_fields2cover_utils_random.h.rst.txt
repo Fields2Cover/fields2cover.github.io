@@ -22,7 +22,6 @@ Program Listing for File random.h
    
    #include <time.h>
    #include <limits>
-   #include <boost/math/constants/constants.hpp>
    #include "fields2cover/types/Point.h"
    #include "fields2cover/types/LineString.h"
    #include "fields2cover/types/LinearRing.h"

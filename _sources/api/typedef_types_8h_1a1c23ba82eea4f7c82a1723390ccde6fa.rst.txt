@@ -1,0 +1,14 @@
+.. _exhale_typedef_types_8h_1a1c23ba82eea4f7c82a1723390ccde6fa:
+
+Typedef F2CLinearRing
+=====================
+
+- Defined in :ref:`file_fields2cover_types.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: F2CLinearRing
+   :project: Fields2Cover

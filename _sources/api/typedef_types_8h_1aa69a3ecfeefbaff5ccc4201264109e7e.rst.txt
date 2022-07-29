@@ -1,0 +1,14 @@
+.. _exhale_typedef_types_8h_1aa69a3ecfeefbaff5ccc4201264109e7e:
+
+Typedef F2CMultiPoint
+=====================
+
+- Defined in :ref:`file_fields2cover_types.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: F2CMultiPoint
+   :project: Fields2Cover

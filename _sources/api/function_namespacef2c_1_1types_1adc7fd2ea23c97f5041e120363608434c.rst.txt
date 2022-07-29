@@ -1,0 +1,14 @@
+.. _exhale_function_namespacef2c_1_1types_1adc7fd2ea23c97f5041e120363608434c:
+
+Template Function f2c::types::operator-(const std::vector<T>&, const f2c::types::Point&)
+========================================================================================
+
+- Defined in :ref:`file_fields2cover_types_Point.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: f2c::types::operator-(const std::vector<T>&, const f2c::types::Point&)
+   :project: Fields2Cover

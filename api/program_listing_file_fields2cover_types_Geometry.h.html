@@ -89,8 +89,7 @@
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;boost/math/constants/constants.hpp&gt;</span><span class="cp"></span>
 
-<span class="k">namespace</span><span class="w"> </span><span class="nn">f2c</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">types</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">f2c</span><span class="o">::</span><span class="nn">types</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">EmptyDestructor</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
 
@@ -176,13 +175,11 @@
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 
-<span class="p">}</span><span class="w">  </span><span class="c1">// namespace types</span>
-<span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c::types</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Geometry_impl.hpp&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span><span class="w"> </span><span class="nn">f2c</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">types</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">f2c</span><span class="o">::</span><span class="nn">types</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">template</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Geometry</span><span class="o">&lt;</span><span class="n">OGRPoint</span><span class="p">,</span><span class="w"> </span><span class="n">wkbPoint</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
 <span class="k">template</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Geometry</span><span class="o">&lt;</span><span class="n">OGRMultiPoint</span><span class="p">,</span><span class="w"> </span><span class="n">wkbMultiPoint</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
 <span class="k">template</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Geometry</span><span class="o">&lt;</span><span class="n">OGRLinearRing</span><span class="p">,</span><span class="w"> </span><span class="n">wkbLinearRing</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
@@ -190,8 +187,7 @@
 <span class="k">template</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Geometry</span><span class="o">&lt;</span><span class="n">OGRMultiLineString</span><span class="p">,</span><span class="w"> </span><span class="n">wkbMultiLineString</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
 <span class="k">template</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Geometry</span><span class="o">&lt;</span><span class="n">OGRPolygon</span><span class="p">,</span><span class="w"> </span><span class="n">wkbPolygon</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
 <span class="k">template</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Geometry</span><span class="o">&lt;</span><span class="n">OGRMultiPolygon</span><span class="p">,</span><span class="w"> </span><span class="n">wkbMultiPolygon</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w">  </span><span class="c1">// namespace types</span>
-<span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c::types</span>
 
 
 <span class="cp">#endif  </span><span class="c1">// FIELDS2COVER_TYPES_GEOMETRY_H_</span>

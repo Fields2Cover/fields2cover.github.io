@@ -29,8 +29,6 @@ Includes
 --------
 
 
-- ``boost/math/constants/constants.hpp``
-
 - ``fields2cover/types/Cell.h`` (:ref:`file_fields2cover_types_Cell.h`)
 
 - ``fields2cover/types/Field.h`` (:ref:`file_fields2cover_types_Field.h`)

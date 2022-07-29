@@ -1,0 +1,14 @@
+.. _exhale_typedef_types_8h_1aff03ace023b7fb426676be28d3c6200e:
+
+Typedef F2CRobots
+=================
+
+- Defined in :ref:`file_fields2cover_types.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: F2CRobots
+   :project: Fields2Cover

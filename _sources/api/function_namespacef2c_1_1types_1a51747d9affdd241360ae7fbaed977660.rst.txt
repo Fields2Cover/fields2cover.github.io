@@ -1,0 +1,14 @@
+.. _exhale_function_namespacef2c_1_1types_1a51747d9affdd241360ae7fbaed977660:
+
+Function f2c::types::operator-(const OGRPoint&, const f2c::types::Point&)
+=========================================================================
+
+- Defined in :ref:`file_fields2cover_types_Point.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: f2c::types::operator-(const OGRPoint&, const f2c::types::Point&)
+   :project: Fields2Cover

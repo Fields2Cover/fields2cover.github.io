@@ -88,8 +88,7 @@
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstddef&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Geometry.h&quot;</span><span class="cp"></span>
 
-<span class="k">namespace</span><span class="w"> </span><span class="nn">f2c</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">types</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">f2c</span><span class="o">::</span><span class="nn">types</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
 <span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">SAMETYPE</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="n">OGRwkbGeometryType</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CHILDRENTYPE</span><span class="o">&gt;</span><span class="w"></span>
 <span class="k">struct</span><span class="w"> </span><span class="nc">Geometries</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Geometry</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -166,8 +165,7 @@
 <span class="w">  </span><span class="cp">#endif</span>
 <span class="p">};</span><span class="w"></span>
 
-<span class="p">}</span><span class="w">  </span><span class="c1">// namespace types</span>
-<span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c::types</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Geometries_impl.hpp&quot;</span><span class="cp"></span>
 

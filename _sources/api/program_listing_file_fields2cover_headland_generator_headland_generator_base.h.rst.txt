@@ -23,8 +23,7 @@ Program Listing for File headland_generator_base.h
    #include "fields2cover/types.h"
    #include "fields2cover/objectives/optimization_class.h"
    
-   namespace f2c {
-   namespace hg {
+   namespace f2c::hg {
    
    template <typename T>
    class HeadlandGeneratorBase : public obj::OptimizationClass<T> {
@@ -36,7 +35,6 @@ Program Listing for File headland_generator_base.h
          double dist_headland) = 0;
    };
    
-   }  // namespace hg
-   }  // namespace f2c
+   }  // namespace f2c::hg
    
    #endif  // FIELDS2COVER_HEADLAND_GENERATOR_HEADLAND_GENERATOR_BASE_H_

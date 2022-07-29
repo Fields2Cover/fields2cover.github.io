@@ -107,6 +107,8 @@ Included By
 
 - :ref:`file_fields2cover_route_planning_snake_order.h`
 
+- :ref:`file_fields2cover_route_planning_spiral_order.h`
+
 - :ref:`file_fields2cover_swath_generator_brute_force.h`
 
 - :ref:`file_fields2cover_swath_generator_swath_generator_base.h`
@@ -133,37 +135,37 @@ Typedefs
 --------
 
 
-- :ref:`exhale_typedef_types_8h_1a3c4e18d3ff5150d2cf578f3fe7bd0a6b`
+- :ref:`exhale_typedef_types_8h_1a66201161983370ba240af39de1247c47`
 
-- :ref:`exhale_typedef_types_8h_1ac82f0ba4910dc50e0b1d02e2fbfe955b`
+- :ref:`exhale_typedef_types_8h_1a9d5a262fc29b26e27a8a26f667f4b9ac`
 
-- :ref:`exhale_typedef_types_8h_1ae7d4543f7fdd34b9cd494317dd1b3d9a`
+- :ref:`exhale_typedef_types_8h_1a1677b3563e5327d164ba87e08bdc2b62`
 
-- :ref:`exhale_typedef_types_8h_1af086c4d74d1378b01cf0040351bb7b21`
+- :ref:`exhale_typedef_types_8h_1ae096eaa6978dec5caeafe739bc06f46c`
 
-- :ref:`exhale_typedef_types_8h_1a77ecc898eaf08ca4cc29eae0756a147c`
+- :ref:`exhale_typedef_types_8h_1a1c23ba82eea4f7c82a1723390ccde6fa`
 
-- :ref:`exhale_typedef_types_8h_1a35d4e5c40418402b5b44646e4f6ce74a`
+- :ref:`exhale_typedef_types_8h_1a6d5dd9ba9c66522eb73fb6f9fb789828`
 
-- :ref:`exhale_typedef_types_8h_1a90eb615055b44d2acae488d4403a10fc`
+- :ref:`exhale_typedef_types_8h_1a2d3fdfa2482d7c4bdb6caaf7a6c20e49`
 
-- :ref:`exhale_typedef_types_8h_1afc330e77c2ab819399401bf2ce1ec469`
+- :ref:`exhale_typedef_types_8h_1aa69a3ecfeefbaff5ccc4201264109e7e`
 
-- :ref:`exhale_typedef_types_8h_1a28b5ba27940c4c78fa2be7652696506b`
+- :ref:`exhale_typedef_types_8h_1a22ff6dfc294d0f3d66e2c69920566553`
 
-- :ref:`exhale_typedef_types_8h_1a30f41350082e59db78114f3287199056`
+- :ref:`exhale_typedef_types_8h_1af7dc991f0aef32bf7c216c30eb78e49f`
 
-- :ref:`exhale_typedef_types_8h_1ac1c5048c49678b873241ff14059734a8`
+- :ref:`exhale_typedef_types_8h_1a006486dab590664b801c8f2a1e132fab`
 
-- :ref:`exhale_typedef_types_8h_1af2270e8dcbc47ae900f40978048a2284`
+- :ref:`exhale_typedef_types_8h_1a84ffa22c5a99fd51ad55dba5ea74f963`
 
-- :ref:`exhale_typedef_types_8h_1a58b1d244ab1359d5a64b38c40607de3d`
+- :ref:`exhale_typedef_types_8h_1aff03ace023b7fb426676be28d3c6200e`
 
-- :ref:`exhale_typedef_types_8h_1a2852a1a1b97a0ac7ddd9557fe56c8cd3`
+- :ref:`exhale_typedef_types_8h_1ad15a4b224f7eddfd9ef3acbecca355a9`
 
-- :ref:`exhale_typedef_types_8h_1a045626a37297f2789b1c415cf2ca2f8e`
+- :ref:`exhale_typedef_types_8h_1a499d2c743b7da32754a79c773bacddb6`
 
-- :ref:`exhale_typedef_types_8h_1a8a5943a58548e51fcfd65dd0df970d36`
+- :ref:`exhale_typedef_types_8h_1a2a1b846c73ad98779f1f8a2c21c2dd6c`
 
-- :ref:`exhale_typedef_types_8h_1a5b75d0ce6780485c11afb2259da7e989`
+- :ref:`exhale_typedef_types_8h_1ab65f55570ff095590db05c79515cd5f2`
 

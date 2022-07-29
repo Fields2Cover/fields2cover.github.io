@@ -1,0 +1,14 @@
+.. _exhale_define_spiral__order_8h_1ab90488e64c251a5f1e4f4362f2fc8cb1:
+
+Define FIELDS2COVER_ROUTE_PLANNING_SPIRAL_ORDER_H_
+==================================================
+
+- Defined in :ref:`file_fields2cover_route_planning_spiral_order.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: FIELDS2COVER_ROUTE_PLANNING_SPIRAL_ORDER_H_
+   :project: Fields2Cover

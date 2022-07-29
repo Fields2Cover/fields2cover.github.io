@@ -27,3 +27,5 @@ Classes
 - :ref:`exhale_class_classf2c_1_1rp_1_1SingleCellSwathsOrderBase`
 
 - :ref:`exhale_class_classf2c_1_1rp_1_1SnakeOrder`
+
+- :ref:`exhale_class_classf2c_1_1rp_1_1SpiralOrder`
