@@ -27,7 +27,9 @@ Program Listing for File snake_order.h
    
    class SnakeOrder : public SingleCellSwathsOrderBase {
     public:
-     using SingleCellSwathsOrderBase::SingleCellSwathsOrderBase;
+     SnakeOrder();
+     SnakeOrder(F2CSwaths& swaths);
+     ~SnakeOrder();
    
     private:
      void sortSwaths() override;

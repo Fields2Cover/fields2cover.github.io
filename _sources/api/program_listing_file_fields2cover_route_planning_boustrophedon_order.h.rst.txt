@@ -27,7 +27,9 @@ Program Listing for File boustrophedon_order.h
    
    class BoustrophedonOrder : public SingleCellSwathsOrderBase {
     public:
-     using SingleCellSwathsOrderBase::SingleCellSwathsOrderBase;
+     BoustrophedonOrder();
+     BoustrophedonOrder(F2CSwaths& swaths);
+     ~BoustrophedonOrder();
    
     private:
      void sortSwaths() override;

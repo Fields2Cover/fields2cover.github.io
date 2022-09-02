@@ -45,7 +45,7 @@ Program Listing for File Point.h
    
      Point operator-(const Point& b) const;
    
-     void operator*=(double b);
+     Point& operator*=(double b);
    
      Point operator*(double b) const;
    

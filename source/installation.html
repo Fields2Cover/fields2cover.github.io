@@ -44,6 +44,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#requirements-on-linux">Requirements on Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#compilation">Compilation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#add-it-to-your-projects">Add it to your projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compilation-with-python-interface">Compilation with python interface</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
@@ -96,7 +97,7 @@ If you are able to run it in other operative systems, open an issue/PR and it wi
 <p>First, clone this repository.
 Then, from the main folder of the project:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd build;</span>
-<span class="go">cmake -DCMAKE_BUILD_TYPE=Release ..;</span>
+<span class="go">cmake ..;</span>
 <span class="go">make -j$(nproc);</span>
 <span class="go">sudo make install;</span>
 </pre></div>
@@ -107,6 +108,21 @@ Then, from the main folder of the project:</p>
 <p>To add Fields2Cover into your CMakeLists.txt, it is as easy as:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">find_package(Fields2Cover REQUIRED)</span>
 <span class="go">target_link_libraries(&lt;&lt;&lt;your_package&gt;&gt;&gt; Fields2Cover)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="compilation-with-python-interface">
+<h2>Compilation with python interface<a class="headerlink" href="#compilation-with-python-interface" title="Permalink to this headline"></a></h2>
+<p>As without the interface, clone this repository.
+Then, from the main folder of the project:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd build;</span>
+<span class="go">cmake -DBUILD_PYTHON=ON ..;</span>
+<span class="go">make -j$(nproc);</span>
+<span class="go">sudo make install;</span>
+</pre></div>
+</div>
+<p>To test if the compilation and installation of the python interface is correct, run on python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fields2cover</span>
 </pre></div>
 </div>
 </div>

@@ -289,4 +289,4 @@ Pages
 .. toctree::
    :maxdepth: 5
 
-   page_md__home_sanson_catkin_ws_src_public__fields2cover__public_CODE_OF_CONDUCT.rst
+   page_md__home_sanson_catkin_ws_src_public__Fields2Cover__public_CODE_OF_CONDUCT.rst

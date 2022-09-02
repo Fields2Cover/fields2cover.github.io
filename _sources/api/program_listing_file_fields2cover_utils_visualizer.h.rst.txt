@@ -20,7 +20,6 @@ Program Listing for File visualizer.h
    #ifndef FIELDS2COVER_UTILS_VISUALIZER_H_
    #define FIELDS2COVER_UTILS_VISUALIZER_H_
    
-   #ifdef F2C_DEF_MATPLOTLIB
    
    #include <vector>
    #include <string>
@@ -37,6 +36,7 @@ Program Listing for File visualizer.h
      static void plot(const F2CCell& cell);
      static void plot(const F2CCells& cells);
      static void plot(const F2CSwaths& swaths);
+     static void plot(const F2CSwathsByCells& swaths);
      static void plot(const F2CSwath& swath, std::string opt = "");
      static void plot(const F2CField& field);
      static void plot(const F2CFields& fields);
@@ -64,6 +64,11 @@ Program Listing for File visualizer.h
      static void show(bool block = true);
    
      static void save(const std::string& file);
+   
+     static void title(const std::string& text);
+   
+     static void xlim(double min, double max);
+     static void ylim(double min, double max);
    
     private:
      template<class T>
@@ -112,5 +117,4 @@ Program Listing for File visualizer.h
    }  // namespace f2c
    
    
-   #endif  // F2C_DEF_MATPLOTLIB
    #endif  // FIELDS2COVER_UTILS_VISUALIZER_H_

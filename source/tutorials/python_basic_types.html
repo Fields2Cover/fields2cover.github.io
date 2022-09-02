@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 1: Basic types &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Part 2: Objective functions" href="python_objective_functions.html" />
+    <link rel="prev" title="Part 6: Path planning" href="path_planning.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#c-tutorials">C++ tutorials</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html#python-tutorials">Python tutorials</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Part 1: Basic types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#initialize-a-point">Initialize a Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#basic-types-are-shared-pointers">Basic types are shared pointers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initialize-a-linestring">Initialize a LineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initialize-a-linearring">Initialize a LinearRing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initializing-other-collections">Initializing other collections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#accessing-elements-in-collections">Accessing elements in collections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#robot">Robot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#swath-swaths-and-swathsbycells">Swath, Swaths and SwathsByCells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#route-and-path">Route and Path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#visualizing-fields2cover-data">Visualizing Fields2Cover data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="python_objective_functions.html">Part 2: Objective functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_headland_generator.html">Part 3: Headland generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_swath_generator.html">Part 4: Swath generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_route_planning.html">Part 5: Route planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_path_planning.html">Part 6: Path planning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
+      <li>Part 1: Basic types</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/source/tutorials/python_basic_types.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="part-1-basic-types">
+<h1>Part 1: Basic types<a class="headerlink" href="#part-1-basic-types" title="Permalink to this headline"></a></h1>
+<p>All the tutorials assume Fields2Cover library is included as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fields2cover</span> <span class="k">as</span> <span class="nn">f2c</span>
+</pre></div>
+</div>
+<div class="section" id="initialize-a-point">
+<h2>Initialize a Point<a class="headerlink" href="#initialize-a-point" title="Permalink to this headline"></a></h2>
+<p>Points are the most basic type. There are many ways to initialize a <code class="docutils literal notranslate"><span class="pre">Point</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c.Point</span></code>)</p>
+<ol class="arabic">
+<li><p>With x and y axis on the constructor</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Point 1: &quot;</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>Point 1: Point(1.2, 3.4, 0)</em></p>
+</li>
+<li><p>With x, y and z axis on the constructor</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p2</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">9.8</span><span class="p">,</span> <span class="mf">7.6</span><span class="p">,</span> <span class="mf">5.4</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Point 2: &quot;</span><span class="p">,</span> <span class="n">p2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><em>Point 2: Point(9.8, 7.6, 5.4)</em></p>
+</li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">OGRPoint</span></code> from GDAL</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+<span class="n">ogrpoint</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPoint</span><span class="p">)</span>
+<span class="n">ogrpoint</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">()</span>
+<span class="n">p3</span><span class="o">.</span><span class="n">importFromWkt</span><span class="p">(</span><span class="n">ogrpoint</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Point 3: &quot;</span><span class="p">,</span> <span class="n">p3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>Point 3: Point(11, 22, 0)</em></p>
+</li>
+<li><p>Creating an empty <code class="docutils literal notranslate"><span class="pre">Point</span></code> and setting its components using <code class="docutils literal notranslate"><span class="pre">setX</span></code>/<code class="docutils literal notranslate"><span class="pre">setY</span></code>/<code class="docutils literal notranslate"><span class="pre">setZ</span></code>.
+The components can be also read with <code class="docutils literal notranslate"><span class="pre">getX</span></code>/<code class="docutils literal notranslate"><span class="pre">getY</span></code>/<code class="docutils literal notranslate"><span class="pre">getZ</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p4</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">()</span>
+<span class="n">p4</span><span class="o">.</span><span class="n">setX</span><span class="p">(</span><span class="mf">3.0</span><span class="p">);</span>
+<span class="n">p4</span><span class="o">.</span><span class="n">setZ</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Point 4: &quot;</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span>
+    <span class="s2">&quot;. Its components are: {x: &quot;</span><span class="p">,</span> <span class="n">p4</span><span class="o">.</span><span class="n">getX</span><span class="p">(),</span>
+    <span class="s2">&quot;, y: &quot;</span><span class="p">,</span> <span class="n">p4</span><span class="o">.</span><span class="n">getY</span><span class="p">(),</span>
+    <span class="s2">&quot;, z: &quot;</span><span class="p">,</span> <span class="n">p4</span><span class="o">.</span><span class="n">getZ</span><span class="p">(),</span> <span class="s2">&quot;}&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>Point 4: Point(3, 0, -1). Its components are: {x: 3, y: 0, z: -1}</em></p>
+</li>
+<li><p>Creating an empty <code class="docutils literal notranslate"><span class="pre">Point</span></code> and importing its components.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p5</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">()</span>
+<span class="n">p5</span><span class="o">.</span><span class="n">importFromWkt</span><span class="p">(</span><span class="s2">&quot;POINT (0 4 4)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Point 5: &quot;</span><span class="p">,</span> <span class="n">p5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>Point 5: Point(0, 4, 4)</em></p>
+</li>
+</ol>
+</div>
+<div class="section" id="basic-types-are-shared-pointers">
+<h2>Basic types are shared pointers<a class="headerlink" href="#basic-types-are-shared-pointers" title="Permalink to this headline"></a></h2>
+<p>Classes derived from GDAL types, like <code class="docutils literal notranslate"><span class="pre">Point</span></code> from <code class="docutils literal notranslate"><span class="pre">OGRPoint</span></code>,
+use a compound structure of shared pointers on it.</p>
+<p>One of the effects of using shared pointers in the classes is the difference between copying and cloning.</p>
+<p>When a class is cloned, the value of the shared pointer is copied to another shared pointer with different direction.
+Due to this, changing the value of the shared pointer after cloning it do not affect the cloned value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">old_p</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cloned_p</span> <span class="o">=</span> <span class="n">old_p</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The old point is &quot;</span><span class="p">,</span> <span class="n">old_p</span><span class="p">)</span>
+<span class="n">cloned_p</span> <span class="o">*=</span> <span class="mf">5.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Old point is: &quot;</span><span class="p">,</span> <span class="n">old_p</span><span class="p">,</span> <span class="s2">&quot; and cloned point is: &quot;</span><span class="p">,</span> <span class="n">cloned_p</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><em>The old point is Point(1, 2, 0)</em></div>
+<div class="line"><em>Old point is: Point(1, 2, 0) and cloned point is: Point(5, 10, 0)</em></div>
+</div>
+<p>On the other hand, if the shared pointer is copied, you are copying the direction of the pointer.
+If one of the values is modified, the other value is modified as well:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">copy_p</span> <span class="o">=</span> <span class="n">old_p</span>
+<span class="n">copy_p</span> <span class="o">*=</span> <span class="mf">5.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Old point is: &quot;</span><span class="p">,</span> <span class="n">old_p</span><span class="p">,</span> <span class="s2">&quot; and copied point is: &quot;</span><span class="p">,</span> <span class="n">copy_p</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>Old point is: Point(5.5, 11, 0) and copied point is: Point(5.5, 11, 0)</em></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Despite the effect of the shared pointers on basic types is on purpouse,
+it can lead on many bugs. As developer, be aware of this effect.</p>
+</div>
+</div>
+<div class="section" id="initialize-a-linestring">
+<h2>Initialize a LineString<a class="headerlink" href="#initialize-a-linestring" title="Permalink to this headline"></a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">LineString</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c.LineString</span></code>) represents a line. The ways to initialize a <code class="docutils literal notranslate"><span class="pre">LineString</span></code> are:</p>
+<ol class="arabic">
+<li><p>Creating an empty <code class="docutils literal notranslate"><span class="pre">LineString</span></code> and adding several <code class="docutils literal notranslate"><span class="pre">Point</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line1</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">LineString</span><span class="p">()</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">p5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Length of line 1: &quot;</span><span class="p">,</span> <span class="n">line1</span><span class="o">.</span><span class="n">getLength</span><span class="p">())</span>
+</pre></div>
+</div>
+<p><em>Length of line 1: 5</em></p>
+</li>
+<li><p>Creating an empty <code class="docutils literal notranslate"><span class="pre">LineString</span></code> and adding several <code class="docutils literal notranslate"><span class="pre">Point</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line2</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">LineString</span><span class="p">();</span>
+<span class="p">[</span><span class="n">line2</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]];</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Length of line 2: &quot;</span><span class="p">,</span> <span class="n">line2</span><span class="o">.</span><span class="n">getLength</span><span class="p">());</span>
+</pre></div>
+</div>
+<p><em>Length of line 2: 2</em></p>
+</li>
+</ol>
+</div>
+<div class="section" id="initialize-a-linearring">
+<h2>Initialize a LinearRing<a class="headerlink" href="#initialize-a-linearring" title="Permalink to this headline"></a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c.LinearRing</span></code>) is a closed <code class="docutils literal notranslate"><span class="pre">LineString</span></code>.
+It can be initialized as a <code class="docutils literal notranslate"><span class="pre">LineString</span></code>:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ring</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">LinearRing</span><span class="p">();</span>
+<span class="p">[</span><span class="n">ring</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]];</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Area of the ring: &quot;</span><span class="p">,</span> <span class="n">ring</span><span class="o">.</span><span class="n">getArea</span><span class="p">())</span>
+</pre></div>
+</div>
+<p><em>Area of the ring: 0.5</em></p>
+</div></blockquote>
+<p>The main difference between <code class="docutils literal notranslate"><span class="pre">LineString</span></code> and <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code> is that <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code> is expected to be closed, so the area can be computed.</p>
+</div>
+<div class="section" id="initializing-other-collections">
+<h2>Initializing other collections<a class="headerlink" href="#initializing-other-collections" title="Permalink to this headline"></a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">MultiLineString</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c.MultiLineString</span></code>) are several <code class="docutils literal notranslate"><span class="pre">LineString</span></code>. It can be initialize as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">MultiLineString</span><span class="p">();</span>
+<span class="n">lines</span><span class="o">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">line1</span><span class="p">);</span>
+<span class="n">lines</span><span class="o">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">line2</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lines have length: &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lines</span><span class="o">.</span><span class="n">size</span><span class="p">()):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">getLength</span><span class="p">(),</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>Lines have length: 5, 2,</em></p>
+<p>A <code class="docutils literal notranslate"><span class="pre">Cell</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c.Cell</span></code>) is a polygon created by one outter <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code> and zero, one or many inner <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code>.
+First <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code> has to be the outter one.
+<code class="docutils literal notranslate"><span class="pre">LinearRing</span></code> should not cross each others.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">outter_ring</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">LinearRing</span><span class="p">();</span>
+<span class="p">[</span><span class="n">outter_ring</span><span class="o">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span>  \
+  <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]];</span>
+<span class="n">inner_ring</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">LinearRing</span><span class="p">();</span>
+<span class="p">[</span><span class="n">inner_ring</span><span class="o">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span>  \
+  <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span>  \
+  <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)]];</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Cell</span><span class="p">();</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">addRing</span><span class="p">(</span><span class="n">outter_ring</span><span class="p">);</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">addRing</span><span class="p">(</span><span class="n">inner_ring</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The area of the cell is: &quot;</span><span class="p">,</span> <span class="n">cell</span><span class="o">.</span><span class="n">getArea</span><span class="p">(),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><em>The area of the cell is: 3</em></p>
+<p>A <code class="docutils literal notranslate"><span class="pre">Cells</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c.Cells</span></code>) is a multipolygon. It contains zero, one or several <code class="docutils literal notranslate"><span class="pre">Cell</span></code> on it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cells</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Cells</span><span class="p">();</span>
+<span class="n">cells</span><span class="o">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">cell</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The area of the cells is: &quot;</span><span class="p">,</span> <span class="n">cells</span><span class="o">.</span><span class="n">getArea</span><span class="p">(),</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>The area of the cells is: 3</em></p>
+<p>Lastly, <code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c.MultiPoint</span></code>) is a collection of <code class="docutils literal notranslate"><span class="pre">Point</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">MultiPoint</span><span class="p">();</span>
+<span class="p">[</span><span class="n">points</span><span class="o">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]];</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Points contains &quot;</span><span class="p">,</span> <span class="n">points</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="s2">&quot; points.&quot;</span><span class="p">);</span>
+<span class="n">points</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Points contains &quot;</span><span class="p">,</span> <span class="n">points</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="s2">&quot; points.&quot;</span><span class="p">);</span>
+<span class="n">points</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">p5</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Points contains &quot;</span><span class="p">,</span> <span class="n">points</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="s2">&quot; points.&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><em>Points contains 2 points.</em></div>
+<div class="line"><em>Points contains 3 points.</em></div>
+<div class="line"><em>Points contains 4 points.</em></div>
+</div>
+</div>
+<div class="section" id="accessing-elements-in-collections">
+<h2>Accessing elements in collections<a class="headerlink" href="#accessing-elements-in-collections" title="Permalink to this headline"></a></h2>
+<p>To access each of the elements in a collection, the function <code class="docutils literal notranslate"><span class="pre">getGeometry(n)</span></code> returns the element n.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p_0</span> <span class="o">=</span> <span class="n">points</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First point in points: &quot;</span><span class="p">,</span> <span class="n">p_0</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>First point in points: Point(1, 2, 0)</em></p>
+<p>Unfortunately, if we change the child element, it is not changed on the collection.
+If you want to keep it, you have to set the geometry back with <code class="docutils literal notranslate"><span class="pre">setGeometry()</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p_0</span> <span class="o">*=</span> <span class="mf">1e5</span><span class="p">;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modified p_0: &quot;</span><span class="p">,</span> <span class="n">p_0</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First point in points without modification: &quot;</span><span class="p">,</span> <span class="n">points</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="n">points</span><span class="o">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">p_0</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modified first point in points: &quot;</span><span class="p">,</span> <span class="n">points</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><em>Modified p_0: Point(100000, 200000, 0)</em></div>
+<div class="line"><em>First point in points without modification: Point(1, 2, 0)</em></div>
+<div class="line"><em>Modified first point in points: Point(100000, 200000, 0)</em></div>
+</div>
+<p>This process can be done in any of the collection types presented previously:
+<code class="docutils literal notranslate"><span class="pre">LineString</span></code>, <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiLineString</span></code>, <code class="docutils literal notranslate"><span class="pre">Cell</span></code>, <code class="docutils literal notranslate"><span class="pre">Cells</span></code> and <code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code></p>
+</div>
+<div class="section" id="robot">
+<h2>Robot<a class="headerlink" href="#robot" title="Permalink to this headline"></a></h2>
+<p>The vehicle to cover the field is defined as a <code class="docutils literal notranslate"><span class="pre">Robot</span></code> struct.
+To initialize it, the constructor needs the width of the robot and the width of the operation.
+For example, if we have a vehicle to fertilize a field, with a width of 3 meters width and a fertilizer width of 39 meters, we should initialize it as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robot</span> <span class="o">=</span> <span class="n">F2CRobot</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">39.0</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Other important parameters of <code class="docutils literal notranslate"><span class="pre">Robot</span></code> are:</p>
+<ul class="simple">
+<li><p><em>cruise_speed</em>: is the speed of the vehicle when traveling through the field.</p></li>
+<li><p><em>max_icc</em>: is the maximum Instantaneous Center of Curvature on a turn. It’s the inverse of the radius. It’s preferable to use the function <code class="docutils literal notranslate"><span class="pre">setMinRadius(double)</span></code>.</p></li>
+<li><p><em>linear_curv_change</em>: is the maximum change of curvature in a turn. It’s used to prevent instant changes of curvature.</p></li>
+<li><p><em>max_vel</em>: if not set, the velocity when turning is <em>cruise_speed</em>.</p></li>
+</ul>
+</div>
+<div class="section" id="swath-swaths-and-swathsbycells">
+<h2>Swath, Swaths and SwathsByCells<a class="headerlink" href="#swath-swaths-and-swathsbycells" title="Permalink to this headline"></a></h2>
+<p>A swath, or AB line, is the path that uses an agricultural vehicle to cross the field. On Precision Agriculture, swaths are fixed.
+Swaths are coded in the Fields2Cover library as <code class="docutils literal notranslate"><span class="pre">Swath</span></code>.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">Swath</span></code> is defined by a <code class="docutils literal notranslate"><span class="pre">LineString</span></code>, which defines the path of the swath, and the width of the swath.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Swaths</span></code> is a collection of <code class="docutils literal notranslate"><span class="pre">Swath</span></code>. <code class="docutils literal notranslate"><span class="pre">Swaths</span></code> groups all the <code class="docutils literal notranslate"><span class="pre">Swath</span></code> on a <code class="docutils literal notranslate"><span class="pre">Cell</span></code>.
+<code class="docutils literal notranslate"><span class="pre">SwathsByCells</span></code> collects the <code class="docutils literal notranslate"><span class="pre">Swaths</span></code> for each <code class="docutils literal notranslate"><span class="pre">Cell</span></code>.</p>
+</div>
+<div class="section" id="route-and-path">
+<h2>Route and Path<a class="headerlink" href="#route-and-path" title="Permalink to this headline"></a></h2>
+<p>Lastly, a <code class="docutils literal notranslate"><span class="pre">Route</span></code> defines a route, as a sequence of <code class="docutils literal notranslate"><span class="pre">Swaths</span></code> and <code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code>.
+The type of the <code class="docutils literal notranslate"><span class="pre">Route</span></code> points if there is an start and/or end point in the route.
+If there are none, the <code class="docutils literal notranslate"><span class="pre">Route</span></code> will start with the first <code class="docutils literal notranslate"><span class="pre">Swaths</span></code>, then the first <code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code>, then the second <code class="docutils literal notranslate"><span class="pre">Swaths</span></code>, and so on…
+<code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code> are employed to go from the end of one <code class="docutils literal notranslate"><span class="pre">Swaths</span></code> to the start of the next <code class="docutils literal notranslate"><span class="pre">Swaths</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code> could be empty.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">Route</span></code> is not a path because it doesn’t have the turns or the velocities the vehicle has to have.
+On the other hand, <code class="docutils literal notranslate"><span class="pre">Path</span></code> defines the point, angle, velocity and duration of each step.
+With a <code class="docutils literal notranslate"><span class="pre">Path</span></code>, a vehicle knows exactly where, when and how should it be.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">Route</span></code> are not used in this version of Fields2Cover</p>
+</div>
+</div>
+<div class="section" id="visualizing-fields2cover-data">
+<h2>Visualizing Fields2Cover data<a class="headerlink" href="#visualizing-fields2cover-data" title="Permalink to this headline"></a></h2>
+<p>To visualize Fields2Cover data, the library provides the class <code class="docutils literal notranslate"><span class="pre">f2c::Visualizer</span></code> to easily plot it.</p>
+<p>First, you can define your figure id with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">.</span><span class="n">Visualizer</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The previous line could be omitted, and it will create one itself.
+Then, draw the data using that figure as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">.</span><span class="n">Visualizer</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lines</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Lastly, the data can be plot as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">.</span><span class="n">Visualizer</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>or saved as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">.</span><span class="n">Visualizer</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;Tutorial_image&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The result should be an image as:</p>
+<img alt="../../_images/Tutorial_image_1_9.png" src="../../_images/Tutorial_image_1_9.png" />
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="path_planning.html" class="btn btn-neutral float-left" title="Part 6: Path planning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="python_objective_functions.html" class="btn btn-neutral float-right" title="Part 2: Objective functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

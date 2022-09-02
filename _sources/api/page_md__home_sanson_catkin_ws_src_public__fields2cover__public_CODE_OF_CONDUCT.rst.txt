@@ -1,7 +1,0 @@
-.. _page_md__home_sanson_catkin_ws_src_public__fields2cover__public_CODE_OF_CONDUCT:
-
-Contributor Covenant Code of Conduct
-====================================
-
-.. doxygenpage:: md__home_sanson_catkin_ws_src_public__fields2cover__public_CODE_OF_CONDUCT
-   :project: Fields2Cover

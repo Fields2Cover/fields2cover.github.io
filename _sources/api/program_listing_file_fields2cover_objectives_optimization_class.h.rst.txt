@@ -33,14 +33,44 @@ Program Listing for File optimization_class.h
          "T must derive from GlobalObjective");
    
     public:
-     template <typename ...Ts>
-     double computeCost(Ts... t) const {
-       return objective_.computeCost(t...);
+     // Avoid using variadic templates. SWIG don't work well with it
+   
+     template <typename T1>
+     double computeCost(const T1& t1) const {
+       return objective_.computeCost(t1);
+     }
+     template <typename T1, typename T2>
+     double computeCost(const T1& t1, const T2& t2) const {
+       return objective_.computeCost(t1, t2);
+     }
+     template <typename T1, typename T2, typename T3>
+     double computeCost(
+         const T1& t1, const T2& t2, const T3& t3) const {
+       return objective_.computeCost(t1, t2, t3);
+     }
+     template <typename T1, typename T2, typename T3, typename T4>
+     double computeCost(
+         const T1& t1, const T2& t2, const T3& t3, const T4& t4) const {
+       return objective_.computeCost(t1, t2, t3, t4);
      }
    
-     template <typename ...Ts>
-     double computeCostWithMinimizingSign(Ts... t) const {
-       return objective_.computeCostWithMinimizingSign(t...);
+     template <typename T1>
+     double computeCostWithMinimizingSign(const T1& t1) const {
+       return objective_.computeCostWithMinimizingSign(t1);
+     }
+     template <typename T1, typename T2>
+     double computeCostWithMinimizingSign(const T1& t1, const T2& t2) const {
+       return objective_.computeCostWithMinimizingSign(t1, t2);
+     }
+     template <typename T1, typename T2, typename T3>
+     double computeCostWithMinimizingSign(
+         const T1& t1, const T2& t2, const T3& t3) const {
+       return objective_.computeCostWithMinimizingSign(t1, t2, t3);
+     }
+     template <typename T1, typename T2, typename T3, typename T4>
+     double computeCostWithMinimizingSign(
+         const T1& t1, const T2& t2, const T3& t3, const T4& t4) const {
+       return objective_.computeCostWithMinimizingSign(t1, t2, t3, t4);
      }
    
     protected:

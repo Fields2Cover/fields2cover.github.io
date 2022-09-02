@@ -42,12 +42,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/basic_types.html">Part 1: Basic types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/objective_functions.html">Part 2: Objective functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/headland_generator.html">Part 3: Headland generator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/swath_generator.html">Part 4: Swath generator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/route_planning.html">Part 5: Route planning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/path_planning.html">Part 6: Path planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#c-tutorials">C++ tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/basic_types.html">Part 1: Basic types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/objective_functions.html">Part 2: Objective functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/headland_generator.html">Part 3: Headland generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/swath_generator.html">Part 4: Swath generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/route_planning.html">Part 5: Route planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/path_planning.html">Part 6: Path planning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#python-tutorials">Python tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/python_basic_types.html">Part 1: Basic types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html">Part 2: Objective functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/python_headland_generator.html">Part 3: Headland generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/python_swath_generator.html">Part 4: Swath generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/python_route_planning.html">Part 5: Route planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/python_path_planning.html">Part 6: Path planning</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
@@ -90,6 +102,8 @@ Here, you will learn how to concatenate them to solve the CPP.</p>
 However, the software architecture is prepared to be extended to more complex situations.</p>
 </div>
 <p>All the code examples shown in the tutorials are located on the <code class="docutils literal notranslate"><span class="pre">tutorials</span></code> folder.</p>
+<div class="section" id="c-tutorials">
+<h2>C++ tutorials<a class="headerlink" href="#c-tutorials" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/basic_types.html">Part 1: Basic types</a><ul>
@@ -142,6 +156,63 @@ However, the software architecture is prepared to be extended to more complex si
 </ul>
 </li>
 </ul>
+</div>
+</div>
+<div class="section" id="python-tutorials">
+<h2>Python tutorials<a class="headerlink" href="#python-tutorials" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/python_basic_types.html">Part 1: Basic types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_basic_types.html#initialize-a-point">Initialize a Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_basic_types.html#basic-types-are-shared-pointers">Basic types are shared pointers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_basic_types.html#initialize-a-linestring">Initialize a LineString</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_basic_types.html#initialize-a-linearring">Initialize a LinearRing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_basic_types.html#initializing-other-collections">Initializing other collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_basic_types.html#accessing-elements-in-collections">Accessing elements in collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_basic_types.html#robot">Robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_basic_types.html#swath-swaths-and-swathsbycells">Swath, Swaths and SwathsByCells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_basic_types.html#route-and-path">Route and Path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_basic_types.html#visualizing-fields2cover-data">Visualizing Fields2Cover data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/python_objective_functions.html">Part 2: Objective functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_objective_functions.html#global-objective-functions">Global objective functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html#field-coverage">Field coverage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html#number-of-swaths">Number of swaths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html#overlap">Overlap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html#swath-length">Swath Length</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_objective_functions.html#path-objective-functions">Path objective functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html#distance-with-turns">Distance with turns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html#direct-distance-without-turns">Direct distance without turns</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/python_headland_generator.html">Part 3: Headland generator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_headland_generator.html#constant-width-headland">Constant width headland</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/python_swath_generator.html">Part 4: Swath generator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_swath_generator.html#brute-force">Brute force</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/python_route_planning.html">Part 5: Route planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_route_planning.html#boustrophedon-order">Boustrophedon order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_route_planning.html#snake-order">Snake order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_route_planning.html#spiral-order">Spiral order</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/python_path_planning.html">Part 6: Path planning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_path_planning.html#dubins-curves">Dubins curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_path_planning.html#dubins-curves-with-continuous-curvature">Dubins curves with Continuous curvature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_path_planning.html#reeds-shepp-curves">Reeds-Shepp curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_path_planning.html#reeds-shepp-curves-with-continuous-curvature">Reeds-Shepp curves with Continuous curvature</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 </div>
 

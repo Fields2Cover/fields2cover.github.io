@@ -27,6 +27,7 @@ Program Listing for File single_cell_swaths_order_base.h
    
    class SingleCellSwathsOrderBase {
     public:
+     SingleCellSwathsOrderBase();
      explicit SingleCellSwathsOrderBase(F2CSwaths& swaths);
      virtual ~SingleCellSwathsOrderBase();
    
