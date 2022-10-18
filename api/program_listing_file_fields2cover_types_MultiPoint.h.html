@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -82,6 +83,7 @@
 <span class="cp">#define FIELDS2COVER_TYPES_MULTIPOINT_H_</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gdal/ogr_geometry.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Geometries.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Point.h&quot;</span><span class="cp"></span>
 
@@ -92,8 +94,8 @@
 <span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">Geometries</span><span class="o">&lt;</span><span class="n">MultiPoint</span><span class="p">,</span><span class="w"> </span><span class="n">OGRMultiPoint</span><span class="p">,</span><span class="w"> </span><span class="n">wkbMultiPoint</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="o">&gt;::</span><span class="n">Geometries</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="n">MultiPoint</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="n">MultiPoint</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">ps</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">MultiPoint</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">ps</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">MultiPoint</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">ps</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">MultiPoint</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">ps</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="nf">size</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 

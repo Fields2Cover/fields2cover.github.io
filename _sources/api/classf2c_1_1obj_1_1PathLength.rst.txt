@@ -1,0 +1,26 @@
+.. _exhale_class_classf2c_1_1obj_1_1PathLength:
+
+Class PathLength
+================
+
+- Defined in :ref:`file_fields2cover_objectives_path_length.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public f2c::obj::PPObjective`` (:ref:`exhale_class_classf2c_1_1obj_1_1PPObjective`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: f2c::obj::PathLength
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

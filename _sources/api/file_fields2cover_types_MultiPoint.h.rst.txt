@@ -8,6 +8,7 @@ File MultiPoint.h
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 .. contents:: Contents
    :local:
    :backlinks: none
@@ -34,6 +35,8 @@ Includes
 - ``fields2cover/types/Point.h`` (:ref:`file_fields2cover_types_Point.h`)
 
 - ``gdal/ogr_geometry.h``
+
+- ``vector``
 
 
 

@@ -8,6 +8,7 @@ File path_planning.h
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 .. contents:: Contents
    :local:
    :backlinks: none
@@ -28,10 +29,6 @@ Definition (``fields2cover/path_planning/path_planning.h``)
 Includes
 --------
 
-
-- ``fields2cover/objectives/optimization_class.h`` (:ref:`file_fields2cover_objectives_optimization_class.h`)
-
-- ``fields2cover/objectives/path_objective.h`` (:ref:`file_fields2cover_objectives_path_objective.h`)
 
 - ``fields2cover/path_planning/turning_base.h`` (:ref:`file_fields2cover_path_planning_turning_base.h`)
 

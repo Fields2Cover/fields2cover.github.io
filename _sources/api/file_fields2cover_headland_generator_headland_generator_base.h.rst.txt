@@ -8,6 +8,7 @@ File headland_generator_base.h
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 .. contents:: Contents
    :local:
    :backlinks: none
@@ -28,8 +29,6 @@ Definition (``fields2cover/headland_generator/headland_generator_base.h``)
 Includes
 --------
 
-
-- ``fields2cover/objectives/optimization_class.h`` (:ref:`file_fields2cover_objectives_optimization_class.h`)
 
 - ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
 

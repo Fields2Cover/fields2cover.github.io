@@ -1,0 +1,69 @@
+
+.. _file_fields2cover_types_Strip.h:
+
+File Strip.h
+============
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_types>` (``fields2cover/types``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``fields2cover/types/Strip.h``)
+-------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_fields2cover_types_Strip.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``fields2cover/types/Cell.h`` (:ref:`file_fields2cover_types_Cell.h`)
+
+- ``string``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_fields2cover_types.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_f2c`
+
+- :ref:`namespace_f2c__types`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structf2c_1_1types_1_1Strip`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_Strip_8h_1accb0ac31990146815d63172a69e66249`
+

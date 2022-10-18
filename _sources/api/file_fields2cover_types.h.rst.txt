@@ -8,6 +8,7 @@ File types.h
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 .. contents:: Contents
    :local:
    :backlinks: none
@@ -53,6 +54,8 @@ Includes
 
 - ``fields2cover/types/Route.h`` (:ref:`file_fields2cover_types_Route.h`)
 
+- ``fields2cover/types/Strip.h`` (:ref:`file_fields2cover_types_Strip.h`)
+
 - ``fields2cover/types/Swath.h`` (:ref:`file_fields2cover_types_Swath.h`)
 
 - ``fields2cover/types/Swaths.h`` (:ref:`file_fields2cover_types_Swaths.h`)
@@ -71,21 +74,27 @@ Included By
 
 - :ref:`file_fields2cover_headland_generator_headland_generator_base.h`
 
+- :ref:`file_fields2cover_objectives_base_objective.h`
+
 - :ref:`file_fields2cover_objectives_complete_turn_path_obj.h`
 
 - :ref:`file_fields2cover_objectives_direct_dist_path_obj.h`
 
 - :ref:`file_fields2cover_objectives_field_coverage.h`
 
-- :ref:`file_fields2cover_objectives_global_objective.h`
+- :ref:`file_fields2cover_objectives_hg_objective.h`
 
 - :ref:`file_fields2cover_objectives_n_swath.h`
 
-- :ref:`file_fields2cover_objectives_optimization_class.h`
-
 - :ref:`file_fields2cover_objectives_overlaps.h`
 
-- :ref:`file_fields2cover_objectives_path_objective.h`
+- :ref:`file_fields2cover_objectives_pp_objective.h`
+
+- :ref:`file_fields2cover_objectives_rem_area.h`
+
+- :ref:`file_fields2cover_objectives_rp_objective.h`
+
+- :ref:`file_fields2cover_objectives_sg_objective.h`
 
 - :ref:`file_fields2cover_objectives_swath_length.h`
 
@@ -102,6 +111,8 @@ Included By
 - :ref:`file_fields2cover_path_planning_turning_base.h`
 
 - :ref:`file_fields2cover_route_planning_boustrophedon_order.h`
+
+- :ref:`file_fields2cover_route_planning_custom_order.h`
 
 - :ref:`file_fields2cover_route_planning_single_cell_swaths_order_base.h`
 
@@ -162,6 +173,10 @@ Typedefs
 - :ref:`exhale_typedef_types_8h_1aff03ace023b7fb426676be28d3c6200e`
 
 - :ref:`exhale_typedef_types_8h_1ad15a4b224f7eddfd9ef3acbecca355a9`
+
+- :ref:`exhale_typedef_types_8h_1af22b9e42eeec1068c063f30f08bc4359`
+
+- :ref:`exhale_typedef_types_8h_1a4de672a34c27f657b9fd57d16275e1e9`
 
 - :ref:`exhale_typedef_types_8h_1a499d2c743b7da32754a79c773bacddb6`
 

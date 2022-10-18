@@ -27,16 +27,9 @@ Program Listing for File dubins_curves_cc.h
    
    class DubinsCurvesCC : public TurningBase {
     public:
-     explicit DubinsCurvesCC(const F2CRobot& params);
-     ~DubinsCurvesCC() = default;
-     DubinsCurvesCC(DubinsCurvesCC &&) = default;
-     DubinsCurvesCC() = default;
-     DubinsCurvesCC(const DubinsCurvesCC&) = default;
-     DubinsCurvesCC &operator=(const DubinsCurvesCC&) = default;
-     DubinsCurvesCC &operator=(DubinsCurvesCC&&) = default;
-   
-     F2CPath createSimpleTurn(double dist_start_pos, double start_angle,
-         double end_angle) override;
+     F2CPath createSimpleTurn(const F2CRobot& robot,
+         double dist_start_pos, double start_angle,
+         double end_angle, double max_headland_width = 1e5) override;
    
     public:
      double discretization {0.01};

@@ -1,0 +1,14 @@
+.. _exhale_define_base__objective_8h_1a0caa0d08c07d94284adcfe27b4189c01:
+
+Define FIELDS2COVER_OBJECTIVES_BASE_OBJECTIVE_H_
+================================================
+
+- Defined in :ref:`file_fields2cover_objectives_base_objective.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: FIELDS2COVER_OBJECTIVES_BASE_OBJECTIVE_H_
+   :project: Fields2Cover

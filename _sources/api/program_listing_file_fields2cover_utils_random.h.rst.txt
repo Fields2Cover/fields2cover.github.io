@@ -22,6 +22,7 @@ Program Listing for File random.h
    
    #include <time.h>
    #include <limits>
+   #include <random>
    #include <boost/math/constants/constants.hpp>
    #include "fields2cover/types/Point.h"
    #include "fields2cover/types/LineString.h"
@@ -34,7 +35,7 @@ Program Listing for File random.h
    class Random {
     public:
      explicit Random(uint32_t seed = static_cast<uint32_t>(time(NULL))) :
-       seed_(seed) {}
+       mt_(seed) {}
    
      ~Random() = default;
      Random(const Random&) = default;
@@ -49,6 +50,8 @@ Program Listing for File random.h
    
      double getRandomExp(double min, double max);
    
+     double getRandomExpDist(double lambda);
+   
      double getAngleRandom();
    
      f2c::types::Field generateRandField(int n_sides, double area,
@@ -59,7 +62,7 @@ Program Listing for File random.h
      f2c::types::Field genNonConvexField(double area);
    
     private:
-     uint32_t seed_;
+     std::mt19937 mt_;
    };
    
    

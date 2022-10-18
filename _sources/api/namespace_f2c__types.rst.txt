@@ -48,11 +48,15 @@ Classes
 
 - :ref:`exhale_struct_structf2c_1_1types_1_1Path`
 
+- :ref:`exhale_struct_structf2c_1_1types_1_1PathState`
+
 - :ref:`exhale_struct_structf2c_1_1types_1_1Point`
 
 - :ref:`exhale_struct_structf2c_1_1types_1_1Robot`
 
 - :ref:`exhale_struct_structf2c_1_1types_1_1Route`
+
+- :ref:`exhale_struct_structf2c_1_1types_1_1Strip`
 
 - :ref:`exhale_struct_structf2c_1_1types_1_1Swath`
 
@@ -79,10 +83,6 @@ Enums
 Functions
 ---------
 
-
-- :ref:`exhale_function_namespacef2c_1_1types_1affbf35c6dffcd36a65df0bc51c16d68d`
-
-- :ref:`exhale_function_namespacef2c_1_1types_1a0c899cb7e819cd6e91aa82b4a66b17f5`
 
 - :ref:`exhale_function_namespacef2c_1_1types_1a0880c6d8de577ef57fff41cacbce0ed4`
 

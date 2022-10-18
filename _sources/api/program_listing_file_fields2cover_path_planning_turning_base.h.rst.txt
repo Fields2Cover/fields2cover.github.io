@@ -20,34 +20,29 @@ Program Listing for File turning_base.h
    #ifndef FIELDS2COVER_PATH_PLANNING_TURNING_BASE_H_
    #define FIELDS2COVER_PATH_PLANNING_TURNING_BASE_H_
    
-   #include <iostream>
    #include <memory>
    #include <map>
    #include <vector>
    #include <limits>
    #include <functional>
    #include "fields2cover/types.h"
-   #include "fields2cover/objectives/optimization_class.h"
    #include "fields2cover/utils/random.h"
    
    namespace f2c::pp {
    
    class TurningBase {
     public:
-     virtual ~TurningBase() = default;
+     F2CPath createTurn(const F2CRobot& robot,
+         const F2CPoint& start_pos, double start_angle,
+         const F2CPoint& end_pos, double end_angle,
+         double max_headland_width = 1e5);
    
+     F2CPath createTurnIfNotCached(const F2CRobot& robot, double dist_start_pos,
+         double start_angle, double end_angle, double max_headland_width = 1e5);
    
-    public:
-     void setRobotParams(const F2CRobot& params);
-   
-     F2CPath createTurn(const F2CPoint& start_pos, double start_angle,
-         const F2CPoint& end_pos, double end_angle);
-   
-     F2CPath createTurnIfNotCached(double dist_start_pos,
-         double start_angle, double end_angle);
-   
-     virtual F2CPath createSimpleTurn(double dist_start_pos, double start_angle,
-         double end_angle) = 0;
+     virtual F2CPath createSimpleTurn(const F2CRobot& robot, double dist_start_pos,
+         double start_angle, double end_angle,
+         double max_headland_width = 1e5) = 0;
    
      static std::vector<double> transformToNormalTurn(const F2CPoint& start_pos,
          double start_angle, const F2CPoint& end_pos, double end_angle);
@@ -64,15 +59,12 @@ Program Listing for File turning_base.h
          float max_error_dist = 0.05);
    
     public:
-     F2CRobot robot;
-     double max_headland_width {std::numeric_limits<double>::max()};
      bool using_cache {true};
    
     protected:
      // To prevent memory consumption and comparative errors because of doubles
      // ints are used multiplied by 1000.
      std::map<std::vector<int>, F2CPath> path_cache_;
-     Random rand_;
    };
    
    }  // namespace f2c::pp

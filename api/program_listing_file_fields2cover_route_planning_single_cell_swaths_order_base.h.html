@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -88,23 +89,12 @@
 
 <span class="k">class</span><span class="w"> </span><span class="nc">SingleCellSwathsOrderBase</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">  </span><span class="n">SingleCellSwathsOrderBase</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">SingleCellSwathsOrderBase</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="n">swaths</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">SingleCellSwathsOrderBase</span><span class="p">();</span><span class="w"></span>
-
-<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">genSortedSwaths</span><span class="p">();</span><span class="w"></span>
-
-<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setSwaths</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="n">swaths</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getSwaths</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">swaths_</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setCounter</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">new_count</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="n">counter_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_count</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="w"> </span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="n">swaths</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">variant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 
 <span class="w"> </span><span class="k">protected</span><span class="o">:</span><span class="w"></span>
-<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">sortSwaths</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">changeStartPoint</span><span class="p">();</span><span class="w"></span>
-
-<span class="w"> </span><span class="k">protected</span><span class="o">:</span><span class="w"></span>
-<span class="w">  </span><span class="n">F2CSwaths</span><span class="w"> </span><span class="n">swaths_</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">counter_</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">changeStartPoint</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="n">swaths</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">variant</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sortSwaths</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="o">&amp;</span><span class="w"> </span><span class="n">swaths</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 
 

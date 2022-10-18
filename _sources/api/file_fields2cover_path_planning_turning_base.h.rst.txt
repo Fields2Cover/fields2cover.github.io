@@ -8,6 +8,7 @@ File turning_base.h
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 .. contents:: Contents
    :local:
    :backlinks: none
@@ -29,15 +30,11 @@ Includes
 --------
 
 
-- ``fields2cover/objectives/optimization_class.h`` (:ref:`file_fields2cover_objectives_optimization_class.h`)
-
 - ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
 
 - ``fields2cover/utils/random.h`` (:ref:`file_fields2cover_utils_random.h`)
 
 - ``functional``
-
-- ``iostream``
 
 - ``limits``
 

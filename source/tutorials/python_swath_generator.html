@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -105,19 +106,20 @@ This algorithms need to define a Global objective function to search the best an
 <p>Brute force algorithm tries all the possible angles (using a step_angle) and keeps the one that produces the smallest cost of the objective function.</p>
 <p>Due to the objective function defines the best swaths, changing one objective function for another modifies the output of the algorithm.</p>
 <p>This is the output if the global cost function is the number of swaths:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bf_sw_gen_nswath</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">SG_BruteForce_NSwath</span><span class="p">();</span>
-<span class="n">swaths_bf_nswath</span> <span class="o">=</span> <span class="n">bf_sw_gen_nswath</span><span class="o">.</span><span class="n">generateBestSwaths</span><span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">op_width</span><span class="p">,</span> <span class="n">no_hl</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n_swath</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">OBJ_NSwath</span><span class="p">();</span>
+<span class="n">bf_sw_gen</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">SG_BruteForce</span><span class="p">();</span>
+<span class="n">swaths_bf_nswath</span> <span class="o">=</span> <span class="n">bf_sw_gen</span><span class="o">.</span><span class="n">generateBestSwaths</span><span class="p">(</span><span class="n">n_swath</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">op_width</span><span class="p">,</span> <span class="n">no_hl</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
 </pre></div>
 </div>
 <img alt="../../_images/Tutorial_4_1_Brute_force_NSwath.png" src="../../_images/Tutorial_4_1_Brute_force_NSwath.png" />
 <p>This is the output if the global cost function is the sum of the length of swaths:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bf_sw_gen_swathlength</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">SG_BruteForce_SwathLength</span><span class="p">();</span>
-<span class="n">swaths_bf_swathlength</span> <span class="o">=</span> <span class="n">bf_sw_gen_swathlength</span><span class="o">.</span><span class="n">generateBestSwaths</span><span class="p">(</span><span class="n">robot</span><span class="o">.</span><span class="n">op_width</span><span class="p">,</span> <span class="n">no_hl</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">swath_length</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">OBJ_SwathLength</span><span class="p">();</span>
+<span class="n">swaths_bf_swathlength</span> <span class="o">=</span> <span class="n">bf_sw_gen</span><span class="o">.</span><span class="n">generateBestSwaths</span><span class="p">(</span><span class="n">swath_length</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">op_width</span><span class="p">,</span> <span class="n">no_hl</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
 </pre></div>
 </div>
 <img alt="../../_images/Tutorial_4_1_Brute_force_SwathLength.png" src="../../_images/Tutorial_4_1_Brute_force_SwathLength.png" />
 <p>Of course, you can also create swaths with a custom angle:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">swaths_bf_angle</span> <span class="o">=</span> <span class="n">bf_sw_gen_swathlength</span><span class="o">.</span><span class="n">generateSwaths</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">op_width</span><span class="p">,</span> <span class="n">no_hl</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">swaths_bf_angle</span> <span class="o">=</span> <span class="n">bf_sw_gen</span><span class="o">.</span><span class="n">generateSwaths</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">op_width</span><span class="p">,</span> <span class="n">no_hl</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
 </pre></div>
 </div>
 <img alt="../../_images/Tutorial_4_1_Brute_force_Angle.png" src="../../_images/Tutorial_4_1_Brute_force_Angle.png" />

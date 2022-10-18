@@ -8,6 +8,7 @@ File brute_force.h
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 .. contents:: Contents
    :local:
    :backlinks: none
@@ -28,8 +29,6 @@ Definition (``fields2cover/swath_generator/brute_force.h``)
 Includes
 --------
 
-
-- ``fields2cover/swath_generator/brute_force_impl.hpp``
 
 - ``fields2cover/swath_generator/swath_generator_base.h`` (:ref:`file_fields2cover_swath_generator_swath_generator_base.h`)
 

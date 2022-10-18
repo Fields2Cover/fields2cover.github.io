@@ -8,6 +8,7 @@ File single_cell_swaths_order_base.h
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 .. contents:: Contents
    :local:
    :backlinks: none
@@ -38,6 +39,8 @@ Included By
 
 
 - :ref:`file_fields2cover_route_planning_boustrophedon_order.h`
+
+- :ref:`file_fields2cover_route_planning_custom_order.h`
 
 - :ref:`file_fields2cover_route_planning_snake_order.h`
 

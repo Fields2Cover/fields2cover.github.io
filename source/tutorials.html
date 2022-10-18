@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -120,16 +121,24 @@ However, the software architecture is prepared to be extended to more complex si
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/objective_functions.html">Part 2: Objective functions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/objective_functions.html#global-objective-functions">Global objective functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/objective_functions.html#hg-objective-functions">HG objective functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/objective_functions.html#remaining-area">Remaining area</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/objective_functions.html#sg-objective-functions">SG objective functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/objective_functions.html#field-coverage">Field coverage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/objective_functions.html#number-of-swaths">Number of swaths</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/objective_functions.html#overlap">Overlap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/objective_functions.html#swath-length">Swath Length</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/objective_functions.html#path-objective-functions">Path objective functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/objective_functions.html#rp-objective-functions">RP objective functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/objective_functions.html#distance-with-turns">Distance with turns</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/objective_functions.html#direct-distance-without-turns">Direct distance without turns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/objective_functions.html#pp-objective-functions">PP objective functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/objective_functions.html#path-length">Path length</a></li>
 </ul>
 </li>
 </ul>
@@ -146,6 +155,7 @@ However, the software architecture is prepared to be extended to more complex si
 <li class="toctree-l2"><a class="reference internal" href="tutorials/route_planning.html#boustrophedon-order">Boustrophedon order</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/route_planning.html#snake-order">Snake order</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/route_planning.html#spiral-order">Spiral order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/route_planning.html#custom-order">Custom order</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/path_planning.html">Part 6: Path planning</a><ul>
@@ -176,16 +186,24 @@ However, the software architecture is prepared to be extended to more complex si
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/python_objective_functions.html">Part 2: Objective functions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/python_objective_functions.html#global-objective-functions">Global objective functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_objective_functions.html#hg-objective-functions">HG objective functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html#remaining-area">Remaining area</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_objective_functions.html#sg-objective-functions">SG objective functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html#field-coverage">Field coverage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html#number-of-swaths">Number of swaths</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html#overlap">Overlap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html#swath-length">Swath Length</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/python_objective_functions.html#path-objective-functions">Path objective functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_objective_functions.html#rp-objective-functions">RP objective functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html#distance-with-turns">Distance with turns</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html#direct-distance-without-turns">Direct distance without turns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_objective_functions.html#pp-objective-functions">PP objective functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/python_objective_functions.html#path-length">Path length</a></li>
 </ul>
 </li>
 </ul>
@@ -202,6 +220,7 @@ However, the software architecture is prepared to be extended to more complex si
 <li class="toctree-l2"><a class="reference internal" href="tutorials/python_route_planning.html#boustrophedon-order">Boustrophedon order</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/python_route_planning.html#snake-order">Snake order</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/python_route_planning.html#spiral-order">Spiral order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/python_route_planning.html#custom-order">Custom order</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/python_path_planning.html">Part 6: Path planning</a><ul>

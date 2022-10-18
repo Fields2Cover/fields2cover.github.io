@@ -1,0 +1,14 @@
+.. _exhale_define_rem__area_8h_1ab1497460a8314b90bd7e713dec3ab034:
+
+Define FIELDS2COVER_OBJECTIVES_REM_AREA_H_
+==========================================
+
+- Defined in :ref:`file_fields2cover_objectives_rem_area.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: FIELDS2COVER_OBJECTIVES_REM_AREA_H_
+   :project: Fields2Cover

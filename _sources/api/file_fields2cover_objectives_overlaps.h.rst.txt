@@ -8,6 +8,7 @@ File overlaps.h
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 .. contents:: Contents
    :local:
    :backlinks: none
@@ -29,7 +30,7 @@ Includes
 --------
 
 
-- ``fields2cover/objectives/global_objective.h`` (:ref:`file_fields2cover_objectives_global_objective.h`)
+- ``fields2cover/objectives/sg_objective.h`` (:ref:`file_fields2cover_objectives_sg_objective.h`)
 
 - ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
 

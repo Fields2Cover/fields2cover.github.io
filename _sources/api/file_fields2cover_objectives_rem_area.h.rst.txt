@@ -1,0 +1,69 @@
+
+.. _file_fields2cover_objectives_rem_area.h:
+
+File rem_area.h
+===============
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_objectives>` (``fields2cover/objectives``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``fields2cover/objectives/rem_area.h``)
+---------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_fields2cover_objectives_rem_area.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``fields2cover/objectives/hg_objective.h`` (:ref:`file_fields2cover_objectives_hg_objective.h`)
+
+- ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_fields2cover.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_f2c`
+
+- :ref:`namespace_f2c__obj`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classf2c_1_1obj_1_1RemArea`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_rem__area_8h_1ab1497460a8314b90bd7e713dec3ab034`
+

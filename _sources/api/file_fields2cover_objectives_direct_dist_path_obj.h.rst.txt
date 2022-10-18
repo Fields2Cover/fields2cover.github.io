@@ -8,6 +8,7 @@ File direct_dist_path_obj.h
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 .. contents:: Contents
    :local:
    :backlinks: none
@@ -29,7 +30,7 @@ Includes
 --------
 
 
-- ``fields2cover/objectives/path_objective.h`` (:ref:`file_fields2cover_objectives_path_objective.h`)
+- ``fields2cover/objectives/rp_objective.h`` (:ref:`file_fields2cover_objectives_rp_objective.h`)
 
 - ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
 

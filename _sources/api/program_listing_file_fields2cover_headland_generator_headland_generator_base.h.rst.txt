@@ -21,15 +21,10 @@ Program Listing for File headland_generator_base.h
    #define FIELDS2COVER_HEADLAND_GENERATOR_HEADLAND_GENERATOR_BASE_H_
    
    #include "fields2cover/types.h"
-   #include "fields2cover/objectives/optimization_class.h"
    
    namespace f2c::hg {
    
-   template <typename T>
-   class HeadlandGeneratorBase : public obj::OptimizationClass<T> {
-    public:
-     virtual ~HeadlandGeneratorBase() = default;
-   
+   class HeadlandGeneratorBase {
     public:
      virtual F2CCells generateHeadlands(const F2CCells& field,
          double dist_headland) = 0;

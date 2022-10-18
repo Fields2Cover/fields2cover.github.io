@@ -73,27 +73,17 @@ Program Listing for File Geometry.h
      template <class T2, OGRwkbGeometryType R2>
      bool Disjoint(const Geometry<T2, R2>& geom) const;
    
-     bool Disjoint(const OGRGeometry* geom) const;
-   
      template <class T2, OGRwkbGeometryType R2>
      bool Crosses(const Geometry<T2, R2>& geom) const;
-   
-     bool Crosses(const OGRGeometry* geom) const;
    
      template <class T2, OGRwkbGeometryType R2>
      bool Touches(const Geometry<T2, R2>& geom) const;
    
-     bool Touches(const OGRGeometry* geom) const;
-   
      template <class T2, OGRwkbGeometryType R2>
      bool Within(const Geometry<T2, R2>& geom) const;
    
-     bool Within(const OGRGeometry* geom) const;
-   
      template <class T2, OGRwkbGeometryType R2>
      bool Intersects(const Geometry<T2, R2>& geom) const;
-   
-     bool Intersects(const OGRGeometry* geom) const;
    
      static double mod_2pi(double val);
    
@@ -117,16 +107,5 @@ Program Listing for File Geometry.h
    }  // namespace f2c::types
    
    #include "fields2cover/types/Geometry_impl.hpp"
-   
-   namespace f2c::types {
-   template struct Geometry<OGRPoint, wkbPoint>;
-   template struct Geometry<OGRMultiPoint, wkbMultiPoint>;
-   template struct Geometry<OGRLinearRing, wkbLinearRing>;
-   template struct Geometry<OGRLineString, wkbLineString>;
-   template struct Geometry<OGRMultiLineString, wkbMultiLineString>;
-   template struct Geometry<OGRPolygon, wkbPolygon>;
-   template struct Geometry<OGRMultiPolygon, wkbMultiPolygon>;
-   }  // namespace f2c::types
-   
    
    #endif  // FIELDS2COVER_TYPES_GEOMETRY_H_

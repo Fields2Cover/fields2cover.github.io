@@ -1,0 +1,7 @@
+.. _page_md__home_sanson_catkin_ws_src_Fields2Cover_CHANGELOG:
+
+Changelog
+=========
+
+.. doxygenpage:: md__home_sanson_catkin_ws_src_Fields2Cover_CHANGELOG
+   :project: Fields2Cover

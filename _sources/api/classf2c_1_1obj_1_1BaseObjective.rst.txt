@@ -1,0 +1,17 @@
+.. _exhale_class_classf2c_1_1obj_1_1BaseObjective:
+
+Template Class BaseObjective
+============================
+
+- Defined in :ref:`file_fields2cover_objectives_base_objective.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: f2c::obj::BaseObjective
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

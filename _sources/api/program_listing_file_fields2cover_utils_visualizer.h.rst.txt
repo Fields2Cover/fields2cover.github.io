@@ -33,11 +33,11 @@ Program Listing for File visualizer.h
          const std::string& opts = "");
      static void plot(const F2CPath& path);
      static void plot(const F2CMultiLineString& lines);
-     static void plot(const F2CCell& cell);
+     static void plot(const F2CCell& cell, const std::string& opt = "tab:olive");
      static void plot(const F2CCells& cells);
      static void plot(const F2CSwaths& swaths);
      static void plot(const F2CSwathsByCells& swaths);
-     static void plot(const F2CSwath& swath, std::string opt = "");
+     static void plot(const F2CSwath& swath, const std::string& opt = "");
      static void plot(const F2CField& field);
      static void plot(const F2CFields& fields);
      static void plot(const F2CRobot& robot);
@@ -69,6 +69,7 @@ Program Listing for File visualizer.h
    
      static void xlim(double min, double max);
      static void ylim(double min, double max);
+     static void axis(const std::string& opt);
    
     private:
      template<class T>

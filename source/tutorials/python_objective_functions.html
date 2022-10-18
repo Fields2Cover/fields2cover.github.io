@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -46,8 +47,10 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html#python-tutorials">Python tutorials</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="python_basic_types.html">Part 1: Basic types</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Part 2: Objective functions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#global-objective-functions">Global objective functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#path-objective-functions">Path objective functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hg-objective-functions">HG objective functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sg-objective-functions">SG objective functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rp-objective-functions">RP objective functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pp-objective-functions">PP objective functions</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="python_headland_generator.html">Part 3: Headland generator</a></li>
@@ -92,10 +95,30 @@
 <p>One of the main problems in the Coverage Path Planning problem is to define the objective function.
 The objective function defines how good a path is.
 By default, the objective functions are defined as minimization problems.</p>
-<p>Fields2Cover defines two kind of objective functions: Global objective functions and path objective functions.</p>
-<div class="section" id="global-objective-functions">
-<h2>Global objective functions<a class="headerlink" href="#global-objective-functions" title="Permalink to this headline"></a></h2>
-<p>Global objective functions are objective functions where the order of the swaths are not important. This kind of objective functions are used before the route planning. Thanks to global functions, early problems as swath generation can be solved without computing the complete path in each step. Global objective functions provided are:</p>
+<p>Fields2Cover defines different objective functions for each module: HG (Headland Generator), SG (Swath Generator), RP (Route Planner) and PP (Path Planner).</p>
+<div class="section" id="hg-objective-functions">
+<h2>HG objective functions<a class="headerlink" href="#hg-objective-functions" title="Permalink to this headline"></a></h2>
+<div class="section" id="remaining-area">
+<h3>Remaining area<a class="headerlink" href="#remaining-area" title="Permalink to this headline"></a></h3>
+<p>Compute the percentage of main field over the total field. The cost is a value between [0, 1], and it is defined as a maximization problem.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total_field</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Cells</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">LinearRing</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">VectorPoint</span><span class="p">([</span>
+    <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
+    <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)]))));</span>
+<span class="n">field</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Cells</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">LinearRing</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">VectorPoint</span><span class="p">([</span>
+    <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
+    <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)]))));</span>
+
+<span class="n">rem_area</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">OBJ_RemArea</span><span class="p">();</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The remaining area is &quot;</span><span class="p">,</span>
+    <span class="n">rem_area</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">total_field</span><span class="p">,</span> <span class="n">field</span><span class="p">),</span> <span class="s2">&quot;, and with sign is &quot;</span><span class="p">,</span>
+    <span class="n">rem_area</span><span class="o">.</span><span class="n">computeCostWithMinimizingSign</span><span class="p">(</span><span class="n">total_field</span><span class="p">,</span> <span class="n">field</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><em>The remaining area is  0.25 , and with sign is  -0.25</em></p>
+</div>
+</div>
+<div class="section" id="sg-objective-functions">
+<h2>SG objective functions<a class="headerlink" href="#sg-objective-functions" title="Permalink to this headline"></a></h2>
 <div class="section" id="field-coverage">
 <h3>Field coverage<a class="headerlink" href="#field-coverage" title="Permalink to this headline"></a></h3>
 <p>Compute the percentage of the field covered by the swaths. The cost is a value between [0, 1], and it is defined as a maximization problem.</p>
@@ -111,10 +134,6 @@ By default, the objective functions are defined as minimization problems.</p>
     <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)])),</span> <span class="n">width</span><span class="p">);</span>
 <span class="n">swath3</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Swath</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">LineString</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">VectorPoint</span><span class="p">([</span>
     <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)])),</span> <span class="n">width</span><span class="p">);</span>
-
-<span class="n">field</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Cells</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">LinearRing</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">VectorPoint</span><span class="p">([</span>
-    <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
-    <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)]))));</span>
 
 <span class="n">swaths1</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Swaths</span><span class="p">();</span>
 <span class="n">swaths1</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">swath1</span><span class="p">);</span>
@@ -176,10 +195,8 @@ By default, the objective functions are defined as minimization problems.</p>
 <p><em>The swath length with swath1 is 4 and with all of the swaths 12</em></p>
 </div>
 </div>
-<div class="section" id="path-objective-functions">
-<h2>Path objective functions<a class="headerlink" href="#path-objective-functions" title="Permalink to this headline"></a></h2>
-<p>Path objective functions are those in which the order of the swaths matter.
-Those objective functions depends directly on the final path that is going to be generated.</p>
+<div class="section" id="rp-objective-functions">
+<h2>RP objective functions<a class="headerlink" href="#rp-objective-functions" title="Permalink to this headline"></a></h2>
 <div class="section" id="distance-with-turns">
 <h3>Distance with turns<a class="headerlink" href="#distance-with-turns" title="Permalink to this headline"></a></h3>
 <p>Compute the complete distance of the path, including turns. This objective function actually computes each turn needed, so we will need to define the way to compute the turns.</p>
@@ -209,6 +226,21 @@ This is faster than computing the turns and doesn’t require to provide a class
 </pre></div>
 </div>
 <p><em>The aproximated length is: 3</em></p>
+</div>
+</div>
+<div class="section" id="pp-objective-functions">
+<h2>PP objective functions<a class="headerlink" href="#pp-objective-functions" title="Permalink to this headline"></a></h2>
+<div class="section" id="path-length">
+<h3>Path length<a class="headerlink" href="#path-length" title="Permalink to this headline"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Path</span><span class="p">()</span>
+<span class="n">path</span><span class="o">.</span><span class="n">appendSwath</span><span class="p">(</span><span class="n">swaths_path</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">path</span><span class="o">.</span><span class="n">appendSwath</span><span class="p">(</span><span class="n">swaths_path</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
+
+<span class="n">path_length</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">OBJ_PathLength</span><span class="p">();</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The path length is: &quot;</span><span class="p">,</span> <span class="n">path_length</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">path</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><em>The path length is: 3</em></p>
 </div>
 </div>
 </div>

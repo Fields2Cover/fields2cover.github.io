@@ -9,20 +9,25 @@ Directory objectives
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 *Directory path:* ``fields2cover/objectives``
 
 
 Files
 -----
 
+- :ref:`file_fields2cover_objectives_base_objective.h`
 - :ref:`file_fields2cover_objectives_complete_turn_path_obj.h`
 - :ref:`file_fields2cover_objectives_direct_dist_path_obj.h`
 - :ref:`file_fields2cover_objectives_field_coverage.h`
-- :ref:`file_fields2cover_objectives_global_objective.h`
+- :ref:`file_fields2cover_objectives_hg_objective.h`
 - :ref:`file_fields2cover_objectives_n_swath.h`
-- :ref:`file_fields2cover_objectives_optimization_class.h`
 - :ref:`file_fields2cover_objectives_overlaps.h`
-- :ref:`file_fields2cover_objectives_path_objective.h`
+- :ref:`file_fields2cover_objectives_path_length.h`
+- :ref:`file_fields2cover_objectives_pp_objective.h`
+- :ref:`file_fields2cover_objectives_rem_area.h`
+- :ref:`file_fields2cover_objectives_rp_objective.h`
+- :ref:`file_fields2cover_objectives_sg_objective.h`
 - :ref:`file_fields2cover_objectives_swath_length.h`
 
 

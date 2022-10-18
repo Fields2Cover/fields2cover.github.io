@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -51,6 +52,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#boustrophedon-order">Boustrophedon order</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#snake-order">Snake order</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#spiral-order">Spiral order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-order">Custom order</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="path_planning.html">Part 6: Path planning</a></li>
@@ -104,7 +106,7 @@ In the next version, route planners will support metaheuristics, <code class="do
 <span class="n">f2c</span><span class="o">::</span><span class="n">hg</span><span class="o">::</span><span class="n">ConstHL</span><span class="w"> </span><span class="n">const_hl</span><span class="p">;</span><span class="w"></span>
 <span class="n">F2CCells</span><span class="w"> </span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">.</span><span class="n">generateRandField</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mf">1e4</span><span class="p">).</span><span class="n">field</span><span class="p">;</span><span class="w"></span>
 <span class="n">F2CCells</span><span class="w"> </span><span class="n">no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">const_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">robot_width</span><span class="p">);</span><span class="w"></span>
-<span class="n">f2c</span><span class="o">::</span><span class="n">sg</span><span class="o">::</span><span class="n">BruteForce</span><span class="o">&lt;</span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">NSwath</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bf</span><span class="p">;</span><span class="w"></span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">sg</span><span class="o">::</span><span class="n">BruteForce</span><span class="w"> </span><span class="n">bf</span><span class="p">;</span><span class="w"></span>
 <span class="n">F2CSwaths</span><span class="w"> </span><span class="n">swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bf</span><span class="p">.</span><span class="n">generateSwaths</span><span class="p">(</span><span class="n">M_PI</span><span class="p">,</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">op_width</span><span class="p">,</span><span class="w"> </span><span class="n">no_hl</span><span class="p">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
@@ -120,8 +122,8 @@ This pattern can have 4 results on the same field, depending on the start point.
 <p>With the next code, swaths are order as the first image.
 Calling again <code class="docutils literal notranslate"><span class="pre">genSortedSwaths</span></code> produces the other variants.
 Once it has been called 4 times, the loop starts over.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">BoustrophedonOrder</span><span class="w"> </span><span class="nf">boustrophedon_sorter</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span><span class="w"></span>
-<span class="n">swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">boustrophedon_sorter</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">BoustrophedonOrder</span><span class="w"> </span><span class="n">boustrophedon_sorter</span><span class="p">;</span><span class="w"></span>
+<span class="n">boustrophedon_swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">boustrophedon_sorter</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <table class="docutils align-default">
@@ -143,8 +145,8 @@ Once it has been called 4 times, the loop starts over.</p>
 <h2>Snake order<a class="headerlink" href="#snake-order" title="Permalink to this headline"></a></h2>
 <p>Snake order covers the field skipping one swath each turn, and then coming back using uncovered swaths. This pattern, compared to boustrophedon, reduces the number of sharp turns.</p>
 <p>As with boustrophedon pattern, snake pattern also has 4 variants:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">SnakeOrder</span><span class="w"> </span><span class="nf">snake_sorter</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span><span class="w"></span>
-<span class="n">swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">snake_sorter</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">SnakeOrder</span><span class="w"> </span><span class="n">snake_sorter</span><span class="p">;</span><span class="w"></span>
+<span class="n">snake_swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">snake_sorter</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <table class="docutils align-default">
@@ -175,8 +177,8 @@ at the price of longer distance travelled between the swaths.</p>
 <p>With the spiral size of 6, the order of swaths travelled is:
 1, 6, 2, 5, 3, 4, 7, 12, 8, 11 and so on…</p>
 <p>Same as previous patterns, spiral pattern also has 4 variants:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">SpiralOrder</span><span class="w"> </span><span class="nf">spiral_sorter</span><span class="p">(</span><span class="n">swaths</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span><span class="w"></span>
-<span class="n">swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spiral_sorter</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">SpiralOrder</span><span class="w"> </span><span class="nf">spiral_sorter</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span><span class="w"></span>
+<span class="n">spiral_swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spiral_sorter</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <table class="docutils align-default">
@@ -193,6 +195,29 @@ at the price of longer distance travelled between the swaths.</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="custom-order">
+<h2>Custom order<a class="headerlink" href="#custom-order" title="Permalink to this headline"></a></h2>
+<p>To support more general approach for coverage path planning it’s possible to define
+custom order of the swaths for the path planning process.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">CustomOrder</span><span class="w"> </span><span class="nf">custom_order</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">});</span><span class="w"></span>
+<span class="n">custom_swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">custom_order</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">CustomOrder</span><span class="w"> </span><span class="n">custom_order</span><span class="p">;</span><span class="w"></span>
+<span class="n">custom_order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">custom_order</span><span class="p">.</span><span class="n">setCustomOrder</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">})</span><span class="w"></span>
+<span class="n">custom_swaths2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">custom_order</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are several checks whether the customer order can be used or not.</p>
+<ul class="simple">
+<li><p>The custom order may not contain any elements more than once</p></li>
+<li><p>The supplied list/vector length must be the same as the number of the swaths</p></li>
+<li><p>The order vector may contain only elements from the swath range: <cite>&lt;0, swaths.size() - 1&gt;</cite></p></li>
+</ul>
+</div>
 </div>
 </div>
 

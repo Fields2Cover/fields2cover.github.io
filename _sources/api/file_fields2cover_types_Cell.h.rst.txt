@@ -8,6 +8,7 @@ File Cell.h
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 .. contents:: Contents
    :local:
    :backlinks: none
@@ -52,6 +53,8 @@ Included By
 
 
 - :ref:`file_fields2cover_types_Cells.h`
+
+- :ref:`file_fields2cover_types_Strip.h`
 
 - :ref:`file_fields2cover_types_Swaths.h`
 

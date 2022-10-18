@@ -1,0 +1,33 @@
+.. _exhale_class_classf2c_1_1obj_1_1RPObjective:
+
+Class RPObjective
+=================
+
+- Defined in :ref:`file_fields2cover_objectives_rp_objective.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public f2c::obj::BaseObjective< RPObjective >`` (:ref:`exhale_class_classf2c_1_1obj_1_1BaseObjective`)
+
+
+Derived Types
+*************
+
+- ``public f2c::obj::CompleteTurnPathObj< T, R >`` (:ref:`exhale_class_classf2c_1_1obj_1_1CompleteTurnPathObj`)
+- ``public f2c::obj::DirectDistPathObj`` (:ref:`exhale_class_classf2c_1_1obj_1_1DirectDistPathObj`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: f2c::obj::RPObjective
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

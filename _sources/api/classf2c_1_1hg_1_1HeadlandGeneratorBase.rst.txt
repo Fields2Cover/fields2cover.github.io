@@ -1,7 +1,7 @@
 .. _exhale_class_classf2c_1_1hg_1_1HeadlandGeneratorBase:
 
-Template Class HeadlandGeneratorBase
-====================================
+Class HeadlandGeneratorBase
+===========================
 
 - Defined in :ref:`file_fields2cover_headland_generator_headland_generator_base.h`
 
@@ -9,10 +9,10 @@ Template Class HeadlandGeneratorBase
 Inheritance Relationships
 -------------------------
 
-Base Type
-*********
+Derived Type
+************
 
-- ``public f2c::obj::OptimizationClass< T >`` (:ref:`exhale_class_classf2c_1_1obj_1_1OptimizationClass`)
+- ``public f2c::hg::ConstHL`` (:ref:`exhale_class_classf2c_1_1hg_1_1ConstHL`)
 
 
 Class Documentation

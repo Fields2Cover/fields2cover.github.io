@@ -13,6 +13,7 @@ Derived Types
 *************
 
 - ``public f2c::rp::BoustrophedonOrder`` (:ref:`exhale_class_classf2c_1_1rp_1_1BoustrophedonOrder`)
+- ``public f2c::rp::CustomOrder`` (:ref:`exhale_class_classf2c_1_1rp_1_1CustomOrder`)
 - ``public f2c::rp::SnakeOrder`` (:ref:`exhale_class_classf2c_1_1rp_1_1SnakeOrder`)
 - ``public f2c::rp::SpiralOrder`` (:ref:`exhale_class_classf2c_1_1rp_1_1SpiralOrder`)
 

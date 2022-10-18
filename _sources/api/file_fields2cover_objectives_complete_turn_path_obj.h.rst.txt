@@ -8,6 +8,7 @@ File complete_turn_path_obj.h
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 .. contents:: Contents
    :local:
    :backlinks: none
@@ -31,7 +32,9 @@ Includes
 
 - ``fields2cover/objectives/direct_dist_path_obj.h`` (:ref:`file_fields2cover_objectives_direct_dist_path_obj.h`)
 
-- ``fields2cover/objectives/path_objective.h`` (:ref:`file_fields2cover_objectives_path_objective.h`)
+- ``fields2cover/objectives/pp_objective.h`` (:ref:`file_fields2cover_objectives_pp_objective.h`)
+
+- ``fields2cover/objectives/rp_objective.h`` (:ref:`file_fields2cover_objectives_rp_objective.h`)
 
 - ``fields2cover/path_planning/turning_base.h`` (:ref:`file_fields2cover_path_planning_turning_base.h`)
 

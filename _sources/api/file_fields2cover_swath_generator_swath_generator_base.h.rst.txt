@@ -8,6 +8,7 @@ File swath_generator_base.h
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 .. contents:: Contents
    :local:
    :backlinks: none
@@ -33,7 +34,7 @@ Includes
 
 - ``cmath``
 
-- ``fields2cover/objectives/optimization_class.h`` (:ref:`file_fields2cover_objectives_optimization_class.h`)
+- ``fields2cover/objectives/sg_objective.h`` (:ref:`file_fields2cover_objectives_sg_objective.h`)
 
 - ``fields2cover/swath_generator/swath_generator_base_impl.hpp``
 

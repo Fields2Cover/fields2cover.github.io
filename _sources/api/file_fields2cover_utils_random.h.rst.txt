@@ -8,6 +8,7 @@ File random.h
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 .. contents:: Contents
    :local:
    :backlinks: none
@@ -42,6 +43,8 @@ Includes
 - ``fields2cover/types/Point.h`` (:ref:`file_fields2cover_types_Point.h`)
 
 - ``limits``
+
+- ``random`` (:ref:`file_fields2cover_utils_random.h`)
 
 - ``time.h``
 

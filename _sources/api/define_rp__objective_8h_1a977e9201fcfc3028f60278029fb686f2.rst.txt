@@ -1,0 +1,14 @@
+.. _exhale_define_rp__objective_8h_1a977e9201fcfc3028f60278029fb686f2:
+
+Define FIELDS2COVER_OBJECTIVES_RP_OBJECTIVE_H_
+==============================================
+
+- Defined in :ref:`file_fields2cover_objectives_rp_objective.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: FIELDS2COVER_OBJECTIVES_RP_OBJECTIVE_H_
+   :project: Fields2Cover

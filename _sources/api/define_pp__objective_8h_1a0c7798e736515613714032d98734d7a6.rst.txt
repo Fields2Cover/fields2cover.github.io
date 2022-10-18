@@ -1,0 +1,14 @@
+.. _exhale_define_pp__objective_8h_1a0c7798e736515613714032d98734d7a6:
+
+Define FIELDS2COVER_OBJECTIVES_PP_OBJECTIVE_H_
+==============================================
+
+- Defined in :ref:`file_fields2cover_objectives_pp_objective.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: FIELDS2COVER_OBJECTIVES_PP_OBJECTIVE_H_
+   :project: Fields2Cover

@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -93,6 +94,7 @@
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Cell.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Cells.h&quot;</span><span class="cp"></span>
 
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Strip.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Field.h&quot;</span><span class="cp"></span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Swath.h&quot;</span><span class="cp"></span>
@@ -112,6 +114,7 @@
 <span class="k">using</span><span class="w"> </span><span class="n">F2CMultiLineString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">MultiLineString</span><span class="p">;</span><span class="w"></span>
 <span class="k">using</span><span class="w"> </span><span class="n">F2CCell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Cell</span><span class="p">;</span><span class="w"></span>
 <span class="k">using</span><span class="w"> </span><span class="n">F2CCells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Cells</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CStrip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Strip</span><span class="p">;</span><span class="w"></span>
 <span class="k">using</span><span class="w"> </span><span class="n">F2CField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Field</span><span class="p">;</span><span class="w"></span>
 <span class="k">using</span><span class="w"> </span><span class="n">F2CPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Path</span><span class="p">;</span><span class="w"></span>
 <span class="k">using</span><span class="w"> </span><span class="n">F2CRoute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Route</span><span class="p">;</span><span class="w"></span>
@@ -119,6 +122,7 @@
 <span class="k">using</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Swaths</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">using</span><span class="w"> </span><span class="n">F2CRobots</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">F2CRobot</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CStrips</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">F2CStrip</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
 <span class="k">using</span><span class="w"> </span><span class="n">F2CFields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">F2CField</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
 <span class="k">using</span><span class="w"> </span><span class="n">F2CSwathsByCells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">F2CSwaths</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
 

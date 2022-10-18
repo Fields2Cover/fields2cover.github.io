@@ -9,6 +9,7 @@ Directory types
 
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
+
 *Directory path:* ``fields2cover/types``
 
 
@@ -29,6 +30,7 @@ Files
 - :ref:`file_fields2cover_types_Point.h`
 - :ref:`file_fields2cover_types_Robot.h`
 - :ref:`file_fields2cover_types_Route.h`
+- :ref:`file_fields2cover_types_Strip.h`
 - :ref:`file_fields2cover_types_Swath.h`
 - :ref:`file_fields2cover_types_Swaths.h`
 

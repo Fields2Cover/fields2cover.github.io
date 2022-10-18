@@ -23,19 +23,16 @@ Program Listing for File overlaps.h
    #include <utility>
    #include <vector>
    #include "fields2cover/types.h"
-   #include "fields2cover/objectives/global_objective.h"
+   #include "fields2cover/objectives/sg_objective.h"
    
    namespace f2c::obj {
    
-   class Overlaps : public GlobalObjective {
+   class Overlaps : public SGObjective {
     public:
-     using GlobalObjective::computeCost;
+     using SGObjective::computeCost;
    
-     double computeCost(const F2CCell& poly, const F2CSwaths& swaths)
-       const override;
-     double computeCost(const F2CCells& poly, const F2CSwaths& swaths)
-       const override;
-     double computeCost(const F2CCells& poly) const override;
+     double computeCost(const F2CCell& poly, const F2CSwaths& swaths) override;
+     double computeCost(const F2CCells& poly, const F2CSwaths& swaths) override;
    };
    
    }  // namespace f2c::obj

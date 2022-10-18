@@ -55,6 +55,16 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_fields2cover_objectives_base_objective.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_blog_posts.md.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_fields2cover_route_planning_boustrophedon_order.h.rst
 
 .. toctree::
@@ -75,6 +85,11 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_CHANGELOG.md.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_CODE_OF_CONDUCT.md.rst
 
 .. toctree::
@@ -86,6 +101,11 @@ Files
    :maxdepth: 5
 
    file_fields2cover_headland_generator_constant_headland.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_fields2cover_route_planning_custom_order.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -130,12 +150,12 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_global_objective.h.rst
+   file_fields2cover_headland_generator_headland_generator_base.h.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_headland_generator_headland_generator_base.h.rst
+   file_fields2cover_objectives_hg_objective.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -165,11 +185,6 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_optimization_class.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
    file_fields2cover_types_OptimizationParams.h.rst
 
 .. toctree::
@@ -190,7 +205,7 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_path_objective.h.rst
+   file_fields2cover_objectives_path_length.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -201,6 +216,11 @@ Files
    :maxdepth: 5
 
    file_fields2cover_types_Point.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_fields2cover_objectives_pp_objective.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -220,12 +240,27 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_fields2cover_objectives_rem_area.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_fields2cover_types_Robot.h.rst
 
 .. toctree::
    :maxdepth: 5
 
    file_fields2cover_types_Route.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_fields2cover_objectives_rp_objective.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_fields2cover_objectives_sg_objective.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -241,6 +276,11 @@ Files
    :maxdepth: 5
 
    file_fields2cover_route_planning_spiral_order.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_fields2cover_types_Strip.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -289,4 +329,14 @@ Pages
 .. toctree::
    :maxdepth: 5
 
-   page_md__home_sanson_catkin_ws_src_public__Fields2Cover__public_CODE_OF_CONDUCT.rst
+   page_md__home_sanson_catkin_ws_src_Fields2Cover_blog_posts.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   page_md__home_sanson_catkin_ws_src_Fields2Cover_CHANGELOG.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   page_md__home_sanson_catkin_ws_src_Fields2Cover_CODE_OF_CONDUCT.rst
