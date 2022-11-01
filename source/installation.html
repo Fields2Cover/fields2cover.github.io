@@ -46,6 +46,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#compilation">Compilation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#add-it-to-your-projects">Add it to your projects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#compilation-with-python-interface">Compilation with python interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ros-compatibility">ROS Compatibility</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
@@ -99,7 +100,8 @@ If you are able to run it in other operative systems, open an issue/PR and it wi
 <h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this headline"></a></h2>
 <p>First, clone this repository.
 Then, from the main folder of the project:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd build;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir -p build;</span>
+<span class="go">cd build;</span>
 <span class="go">cmake ..;</span>
 <span class="go">make -j$(nproc);</span>
 <span class="go">sudo make install;</span>
@@ -126,6 +128,18 @@ Then, from the main folder of the project:</p>
 </div>
 <p>To test if the compilation and installation of the python interface is correct, run on python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fields2cover</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ros-compatibility">
+<h2>ROS Compatibility<a class="headerlink" href="#ros-compatibility" title="Permalink to this headline"></a></h2>
+<p>We also provide a <a class="reference external" href="https://github.com/Fields2Cover/fields2cover_ros">ROS interface</a>. On it, you can have a nice visualization of your field and the paths generated:</p>
+<a class="reference internal image-reference" href="source/docs/figures/demo_image.png"><img alt="source/docs/figures/demo_image.png" class="align-center" src="source/docs/figures/demo_image.png" style="width: 1000px;" /></a>
+<p>For being able to use the package from ROS, from <cite>catkin_ws/</cite>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/Fields2Cover/Fields2Cover src/fields2cover</span>
+<span class="go">git clone https://github.com/Fields2Cover/fields2cover_ros src/fields2cover_ros</span>
+<span class="go">rosdep install -r --ignore-src -y --from-paths .</span>
+<span class="go">catkin_make_isolated</span>
 </pre></div>
 </div>
 </div>

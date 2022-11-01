@@ -166,6 +166,8 @@ Typedefs
 
 - :ref:`exhale_typedef_types_8h_1af7dc991f0aef32bf7c216c30eb78e49f`
 
+- :ref:`exhale_typedef_types_8h_1a73736ed3d28c01ca47ae0a6b77082e41`
+
 - :ref:`exhale_typedef_types_8h_1a006486dab590664b801c8f2a1e132fab`
 
 - :ref:`exhale_typedef_types_8h_1a84ffa22c5a99fd51ad55dba5ea74f963`
