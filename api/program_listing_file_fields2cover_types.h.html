@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Program Listing for File types.h &mdash; Fields2Cover latest documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_fields2cover_types.h.html" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -58,8 +60,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Program Listing for File types.h</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File types.h</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/program_listing_file_fields2cover_types.h.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -69,7 +71,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="program-listing-for-file-types-h">
+  <section id="program-listing-for-file-types-h">
 <span id="program-listing-file-fields2cover-types-h"></span><h1>Program Listing for File types.h<a class="headerlink" href="#program-listing-for-file-types-h" title="Permalink to this headline"></a></h1>
 <p>↰ <a class="reference internal" href="file_fields2cover_types.h.html#file-fields2cover-types-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">fields2cover/types.h</span></code>)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//=============================================================================</span>
@@ -82,55 +84,55 @@
 <span class="cp">#ifndef FIELDS2COVER_TYPES_H_</span>
 <span class="cp">#define FIELDS2COVER_TYPES_H_</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gdal/ogr_geometry.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gdal/ogr_geometry.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Point.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/MultiPoint.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/LinearRing.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/LineString.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/MultiLineString.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Cell.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Cells.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Point.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/MultiPoint.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/LinearRing.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/LineString.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/MultiLineString.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Cell.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Cells.h&quot;</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Strip.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Field.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Strip.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Field.h&quot;</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Swath.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Swaths.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Route.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Path.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/OptimizationParams.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Robot.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Swath.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Swaths.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Route.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Path.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/OptimizationParams.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Robot.h&quot;</span>
 
-<span class="k">using</span><span class="w"> </span><span class="n">F2CRobot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Robot</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2COptim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">OptimizationParams</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CRobot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Robot</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2COptim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">OptimizationParams</span><span class="p">;</span>
 
-<span class="k">using</span><span class="w"> </span><span class="n">F2CPoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Point</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CMultiPoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">MultiPoint</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CLineString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">LineString</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CLinearRing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">LinearRing</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CMultiLineString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">MultiLineString</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CCell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Cell</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CCells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Cells</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CStrip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Strip</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Field</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Path</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CPathState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">PathState</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CRoute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Route</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CSwath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Swath</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Swaths</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CPoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Point</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CMultiPoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">MultiPoint</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CLineString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">LineString</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CLinearRing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">LinearRing</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CMultiLineString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">MultiLineString</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CCell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Cell</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CCells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Cells</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CStrip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Strip</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Field</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Path</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CPathState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">PathState</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CRoute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Route</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CSwath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Swath</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Swaths</span><span class="p">;</span>
 
-<span class="k">using</span><span class="w"> </span><span class="n">F2CRobots</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">F2CRobot</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CStrips</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">F2CStrip</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CFields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">F2CField</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">F2CSwathsByCells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">F2CSwaths</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CRobots</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">F2CRobot</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CStrips</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">F2CStrip</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CFields</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">F2CField</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">F2CSwathsByCells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">F2CSwaths</span><span class="o">&gt;</span><span class="p">;</span>
 
 <span class="cp">#endif  </span><span class="c1">//  FIELDS2COVER_TYPES_H_</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

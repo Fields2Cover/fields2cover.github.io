@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Part 6: Path planning &mdash; Fields2Cover latest documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/source/tutorials/python_path_planning.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -78,9 +80,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
-      <li>Part 6: Path planning</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorials.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">Part 6: Path planning</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/source/tutorials/python_path_planning.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -90,7 +92,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="part-6-path-planning">
+  <section id="part-6-path-planning">
 <h1>Part 6: Path planning<a class="headerlink" href="#part-6-path-planning" title="Permalink to this headline"></a></h1>
 <p>Lastly, time to create the final path. A good path planner will do this task.</p>
 <p>For these examples, we will continue from the previous tutorial:</p>
@@ -112,7 +114,7 @@
 <span class="n">path_planner</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">PP_PathPlanning</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="section" id="dubins-curves">
+<section id="dubins-curves">
 <h2>Dubins curves<a class="headerlink" href="#dubins-curves" title="Permalink to this headline"></a></h2>
 <p>Dubins curves are generated with 3 segments of turn. Segments of turn in Dubins are always going forward.
 Segment types are straight, right curve or left curve.</p>
@@ -122,8 +124,8 @@ Segment types are straight, right curve or left curve.</p>
 </pre></div>
 </div>
 <img alt="../../_images/Tutorial_6_1_Dubins.png" src="../../_images/Tutorial_6_1_Dubins.png" />
-</div>
-<div class="section" id="dubins-curves-with-continuous-curvature">
+</section>
+<section id="dubins-curves-with-continuous-curvature">
 <h2>Dubins curves with Continuous curvature<a class="headerlink" href="#dubins-curves-with-continuous-curvature" title="Permalink to this headline"></a></h2>
 <p>While Dubins curves produces the shortest path possible, going from one segment of the curve to another creates instant curvature change.
 A vehicle could not follow a path with this issue, so this path planner implements an integrator to change the curvature smoothly.</p>
@@ -132,8 +134,8 @@ A vehicle could not follow a path with this issue, so this path planner implemen
 </pre></div>
 </div>
 <img alt="../../_images/Tutorial_6_2_Dubins_CC.png" src="../../_images/Tutorial_6_2_Dubins_CC.png" />
-</div>
-<div class="section" id="reeds-shepp-curves">
+</section>
+<section id="reeds-shepp-curves">
 <h2>Reeds-Shepp curves<a class="headerlink" href="#reeds-shepp-curves" title="Permalink to this headline"></a></h2>
 <p>Reeds-Shepp curves also computes the shortest path, but allowing the vehicle to go backwards.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reeds_shepp</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">PP_ReedsSheppCurves</span><span class="p">();</span>
@@ -141,8 +143,8 @@ A vehicle could not follow a path with this issue, so this path planner implemen
 </pre></div>
 </div>
 <img alt="../../_images/Tutorial_6_3_Reeds_Shepp.png" src="../../_images/Tutorial_6_3_Reeds_Shepp.png" />
-</div>
-<div class="section" id="reeds-shepp-curves-with-continuous-curvature">
+</section>
+<section id="reeds-shepp-curves-with-continuous-curvature">
 <h2>Reeds-Shepp curves with Continuous curvature<a class="headerlink" href="#reeds-shepp-curves-with-continuous-curvature" title="Permalink to this headline"></a></h2>
 <p>As with Dubins, instantaneous curvature change is a problem in this kind of curves.
 This planner has an integrator to smooth the path.</p>
@@ -151,8 +153,8 @@ This planner has an integrator to smooth the path.</p>
 </pre></div>
 </div>
 <img alt="../../_images/Tutorial_6_4_Reeds_Shepp_HC.png" src="../../_images/Tutorial_6_4_Reeds_Shepp_HC.png" />
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

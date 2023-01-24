@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Part 1: Basic types &mdash; Fields2Cover latest documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/source/tutorials/python_basic_types.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -84,9 +86,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
-      <li>Part 1: Basic types</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorials.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">Part 1: Basic types</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/source/tutorials/python_basic_types.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -96,13 +98,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="part-1-basic-types">
+  <section id="part-1-basic-types">
 <h1>Part 1: Basic types<a class="headerlink" href="#part-1-basic-types" title="Permalink to this headline"></a></h1>
 <p>All the tutorials assume Fields2Cover library is included as:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fields2cover</span> <span class="k">as</span> <span class="nn">f2c</span>
 </pre></div>
 </div>
-<div class="section" id="initialize-a-point">
+<section id="initialize-a-point">
 <h2>Initialize a Point<a class="headerlink" href="#initialize-a-point" title="Permalink to this headline"></a></h2>
 <p>Points are the most basic type. There are many ways to initialize a <code class="docutils literal notranslate"><span class="pre">Point</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c.Point</span></code>)</p>
 <ol class="arabic">
@@ -153,8 +155,8 @@ The components can be also read with <code class="docutils literal notranslate">
 <p><em>Point 5: Point(0, 4, 4)</em></p>
 </li>
 </ol>
-</div>
-<div class="section" id="basic-types-are-shared-pointers">
+</section>
+<section id="basic-types-are-shared-pointers">
 <h2>Basic types are shared pointers<a class="headerlink" href="#basic-types-are-shared-pointers" title="Permalink to this headline"></a></h2>
 <p>Classes derived from GDAL types, like <code class="docutils literal notranslate"><span class="pre">Point</span></code> from <code class="docutils literal notranslate"><span class="pre">OGRPoint</span></code>,
 use a compound structure of shared pointers on it.</p>
@@ -185,8 +187,8 @@ If one of the values is modified, the other value is modified as well:</p>
 <p>Despite the effect of the shared pointers on basic types is on purpouse,
 it can lead on many bugs. As developer, be aware of this effect.</p>
 </div>
-</div>
-<div class="section" id="initialize-a-linestring">
+</section>
+<section id="initialize-a-linestring">
 <h2>Initialize a LineString<a class="headerlink" href="#initialize-a-linestring" title="Permalink to this headline"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">LineString</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c.LineString</span></code>) represents a line. The ways to initialize a <code class="docutils literal notranslate"><span class="pre">LineString</span></code> are:</p>
 <ol class="arabic">
@@ -208,8 +210,8 @@ it can lead on many bugs. As developer, be aware of this effect.</p>
 <p><em>Length of line 2: 2</em></p>
 </li>
 </ol>
-</div>
-<div class="section" id="initialize-a-linearring">
+</section>
+<section id="initialize-a-linearring">
 <h2>Initialize a LinearRing<a class="headerlink" href="#initialize-a-linearring" title="Permalink to this headline"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c.LinearRing</span></code>) is a closed <code class="docutils literal notranslate"><span class="pre">LineString</span></code>.
 It can be initialized as a <code class="docutils literal notranslate"><span class="pre">LineString</span></code>:</p>
@@ -222,8 +224,8 @@ It can be initialized as a <code class="docutils literal notranslate"><span clas
 <p><em>Area of the ring: 0.5</em></p>
 </div></blockquote>
 <p>The main difference between <code class="docutils literal notranslate"><span class="pre">LineString</span></code> and <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code> is that <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code> is expected to be closed, so the area can be computed.</p>
-</div>
-<div class="section" id="initializing-other-collections">
+</section>
+<section id="initializing-other-collections">
 <h2>Initializing other collections<a class="headerlink" href="#initializing-other-collections" title="Permalink to this headline"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">MultiLineString</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c.MultiLineString</span></code>) are several <code class="docutils literal notranslate"><span class="pre">LineString</span></code>. It can be initialize as:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">MultiLineString</span><span class="p">();</span>
@@ -275,8 +277,8 @@ First <code class="docutils literal notranslate"><span class="pre">LinearRing</s
 <div class="line"><em>Points contains 3 points.</em></div>
 <div class="line"><em>Points contains 4 points.</em></div>
 </div>
-</div>
-<div class="section" id="accessing-elements-in-collections">
+</section>
+<section id="accessing-elements-in-collections">
 <h2>Accessing elements in collections<a class="headerlink" href="#accessing-elements-in-collections" title="Permalink to this headline"></a></h2>
 <p>To access each of the elements in a collection, the function <code class="docutils literal notranslate"><span class="pre">getGeometry(n)</span></code> returns the element n.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p_0</span> <span class="o">=</span> <span class="n">points</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -300,8 +302,8 @@ If you want to keep it, you have to set the geometry back with <code class="docu
 </div>
 <p>This process can be done in any of the collection types presented previously:
 <code class="docutils literal notranslate"><span class="pre">LineString</span></code>, <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiLineString</span></code>, <code class="docutils literal notranslate"><span class="pre">Cell</span></code>, <code class="docutils literal notranslate"><span class="pre">Cells</span></code> and <code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code></p>
-</div>
-<div class="section" id="robot">
+</section>
+<section id="robot">
 <h2>Robot<a class="headerlink" href="#robot" title="Permalink to this headline"></a></h2>
 <p>The vehicle to cover the field is defined as a <code class="docutils literal notranslate"><span class="pre">Robot</span></code> struct.
 To initialize it, the constructor needs the width of the robot and the width of the operation.
@@ -316,16 +318,16 @@ For example, if we have a vehicle to fertilize a field, with a width of 3 meters
 <li><p><em>linear_curv_change</em>: is the maximum change of curvature in a turn. It’s used to prevent instant changes of curvature.</p></li>
 <li><p><em>max_vel</em>: if not set, the velocity when turning is <em>cruise_speed</em>.</p></li>
 </ul>
-</div>
-<div class="section" id="swath-swaths-and-swathsbycells">
+</section>
+<section id="swath-swaths-and-swathsbycells">
 <h2>Swath, Swaths and SwathsByCells<a class="headerlink" href="#swath-swaths-and-swathsbycells" title="Permalink to this headline"></a></h2>
 <p>A swath, or AB line, is the path that uses an agricultural vehicle to cross the field. On Precision Agriculture, swaths are fixed.
 Swaths are coded in the Fields2Cover library as <code class="docutils literal notranslate"><span class="pre">Swath</span></code>.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">Swath</span></code> is defined by a <code class="docutils literal notranslate"><span class="pre">LineString</span></code>, which defines the path of the swath, and the width of the swath.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Swaths</span></code> is a collection of <code class="docutils literal notranslate"><span class="pre">Swath</span></code>. <code class="docutils literal notranslate"><span class="pre">Swaths</span></code> groups all the <code class="docutils literal notranslate"><span class="pre">Swath</span></code> on a <code class="docutils literal notranslate"><span class="pre">Cell</span></code>.
 <code class="docutils literal notranslate"><span class="pre">SwathsByCells</span></code> collects the <code class="docutils literal notranslate"><span class="pre">Swaths</span></code> for each <code class="docutils literal notranslate"><span class="pre">Cell</span></code>.</p>
-</div>
-<div class="section" id="route-and-path">
+</section>
+<section id="route-and-path">
 <h2>Route and Path<a class="headerlink" href="#route-and-path" title="Permalink to this headline"></a></h2>
 <p>Lastly, a <code class="docutils literal notranslate"><span class="pre">Route</span></code> defines a route, as a sequence of <code class="docutils literal notranslate"><span class="pre">Swaths</span></code> and <code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code>.
 The type of the <code class="docutils literal notranslate"><span class="pre">Route</span></code> points if there is an start and/or end point in the route.
@@ -339,8 +341,8 @@ With a <code class="docutils literal notranslate"><span class="pre">Path</span><
 <p class="admonition-title">Warning</p>
 <p><code class="docutils literal notranslate"><span class="pre">Route</span></code> are not used in this version of Fields2Cover</p>
 </div>
-</div>
-<div class="section" id="visualizing-fields2cover-data">
+</section>
+<section id="visualizing-fields2cover-data">
 <h2>Visualizing Fields2Cover data<a class="headerlink" href="#visualizing-fields2cover-data" title="Permalink to this headline"></a></h2>
 <p>To visualize Fields2Cover data, the library provides the class <code class="docutils literal notranslate"><span class="pre">f2c::Visualizer</span></code> to easily plot it.</p>
 <p>First, you can define your figure id with:</p>
@@ -362,8 +364,8 @@ Then, draw the data using that figure as:</p>
 </div>
 <p>The result should be an image as:</p>
 <img alt="../../_images/Tutorial_image_1_9.png" src="../../_images/Tutorial_image_1_9.png" />
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

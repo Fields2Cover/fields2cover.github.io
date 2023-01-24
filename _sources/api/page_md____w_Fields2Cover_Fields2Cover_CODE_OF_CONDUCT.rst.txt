@@ -1,0 +1,7 @@
+.. _page_md____w_Fields2Cover_Fields2Cover_CODE_OF_CONDUCT:
+
+Contributor Covenant Code of Conduct
+====================================
+
+.. doxygenpage:: md____w_Fields2Cover_Fields2Cover_CODE_OF_CONDUCT
+   :project: Fields2Cover

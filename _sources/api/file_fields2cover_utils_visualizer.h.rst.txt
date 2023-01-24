@@ -34,6 +34,8 @@ Includes
 
 - ``string``
 
+- ``type_traits``
+
 - ``vector``
 
 

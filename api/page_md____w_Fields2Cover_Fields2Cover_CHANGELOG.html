@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>blog_posts &mdash; Fields2Cover latest documentation</title>
+  <title>Changelog &mdash; Fields2Cover latest documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/page_md____w_Fields2Cover_Fields2Cover_CHANGELOG.html" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -58,10 +60,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>blog_posts</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Changelog</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/api/page_md__home_sanson_catkin_ws_src_Fields2Cover_blog_posts.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/page_md____w_Fields2Cover_Fields2Cover_CHANGELOG.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -69,21 +71,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="blog-posts">
-<span id="page-md-home-sanson-catkin-ws-src-fields2cover-blog-posts"></span><h1>blog_posts<a class="headerlink" href="#blog-posts" title="Permalink to this headline"></a></h1>
+  <section id="changelog">
+<span id="page-md-w-fields2cover-fields2cover-changelog"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline"></a></h1>
 <dl>
 <dt class="sig sig-object cpp">
-<span class="target" id="md__home_sanson_catkin_ws_src_Fields2Cover_blog_posts"></span><em><span class="pre">page</span></em> <span class="sig-name descname"><span class="pre">md__home_sanson_catkin_ws_src_Fields2Cover_blog_posts</span></span></dt>
-<dd><p>Link to blog posts about Fields2Cover:</p>
+<span class="target" id="md____w_Fields2Cover_Fields2Cover_CHANGELOG"></span><em><span class="pre">page</span></em> <span class="sig-name descname"><span class="pre">md____w_Fields2Cover_Fields2Cover_CHANGELOG</span></span></dt>
+<dd><p>All notable changes to this project will be documented in this file.</p>
+<p>The format is based on <a class="reference external" href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>, and this project adheres to <a class="reference external" href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<p><em>[1.2.0] - 17-10-2022</em></p>
+<p><em>Added</em></p>
 <p><ul class="simple">
-<li></li>
+<li><p>Tests to do cover &lt; 90% functions</p></li>
 </ul>
 </p>
-<p>
- Links should have the format: <em>- www.blog.com/playing-with-fields2cover (date with format dd/mm/yyyy) </em></p>
+<p><em>Changes</em></p>
+<p><ul class="simple">
+<li><p>SG use the objective function as a parameter instead of a template.</p></li>
+<li><p>RP do not save the swaths and modify them using the functions provided</p></li>
+<li><p>PP do not save the robot and use the robot params with a param on the function.</p></li>
+</ul>
+</p>
+<p><em>Changes</em></p>
+<p><ul class="simple">
+<li><p>Objectives are split for each of the modules.</p></li>
+<li><p>Global objective renamed to SG objective.</p></li>
+<li><p>Path objective renamed to RP objective.</p></li>
+</ul>
+</p>
+<p><em>Added</em></p>
+<p><ul class="simple">
+<li><p>PP objective</p></li>
+<li><p>HL objective</p></li>
+</ul>
+</p>
+<p><em>[1.1.0]</em></p>
+<p><em>Added</em></p>
+<p><ul class="simple">
+<li><p>On HL module: constant headland algorithm.</p></li>
+<li><p>On SG module: brute force algorithm.</p></li>
+<li><p>On RP module: Boustrophedon, custom, snake and spiral.</p></li>
+<li><p>On PP module: Dubins and Reeds-Sheep with/without continuous curvature.</p></li>
+<li><p>Objective functions are split between global and path cost functions. </p></li>
+</ul>
+</p>
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>

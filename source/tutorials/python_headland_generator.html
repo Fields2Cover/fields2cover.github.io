@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Part 3: Headland generator &mdash; Fields2Cover latest documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/source/tutorials/python_headland_generator.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -75,9 +77,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
-      <li>Part 3: Headland generator</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorials.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">Part 3: Headland generator</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/source/tutorials/python_headland_generator.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,7 +89,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="part-3-headland-generator">
+  <section id="part-3-headland-generator">
 <h1>Part 3: Headland generator<a class="headerlink" href="#part-3-headland-generator" title="Permalink to this headline"></a></h1>
 <p>Agricultural vehicles need space to turn between swaths. This area is called a headland.
 In Fields2Cover, the headland generator will take a <code class="docutils literal notranslate"><span class="pre">Cells</span></code> and the width of the headland as input, and it will return another <code class="docutils literal notranslate"><span class="pre">`F2CCells`</span></code> of the same field without the headlands.</p>
@@ -98,7 +100,7 @@ In Fields2Cover, the headland generator will take a <code class="docutils litera
 <span class="n">robot</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">26.0</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="section" id="constant-width-headland">
+<section id="constant-width-headland">
 <h2>Constant width headland<a class="headerlink" href="#constant-width-headland" title="Permalink to this headline"></a></h2>
 <p>This class creates a constant headland around the field.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">const_hl</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">HG_Const_gen</span><span class="p">();</span>
@@ -110,8 +112,8 @@ In Fields2Cover, the headland generator will take a <code class="docutils litera
 <p><em>The complete area is 10000, and the area without headlands is 7676.63</em></p>
 <img alt="../../_images/Tutorial_3_1_Const_width.png" src="../../_images/Tutorial_3_1_Const_width.png" />
 <p>On orange it is <code class="docutils literal notranslate"><span class="pre">cells</span></code> and in green it is <code class="docutils literal notranslate"><span class="pre">no_hl</span></code></p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

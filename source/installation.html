@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Installation &mdash; Fields2Cover latest documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/source/installation.html" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -67,8 +69,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Installation</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/source/installation.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -78,25 +80,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="installation">
+  <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
-<p>The Fields2Cover package has only been tested on Ubuntu 20.04.
+<p>The Fields2Cover package has only been tested on Ubuntu 18.04, 20.04 and 22.04.
 If you are able to run it in other operative systems, open an issue/PR and it will be added to this guide</p>
-<div class="section" id="requirements-on-linux">
+<section id="requirements-on-linux">
 <h2>Requirements on Linux<a class="headerlink" href="#requirements-on-linux" title="Permalink to this headline"></a></h2>
 <p>Some packages are needed before compiling the package:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo apt-get -y update</span>
-<span class="go">sudo apt-get install -y --no-install-recommends software-properties-common</span>
-<span class="go">sudo add-apt-repository -y ppa:ubuntugis/ppa</span>
-<span class="go">sudo apt-get -y update</span>
-<span class="go">sudo apt-get install -y --no-install-recommends build-essential ca-certificates cmake \</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>if your OS is Ubuntu 18.04 or 20.04, you would need to do <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">add-apt-repository</span> <span class="pre">ppa:ubuntugis/ppa</span></code></p>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo apt-get update</span>
+<span class="go">sudo apt-get install --no-install-recommends software-properties-common</span>
+<span class="go">sudo apt-get install --no-install-recommends build-essential ca-certificates cmake \</span>
 <span class="go">     doxygen g++ git libeigen3-dev libgdal-dev libpython3-dev python3 python3-pip \</span>
 <span class="go">     python3-matplotlib python3-tk lcov libgtest-dev libtbb-dev swig</span>
 <span class="go">python3 -m pip install gcovr</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="compilation">
+</section>
+<section id="compilation">
 <h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this headline"></a></h2>
 <p>First, clone this repository.
 Then, from the main folder of the project:</p>
@@ -107,16 +111,16 @@ Then, from the main folder of the project:</p>
 <span class="go">sudo make install;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="add-it-to-your-projects">
+</section>
+<section id="add-it-to-your-projects">
 <h2>Add it to your projects<a class="headerlink" href="#add-it-to-your-projects" title="Permalink to this headline"></a></h2>
 <p>To add Fields2Cover into your CMakeLists.txt, it is as easy as:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">find_package(Fields2Cover REQUIRED)</span>
 <span class="go">target_link_libraries(&lt;&lt;&lt;your_package&gt;&gt;&gt; Fields2Cover)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="compilation-with-python-interface">
+</section>
+<section id="compilation-with-python-interface">
 <h2>Compilation with python interface<a class="headerlink" href="#compilation-with-python-interface" title="Permalink to this headline"></a></h2>
 <p>As without the interface, clone this repository.
 Then, from the main folder of the project:</p>
@@ -130,20 +134,20 @@ Then, from the main folder of the project:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fields2cover</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="ros-compatibility">
+</section>
+<section id="ros-compatibility">
 <h2>ROS Compatibility<a class="headerlink" href="#ros-compatibility" title="Permalink to this headline"></a></h2>
 <p>We also provide a <a class="reference external" href="https://github.com/Fields2Cover/fields2cover_ros">ROS interface</a>. On it, you can have a nice visualization of your field and the paths generated:</p>
 <a class="reference internal image-reference" href="../_images/demo_image.png"><img alt="../_images/demo_image.png" class="align-center" src="../_images/demo_image.png" style="width: 1000px;" /></a>
 <p>For being able to use the package from ROS, from <cite>catkin_ws/</cite>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/Fields2Cover/Fields2Cover src/fields2cover</span>
 <span class="go">git clone https://github.com/Fields2Cover/fields2cover_ros src/fields2cover_ros</span>
-<span class="go">rosdep install -r --ignore-src -y --from-paths .</span>
+<span class="go">rosdep install -r --ignore-src --from-paths .</span>
 <span class="go">catkin_make_isolated</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Part 2: Objective functions &mdash; Fields2Cover latest documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/source/tutorials/objective_functions.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -78,9 +80,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
-      <li>Part 2: Objective functions</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorials.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">Part 2: Objective functions</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/source/tutorials/objective_functions.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -90,76 +92,76 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="part-2-objective-functions">
+  <section id="part-2-objective-functions">
 <h1>Part 2: Objective functions<a class="headerlink" href="#part-2-objective-functions" title="Permalink to this headline"></a></h1>
 <p>One of the main problems in the Coverage Path Planning problem is to define the objective function.
 The objective function defines how good a path is.
 By default, the objective functions are defined as minimization problems.</p>
 <p>Fields2Cover defines different objective functions for each module: HG (Headland Generator), SG (Swath Generator), RP (Route Planner) and PP (Path Planner).</p>
-<div class="section" id="hg-objective-functions">
+<section id="hg-objective-functions">
 <h2>HG objective functions<a class="headerlink" href="#hg-objective-functions" title="Permalink to this headline"></a></h2>
-<div class="section" id="remaining-area">
+<section id="remaining-area">
 <h3>Remaining area<a class="headerlink" href="#remaining-area" title="Permalink to this headline"></a></h3>
 <p>Compute the percentage of main field over the total field. The cost is a value between [0, 1], and it is defined as a maximization problem.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CCells</span><span class="w"> </span><span class="nf">total_field</span><span class="p">(</span><span class="n">F2CCell</span><span class="p">(</span><span class="n">F2CLinearRing</span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="p">{</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">-2</span><span class="p">,</span><span class="mi">-2</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">-2</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">-2</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">-2</span><span class="p">,</span><span class="mi">-2</span><span class="p">)})));</span><span class="w"></span>
-<span class="n">F2CCells</span><span class="w"> </span><span class="nf">field</span><span class="p">(</span><span class="n">F2CCell</span><span class="p">(</span><span class="n">F2CLinearRing</span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="p">{</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)})));</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CCells</span><span class="w"> </span><span class="nf">total_field</span><span class="p">(</span><span class="n">F2CCell</span><span class="p">(</span><span class="n">F2CLinearRing</span><span class="p">(</span>
+<span class="w">  </span><span class="p">{</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">-2</span><span class="p">,</span><span class="mi">-2</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">-2</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">-2</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">-2</span><span class="p">,</span><span class="mi">-2</span><span class="p">)})));</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="nf">field</span><span class="p">(</span><span class="n">F2CCell</span><span class="p">(</span><span class="n">F2CLinearRing</span><span class="p">(</span>
+<span class="w">  </span><span class="p">{</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)})));</span>
 
 
-<span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">RemArea</span><span class="w"> </span><span class="n">rem_area</span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The remaining area is &quot;</span><span class="w"></span>
-<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rem_area</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">total_field</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The remaining area with sign is &quot;</span><span class="w"></span>
-<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rem_area</span><span class="p">.</span><span class="n">computeCostWithMinimizingSign</span><span class="p">(</span><span class="n">total_field</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">RemArea</span><span class="w"> </span><span class="n">rem_area</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The remaining area is &quot;</span>
+<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rem_area</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">total_field</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The remaining area with sign is &quot;</span>
+<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rem_area</span><span class="p">.</span><span class="n">computeCostWithMinimizingSign</span><span class="p">(</span><span class="n">total_field</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line"><em>The remaining area is 0.25</em></div>
 <div class="line"><em>The remaining area with sign is: -0.25</em></div>
 </div>
-</div>
-</div>
-<div class="section" id="sg-objective-functions">
+</section>
+</section>
+<section id="sg-objective-functions">
 <h2>SG objective functions<a class="headerlink" href="#sg-objective-functions" title="Permalink to this headline"></a></h2>
-<div class="section" id="field-coverage">
+<section id="field-coverage">
 <h3>Field coverage<a class="headerlink" href="#field-coverage" title="Permalink to this headline"></a></h3>
 <p>Compute the percentage of the field covered by the swaths. The cost is a value between [0, 1], and it is defined as a maximization problem.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Right now, it only works with same width swaths.</p>
 </div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="p">{</span><span class="mf">2.0</span><span class="p">};</span><span class="w"></span>
-<span class="n">F2CSwath</span><span class="w"> </span><span class="nf">swath1</span><span class="p">(</span><span class="n">F2CLineString</span><span class="p">({</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)}),</span><span class="w"> </span><span class="n">width</span><span class="p">);</span><span class="w"></span>
-<span class="n">F2CSwath</span><span class="w"> </span><span class="nf">swath2</span><span class="p">(</span><span class="n">F2CLineString</span><span class="p">({</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">)}),</span><span class="w"> </span><span class="n">width</span><span class="p">);</span><span class="w"></span>
-<span class="n">F2CSwath</span><span class="w"> </span><span class="nf">swath3</span><span class="p">(</span><span class="n">F2CLineString</span><span class="p">({</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">)}),</span><span class="w"> </span><span class="n">width</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="p">{</span><span class="mf">2.0</span><span class="p">};</span>
+<span class="n">F2CSwath</span><span class="w"> </span><span class="nf">swath1</span><span class="p">(</span><span class="n">F2CLineString</span><span class="p">({</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)}),</span><span class="w"> </span><span class="n">width</span><span class="p">);</span>
+<span class="n">F2CSwath</span><span class="w"> </span><span class="nf">swath2</span><span class="p">(</span><span class="n">F2CLineString</span><span class="p">({</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">)}),</span><span class="w"> </span><span class="n">width</span><span class="p">);</span>
+<span class="n">F2CSwath</span><span class="w"> </span><span class="nf">swath3</span><span class="p">(</span><span class="n">F2CLineString</span><span class="p">({</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">)}),</span><span class="w"> </span><span class="n">width</span><span class="p">);</span>
 
-<span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">FieldCoverage</span><span class="w"> </span><span class="n">field_cov</span><span class="p">;</span><span class="w"></span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">FieldCoverage</span><span class="w"> </span><span class="n">field_cov</span><span class="p">;</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The field coverage with swath1 is &quot;</span><span class="w"></span>
-<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">field_cov</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; and with all of the swaths &quot;</span><span class="w"></span>
-<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">field_cov</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The field coverage with swath1 is &quot;</span>
+<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">field_cov</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; and with all of the swaths &quot;</span>
+<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">field_cov</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line"><em>The field coverage with swath1 is 0.5 and with all of the swaths 1</em></div>
 </div>
 <p>If you want to create an algorithm that reduce the objective function, use <code class="docutils literal notranslate"><span class="pre">computeCostWithMinimizingSign()</span></code> function instead, as it consider if it is a maximization or minimization problem:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The field coverage with sign for all of the swaths is &quot;</span><span class="w"></span>
-<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">field_cov</span><span class="p">.</span><span class="n">computeCostWithMinimizingSign</span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The field coverage with sign for all of the swaths is &quot;</span>
+<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">field_cov</span><span class="p">.</span><span class="n">computeCostWithMinimizingSign</span><span class="p">(</span>
+<span class="w">  </span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><em>The field coverage with sign for all of the swaths is -1</em></p>
-</div>
-<div class="section" id="number-of-swaths">
+</section>
+<section id="number-of-swaths">
 <h3>Number of swaths<a class="headerlink" href="#number-of-swaths" title="Permalink to this headline"></a></h3>
 <p>Compute the number of swaths needed to cover the field. The idea is the slowest part of covering a field is turning between swaths. If the number of swaths are reduced, the number of turns too, and consequently, the time needed to cover the field.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">NSwath</span><span class="w"> </span><span class="n">n_swaths</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">NSwath</span><span class="w"> </span><span class="n">n_swaths</span><span class="p">;</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The number of swaths with swath1 is &quot;</span><span class="w"></span>
-<span class="w">   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n_swaths</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; and with all of the swaths &quot;</span><span class="w"></span>
-<span class="w">   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n_swaths</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The number of swaths with swath1 is &quot;</span>
+<span class="w">   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n_swaths</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; and with all of the swaths &quot;</span>
+<span class="w">   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n_swaths</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><em>The number of swaths with swath1 is 1 and with all of the swaths 3</em></p>
@@ -167,83 +169,83 @@ By default, the objective functions are defined as minimization problems.</p>
 <p class="admonition-title">Note</p>
 <p>As the number of swaths do not depend on the field, the parameter can be omitted.</p>
 </div>
-</div>
-<div class="section" id="overlap">
+</section>
+<section id="overlap">
 <h3>Overlap<a class="headerlink" href="#overlap" title="Permalink to this headline"></a></h3>
 <p>Compute percentage of the overlapping area in relation with the area of the field.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">Overlaps</span><span class="w"> </span><span class="n">overlaps</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">Overlaps</span><span class="w"> </span><span class="n">overlaps</span><span class="p">;</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The field overlapping with swath1 is &quot;</span><span class="w"></span>
-<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">overlaps</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; and with all of the swaths &quot;</span><span class="w"></span>
-<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">overlaps</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The field overlapping with swath1 is &quot;</span>
+<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">overlaps</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; and with all of the swaths &quot;</span>
+<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">overlaps</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><em>The field overlapping with swath1 is 0 and with all of the swaths 0.5</em></p>
-</div>
-<div class="section" id="swath-length">
+</section>
+<section id="swath-length">
 <h3>Swath Length<a class="headerlink" href="#swath-length" title="Permalink to this headline"></a></h3>
 <p>Compute the sum of the path length of each swath.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">SwathLength</span><span class="w"> </span><span class="n">swath_length</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">SwathLength</span><span class="w"> </span><span class="n">swath_length</span><span class="p">;</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The swath length with swath1 is &quot;</span><span class="w"></span>
-<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">swath_length</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; and with all of the swaths &quot;</span><span class="w"></span>
-<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">swath_length</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The swath length with swath1 is &quot;</span>
+<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">swath_length</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; and with all of the swaths &quot;</span>
+<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">swath_length</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><em>The swath length with swath1 is 4 and with all of the swaths 12</em></p>
-</div>
-</div>
-<div class="section" id="rp-objective-functions">
+</section>
+</section>
+<section id="rp-objective-functions">
 <h2>RP objective functions<a class="headerlink" href="#rp-objective-functions" title="Permalink to this headline"></a></h2>
-<div class="section" id="distance-with-turns">
+<section id="distance-with-turns">
 <h3>Distance with turns<a class="headerlink" href="#distance-with-turns" title="Permalink to this headline"></a></h3>
 <p>Compute the complete distance of the path, including turns. This objective function actually computes each turn needed, so we will need to define the way to compute the turns.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">F2CSwaths</span><span class="w"> </span><span class="nf">swaths_path</span><span class="p">({</span><span class="w"></span>
-<span class="linenos"> 2</span><span class="w">  </span><span class="n">F2CSwath</span><span class="p">(</span><span class="n">F2CLineString</span><span class="p">({</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)})),</span><span class="w"></span>
-<span class="linenos"> 3</span><span class="w">  </span><span class="n">F2CSwath</span><span class="p">(</span><span class="n">F2CLineString</span><span class="p">({</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)}))});</span><span class="w"></span>
-<span class="linenos"> 4</span><span class="n">F2CRobot</span><span class="w"> </span><span class="nf">robot</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">39.0</span><span class="p">);</span><span class="w"></span>
-<span class="linenos"> 5</span><span class="n">robot</span><span class="p">.</span><span class="n">setMinRadius</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">F2CSwaths</span><span class="w"> </span><span class="nf">swaths_path</span><span class="p">({</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="n">F2CSwath</span><span class="p">(</span><span class="n">F2CLineString</span><span class="p">({</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)})),</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="n">F2CSwath</span><span class="p">(</span><span class="n">F2CLineString</span><span class="p">({</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)}))});</span>
+<span class="linenos"> 4</span><span class="n">F2CRobot</span><span class="w"> </span><span class="nf">robot</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">39.0</span><span class="p">);</span>
+<span class="linenos"> 5</span><span class="n">robot</span><span class="p">.</span><span class="n">setMinRadius</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span>
 <span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">CompleteTurnPathObj</span><span class="o">&lt;</span><span class="n">f2c</span><span class="o">::</span><span class="n">pp</span><span class="o">::</span><span class="n">DubinsCurves</span><span class="o">&gt;</span><span class="w"> </span><span class="n">complete_length</span><span class="p">(</span><span class="n">robot</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">CompleteTurnPathObj</span><span class="o">&lt;</span><span class="n">f2c</span><span class="o">::</span><span class="n">pp</span><span class="o">::</span><span class="n">DubinsCurves</span><span class="o">&gt;</span><span class="w"> </span><span class="n">complete_length</span><span class="p">(</span><span class="n">robot</span><span class="p">);</span>
 <span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The complete length is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">complete_length</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"></span>
-<span class="linenos">10</span><span class="w">  </span><span class="s">&quot; =~= &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">M_PI</span><span class="o">/</span><span class="mf">2.0</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The complete length is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">complete_length</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span>
+<span class="linenos">10</span><span class="w">  </span><span class="s">&quot; =~= &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">M_PI</span><span class="o">/</span><span class="mf">2.0</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><em>The complete length is: 3.57166 =~= 3.5708</em></p>
 <p>On line 7, we define the cost function with the class to compute the turns. In this case, <code class="docutils literal notranslate"><span class="pre">f2c::pp::DubinsCurves</span></code>.</p>
-</div>
-<div class="section" id="direct-distance-without-turns">
+</section>
+<section id="direct-distance-without-turns">
 <h3>Direct distance without turns<a class="headerlink" href="#direct-distance-without-turns" title="Permalink to this headline"></a></h3>
 <p>Compute an approximation of the distance of the path, replacing turns by straight lines.
 This is faster than computing the turns and doesn’t require to provide a class to compute the turns.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">DirectDistPathObj</span><span class="w"> </span><span class="n">direct_dist</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">DirectDistPathObj</span><span class="w"> </span><span class="n">direct_dist</span><span class="p">;</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The aproximated length is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"></span>
-<span class="w">  </span><span class="n">direct_dist</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The aproximated length is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span>
+<span class="w">  </span><span class="n">direct_dist</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><em>The aproximated length is: 3</em></p>
-</div>
-</div>
-<div class="section" id="pp-objective-functions">
+</section>
+</section>
+<section id="pp-objective-functions">
 <h2>PP objective functions<a class="headerlink" href="#pp-objective-functions" title="Permalink to this headline"></a></h2>
-<div class="section" id="path-length">
+<section id="path-length">
 <h3>Path length<a class="headerlink" href="#path-length" title="Permalink to this headline"></a></h3>
 <p>Compute the length of the path</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CPath</span><span class="w"> </span><span class="n">path</span><span class="p">;</span><span class="w"></span>
-<span class="n">path</span><span class="p">.</span><span class="n">appendSwath</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="n">path</span><span class="p">.</span><span class="n">appendSwath</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CPath</span><span class="w"> </span><span class="n">path</span><span class="p">;</span>
+<span class="n">path</span><span class="p">.</span><span class="n">appendSwath</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">path</span><span class="p">.</span><span class="n">appendSwath</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
 
-<span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">PathLength</span><span class="w"> </span><span class="n">path_length</span><span class="p">;</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The path length is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"></span>
-<span class="w">  </span><span class="n">path_length</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">PathLength</span><span class="w"> </span><span class="n">path_length</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The path length is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span>
+<span class="w">  </span><span class="n">path_length</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><em>The path length is: 3</em></p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
