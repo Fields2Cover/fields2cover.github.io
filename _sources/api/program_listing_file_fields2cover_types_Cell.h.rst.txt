@@ -11,7 +11,7 @@ Program Listing for File Cell.h
 .. code-block:: cpp
 
    //=============================================================================
-   //    Copyright (C) 2021-2022 Wageningen University - All Rights Reserved
+   //    Copyright (C) 2021-2023 Wageningen University - All Rights Reserved
    //                     Author: Gonzalo Mier
    //                           BSD-3 License
    //=============================================================================
@@ -35,7 +35,8 @@ Program Listing for File Cell.h
    template < typename... Args >
    inline std::string sstr(Args &&... args) {
      std::ostringstream sstr;
-     (sstr << std::dec << ... << args);
+     sstr << std::dec;
+     (sstr <<  ...  << args);
      return sstr.str();
    }
    
@@ -67,7 +68,11 @@ Program Listing for File Cell.h
    
      static Cell Buffer(const LineString& geom, double width);
    
+     static Cell Buffer(const LinearRing& ring, double width);
+   
      static Cell Buffer(const Point& geom, double width);
+   
+     Cell ConvexHull() const;
    
      void addRing(const LinearRing& ring);
      void addGeometry(const LinearRing& ring);

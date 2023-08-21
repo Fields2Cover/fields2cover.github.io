@@ -1,0 +1,14 @@
+.. _exhale_enum_namespacef2c_1_1types_1a2d51e58a920a3c08d60ac19440ad1249:
+
+Enum SwathType
+==============
+
+- Defined in :ref:`file_fields2cover_types_Swath.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: f2c::types::SwathType
+   :project: Fields2Cover

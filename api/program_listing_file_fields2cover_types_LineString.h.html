@@ -79,7 +79,7 @@
 <span id="program-listing-file-fields2cover-types-linestring-h"></span><h1>Program Listing for File LineString.h<a class="headerlink" href="#program-listing-for-file-linestring-h" title="Permalink to this headline"></a></h1>
 <p>↰ <a class="reference internal" href="file_fields2cover_types_LineString.h.html#file-fields2cover-types-linestring-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">fields2cover/types/LineString.h</span></code>)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//=============================================================================</span>
-<span class="c1">//    Copyright (C) 2021-2022 Wageningen University - All Rights Reserved</span>
+<span class="c1">//    Copyright (C) 2021-2023 Wageningen University - All Rights Reserved</span>
 <span class="c1">//                     Author: Gonzalo Mier</span>
 <span class="c1">//                           BSD-3 License</span>
 <span class="c1">//=============================================================================</span>
@@ -103,6 +103,7 @@
 <span class="w">  </span><span class="n">LineString</span><span class="p">();</span>
 <span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">LineString</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">LinearRing</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ring</span><span class="p">);</span>
 <span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">LineString</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">ps</span><span class="p">);</span>
+<span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">LineString</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p2</span><span class="p">);</span>
 <span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">LineString</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">ps</span><span class="p">);</span>
 
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="k">operator</span><span class="o">*=</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
@@ -125,8 +126,10 @@
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">addGeometry</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">addPoint</span><span class="p">(</span><span class="n">p</span><span class="p">);}</span>
 
 <span class="w">  </span><span class="n">Point</span><span class="w"> </span><span class="nf">StartPoint</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">startAngle</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
 <span class="w">  </span><span class="n">Point</span><span class="w"> </span><span class="nf">EndPoint</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">endAngle</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <span class="p">};</span>
 
 

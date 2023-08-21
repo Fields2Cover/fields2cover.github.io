@@ -75,6 +75,13 @@ Classes
 - :ref:`exhale_struct_structf2c_1_1types_1_1Swath`
 
 
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespacef2c_1_1types_1a2d51e58a920a3c08d60ac19440ad1249`
+
+
 Defines
 -------
 

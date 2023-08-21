@@ -162,6 +162,7 @@
 
 <span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getAngleDiffAbs</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
 
+
 <span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">exportToWkt</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
@@ -178,7 +179,25 @@
 <span class="w">  </span><span class="c1">// https://github.com/OSGeo/gdal/blob/b0aa6065a39b252cb8306e9c2e2535d6dda0fb55/port/cpl_conv.h#L397</span>
 <span class="w">  </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">To</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">From</span><span class="o">&gt;</span>
 <span class="w">  </span><span class="kr">inline</span><span class="w"> </span><span class="n">To</span><span class="w"> </span><span class="n">downCast</span><span class="p">(</span><span class="n">From</span><span class="w"> </span><span class="o">*</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="c1">// Code adapted from:</span>
+<span class="w">  </span><span class="c1">// https://github.com/OSGeo/gdal/blob/717dcc0eed252e2f78c142b1f7866e49c5511224/ogr/ogrgeometry.cpp#L4309</span>
+<span class="w">  </span><span class="n">OGRGeometry</span><span class="o">*</span><span class="w"> </span><span class="n">OGRBuffer</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">dfDist</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w"> </span><span class="k">private</span><span class="o">:</span>
+<span class="w">  </span><span class="c1">// Code extracted from:</span>
+<span class="w">  </span><span class="c1">// https://github.com/OSGeo/gdal/blob/717dcc0eed252e2f78c142b1f7866e49c5511224/ogr/ogrgeometry.cpp#L4309</span>
+<span class="w">  </span><span class="n">OGRGeometry</span><span class="o">*</span><span class="w"> </span><span class="n">BuildGeometryFromGEOS</span><span class="p">(</span>
+<span class="w">      </span><span class="n">GEOSContextHandle_t</span><span class="w"> </span><span class="n">hGEOSCtxt</span><span class="p">,</span><span class="w"> </span><span class="n">GEOSGeom</span><span class="w"> </span><span class="n">hGeosProduct</span><span class="p">,</span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">OGRGeometry</span><span class="w"> </span><span class="o">*</span><span class="n">poSelf</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">OGRGeometry</span><span class="w"> </span><span class="o">*</span><span class="n">poOtherGeom</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">// Code extracted from:</span>
+<span class="w">  </span><span class="c1">// https://github.com/OSGeo/gdal/blob/717dcc0eed252e2f78c142b1f7866e49c5511224/ogr/ogrgeometry.cpp#L4309</span>
+<span class="w">  </span><span class="n">OGRGeometry</span><span class="o">*</span><span class="w"> </span><span class="nf">OGRGeometryRebuildCurves</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">OGRGeometry</span><span class="w"> </span><span class="o">*</span><span class="n">poGeom</span><span class="p">,</span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">OGRGeometry</span><span class="w"> </span><span class="o">*</span><span class="n">poOtherGeom</span><span class="p">,</span><span class="w"> </span><span class="n">OGRGeometry</span><span class="w"> </span><span class="o">*</span><span class="n">poOGRProduct</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
 <span class="p">};</span>
+
 
 <span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c::types</span>
 
