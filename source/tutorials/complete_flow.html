@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 7: Complete flow &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/source/tutorials/complete_flow.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Part 1: Basic types" href="python_basic_types.html" />
+    <link rel="prev" title="Part 6: Path planning" href="path_planning.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html#c-tutorials">C++ tutorials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="basic_types.html">Part 1: Basic types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="objective_functions.html">Part 2: Objective functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="headland_generator.html">Part 3: Headland generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swath_generator.html">Part 4: Swath generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="route_planning.html">Part 5: Route planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="path_planning.html">Part 6: Path planning</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Part 7: Complete flow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#import-a-field">Import a field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transform-to-utm">Transform to UTM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-path">Create path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#move-the-path-back-to-previous-crs">Move the path back to previous CRS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#python-tutorials">Python tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorials.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">Part 7: Complete flow</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/source/tutorials/complete_flow.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="part-7-complete-flow">
+<h1>Part 7: Complete flow<a class="headerlink" href="#part-7-complete-flow" title="Permalink to this headline"></a></h1>
+<p>Usually, field shapes are not saved in code as a ‘F2CField’ in a local system,
+but as a file in a custom Coordinate Reference System (CRS).
+Working with them in Fields2Cover is also possible.</p>
+<p>For this tutorial, we will assume that the variable ‘DATA_PATH’ exists and contains the direction to the data folder.</p>
+<section id="import-a-field">
+<h2>Import a field<a class="headerlink" href="#import-a-field" title="Permalink to this headline"></a></h2>
+<p>To import a field from a xml file, we can do:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CField</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">Parser</span><span class="o">::</span><span class="n">importFieldGml</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">DATA_PATH</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;test1.xml&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>‘F2CField’ constructor splits the data of the boundary of the field between a ‘F2CPoint’ used as a reference point and a ‘F2CCells’ with the boundaries in a local space (First point of it is (0, 0)). To obtain the field shape in absolute values, we have the function ‘getCellsAbsPosition()’.</p>
+</section>
+<section id="transform-to-utm">
+<h2>Transform to UTM<a class="headerlink" href="#transform-to-utm" title="Permalink to this headline"></a></h2>
+<p>In our case, the file “test1.xml” contains data in <a class="reference external" href="https://epsg.io/4258">EPSG:4258</a> (European version of GPS). Unfortunately, values are not in a metric system, and the difference between two points are not in meters either. Therefore, working with it is quite difficult.</p>
+<p>Luckily, to solve this we can transform this data in its custom CRS into <a class="reference external" href="https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system">UTM</a>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">Transform</span><span class="o">::</span><span class="n">transformToUTM</span><span class="p">(</span><span class="n">field</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This is the only line we need to convert our data to UTM!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The CRS of the data can be obtained from the file or explicitly set by hand. If none was selected, it will try GPS (WGS84 - <a class="reference external" href="https://epsg.io/4326">EPSG:4326</a>) or ETRS89 - <a class="reference external" href="https://epsg.io/4258">EPSG:4258</a>).</p>
+</div>
+</section>
+<section id="create-path">
+<h2>Create path<a class="headerlink" href="#create-path" title="Permalink to this headline"></a></h2>
+<p>Once we have the field in UTM, let’s create a coverage path, as we did it in previous tutorials:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CRobot</span><span class="w"> </span><span class="nf">robot</span><span class="w"> </span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0</span><span class="p">);</span>
+<span class="n">robot</span><span class="p">.</span><span class="n">setMinRadius</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// m</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">hg</span><span class="o">::</span><span class="n">ConstHL</span><span class="w"> </span><span class="n">const_hl</span><span class="p">;</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">const_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">field</span><span class="p">.</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">robot_width</span><span class="p">);</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">sg</span><span class="o">::</span><span class="n">BruteForce</span><span class="w"> </span><span class="n">bf</span><span class="p">;</span>
+<span class="n">F2CSwaths</span><span class="w"> </span><span class="n">swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bf</span><span class="p">.</span><span class="n">generateSwaths</span><span class="p">(</span><span class="n">M_PI</span><span class="p">,</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">op_width</span><span class="p">,</span><span class="w"> </span><span class="n">no_hl</span><span class="p">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">SnakeOrder</span><span class="w"> </span><span class="n">snake_sorter</span><span class="p">;</span>
+<span class="n">swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">snake_sorter</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">pp</span><span class="o">::</span><span class="n">PathPlanning</span><span class="w"> </span><span class="n">path_planner</span><span class="p">;</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">pp</span><span class="o">::</span><span class="n">DubinsCurves</span><span class="w"> </span><span class="n">dubins</span><span class="p">;</span>
+<span class="n">F2CPath</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path_planner</span><span class="p">.</span><span class="n">searchBestPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span><span class="w"> </span><span class="n">swaths</span><span class="p">,</span><span class="w"> </span><span class="n">dubins</span><span class="p">);</span>
+</pre></div>
+</div>
+<img alt="../../_images/Tutorial_7_1_UTM.png" src="../../_images/Tutorial_7_1_UTM.png" />
+</section>
+<section id="move-the-path-back-to-previous-crs">
+<h2>Move the path back to previous CRS<a class="headerlink" href="#move-the-path-back-to-previous-crs" title="Permalink to this headline"></a></h2>
+<p>Our coverage path is now generated in a local system, so we cannot use it like this. To transform the path to the original CRS of the data:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CPath</span><span class="w"> </span><span class="n">path_gps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">Transform</span><span class="o">::</span><span class="n">transformToPrevCRS</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="p">);</span>
+</pre></div>
+</div>
+<img alt="../../_images/Tutorial_7_1_GPS.png" src="../../_images/Tutorial_7_1_GPS.png" />
+<p>Finally, save the path to a file as:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">path_gps</span><span class="p">.</span><span class="n">saveToFile</span><span class="p">(</span><span class="s">&quot;path.csv&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="path_planning.html" class="btn btn-neutral float-left" title="Part 6: Path planning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="python_basic_types.html" class="btn btn-neutral float-right" title="Part 1: Basic types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

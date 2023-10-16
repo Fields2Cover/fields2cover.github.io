@@ -11,7 +11,7 @@ Program Listing for File parser.h
 .. code-block:: cpp
 
    //=============================================================================
-   //    Copyright (C) 2021-2022 Wageningen University - All Rights Reserved
+   //    Copyright (C) 2021-2023 Wageningen University - All Rights Reserved
    //                     Author: Gonzalo Mier
    //                           BSD-3 License
    //=============================================================================
@@ -30,7 +30,9 @@ Program Listing for File parser.h
    
    class Parser {
     public:
-       static int importGml(const std::string& file, F2CFields& fields);
+       static void importGml(const std::string& file, F2CFields& fields);
+   
+       static F2CField importFieldGml(const std::string& file);
    
        static int importJson(const std::string& file, F2CFields& fields);
    

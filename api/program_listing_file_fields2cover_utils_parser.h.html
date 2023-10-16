@@ -79,7 +79,7 @@
 <span id="program-listing-file-fields2cover-utils-parser-h"></span><h1>Program Listing for File parser.h<a class="headerlink" href="#program-listing-for-file-parser-h" title="Permalink to this headline"></a></h1>
 <p>↰ <a class="reference internal" href="file_fields2cover_utils_parser.h.html#file-fields2cover-utils-parser-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">fields2cover/utils/parser.h</span></code>)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//=============================================================================</span>
-<span class="c1">//    Copyright (C) 2021-2022 Wageningen University - All Rights Reserved</span>
+<span class="c1">//    Copyright (C) 2021-2023 Wageningen University - All Rights Reserved</span>
 <span class="c1">//                     Author: Gonzalo Mier</span>
 <span class="c1">//                           BSD-3 License</span>
 <span class="c1">//=============================================================================</span>
@@ -98,7 +98,9 @@
 
 <span class="k">class</span><span class="w"> </span><span class="nc">Parser</span><span class="w"> </span><span class="p">{</span>
 <span class="w"> </span><span class="k">public</span><span class="o">:</span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">importGml</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">F2CFields</span><span class="o">&amp;</span><span class="w"> </span><span class="n">fields</span><span class="p">);</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">importGml</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">F2CFields</span><span class="o">&amp;</span><span class="w"> </span><span class="n">fields</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">F2CField</span><span class="w"> </span><span class="nf">importFieldGml</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">file</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">importJson</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">F2CFields</span><span class="o">&amp;</span><span class="w"> </span><span class="n">fields</span><span class="p">);</span>
 
