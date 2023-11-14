@@ -79,7 +79,7 @@
 <span id="program-listing-file-fields2cover-types-geometry-h"></span><h1>Program Listing for File Geometry.h<a class="headerlink" href="#program-listing-for-file-geometry-h" title="Permalink to this headline"></a></h1>
 <p>↰ <a class="reference internal" href="file_fields2cover_types_Geometry.h.html#file-fields2cover-types-geometry-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">fields2cover/types/Geometry.h</span></code>)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//=============================================================================</span>
-<span class="c1">//    Copyright (C) 2021-2022 Wageningen University - All Rights Reserved</span>
+<span class="c1">//    Copyright (C) 2021-2023 Wageningen University - All Rights Reserved</span>
 <span class="c1">//                     Author: Gonzalo Mier</span>
 <span class="c1">//                           BSD-3 License</span>
 <span class="c1">//=============================================================================</span>
@@ -117,8 +117,9 @@
 <span class="w">  </span><span class="n">Geometry</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Geometry</span><span class="o">&amp;</span><span class="w"> </span><span class="n">g</span><span class="p">);</span>
 
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">operator</span><span class="o">-&gt;</span><span class="p">();</span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">operator</span><span class="o">-&gt;</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-<span class="w">  </span><span class="n">T</span><span class="o">*</span><span class="w"> </span><span class="nf">get</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">operator</span><span class="o">-&gt;</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="n">T</span><span class="o">*</span><span class="w"> </span><span class="nf">get</span><span class="p">();</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">*</span><span class="w"> </span><span class="nf">get</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
 <span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">!=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Geometry</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">geom2</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Geometry</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">geom2</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
@@ -196,6 +197,8 @@
 <span class="w">  </span><span class="n">OGRGeometry</span><span class="o">*</span><span class="w"> </span><span class="nf">OGRGeometryRebuildCurves</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">OGRGeometry</span><span class="w"> </span><span class="o">*</span><span class="n">poGeom</span><span class="p">,</span>
 <span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">OGRGeometry</span><span class="w"> </span><span class="o">*</span><span class="n">poOtherGeom</span><span class="p">,</span><span class="w"> </span><span class="n">OGRGeometry</span><span class="w"> </span><span class="o">*</span><span class="n">poOGRProduct</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
+
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">mod</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
 <span class="p">};</span>
 
 

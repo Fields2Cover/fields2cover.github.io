@@ -123,7 +123,7 @@
 
 <span class="w">  </span><span class="n">LinearRing</span><span class="w"> </span><span class="nf">getGeometry</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
 
-<span class="w">  </span><span class="n">LinearRing</span><span class="w"> </span><span class="nf">getGeometry</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">LinearRing</span><span class="w"> </span><span class="nf">getGeometry</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setGeometry</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">LinearRing</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ring</span><span class="p">);</span>
 
@@ -145,8 +145,8 @@
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">addRing</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">LinearRing</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ring</span><span class="p">);</span>
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">addGeometry</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">LinearRing</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ring</span><span class="p">);</span>
 
-<span class="w">  </span><span class="n">LinearRing</span><span class="w"> </span><span class="nf">getExteriorRing</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-<span class="w">  </span><span class="n">LinearRing</span><span class="w"> </span><span class="nf">getInteriorRing</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i_ring</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">LinearRing</span><span class="w"> </span><span class="nf">getExteriorRing</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">LinearRing</span><span class="w"> </span><span class="nf">getInteriorRing</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i_ring</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
 <span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isConvex</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
@@ -162,7 +162,7 @@
 
 <span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isPointIn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
-<span class="w">  </span><span class="n">LineString</span><span class="w"> </span><span class="nf">createLineUntilBorder</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ang</span><span class="p">);</span>
+<span class="w">  </span><span class="n">LineString</span><span class="w"> </span><span class="nf">createLineUntilBorder</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ang</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c::types</span>

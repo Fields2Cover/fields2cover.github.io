@@ -55,7 +55,7 @@ Program Listing for File Cell.h
    
      LinearRing getGeometry(size_t i);
    
-     LinearRing getGeometry(size_t i) const;
+     const LinearRing getGeometry(size_t i) const;
    
      void setGeometry(size_t i, const LinearRing& ring);
    
@@ -77,8 +77,8 @@ Program Listing for File Cell.h
      void addRing(const LinearRing& ring);
      void addGeometry(const LinearRing& ring);
    
-     LinearRing getExteriorRing() const;
-     LinearRing getInteriorRing(size_t i_ring) const;
+     const LinearRing getExteriorRing() const;
+     const LinearRing getInteriorRing(size_t i_ring) const;
    
      bool isConvex() const;
    
@@ -94,7 +94,7 @@ Program Listing for File Cell.h
    
      bool isPointIn(const Point& p) const;
    
-     LineString createLineUntilBorder(const f2c::types::Point& p, double ang);
+     LineString createLineUntilBorder(const Point& p, double ang) const;
    };
    
    }  // namespace f2c::types
