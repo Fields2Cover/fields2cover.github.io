@@ -98,6 +98,8 @@ Program Listing for File Swath.h
    
      void targetOppositeDirAs(const Swath& s);
    
+     void moveTo(const Point& ref_pt);
+   
     private:
      int id_ {0};  // Id of the swath
      LineString path_;
