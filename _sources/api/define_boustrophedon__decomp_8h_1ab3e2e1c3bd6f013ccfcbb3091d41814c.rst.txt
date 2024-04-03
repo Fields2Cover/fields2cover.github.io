@@ -1,0 +1,14 @@
+.. _exhale_define_boustrophedon__decomp_8h_1ab3e2e1c3bd6f013ccfcbb3091d41814c:
+
+Define FIELDS2COVER_DECOMPOSITION_BOUSTROPHEDON_DECOMP_H_
+=========================================================
+
+- Defined in :ref:`file_fields2cover_decomposition_boustrophedon_decomp.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: FIELDS2COVER_DECOMPOSITION_BOUSTROPHEDON_DECOMP_H_
+   :project: Fields2Cover

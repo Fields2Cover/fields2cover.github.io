@@ -30,6 +30,8 @@ Includes
 --------
 
 
+- ``fields2cover/types/Graph2D.h`` (:ref:`file_fields2cover_types_Graph2D.h`)
+
 - ``fields2cover/types/LineString.h`` (:ref:`file_fields2cover_types_LineString.h`)
 
 - ``fields2cover/types/MultiPoint.h`` (:ref:`file_fields2cover_types_MultiPoint.h`)
@@ -41,6 +43,8 @@ Includes
 - ``gdal/ogr_geometry.h``
 
 - ``numeric``
+
+- ``optional``
 
 - ``vector``
 
@@ -69,13 +73,6 @@ Classes
 
 
 - :ref:`exhale_struct_structf2c_1_1types_1_1Route`
-
-
-Enums
------
-
-
-- :ref:`exhale_enum_namespacef2c_1_1types_1a10af3fdf4a7dd63acb103dc19c239c13`
 
 
 Defines

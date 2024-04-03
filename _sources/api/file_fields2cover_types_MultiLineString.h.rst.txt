@@ -46,6 +46,10 @@ Included By
 
 - :ref:`file_fields2cover_types_Cell.h`
 
+- :ref:`file_fields2cover_types_Path.h`
+
+- :ref:`file_fields2cover_types_Robot.h`
+
 - :ref:`file_fields2cover_types_Swaths.h`
 
 - :ref:`file_fields2cover_types.h`

@@ -3,7 +3,7 @@
 Define FIELDS2COVER_OBJECTIVES_PATH_LENGTH_H_
 =============================================
 
-- Defined in :ref:`file_fields2cover_objectives_path_length.h`
+- Defined in :ref:`file_fields2cover_objectives_pp_obj_path_length.h`
 
 
 Define Documentation

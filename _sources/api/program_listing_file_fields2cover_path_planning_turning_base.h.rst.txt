@@ -11,7 +11,7 @@ Program Listing for File turning_base.h
 .. code-block:: cpp
 
    //=============================================================================
-   //    Copyright (C) 2021-2022 Wageningen University - All Rights Reserved
+   //    Copyright (C) 2021-2024 Wageningen University - All Rights Reserved
    //                     Author: Gonzalo Mier
    //                        BSD-3 License
    //=============================================================================
@@ -34,15 +34,13 @@ Program Listing for File turning_base.h
     public:
      F2CPath createTurn(const F2CRobot& robot,
          const F2CPoint& start_pos, double start_angle,
-         const F2CPoint& end_pos, double end_angle,
-         double max_headland_width = 1e5);
+         const F2CPoint& end_pos, double end_angle);
    
      F2CPath createTurnIfNotCached(const F2CRobot& robot, double dist_start_pos,
-         double start_angle, double end_angle, double max_headland_width = 1e5);
+         double start_angle, double end_angle);
    
      virtual F2CPath createSimpleTurn(const F2CRobot& robot, double dist_start_pos,
-         double start_angle, double end_angle,
-         double max_headland_width = 1e5) = 0;
+         double start_angle, double end_angle) = 0;
    
      static std::vector<double> transformToNormalTurn(const F2CPoint& start_pos,
          double start_angle, const F2CPoint& end_pos, double end_angle);
@@ -52,19 +50,25 @@ Program Listing for File turning_base.h
          double max_rot_error = 0.1);
    
    
+     double getDiscretization() const;
+     void setDiscretization(double d);
+   
+     bool getUsingCache() const;
+     void setUsingCache(bool c);
+   
+   
     private:
      static void correctPath(F2CPath& path,
          const F2CPoint& start_pos,
          const F2CPoint& end_pos,
          float max_error_dist = 0.05);
    
-    public:
-     bool using_cache {true};
-   
     protected:
      // To prevent memory consumption and comparative errors because of doubles
      // ints are used multiplied by 1000.
      std::map<std::vector<int>, F2CPath> path_cache_;
+     double discretization {0.01};
+     bool using_cache {true};
    };
    
    }  // namespace f2c::pp

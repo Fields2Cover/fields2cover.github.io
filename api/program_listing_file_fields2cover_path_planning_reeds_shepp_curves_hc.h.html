@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Program Listing for File reeds_shepp_curves_hc.h &mdash; Fields2Cover latest documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_fields2cover_path_planning_reeds_shepp_curves_hc.h.html" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/code-tabs.js?v=c983d12e"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" /> 
@@ -76,10 +81,10 @@
            <div itemprop="articleBody">
              
   <section id="program-listing-for-file-reeds-shepp-curves-hc-h">
-<span id="program-listing-file-fields2cover-path-planning-reeds-shepp-curves-hc-h"></span><h1>Program Listing for File reeds_shepp_curves_hc.h<a class="headerlink" href="#program-listing-for-file-reeds-shepp-curves-hc-h" title="Permalink to this headline"></a></h1>
+<span id="program-listing-file-fields2cover-path-planning-reeds-shepp-curves-hc-h"></span><h1>Program Listing for File reeds_shepp_curves_hc.h<a class="headerlink" href="#program-listing-for-file-reeds-shepp-curves-hc-h" title="Link to this heading"></a></h1>
 <p>↰ <a class="reference internal" href="file_fields2cover_path_planning_reeds_shepp_curves_hc.h.html#file-fields2cover-path-planning-reeds-shepp-curves-hc-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">fields2cover/path_planning/reeds_shepp_curves_hc.h</span></code>)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//=============================================================================</span>
-<span class="c1">//    Copyright (C) 2021-2022 Wageningen University - All Rights Reserved</span>
+<span class="c1">//    Copyright (C) 2021-2024 Wageningen University - All Rights Reserved</span>
 <span class="c1">//                     Author: Gonzalo Mier</span>
 <span class="c1">//                        BSD-3 License</span>
 <span class="c1">//=============================================================================</span>
@@ -96,11 +101,7 @@
 <span class="k">class</span><span class="w"> </span><span class="nc">ReedsSheppCurvesHC</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">TurningBase</span><span class="w"> </span><span class="p">{</span>
 <span class="w"> </span><span class="k">public</span><span class="o">:</span>
 <span class="w">  </span><span class="n">F2CPath</span><span class="w"> </span><span class="n">createSimpleTurn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CRobot</span><span class="o">&amp;</span><span class="w"> </span><span class="n">robot</span><span class="p">,</span>
-<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">dist_start_pos</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">start_angle</span><span class="p">,</span>
-<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">end_angle</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">max_headland_width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e5</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
-
-<span class="w"> </span><span class="k">public</span><span class="o">:</span>
-<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">discretization</span><span class="w"> </span><span class="p">{</span><span class="mf">0.01</span><span class="p">};</span>
+<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">dist_start_pos</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">start_angle</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">end_angle</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c::pp</span>
@@ -118,7 +119,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Wageningen University.</p>
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

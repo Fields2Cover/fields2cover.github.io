@@ -1,0 +1,14 @@
+.. _exhale_typedef_namespacef2c_1_1types_1aae66ccae67ea08edb6cd3c4bb0514a11:
+
+Typedef f2c::types::pair_vec_size__int
+======================================
+
+- Defined in :ref:`file_fields2cover_types_Graph.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: f2c::types::pair_vec_size__int
+   :project: Fields2Cover

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Struct SwathsByCells &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/structf2c_1_1types_1_1SwathsByCells.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Template Struct hash&lt; f2c::types::Point &gt;" href="structstd_1_1hash_3_01f2c_1_1types_1_1Point_01_4.html" />
+    <link rel="prev" title="Struct Swaths" href="structf2c_1_1types_1_1Swaths.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="f2c_library.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#page-hierarchy">Page Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="f2c_library.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="f2c_library.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1Options.html">Struct Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cell.html">Struct Cell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cells.html">Struct Cells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Field.html">Struct Field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries.html">Template Struct Geometries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1ConstIterator_1_1Private.html">Struct ConstIterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1Iterator_1_1Private.html">Struct Iterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometry.html">Template Struct Geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LinearRing.html">Struct LinearRing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LineString.html">Struct LineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiLineString.html">Struct MultiLineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiPoint.html">Struct MultiPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Path.html">Struct Path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1PathState.html">Struct PathState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Point.html">Struct Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Robot.html">Struct Robot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Route.html">Struct Route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Strip.html">Struct Strip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swath.html">Struct Swath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html">Struct Swaths</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Struct SwathsByCells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structstd_1_1hash_3_01f2c_1_1types_1_1Point_01_4.html">Template Struct hash&lt; f2c::types::Point &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1BoustrophedonDecomp.html">Class BoustrophedonDecomp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1DecompositionBase.html">Class DecompositionBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1TrapezoidalDecomp.html">Class TrapezoidalDecomp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1ConstHL.html">Class ConstHL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html">Class HeadlandGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1BaseObjective.html">Template Class BaseObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1CompleteTurnPathObj.html">Template Class CompleteTurnPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1DecompObjective.html">Class DecompObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1DirectDistPathObj.html">Class DirectDistPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1FieldCoverage.html">Class FieldCoverage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1HGObjective.html">Class HGObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1NSwath.html">Class NSwath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1NSwathModified.html">Class NSwathModified</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1Overlaps.html">Class Overlaps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1PathLength.html">Class PathLength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1PPObjective.html">Class PPObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1RemArea.html">Class RemArea</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1RPObjective.html">Class RPObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1SGObjective.html">Class SGObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1SwathLength.html">Class SwathLength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Parser.html">Class Parser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurves.html">Class DubinsCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurvesCC.html">Class DubinsCurvesCC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1PathPlanning.html">Class PathPlanning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurves.html">Class ReedsSheppCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurvesHC.html">Class ReedsSheppCurvesHC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1TurningBase.html">Class TurningBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Random.html">Class Random</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1BoustrophedonOrder.html">Class BoustrophedonOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1CustomOrder.html">Class CustomOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1RoutePlannerBase.html">Class RoutePlannerBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SingleCellSwathsOrderBase.html">Class SingleCellSwathsOrderBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SnakeOrder.html">Class SnakeOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SpiralOrder.html">Class SpiralOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1BruteForce.html">Class BruteForce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1SwathGeneratorBase.html">Class SwathGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Transform.html">Class Transform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1EmptyDestructor.html">Class EmptyDestructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1ConstIterator.html">Class Geometries::ConstIterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1Iterator.html">Class Geometries::Iterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Graph.html">Class Graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Graph2D.html">Class Graph2D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Visualizer.html">Class Visualizer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#defines">Defines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="f2c_library.html">API</a></li>
+      <li class="breadcrumb-item active">Struct SwathsByCells</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/structf2c_1_1types_1_1SwathsByCells.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="struct-swathsbycells">
+<span id="exhale-struct-structf2c-1-1types-1-1swathsbycells"></span><h1>Struct SwathsByCells<a class="headerlink" href="#struct-swathsbycells" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_fields2cover_types_SwathsByCells.h.html#file-fields2cover-types-swathsbycells-h"><span class="std std-ref">File SwathsByCells.h</span></a></p></li>
+</ul>
+<section id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Link to this heading"></a></h2>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCellsE">
+<span id="_CPPv3N3f2c5types13SwathsByCellsE"></span><span id="_CPPv2N3f2c5types13SwathsByCellsE"></span><span id="f2c::types::SwathsByCells"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SwathsByCells</span></span></span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCellsE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCells13SwathsByCellsEv">
+<span id="_CPPv3N3f2c5types13SwathsByCells13SwathsByCellsEv"></span><span id="_CPPv2N3f2c5types13SwathsByCells13SwathsByCellsEv"></span><span id="f2c::types::SwathsByCells::SwathsByCells"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a5fdf0c16ebf08c445dd4aac93a0f01b3"></span><span class="sig-name descname"><span class="n"><span class="pre">SwathsByCells</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCells13SwathsByCellsEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCells13SwathsByCellsEi">
+<span id="_CPPv3N3f2c5types13SwathsByCells13SwathsByCellsEi"></span><span id="_CPPv2N3f2c5types13SwathsByCells13SwathsByCellsEi"></span><span id="f2c::types::SwathsByCells::SwathsByCells__i"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1ad62121c1ce444c354a8db680e9f10920"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SwathsByCells</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCells13SwathsByCellsEi" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCells13SwathsByCellsERKNSt16initializer_listI6SwathsEE">
+<span id="_CPPv3N3f2c5types13SwathsByCells13SwathsByCellsERKNSt16initializer_listI6SwathsEE"></span><span id="_CPPv2N3f2c5types13SwathsByCells13SwathsByCellsERKNSt16initializer_listI6SwathsEE"></span><span id="f2c::types::SwathsByCells::SwathsByCells__std::initializer_list:Swaths:CR"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a57b797cd41ce807da56fc78b7614a5df"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SwathsByCells</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">initializer_list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCells13SwathsByCellsERKNSt16initializer_listI6SwathsEE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCells13SwathsByCellsERKNSt6vectorI6SwathsEE">
+<span id="_CPPv3N3f2c5types13SwathsByCells13SwathsByCellsERKNSt6vectorI6SwathsEE"></span><span id="_CPPv2N3f2c5types13SwathsByCells13SwathsByCellsERKNSt6vectorI6SwathsEE"></span><span id="f2c::types::SwathsByCells::SwathsByCells__std::vector:Swaths:CR"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a40c0d0dd3f93d5aa7d5f59f196a507cb"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SwathsByCells</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCells13SwathsByCellsERKNSt6vectorI6SwathsEE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCellsD0Ev">
+<span id="_CPPv3N3f2c5types13SwathsByCellsD0Ev"></span><span id="_CPPv2N3f2c5types13SwathsByCellsD0Ev"></span><span id="f2c::types::SwathsByCells::~SwathsByCells"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1ababb7caaefd358010156c5bfb4e814aa"></span><span class="sig-name descname"><span class="n"><span class="pre">~SwathsByCells</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCellsD0Ev" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCells12emplace_backERK6Swaths">
+<span id="_CPPv3N3f2c5types13SwathsByCells12emplace_backERK6Swaths"></span><span id="_CPPv2N3f2c5types13SwathsByCells12emplace_backERK6Swaths"></span><span id="f2c::types::SwathsByCells::emplace_back__SwathsCR"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a04410c9cd92baa6fdd227117d2d9d156"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">emplace_back</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCells12emplace_backERK6Swaths" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCells9push_backERK6Swaths">
+<span id="_CPPv3N3f2c5types13SwathsByCells9push_backERK6Swaths"></span><span id="_CPPv2N3f2c5types13SwathsByCells9push_backERK6Swaths"></span><span id="f2c::types::SwathsByCells::push_back__SwathsCR"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a4b91459dece59f46eade6377bfdf3998"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">push_back</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCells9push_backERK6Swaths" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCells5beginEv">
+<span id="_CPPv3N3f2c5types13SwathsByCells5beginEv"></span><span id="_CPPv2N3f2c5types13SwathsByCells5beginEv"></span><span id="f2c::types::SwathsByCells::begin"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a470bf4c8173f2940a8a14156b638f87a"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">iterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCells5beginEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCells3endEv">
+<span id="_CPPv3N3f2c5types13SwathsByCells3endEv"></span><span id="_CPPv2N3f2c5types13SwathsByCells3endEv"></span><span id="f2c::types::SwathsByCells::end"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1aebb86785ca13254c3d28546705d54b05"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">iterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCells3endEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types13SwathsByCells5beginEv">
+<span id="_CPPv3NK3f2c5types13SwathsByCells5beginEv"></span><span id="_CPPv2NK3f2c5types13SwathsByCells5beginEv"></span><span id="f2c::types::SwathsByCells::beginC"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1ab4cfacb2f46d410597d730440717a7fa"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">const_iterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types13SwathsByCells5beginEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types13SwathsByCells3endEv">
+<span id="_CPPv3NK3f2c5types13SwathsByCells3endEv"></span><span id="_CPPv2NK3f2c5types13SwathsByCells3endEv"></span><span id="f2c::types::SwathsByCells::endC"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1adb27d76d8981e337d3ea136d80a8b2a2"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">const_iterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types13SwathsByCells3endEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCells7reverseEv">
+<span id="_CPPv3N3f2c5types13SwathsByCells7reverseEv"></span><span id="_CPPv2N3f2c5types13SwathsByCells7reverseEv"></span><span id="f2c::types::SwathsByCells::reverse"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a932ad31427b67c6a75efcc6a28416612"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reverse</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCells7reverseEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCells4backEv">
+<span id="_CPPv3N3f2c5types13SwathsByCells4backEv"></span><span id="_CPPv2N3f2c5types13SwathsByCells4backEv"></span><span id="f2c::types::SwathsByCells::back"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a02ebd0ff593a524ea9252957e686fb90"></span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">back</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCells4backEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types13SwathsByCells4backEv">
+<span id="_CPPv3NK3f2c5types13SwathsByCells4backEv"></span><span id="_CPPv2NK3f2c5types13SwathsByCells4backEv"></span><span id="f2c::types::SwathsByCells::backC"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a6f45475613a4f69477c46f9f7430162b"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">back</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types13SwathsByCells4backEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCells2atE6size_t">
+<span id="_CPPv3N3f2c5types13SwathsByCells2atE6size_t"></span><span id="_CPPv2N3f2c5types13SwathsByCells2atE6size_t"></span><span id="f2c::types::SwathsByCells::at__s"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a7014dcd49d48359ba460df424040947b"></span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">at</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCells2atE6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types13SwathsByCells2atE6size_t">
+<span id="_CPPv3NK3f2c5types13SwathsByCells2atE6size_t"></span><span id="_CPPv2NK3f2c5types13SwathsByCells2atE6size_t"></span><span id="f2c::types::SwathsByCells::at__sC"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1ad1756e47d89bd10eb9177a0936371ad0"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">at</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types13SwathsByCells2atE6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCells8getSwathE6size_t">
+<span id="_CPPv3N3f2c5types13SwathsByCells8getSwathE6size_t"></span><span id="_CPPv2N3f2c5types13SwathsByCells8getSwathE6size_t"></span><span id="f2c::types::SwathsByCells::getSwath__s"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a95362f7e65d3f01f1e99b6211abc851b"></span><a class="reference internal" href="structf2c_1_1types_1_1Swath.html#_CPPv4N3f2c5types5SwathE" title="f2c::types::Swath"><span class="n"><span class="pre">Swath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getSwath</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCells8getSwathE6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types13SwathsByCells8getSwathE6size_t">
+<span id="_CPPv3NK3f2c5types13SwathsByCells8getSwathE6size_t"></span><span id="_CPPv2NK3f2c5types13SwathsByCells8getSwathE6size_t"></span><span id="f2c::types::SwathsByCells::getSwath__sC"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1aaa6ef27a2c7facc84968f64a2523df2a"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1Swath.html#_CPPv4N3f2c5types5SwathE" title="f2c::types::Swath"><span class="n"><span class="pre">Swath</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getSwath</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types13SwathsByCells8getSwathE6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types13SwathsByCells4sizeEv">
+<span id="_CPPv3NK3f2c5types13SwathsByCells4sizeEv"></span><span id="_CPPv2NK3f2c5types13SwathsByCells4sizeEv"></span><span id="f2c::types::SwathsByCells::sizeC"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a0bef18f58530829eba15db95cf0da271"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types13SwathsByCells4sizeEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types13SwathsByCells9sizeTotalEv">
+<span id="_CPPv3NK3f2c5types13SwathsByCells9sizeTotalEv"></span><span id="_CPPv2NK3f2c5types13SwathsByCells9sizeTotalEv"></span><span id="f2c::types::SwathsByCells::sizeTotalC"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a87c8009f9b2b02c90a96f703b63af3f6"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sizeTotal</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types13SwathsByCells9sizeTotalEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c5types13SwathsByCellsixEi">
+<span id="_CPPv3N3f2c5types13SwathsByCellsixEi"></span><span id="_CPPv2N3f2c5types13SwathsByCellsixEi"></span><span id="f2c::types::SwathsByCells::subscript-operator__i"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a5ee62037b1f2d1f966a93ba02122a851"></span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">[]</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c5types13SwathsByCellsixEi" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types13SwathsByCellsixEi">
+<span id="_CPPv3NK3f2c5types13SwathsByCellsixEi"></span><span id="_CPPv2NK3f2c5types13SwathsByCellsixEi"></span><span id="f2c::types::SwathsByCells::subscript-operator__iC"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a93a084d20a244acc2d688c96d5622a20"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">[]</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types13SwathsByCellsixEi" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types13SwathsByCells5cloneEv">
+<span id="_CPPv3NK3f2c5types13SwathsByCells5cloneEv"></span><span id="_CPPv2NK3f2c5types13SwathsByCells5cloneEv"></span><span id="f2c::types::SwathsByCells::cloneC"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a5cae777bd8c988451ec11e89be7d01aa"></span><a class="reference internal" href="#_CPPv4N3f2c5types13SwathsByCellsE" title="f2c::types::SwathsByCells"><span class="n"><span class="pre">SwathsByCells</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clone</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types13SwathsByCells5cloneEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c5types13SwathsByCells7flattenEv">
+<span id="_CPPv3NK3f2c5types13SwathsByCells7flattenEv"></span><span id="_CPPv2NK3f2c5types13SwathsByCells7flattenEv"></span><span id="f2c::types::SwathsByCells::flattenC"></span><span class="target" id="structf2c_1_1types_1_1SwathsByCells_1a5ed8564eed5aa4463567b2ce61cbd825"></span><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html#_CPPv4N3f2c5types6SwathsE" title="f2c::types::Swaths"><span class="n"><span class="pre">Swaths</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">flatten</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c5types13SwathsByCells7flattenEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="structf2c_1_1types_1_1Swaths.html" class="btn btn-neutral float-left" title="Struct Swaths" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="structstd_1_1hash_3_01f2c_1_1types_1_1Point_01_4.html" class="btn btn-neutral float-right" title="Template Struct hash&lt; f2c::types::Point &gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 Class HGObjective
 =================
 
-- Defined in :ref:`file_fields2cover_objectives_hg_objective.h`
+- Defined in :ref:`file_fields2cover_objectives_hg_obj_hg_objective.h`
 
 
 Inheritance Relationships

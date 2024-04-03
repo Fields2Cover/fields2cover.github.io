@@ -18,6 +18,7 @@ Files
 
 - :ref:`file_fields2cover_route_planning_boustrophedon_order.h`
 - :ref:`file_fields2cover_route_planning_custom_order.h`
+- :ref:`file_fields2cover_route_planning_route_planner_base.h`
 - :ref:`file_fields2cover_route_planning_single_cell_swaths_order_base.h`
 - :ref:`file_fields2cover_route_planning_snake_order.h`
 - :ref:`file_fields2cover_route_planning_spiral_order.h`

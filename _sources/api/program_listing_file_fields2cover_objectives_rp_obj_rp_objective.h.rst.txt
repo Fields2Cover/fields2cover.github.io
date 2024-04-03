@@ -1,0 +1,74 @@
+
+.. _program_listing_file_fields2cover_objectives_rp_obj_rp_objective.h:
+
+Program Listing for File rp_objective.h
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_fields2cover_objectives_rp_obj_rp_objective.h>` (``fields2cover/objectives/rp_obj/rp_objective.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //=============================================================================
+   //    Copyright (C) 2021-2024 Wageningen University - All Rights Reserved
+   //                     Author: Gonzalo Mier
+   //                        BSD-3 License
+   //=============================================================================
+   
+   #pragma once
+   #ifndef FIELDS2COVER_OBJECTIVES_RP_OBJECTIVE_H_
+   #define FIELDS2COVER_OBJECTIVES_RP_OBJECTIVE_H_
+   
+   #include <vector>
+   #include "fields2cover/types.h"
+   #include "fields2cover/objectives/base_objective.h"
+   
+   namespace f2c::obj {
+   
+   class RPObjective : public BaseObjective<RPObjective> {
+    public:
+     virtual double computeCost(const F2CPoint& p1, const F2CPoint& p2);
+   
+     virtual double computeCost(
+         const F2CPoint& p1, double ang1, const F2CPoint& p2);
+   
+     virtual double computeCost(
+         const F2CPoint& p1, double ang1, const F2CPoint& p2, double ang2);  // = 0
+   
+     virtual double computeCost(
+         const F2CPoint& p1, const F2CPoint& p2, double ang2);
+   
+     virtual double computeCost(const F2CSwath& s, const F2CPoint& p);
+   
+     virtual double computeCost(const F2CSwath& s1, const F2CSwath& s2);
+   
+     virtual double computeCost(const F2CSwath& s, const F2CPoint& p, double ang);
+   
+     virtual double computeCost(const F2CPoint& p, const F2CSwath& s);
+   
+     virtual double computeCost(const F2CPoint& p, double ang, const F2CSwath& s);
+   
+     virtual double computeCost(const std::vector<F2CPoint>& ps);
+   
+     virtual double computeCost(const F2CMultiPoint& ps);
+   
+     virtual double computeCost(const F2CSwath& s, const F2CMultiPoint& ps);
+   
+     virtual double computeCost(const F2CSwaths& s, const F2CMultiPoint& ps);
+   
+     virtual double computeCost(const F2CMultiPoint& ps, const F2CSwath& s);
+   
+     virtual double computeCost(const F2CMultiPoint& ps, const F2CSwaths& s);
+   
+     virtual double computeCost(const F2CSwath& s);
+   
+     virtual double computeCost(const F2CSwaths& swaths);
+   
+     virtual double computeCost(const F2CRoute& r);
+   };
+   
+   
+   }  // namespace f2c::obj
+   
+   #endif  // FIELDS2COVER_OBJECTIVES_RP_OBJECTIVE_H_

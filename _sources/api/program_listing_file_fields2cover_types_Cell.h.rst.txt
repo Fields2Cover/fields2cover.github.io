@@ -11,9 +11,9 @@ Program Listing for File Cell.h
 .. code-block:: cpp
 
    //=============================================================================
-   //    Copyright (C) 2021-2023 Wageningen University - All Rights Reserved
+   //    Copyright (C) 2021-2024 Wageningen University - All Rights Reserved
    //                     Author: Gonzalo Mier
-   //                           BSD-3 License
+   //                        BSD-3 License
    //=============================================================================
    
    #pragma once
@@ -46,11 +46,10 @@ Program Listing for File Cell.h
      using Geometries<Cell, OGRPolygon, wkbPolygon, LinearRing>::Geometries;
      Cell();
      explicit Cell(const OGRGeometry* geom);
-   
      explicit Cell(const f2c::types::LinearRing& ring);
+     ~Cell() = default;
    
      void getGeometry(size_t i, LinearRing& ring);
-   
      void getGeometry(size_t i, LinearRing& ring) const;
    
      LinearRing getGeometry(size_t i);
@@ -64,15 +63,18 @@ Program Listing for File Cell.h
    
      void operator*=(double b);
    
-     static Cell Buffer(const Cell& geom, double width);
+     static Cell buffer(const Cell& geom, double width);
    
-     static Cell Buffer(const LineString& geom, double width);
+     static Cell buffer(const LineString& geom, double width);
    
-     static Cell Buffer(const LinearRing& ring, double width);
+     static Cell buffer(const LinearRing& ring, double width);
    
-     static Cell Buffer(const Point& geom, double width);
+     static Cell buffer(const Point& geom, double width);
    
-     Cell ConvexHull() const;
+     Cell convexHull() const;
+   
+     template <class T, OGRwkbGeometryType R>
+     static Cell convexHull(const Geometry<T, R>& geom);
    
      void addRing(const LinearRing& ring);
      void addGeometry(const LinearRing& ring);
@@ -82,9 +84,9 @@ Program Listing for File Cell.h
    
      bool isConvex() const;
    
-     LineString getSemiLongCurve(const Point& point, double angle) const;
+     LineString createSemiLongLine(const Point& point, double angle) const;
    
-     LineString getStraightLongCurve(const Point& point, double angle) const;
+     LineString createStraightLongLine(const Point& point, double angle) const;
    
      MultiLineString getLinesInside(const LineString& line) const;
    
@@ -95,7 +97,18 @@ Program Listing for File Cell.h
      bool isPointIn(const Point& p) const;
    
      LineString createLineUntilBorder(const Point& p, double ang) const;
+   
+     Point closestPointOnBorderTo(const Point& p) const;
    };
+   
+   template <class T, OGRwkbGeometryType R>
+   Cell Cell::convexHull(const Geometry<T, R>& geom) {
+     OGRGeometry* c_hull = geom->ConvexHull();
+     Cell cell {c_hull};
+     OGRGeometryFactory::destroyGeometry(c_hull);
+     return cell;
+   }
+   
    
    }  // namespace f2c::types
    

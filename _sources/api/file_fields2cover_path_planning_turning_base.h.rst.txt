@@ -50,7 +50,7 @@ Included By
 -----------
 
 
-- :ref:`file_fields2cover_objectives_complete_turn_path_obj.h`
+- :ref:`file_fields2cover_objectives_rp_obj_complete_turn_path_obj.h`
 
 - :ref:`file_fields2cover_path_planning_dubins_curves.h`
 

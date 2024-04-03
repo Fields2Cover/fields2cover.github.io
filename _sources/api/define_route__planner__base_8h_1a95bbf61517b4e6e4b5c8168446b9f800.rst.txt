@@ -1,0 +1,14 @@
+.. _exhale_define_route__planner__base_8h_1a95bbf61517b4e6e4b5c8168446b9f800:
+
+Define FIELDS2COVER_ROUTE_PLANNING_ROUTE_PLANNING_BASE_H_
+=========================================================
+
+- Defined in :ref:`file_fields2cover_route_planning_route_planner_base.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: FIELDS2COVER_ROUTE_PLANNING_ROUTE_PLANNING_BASE_H_
+   :project: Fields2Cover

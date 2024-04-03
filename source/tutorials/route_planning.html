@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Part 5: Route planning &mdash; Fields2Cover latest documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/code-tabs.css?v=1bc26e2f" />
+
+  
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="canonical" href="https://fields2cover.github.io/source/tutorials/route_planning.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=c6e86fd7"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/code-tabs.js?v=c983d12e"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -49,23 +54,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Fields2Cover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html#c-tutorials">C++ tutorials</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="basic_types.html">Part 1: Basic types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="objective_functions.html">Part 2: Objective functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="headland_generator.html">Part 3: Headland generator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="swath_generator.html">Part 4: Swath generator</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Part 5: Route planning</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#boustrophedon-order">Boustrophedon order</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#snake-order">Snake order</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#spiral-order">Spiral order</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#custom-order">Custom order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_types.html">Part 1: Basic types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="objective_functions.html">Part 2: Objective functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="headland_generator.html">Part 3: Headland generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swath_generator.html">Part 4: Swath generator</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Part 5: Route planning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#metaheuristics-for-route-planning">Metaheuristics for route planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#known-patterns">Known patterns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boustrophedon-order">Boustrophedon order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#snake-order">Snake order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spiral-order">Spiral order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-order">Custom order</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="path_planning.html">Part 6: Path planning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="complete_flow.html">Part 7: Complete flow</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#python-tutorials">Python tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="path_planning.html">Part 6: Path planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decomposition.html">Part 7: Cell Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complete_flow.html">Part 8: Complete flow</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
@@ -98,81 +102,155 @@
            <div itemprop="articleBody">
              
   <section id="part-5-route-planning">
-<h1>Part 5: Route planning<a class="headerlink" href="#part-5-route-planning" title="Permalink to this headline"></a></h1>
+<h1>Part 5: Route planning<a class="headerlink" href="#part-5-route-planning" title="Link to this heading"></a></h1>
 <p>A route planner searches the best order to cover previously generated swaths.
-Usually, metaheuristics are used in the search.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In this version of Fields2Cover, no metaheuristic is provided, only predefined patterns.
-Route patterns do not return <code class="docutils literal notranslate"><span class="pre">F2CRoute</span></code>, but <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code> instead.
-In the next version, route planners will support metaheuristics, <code class="docutils literal notranslate"><span class="pre">F2CCells</span></code> as inputs, and <code class="docutils literal notranslate"><span class="pre">F2CRoute</span></code> as output.</p>
+We can do this process using metaheuristics or known patterns. Let’s first explain the metaheuristic approach.</p>
+<section id="metaheuristics-for-route-planning">
+<h2>Metaheuristics for route planning<a class="headerlink" href="#metaheuristics-for-route-planning" title="Link to this heading"></a></h2>
+<p>For this tutorial, let’s use this field:</p>
+<img alt="../../_images/Tutorial_5_0_field.png" src="../../_images/Tutorial_5_0_field.png" />
+<p>This method searches the shortest route to cover all the swaths.
+Our inputs are: 1. the swaths; 2. The path to traverse through the headlands.</p>
+<p>Swaths were already generated using the Swath generator module. On the other hand, the path on the headland has not been computed yet. As we usually use 3 widths of the robot as the headland width, we create a headland path that navigates using the middle of the headland:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">hg</span><span class="o">::</span><span class="n">ConstHL</span><span class="w"> </span><span class="n">const_hl</span><span class="p">;</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">mid_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">const_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">getWidth</span><span class="p">());</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">const_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">getWidth</span><span class="p">());</span>
+
+<span class="n">f2c</span><span class="o">::</span><span class="n">sg</span><span class="o">::</span><span class="n">BruteForce</span><span class="w"> </span><span class="n">bf</span><span class="p">;</span>
+<span class="n">F2CSwathsByCells</span><span class="w"> </span><span class="n">swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bf</span><span class="p">.</span><span class="n">generateSwaths</span><span class="p">(</span><span class="n">M_PI</span><span class="o">/</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">getCovWidth</span><span class="p">(),</span><span class="w"> </span><span class="n">no_hl</span><span class="p">);</span>
+</pre></div>
 </div>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">const_hl</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">HG_Const_gen</span><span class="p">();</span>
+<span class="n">mid_hl</span> <span class="o">=</span> <span class="n">const_hl</span><span class="o">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">robot</span><span class="o">.</span><span class="n">getWidth</span><span class="p">());</span>
+<span class="n">no_hl</span> <span class="o">=</span> <span class="n">const_hl</span><span class="o">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="n">robot</span><span class="o">.</span><span class="n">getWidth</span><span class="p">());</span>
+
+<span class="n">bf</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">SG_BruteForce</span><span class="p">();</span>
+<span class="n">swaths</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">generateSwaths</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">getCovWidth</span><span class="p">(),</span> <span class="n">no_hl</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><p>For it, we rely on <a class="reference external" href="https://developers.google.com/optimization">OR-tools</a> to do the optimization process.
+The route is then computed as:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">RoutePlannerBase</span><span class="w"> </span><span class="n">route_planner</span><span class="p">;</span>
+<span class="n">F2CRoute</span><span class="w"> </span><span class="n">route</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">route_planner</span><span class="p">.</span><span class="n">genRoute</span><span class="p">(</span><span class="n">mid_hl</span><span class="p">,</span><span class="w"> </span><span class="n">swaths</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">route_planner</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">RP_RoutePlannerBase</span><span class="p">();</span>
+<span class="n">route</span> <span class="o">=</span> <span class="n">route_planner</span><span class="o">.</span><span class="n">genRoute</span><span class="p">(</span><span class="n">mid_hl</span><span class="p">,</span> <span class="n">swaths</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><img alt="../../_images/Tutorial_5_0_route.png" src="../../_images/Tutorial_5_0_route.png" />
+<p>To plot the order, we have used green for earlier covered swaths and black for last covered.
+The direction of swaths is also green dot to black cross.</p>
+<p>Finally, we can use the function <code class="docutils literal notranslate"><span class="pre">f2c::rp::RoutePlannerBase::setStartAndEndPoint(const</span> <span class="pre">F2CPoint&amp;</span> <span class="pre">p)</span></code> to set the start and end point of the route.
+If this function is not used, the route will start at the start of the first swath and will end at the end of the last swath.</p>
+</section>
+<section id="known-patterns">
+<h2>Known patterns<a class="headerlink" href="#known-patterns" title="Link to this heading"></a></h2>
+<p>On the other hand, for swaths that have been created in order (in convex fields), can be sorted faster using known patterns.</p>
 <p>For these examples, we will continue from the previous tutorial:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">Random</span><span class="w"> </span><span class="nf">rand</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
 <span class="n">F2CRobot</span><span class="w"> </span><span class="nf">robot</span><span class="w"> </span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0</span><span class="p">);</span>
 <span class="n">f2c</span><span class="o">::</span><span class="n">hg</span><span class="o">::</span><span class="n">ConstHL</span><span class="w"> </span><span class="n">const_hl</span><span class="p">;</span>
-<span class="n">F2CCells</span><span class="w"> </span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">.</span><span class="n">generateRandField</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mf">1e4</span><span class="p">).</span><span class="n">field</span><span class="p">;</span>
-<span class="n">F2CCells</span><span class="w"> </span><span class="n">no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">const_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">robot_width</span><span class="p">);</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">.</span><span class="n">generateRandField</span><span class="p">(</span><span class="mf">1e4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">).</span><span class="n">getField</span><span class="p">();</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">const_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">getWidth</span><span class="p">());</span>
 <span class="n">f2c</span><span class="o">::</span><span class="n">sg</span><span class="o">::</span><span class="n">BruteForce</span><span class="w"> </span><span class="n">bf</span><span class="p">;</span>
-<span class="n">F2CSwaths</span><span class="w"> </span><span class="n">swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bf</span><span class="p">.</span><span class="n">generateSwaths</span><span class="p">(</span><span class="n">M_PI</span><span class="p">,</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">op_width</span><span class="p">,</span><span class="w"> </span><span class="n">no_hl</span><span class="p">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="n">F2CSwaths</span><span class="w"> </span><span class="n">swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bf</span><span class="p">.</span><span class="n">generateSwaths</span><span class="p">(</span><span class="n">M_PI</span><span class="p">,</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">getCovWidth</span><span class="p">(),</span><span class="w"> </span><span class="n">no_hl</span><span class="p">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
 </pre></div>
 </div>
-<p>Once planned the swaths, it would be awesome to find the best order to cover the field.
-To plot the order, we have used green for earlier covered swaths and black for last covered.
-The direction of swaths is also green dot to black cross.</p>
-<img alt="../../_images/Tutorial_4_1_Brute_force_Angle.png" src="../../_images/Tutorial_4_1_Brute_force_Angle.png" />
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rand</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+<span class="n">robot</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">);</span>
+<span class="n">const_hl</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">HG_Const_gen</span><span class="p">();</span>
+<span class="n">field</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="n">generateRandField</span><span class="p">(</span><span class="mf">1e4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="n">cells</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">getField</span><span class="p">();</span>
+<span class="n">no_hl</span> <span class="o">=</span> <span class="n">const_hl</span><span class="o">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="n">robot</span><span class="o">.</span><span class="n">getWidth</span><span class="p">());</span>
+<span class="n">bf</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">SG_BruteForce</span><span class="p">();</span>
+<span class="n">swaths</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">generateSwaths</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">getCovWidth</span><span class="p">(),</span> <span class="n">no_hl</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+</div></div><img alt="../../_images/Tutorial_4_1_Brute_force_Angle.png" src="../../_images/Tutorial_4_1_Brute_force_Angle.png" />
+</section>
 <section id="boustrophedon-order">
-<h2>Boustrophedon order<a class="headerlink" href="#boustrophedon-order" title="Permalink to this headline"></a></h2>
+<h2>Boustrophedon order<a class="headerlink" href="#boustrophedon-order" title="Link to this heading"></a></h2>
 <p>Boustrophedon pattern is one of the most known patterns to cover a field.
 Swaths are traveled in the simplest order, covering first the first swath, then the second, and so on.
 This pattern can have 4 results on the same field, depending on the start point.</p>
 <p>With the next code, swaths are order as the first image.
 Calling again <code class="docutils literal notranslate"><span class="pre">genSortedSwaths</span></code> produces the other variants.
 Once it has been called 4 times, the loop starts over.</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">BoustrophedonOrder</span><span class="w"> </span><span class="n">boustrophedon_sorter</span><span class="p">;</span>
 <span class="n">boustrophedon_swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">boustrophedon_sorter</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span>
 </pre></div>
 </div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">boustrophedon_sorter</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">RP_Boustrophedon</span><span class="p">();</span>
+<span class="n">swaths</span> <span class="o">=</span> <span class="n">boustrophedon_sorter</span><span class="o">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><table class="docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../../_images/Tutorial_5_1_Boustrophedon_1.png"><img alt="boustrophedon1" src="../../_images/Tutorial_5_1_Boustrophedon_1.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
-<td><p><a class="reference internal" href="../../_images/Tutorial_5_1_Boustrophedon_2.png"><img alt="boustrophedon2" src="../../_images/Tutorial_5_1_Boustrophedon_2.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../_images/Tutorial_5_1_Boustrophedon_1.png"><img alt="boustrophedon1" src="../../_images/Tutorial_5_1_Boustrophedon_1.png" style="width: 336.0px; height: 252.0px;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/Tutorial_5_1_Boustrophedon_2.png"><img alt="boustrophedon2" src="../../_images/Tutorial_5_1_Boustrophedon_2.png" style="width: 336.0px; height: 252.0px;" /></a></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../../_images/Tutorial_5_1_Boustrophedon_3.png"><img alt="boustrophedon3" src="../../_images/Tutorial_5_1_Boustrophedon_3.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
-<td><p><a class="reference internal" href="../../_images/Tutorial_5_1_Boustrophedon_4.png"><img alt="boustrophedon4" src="../../_images/Tutorial_5_1_Boustrophedon_4.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../../_images/Tutorial_5_1_Boustrophedon_3.png"><img alt="boustrophedon3" src="../../_images/Tutorial_5_1_Boustrophedon_3.png" style="width: 336.0px; height: 252.0px;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/Tutorial_5_1_Boustrophedon_4.png"><img alt="boustrophedon4" src="../../_images/Tutorial_5_1_Boustrophedon_4.png" style="width: 336.0px; height: 252.0px;" /></a></p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="snake-order">
-<h2>Snake order<a class="headerlink" href="#snake-order" title="Permalink to this headline"></a></h2>
+<h2>Snake order<a class="headerlink" href="#snake-order" title="Link to this heading"></a></h2>
 <p>Snake order covers the field skipping one swath each turn, and then coming back using uncovered swaths. This pattern, compared to boustrophedon, reduces the number of sharp turns.</p>
 <p>As with boustrophedon pattern, snake pattern also has 4 variants:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">SnakeOrder</span><span class="w"> </span><span class="n">snake_sorter</span><span class="p">;</span>
 <span class="n">snake_swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">snake_sorter</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span>
 </pre></div>
 </div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snake_sorter</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">RP_Snake</span><span class="p">();</span>
+<span class="n">swaths</span> <span class="o">=</span> <span class="n">snake_sorter</span><span class="o">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><table class="docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../../_images/Tutorial_5_2_Snake_1.png"><img alt="snake1" src="../../_images/Tutorial_5_2_Snake_1.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
-<td><p><a class="reference internal" href="../../_images/Tutorial_5_2_Snake_2.png"><img alt="snake2" src="../../_images/Tutorial_5_2_Snake_2.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../_images/Tutorial_5_2_Snake_1.png"><img alt="snake1" src="../../_images/Tutorial_5_2_Snake_1.png" style="width: 336.0px; height: 252.0px;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/Tutorial_5_2_Snake_2.png"><img alt="snake2" src="../../_images/Tutorial_5_2_Snake_2.png" style="width: 336.0px; height: 252.0px;" /></a></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../../_images/Tutorial_5_2_Snake_3.png"><img alt="snake3" src="../../_images/Tutorial_5_2_Snake_3.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
-<td><p><a class="reference internal" href="../../_images/Tutorial_5_2_Snake_4.png"><img alt="snake4" src="../../_images/Tutorial_5_2_Snake_4.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../../_images/Tutorial_5_2_Snake_3.png"><img alt="snake3" src="../../_images/Tutorial_5_2_Snake_3.png" style="width: 336.0px; height: 252.0px;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/Tutorial_5_2_Snake_4.png"><img alt="snake4" src="../../_images/Tutorial_5_2_Snake_4.png" style="width: 336.0px; height: 252.0px;" /></a></p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="spiral-order">
-<h2>Spiral order<a class="headerlink" href="#spiral-order" title="Permalink to this headline"></a></h2>
+<h2>Spiral order<a class="headerlink" href="#spiral-order" title="Link to this heading"></a></h2>
 <p>Spiral order covers the field in multiple spirals with predefined size.
 This pattern is commonly used when harvesting.
 Harvesters have a limited capacity and sometimes have to unload onto a truck.</p>
@@ -184,39 +262,50 @@ at the price of longer distance travelled between the swaths.</p>
 <p>With the spiral size of 6, the order of swaths travelled is:
 1, 6, 2, 5, 3, 4, 7, 12, 8, 11 and so on…</p>
 <p>Same as previous patterns, spiral pattern also has 4 variants:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">SpiralOrder</span><span class="w"> </span><span class="nf">spiral_sorter</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
 <span class="n">spiral_swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spiral_sorter</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span>
 </pre></div>
 </div>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">spiral_sorter</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">RP_Spiral</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+<span class="n">swaths</span> <span class="o">=</span> <span class="n">spiral_sorter</span><span class="o">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><table class="docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../../_images/Tutorial_5_3_Spiral_1.png"><img alt="spiral1" src="../../_images/Tutorial_5_3_Spiral_1.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
-<td><p><a class="reference internal" href="../../_images/Tutorial_5_3_Spiral_2.png"><img alt="spiral2" src="../../_images/Tutorial_5_3_Spiral_2.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../_images/Tutorial_5_3_Spiral_1.png"><img alt="spiral1" src="../../_images/Tutorial_5_3_Spiral_1.png" style="width: 336.0px; height: 252.0px;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/Tutorial_5_3_Spiral_2.png"><img alt="spiral2" src="../../_images/Tutorial_5_3_Spiral_2.png" style="width: 336.0px; height: 252.0px;" /></a></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../../_images/Tutorial_5_3_Spiral_3.png"><img alt="spiral3" src="../../_images/Tutorial_5_3_Spiral_3.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
-<td><p><a class="reference internal" href="../../_images/Tutorial_5_3_Spiral_4.png"><img alt="spiral4" src="../../_images/Tutorial_5_3_Spiral_4.png" style="width: 384.0px; height: 288.0px;" /></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../../_images/Tutorial_5_3_Spiral_3.png"><img alt="spiral3" src="../../_images/Tutorial_5_3_Spiral_3.png" style="width: 336.0px; height: 252.0px;" /></a></p></td>
+<td><p><a class="reference internal" href="../../_images/Tutorial_5_3_Spiral_4.png"><img alt="spiral4" src="../../_images/Tutorial_5_3_Spiral_4.png" style="width: 336.0px; height: 252.0px;" /></a></p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="custom-order">
-<h2>Custom order<a class="headerlink" href="#custom-order" title="Permalink to this headline"></a></h2>
+<h2>Custom order<a class="headerlink" href="#custom-order" title="Link to this heading"></a></h2>
 <p>To support more general approach for coverage path planning it’s possible to define
 custom order of the swaths for the path planning process.</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">CustomOrder</span><span class="w"> </span><span class="nf">custom_order</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">});</span>
 <span class="n">custom_swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">custom_order</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">CustomOrder</span><span class="w"> </span><span class="n">custom_order</span><span class="p">;</span>
-<span class="n">custom_order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">custom_order</span><span class="p">.</span><span class="n">setCustomOrder</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">})</span>
-<span class="n">custom_swaths2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">custom_order</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">custom_order</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">RP_CustomOrder</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">swaths</span> <span class="o">=</span> <span class="n">custom_order</span><span class="o">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition note">
+</div></div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>There are several checks whether the customer order can be used or not.</p>
 <ul class="simple">
@@ -239,7 +328,7 @@ custom order of the swaths for the path planning process.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Wageningen University.</p>
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -3,7 +3,7 @@
 Class Overlaps
 ==============
 
-- Defined in :ref:`file_fields2cover_objectives_overlaps.h`
+- Defined in :ref:`file_fields2cover_objectives_sg_obj_overlaps.h`
 
 
 Inheritance Relationships

@@ -3,7 +3,7 @@
 Class DirectDistPathObj
 =======================
 
-- Defined in :ref:`file_fields2cover_objectives_direct_dist_path_obj.h`
+- Defined in :ref:`file_fields2cover_objectives_rp_obj_direct_dist_path_obj.h`
 
 
 Inheritance Relationships

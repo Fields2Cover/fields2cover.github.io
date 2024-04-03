@@ -44,8 +44,6 @@ Classes
 
 - :ref:`exhale_struct_structf2c_1_1types_1_1MultiPoint`
 
-- :ref:`exhale_struct_structf2c_1_1types_1_1OptimizationParams`
-
 - :ref:`exhale_struct_structf2c_1_1types_1_1Path`
 
 - :ref:`exhale_struct_structf2c_1_1types_1_1PathState`
@@ -62,11 +60,17 @@ Classes
 
 - :ref:`exhale_struct_structf2c_1_1types_1_1Swaths`
 
+- :ref:`exhale_struct_structf2c_1_1types_1_1SwathsByCells`
+
 - :ref:`exhale_class_classf2c_1_1types_1_1EmptyDestructor`
 
 - :ref:`exhale_class_classf2c_1_1types_1_1Geometries_1_1ConstIterator`
 
 - :ref:`exhale_class_classf2c_1_1types_1_1Geometries_1_1Iterator`
+
+- :ref:`exhale_class_classf2c_1_1types_1_1Graph`
+
+- :ref:`exhale_class_classf2c_1_1types_1_1Graph2D`
 
 
 Enums
@@ -76,8 +80,6 @@ Enums
 - :ref:`exhale_enum_namespacef2c_1_1types_1a30a630bb463e5105d6c6f9cf554598b6`
 
 - :ref:`exhale_enum_namespacef2c_1_1types_1a8078cfee08a9e4bb6b9a1d5ea1d867be`
-
-- :ref:`exhale_enum_namespacef2c_1_1types_1a10af3fdf4a7dd63acb103dc19c239c13`
 
 - :ref:`exhale_enum_namespacef2c_1_1types_1a2d51e58a920a3c08d60ac19440ad1249`
 
@@ -105,3 +107,12 @@ Functions
 - :ref:`exhale_function_namespacef2c_1_1types_1a54e4107f8b5b82a8f6b5a95dfd119c79`
 
 - :ref:`exhale_function_namespacef2c_1_1types_1a7603f796c4f68465d5ee17614e5c6a34`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespacef2c_1_1types_1a50ebad52177c0f9fc713080e134531cd`
+
+- :ref:`exhale_typedef_namespacef2c_1_1types_1aae66ccae67ea08edb6cd3c4bb0514a11`

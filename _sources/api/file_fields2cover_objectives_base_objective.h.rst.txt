@@ -40,13 +40,15 @@ Included By
 -----------
 
 
-- :ref:`file_fields2cover_objectives_hg_objective.h`
+- :ref:`file_fields2cover_objectives_decomp_obj_decomp_objective.h`
 
-- :ref:`file_fields2cover_objectives_pp_objective.h`
+- :ref:`file_fields2cover_objectives_hg_obj_hg_objective.h`
 
-- :ref:`file_fields2cover_objectives_rp_objective.h`
+- :ref:`file_fields2cover_objectives_pp_obj_pp_objective.h`
 
-- :ref:`file_fields2cover_objectives_sg_objective.h`
+- :ref:`file_fields2cover_objectives_rp_obj_rp_objective.h`
+
+- :ref:`file_fields2cover_objectives_sg_obj_sg_objective.h`
 
 - :ref:`file_fields2cover.h`
 

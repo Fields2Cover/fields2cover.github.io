@@ -1,0 +1,84 @@
+
+.. _file_fields2cover_types_Graph.h:
+
+File Graph.h
+============
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_types>` (``fields2cover/types``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``fields2cover/types/Graph.h``)
+-------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_fields2cover_types_Graph.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``functional``
+
+- ``unordered_map``
+
+- ``utility``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_fields2cover_types_Graph2D.h`
+
+- :ref:`file_fields2cover_types.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_f2c`
+
+- :ref:`namespace_f2c__types`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classf2c_1_1types_1_1Graph`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_Graph_8h_1a0e5f99e1c3ea95f9bbbb6c4716887b3e`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespacef2c_1_1types_1a50ebad52177c0f9fc713080e134531cd`
+
+- :ref:`exhale_typedef_namespacef2c_1_1types_1aae66ccae67ea08edb6cd3c4bb0514a11`
+

@@ -1,0 +1,23 @@
+.. _dir_fields2cover_decomposition:
+
+
+Directory decomposition
+=======================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover>` (``fields2cover``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``fields2cover/decomposition``
+
+
+Files
+-----
+
+- :ref:`file_fields2cover_decomposition_boustrophedon_decomp.h`
+- :ref:`file_fields2cover_decomposition_decomposition_base.h`
+- :ref:`file_fields2cover_decomposition_trapezoidal_decomp.h`
+
+

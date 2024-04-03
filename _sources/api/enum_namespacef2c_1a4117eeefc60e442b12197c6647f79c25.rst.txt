@@ -1,0 +1,14 @@
+.. _exhale_enum_namespacef2c_1a4117eeefc60e442b12197c6647f79c25:
+
+Enum SGAlg
+==========
+
+- Defined in :ref:`file_fields2cover.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: f2c::SGAlg
+   :project: Fields2Cover

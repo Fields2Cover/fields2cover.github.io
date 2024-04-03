@@ -1,0 +1,14 @@
+.. _exhale_function_namespacef2c_1a31b888d96f50abd384e8557f8b31e7ef:
+
+Function f2c::planCovPath(const F2CRobot&, const F2CField&, bool)
+=================================================================
+
+- Defined in :ref:`file_fields2cover.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: f2c::planCovPath(const F2CRobot&, const F2CField&, bool)
+   :project: Fields2Cover

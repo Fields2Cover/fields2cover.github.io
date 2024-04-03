@@ -1,0 +1,69 @@
+
+.. _file_fields2cover_decomposition_boustrophedon_decomp.h:
+
+File boustrophedon_decomp.h
+===========================
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_decomposition>` (``fields2cover/decomposition``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``fields2cover/decomposition/boustrophedon_decomp.h``)
+------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_fields2cover_decomposition_boustrophedon_decomp.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``fields2cover/decomposition/trapezoidal_decomp.h`` (:ref:`file_fields2cover_decomposition_trapezoidal_decomp.h`)
+
+- ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_fields2cover.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_f2c`
+
+- :ref:`namespace_f2c__decomp`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classf2c_1_1decomp_1_1BoustrophedonDecomp`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_boustrophedon__decomp_8h_1ab3e2e1c3bd6f013ccfcbb3091d41814c`
+

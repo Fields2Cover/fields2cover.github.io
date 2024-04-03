@@ -10,6 +10,7 @@ Directory fields2cover
 Subdirectories
 --------------
 
+- :ref:`dir_fields2cover_decomposition`
 - :ref:`dir_fields2cover_headland_generator`
 - :ref:`dir_fields2cover_objectives`
 - :ref:`dir_fields2cover_path_planning`

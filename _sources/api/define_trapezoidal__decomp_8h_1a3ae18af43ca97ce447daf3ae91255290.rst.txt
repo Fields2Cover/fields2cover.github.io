@@ -1,0 +1,14 @@
+.. _exhale_define_trapezoidal__decomp_8h_1a3ae18af43ca97ce447daf3ae91255290:
+
+Define FIELDS2COVER_DECOMPOSITION_TRAPEZOIDAL_DECOMP_H_
+=======================================================
+
+- Defined in :ref:`file_fields2cover_decomposition_trapezoidal_decomp.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: FIELDS2COVER_DECOMPOSITION_TRAPEZOIDAL_DECOMP_H_
+   :project: Fields2Cover

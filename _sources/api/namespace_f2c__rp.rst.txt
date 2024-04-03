@@ -26,6 +26,8 @@ Classes
 
 - :ref:`exhale_class_classf2c_1_1rp_1_1CustomOrder`
 
+- :ref:`exhale_class_classf2c_1_1rp_1_1RoutePlannerBase`
+
 - :ref:`exhale_class_classf2c_1_1rp_1_1SingleCellSwathsOrderBase`
 
 - :ref:`exhale_class_classf2c_1_1rp_1_1SnakeOrder`

@@ -30,21 +30,9 @@ Includes
 --------
 
 
-- ``algorithm``
-
-- ``cmath``
-
-- ``fields2cover/objectives/sg_objective.h`` (:ref:`file_fields2cover_objectives_sg_objective.h`)
-
-- ``fields2cover/swath_generator/swath_generator_base_impl.hpp``
+- ``fields2cover/objectives/sg_obj/sg_objective.h`` (:ref:`file_fields2cover_objectives_sg_obj_sg_objective.h`)
 
 - ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
-
-- ``limits``
-
-- ``memory``
-
-- ``numeric``
 
 - ``vector``
 

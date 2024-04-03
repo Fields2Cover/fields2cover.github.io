@@ -1,0 +1,22 @@
+.. _dir_fields2cover_objectives_hg_obj:
+
+
+Directory hg_obj
+================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_objectives>` (``fields2cover/objectives``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``fields2cover/objectives/hg_obj``
+
+
+Files
+-----
+
+- :ref:`file_fields2cover_objectives_hg_obj_hg_objective.h`
+- :ref:`file_fields2cover_objectives_hg_obj_rem_area.h`
+
+

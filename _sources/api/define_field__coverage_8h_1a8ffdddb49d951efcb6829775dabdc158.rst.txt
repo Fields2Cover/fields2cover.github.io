@@ -3,7 +3,7 @@
 Define FIELDS2COVER_OBJECTIVES_FIELD_COVERAGE_H_
 ================================================
 
-- Defined in :ref:`file_fields2cover_objectives_field_coverage.h`
+- Defined in :ref:`file_fields2cover_objectives_sg_obj_field_coverage.h`
 
 
 Define Documentation

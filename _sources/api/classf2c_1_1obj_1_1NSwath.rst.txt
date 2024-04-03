@@ -3,7 +3,7 @@
 Class NSwath
 ============
 
-- Defined in :ref:`file_fields2cover_objectives_n_swath.h`
+- Defined in :ref:`file_fields2cover_objectives_sg_obj_n_swath.h`
 
 
 Inheritance Relationships
@@ -13,6 +13,12 @@ Base Type
 *********
 
 - ``public f2c::obj::SGObjective`` (:ref:`exhale_class_classf2c_1_1obj_1_1SGObjective`)
+
+
+Derived Type
+************
+
+- ``public f2c::obj::NSwathModified`` (:ref:`exhale_class_classf2c_1_1obj_1_1NSwathModified`)
 
 
 Class Documentation

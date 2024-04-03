@@ -1,0 +1,26 @@
+.. _exhale_class_classf2c_1_1types_1_1Graph2D:
+
+Class Graph2D
+=============
+
+- Defined in :ref:`file_fields2cover_types_Graph2D.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public f2c::types::Graph`` (:ref:`exhale_class_classf2c_1_1types_1_1Graph`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: f2c::types::Graph2D
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

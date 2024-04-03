@@ -42,6 +42,8 @@ Includes
 
 - ``gdal/ogr_geometry.h``
 
+- ``vector``
+
 
 
 Included By
@@ -49,6 +51,8 @@ Included By
 
 
 - :ref:`file_fields2cover_types_Field.h`
+
+- :ref:`file_fields2cover_types_Robot.h`
 
 - :ref:`file_fields2cover_types_Swath.h`
 

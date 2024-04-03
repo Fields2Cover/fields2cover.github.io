@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Struct Options &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/structf2c_1_1Options.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Struct Cell" href="structf2c_1_1types_1_1Cell.html" />
+    <link rel="prev" title="Namespace std" href="namespace_std.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="f2c_library.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#page-hierarchy">Page Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="f2c_library.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="f2c_library.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Struct Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cell.html">Struct Cell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cells.html">Struct Cells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Field.html">Struct Field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries.html">Template Struct Geometries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1ConstIterator_1_1Private.html">Struct ConstIterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1Iterator_1_1Private.html">Struct Iterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometry.html">Template Struct Geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LinearRing.html">Struct LinearRing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LineString.html">Struct LineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiLineString.html">Struct MultiLineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiPoint.html">Struct MultiPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Path.html">Struct Path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1PathState.html">Struct PathState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Point.html">Struct Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Robot.html">Struct Robot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Route.html">Struct Route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Strip.html">Struct Strip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swath.html">Struct Swath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html">Struct Swaths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1SwathsByCells.html">Struct SwathsByCells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structstd_1_1hash_3_01f2c_1_1types_1_1Point_01_4.html">Template Struct hash&lt; f2c::types::Point &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1BoustrophedonDecomp.html">Class BoustrophedonDecomp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1DecompositionBase.html">Class DecompositionBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1TrapezoidalDecomp.html">Class TrapezoidalDecomp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1ConstHL.html">Class ConstHL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html">Class HeadlandGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1BaseObjective.html">Template Class BaseObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1CompleteTurnPathObj.html">Template Class CompleteTurnPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1DecompObjective.html">Class DecompObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1DirectDistPathObj.html">Class DirectDistPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1FieldCoverage.html">Class FieldCoverage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1HGObjective.html">Class HGObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1NSwath.html">Class NSwath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1NSwathModified.html">Class NSwathModified</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1Overlaps.html">Class Overlaps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1PathLength.html">Class PathLength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1PPObjective.html">Class PPObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1RemArea.html">Class RemArea</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1RPObjective.html">Class RPObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1SGObjective.html">Class SGObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1SwathLength.html">Class SwathLength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Parser.html">Class Parser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurves.html">Class DubinsCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurvesCC.html">Class DubinsCurvesCC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1PathPlanning.html">Class PathPlanning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurves.html">Class ReedsSheppCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurvesHC.html">Class ReedsSheppCurvesHC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1TurningBase.html">Class TurningBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Random.html">Class Random</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1BoustrophedonOrder.html">Class BoustrophedonOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1CustomOrder.html">Class CustomOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1RoutePlannerBase.html">Class RoutePlannerBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SingleCellSwathsOrderBase.html">Class SingleCellSwathsOrderBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SnakeOrder.html">Class SnakeOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SpiralOrder.html">Class SpiralOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1BruteForce.html">Class BruteForce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1SwathGeneratorBase.html">Class SwathGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Transform.html">Class Transform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1EmptyDestructor.html">Class EmptyDestructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1ConstIterator.html">Class Geometries::ConstIterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1Iterator.html">Class Geometries::Iterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Graph.html">Class Graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Graph2D.html">Class Graph2D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Visualizer.html">Class Visualizer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#defines">Defines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="f2c_library.html">API</a></li>
+      <li class="breadcrumb-item active">Struct Options</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/structf2c_1_1Options.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="struct-options">
+<span id="exhale-struct-structf2c-1-1options"></span><h1>Struct Options<a class="headerlink" href="#struct-options" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_fields2cover.h.html#file-fields2cover-h"><span class="std std-ref">File fields2cover.h</span></a></p></li>
+</ul>
+<section id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Link to this heading"></a></h2>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c7OptionsE">
+<span id="_CPPv3N3f2c7OptionsE"></span><span id="_CPPv2N3f2c7OptionsE"></span><span id="f2c::Options"></span><span class="target" id="structf2c_1_1Options"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Options</span></span></span><a class="headerlink" href="#_CPPv4N3f2c7OptionsE" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c7Options10decomp_algE">
+<span id="_CPPv3N3f2c7Options10decomp_algE"></span><span id="_CPPv2N3f2c7Options10decomp_algE"></span><span id="f2c::Options::decomp_alg__DecompAlg"></span><span class="target" id="structf2c_1_1Options_1aa056bbf795da27a333e7e32ecce93cf4"></span><a class="reference internal" href="enum_namespacef2c_1a1e59f3db82500923975d8f2d4974de92.html#_CPPv4N3f2c9DecompAlgE" title="f2c::DecompAlg"><span class="n"><span class="pre">DecompAlg</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">decomp_alg</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="enum_namespacef2c_1a1e59f3db82500923975d8f2d4974de92.html#_CPPv4N3f2c9DecompAlgE" title="f2c::DecompAlg"><span class="n"><span class="pre">DecompAlg</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="enum_namespacef2c_1a1e59f3db82500923975d8f2d4974de92.html#_CPPv4N3f2c9DecompAlg4NONEE" title="f2c::DecompAlg::NONE"><span class="n"><span class="pre">NONE</span></span></a><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N3f2c7Options10decomp_algE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c7Options12decomp_angleE">
+<span id="_CPPv3N3f2c7Options12decomp_angleE"></span><span id="_CPPv2N3f2c7Options12decomp_angleE"></span><span id="f2c::Options::decomp_angle__double"></span><span class="target" id="structf2c_1_1Options_1a994efaf04956bf3946489561de400b7f"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">decomp_angle</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N3f2c7Options12decomp_angleE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c7Options6hg_algE">
+<span id="_CPPv3N3f2c7Options6hg_algE"></span><span id="_CPPv2N3f2c7Options6hg_algE"></span><span id="f2c::Options::hg_alg__HGAlg"></span><span class="target" id="structf2c_1_1Options_1a1eb51eaeb685a40d5297578057d99d8b"></span><a class="reference internal" href="enum_namespacef2c_1af1570d754f89b5997c70373b417fec30.html#_CPPv4N3f2c5HGAlgE" title="f2c::HGAlg"><span class="n"><span class="pre">HGAlg</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hg_alg</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="enum_namespacef2c_1af1570d754f89b5997c70373b417fec30.html#_CPPv4N3f2c5HGAlgE" title="f2c::HGAlg"><span class="n"><span class="pre">HGAlg</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="enum_namespacef2c_1af1570d754f89b5997c70373b417fec30.html#_CPPv4N3f2c5HGAlg5CONSTE" title="f2c::HGAlg::CONST"><span class="n"><span class="pre">CONST</span></span></a><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N3f2c7Options6hg_algE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c7Options9hg_swathsE">
+<span id="_CPPv3N3f2c7Options9hg_swathsE"></span><span id="_CPPv2N3f2c7Options9hg_swathsE"></span><span id="f2c::Options::hg_swaths__i"></span><span class="target" id="structf2c_1_1Options_1a0e7c8e9d01650f0014c364f8b1ba3fd1"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hg_swaths</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N3f2c7Options9hg_swathsE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c7Options6sg_algE">
+<span id="_CPPv3N3f2c7Options6sg_algE"></span><span id="_CPPv2N3f2c7Options6sg_algE"></span><span id="f2c::Options::sg_alg__SGAlg"></span><span class="target" id="structf2c_1_1Options_1af8cf815312a8628b6adbff90f576a835"></span><a class="reference internal" href="enum_namespacef2c_1a4117eeefc60e442b12197c6647f79c25.html#_CPPv4N3f2c5SGAlgE" title="f2c::SGAlg"><span class="n"><span class="pre">SGAlg</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sg_alg</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="enum_namespacef2c_1a4117eeefc60e442b12197c6647f79c25.html#_CPPv4N3f2c5SGAlgE" title="f2c::SGAlg"><span class="n"><span class="pre">SGAlg</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="enum_namespacef2c_1a4117eeefc60e442b12197c6647f79c25.html#_CPPv4N3f2c5SGAlg11BRUTE_FORCEE" title="f2c::SGAlg::BRUTE_FORCE"><span class="n"><span class="pre">BRUTE_FORCE</span></span></a><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N3f2c7Options6sg_algE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c7Options6sg_objE">
+<span id="_CPPv3N3f2c7Options6sg_objE"></span><span id="_CPPv2N3f2c7Options6sg_objE"></span><span id="f2c::Options::sg_obj__SGObjFunc"></span><span class="target" id="structf2c_1_1Options_1afe74f27f3b7f1654da59738cedfe933f"></span><a class="reference internal" href="enum_namespacef2c_1ae6c8de33b5c2e8466d025ac57ab475a7.html#_CPPv4N3f2c9SGObjFuncE" title="f2c::SGObjFunc"><span class="n"><span class="pre">SGObjFunc</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sg_obj</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="enum_namespacef2c_1ae6c8de33b5c2e8466d025ac57ab475a7.html#_CPPv4N3f2c9SGObjFuncE" title="f2c::SGObjFunc"><span class="n"><span class="pre">SGObjFunc</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="enum_namespacef2c_1ae6c8de33b5c2e8466d025ac57ab475a7.html#_CPPv4N3f2c9SGObjFunc11N_SWATH_MODE" title="f2c::SGObjFunc::N_SWATH_MOD"><span class="n"><span class="pre">N_SWATH_MOD</span></span></a><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N3f2c7Options6sg_objE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c7Options8sg_angleE">
+<span id="_CPPv3N3f2c7Options8sg_angleE"></span><span id="_CPPv2N3f2c7Options8sg_angleE"></span><span id="f2c::Options::sg_angle__double"></span><span class="target" id="structf2c_1_1Options_1a9ca864e3ea64d5fa38e9d86bf03cd1de"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sg_angle</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N3f2c7Options8sg_angleE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c7Options6rp_algE">
+<span id="_CPPv3N3f2c7Options6rp_algE"></span><span id="_CPPv2N3f2c7Options6rp_algE"></span><span id="f2c::Options::rp_alg__RPAlg"></span><span class="target" id="structf2c_1_1Options_1a94b264cb4800a851ef90e1bed0770322"></span><a class="reference internal" href="enum_namespacef2c_1a2f5e5900b507ba5ae513e3fe6d93c787.html#_CPPv4N3f2c5RPAlgE" title="f2c::RPAlg"><span class="n"><span class="pre">RPAlg</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rp_alg</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="enum_namespacef2c_1a2f5e5900b507ba5ae513e3fe6d93c787.html#_CPPv4N3f2c5RPAlgE" title="f2c::RPAlg"><span class="n"><span class="pre">RPAlg</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="enum_namespacef2c_1a2f5e5900b507ba5ae513e3fe6d93c787.html#_CPPv4N3f2c5RPAlg14SHORTEST_ROUTEE" title="f2c::RPAlg::SHORTEST_ROUTE"><span class="n"><span class="pre">SHORTEST_ROUTE</span></span></a><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N3f2c7Options6rp_algE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c7Options6pp_algE">
+<span id="_CPPv3N3f2c7Options6pp_algE"></span><span id="_CPPv2N3f2c7Options6pp_algE"></span><span id="f2c::Options::pp_alg__PPAlg"></span><span class="target" id="structf2c_1_1Options_1ada94d6cd869ad9209f251039365958d6"></span><a class="reference internal" href="enum_namespacef2c_1a9dd903ed17e8e57e6a804e88eab576e9.html#_CPPv4N3f2c5PPAlgE" title="f2c::PPAlg"><span class="n"><span class="pre">PPAlg</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pp_alg</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="enum_namespacef2c_1a9dd903ed17e8e57e6a804e88eab576e9.html#_CPPv4N3f2c5PPAlgE" title="f2c::PPAlg"><span class="n"><span class="pre">PPAlg</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="enum_namespacef2c_1a9dd903ed17e8e57e6a804e88eab576e9.html#_CPPv4N3f2c5PPAlg6DUBINSE" title="f2c::PPAlg::DUBINS"><span class="n"><span class="pre">DUBINS</span></span></a><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N3f2c7Options6pp_algE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="namespace_std.html" class="btn btn-neutral float-left" title="Namespace std" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="structf2c_1_1types_1_1Cell.html" class="btn btn-neutral float-right" title="Struct Cell" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

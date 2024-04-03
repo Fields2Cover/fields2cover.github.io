@@ -50,6 +50,8 @@ Included By
 
 - :ref:`file_fields2cover_types_Route.h`
 
+- :ref:`file_fields2cover_types_SwathsByCells.h`
+
 - :ref:`file_fields2cover_types.h`
 
 

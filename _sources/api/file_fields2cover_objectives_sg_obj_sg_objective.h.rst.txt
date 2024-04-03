@@ -1,0 +1,79 @@
+
+.. _file_fields2cover_objectives_sg_obj_sg_objective.h:
+
+File sg_objective.h
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_objectives_sg_obj>` (``fields2cover/objectives/sg_obj``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``fields2cover/objectives/sg_obj/sg_objective.h``)
+--------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_fields2cover_objectives_sg_obj_sg_objective.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``fields2cover/objectives/base_objective.h`` (:ref:`file_fields2cover_objectives_base_objective.h`)
+
+- ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_fields2cover_objectives_sg_obj_field_coverage.h`
+
+- :ref:`file_fields2cover_objectives_sg_obj_n_swath.h`
+
+- :ref:`file_fields2cover_objectives_sg_obj_overlaps.h`
+
+- :ref:`file_fields2cover_objectives_sg_obj_swath_length.h`
+
+- :ref:`file_fields2cover_swath_generator_swath_generator_base.h`
+
+- :ref:`file_fields2cover.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_f2c`
+
+- :ref:`namespace_f2c__obj`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classf2c_1_1obj_1_1SGObjective`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_sg__objective_8h_1ac1f65b16f2345493504e7df2157d44f9`
+

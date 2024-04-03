@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Part 6: Path planning &mdash; Fields2Cover latest documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/code-tabs.css?v=1bc26e2f" />
+
+  
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="canonical" href="https://fields2cover.github.io/source/tutorials/path_planning.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=c6e86fd7"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/code-tabs.js?v=c983d12e"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Part 7: Complete flow" href="complete_flow.html" />
+    <link rel="next" title="Part 7: Cell Decomposition" href="decomposition.html" />
     <link rel="prev" title="Part 5: Route planning" href="route_planning.html" /> 
 </head>
 
@@ -49,23 +54,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Fields2Cover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html#c-tutorials">C++ tutorials</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="basic_types.html">Part 1: Basic types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="objective_functions.html">Part 2: Objective functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="headland_generator.html">Part 3: Headland generator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="swath_generator.html">Part 4: Swath generator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="route_planning.html">Part 5: Route planning</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Part 6: Path planning</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#dubins-curves">Dubins curves</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dubins-curves-with-continuous-curvature">Dubins curves with Continuous curvature</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#reeds-shepp-curves">Reeds-Shepp curves</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#reeds-shepp-curves-with-continuous-curvature">Reeds-Shepp curves with Continuous curvature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_types.html">Part 1: Basic types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="objective_functions.html">Part 2: Objective functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="headland_generator.html">Part 3: Headland generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swath_generator.html">Part 4: Swath generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route_planning.html">Part 5: Route planning</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Part 6: Path planning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dubins-curves">Dubins curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dubins-curves-with-continuous-curvature">Dubins curves with Continuous curvature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reeds-shepp-curves">Reeds-Shepp curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reeds-shepp-curves-with-continuous-curvature">Reeds-Shepp curves with Continuous curvature</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="complete_flow.html">Part 7: Complete flow</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#python-tutorials">Python tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decomposition.html">Part 7: Cell Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complete_flow.html">Part 8: Complete flow</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
@@ -98,65 +100,135 @@
            <div itemprop="articleBody">
              
   <section id="part-6-path-planning">
-<h1>Part 6: Path planning<a class="headerlink" href="#part-6-path-planning" title="Permalink to this headline"></a></h1>
+<h1>Part 6: Path planning<a class="headerlink" href="#part-6-path-planning" title="Link to this heading"></a></h1>
 <p>Lastly, time to create the final path. A good path planner will do this task.</p>
 <p>For these examples, we will continue from the previous tutorial:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">Random</span><span class="w"> </span><span class="nf">rand</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
 <span class="n">F2CRobot</span><span class="w"> </span><span class="nf">robot</span><span class="w"> </span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0</span><span class="p">);</span>
 <span class="n">f2c</span><span class="o">::</span><span class="n">hg</span><span class="o">::</span><span class="n">ConstHL</span><span class="w"> </span><span class="n">const_hl</span><span class="p">;</span>
-<span class="n">F2CCells</span><span class="w"> </span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">.</span><span class="n">generateRandField</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mf">1e4</span><span class="p">).</span><span class="n">field</span><span class="p">;</span>
-<span class="n">F2CCells</span><span class="w"> </span><span class="n">no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">const_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">robot_width</span><span class="p">);</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">.</span><span class="n">generateRandField</span><span class="p">(</span><span class="mf">1e4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">).</span><span class="n">getField</span><span class="p">();</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">const_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">getWidth</span><span class="p">());</span>
 <span class="n">f2c</span><span class="o">::</span><span class="n">sg</span><span class="o">::</span><span class="n">BruteForce</span><span class="w"> </span><span class="n">bf</span><span class="p">;</span>
-<span class="n">F2CSwaths</span><span class="w"> </span><span class="n">swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bf</span><span class="p">.</span><span class="n">generateSwaths</span><span class="p">(</span><span class="n">M_PI</span><span class="p">,</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">op_width</span><span class="p">,</span><span class="w"> </span><span class="n">no_hl</span><span class="p">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="n">F2CSwaths</span><span class="w"> </span><span class="n">swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bf</span><span class="p">.</span><span class="n">generateSwaths</span><span class="p">(</span><span class="n">M_PI</span><span class="p">,</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">getCovWidth</span><span class="p">(),</span><span class="w"> </span><span class="n">no_hl</span><span class="p">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
 <span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">SnakeOrder</span><span class="w"> </span><span class="n">snake_sorter</span><span class="p">;</span>
 <span class="n">swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">snake_sorter</span><span class="p">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Before continue, we will define the path planner and some parameters that will be needed for computing the turns:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">pp</span><span class="o">::</span><span class="n">PathPlanning</span><span class="w"> </span><span class="n">path_planner</span><span class="p">;</span>
-<span class="n">robot</span><span class="p">.</span><span class="n">setMinRadius</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// m</span>
-<span class="n">robot</span><span class="p">.</span><span class="n">linear_curv_change</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span><span class="w">  </span><span class="c1">// 1/m^2</span>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rand</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">robot</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">)</span>
+<span class="n">const_hl</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">HG_Const_gen</span><span class="p">()</span>
+<span class="n">field</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="n">generateRandField</span><span class="p">(</span><span class="mf">1e4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">cells</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">getField</span><span class="p">()</span>
+<span class="n">no_hl</span> <span class="o">=</span> <span class="n">const_hl</span><span class="o">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="n">robot</span><span class="o">.</span><span class="n">getWidth</span><span class="p">())</span>
+<span class="n">bf</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">SG_BruteForce</span><span class="p">()</span>
+<span class="n">swaths</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">generateSwaths</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">robot</span><span class="o">.</span><span class="n">getCovWidth</span><span class="p">(),</span> <span class="n">no_hl</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">snake_sorter</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">RP_Snake</span><span class="p">()</span>
+<span class="n">swaths</span> <span class="o">=</span> <span class="n">snake_sorter</span><span class="o">.</span><span class="n">genSortedSwaths</span><span class="p">(</span><span class="n">swaths</span><span class="p">)</span>
 </pre></div>
 </div>
+</div></div><p>Before continue, we will define the path planner and some parameters that will be needed for computing the turns:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">robot</span><span class="p">.</span><span class="n">setMinTurningRadius</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// m</span>
+<span class="n">robot</span><span class="p">.</span><span class="n">setMaxDiffCurv</span><span class="p">(</span><span class="mf">0.1</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1/m^2</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">pp</span><span class="o">::</span><span class="n">PathPlanning</span><span class="w"> </span><span class="n">path_planner</span><span class="p">;</span>
+</pre></div>
+</div>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robot</span><span class="o">.</span><span class="n">setMinTurningRadius</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># m</span>
+<span class="n">robot</span><span class="o">.</span><span class="n">setMaxDiffCurv</span><span class="p">(</span><span class="mf">0.1</span><span class="p">);</span>  <span class="c1"># 1/m^2</span>
+<span class="n">path_planner</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">PP_PathPlanning</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></div><p>Any of these planners accept also a <code class="docutils literal notranslate"><span class="pre">route</span></code> input instead of a <code class="docutils literal notranslate"><span class="pre">swaths</span></code>.</p>
 <section id="dubins-curves">
-<h2>Dubins curves<a class="headerlink" href="#dubins-curves" title="Permalink to this headline"></a></h2>
+<h2>Dubins curves<a class="headerlink" href="#dubins-curves" title="Link to this heading"></a></h2>
 <p>Dubins curves are generated with 3 segments of turn. Segments of turn in Dubins are always going forward.
 Segment types are straight, right curve or left curve.</p>
 <p>Dubins produces the shortest turn possible.</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">pp</span><span class="o">::</span><span class="n">DubinsCurves</span><span class="w"> </span><span class="n">dubins</span><span class="p">;</span>
-<span class="n">F2CPath</span><span class="w"> </span><span class="n">path_dubins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path_planner</span><span class="p">.</span><span class="n">searchBestPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span><span class="w"> </span><span class="n">swaths</span><span class="p">,</span><span class="w"> </span><span class="n">dubins</span><span class="p">);</span>
+<span class="n">F2CPath</span><span class="w"> </span><span class="n">path_dubins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path_planner</span><span class="p">.</span><span class="n">planPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span><span class="w"> </span><span class="n">swaths</span><span class="p">,</span><span class="w"> </span><span class="n">dubins</span><span class="p">);</span>
 </pre></div>
 </div>
-<img alt="../../_images/Tutorial_6_1_Dubins.png" src="../../_images/Tutorial_6_1_Dubins.png" />
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dubins</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">PP_DubinsCurves</span><span class="p">()</span>
+<span class="n">path_dubins</span> <span class="o">=</span> <span class="n">path_planner</span><span class="o">.</span><span class="n">planPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">swaths</span><span class="p">,</span> <span class="n">dubins</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><img alt="../../_images/Tutorial_6_1_Dubins.png" src="../../_images/Tutorial_6_1_Dubins.png" />
 </section>
 <section id="dubins-curves-with-continuous-curvature">
-<h2>Dubins curves with Continuous curvature<a class="headerlink" href="#dubins-curves-with-continuous-curvature" title="Permalink to this headline"></a></h2>
+<h2>Dubins curves with Continuous curvature<a class="headerlink" href="#dubins-curves-with-continuous-curvature" title="Link to this heading"></a></h2>
 <p>While Dubins curves produces the shortest path possible, going from one segment of the curve to another creates instant curvature change.
 A vehicle could not follow a path with this issue, so this path planner implements an integrator to change the curvature smoothly.</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">pp</span><span class="o">::</span><span class="n">DubinsCurvesCC</span><span class="w"> </span><span class="n">dubins_cc</span><span class="p">;</span>
-<span class="n">F2CPath</span><span class="w"> </span><span class="n">path_dubins_cc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path_planner</span><span class="p">.</span><span class="n">searchBestPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span><span class="w"> </span><span class="n">swaths</span><span class="p">,</span><span class="w"> </span><span class="n">dubins_cc</span><span class="p">);</span>
+<span class="n">F2CPath</span><span class="w"> </span><span class="n">path_dubins_cc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path_planner</span><span class="p">.</span><span class="n">planPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span><span class="w"> </span><span class="n">swaths</span><span class="p">,</span><span class="w"> </span><span class="n">dubins_cc</span><span class="p">);</span>
 </pre></div>
 </div>
-<img alt="../../_images/Tutorial_6_2_Dubins_CC.png" src="../../_images/Tutorial_6_2_Dubins_CC.png" />
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dubins_cc</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">PP_DubinsCurvesCC</span><span class="p">();</span>
+<span class="n">path_dubins_cc</span> <span class="o">=</span> <span class="n">path_planner</span><span class="o">.</span><span class="n">planPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">swaths</span><span class="p">,</span> <span class="n">dubins_cc</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><img alt="../../_images/Tutorial_6_2_Dubins_CC.png" src="../../_images/Tutorial_6_2_Dubins_CC.png" />
 </section>
 <section id="reeds-shepp-curves">
-<h2>Reeds-Shepp curves<a class="headerlink" href="#reeds-shepp-curves" title="Permalink to this headline"></a></h2>
+<h2>Reeds-Shepp curves<a class="headerlink" href="#reeds-shepp-curves" title="Link to this heading"></a></h2>
 <p>Reeds-Shepp curves also computes the shortest path, but allowing the vehicle to go backwards.</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">pp</span><span class="o">::</span><span class="n">ReedsSheppCurves</span><span class="w"> </span><span class="n">reeds_shepp</span><span class="p">;</span>
-<span class="n">F2CPath</span><span class="w"> </span><span class="n">path_reeds_shepp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path_planner</span><span class="p">.</span><span class="n">searchBestPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span><span class="w"> </span><span class="n">swaths</span><span class="p">,</span><span class="w"> </span><span class="n">reeds_shepp</span><span class="p">);</span>
+<span class="n">F2CPath</span><span class="w"> </span><span class="n">path_reeds_shepp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path_planner</span><span class="p">.</span><span class="n">planPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span><span class="w"> </span><span class="n">swaths</span><span class="p">,</span><span class="w"> </span><span class="n">reeds_shepp</span><span class="p">);</span>
 </pre></div>
 </div>
-<img alt="../../_images/Tutorial_6_3_Reeds_Shepp.png" src="../../_images/Tutorial_6_3_Reeds_Shepp.png" />
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reeds_shepp</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">PP_ReedsSheppCurves</span><span class="p">();</span>
+<span class="n">path_reeds_shepp</span> <span class="o">=</span> <span class="n">path_planner</span><span class="o">.</span><span class="n">planPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">swaths</span><span class="p">,</span> <span class="n">reeds_shepp</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><img alt="../../_images/Tutorial_6_3_Reeds_Shepp.png" src="../../_images/Tutorial_6_3_Reeds_Shepp.png" />
 </section>
 <section id="reeds-shepp-curves-with-continuous-curvature">
-<h2>Reeds-Shepp curves with Continuous curvature<a class="headerlink" href="#reeds-shepp-curves-with-continuous-curvature" title="Permalink to this headline"></a></h2>
+<h2>Reeds-Shepp curves with Continuous curvature<a class="headerlink" href="#reeds-shepp-curves-with-continuous-curvature" title="Link to this heading"></a></h2>
 <p>As with Dubins, instantaneous curvature change is a problem in this kind of curves.
 This planner has an integrator to smooth the path.</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">pp</span><span class="o">::</span><span class="n">ReedsSheppCurvesHC</span><span class="w"> </span><span class="n">reeds_shepp_hc</span><span class="p">;</span>
-<span class="n">F2CPath</span><span class="w"> </span><span class="n">path_reeds_shepp_hc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path_planner</span><span class="p">.</span><span class="n">searchBestPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span><span class="w"> </span><span class="n">swaths</span><span class="p">,</span><span class="w"> </span><span class="n">reeds_shepp_hc</span><span class="p">);</span>
+<span class="n">F2CPath</span><span class="w"> </span><span class="n">path_reeds_shepp_hc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path_planner</span><span class="p">.</span><span class="n">planPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span><span class="w"> </span><span class="n">swaths</span><span class="p">,</span><span class="w"> </span><span class="n">reeds_shepp_hc</span><span class="p">);</span>
 </pre></div>
 </div>
-<img alt="../../_images/Tutorial_6_4_Reeds_Shepp_HC.png" src="../../_images/Tutorial_6_4_Reeds_Shepp_HC.png" />
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reeds_shepp_hc</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">PP_ReedsSheppCurvesHC</span><span class="p">();</span>
+<span class="n">path_reeds_shepp_hc</span> <span class="o">=</span> <span class="n">path_planner</span><span class="o">.</span><span class="n">planPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">swaths</span><span class="p">,</span> <span class="n">reeds_shepp_hc</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><img alt="../../_images/Tutorial_6_4_Reeds_Shepp_HC.png" src="../../_images/Tutorial_6_4_Reeds_Shepp_HC.png" />
 </section>
 </section>
 
@@ -165,13 +237,13 @@ This planner has an integrator to smooth the path.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="route_planning.html" class="btn btn-neutral float-left" title="Part 5: Route planning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="complete_flow.html" class="btn btn-neutral float-right" title="Part 7: Complete flow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="decomposition.html" class="btn btn-neutral float-right" title="Part 7: Cell Decomposition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Wageningen University.</p>
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -16,3 +16,14 @@ Decomposition algorithms' namespace.
 
 
 
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classf2c_1_1decomp_1_1BoustrophedonDecomp`
+
+- :ref:`exhale_class_classf2c_1_1decomp_1_1DecompositionBase`
+
+- :ref:`exhale_class_classf2c_1_1decomp_1_1TrapezoidalDecomp`

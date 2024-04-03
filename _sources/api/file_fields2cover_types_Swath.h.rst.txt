@@ -54,6 +54,8 @@ Included By
 
 - :ref:`file_fields2cover_types_Swaths.h`
 
+- :ref:`file_fields2cover_types_SwathsByCells.h`
+
 - :ref:`file_fields2cover_types.h`
 
 

@@ -1,0 +1,47 @@
+
+.. _program_listing_file_fields2cover_decomposition_decomposition_base.h:
+
+Program Listing for File decomposition_base.h
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_fields2cover_decomposition_decomposition_base.h>` (``fields2cover/decomposition/decomposition_base.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //=============================================================================
+   //    Copyright (C) 2021-2024 Wageningen University - All Rights Reserved
+   //                     Author: Gonzalo Mier
+   //                        BSD-3 License
+   //=============================================================================
+   
+   #pragma once
+   #ifndef FIELDS2COVER_DECOMPOSITION_DECOMPOSITION_BASE_H_
+   #define FIELDS2COVER_DECOMPOSITION_DECOMPOSITION_BASE_H_
+   
+   #include "fields2cover/types.h"
+   #include "fields2cover/objectives/decomp_obj/decomp_objective.h"
+   
+   namespace f2c::decomp {
+   
+   class DecompositionBase {
+    public:
+     virtual F2CCells decompose(const F2CCells& cells,
+         const obj::DecompObjective& obj = obj::DecompObjective());
+   
+    public:
+     virtual F2CCells split(const F2CCells& cells,
+         const obj::DecompObjective& obj);
+   
+     virtual F2CMultiLineString genSplitLines(const F2CCells& cells,
+         const obj::DecompObjective& obj) = 0;
+   
+     virtual F2CCells merge(const F2CCells& cells,
+         const obj::DecompObjective& obj);
+   };
+   
+   }  // namespace f2c::decomp
+   
+   
+   #endif  // FIELDS2COVER_DECOMPOSITION_DECOMPOSITION_BASE_H_

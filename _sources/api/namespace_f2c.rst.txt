@@ -41,6 +41,8 @@ Classes
 -------
 
 
+- :ref:`exhale_struct_structf2c_1_1Options`
+
 - :ref:`exhale_class_classf2c_1_1Parser`
 
 - :ref:`exhale_class_classf2c_1_1Random`
@@ -48,3 +50,41 @@ Classes
 - :ref:`exhale_class_classf2c_1_1Transform`
 
 - :ref:`exhale_class_classf2c_1_1Visualizer`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespacef2c_1a1e59f3db82500923975d8f2d4974de92`
+
+- :ref:`exhale_enum_namespacef2c_1af1570d754f89b5997c70373b417fec30`
+
+- :ref:`exhale_enum_namespacef2c_1a9dd903ed17e8e57e6a804e88eab576e9`
+
+- :ref:`exhale_enum_namespacef2c_1a2f5e5900b507ba5ae513e3fe6d93c787`
+
+- :ref:`exhale_enum_namespacef2c_1a4117eeefc60e442b12197c6647f79c25`
+
+- :ref:`exhale_enum_namespacef2c_1ae6c8de33b5c2e8466d025ac57ab475a7`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacef2c_1a996a61779b3ca8e69e9def0c559772ff`
+
+- :ref:`exhale_function_namespacef2c_1ad1ab0562096f27cb72e47c545ae1e8bf`
+
+- :ref:`exhale_function_namespacef2c_1a31b888d96f50abd384e8557f8b31e7ef`
+
+- :ref:`exhale_function_namespacef2c_1aaf6c30654c2ac4d1865b5fa8eef5fe54`
+
+- :ref:`exhale_function_namespacef2c_1a8e1af5dfac7b80500fccc259ef09549e`
+
+- :ref:`exhale_function_namespacef2c_1a06fe1cda867fcdbc6df7496fd0a2ce5a`
+
+- :ref:`exhale_function_namespacef2c_1ad38fc33ed13d70292523c35e7f2a16c6`
+
+- :ref:`exhale_function_namespacef2c_1a2d513731ee8cdf45dd089b9249e0aaa1`

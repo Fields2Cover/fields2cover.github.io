@@ -1,0 +1,83 @@
+
+.. _file_fields2cover_route_planning_route_planner_base.h:
+
+File route_planner_base.h
+=========================
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_route_planning>` (``fields2cover/route_planning``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``fields2cover/route_planning/route_planner_base.h``)
+-----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_fields2cover_route_planning_route_planner_base.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``fields2cover/objectives/rp_obj/direct_dist_path_obj.h`` (:ref:`file_fields2cover_objectives_rp_obj_direct_dist_path_obj.h`)
+
+- ``fields2cover/objectives/rp_obj/rp_objective.h`` (:ref:`file_fields2cover_objectives_rp_obj_rp_objective.h`)
+
+- ``fields2cover/route_planning/single_cell_swaths_order_base.h`` (:ref:`file_fields2cover_route_planning_single_cell_swaths_order_base.h`)
+
+- ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
+
+- ``limits``
+
+- ``map``
+
+- ``optional``
+
+- ``utility``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_fields2cover.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_f2c`
+
+- :ref:`namespace_f2c__rp`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classf2c_1_1rp_1_1RoutePlannerBase`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_route__planner__base_8h_1a95bbf61517b4e6e4b5c8168446b9f800`
+

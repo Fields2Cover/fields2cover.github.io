@@ -1,0 +1,14 @@
+.. _exhale_enum_namespacef2c_1a2f5e5900b507ba5ae513e3fe6d93c787:
+
+Enum RPAlg
+==========
+
+- Defined in :ref:`file_fields2cover.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: f2c::RPAlg
+   :project: Fields2Cover

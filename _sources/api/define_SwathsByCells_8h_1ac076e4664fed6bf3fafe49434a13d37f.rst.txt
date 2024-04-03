@@ -1,0 +1,14 @@
+.. _exhale_define_SwathsByCells_8h_1ac076e4664fed6bf3fafe49434a13d37f:
+
+Define FIELDS2COVER_TYPES_SWATHS_BY_CELLS_H_
+============================================
+
+- Defined in :ref:`file_fields2cover_types_SwathsByCells.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: FIELDS2COVER_TYPES_SWATHS_BY_CELLS_H_
+   :project: Fields2Cover

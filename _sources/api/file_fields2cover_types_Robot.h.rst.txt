@@ -30,11 +30,25 @@ Includes
 --------
 
 
+- ``fields2cover/types/Cell.h`` (:ref:`file_fields2cover_types_Cell.h`)
+
+- ``fields2cover/types/Cells.h`` (:ref:`file_fields2cover_types_Cells.h`)
+
+- ``fields2cover/types/LineString.h`` (:ref:`file_fields2cover_types_LineString.h`)
+
+- ``fields2cover/types/MultiLineString.h`` (:ref:`file_fields2cover_types_MultiLineString.h`)
+
+- ``fields2cover/types/Path.h`` (:ref:`file_fields2cover_types_Path.h`)
+
 - ``fields2cover/types/Point.h`` (:ref:`file_fields2cover_types_Point.h`)
 
 - ``gdal/ogr_geometry.h``
 
 - ``optional``
+
+- ``string``
+
+- ``utility``
 
 - ``vector``
 

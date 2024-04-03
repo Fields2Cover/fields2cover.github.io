@@ -1,0 +1,23 @@
+.. _dir_fields2cover_objectives_rp_obj:
+
+
+Directory rp_obj
+================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_objectives>` (``fields2cover/objectives``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``fields2cover/objectives/rp_obj``
+
+
+Files
+-----
+
+- :ref:`file_fields2cover_objectives_rp_obj_complete_turn_path_obj.h`
+- :ref:`file_fields2cover_objectives_rp_obj_direct_dist_path_obj.h`
+- :ref:`file_fields2cover_objectives_rp_obj_rp_objective.h`
+
+

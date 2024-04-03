@@ -11,7 +11,7 @@ Program Listing for File single_cell_swaths_order_base.h
 .. code-block:: cpp
 
    //=============================================================================
-   //    Copyright (C) 2021-2022 Wageningen University - All Rights Reserved
+   //    Copyright (C) 2021-2024 Wageningen University - All Rights Reserved
    //                     Author: Gonzalo Mier
    //                        BSD-3 License
    //=============================================================================
@@ -23,7 +23,6 @@ Program Listing for File single_cell_swaths_order_base.h
    #include "fields2cover/types.h"
    
    namespace f2c::rp {
-   
    
    class SingleCellSwathsOrderBase {
     public:

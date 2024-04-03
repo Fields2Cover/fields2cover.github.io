@@ -1,0 +1,26 @@
+.. _exhale_class_classf2c_1_1obj_1_1DecompObjective:
+
+Class DecompObjective
+=====================
+
+- Defined in :ref:`file_fields2cover_objectives_decomp_obj_decomp_objective.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public f2c::obj::BaseObjective< DecompObjective >`` (:ref:`exhale_class_classf2c_1_1obj_1_1BaseObjective`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: f2c::obj::DecompObjective
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

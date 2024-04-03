@@ -3,7 +3,7 @@
 Class PathLength
 ================
 
-- Defined in :ref:`file_fields2cover_objectives_path_length.h`
+- Defined in :ref:`file_fields2cover_objectives_pp_obj_path_length.h`
 
 
 Inheritance Relationships

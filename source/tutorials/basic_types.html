@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Part 1: Basic types &mdash; Fields2Cover latest documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/code-tabs.css?v=1bc26e2f" />
+
+  
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="canonical" href="https://fields2cover.github.io/source/tutorials/basic_types.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=c6e86fd7"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/code-tabs.js?v=c983d12e"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -49,29 +54,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Fields2Cover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html#c-tutorials">C++ tutorials</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Part 1: Basic types</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#initialize-a-f2cpoint">Initialize a F2CPoint</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#basic-types-are-shared-pointers">Basic types are shared pointers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#initialize-a-f2clinestring">Initialize a F2CLineString</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#initialize-a-f2clinearring">Initialize a F2CLinearRing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#initializing-other-collections">Initializing other collections</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#accessing-elements-in-collections">Accessing elements in collections</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#f2crobot">F2CRobot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#f2cswath-f2cswaths-and-f2cswathsbycells">F2CSwath, F2CSwaths and F2CSwathsByCells</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#f2croute-and-f2cpath">F2CRoute and F2CPath</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#visualizing-fields2cover-data">Visualizing Fields2Cover data</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Part 1: Basic types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initialize-a-f2cpoint">Initialize a F2CPoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-types-are-shared-pointers">Basic types are shared pointers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initialize-a-f2clinestring">Initialize a F2CLineString</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initialize-a-f2clinearring">Initialize a F2CLinearRing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initializing-other-collections">Initializing other collections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-elements-in-collections">Accessing elements in collections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#f2crobot">F2CRobot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#f2cswath-f2cswaths-and-f2cswathsbycells">F2CSwath, F2CSwaths and F2CSwathsByCells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#f2croute">F2CRoute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#f2cpath">F2CPath</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visualizing-fields2cover-data">Visualizing Fields2Cover data</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="objective_functions.html">Part 2: Objective functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="headland_generator.html">Part 3: Headland generator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="swath_generator.html">Part 4: Swath generator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="route_planning.html">Part 5: Route planning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="path_planning.html">Part 6: Path planning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="complete_flow.html">Part 7: Complete flow</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#python-tutorials">Python tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="objective_functions.html">Part 2: Objective functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="headland_generator.html">Part 3: Headland generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swath_generator.html">Part 4: Swath generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route_planning.html">Part 5: Route planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="path_planning.html">Part 6: Path planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decomposition.html">Part 7: Cell Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complete_flow.html">Part 8: Complete flow</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
@@ -104,39 +107,98 @@
            <div itemprop="articleBody">
              
   <section id="part-1-basic-types">
-<h1>Part 1: Basic types<a class="headerlink" href="#part-1-basic-types" title="Permalink to this headline"></a></h1>
+<h1>Part 1: Basic types<a class="headerlink" href="#part-1-basic-types" title="Link to this heading"></a></h1>
 <p>All the tutorials assume Fields2Cover library and iostream are included as:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover.h&quot;</span>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 </pre></div>
 </div>
-<section id="initialize-a-f2cpoint">
-<h2>Initialize a F2CPoint<a class="headerlink" href="#initialize-a-f2cpoint" title="Permalink to this headline"></a></h2>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fields2cover</span> <span class="k">as</span> <span class="nn">f2c</span>
+</pre></div>
+</div>
+</div></div><section id="initialize-a-f2cpoint">
+<h2>Initialize a F2CPoint<a class="headerlink" href="#initialize-a-f2cpoint" title="Link to this heading"></a></h2>
 <p>Points are the most basic type. There are many ways to initialize a <code class="docutils literal notranslate"><span class="pre">F2CPoint</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c::types::Point</span></code>)</p>
-<ol class="arabic">
-<li><p>With x and y axis on the constructor</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CPoint</span><span class="w"> </span><span class="nf">p1</span><span class="w"> </span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.4</span><span class="p">);</span>
+<ol class="arabic simple">
+<li><p>Using x and y coordinates</p></li>
+</ol>
+<blockquote>
+<div><div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">F2CPoint</span><span class="w"> </span><span class="nf">p1</span><span class="w"> </span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.4</span><span class="p">);</span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Point 1: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><em>Point 1: Point(1.2, 3.4, 0)</em></p>
-</li>
-<li><p>With x, y and z axis on the constructor</p>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Point 1: &quot;</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div><p><em>Point 1: Point(1.2, 3.4, 0)</em></p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Using x, y and z coordinates</p></li>
+</ol>
+<blockquote>
+<div><div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CPoint</span><span class="w"> </span><span class="nf">p2</span><span class="w"> </span><span class="p">(</span><span class="mf">9.8</span><span class="p">,</span><span class="w"> </span><span class="mf">7.6</span><span class="p">,</span><span class="w"> </span><span class="mf">5.4</span><span class="p">);</span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Point 2: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><em>Point 2: Point(9.8, 7.6, 5.4)</em></p>
-</li>
-<li><p>Using <code class="docutils literal notranslate"><span class="pre">OGRPoint</span></code> from GDAL</p>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p2</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">9.8</span><span class="p">,</span> <span class="mf">7.6</span><span class="p">,</span> <span class="mf">5.4</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Point 2: &quot;</span><span class="p">,</span> <span class="n">p2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><p><em>Point 2: Point(9.8, 7.6, 5.4)</em></p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">OGRPoint</span></code> from GDAL</p></li>
+</ol>
+<blockquote>
+<div><div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CPoint</span><span class="w"> </span><span class="nf">p3</span><span class="w"> </span><span class="p">(</span><span class="n">OGRPoint</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">));</span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Point 3: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><em>Point 3: Point(11, 22, 0)</em></p>
-</li>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span>
+<span class="n">ogrpoint</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">(</span><span class="n">ogr</span><span class="o">.</span><span class="n">wkbPoint</span><span class="p">)</span>
+<span class="n">ogrpoint</span><span class="o">.</span><span class="n">AddPoint</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">()</span>
+<span class="n">p3</span><span class="o">.</span><span class="n">importFromWkt</span><span class="p">(</span><span class="n">ogrpoint</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Point 3: &quot;</span><span class="p">,</span> <span class="n">p3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div><p><em>Point 3: Point(11, 22, 0)</em></p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
 <li><p>Creating an empty <code class="docutils literal notranslate"><span class="pre">F2CPoint</span></code> and setting its components using <code class="docutils literal notranslate"><span class="pre">setX</span></code>/<code class="docutils literal notranslate"><span class="pre">setY</span></code>/<code class="docutils literal notranslate"><span class="pre">setZ</span></code>.
-The components can be also read with <code class="docutils literal notranslate"><span class="pre">getX</span></code>/<code class="docutils literal notranslate"><span class="pre">getY</span></code>/<code class="docutils literal notranslate"><span class="pre">getZ</span></code>.</p>
+The components can be also read with <code class="docutils literal notranslate"><span class="pre">getX</span></code>/<code class="docutils literal notranslate"><span class="pre">getY</span></code>/<code class="docutils literal notranslate"><span class="pre">getZ</span></code>.</p></li>
+</ol>
+<blockquote>
+<div><div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CPoint</span><span class="w"> </span><span class="n">p4</span><span class="p">;</span>
 <span class="n">p4</span><span class="p">.</span><span class="n">setX</span><span class="p">(</span><span class="mf">3.0</span><span class="p">);</span>
 <span class="n">p4</span><span class="p">.</span><span class="n">setZ</span><span class="p">(</span><span class="mf">-1.0</span><span class="p">);</span>
@@ -146,135 +208,225 @@ The components can be also read with <code class="docutils literal notranslate">
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, z: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p4</span><span class="p">.</span><span class="n">getZ</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><em>Point 4: Point(3, 0, -1). Its components are: {x: 3, y: 0, z: -1}</em></p>
-</li>
-<li><p>Creating an empty <code class="docutils literal notranslate"><span class="pre">F2CPoint</span></code> and importing its components.</p>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p4</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">()</span>
+<span class="n">p4</span><span class="o">.</span><span class="n">setX</span><span class="p">(</span><span class="mf">3.0</span><span class="p">);</span>
+<span class="n">p4</span><span class="o">.</span><span class="n">setZ</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Point 4: &quot;</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span>
+    <span class="s2">&quot;. Its components are: {x: &quot;</span><span class="p">,</span> <span class="n">p4</span><span class="o">.</span><span class="n">getX</span><span class="p">(),</span>
+    <span class="s2">&quot;, y: &quot;</span><span class="p">,</span> <span class="n">p4</span><span class="o">.</span><span class="n">getY</span><span class="p">(),</span>
+    <span class="s2">&quot;, z: &quot;</span><span class="p">,</span> <span class="n">p4</span><span class="o">.</span><span class="n">getZ</span><span class="p">(),</span> <span class="s2">&quot;}&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div><p><em>Point 4: Point(3, 0, -1). Its components are: {x: 3, y: 0, z: -1}</em></p>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>Creating an empty <code class="docutils literal notranslate"><span class="pre">F2CPoint</span></code> and importing its components.</p></li>
+</ol>
+<blockquote>
+<div><div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CPoint</span><span class="w"> </span><span class="n">p5</span><span class="p">;</span>
 <span class="n">p5</span><span class="p">.</span><span class="n">importFromWkt</span><span class="p">(</span><span class="s">&quot;POINT (0 4 4)&quot;</span><span class="p">);</span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Point 5: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p5</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><em>Point 5: Point(0, 4, 4)</em></p>
-</li>
-</ol>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p5</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">()</span>
+<span class="n">p5</span><span class="o">.</span><span class="n">importFromWkt</span><span class="p">(</span><span class="s2">&quot;POINT (0 4 4)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Point 5: &quot;</span><span class="p">,</span> <span class="n">p5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div><p><em>Point 5: Point(0, 4, 4)</em></p>
+</div></blockquote>
 </section>
 <section id="basic-types-are-shared-pointers">
-<h2>Basic types are shared pointers<a class="headerlink" href="#basic-types-are-shared-pointers" title="Permalink to this headline"></a></h2>
+<h2>Basic types are shared pointers<a class="headerlink" href="#basic-types-are-shared-pointers" title="Link to this heading"></a></h2>
 <p>Classes derived from GDAL types, like <code class="docutils literal notranslate"><span class="pre">F2CPoint</span></code> from <code class="docutils literal notranslate"><span class="pre">OGRPoint</span></code>,
 use a compound structure of shared pointers on it.</p>
 <p>The pointers to GDAL types can be access as <code class="docutils literal notranslate"><span class="pre">p1-&gt;()</span></code> or <code class="docutils literal notranslate"><span class="pre">p1.get()</span></code>.
 Usually, this is not needed, as a simple access has been provided:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Access to OGRPoints: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p4</span><span class="o">-&gt;</span><span class="n">Distance</span><span class="p">(</span><span class="n">p5</span><span class="p">.</span><span class="n">get</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Without accessing: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p4</span><span class="p">.</span><span class="n">Distance</span><span class="p">(</span><span class="n">p5</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Without accessing: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p4</span><span class="p">.</span><span class="n">distance</span><span class="p">(</span><span class="n">p5</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="line-block">
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Access to OGRPoints: &quot;</span><span class="p">,</span> <span class="n">p4</span><span class="o">-&gt;</span><span class="n">Distance</span><span class="p">(</span><span class="n">p5</span><span class="o">.</span><span class="n">get</span><span class="p">()));</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Without accessing: &quot;</span><span class="p">,</span> <span class="n">p4</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">p5</span><span class="p">));</span>
+</pre></div>
+</div>
+</div></div><div class="line-block">
 <div class="line"><em>Access to OGRPoints: 5</em></div>
 <div class="line"><em>Without accessing: 5</em></div>
 </div>
-<p>One of the effects of using shared pointers in the classes is the difference between copying and cloning.</p>
-<p>When a class is cloned, the value of the shared pointer is copied to another shared pointer with different direction.
-Due to this, changing the value of the shared pointer after cloning it do not affect the cloned value:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CPoint</span><span class="w"> </span><span class="nf">old_p</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
-<span class="n">F2CPoint</span><span class="w"> </span><span class="n">cloned_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">old_p</span><span class="p">.</span><span class="n">clone</span><span class="p">();</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The old point is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">old_p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="n">cloned_p</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">5.0</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Old point is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">old_p</span><span class="w"> </span><span class="o">&lt;&lt;</span>
-<span class="w">   </span><span class="s">&quot; and cloned point is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cloned_p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</pre></div>
-</div>
-<div class="line-block">
-<div class="line"><em>The old point is Point(1, 2, 0)</em></div>
-<div class="line"><em>Old point is: Point(1, 2, 0) and cloned point is: Point(5, 10, 0)</em></div>
-</div>
-<p>On the other hand, if the shared pointer is copied, you are copying the direction of the pointer.
-If one of the values is modified, the other value is modified as well:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CPoint</span><span class="w"> </span><span class="n">copy_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">old_p</span><span class="p">;</span>
-<span class="n">copy_p</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">5.5</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Old point is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">old_p</span><span class="w"> </span><span class="o">&lt;&lt;</span>
-<span class="w">   </span><span class="s">&quot; and copied point is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">copy_p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</pre></div>
-</div>
-<p><em>Old point is: Point(5.5, 11, 0) and copied point is: Point(5.5, 11, 0)</em></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Despite the effect of the shared pointers on basic types is on purpouse,
-it can lead on many bugs. As developer, be aware of this effect.</p>
-</div>
 </section>
 <section id="initialize-a-f2clinestring">
-<h2>Initialize a F2CLineString<a class="headerlink" href="#initialize-a-f2clinestring" title="Permalink to this headline"></a></h2>
-<p>A <code class="docutils literal notranslate"><span class="pre">F2CLineString</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c::types::LineString</span></code>) represents a line. The ways to initialize a <code class="docutils literal notranslate"><span class="pre">F2CLineString</span></code> are:</p>
-<ol class="arabic">
-<li><p>Creating an empty <code class="docutils literal notranslate"><span class="pre">F2CLineString</span></code> and adding several <code class="docutils literal notranslate"><span class="pre">F2CPoint</span></code>:</p>
+<h2>Initialize a F2CLineString<a class="headerlink" href="#initialize-a-f2clinestring" title="Link to this heading"></a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">F2CLineString</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c::types::LineString</span></code>) is a line defined by a vector of points. To initialize a <code class="docutils literal notranslate"><span class="pre">F2CLineString</span></code>, we can:</p>
+<ol class="arabic simple">
+<li><p>Create an empty <code class="docutils literal notranslate"><span class="pre">F2CLineString</span></code> and adding several <code class="docutils literal notranslate"><span class="pre">F2CPoint</span></code>:</p></li>
+</ol>
+<blockquote>
+<div><div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CLineString</span><span class="w"> </span><span class="n">line1</span><span class="p">;</span>
 <span class="n">line1</span><span class="p">.</span><span class="n">addPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 <span class="n">line1</span><span class="p">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">p5</span><span class="p">);</span><span class="w">  </span><span class="c1">// Point(0, 4)</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Length of line 1: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">line1</span><span class="p">.</span><span class="n">getLength</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Length of line 1: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">line1</span><span class="p">.</span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><em>Length of line 1: 5</em></p>
-</li>
-<li><p>Creating an empty <code class="docutils literal notranslate"><span class="pre">F2CLineString</span></code> and adding several <code class="docutils literal notranslate"><span class="pre">F2CPoint</span></code>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CLineString</span><span class="w"> </span><span class="nf">line2</span><span class="p">({</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)});</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Length of line 2: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">line2</span><span class="p">.</span><span class="n">getLength</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line1</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">LineString</span><span class="p">()</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">line1</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">p5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Length of line 1: &quot;</span><span class="p">,</span> <span class="n">line1</span><span class="o">.</span><span class="n">length</span><span class="p">())</span>
 </pre></div>
 </div>
-<p><em>Length of line 2: 2</em></p>
-</li>
+</div></div><p><em>Length of line 1: 5</em></p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Give a sequence of <code class="docutils literal notranslate"><span class="pre">F2CPoint</span></code>:</p></li>
 </ol>
+<blockquote>
+<div><div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CLineString</span><span class="w"> </span><span class="nf">line2</span><span class="p">({</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)});</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Length of line 2: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">line2</span><span class="p">.</span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line2</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">LineString</span><span class="p">();</span>
+<span class="p">[</span><span class="n">line2</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]];</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Length of line 2: &quot;</span><span class="p">,</span> <span class="n">line2</span><span class="o">.</span><span class="n">length</span><span class="p">());</span>
+</pre></div>
+</div>
+</div></div><p><em>Length of line 2: 2</em></p>
+</div></blockquote>
 </section>
 <section id="initialize-a-f2clinearring">
-<h2>Initialize a F2CLinearRing<a class="headerlink" href="#initialize-a-f2clinearring" title="Permalink to this headline"></a></h2>
+<h2>Initialize a F2CLinearRing<a class="headerlink" href="#initialize-a-f2clinearring" title="Link to this heading"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">F2CLinearRing</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c::types::LinearRing</span></code>) is a closed <code class="docutils literal notranslate"><span class="pre">F2CLineString</span></code>.
 It can be initialized as a <code class="docutils literal notranslate"><span class="pre">F2CLineString</span></code>:</p>
-<blockquote>
-<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CLinearRing</span><span class="w"> </span><span class="n">ring</span><span class="p">{</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)};</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Area of the ring: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ring</span><span class="p">.</span><span class="n">getArea</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CLinearRing</span><span class="w"> </span><span class="n">ring</span><span class="p">{</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Area of the ring: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ring</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><em>Area of the ring: 0.5</em></p>
-</div></blockquote>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ring</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">LinearRing</span><span class="p">();</span>
+<span class="p">[</span><span class="n">ring</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]];</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Area of the ring: &quot;</span><span class="p">,</span> <span class="n">ring</span><span class="o">.</span><span class="n">area</span><span class="p">())</span>
+</pre></div>
+</div>
+</div></div><p><em>Area of the ring: 0.5</em></p>
 <p>The main difference between <code class="docutils literal notranslate"><span class="pre">F2CLineString</span></code> and <code class="docutils literal notranslate"><span class="pre">F2CLinearRing</span></code> is that <code class="docutils literal notranslate"><span class="pre">F2CLinearRing</span></code> is expected to be closed, so the area can be computed.</p>
 </section>
 <section id="initializing-other-collections">
-<h2>Initializing other collections<a class="headerlink" href="#initializing-other-collections" title="Permalink to this headline"></a></h2>
+<h2>Initializing other collections<a class="headerlink" href="#initializing-other-collections" title="Link to this heading"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">F2CMultiLineString</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c::types::MultiLineString</span></code>) are several <code class="docutils literal notranslate"><span class="pre">F2CLineString</span></code>. It can be initialize as:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CMultiLineString</span><span class="w"> </span><span class="n">lines</span><span class="p">;</span>
 <span class="n">lines</span><span class="p">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">line1</span><span class="p">);</span>
 <span class="n">lines</span><span class="p">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">line2</span><span class="p">);</span>
 
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Lines have length: &quot;</span><span class="p">;</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">lines</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">line</span><span class="p">.</span><span class="n">getLength</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">line</span><span class="p">.</span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><em>Lines have length: 5, 2,</em></p>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">MultiLineString</span><span class="p">();</span>
+<span class="n">lines</span><span class="o">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">line1</span><span class="p">);</span>
+<span class="n">lines</span><span class="o">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">line2</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lines have length: &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lines</span><span class="o">.</span><span class="n">size</span><span class="p">()):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">(),</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div><p><em>Lines have length: 5, 2,</em></p>
 <p>A <code class="docutils literal notranslate"><span class="pre">F2CCell</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c::types::Cell</span></code>) is a polygon created by one outter <code class="docutils literal notranslate"><span class="pre">F2CLinearRing</span></code> and zero, one or many inner <code class="docutils literal notranslate"><span class="pre">F2CLinearRing</span></code>.
-First <code class="docutils literal notranslate"><span class="pre">F2CLinearRing</span></code> has to be the outter one.
-<code class="docutils literal notranslate"><span class="pre">F2CLinearRing</span></code> should not cross each others.</p>
+The first <code class="docutils literal notranslate"><span class="pre">F2CLinearRing</span></code> is the outter one.
+Moreover, all the <code class="docutils literal notranslate"><span class="pre">F2CLinearRing</span></code> should not intersect with each others.</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CLinearRing</span><span class="w"> </span><span class="n">outter_ring</span><span class="p">{</span>
-<span class="w">  </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)};</span>
+<span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)};</span>
 <span class="n">F2CLinearRing</span><span class="w"> </span><span class="n">inner_ring</span><span class="p">{</span>
 <span class="w">  </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">),</span>
 <span class="w">  </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)};</span>
 <span class="n">F2CCell</span><span class="w"> </span><span class="n">cell</span><span class="p">;</span>
 <span class="n">cell</span><span class="p">.</span><span class="n">addRing</span><span class="p">(</span><span class="n">outter_ring</span><span class="p">);</span>
 <span class="n">cell</span><span class="p">.</span><span class="n">addRing</span><span class="p">(</span><span class="n">inner_ring</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The area of the cell is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">getArea</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The area of the cell is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cell</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><em>The area of the cell is: 3</em></p>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">outter_ring</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">LinearRing</span><span class="p">();</span>
+<span class="p">[</span><span class="n">outter_ring</span><span class="o">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span>  \
+  <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]];</span>
+<span class="n">inner_ring</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">LinearRing</span><span class="p">();</span>
+<span class="p">[</span><span class="n">inner_ring</span><span class="o">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span>  \
+  <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span>  \
+  <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)]];</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Cell</span><span class="p">();</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">addRing</span><span class="p">(</span><span class="n">outter_ring</span><span class="p">);</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">addRing</span><span class="p">(</span><span class="n">inner_ring</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The area of the cell is: &quot;</span><span class="p">,</span> <span class="n">cell</span><span class="o">.</span><span class="n">area</span><span class="p">(),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><p><em>The area of the cell is: 3</em></p>
 <p>A <code class="docutils literal notranslate"><span class="pre">F2CCells</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c::types::Cells</span></code>) is a multipolygon. It contains zero, one or several <code class="docutils literal notranslate"><span class="pre">F2CCell</span></code> on it.</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CCells</span><span class="w"> </span><span class="n">cells</span><span class="p">;</span>
 <span class="n">cells</span><span class="p">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">cell</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The area of the cells is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cells</span><span class="p">.</span><span class="n">getArea</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The area of the cells is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cells</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><em>The area of the cells is: 3</em></p>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cells</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Cells</span><span class="p">();</span>
+<span class="n">cells</span><span class="o">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">cell</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The area of the cells is: &quot;</span><span class="p">,</span> <span class="n">cells</span><span class="o">.</span><span class="n">area</span><span class="p">(),</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div><p><em>The area of the cells is: 3</em></p>
 <p>Lastly, <code class="docutils literal notranslate"><span class="pre">F2CMultiPoint</span></code> (<code class="docutils literal notranslate"><span class="pre">f2c::types::MultiPoint</span></code>) is a collection of <code class="docutils literal notranslate"><span class="pre">F2CPoint</span></code></p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CMultiPoint</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="p">{</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)};</span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Points contains &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; points.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="n">points</span><span class="p">.</span><span class="n">addPoint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span>
@@ -283,22 +435,47 @@ First <code class="docutils literal notranslate"><span class="pre">F2CLinearRing
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Points contains &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; points.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="line-block">
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">MultiPoint</span><span class="p">();</span>
+<span class="p">[</span><span class="n">points</span><span class="o">.</span><span class="n">addGeometry</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]];</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Points contains &quot;</span><span class="p">,</span> <span class="n">points</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="s2">&quot; points.&quot;</span><span class="p">);</span>
+<span class="n">points</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Points contains &quot;</span><span class="p">,</span> <span class="n">points</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="s2">&quot; points.&quot;</span><span class="p">);</span>
+<span class="n">points</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">p5</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Points contains &quot;</span><span class="p">,</span> <span class="n">points</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="s2">&quot; points.&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><div class="line-block">
 <div class="line"><em>Points contains 2 points.</em></div>
 <div class="line"><em>Points contains 3 points.</em></div>
 <div class="line"><em>Points contains 4 points.</em></div>
 </div>
 </section>
 <section id="accessing-elements-in-collections">
-<h2>Accessing elements in collections<a class="headerlink" href="#accessing-elements-in-collections" title="Permalink to this headline"></a></h2>
+<h2>Accessing elements in collections<a class="headerlink" href="#accessing-elements-in-collections" title="Link to this heading"></a></h2>
 <p>To access each of the elements in a collection, the function <code class="docutils literal notranslate"><span class="pre">getGeometry(int</span> <span class="pre">n)</span></code> returns the element n.</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CPoint</span><span class="w"> </span><span class="n">p_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;First point in points: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_0</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><em>First point in points: Point(1, 2, 0)</em></p>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p_0</span> <span class="o">=</span> <span class="n">points</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First point in points: &quot;</span><span class="p">,</span> <span class="n">p_0</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div><p><em>First point in points: Point(1, 2, 0)</em></p>
 <p>Unfortunately, if we change the child element, it is not changed on the collection.
-If you want to keep it, you have to set the geometry back with <code class="docutils literal notranslate"><span class="pre">setGeometry()</span></code></p>
+If we want to keep it, we have to set the geometry back with <code class="docutils literal notranslate"><span class="pre">setGeometry()</span></code></p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">p_0</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">1e5</span><span class="p">;</span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Modified p_0: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_0</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;First point in points without modification: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
@@ -306,7 +483,15 @@ If you want to keep it, you have to set the geometry back with <code class="docu
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Modified first point in points: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="line-block">
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p_0</span> <span class="o">*=</span> <span class="mf">1e5</span><span class="p">;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modified p_0: &quot;</span><span class="p">,</span> <span class="n">p_0</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First point in points without modification: &quot;</span><span class="p">,</span> <span class="n">points</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="n">points</span><span class="o">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">p_0</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modified first point in points: &quot;</span><span class="p">,</span> <span class="n">points</span><span class="o">.</span><span class="n">getGeometry</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+</div></div><div class="line-block">
 <div class="line"><em>Modified p_0: Point(100000, 200000, 0)</em></div>
 <div class="line"><em>First point in points without modification: Point(1, 2, 0)</em></div>
 <div class="line"><em>Modified first point in points: Point(100000, 200000, 0)</em></div>
@@ -315,66 +500,116 @@ If you want to keep it, you have to set the geometry back with <code class="docu
 <code class="docutils literal notranslate"><span class="pre">F2CLineString</span></code>, <code class="docutils literal notranslate"><span class="pre">F2CLinearRing</span></code>, <code class="docutils literal notranslate"><span class="pre">F2CMultiLineString</span></code>, <code class="docutils literal notranslate"><span class="pre">F2CCell</span></code>, <code class="docutils literal notranslate"><span class="pre">F2CCells</span></code> and <code class="docutils literal notranslate"><span class="pre">F2CMultiPoint</span></code></p>
 </section>
 <section id="f2crobot">
-<h2>F2CRobot<a class="headerlink" href="#f2crobot" title="Permalink to this headline"></a></h2>
+<h2>F2CRobot<a class="headerlink" href="#f2crobot" title="Link to this heading"></a></h2>
 <p>The vehicle to cover the field is defined as a <code class="docutils literal notranslate"><span class="pre">F2CRobot</span></code> struct.
 To initialize it, the constructor needs the width of the robot and the width of the operation.
-For example, if we have a vehicle to fertilize a field, with a width of 3 meters width and a fertilizer width of 39 meters, we should initialize it as:</p>
+For example, if we have a vehicle to fertilize a field, with 3m width and a 39m operational width, we should initialize it as:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CRobot</span><span class="w"> </span><span class="nf">robot</span><span class="w"> </span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">39.0</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Other important parameters of <code class="docutils literal notranslate"><span class="pre">F2CRobot</span></code> are:</p>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robot</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">39.0</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><p>Important functions of <code class="docutils literal notranslate"><span class="pre">F2CRobot</span></code> are:</p>
 <ul class="simple">
-<li><p><em>cruise_speed</em>: is the speed of the vehicle when traveling through the field.</p></li>
-<li><p><em>max_icc</em>: is the maximum Instantaneous Center of Curvature on a turn. It’s the inverse of the radius. It’s preferable to use the function <code class="docutils literal notranslate"><span class="pre">setMinRadius(double)</span></code>.</p></li>
-<li><p><em>linear_curv_change</em>: is the maximum change of curvature in a turn. It’s used to prevent instant changes of curvature.</p></li>
-<li><p><em>max_vel</em>: if not set, the velocity when turning is <em>cruise_speed</em>.</p></li>
+<li><p><em>getWidth/setWidth</em>: get/set the width of the robot. If something is closer than this value from the robot, we can expect it will be hit.</p></li>
+<li><p><em>getCovWidth/setCovWidth</em>: get/set the coverage width of the robot, also called operational width. This parameter defines the width of the swaths in the field.</p></li>
+<li><p><em>getMinTurningRadius/setMinTurningRadius</em> and <em>getMaxCurv/setMaxCurv</em>: get/set the minimum turning radius or the maximum curvature, respectively. Both are saved as the same parameter, as maximum curvature is the inverse of the minimum turning radius.</p></li>
+<li><p><em>getMaxDiffCurv/setMaxDiffCurv</em>: get/set the maximum linear change of the curvature.</p></li>
+<li><p><em>getCruiseVel/setCruiseVel</em>: get/set the speed of the vehicle when traveling through the field.</p></li>
+<li><p><em>getTurnVel/setTurnVel</em>: get/set the speed of the vehicle when making turns or going through the headlands.</p></li>
 </ul>
 </section>
 <section id="f2cswath-f2cswaths-and-f2cswathsbycells">
-<h2>F2CSwath, F2CSwaths and F2CSwathsByCells<a class="headerlink" href="#f2cswath-f2cswaths-and-f2cswathsbycells" title="Permalink to this headline"></a></h2>
+<h2>F2CSwath, F2CSwaths and F2CSwathsByCells<a class="headerlink" href="#f2cswath-f2cswaths-and-f2cswathsbycells" title="Link to this heading"></a></h2>
 <p>A swath, or AB line, is the path that uses an agricultural vehicle to cross the field. On Precision Agriculture, swaths are fixed.
 Swaths are coded in the Fields2Cover library as <code class="docutils literal notranslate"><span class="pre">F2CSwath</span></code>.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">F2CSwath</span></code> is defined by a <code class="docutils literal notranslate"><span class="pre">F2CLineString</span></code>, which defines the path of the swath, and the width of the swath.</p>
 <p><code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code> is a collection of <code class="docutils literal notranslate"><span class="pre">F2CSwath</span></code>. <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code> groups all the <code class="docutils literal notranslate"><span class="pre">F2CSwath</span></code> on a <code class="docutils literal notranslate"><span class="pre">F2CCell</span></code>.
-<code class="docutils literal notranslate"><span class="pre">F2CSwathsByCells</span></code> collects the <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code> for each <code class="docutils literal notranslate"><span class="pre">F2CCell</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">F2CSwathsByCells</span></code> collects the <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code> for each <code class="docutils literal notranslate"><span class="pre">F2CCell</span></code> in a <code class="docutils literal notranslate"><span class="pre">F2CCells</span></code>.</p>
 </section>
-<section id="f2croute-and-f2cpath">
-<h2>F2CRoute and F2CPath<a class="headerlink" href="#f2croute-and-f2cpath" title="Permalink to this headline"></a></h2>
-<p>Lastly, a <code class="docutils literal notranslate"><span class="pre">F2CRoute</span></code> defines a route, as a sequence of <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code> and <code class="docutils literal notranslate"><span class="pre">F2CMultiPoint</span></code>.
-The type of the <code class="docutils literal notranslate"><span class="pre">F2CRoute</span></code> points if there is an start and/or end point in the route.
-If there are none, the <code class="docutils literal notranslate"><span class="pre">F2CRoute</span></code> will start with the first <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code>, then the first <code class="docutils literal notranslate"><span class="pre">F2CMultiPoint</span></code>, then the second <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code>, and so on…
-<code class="docutils literal notranslate"><span class="pre">F2CMultiPoint</span></code> are employed to go from the end of one <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code> to the start of the next <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code>.
-The <code class="docutils literal notranslate"><span class="pre">F2CMultiPoint</span></code> could be empty.</p>
-<p>A <code class="docutils literal notranslate"><span class="pre">F2CRoute</span></code> is not a path because it doesn’t have the turns or the velocities the vehicle has to have.
-On the other hand, <code class="docutils literal notranslate"><span class="pre">F2CPath</span></code> defines the point, angle, velocity and duration of each step.
-With a <code class="docutils literal notranslate"><span class="pre">F2CPath</span></code>, a vehicle knows exactly where, when and how should it be.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><code class="docutils literal notranslate"><span class="pre">F2CRoute</span></code> are not used in this version of Fields2Cover</p>
-</div>
+<section id="f2croute">
+<h2>F2CRoute<a class="headerlink" href="#f2croute" title="Link to this heading"></a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">F2CRoute</span></code> defines a route, as a sequence of <code class="docutils literal notranslate"><span class="pre">std::vector&lt;F2CSwaths&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">std::vector&lt;F2CMultiPoint&gt;</span></code>.
+The order of the sequence is:
+- First, follow the first <code class="docutils literal notranslate"><span class="pre">F2CMultiPoint</span></code>. If it doesn’t contain any point, skip it.
+- Then, cover the first <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code> in order, going from the end of each swath to the start of the next one, until all of them are covered.
+- Use the next <code class="docutils literal notranslate"><span class="pre">F2CMultiPoint</span></code> to go from the end of the last <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code> covered until the start of the next <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code>, if any. If there is any <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code> left, the <code class="docutils literal notranslate"><span class="pre">F2CMultiPoint</span></code> goes to the end of the route. If <code class="docutils literal notranslate"><span class="pre">F2CMultiPoint</span></code> is empty, skip it.
+- Follow the last two steps until all <code class="docutils literal notranslate"><span class="pre">F2CSwaths</span></code> are covered.</p>
+<p>Fortunately, this class handles this behaviour with functions like <em>addSwaths</em> and <em>addConection</em>, so we do not have to worry about it.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">F2CRoute</span></code> is not a path because it doesn’t have the turns or the velocities the vehicle needs to follow it.</p>
+</section>
+<section id="f2cpath">
+<h2>F2CPath<a class="headerlink" href="#f2cpath" title="Link to this heading"></a></h2>
+<p>Lastly, <code class="docutils literal notranslate"><span class="pre">F2CPath</span></code> defines a coverage path by a vector of the point, angle, length and velocity of each step. It also provides information about the direction and if it is traversing through the mainland or not.</p>
 </section>
 <section id="visualizing-fields2cover-data">
-<h2>Visualizing Fields2Cover data<a class="headerlink" href="#visualizing-fields2cover-data" title="Permalink to this headline"></a></h2>
-<p>To visualize Fields2Cover data, the library provides the class <code class="docutils literal notranslate"><span class="pre">f2c::Visualizer</span></code> to easily plot it.</p>
-<p>First, you can define your figure id with:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">Visualizer</span><span class="o">::</span><span class="n">figure</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<h2>Visualizing Fields2Cover data<a class="headerlink" href="#visualizing-fields2cover-data" title="Link to this heading"></a></h2>
+<p>To visualize Fields2Cover data, the library provides the class <code class="docutils literal notranslate"><span class="pre">f2c::Visualizer</span></code> to easily plot our results.</p>
+<p>First, we need to create our figure as:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">Visualizer</span><span class="o">::</span><span class="n">figure</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>The previous line could be omitted, and it will create one itself.
-Then, draw the data using that figure as:</p>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">.</span><span class="n">Visualizer</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
+</pre></div>
+</div>
+</div></div><p>Then, we can draw our data as:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">Visualizer</span><span class="o">::</span><span class="n">plot</span><span class="p">(</span><span class="n">lines</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Lastly, the data can be plot as:</p>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">.</span><span class="n">Visualizer</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lines</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><p>Finally, the data is plotted as:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">Visualizer</span><span class="o">::</span><span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>or saved as:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">Visualizer</span><span class="o">::</span><span class="n">save</span><span class="p">(</span><span class="s">&quot;Tutorial_image&quot;</span><span class="p">);</span>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">.</span><span class="n">Visualizer</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>The result should be an image as:</p>
-<img alt="../../_images/Tutorial_image_1_9.png" src="../../_images/Tutorial_image_1_9.png" />
+</div></div><p>or saved as:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">Visualizer</span><span class="o">::</span><span class="n">save</span><span class="p">(</span><span class="s">&quot;Tutorial_image.png&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">.</span><span class="n">Visualizer</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;Tutorial_image.png&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remember to add the extension to your images (.png)</p>
+</div>
+<p>The result should be this image:</p>
+<img alt="../../_images/Tutorial_image.png" src="../../_images/Tutorial_image.png" />
 </section>
 </section>
 
@@ -389,7 +624,7 @@ Then, draw the data using that figure as:</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Wageningen University.</p>
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

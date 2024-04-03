@@ -34,6 +34,8 @@ Includes
 
 - ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
 
+- ``vector``
+
 
 
 Included By

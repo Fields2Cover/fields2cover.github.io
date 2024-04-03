@@ -1,0 +1,26 @@
+.. _dir_fields2cover_objectives_sg_obj:
+
+
+Directory sg_obj
+================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_objectives>` (``fields2cover/objectives``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``fields2cover/objectives/sg_obj``
+
+
+Files
+-----
+
+- :ref:`file_fields2cover_objectives_sg_obj_field_coverage.h`
+- :ref:`file_fields2cover_objectives_sg_obj_n_swath.h`
+- :ref:`file_fields2cover_objectives_sg_obj_n_swath_modified.h`
+- :ref:`file_fields2cover_objectives_sg_obj_overlaps.h`
+- :ref:`file_fields2cover_objectives_sg_obj_sg_objective.h`
+- :ref:`file_fields2cover_objectives_sg_obj_swath_length.h`
+
+

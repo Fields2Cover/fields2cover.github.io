@@ -1,0 +1,14 @@
+.. _exhale_enum_namespacef2c_1ae6c8de33b5c2e8466d025ac57ab475a7:
+
+Enum SGObjFunc
+==============
+
+- Defined in :ref:`file_fields2cover.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: f2c::SGObjFunc
+   :project: Fields2Cover

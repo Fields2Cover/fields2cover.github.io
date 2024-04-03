@@ -1,0 +1,45 @@
+
+.. _program_listing_file_fields2cover_decomposition_trapezoidal_decomp.h:
+
+Program Listing for File trapezoidal_decomp.h
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_fields2cover_decomposition_trapezoidal_decomp.h>` (``fields2cover/decomposition/trapezoidal_decomp.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //=============================================================================
+   //    Copyright (C) 2021-2024 Wageningen University - All Rights Reserved
+   //                     Author: Gonzalo Mier
+   //                        BSD-3 License
+   //=============================================================================
+   
+   #pragma once
+   #ifndef FIELDS2COVER_DECOMPOSITION_TRAPEZOIDAL_DECOMP_H_
+   #define FIELDS2COVER_DECOMPOSITION_TRAPEZOIDAL_DECOMP_H_
+   
+   #include "fields2cover/types.h"
+   #include "fields2cover/decomposition/decomposition_base.h"
+   
+   namespace f2c::decomp {
+   
+   class TrapezoidalDecomp : public DecompositionBase {
+    public:
+     double getSplitAngle() const;
+     void setSplitAngle(double ang);
+   
+    public:
+     F2CMultiLineString genSplitLines(const F2CCells& cells,
+         const obj::DecompObjective& obj = obj::DecompObjective()) override;
+   
+    protected:
+     double split_angle {0.0};
+   };
+   
+   
+   }  // namespace f2c::decomp
+   
+   
+   #endif  // FIELDS2COVER_DECOMPOSITION_TRAPEZOIDAL_DECOMP_H_

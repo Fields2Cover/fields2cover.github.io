@@ -1,0 +1,37 @@
+
+.. _program_listing_file_fields2cover_decomposition_boustrophedon_decomp.h:
+
+Program Listing for File boustrophedon_decomp.h
+===============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_fields2cover_decomposition_boustrophedon_decomp.h>` (``fields2cover/decomposition/boustrophedon_decomp.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //=============================================================================
+   //    Copyright (C) 2021-2024 Wageningen University - All Rights Reserved
+   //                     Author: Gonzalo Mier
+   //                        BSD-3 License
+   //=============================================================================
+   
+   #pragma once
+   #ifndef FIELDS2COVER_DECOMPOSITION_BOUSTROPHEDON_DECOMP_H_
+   #define FIELDS2COVER_DECOMPOSITION_BOUSTROPHEDON_DECOMP_H_
+   
+   #include "fields2cover/types.h"
+   #include "fields2cover/decomposition/trapezoidal_decomp.h"
+   
+   namespace f2c::decomp {
+   
+   class BoustrophedonDecomp : public TrapezoidalDecomp {
+    public:
+     F2CMultiLineString genSplitLines(const F2CCells& cells,
+         const obj::DecompObjective& obj = obj::DecompObjective()) override;
+   };
+   
+   }  // namespace f2c::decomp
+   
+   
+   #endif  // FIELDS2COVER_DECOMPOSITION_BOUSTROPHEDON_DECOMP_H_

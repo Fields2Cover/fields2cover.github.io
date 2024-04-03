@@ -1,0 +1,14 @@
+.. _exhale_enum_namespacef2c_1a9dd903ed17e8e57e6a804e88eab576e9:
+
+Enum PPAlg
+==========
+
+- Defined in :ref:`file_fields2cover.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: f2c::PPAlg
+   :project: Fields2Cover

@@ -1,0 +1,69 @@
+
+.. _file_fields2cover_objectives_sg_obj_n_swath_modified.h:
+
+File n_swath_modified.h
+=======================
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_objectives_sg_obj>` (``fields2cover/objectives/sg_obj``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``fields2cover/objectives/sg_obj/n_swath_modified.h``)
+------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_fields2cover_objectives_sg_obj_n_swath_modified.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``fields2cover/objectives/sg_obj/n_swath.h`` (:ref:`file_fields2cover_objectives_sg_obj_n_swath.h`)
+
+- ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_fields2cover.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_f2c`
+
+- :ref:`namespace_f2c__obj`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classf2c_1_1obj_1_1NSwathModified`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_n__swath__modified_8h_1ab336f5842e69fffdb97b967a41f0e925`
+

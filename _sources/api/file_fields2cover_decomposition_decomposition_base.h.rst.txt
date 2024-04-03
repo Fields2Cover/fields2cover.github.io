@@ -1,0 +1,71 @@
+
+.. _file_fields2cover_decomposition_decomposition_base.h:
+
+File decomposition_base.h
+=========================
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_decomposition>` (``fields2cover/decomposition``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``fields2cover/decomposition/decomposition_base.h``)
+----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_fields2cover_decomposition_decomposition_base.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``fields2cover/objectives/decomp_obj/decomp_objective.h`` (:ref:`file_fields2cover_objectives_decomp_obj_decomp_objective.h`)
+
+- ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_fields2cover_decomposition_trapezoidal_decomp.h`
+
+- :ref:`file_fields2cover.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_f2c`
+
+- :ref:`namespace_f2c__decomp`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classf2c_1_1decomp_1_1DecompositionBase`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_decomposition__base_8h_1a1b37aec4c69d8a8e349d4e09c733b3a1`
+

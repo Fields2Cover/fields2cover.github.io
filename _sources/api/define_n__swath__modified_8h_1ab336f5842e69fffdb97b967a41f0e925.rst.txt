@@ -1,0 +1,14 @@
+.. _exhale_define_n__swath__modified_8h_1ab336f5842e69fffdb97b967a41f0e925:
+
+Define FIELDS2COVER_OBJECTIVES_N_SWATH_MODIFIED_H_
+==================================================
+
+- Defined in :ref:`file_fields2cover_objectives_sg_obj_n_swath_modified.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: FIELDS2COVER_OBJECTIVES_N_SWATH_MODIFIED_H_
+   :project: Fields2Cover

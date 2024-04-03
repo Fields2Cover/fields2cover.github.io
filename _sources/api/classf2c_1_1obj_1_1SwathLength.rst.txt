@@ -3,7 +3,7 @@
 Class SwathLength
 =================
 
-- Defined in :ref:`file_fields2cover_objectives_swath_length.h`
+- Defined in :ref:`file_fields2cover_objectives_sg_obj_swath_length.h`
 
 
 Inheritance Relationships

@@ -3,7 +3,7 @@
 Define FIELDS2COVER_OBJECTIVES_RP_OBJECTIVE_H_
 ==============================================
 
-- Defined in :ref:`file_fields2cover_objectives_rp_objective.h`
+- Defined in :ref:`file_fields2cover_objectives_rp_obj_rp_objective.h`
 
 
 Define Documentation

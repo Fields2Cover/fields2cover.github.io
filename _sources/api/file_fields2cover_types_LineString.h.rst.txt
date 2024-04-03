@@ -52,6 +52,10 @@ Included By
 
 - :ref:`file_fields2cover_types_MultiLineString.h`
 
+- :ref:`file_fields2cover_types_Path.h`
+
+- :ref:`file_fields2cover_types_Robot.h`
+
 - :ref:`file_fields2cover_types_Route.h`
 
 - :ref:`file_fields2cover_types_Swath.h`

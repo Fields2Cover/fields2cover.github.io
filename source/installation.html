@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Installation &mdash; Fields2Cover latest documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://fields2cover.github.io/source/installation.html" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/code-tabs.js?v=c983d12e"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -52,7 +57,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#compilation">Compilation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#add-it-to-your-projects">Add it to your projects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#compilation-with-python-interface">Compilation with python interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ros-compatibility">ROS Compatibility</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
@@ -85,11 +89,11 @@
            <div itemprop="articleBody">
              
   <section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
-<p>The Fields2Cover package has only been tested on Ubuntu 18.04, 20.04 and 22.04.
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
+<p>The Fields2Cover package has only been tested on Ubuntu.
 If you are able to run it in other operative systems, open an issue/PR and it will be added to this guide</p>
 <section id="requirements-on-linux">
-<h2>Requirements on Linux<a class="headerlink" href="#requirements-on-linux" title="Permalink to this headline"></a></h2>
+<h2>Requirements on Linux<a class="headerlink" href="#requirements-on-linux" title="Link to this heading"></a></h2>
 <p>Some packages are needed before compiling the package:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -105,7 +109,7 @@ If you are able to run it in other operative systems, open an issue/PR and it wi
 </div>
 </section>
 <section id="compilation">
-<h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this headline"></a></h2>
+<h2>Compilation<a class="headerlink" href="#compilation" title="Link to this heading"></a></h2>
 <p>First, clone this repository.
 Then, from the main folder of the project:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir -p build;</span>
@@ -117,7 +121,7 @@ Then, from the main folder of the project:</p>
 </div>
 </section>
 <section id="add-it-to-your-projects">
-<h2>Add it to your projects<a class="headerlink" href="#add-it-to-your-projects" title="Permalink to this headline"></a></h2>
+<h2>Add it to your projects<a class="headerlink" href="#add-it-to-your-projects" title="Link to this heading"></a></h2>
 <p>To add Fields2Cover into your CMakeLists.txt, it is as easy as:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">find_package(Fields2Cover REQUIRED)</span>
 <span class="go">target_link_libraries(&lt;&lt;&lt;your_package&gt;&gt;&gt; Fields2Cover)</span>
@@ -125,7 +129,7 @@ Then, from the main folder of the project:</p>
 </div>
 </section>
 <section id="compilation-with-python-interface">
-<h2>Compilation with python interface<a class="headerlink" href="#compilation-with-python-interface" title="Permalink to this headline"></a></h2>
+<h2>Compilation with python interface<a class="headerlink" href="#compilation-with-python-interface" title="Link to this heading"></a></h2>
 <p>As without the interface, clone this repository.
 Then, from the main folder of the project:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd build;</span>
@@ -136,21 +140,6 @@ Then, from the main folder of the project:</p>
 </div>
 <p>To test if the compilation and installation of the python interface is correct, run on python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fields2cover</span>
-</pre></div>
-</div>
-</section>
-<section id="ros-compatibility">
-<h2>ROS Compatibility<a class="headerlink" href="#ros-compatibility" title="Permalink to this headline"></a></h2>
-<p>We also provide a <a class="reference external" href="https://github.com/Fields2Cover/fields2cover_ros">ROS 1 and ROS 2 interface</a>. On it, you can have a nice visualization of your field and the paths generated:</p>
-<a class="reference internal image-reference" href="../_images/demo_image.png"><img alt="../_images/demo_image.png" class="align-center" src="../_images/demo_image.png" style="width: 1000px;" /></a>
-<p>For being able to use the package from ROS, from <cite>catkin_ws/</cite>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/Fields2Cover/Fields2Cover src/fields2cover</span>
-<span class="go">git clone https://github.com/Fields2Cover/fields2cover_ros src/fields2cover_ros</span>
-<span class="go">rosdep install -r --ignore-src --from-paths .</span>
-<span class="gp"># </span>If<span class="w"> </span>using<span class="w"> </span>ROS<span class="w"> </span><span class="m">1</span>:
-<span class="go">catkin_make_isolated</span>
-<span class="gp"># </span>If<span class="w"> </span>using<span class="w"> </span>ROS<span class="w"> </span><span class="m">2</span>:
-<span class="go">colcon build</span>
 </pre></div>
 </div>
 </section>
@@ -167,7 +156,7 @@ Then, from the main folder of the project:</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Wageningen University.</p>
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

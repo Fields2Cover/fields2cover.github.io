@@ -36,6 +36,10 @@ Includes
 
 - ``fields2cover/types/Field.h`` (:ref:`file_fields2cover_types_Field.h`)
 
+- ``fields2cover/types/Graph.h`` (:ref:`file_fields2cover_types_Graph.h`)
+
+- ``fields2cover/types/Graph2D.h`` (:ref:`file_fields2cover_types_Graph2D.h`)
+
 - ``fields2cover/types/LineString.h`` (:ref:`file_fields2cover_types_LineString.h`)
 
 - ``fields2cover/types/LinearRing.h`` (:ref:`file_fields2cover_types_LinearRing.h`)
@@ -43,8 +47,6 @@ Includes
 - ``fields2cover/types/MultiLineString.h`` (:ref:`file_fields2cover_types_MultiLineString.h`)
 
 - ``fields2cover/types/MultiPoint.h`` (:ref:`file_fields2cover_types_MultiPoint.h`)
-
-- ``fields2cover/types/OptimizationParams.h`` (:ref:`file_fields2cover_types_OptimizationParams.h`)
 
 - ``fields2cover/types/Path.h`` (:ref:`file_fields2cover_types_Path.h`)
 
@@ -60,6 +62,8 @@ Includes
 
 - ``fields2cover/types/Swaths.h`` (:ref:`file_fields2cover_types_Swaths.h`)
 
+- ``fields2cover/types/SwathsByCells.h`` (:ref:`file_fields2cover_types_SwathsByCells.h`)
+
 - ``gdal/ogr_geometry.h``
 
 - ``vector``
@@ -70,33 +74,43 @@ Included By
 -----------
 
 
+- :ref:`file_fields2cover_decomposition_boustrophedon_decomp.h`
+
+- :ref:`file_fields2cover_decomposition_decomposition_base.h`
+
+- :ref:`file_fields2cover_decomposition_trapezoidal_decomp.h`
+
 - :ref:`file_fields2cover_headland_generator_constant_headland.h`
 
 - :ref:`file_fields2cover_headland_generator_headland_generator_base.h`
 
 - :ref:`file_fields2cover_objectives_base_objective.h`
 
-- :ref:`file_fields2cover_objectives_complete_turn_path_obj.h`
+- :ref:`file_fields2cover_objectives_decomp_obj_decomp_objective.h`
 
-- :ref:`file_fields2cover_objectives_direct_dist_path_obj.h`
+- :ref:`file_fields2cover_objectives_hg_obj_hg_objective.h`
 
-- :ref:`file_fields2cover_objectives_field_coverage.h`
+- :ref:`file_fields2cover_objectives_hg_obj_rem_area.h`
 
-- :ref:`file_fields2cover_objectives_hg_objective.h`
+- :ref:`file_fields2cover_objectives_pp_obj_pp_objective.h`
 
-- :ref:`file_fields2cover_objectives_n_swath.h`
+- :ref:`file_fields2cover_objectives_rp_obj_complete_turn_path_obj.h`
 
-- :ref:`file_fields2cover_objectives_overlaps.h`
+- :ref:`file_fields2cover_objectives_rp_obj_direct_dist_path_obj.h`
 
-- :ref:`file_fields2cover_objectives_pp_objective.h`
+- :ref:`file_fields2cover_objectives_rp_obj_rp_objective.h`
 
-- :ref:`file_fields2cover_objectives_rem_area.h`
+- :ref:`file_fields2cover_objectives_sg_obj_field_coverage.h`
 
-- :ref:`file_fields2cover_objectives_rp_objective.h`
+- :ref:`file_fields2cover_objectives_sg_obj_n_swath.h`
 
-- :ref:`file_fields2cover_objectives_sg_objective.h`
+- :ref:`file_fields2cover_objectives_sg_obj_n_swath_modified.h`
 
-- :ref:`file_fields2cover_objectives_swath_length.h`
+- :ref:`file_fields2cover_objectives_sg_obj_overlaps.h`
+
+- :ref:`file_fields2cover_objectives_sg_obj_sg_objective.h`
+
+- :ref:`file_fields2cover_objectives_sg_obj_swath_length.h`
 
 - :ref:`file_fields2cover_path_planning_dubins_curves.h`
 
@@ -113,6 +127,8 @@ Included By
 - :ref:`file_fields2cover_route_planning_boustrophedon_order.h`
 
 - :ref:`file_fields2cover_route_planning_custom_order.h`
+
+- :ref:`file_fields2cover_route_planning_route_planner_base.h`
 
 - :ref:`file_fields2cover_route_planning_single_cell_swaths_order_base.h`
 
@@ -154,6 +170,10 @@ Typedefs
 
 - :ref:`exhale_typedef_types_8h_1ae096eaa6978dec5caeafe739bc06f46c`
 
+- :ref:`exhale_typedef_types_8h_1aef58ebe6bd0baa637d53d305e4617f04`
+
+- :ref:`exhale_typedef_types_8h_1aa04e755d0a3a419b1256e744d1f81729`
+
 - :ref:`exhale_typedef_types_8h_1a1c23ba82eea4f7c82a1723390ccde6fa`
 
 - :ref:`exhale_typedef_types_8h_1a6d5dd9ba9c66522eb73fb6f9fb789828`
@@ -161,8 +181,6 @@ Typedefs
 - :ref:`exhale_typedef_types_8h_1a2d3fdfa2482d7c4bdb6caaf7a6c20e49`
 
 - :ref:`exhale_typedef_types_8h_1aa69a3ecfeefbaff5ccc4201264109e7e`
-
-- :ref:`exhale_typedef_types_8h_1a22ff6dfc294d0f3d66e2c69920566553`
 
 - :ref:`exhale_typedef_types_8h_1af7dc991f0aef32bf7c216c30eb78e49f`
 
@@ -184,5 +202,5 @@ Typedefs
 
 - :ref:`exhale_typedef_types_8h_1a2a1b846c73ad98779f1f8a2c21c2dd6c`
 
-- :ref:`exhale_typedef_types_8h_1ab65f55570ff095590db05c79515cd5f2`
+- :ref:`exhale_typedef_types_8h_1aed3042e922939ea4d819375987605f8b`
 

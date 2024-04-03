@@ -3,7 +3,7 @@
 Struct PathState
 ================
 
-- Defined in :ref:`file_fields2cover_types_Path.h`
+- Defined in :ref:`file_fields2cover_types_PathState.h`
 
 
 Struct Documentation

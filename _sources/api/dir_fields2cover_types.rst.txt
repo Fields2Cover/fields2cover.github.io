@@ -21,17 +21,20 @@ Files
 - :ref:`file_fields2cover_types_Field.h`
 - :ref:`file_fields2cover_types_Geometries.h`
 - :ref:`file_fields2cover_types_Geometry.h`
+- :ref:`file_fields2cover_types_Graph.h`
+- :ref:`file_fields2cover_types_Graph2D.h`
 - :ref:`file_fields2cover_types_LinearRing.h`
 - :ref:`file_fields2cover_types_LineString.h`
 - :ref:`file_fields2cover_types_MultiLineString.h`
 - :ref:`file_fields2cover_types_MultiPoint.h`
-- :ref:`file_fields2cover_types_OptimizationParams.h`
 - :ref:`file_fields2cover_types_Path.h`
+- :ref:`file_fields2cover_types_PathState.h`
 - :ref:`file_fields2cover_types_Point.h`
 - :ref:`file_fields2cover_types_Robot.h`
 - :ref:`file_fields2cover_types_Route.h`
 - :ref:`file_fields2cover_types_Strip.h`
 - :ref:`file_fields2cover_types_Swath.h`
 - :ref:`file_fields2cover_types_Swaths.h`
+- :ref:`file_fields2cover_types_SwathsByCells.h`
 
 

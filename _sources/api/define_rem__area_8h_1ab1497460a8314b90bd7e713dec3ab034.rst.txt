@@ -3,7 +3,7 @@
 Define FIELDS2COVER_OBJECTIVES_REM_AREA_H_
 ==========================================
 
-- Defined in :ref:`file_fields2cover_objectives_rem_area.h`
+- Defined in :ref:`file_fields2cover_objectives_hg_obj_rem_area.h`
 
 
 Define Documentation

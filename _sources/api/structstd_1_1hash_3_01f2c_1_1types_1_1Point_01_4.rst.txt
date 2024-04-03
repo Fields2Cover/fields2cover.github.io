@@ -1,0 +1,17 @@
+.. _exhale_struct_structstd_1_1hash_3_01f2c_1_1types_1_1Point_01_4:
+
+Template Struct hash< f2c::types::Point >
+=========================================
+
+- Defined in :ref:`file_fields2cover_types_Point.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: std::hash< f2c::types::Point >
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,75 @@
+
+.. _file_fields2cover_types_Graph2D.h:
+
+File Graph2D.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_types>` (``fields2cover/types``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``fields2cover/types/Graph2D.h``)
+---------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_fields2cover_types_Graph2D.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``fields2cover/types/Graph.h`` (:ref:`file_fields2cover_types_Graph.h`)
+
+- ``fields2cover/types/Point.h`` (:ref:`file_fields2cover_types_Point.h`)
+
+- ``unordered_map``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_fields2cover_types_Route.h`
+
+- :ref:`file_fields2cover_types.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_f2c`
+
+- :ref:`namespace_f2c__types`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classf2c_1_1types_1_1Graph2D`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_Graph2D_8h_1aec1a669c537e87c0f3a7f5420717b1b2`
+

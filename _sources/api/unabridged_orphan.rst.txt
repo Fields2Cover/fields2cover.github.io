@@ -16,12 +16,42 @@ Directories
 .. toctree::
    :maxdepth: 5
 
+   dir_fields2cover_decomposition.rst
+
+.. toctree::
+   :maxdepth: 5
+
    dir_fields2cover_headland_generator.rst
 
 .. toctree::
    :maxdepth: 5
 
    dir_fields2cover_objectives.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_fields2cover_objectives_decomp_obj.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_fields2cover_objectives_hg_obj.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_fields2cover_objectives_pp_obj.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_fields2cover_objectives_rp_obj.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_fields2cover_objectives_sg_obj.rst
 
 .. toctree::
    :maxdepth: 5
@@ -65,6 +95,11 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_fields2cover_decomposition_boustrophedon_decomp.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_fields2cover_route_planning_boustrophedon_order.h.rst
 
 .. toctree::
@@ -95,7 +130,7 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_complete_turn_path_obj.h.rst
+   file_fields2cover_objectives_rp_obj_complete_turn_path_obj.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -110,7 +145,17 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_direct_dist_path_obj.h.rst
+   file_fields2cover_objectives_decomp_obj_decomp_objective.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_fields2cover_decomposition_decomposition_base.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_fields2cover_objectives_rp_obj_direct_dist_path_obj.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -130,7 +175,7 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_field_coverage.h.rst
+   file_fields2cover_objectives_sg_obj_field_coverage.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -150,12 +195,22 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_fields2cover_types_Graph.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_fields2cover_types_Graph2D.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_fields2cover_headland_generator_headland_generator_base.h.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_hg_objective.h.rst
+   file_fields2cover_objectives_hg_obj_hg_objective.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -180,17 +235,17 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_n_swath.h.rst
+   file_fields2cover_objectives_sg_obj_n_swath.h.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_types_OptimizationParams.h.rst
+   file_fields2cover_objectives_sg_obj_n_swath_modified.h.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_overlaps.h.rst
+   file_fields2cover_objectives_sg_obj_overlaps.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -205,7 +260,7 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_path_length.h.rst
+   file_fields2cover_objectives_pp_obj_path_length.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -215,12 +270,17 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_fields2cover_types_PathState.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_fields2cover_types_Point.h.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_pp_objective.h.rst
+   file_fields2cover_objectives_pp_obj_pp_objective.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -240,7 +300,7 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_rem_area.h.rst
+   file_fields2cover_objectives_hg_obj_rem_area.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -255,12 +315,17 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_rp_objective.h.rst
+   file_fields2cover_route_planning_route_planner_base.h.rst
 
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_sg_objective.h.rst
+   file_fields2cover_objectives_rp_obj_rp_objective.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_fields2cover_objectives_sg_obj_sg_objective.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -295,7 +360,7 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_fields2cover_objectives_swath_length.h.rst
+   file_fields2cover_objectives_sg_obj_swath_length.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -305,7 +370,17 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_fields2cover_types_SwathsByCells.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_fields2cover_utils_transformation.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_fields2cover_decomposition_trapezoidal_decomp.h.rst
 
 .. toctree::
    :maxdepth: 5
@@ -340,3 +415,8 @@ Pages
    :maxdepth: 5
 
    page_md____w_Fields2Cover_Fields2Cover_CODE_OF_CONDUCT.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   page_citelist.rst

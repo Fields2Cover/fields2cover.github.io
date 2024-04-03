@@ -25,35 +25,45 @@ Includes
 --------
 
 
+- ``fields2cover/decomposition/boustrophedon_decomp.h`` (:ref:`file_fields2cover_decomposition_boustrophedon_decomp.h`)
+
+- ``fields2cover/decomposition/decomposition_base.h`` (:ref:`file_fields2cover_decomposition_decomposition_base.h`)
+
+- ``fields2cover/decomposition/trapezoidal_decomp.h`` (:ref:`file_fields2cover_decomposition_trapezoidal_decomp.h`)
+
 - ``fields2cover/headland_generator/constant_headland.h`` (:ref:`file_fields2cover_headland_generator_constant_headland.h`)
 
 - ``fields2cover/headland_generator/headland_generator_base.h`` (:ref:`file_fields2cover_headland_generator_headland_generator_base.h`)
 
 - ``fields2cover/objectives/base_objective.h`` (:ref:`file_fields2cover_objectives_base_objective.h`)
 
-- ``fields2cover/objectives/complete_turn_path_obj.h`` (:ref:`file_fields2cover_objectives_complete_turn_path_obj.h`)
+- ``fields2cover/objectives/decomp_obj/decomp_objective.h`` (:ref:`file_fields2cover_objectives_decomp_obj_decomp_objective.h`)
 
-- ``fields2cover/objectives/direct_dist_path_obj.h`` (:ref:`file_fields2cover_objectives_direct_dist_path_obj.h`)
+- ``fields2cover/objectives/hg_obj/hg_objective.h`` (:ref:`file_fields2cover_objectives_hg_obj_hg_objective.h`)
 
-- ``fields2cover/objectives/field_coverage.h`` (:ref:`file_fields2cover_objectives_field_coverage.h`)
+- ``fields2cover/objectives/hg_obj/rem_area.h`` (:ref:`file_fields2cover_objectives_hg_obj_rem_area.h`)
 
-- ``fields2cover/objectives/hg_objective.h`` (:ref:`file_fields2cover_objectives_hg_objective.h`)
+- ``fields2cover/objectives/pp_obj/path_length.h`` (:ref:`file_fields2cover_objectives_pp_obj_path_length.h`)
 
-- ``fields2cover/objectives/n_swath.h`` (:ref:`file_fields2cover_objectives_n_swath.h`)
+- ``fields2cover/objectives/pp_obj/pp_objective.h`` (:ref:`file_fields2cover_objectives_pp_obj_pp_objective.h`)
 
-- ``fields2cover/objectives/overlaps.h`` (:ref:`file_fields2cover_objectives_overlaps.h`)
+- ``fields2cover/objectives/rp_obj/complete_turn_path_obj.h`` (:ref:`file_fields2cover_objectives_rp_obj_complete_turn_path_obj.h`)
 
-- ``fields2cover/objectives/path_length.h`` (:ref:`file_fields2cover_objectives_path_length.h`)
+- ``fields2cover/objectives/rp_obj/direct_dist_path_obj.h`` (:ref:`file_fields2cover_objectives_rp_obj_direct_dist_path_obj.h`)
 
-- ``fields2cover/objectives/pp_objective.h`` (:ref:`file_fields2cover_objectives_pp_objective.h`)
+- ``fields2cover/objectives/rp_obj/rp_objective.h`` (:ref:`file_fields2cover_objectives_rp_obj_rp_objective.h`)
 
-- ``fields2cover/objectives/rem_area.h`` (:ref:`file_fields2cover_objectives_rem_area.h`)
+- ``fields2cover/objectives/sg_obj/field_coverage.h`` (:ref:`file_fields2cover_objectives_sg_obj_field_coverage.h`)
 
-- ``fields2cover/objectives/rp_objective.h`` (:ref:`file_fields2cover_objectives_rp_objective.h`)
+- ``fields2cover/objectives/sg_obj/n_swath.h`` (:ref:`file_fields2cover_objectives_sg_obj_n_swath.h`)
 
-- ``fields2cover/objectives/sg_objective.h`` (:ref:`file_fields2cover_objectives_sg_objective.h`)
+- ``fields2cover/objectives/sg_obj/n_swath_modified.h`` (:ref:`file_fields2cover_objectives_sg_obj_n_swath_modified.h`)
 
-- ``fields2cover/objectives/swath_length.h`` (:ref:`file_fields2cover_objectives_swath_length.h`)
+- ``fields2cover/objectives/sg_obj/overlaps.h`` (:ref:`file_fields2cover_objectives_sg_obj_overlaps.h`)
+
+- ``fields2cover/objectives/sg_obj/sg_objective.h`` (:ref:`file_fields2cover_objectives_sg_obj_sg_objective.h`)
+
+- ``fields2cover/objectives/sg_obj/swath_length.h`` (:ref:`file_fields2cover_objectives_sg_obj_swath_length.h`)
 
 - ``fields2cover/path_planning/dubins_curves.h`` (:ref:`file_fields2cover_path_planning_dubins_curves.h`)
 
@@ -70,6 +80,8 @@ Includes
 - ``fields2cover/route_planning/boustrophedon_order.h`` (:ref:`file_fields2cover_route_planning_boustrophedon_order.h`)
 
 - ``fields2cover/route_planning/custom_order.h`` (:ref:`file_fields2cover_route_planning_custom_order.h`)
+
+- ``fields2cover/route_planning/route_planner_base.h`` (:ref:`file_fields2cover_route_planning_route_planner_base.h`)
 
 - ``fields2cover/route_planning/single_cell_swaths_order_base.h`` (:ref:`file_fields2cover_route_planning_single_cell_swaths_order_base.h`)
 
@@ -115,6 +127,51 @@ Namespaces
 - :ref:`namespace_f2c__sg`
 
 - :ref:`namespace_f2c__types`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structf2c_1_1Options`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespacef2c_1a1e59f3db82500923975d8f2d4974de92`
+
+- :ref:`exhale_enum_namespacef2c_1af1570d754f89b5997c70373b417fec30`
+
+- :ref:`exhale_enum_namespacef2c_1a9dd903ed17e8e57e6a804e88eab576e9`
+
+- :ref:`exhale_enum_namespacef2c_1a2f5e5900b507ba5ae513e3fe6d93c787`
+
+- :ref:`exhale_enum_namespacef2c_1a4117eeefc60e442b12197c6647f79c25`
+
+- :ref:`exhale_enum_namespacef2c_1ae6c8de33b5c2e8466d025ac57ab475a7`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacef2c_1a996a61779b3ca8e69e9def0c559772ff`
+
+- :ref:`exhale_function_namespacef2c_1ad1ab0562096f27cb72e47c545ae1e8bf`
+
+- :ref:`exhale_function_namespacef2c_1a31b888d96f50abd384e8557f8b31e7ef`
+
+- :ref:`exhale_function_namespacef2c_1aaf6c30654c2ac4d1865b5fa8eef5fe54`
+
+- :ref:`exhale_function_namespacef2c_1a2d513731ee8cdf45dd089b9249e0aaa1`
+
+- :ref:`exhale_function_namespacef2c_1a8e1af5dfac7b80500fccc259ef09549e`
+
+- :ref:`exhale_function_namespacef2c_1a06fe1cda867fcdbc6df7496fd0a2ce5a`
+
+- :ref:`exhale_function_namespacef2c_1ad38fc33ed13d70292523c35e7f2a16c6`
 
 
 Defines

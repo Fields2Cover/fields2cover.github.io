@@ -1,0 +1,14 @@
+.. _exhale_define_decomposition__base_8h_1a1b37aec4c69d8a8e349d4e09c733b3a1:
+
+Define FIELDS2COVER_DECOMPOSITION_DECOMPOSITION_BASE_H_
+=======================================================
+
+- Defined in :ref:`file_fields2cover_decomposition_decomposition_base.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: FIELDS2COVER_DECOMPOSITION_DECOMPOSITION_BASE_H_
+   :project: Fields2Cover

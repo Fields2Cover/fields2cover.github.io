@@ -1,0 +1,37 @@
+
+.. _program_listing_file_fields2cover_objectives_decomp_obj_decomp_objective.h:
+
+Program Listing for File decomp_objective.h
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_fields2cover_objectives_decomp_obj_decomp_objective.h>` (``fields2cover/objectives/decomp_obj/decomp_objective.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //=============================================================================
+   //    Copyright (C) 2021-2024 Wageningen University - All Rights Reserved
+   //                     Author: Gonzalo Mier
+   //                        BSD-3 License
+   //=============================================================================
+   
+   #pragma once
+   #ifndef FIELDS2COVER_OBJECTIVES_DECOMP_OBJECTIVE_H_
+   #define FIELDS2COVER_OBJECTIVES_DECOMP_OBJECTIVE_H_
+   
+   #include <vector>
+   #include "fields2cover/types.h"
+   #include "fields2cover/objectives/base_objective.h"
+   
+   namespace f2c::obj {
+   
+   class DecompObjective : public BaseObjective<DecompObjective> {
+    public:
+     virtual double computeCost(const F2CCells& cells);
+   };
+   
+   
+   }  // namespace f2c::obj
+   
+   #endif  // FIELDS2COVER_OBJECTIVES_DECOMP_OBJECTIVE_H_

@@ -1,0 +1,14 @@
+.. _exhale_enum_namespacef2c_1a1e59f3db82500923975d8f2d4974de92:
+
+Enum DecompAlg
+==============
+
+- Defined in :ref:`file_fields2cover.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: f2c::DecompAlg
+   :project: Fields2Cover

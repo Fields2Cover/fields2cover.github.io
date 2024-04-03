@@ -1,0 +1,37 @@
+
+.. _program_listing_file_fields2cover_objectives_sg_obj_n_swath_modified.h:
+
+Program Listing for File n_swath_modified.h
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_fields2cover_objectives_sg_obj_n_swath_modified.h>` (``fields2cover/objectives/sg_obj/n_swath_modified.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //=============================================================================
+   //    Copyright (C) 2021-2024 Wageningen University - All Rights Reserved
+   //                     Author: Gonzalo Mier
+   //                        BSD-3 License
+   //=============================================================================
+   
+   #pragma once
+   #ifndef FIELDS2COVER_OBJECTIVES_N_SWATH_MODIFIED_H_
+   #define FIELDS2COVER_OBJECTIVES_N_SWATH_MODIFIED_H_
+   
+   #include "fields2cover/types.h"
+   #include "fields2cover/objectives/sg_obj/n_swath.h"
+   
+   namespace f2c::obj {
+   
+   class NSwathModified : public NSwath {
+    public:
+     using SGObjective::computeCost;
+     bool isFastCompAvailable() const override {return true;}
+     double computeCost(double ang, double op_width, const F2CCell& cell) override;
+   };
+   
+   }  // namespace f2c::obj
+   
+   #endif  // FIELDS2COVER_OBJECTIVES_N_SWATH_MODIFIED_H_

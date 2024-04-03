@@ -3,7 +3,7 @@
 Class PPObjective
 =================
 
-- Defined in :ref:`file_fields2cover_objectives_pp_objective.h`
+- Defined in :ref:`file_fields2cover_objectives_pp_obj_pp_objective.h`
 
 
 Inheritance Relationships

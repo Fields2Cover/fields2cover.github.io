@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Program Listing for File Path.h &mdash; Fields2Cover latest documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_fields2cover_types_Path.h.html" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/code-tabs.js?v=c983d12e"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" /> 
@@ -76,12 +81,12 @@
            <div itemprop="articleBody">
              
   <section id="program-listing-for-file-path-h">
-<span id="program-listing-file-fields2cover-types-path-h"></span><h1>Program Listing for File Path.h<a class="headerlink" href="#program-listing-for-file-path-h" title="Permalink to this headline"></a></h1>
+<span id="program-listing-file-fields2cover-types-path-h"></span><h1>Program Listing for File Path.h<a class="headerlink" href="#program-listing-for-file-path-h" title="Link to this heading"></a></h1>
 <p>↰ <a class="reference internal" href="file_fields2cover_types_Path.h.html#file-fields2cover-types-path-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">fields2cover/types/Path.h</span></code>)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//=============================================================================</span>
-<span class="c1">//    Copyright (C) 2021-2022 Wageningen University - All Rights Reserved</span>
+<span class="c1">//    Copyright (C) 2021-2024 Wageningen University - All Rights Reserved</span>
 <span class="c1">//                     Author: Gonzalo Mier</span>
-<span class="c1">//                           BSD-3 License</span>
+<span class="c1">//                        BSD-3 License</span>
 <span class="c1">//=============================================================================</span>
 
 <span class="cp">#pragma once</span>
@@ -92,59 +97,86 @@
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;limits&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Swath.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/Point.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/LineString.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/MultiLineString.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;fields2cover/types/PathState.h&quot;</span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">f2c</span><span class="o">::</span><span class="nn">types</span><span class="w"> </span><span class="p">{</span>
 
-<span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PathSectionType</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">SWATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="n">TURN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="p">};</span>
-
-<span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PathDirection</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">FORWARD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="n">BACKWARD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
-<span class="w">  </span><span class="c1">// STOP = 0,</span>
-<span class="p">};</span>
-
-<span class="k">struct</span><span class="w"> </span><span class="nc">PathState</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">Point</span><span class="w"> </span><span class="n">point</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">angle</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">velocity</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">duration</span><span class="p">;</span>
-<span class="w">  </span><span class="n">PathDirection</span><span class="w"> </span><span class="n">dir</span><span class="p">;</span>
-<span class="w">  </span><span class="n">PathSectionType</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
-
-<span class="w"> </span><span class="k">public</span><span class="o">:</span>
-<span class="w">  </span><span class="n">PathState</span><span class="w"> </span><span class="n">clone</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-<span class="p">};</span>
-
 <span class="k">struct</span><span class="w"> </span><span class="nc">Path</span><span class="w"> </span><span class="p">{</span>
 <span class="w"> </span><span class="k">public</span><span class="o">:</span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PathState</span><span class="o">&gt;</span><span class="w"> </span><span class="n">states</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">task_time</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">};</span>
-<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">measure_error</span><span class="w"> </span><span class="p">{</span><span class="mf">0.1</span><span class="p">};</span>
+<span class="w">  </span><span class="n">PathState</span><span class="o">&amp;</span><span class="w"> </span><span class="n">getState</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">PathState</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getState</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setState</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">PathState</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ps</span><span class="p">);</span>
 
-<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">addState</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">PathState</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ps</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">addState</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ang</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">len</span><span class="p">,</span>
+<span class="w">      </span><span class="n">PathDirection</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PathDirection</span><span class="o">::</span><span class="n">FORWARD</span><span class="p">,</span>
+<span class="w">      </span><span class="n">PathSectionType</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PathSectionType</span><span class="o">::</span><span class="n">SWATH</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">vel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PathState</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">getStates</span><span class="p">();</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PathState</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">getStates</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setStates</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PathState</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v_ps</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getTaskTime</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PathState</span><span class="o">&gt;::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">cbegin</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PathState</span><span class="o">&gt;::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">cend</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PathState</span><span class="o">&gt;::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">begin</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PathState</span><span class="o">&gt;::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">end</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PathState</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">begin</span><span class="p">();</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PathState</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">end</span><span class="p">();</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">PathState</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="n">PathState</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="p">);</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">PathState</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">back</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="n">PathState</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">back</span><span class="p">();</span>
+
+
 <span class="w">  </span><span class="n">Path</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">+=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Path</span><span class="o">&amp;</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
-<span class="w">  </span><span class="n">Path</span><span class="w"> </span><span class="nf">clone</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="nf">size</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getDimMinX</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getDimMinY</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getDimMaxX</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getDimMaxY</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">moveTo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">rotateFromPoint</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ang</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">mirrorX</span><span class="p">();</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">mirrorY</span><span class="p">();</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setBackwardDir</span><span class="p">();</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setBackwardDir</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setForwardDir</span><span class="p">();</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setForwardDir</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setSwathType</span><span class="p">();</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setSwathType</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTurnType</span><span class="p">();</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTurnType</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
 
 <span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">appendSwath</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Swath</span><span class="o">&amp;</span><span class="w"> </span><span class="n">swath</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">cruise_speed</span><span class="p">);</span>
 
+<span class="w">  </span><span class="n">PathState</span><span class="w"> </span><span class="nf">at</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="n">Point</span><span class="w"> </span><span class="nf">atStart</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="n">Point</span><span class="w"> </span><span class="nf">atEnd</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">LineString</span><span class="w"> </span><span class="nf">toLineString</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">serializePath</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">digit_precision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
-<span class="w">  </span><span class="n">Path</span><span class="w"> </span><span class="nf">discretize_swath</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">step_size</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">saveToFile</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">precision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">loadFile</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">file</span><span class="p">);</span>
 
+<span class="w">  </span><span class="n">Path</span><span class="w"> </span><span class="nf">discretizeSwath</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">step_size</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="n">Path</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">discretize</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">step_size</span><span class="p">);</span>
 <span class="w">  </span><span class="n">Path</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">populate</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number_points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
 <span class="w">  </span><span class="n">Path</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">reduce</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">min_dist_equal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+
+<span class="w"> </span><span class="k">private</span><span class="o">:</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PathState</span><span class="o">&gt;</span><span class="w"> </span><span class="n">states_</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c::types</span>
@@ -162,7 +194,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Wageningen University.</p>
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

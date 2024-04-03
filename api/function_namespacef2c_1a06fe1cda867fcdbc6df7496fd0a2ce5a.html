@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Function f2c::planCovRoute(const F2CRobot&amp;, const F2CCells&amp;, const Options&amp;) &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/function_namespacef2c_1a06fe1cda867fcdbc6df7496fd0a2ce5a.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Function f2c::planCovRoute(const F2CRobot&amp;, const F2CField&amp;, bool)" href="function_namespacef2c_1ad38fc33ed13d70292523c35e7f2a16c6.html" />
+    <link rel="prev" title="Function f2c::planCovRoute(const F2CRobot&amp;, const F2CCell&amp;, const Options&amp;)" href="function_namespacef2c_1a8e1af5dfac7b80500fccc259ef09549e.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="f2c_library.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#page-hierarchy">Page Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="f2c_library.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#classes-and-structs">Classes and Structs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#enums">Enums</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="f2c_library.html#functions">Functions</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1a996a61779b3ca8e69e9def0c559772ff.html">Function f2c::planCovPath(const F2CRobot&amp;, const F2CCell&amp;, const Options&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1ad1ab0562096f27cb72e47c545ae1e8bf.html">Function f2c::planCovPath(const F2CRobot&amp;, const F2CCells&amp;, const Options&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1a31b888d96f50abd384e8557f8b31e7ef.html">Function f2c::planCovPath(const F2CRobot&amp;, const F2CField&amp;, bool)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1aaf6c30654c2ac4d1865b5fa8eef5fe54.html">Function f2c::planCovPath(const F2CRobot&amp;, const F2CField&amp;, const Options&amp;, bool)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1a8e1af5dfac7b80500fccc259ef09549e.html">Function f2c::planCovRoute(const F2CRobot&amp;, const F2CCell&amp;, const Options&amp;)</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Function f2c::planCovRoute(const F2CRobot&amp;, const F2CCells&amp;, const Options&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1ad38fc33ed13d70292523c35e7f2a16c6.html">Function f2c::planCovRoute(const F2CRobot&amp;, const F2CField&amp;, bool)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1a2d513731ee8cdf45dd089b9249e0aaa1.html">Function f2c::planCovRoute(const F2CRobot&amp;, const F2CField&amp;, const Options&amp;, bool)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1_1types_1a0880c6d8de577ef57fff41cacbce0ed4.html">Function f2c::types::operator+(const OGRPoint&amp;, const f2c::types::Point&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1_1types_1aab866196ebdf20e1b7c16ae6cb1599c8.html">Template Function f2c::types::operator+(const std::vector&lt;T&gt;&amp;, const f2c::types::Point&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1_1types_1ac6defee3df6c457a37ba8c8c6b94ec8e.html">Template Function f2c::types::operator+(const T&amp;, const f2c::types::Point&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1_1types_1a51747d9affdd241360ae7fbaed977660.html">Function f2c::types::operator-(const OGRPoint&amp;, const f2c::types::Point&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1_1types_1aee91f51748124a90e92b9dfe3c5b252b.html">Template Function f2c::types::operator-(const f2c::types::Point&amp;, const std::vector&lt;T&gt;&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1_1types_1adc7fd2ea23c97f5041e120363608434c.html">Template Function f2c::types::operator-(const std::vector&lt;T&gt;&amp;, const f2c::types::Point&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1_1types_1a910e6284fc787370ce18e649100c03b8.html">Template Function f2c::types::operator-(const f2c::types::Point&amp;, const T&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1_1types_1a42afe7b867f4bc4ef6a1116e44dc05dd.html">Template Function f2c::types::operator-(const T&amp;, const f2c::types::Point&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1_1types_1a54e4107f8b5b82a8f6b5a95dfd119c79.html">Function f2c::types::operator&lt;&lt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_namespacef2c_1_1types_1a7603f796c4f68465d5ee17614e5c6a34.html">Template Function f2c::types::sstr</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#defines">Defines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="f2c_library.html">API</a></li>
+      <li class="breadcrumb-item active">Function f2c::planCovRoute(const F2CRobot&amp;, const F2CCells&amp;, const Options&amp;)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/function_namespacef2c_1a06fe1cda867fcdbc6df7496fd0a2ce5a.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="function-f2c-plancovroute-const-f2crobot-const-f2ccells-const-options">
+<span id="exhale-function-namespacef2c-1a06fe1cda867fcdbc6df7496fd0a2ce5a"></span><h1>Function f2c::planCovRoute(const F2CRobot&amp;, const F2CCells&amp;, const Options&amp;)<a class="headerlink" href="#function-f2c-plancovroute-const-f2crobot-const-f2ccells-const-options" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_fields2cover.h.html#file-fields2cover-h"><span class="std std-ref">File fields2cover.h</span></a></p></li>
+</ul>
+<section id="function-documentation">
+<h2>Function Documentation<a class="headerlink" href="#function-documentation" title="Link to this heading"></a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c12planCovRouteERK8F2CRobotRK8F2CCellsRK7Options">
+<span id="_CPPv3N3f2c12planCovRouteERK8F2CRobotRK8F2CCellsRK7Options"></span><span id="_CPPv2N3f2c12planCovRouteERK8F2CRobotRK8F2CCellsRK7Options"></span><span id="f2c::planCovRoute__F2CRobotCR.F2CCellsCR.OptionsCR"></span><span class="target" id="namespacef2c_1a06fe1cda867fcdbc6df7496fd0a2ce5a"></span><a class="reference internal" href="typedef_types_8h_1ad15a4b224f7eddfd9ef3acbecca355a9.html#_CPPv48F2CRoute" title="F2CRoute"><span class="n"><span class="pre">F2CRoute</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">f2c</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">planCovRoute</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a84ffa22c5a99fd51ad55dba5ea74f963.html#_CPPv48F2CRobot" title="F2CRobot"><span class="n"><span class="pre">F2CRobot</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">robot</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a9d5a262fc29b26e27a8a26f667f4b9ac.html#_CPPv48F2CCells" title="F2CCells"><span class="n"><span class="pre">F2CCells</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cells</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1Options.html#_CPPv4N3f2c7OptionsE" title="f2c::Options"><span class="n"><span class="pre">Options</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">opt</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="structf2c_1_1Options.html#_CPPv4N3f2c7OptionsE" title="f2c::Options"><span class="n"><span class="pre">Options</span></span></a><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c12planCovRouteERK8F2CRobotRK8F2CCellsRK7Options" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="function_namespacef2c_1a8e1af5dfac7b80500fccc259ef09549e.html" class="btn btn-neutral float-left" title="Function f2c::planCovRoute(const F2CRobot&amp;, const F2CCell&amp;, const Options&amp;)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="function_namespacef2c_1ad38fc33ed13d70292523c35e7f2a16c6.html" class="btn btn-neutral float-right" title="Function f2c::planCovRoute(const F2CRobot&amp;, const F2CField&amp;, bool)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

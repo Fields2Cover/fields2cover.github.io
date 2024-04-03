@@ -1,0 +1,22 @@
+.. _dir_fields2cover_objectives_pp_obj:
+
+
+Directory pp_obj
+================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_objectives>` (``fields2cover/objectives``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``fields2cover/objectives/pp_obj``
+
+
+Files
+-----
+
+- :ref:`file_fields2cover_objectives_pp_obj_path_length.h`
+- :ref:`file_fields2cover_objectives_pp_obj_pp_objective.h`
+
+

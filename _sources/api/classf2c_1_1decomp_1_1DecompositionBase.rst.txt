@@ -1,0 +1,26 @@
+.. _exhale_class_classf2c_1_1decomp_1_1DecompositionBase:
+
+Class DecompositionBase
+=======================
+
+- Defined in :ref:`file_fields2cover_decomposition_decomposition_base.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Type
+************
+
+- ``public f2c::decomp::TrapezoidalDecomp`` (:ref:`exhale_class_classf2c_1_1decomp_1_1TrapezoidalDecomp`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: f2c::decomp::DecompositionBase
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

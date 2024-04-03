@@ -40,9 +40,13 @@ Includes
 
 - ``gdal/ogr_geometry.h``
 
+- ``iostream``
+
 - ``memory``
 
 - ``string``
+
+- ``utility``
 
 - ``vector``
 

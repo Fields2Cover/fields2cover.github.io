@@ -54,6 +54,8 @@ Included By
 
 - :ref:`file_fields2cover_types_Cells.h`
 
+- :ref:`file_fields2cover_types_Robot.h`
+
 - :ref:`file_fields2cover_types_Strip.h`
 
 - :ref:`file_fields2cover_types_Swaths.h`

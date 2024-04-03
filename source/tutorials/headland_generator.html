@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Part 3: Headland generator &mdash; Fields2Cover latest documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/code-tabs.css?v=1bc26e2f" />
+
+  
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="canonical" href="https://fields2cover.github.io/source/tutorials/headland_generator.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=c6e86fd7"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/code-tabs.js?v=c983d12e"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -49,20 +54,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Fields2Cover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../tutorials.html#c-tutorials">C++ tutorials</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="basic_types.html">Part 1: Basic types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="objective_functions.html">Part 2: Objective functions</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Part 3: Headland generator</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#constant-width-headland">Constant width headland</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_types.html">Part 1: Basic types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="objective_functions.html">Part 2: Objective functions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Part 3: Headland generator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constant-width-headland">Constant width headland</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="swath_generator.html">Part 4: Swath generator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="route_planning.html">Part 5: Route planning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="path_planning.html">Part 6: Path planning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="complete_flow.html">Part 7: Complete flow</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials.html#python-tutorials">Python tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swath_generator.html">Part 4: Swath generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="route_planning.html">Part 5: Route planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="path_planning.html">Part 6: Path planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decomposition.html">Part 7: Cell Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="complete_flow.html">Part 8: Complete flow</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
@@ -95,26 +97,50 @@
            <div itemprop="articleBody">
              
   <section id="part-3-headland-generator">
-<h1>Part 3: Headland generator<a class="headerlink" href="#part-3-headland-generator" title="Permalink to this headline"></a></h1>
+<h1>Part 3: Headland generator<a class="headerlink" href="#part-3-headland-generator" title="Link to this heading"></a></h1>
 <p>Agricultural vehicles need space to turn between swaths. This area is called a headland.
 In Fields2Cover, the headland generator will take a <code class="docutils literal notranslate"><span class="pre">F2CCells</span></code> and the width of the headland as input, and it will return another <code class="docutils literal notranslate"><span class="pre">`F2CCells`</span></code> of the same field without the headlands.</p>
 <p>Lets create a random field with <code class="docutils literal notranslate"><span class="pre">5</span></code> sides and <code class="docutils literal notranslate"><span class="pre">1e4</span></code> meters squared of area, and a robot with <code class="docutils literal notranslate"><span class="pre">2</span></code> meters of width.</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">Random</span><span class="w"> </span><span class="nf">rand</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
-<span class="n">F2CField</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">.</span><span class="n">generateRandField</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mf">1e4</span><span class="p">);</span>
-<span class="n">F2CCells</span><span class="w"> </span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">field</span><span class="p">.</span><span class="n">field</span><span class="p">;</span>
+<span class="n">F2CField</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">.</span><span class="n">generateRandField</span><span class="p">(</span><span class="mf">1e4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">field</span><span class="p">.</span><span class="n">getField</span><span class="p">();</span>
 <span class="n">F2CRobot</span><span class="w"> </span><span class="nf">robot</span><span class="w"> </span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">26.0</span><span class="p">);</span>
 </pre></div>
 </div>
-<section id="constant-width-headland">
-<h2>Constant width headland<a class="headerlink" href="#constant-width-headland" title="Permalink to this headline"></a></h2>
-<p>This class creates a constant headland around the field.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">hg</span><span class="o">::</span><span class="n">ConstHL</span><span class="w"> </span><span class="n">const_hl</span><span class="p">;</span>
-<span class="n">F2CCells</span><span class="w"> </span><span class="n">no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">const_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">robot_width</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The complete area is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cells</span><span class="p">.</span><span class="n">getArea</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span>
-<span class="w">  </span><span class="s">&quot;, and the area without headlands is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">no_hl</span><span class="p">.</span><span class="n">getArea</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rand</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+<span class="n">field</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="n">generateRandField</span><span class="p">(</span><span class="mf">1e4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="n">cells</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">getField</span><span class="p">();</span>
+<span class="n">robot</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">26.0</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><em>The complete area is 10000, and the area without headlands is 7676.63</em></p>
+</div></div><section id="constant-width-headland">
+<h2>Constant width headland<a class="headerlink" href="#constant-width-headland" title="Link to this heading"></a></h2>
+<p>This class creates a constant headland around the field.</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">hg</span><span class="o">::</span><span class="n">ConstHL</span><span class="w"> </span><span class="n">const_hl</span><span class="p">;</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">const_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">getWidth</span><span class="p">());</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The complete area is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cells</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span>
+<span class="w">    </span><span class="s">&quot;, and the area without headlands is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">no_hl</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">const_hl</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">HG_Const_gen</span><span class="p">();</span>
+<span class="n">no_hl</span> <span class="o">=</span> <span class="n">const_hl</span><span class="o">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="n">robot</span><span class="o">.</span><span class="n">getWidth</span><span class="p">());</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The complete area is &quot;</span><span class="p">,</span> <span class="n">cells</span><span class="o">.</span><span class="n">area</span><span class="p">(),</span>
+    <span class="s2">&quot;, and the area without headlands is &quot;</span><span class="p">,</span> <span class="n">no_hl</span><span class="o">.</span><span class="n">area</span><span class="p">());</span>
+</pre></div>
+</div>
+</div></div><p><em>The complete area is 10000, and the area without headlands is 7676.63</em></p>
 <img alt="../../_images/Tutorial_3_1_Const_width.png" src="../../_images/Tutorial_3_1_Const_width.png" />
 <p>On orange it is <code class="docutils literal notranslate"><span class="pre">cells</span></code> and in green it is <code class="docutils literal notranslate"><span class="pre">no_hl</span></code></p>
 </section>
@@ -131,7 +157,7 @@ In Fields2Cover, the headland generator will take a <code class="docutils litera
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Wageningen University.</p>
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

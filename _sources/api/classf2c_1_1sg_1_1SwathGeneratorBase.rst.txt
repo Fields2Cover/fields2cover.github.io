@@ -1,9 +1,18 @@
 .. _exhale_class_classf2c_1_1sg_1_1SwathGeneratorBase:
 
-Template Class SwathGeneratorBase
-=================================
+Class SwathGeneratorBase
+========================
 
 - Defined in :ref:`file_fields2cover_swath_generator_swath_generator_base.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Type
+************
+
+- ``public f2c::sg::BruteForce`` (:ref:`exhale_class_classf2c_1_1sg_1_1BruteForce`)
 
 
 Class Documentation

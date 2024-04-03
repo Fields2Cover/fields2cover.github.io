@@ -3,7 +3,7 @@
 Class RPObjective
 =================
 
-- Defined in :ref:`file_fields2cover_objectives_rp_objective.h`
+- Defined in :ref:`file_fields2cover_objectives_rp_obj_rp_objective.h`
 
 
 Inheritance Relationships

@@ -1,0 +1,77 @@
+
+.. _file_fields2cover_objectives_rp_obj_rp_objective.h:
+
+File rp_objective.h
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_objectives_rp_obj>` (``fields2cover/objectives/rp_obj``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``fields2cover/objectives/rp_obj/rp_objective.h``)
+--------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_fields2cover_objectives_rp_obj_rp_objective.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``fields2cover/objectives/base_objective.h`` (:ref:`file_fields2cover_objectives_base_objective.h`)
+
+- ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_fields2cover_objectives_rp_obj_complete_turn_path_obj.h`
+
+- :ref:`file_fields2cover_objectives_rp_obj_direct_dist_path_obj.h`
+
+- :ref:`file_fields2cover_route_planning_route_planner_base.h`
+
+- :ref:`file_fields2cover.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_f2c`
+
+- :ref:`namespace_f2c__obj`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classf2c_1_1obj_1_1RPObjective`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_rp__objective_8h_1a977e9201fcfc3028f60278029fb686f2`
+
