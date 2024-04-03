@@ -165,9 +165,9 @@ Functions
 
 - :ref:`exhale_function_namespacef2c_1ad1ab0562096f27cb72e47c545ae1e8bf`
 
-- :ref:`exhale_function_namespacef2c_1a8e1af5dfac7b80500fccc259ef09549e`
-
 - :ref:`exhale_function_namespacef2c_1a2d513731ee8cdf45dd089b9249e0aaa1`
+
+- :ref:`exhale_function_namespacef2c_1a8e1af5dfac7b80500fccc259ef09549e`
 
 - :ref:`exhale_function_namespacef2c_1a06fe1cda867fcdbc6df7496fd0a2ce5a`
 

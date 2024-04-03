@@ -60,11 +60,13 @@
 <li class="toctree-l2"><a class="reference internal" href="swath_generator.html">Part 4: Swath generator</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Part 5: Route planning</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#metaheuristics-for-route-planning">Metaheuristics for route planning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#known-patterns">Known patterns</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#boustrophedon-order">Boustrophedon order</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#snake-order">Snake order</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#spiral-order">Spiral order</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#custom-order">Custom order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#known-patterns">Known patterns</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#boustrophedon-order">Boustrophedon order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#snake-order">Snake order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spiral-order">Spiral order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-order">Custom order</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="path_planning.html">Part 6: Path planning</a></li>
@@ -186,9 +188,8 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 </pre></div>
 </div>
 </div></div><img alt="../../_images/Tutorial_4_1_Brute_force_Angle.png" src="../../_images/Tutorial_4_1_Brute_force_Angle.png" />
-</section>
 <section id="boustrophedon-order">
-<h2>Boustrophedon order<a class="headerlink" href="#boustrophedon-order" title="Link to this heading"></a></h2>
+<h3>Boustrophedon order<a class="headerlink" href="#boustrophedon-order" title="Link to this heading"></a></h3>
 <p>Boustrophedon pattern is one of the most known patterns to cover a field.
 Swaths are traveled in the simplest order, covering first the first swath, then the second, and so on.
 This pattern can have 4 results on the same field, depending on the start point.</p>
@@ -221,7 +222,7 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 </table>
 </section>
 <section id="snake-order">
-<h2>Snake order<a class="headerlink" href="#snake-order" title="Link to this heading"></a></h2>
+<h3>Snake order<a class="headerlink" href="#snake-order" title="Link to this heading"></a></h3>
 <p>Snake order covers the field skipping one swath each turn, and then coming back using uncovered swaths. This pattern, compared to boustrophedon, reduces the number of sharp turns.</p>
 <p>As with boustrophedon pattern, snake pattern also has 4 variants:</p>
 <div class="tabs docutils container" data-tabgroup="lang">
@@ -250,7 +251,7 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 </table>
 </section>
 <section id="spiral-order">
-<h2>Spiral order<a class="headerlink" href="#spiral-order" title="Link to this heading"></a></h2>
+<h3>Spiral order<a class="headerlink" href="#spiral-order" title="Link to this heading"></a></h3>
 <p>Spiral order covers the field in multiple spirals with predefined size.
 This pattern is commonly used when harvesting.
 Harvesters have a limited capacity and sometimes have to unload onto a truck.</p>
@@ -288,7 +289,7 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 </table>
 </section>
 <section id="custom-order">
-<h2>Custom order<a class="headerlink" href="#custom-order" title="Link to this heading"></a></h2>
+<h3>Custom order<a class="headerlink" href="#custom-order" title="Link to this heading"></a></h3>
 <p>To support more general approach for coverage path planning it’s possible to define
 custom order of the swaths for the path planning process.</p>
 <div class="tabs docutils container" data-tabgroup="lang">
@@ -314,6 +315,7 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 <li><p>The order vector may contain only elements from the swath range: <cite>&lt;0, swaths.size() - 1&gt;</cite></p></li>
 </ul>
 </div>
+</section>
 </section>
 </section>
 
