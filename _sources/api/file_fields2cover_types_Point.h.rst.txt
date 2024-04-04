@@ -101,21 +101,21 @@ Functions
 ---------
 
 
-- :ref:`exhale_function_namespacef2c_1_1types_1a0880c6d8de577ef57fff41cacbce0ed4`
+- :ref:`exhale_function_namespacef2c_1_1types_1ac6defee3df6c457a37ba8c8c6b94ec8e`
 
 - :ref:`exhale_function_namespacef2c_1_1types_1aab866196ebdf20e1b7c16ae6cb1599c8`
 
-- :ref:`exhale_function_namespacef2c_1_1types_1ac6defee3df6c457a37ba8c8c6b94ec8e`
-
-- :ref:`exhale_function_namespacef2c_1_1types_1a51747d9affdd241360ae7fbaed977660`
-
-- :ref:`exhale_function_namespacef2c_1_1types_1aee91f51748124a90e92b9dfe3c5b252b`
+- :ref:`exhale_function_namespacef2c_1_1types_1a0880c6d8de577ef57fff41cacbce0ed4`
 
 - :ref:`exhale_function_namespacef2c_1_1types_1adc7fd2ea23c97f5041e120363608434c`
 
 - :ref:`exhale_function_namespacef2c_1_1types_1a910e6284fc787370ce18e649100c03b8`
 
 - :ref:`exhale_function_namespacef2c_1_1types_1a42afe7b867f4bc4ef6a1116e44dc05dd`
+
+- :ref:`exhale_function_namespacef2c_1_1types_1a51747d9affdd241360ae7fbaed977660`
+
+- :ref:`exhale_function_namespacef2c_1_1types_1aee91f51748124a90e92b9dfe3c5b252b`
 
 - :ref:`exhale_function_namespacef2c_1_1types_1a54e4107f8b5b82a8f6b5a95dfd119c79`
 
