@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Migration guide to version 2.0 &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/source/migration_to_v2.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FAQ" href="faq.html" />
+    <link rel="prev" title="Part 8: Complete flow" href="tutorials/complete_flow.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Migration guide to version 2.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#new-classes-and-new-functionalities">New classes and new functionalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#renaming-functions">Renaming functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#renaming-files">Renaming files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-attributes-are-private-now">Class attributes are private now</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visualizer">Visualizer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Migration guide to version 2.0</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/migration_to_v2.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="migration-guide-to-version-2-0">
+<span id="migration-guide"></span><h1>Migration guide to version 2.0<a class="headerlink" href="#migration-guide-to-version-2-0" title="Link to this heading"></a></h1>
+<p>F2C v2 has some breaking changes, which requires a little modifications to our code using F2C v1. Fortunately, this guide shows those changes so we can start using v2 as soon as possible.</p>
+<section id="new-classes-and-new-functionalities">
+<h2>New classes and new functionalities<a class="headerlink" href="#new-classes-and-new-functionalities" title="Link to this heading"></a></h2>
+<p>To be able to add new functionalities to the library, some classes are added:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Graph</span></code> and <code class="docutils literal notranslate"><span class="pre">f2c::types::Graph2D</span></code> implement simple logic for graphs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Route</span></code> on version 2 has  <span class="xref std std-doc">a new logic</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::SwathsByCells</span></code> is a class now, instead of just an alias to <code class="docutils literal notranslate"><span class="pre">std::vector&lt;Swaths&gt;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::rp::RoutePlannerBase</span></code> class does the route planning without given known patterns.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::decomp::DecompositionBase</span></code>, <code class="docutils literal notranslate"><span class="pre">f2c::decomp::TrapezoidalDecomp</span></code> and <code class="docutils literal notranslate"><span class="pre">f2c::decomp::BoustrophedonDecomp</span></code> provides functions to do cell decomposition.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::pp::PathPlanning</span></code> is able to connect <code class="docutils literal notranslate"><span class="pre">f2c::types::Route</span></code> smoothly, providing proper coverage paths for any kind of fields.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::obj::NSwathModified</span></code> is a new objective function. It’s an approximation to <code class="docutils literal notranslate"><span class="pre">f2c::obj::NSwath</span></code>, being able to compute faster the number of swaths.</p></li>
+</ul>
+</section>
+<section id="renaming-functions">
+<h2>Renaming functions<a class="headerlink" href="#renaming-functions" title="Link to this heading"></a></h2>
+<p>On v1, functions inherited from GDAL maintained the same name as in GDAL. Due to that, many functions didn’t have a name following camel case convention. Here it is a list with a few examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Geometry::Distance</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">f2c::types::Geometry::distance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Geometry::Difference</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">f2c::types::Geometry::difference</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Geometry::Within</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">f2c::types::Geometry::within</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Geometry::Union</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">f2c::types::Geometry::union</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Swath::StartPoint</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">f2c::types::Swath::startPoint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Swath::EndPoint</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">f2c::types::Swath::endPoint</span></code></p></li>
+</ul>
+<p>Other functions had names that could be improved:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Geometry::getArea()</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">f2c::types::Geometry::area()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Geometry::getLength()</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">f2c::types::Geometry::length()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Point::getSemiLongCurve()</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">f2c::types::Point::createSemiLongLine()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::pp::PathPlanning::searchBestPath</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">f2c::pp::PathPlanning::planPath</span></code></p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The input parameters in function <code class="docutils literal notranslate"><span class="pre">f2c::Random::generateRandField(int</span> <span class="pre">n_sides,</span> <span class="pre">double</span> <span class="pre">area)</span></code> has been reorder to <code class="docutils literal notranslate"><span class="pre">f2c::Random::generateRandField(double</span> <span class="pre">area,</span> <span class="pre">int</span> <span class="pre">n_sides)</span></code>.</p>
+<p>This change is made for keeping coherence with other similar functions, but can make our program crash if we are not careful.</p>
+</div>
+</section>
+<section id="renaming-files">
+<h2>Renaming files<a class="headerlink" href="#renaming-files" title="Link to this heading"></a></h2>
+<p>This section is only refered to objective functions.
+Previously, they were mixed in the same folder, independently of the module they belong to.</p>
+<p>Now, they are sorted by subfolders.</p>
+<p>For example, file <code class="docutils literal notranslate"><span class="pre">fields2cover/objectives/n_swath.h</span></code> is moved to <code class="docutils literal notranslate"><span class="pre">fields2cover/objectives/sg_obj/n_swath.h</span></code></p>
+</section>
+<section id="class-attributes-are-private-now">
+<h2>Class attributes are private now<a class="headerlink" href="#class-attributes-are-private-now" title="Link to this heading"></a></h2>
+<p>On v1, you can access any attribute of any class because everything was public. Following good practices, access to attributes is done by getters and setters now, and all the attributes are private:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Robot</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">getWidth()</span></code>/<code class="docutils literal notranslate"><span class="pre">setWidth()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">op_width</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">getCovWidth()</span></code>/<code class="docutils literal notranslate"><span class="pre">setCovWidth()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cruise_speed</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">getCruiseVel()</span></code>/<code class="docutils literal notranslate"><span class="pre">setCruiseVel()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_icc</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">getMaxCurv()</span></code>/<code class="docutils literal notranslate"><span class="pre">setMaxCurv()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linear_curv_change</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">getMaxDiffCurv()</span></code>/<code class="docutils literal notranslate"><span class="pre">setMaxDiffCurv()</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Swath</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">getId()</span></code>/<code class="docutils literal notranslate"><span class="pre">setId()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">getPath()</span></code>/<code class="docutils literal notranslate"><span class="pre">setPath()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">getWidth()</span></code>/<code class="docutils literal notranslate"><span class="pre">setWidth()</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Path</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">states</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">getState()</span></code>/<code class="docutils literal notranslate"><span class="pre">setState()</span></code>, <code class="docutils literal notranslate"><span class="pre">getStates()</span></code>/<code class="docutils literal notranslate"><span class="pre">setStates()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">task_time</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">getTaskTime()</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::types::Field</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">getId()</span></code>/<code class="docutils literal notranslate"><span class="pre">setId()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coord_sys</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">getCRS()</span></code>/<code class="docutils literal notranslate"><span class="pre">setCRS()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">field</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">getField()</span></code>/<code class="docutils literal notranslate"><span class="pre">setField()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ref_point</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">getRefPoint()</span></code>/<code class="docutils literal notranslate"><span class="pre">setRefPoint()</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="visualizer">
+<h2>Visualizer<a class="headerlink" href="#visualizer" title="Link to this heading"></a></h2>
+<p>The library used for plotting has been changed from <a class="reference external" href="https://github.com/lava/matplotlib-cpp">lava/matplotlib-cpp</a> to <a class="reference external" href="https://github.com/alandefreitas/matplotplusplus">alandefreitas/matplotplusplus</a>. This means that the resulting plots will be different.</p>
+<p>The main changes on the user side are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::Visualizer::figure()</span></code> does not accept arguments.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f2c::Visualizer::save(std::string)</span></code> requires the extension of the file on the name i.e. <cite>.png</cite>.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorials/complete_flow.html" class="btn btn-neutral float-left" title="Part 8: Complete flow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="faq.html" class="btn btn-neutral float-right" title="FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

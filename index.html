@@ -53,6 +53,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Fields2Cover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="source/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/migration_to_v2.html">Migration guide to version 2.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="source/faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/f2c_library.html">API</a></li>
 </ul>
@@ -92,6 +93,37 @@
 <a class="reference internal image-reference" href="_images/diagram-F2C.jpg"><img alt="_images/diagram-F2C.jpg" class="align-center" src="_images/diagram-F2C.jpg" style="width: 500px;" /></a>
 <p>Although the development of this project is focused on offline planning of agricultural vehicles,
 the library accepts pull requests from other types of coverage planners.</p>
+<section id="f2c-version-2-0">
+<h2>F2C version 2.0<a class="headerlink" href="#f2c-version-2-0" title="Link to this heading"></a></h2>
+<p>The version 2.0 of Fields2Cover comes with support for non-convex fields and fields with obstacles!! This has been huge request from the community and finally it’s here.</p>
+<p>A quick list of new additions to the library:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="source/tutorials/decomposition.html#tutorial-decomp"><span class="std std-ref">Decomposition algorithms</span></a>:</p>
+<ul class="simple">
+<li><p>Trapezoidal and Boustrophedon decomposition. Those algorithms are useful to split any concave field into several convex sub-fields.</p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="source/tutorials/route_planning.html#tutorial-route"><span class="std std-ref">Route planner</span></a>:</p>
+<ul class="simple">
+<li><p>Route optimizer using <a class="reference external" href="https://developers.google.com/optimization">OR-tools</a> can be used to order the swaths, instead of just using a known pattern.</p></li>
+<li><p>Support for a point used as the start and end points of the route.</p></li>
+</ul>
+</li>
+<li><p>Path planner:</p>
+<ul class="simple">
+<li><p>Support for routes provided by the route optimizer.</p></li>
+</ul>
+</li>
+<li><p>Swath generator:</p>
+<ul class="simple">
+<li><p>Speed improvement on swath generation.</p></li>
+<li><p>New cost function: <code class="docutils literal notranslate"><span class="pre">NSwathModified</span></code>. It uses an approximation to compute the number of swaths, reducing computation costs.</p></li>
+</ul>
+</li>
+<li><p>Many bugs fixed.</p></li>
+</ol>
+<p>For a little guide about the migration, please check: <a class="reference internal" href="source/migration_to_v2.html#migration-guide"><span class="std std-ref">Migration guide to version 2.0</span></a>.</p>
+</section>
 <section id="citing">
 <h2>Citing<a class="headerlink" href="#citing" title="Link to this heading"></a></h2>
 <p>Please cite <a class="reference external" href="https://ieeexplore.ieee.org/document/10050562">the following paper</a> when using Fields2Cover for your research:</p>
@@ -129,6 +161,14 @@ the library accepts pull requests from other types of coverage planners.</p>
 <li class="toctree-l2"><a class="reference internal" href="source/tutorials/path_planning.html">Part 6: Path planning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="source/tutorials/decomposition.html">Part 7: Cell Decomposition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="source/tutorials/complete_flow.html">Part 8: Complete flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/migration_to_v2.html">Migration guide to version 2.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/migration_to_v2.html#new-classes-and-new-functionalities">New classes and new functionalities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/migration_to_v2.html#renaming-functions">Renaming functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/migration_to_v2.html#renaming-files">Renaming files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/migration_to_v2.html#class-attributes-are-private-now">Class attributes are private now</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source/migration_to_v2.html#visualizer">Visualizer</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="source/faq.html">FAQ</a><ul>
