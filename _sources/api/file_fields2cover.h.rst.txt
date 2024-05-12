@@ -157,13 +157,13 @@ Functions
 ---------
 
 
+- :ref:`exhale_function_namespacef2c_1aaf6c30654c2ac4d1865b5fa8eef5fe54`
+
 - :ref:`exhale_function_namespacef2c_1a996a61779b3ca8e69e9def0c559772ff`
 
 - :ref:`exhale_function_namespacef2c_1ad1ab0562096f27cb72e47c545ae1e8bf`
 
 - :ref:`exhale_function_namespacef2c_1a31b888d96f50abd384e8557f8b31e7ef`
-
-- :ref:`exhale_function_namespacef2c_1aaf6c30654c2ac4d1865b5fa8eef5fe54`
 
 - :ref:`exhale_function_namespacef2c_1a8e1af5dfac7b80500fccc259ef09549e`
 
