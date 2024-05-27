@@ -90,6 +90,8 @@ Program Listing for File visualizer.h
    
      static void figure();
    
+     static void figure_size(unsigned int width, unsigned int height);
+   
      static void axis_equal();
    
      static void show();
