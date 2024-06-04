@@ -50,6 +50,8 @@ Program Listing for File route_planner_base.h
          double d_tol, bool redirect_swaths = true) const;
    
    
+     virtual ~RoutePlannerBase() = default;
+   
     protected:
      virtual std::vector<int64_t> computeBestRoute(
          const F2CGraph2D& cov_graph, bool show_log) const;
