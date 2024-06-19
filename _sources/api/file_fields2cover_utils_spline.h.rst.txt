@@ -1,0 +1,60 @@
+
+.. _file_fields2cover_utils_spline.h:
+
+File spline.h
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_utils>` (``fields2cover/utils``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``fields2cover/utils/spline.h``)
+--------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_fields2cover_utils_spline.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_fields2cover.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_f2c`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classf2c_1_1CubicSpline`
+

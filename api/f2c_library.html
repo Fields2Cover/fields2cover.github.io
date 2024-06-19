@@ -96,6 +96,7 @@
 <li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html">Struct Swaths</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1SwathsByCells.html">Struct SwathsByCells</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structstd_1_1hash_3_01f2c_1_1types_1_1Point_01_4.html">Template Struct hash&lt; f2c::types::Point &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1CubicSpline.html">Class CubicSpline</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1BoustrophedonDecomp.html">Class BoustrophedonDecomp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1DecompositionBase.html">Class DecompositionBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1TrapezoidalDecomp.html">Class TrapezoidalDecomp</a></li>
@@ -381,9 +382,6 @@
 </li>
 <li><dl class="simple">
 <dt><a class="reference internal" href="namespace_f2c__types.html#namespace-f2c-types"><span class="std std-ref">Namespace f2c::types</span></a></dt><dd><ul>
-<li><p><a class="reference internal" href="enum_namespacef2c_1_1types_1a30a630bb463e5105d6c6f9cf554598b6.html#exhale-enum-namespacef2c-1-1types-1a30a630bb463e5105d6c6f9cf554598b6"><span class="std std-ref">Enum PathDirection</span></a></p></li>
-<li><p><a class="reference internal" href="enum_namespacef2c_1_1types_1a8078cfee08a9e4bb6b9a1d5ea1d867be.html#exhale-enum-namespacef2c-1-1types-1a8078cfee08a9e4bb6b9a1d5ea1d867be"><span class="std std-ref">Enum PathSectionType</span></a></p></li>
-<li><p><a class="reference internal" href="enum_namespacef2c_1_1types_1a2d51e58a920a3c08d60ac19440ad1249.html#exhale-enum-namespacef2c-1-1types-1a2d51e58a920a3c08d60ac19440ad1249"><span class="std std-ref">Enum SwathType</span></a></p></li>
 <li><p><a class="reference internal" href="structf2c_1_1types_1_1Cell.html#exhale-struct-structf2c-1-1types-1-1cell"><span class="std std-ref">Struct Cell</span></a></p></li>
 <li><p><a class="reference internal" href="structf2c_1_1types_1_1Cells.html#exhale-struct-structf2c-1-1types-1-1cells"><span class="std std-ref">Struct Cells</span></a></p></li>
 <li><p><a class="reference internal" href="structf2c_1_1types_1_1Field.html#exhale-struct-structf2c-1-1types-1-1field"><span class="std std-ref">Struct Field</span></a></p></li>
@@ -411,7 +409,6 @@
 <li><p><a class="reference internal" href="structf2c_1_1types_1_1LinearRing.html#exhale-struct-structf2c-1-1types-1-1linearring"><span class="std std-ref">Struct LinearRing</span></a></p></li>
 <li><p><a class="reference internal" href="structf2c_1_1types_1_1LineString.html#exhale-struct-structf2c-1-1types-1-1linestring"><span class="std std-ref">Struct LineString</span></a></p></li>
 <li><p><a class="reference internal" href="structf2c_1_1types_1_1MultiLineString.html#exhale-struct-structf2c-1-1types-1-1multilinestring"><span class="std std-ref">Struct MultiLineString</span></a></p></li>
-<li><p><a class="reference internal" href="structf2c_1_1types_1_1MultiPoint.html#exhale-struct-structf2c-1-1types-1-1multipoint"><span class="std std-ref">Struct MultiPoint</span></a></p></li>
 <li><p><a class="reference internal" href="structf2c_1_1types_1_1Path.html#exhale-struct-structf2c-1-1types-1-1path"><span class="std std-ref">Struct Path</span></a></p></li>
 <li><p><a class="reference internal" href="structf2c_1_1types_1_1PathState.html#exhale-struct-structf2c-1-1types-1-1pathstate"><span class="std std-ref">Struct PathState</span></a></p></li>
 <li><p><a class="reference internal" href="structf2c_1_1types_1_1Point.html#exhale-struct-structf2c-1-1types-1-1point"><span class="std std-ref">Struct Point</span></a></p></li>
@@ -424,11 +421,16 @@
 <li><p><a class="reference internal" href="classf2c_1_1types_1_1EmptyDestructor.html#exhale-class-classf2c-1-1types-1-1emptydestructor"><span class="std std-ref">Class EmptyDestructor</span></a></p></li>
 <li><p><a class="reference internal" href="classf2c_1_1types_1_1Graph.html#exhale-class-classf2c-1-1types-1-1graph"><span class="std std-ref">Class Graph</span></a></p></li>
 <li><p><a class="reference internal" href="classf2c_1_1types_1_1Graph2D.html#exhale-class-classf2c-1-1types-1-1graph2d"><span class="std std-ref">Class Graph2D</span></a></p></li>
+<li><p><a class="reference internal" href="enum_namespacef2c_1_1types_1a30a630bb463e5105d6c6f9cf554598b6.html#exhale-enum-namespacef2c-1-1types-1a30a630bb463e5105d6c6f9cf554598b6"><span class="std std-ref">Enum PathDirection</span></a></p></li>
+<li><p><a class="reference internal" href="enum_namespacef2c_1_1types_1a8078cfee08a9e4bb6b9a1d5ea1d867be.html#exhale-enum-namespacef2c-1-1types-1a8078cfee08a9e4bb6b9a1d5ea1d867be"><span class="std std-ref">Enum PathSectionType</span></a></p></li>
+<li><p><a class="reference internal" href="enum_namespacef2c_1_1types_1a2d51e58a920a3c08d60ac19440ad1249.html#exhale-enum-namespacef2c-1-1types-1a2d51e58a920a3c08d60ac19440ad1249"><span class="std std-ref">Enum SwathType</span></a></p></li>
+<li><p><a class="reference internal" href="structf2c_1_1types_1_1MultiPoint.html#exhale-struct-structf2c-1-1types-1-1multipoint"><span class="std std-ref">Struct MultiPoint</span></a></p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><p><a class="reference internal" href="structf2c_1_1Options.html#exhale-struct-structf2c-1-1options"><span class="std std-ref">Struct Options</span></a></p></li>
+<li><p><a class="reference internal" href="classf2c_1_1CubicSpline.html#exhale-class-classf2c-1-1cubicspline"><span class="std std-ref">Class CubicSpline</span></a></p></li>
 <li><p><a class="reference internal" href="classf2c_1_1Parser.html#exhale-class-classf2c-1-1parser"><span class="std std-ref">Class Parser</span></a></p></li>
 <li><p><a class="reference internal" href="classf2c_1_1Random.html#exhale-class-classf2c-1-1random"><span class="std std-ref">Class Random</span></a></p></li>
 <li><p><a class="reference internal" href="classf2c_1_1Transform.html#exhale-class-classf2c-1-1transform"><span class="std std-ref">Class Transform</span></a></p></li>
@@ -587,6 +589,7 @@
 <dt><a class="reference internal" href="dir_fields2cover_utils.html#dir-fields2cover-utils"><span class="std std-ref">Directory utils</span></a></dt><dd><ul>
 <li><p><a class="reference internal" href="file_fields2cover_utils_parser.h.html#file-fields2cover-utils-parser-h"><span class="std std-ref">File parser.h</span></a></p></li>
 <li><p><a class="reference internal" href="file_fields2cover_utils_random.h.html#file-fields2cover-utils-random-h"><span class="std std-ref">File random.h</span></a></p></li>
+<li><p><a class="reference internal" href="file_fields2cover_utils_spline.h.html#file-fields2cover-utils-spline-h"><span class="std std-ref">File spline.h</span></a></p></li>
 <li><p><a class="reference internal" href="file_fields2cover_utils_transformation.h.html#file-fields2cover-utils-transformation-h"><span class="std std-ref">File transformation.h</span></a></p></li>
 <li><p><a class="reference internal" href="file_fields2cover_utils_visualizer.h.html#file-fields2cover-utils-visualizer-h"><span class="std std-ref">File visualizer.h</span></a></p></li>
 </ul>
@@ -1891,6 +1894,24 @@
 <li class="toctree-l2"><a class="reference internal" href="structstd_1_1hash_3_01f2c_1_1types_1_1Point_01_4.html#struct-documentation">Struct Documentation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="structstd_1_1hash_3_01f2c_1_1types_1_1Point_01_4.html#_CPPv4IENSt4hashIN3f2c5types5PointEEE"><code class="docutils literal notranslate"><span class="pre">hash</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="structstd_1_1hash_3_01f2c_1_1types_1_1Point_01_4.html#_CPPv4NKSt4hashIN3f2c5types5PointEEclERKN3f2c5types5PointE"><code class="docutils literal notranslate"><span class="pre">hash::operator()()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classf2c_1_1CubicSpline.html">Class CubicSpline</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classf2c_1_1CubicSpline.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classf2c_1_1CubicSpline.html#_CPPv4N3f2c11CubicSplineE"><code class="docutils literal notranslate"><span class="pre">CubicSpline</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1CubicSpline.html#_CPPv4N3f2c11CubicSpline11CubicSplineEv"><code class="docutils literal notranslate"><span class="pre">CubicSpline::CubicSpline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1CubicSpline.html#_CPPv4N3f2c11CubicSpline11CubicSplineERKNSt6vectorIdEERKNSt6vectorIdEEb"><code class="docutils literal notranslate"><span class="pre">CubicSpline::CubicSpline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1CubicSpline.html#_CPPv4N3f2c11CubicSplineD0Ev"><code class="docutils literal notranslate"><span class="pre">CubicSpline::~CubicSpline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1CubicSpline.html#_CPPv4N3f2c11CubicSpline9SetPointsERKNSt6vectorIdEERKNSt6vectorIdEEb"><code class="docutils literal notranslate"><span class="pre">CubicSpline::SetPoints()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1CubicSpline.html#_CPPv4NK3f2c11CubicSplineclEd"><code class="docutils literal notranslate"><span class="pre">CubicSpline::operator()()</span></code></a></li>
 </ul>
 </li>
 </ul>

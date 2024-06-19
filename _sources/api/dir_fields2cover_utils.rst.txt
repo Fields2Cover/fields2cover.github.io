@@ -18,6 +18,7 @@ Files
 
 - :ref:`file_fields2cover_utils_parser.h`
 - :ref:`file_fields2cover_utils_random.h`
+- :ref:`file_fields2cover_utils_spline.h`
 - :ref:`file_fields2cover_utils_transformation.h`
 - :ref:`file_fields2cover_utils_visualizer.h`
 

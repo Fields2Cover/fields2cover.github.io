@@ -345,6 +345,11 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_fields2cover_utils_spline.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_fields2cover_types_Strip.h.rst
 
 .. toctree::
