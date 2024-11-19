@@ -20,6 +20,7 @@ Program Listing for File Graph.h
    #ifndef FIELDS2COVER_TYPES_GRAPH_H_
    #define FIELDS2COVER_TYPES_GRAPH_H_
    
+   #include <cstdint>
    #include <vector>
    #include <functional>
    #include <utility>
@@ -73,4 +74,3 @@ Program Listing for File Graph.h
    }  // namespace f2c::types
    
    #endif  // FIELDS2COVER_TYPES_GRAPH_H_
-   

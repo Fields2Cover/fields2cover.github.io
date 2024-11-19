@@ -30,6 +30,8 @@ Includes
 --------
 
 
+- ``cstdint``
+
 - ``functional``
 
 - ``unordered_map``
