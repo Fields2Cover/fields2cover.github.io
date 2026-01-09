@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegoogletest-output-test_1a1a8d86ab15f4cfbbcbebcfc2c8863421:
+
+Function googletest-output-test::RemoveTypeInfoDetails
+======================================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-output-test.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: googletest-output-test::RemoveTypeInfoDetails(test_output)
+   :project: Fields2Cover

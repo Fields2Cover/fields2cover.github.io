@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gMock Cookbook &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/page_md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_cook_book.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">gMock Cookbook</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/page_md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_cook_book.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gmock-cookbook">
+<span id="page-md-w-fields2cover-fields2cover-googletest-docs-gmock-cook-book"></span><h1>gMock Cookbook<a class="headerlink" href="#gmock-cookbook" title="Link to this heading"></a></h1>
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_cook_book"></span><em><span class="pre">page</span></em> <span class="sig-name descname"><span class="pre">gMock</span> <span class="pre">Cookbook</span></span></dt>
+<dd><p>You can find recipes for using gMock here. If you haven’t yet, please read <a class="reference internal" href="page_md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_for_dummies.html#md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_for_dummies"><span class="std std-ref">the dummy guide</span></a> first to make sure you understand the basics.</p>
+<p>{: .callout .note} <strong>Note:</strong> gMock lives in the <code class="docutils literal notranslate"><span class="pre">testing</span></code> name space. For readability, it is recommended to write <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">::testing::Foo;</span></code> once in your file before using the name <code class="docutils literal notranslate"><span class="pre">Foo</span></code> defined by gMock. We omit such <code class="docutils literal notranslate"><span class="pre">using</span></code> statements in this section for brevity, but you should do it in your own code.</p>
+<p><em>Creating  Classes</em></p>
+<p><a class="reference internal" href="classMock.html#classMock"><span class="std std-ref">Mock</span></a> classes are defined as normal classes, using the <code class="docutils literal notranslate"><span class="pre">MOCK_METHOD</span></code> macro to generate mocked methods. The macro gets 3 or 4 parameters:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyMock</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="n">ReturnType</span><span class="p">,</span><span class="w"> </span><span class="n">MethodName</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">Args</span><span class="p">...));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="n">ReturnType</span><span class="p">,</span><span class="w"> </span><span class="n">MethodName</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">Args</span><span class="p">...),</span><span class="w"> </span><span class="p">(</span><span class="n">Specs</span><span class="p">...));</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>The first 3 parameters are simply the method declaration, split into 3 parts. The 4th parameter accepts a closed list of qualifiers, which affect the generated method:</p>
+<p><ul class="simple">
+<li><p>**<code class="docutils literal notranslate"><span class="pre">const</span></code>** - Makes the mocked method a <code class="docutils literal notranslate"><span class="pre">const</span></code> method. Required if overriding a <code class="docutils literal notranslate"><span class="pre">const</span></code> method.</p></li>
+<li><p>**<code class="docutils literal notranslate"><span class="pre">override</span></code>** - Marks the method with <code class="docutils literal notranslate"><span class="pre">override</span></code>. Recommended if overriding a <code class="docutils literal notranslate"><span class="pre">virtual</span></code> method.</p></li>
+<li><p>**<code class="docutils literal notranslate"><span class="pre">noexcept</span></code>** - Marks the method with <code class="docutils literal notranslate"><span class="pre">noexcept</span></code>. Required if overriding a <code class="docutils literal notranslate"><span class="pre">noexcept</span></code> method.</p></li>
+<li><p>**<code class="docutils literal notranslate"><span class="pre">Calltype(...)</span></code>** - Sets the call type for the method (e.g. to <code class="docutils literal notranslate"><span class="pre">STDMETHODCALLTYPE</span></code>), useful in Windows.</p></li>
+<li><p>**<code class="docutils literal notranslate"><span class="pre">ref(...)</span></code>** - Marks the method with the reference qualification specified. Required if overriding a method that has reference qualifications. Eg <code class="docutils literal notranslate"><span class="pre">ref(&amp;)</span></code> or <code class="docutils literal notranslate"><span class="pre">ref(&amp;&amp;)</span></code>.</p></li>
+</ul>
+</p>
+<p><em>Dealing with unprotected commas</em></p>
+<p>Unprotected commas, i.e. commas which are not surrounded by parentheses, prevent <code class="docutils literal notranslate"><span class="pre">MOCK_METHOD</span></code> from parsing its arguments correctly:</p>
+<p>{: .bad} <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MockFoo</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">GetPair</span><span class="p">,</span><span class="w"> </span><span class="p">());</span><span class="w">  </span><span class="c1">// Won&#39;t compile!</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="n">CheckMap</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">));</span><span class="w">  </span><span class="c1">// Won&#39;t compile!</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</p>
+<p>Solution 1 - wrap with parentheses:</p>
+<p>{: .good} <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MockFoo</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">((</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">),</span><span class="w"> </span><span class="n">GetPair</span><span class="p">,</span><span class="w"> </span><span class="p">());</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="n">CheckMap</span><span class="p">,</span><span class="w"> </span><span class="p">((</span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="p">),</span><span class="w"> </span><span class="kt">bool</span><span class="p">));</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</p>
+<p>Note that wrapping a return or argument type with parentheses is, in general, invalid C++. <code class="docutils literal notranslate"><span class="pre">MOCK_METHOD</span></code> removes the parentheses.</p>
+<p>Solution 2 - define an alias:</p>
+<p>{: .good} <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MockFoo</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">BoolAndInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="n">BoolAndInt</span><span class="p">,</span><span class="w"> </span><span class="n">GetPair</span><span class="p">,</span><span class="w"> </span><span class="p">());</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">MapIntDouble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="n">CheckMap</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">MapIntDouble</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">));</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</p>
+<p><em>Mocking Private or Protected Methods</em></p>
+<p>You must always put a mock method definition (<code class="docutils literal notranslate"><span class="pre">MOCK_METHOD</span></code>) in a <code class="docutils literal notranslate"><span class="pre">public:</span></code> section of the mock class, regardless of the method being mocked being <code class="docutils literal notranslate"><span class="pre">public</span></code>, <code class="docutils literal notranslate"><span class="pre">protected</span></code>, or <code class="docutils literal notranslate"><span class="pre">private</span></code> in the base class. This allows <code class="docutils literal notranslate"><span class="pre">ON_CALL</span></code> and <code class="docutils literal notranslate"><span class="pre">EXPECT_CALL</span></code> to reference the mock function from outside of the mock class. (Yes, C++ allows a subclass to change the access level of a virtual function in the base class.) Example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">Transform</span><span class="p">(</span><span class="n">Gadget</span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w"> </span><span class="k">protected</span><span class="o">:</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">Resume</span><span class="p">();</span>
+
+<span class="w"> </span><span class="k">private</span><span class="o">:</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">GetTimeOut</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MockFoo</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="n">Transform</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">Gadget</span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+
+<span class="w">  </span><span class="c1">// The following must be in the public section, even though the</span>
+<span class="w">  </span><span class="c1">// methods are protected or private in the base class.</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">void</span><span class="p">,</span><span class="w"> </span><span class="n">Resume</span><span class="p">,</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">GetTimeOut</span><span class="p">,</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><em>Mocking Overloaded Methods</em></p>
+<p>You can mock overloaded functions as usual. No special attention is required:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+
+<span class="w">  </span><span class="c1">// Must be virtual as we&#39;ll inherit from Foo.</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">Foo</span><span class="p">();</span>
+
+<span class="w">  </span><span class="c1">// Overloaded on the types and/or numbers of arguments.</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="n">Element</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">times</span><span class="p">,</span><span class="w"> </span><span class="n">Element</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Overloaded on the const-ness of this object.</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="n">Bar</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">GetBar</span><span class="p">();</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Bar</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">GetBar</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MockFoo</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Add</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">Element</span><span class="w"> </span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Add</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">times</span><span class="p">,</span><span class="w"> </span><span class="n">Element</span><span class="w"> </span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="n">Bar</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">GetBar</span><span class="p">,</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Bar</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">GetBar</span><span class="p">,</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="p">,</span><span class="w"> </span><span class="k">override</span><span class="p">));</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>{: .callout .note} <strong>Note:</strong> if you don’t mock all versions of the overloaded method, the compiler will give you a warning about some methods in the base class being hidden. To fix that, use <code class="docutils literal notranslate"><span class="pre">using</span></code> to bring them in scope:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MockFoo</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">Foo</span><span class="o">::</span><span class="n">Add</span><span class="p">;</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Add</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">Element</span><span class="w"> </span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="c1">// We don&#39;t want to mock int Add(int times, Element x);</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><em>Mocking Class Templates</em></p>
+<p>You can mock class templates just like any class.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Elem</span><span class="o">&gt;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">StackInterface</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="c1">// Must be virtual as we&#39;ll inherit from StackInterface.</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">StackInterface</span><span class="p">();</span>
+
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">GetSize</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Push</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Elem</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Elem</span><span class="o">&gt;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MockStack</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">StackInterface</span><span class="o">&lt;</span><span class="n">Elem</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">GetSize</span><span class="p">,</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="p">,</span><span class="w"> </span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">void</span><span class="p">,</span><span class="w"> </span><span class="n">Push</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Elem</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

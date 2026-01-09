@@ -1,0 +1,166 @@
+
+.. _file_googletest_googlemock_test_gmock_link_test.h:
+
+File gmock_link_test.h
+======================
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``googletest/googlemock/test/gmock_link_test.h``)
+-------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_googletest_googlemock_test_gmock_link_test.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``errno.h``
+
+- ``gmock/gmock.h``
+
+- ``gtest/gtest.h``
+
+- ``gtest/internal/gtest-port.h``
+
+- ``iostream``
+
+- ``vector``
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classFieldHelper`
+
+- :ref:`exhale_class_classInterface`
+
+- :ref:`exhale_class_classInvokeHelper`
+
+- :ref:`exhale_class_classMock`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_gmock__link__test_8h_1af799ef9a88f3b9701c0a23ff385f0bec`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a56eb072fc6793f17991c4b9453cb57f9`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a0e54493b534daa8c40db27f11c1fa47c`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a9ac86d1d3b037000c95d84125b493aa2`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a180ffdf57248ab9b453f3edcd93755ef`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a88c24d00f8d1ef0bc424e44ef0d02c47`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a9c49e996772a00f039252ed51b929c07`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a97addba006a789710b9142e173d1f6aa`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a7b2cbe54d3e02b9b9e9ac11fe2e4277a`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a407dfcf377f8201153cb0141eb4e50d0`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a77a83a48b183a392eddae15de6162950`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a2703b6bda7d6a9fe9ca0c3a545cb0794`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a0e620555ef048587252b680112dca0a1`
+
+- :ref:`exhale_function_gmock__link__test_8h_1acd4cefd0a0c481117e8450bb3e26995a`
+
+- :ref:`exhale_function_gmock__link__test_8h_1adccb056e47ae0c111fdb5c8718aa1237`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a75e1edbf10c6912cb689a744897c7cfd`
+
+- :ref:`exhale_function_gmock__link__test_8h_1af8960bb8270f5b279a8f7b41d3b045b5`
+
+- :ref:`exhale_function_gmock__link__test_8h_1ac35b16985b69c6aee820e850a90a3a92`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a16f49ffd8b6c3926dd3be08475a84cea`
+
+- :ref:`exhale_function_gmock__link__test_8h_1afd9457843e9d37ad61805fe4e346230a`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a4f1efb4c1404ef1987ead7fbcda62f97`
+
+- :ref:`exhale_function_gmock__link__test_8h_1aa76ccb0b23625c6e67224dc93775c260`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a87dc8bf67fbb09f4887bd73c4c3d4cc1`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a2a241b93f4367065a763c7df5133e5b6`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a371f2d2cb3d6de8d92bcdc7880c396e9`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a7fc9e5ba927fb0b787c401830d96e845`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a2f67e08eb609d505e32d1ea9c5ea4934`
+
+- :ref:`exhale_function_gmock__link__test_8h_1adac5a0d25e665298c61d73103f6b4ef6`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a44f6ef7c07900d4b35ecf9dd5fb3d199`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a305fc67126afc2ce2a398af8ac95f911`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a5ffe71be3f23caa89c945a8f91f37c61`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a84f858c615e1a833900ba5cb6fd6035d`
+
+- :ref:`exhale_function_gmock__link__test_8h_1af0e170be9fd6cff187a448aa8be13996`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a186ca1714643654a35d0daadde7cfccd`
+
+- :ref:`exhale_function_gmock__link__test_8h_1ac6a135440a78f13e4a16d1731bf80991`
+
+- :ref:`exhale_function_gmock__link__test_8h_1aef5c583c3e024858d646fd49cb26d38b`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a632cd5bfa5abc4dca05bca7e32c3117c`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a8677237cca1dcb672f230ba196bf46c9`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a16605ff63dee99b3858ff175f3165a8b`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a443d44d009c84175febff2fc677517b4`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a3f39bdcd5e11abe967d40fa209a5fbfc`
+
+- :ref:`exhale_function_gmock__link__test_8h_1ad60d270605d53ff00c73efcfc0353771`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a152c90c6b50fe035d27c83aa6c0f9793`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a2918d5abf4d84037728f3c1bbc5c4fca`
+
+- :ref:`exhale_function_gmock__link__test_8h_1aaaae4940e8dd1c9ba7342163248ff86f`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a3f3f7a915ecbf4ed9480e7689ac3be1e`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a8e87d7c7853fa49506556f9e05487021`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a541f200e4f422050bbd5e424dc3d01a1`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_gmock__link__test_8h_1a74fbfb7aad43e9e94c7a669a8787f6aa`
+
+- :ref:`exhale_variable_gmock__link__test_8h_1a5c4ef9bdcacdf2bf96b1a7a0fad1f790`
+

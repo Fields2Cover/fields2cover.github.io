@@ -1,0 +1,26 @@
+.. _exhale_class_classgtest__testbridge__test_1_1GTestTestFilterTest:
+
+Class GTestTestFilterTest
+=========================
+
+- Defined in :ref:`file_googletest_googletest_test_gtest_testbridge_test.py`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public gtest_test_utils.TestCase``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: gtest_testbridge_test::GTestTestFilterTest
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

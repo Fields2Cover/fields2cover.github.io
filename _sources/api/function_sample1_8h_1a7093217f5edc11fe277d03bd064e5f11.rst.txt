@@ -1,0 +1,14 @@
+.. _exhale_function_sample1_8h_1a7093217f5edc11fe277d03bd064e5f11:
+
+Function IsPrime
+================
+
+- Defined in :ref:`file_googletest_googletest_samples_sample1.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: IsPrime(int)
+   :project: Fields2Cover

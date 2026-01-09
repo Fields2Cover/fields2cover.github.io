@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegmock__test__utils_1a31a0e33565ec805d314cb0a4eb8317e6:
+
+Variable gmock_test_utils::Subprocess
+=====================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: gmock_test_utils::Subprocess
+   :project: Fields2Cover

@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File gtest_xml_test_utils.py &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_googletest_googletest_test_gtest_xml_test_utils.py.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File gtest_xml_test_utils.py</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_googletest_googletest_test_gtest_xml_test_utils.py.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-gtest-xml-test-utils-py">
+<span id="program-listing-file-googletest-googletest-test-gtest-xml-test-utils-py"></span><h1>Program Listing for File gtest_xml_test_utils.py<a class="headerlink" href="#program-listing-for-file-gtest-xml-test-utils-py" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_googletest_googletest_test_gtest_xml_test_utils.py.html#file-googletest-googletest-test-gtest-xml-test-utils-py"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">googletest/googletest/test/gtest_xml_test_utils.py</span></code>)</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copyright 2006, Google Inc.</span>
+<span class="c1"># All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Redistribution and use in source and binary forms, with or without</span>
+<span class="c1"># modification, are permitted provided that the following conditions are</span>
+<span class="c1"># met:</span>
+<span class="c1">#</span>
+<span class="c1">#     * Redistributions of source code must retain the above copyright</span>
+<span class="c1"># notice, this list of conditions and the following disclaimer.</span>
+<span class="c1">#     * Redistributions in binary form must reproduce the above</span>
+<span class="c1"># copyright notice, this list of conditions and the following disclaimer</span>
+<span class="c1"># in the documentation and/or other materials provided with the</span>
+<span class="c1"># distribution.</span>
+<span class="c1">#     * Neither the name of Google Inc. nor the names of its</span>
+<span class="c1"># contributors may be used to endorse or promote products derived from</span>
+<span class="c1"># this software without specific prior written permission.</span>
+<span class="c1">#</span>
+<span class="c1"># THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<span class="c1"># &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span>
+<span class="c1"># LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</span>
+<span class="c1"># A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</span>
+<span class="c1"># OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span>
+<span class="c1"># SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</span>
+<span class="c1"># LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</span>
+<span class="c1"># DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</span>
+<span class="c1"># THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span>
+<span class="c1"># (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span>
+<span class="c1"># OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+
+<span class="sd">&quot;&quot;&quot;Unit test utilities for gtest_xml_output&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xml.dom</span><span class="w"> </span><span class="kn">import</span> <span class="n">minidom</span><span class="p">,</span> <span class="n">Node</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">googletest.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">gtest_test_utils</span>
+
+<span class="n">GTEST_DEFAULT_OUTPUT_FILE</span> <span class="o">=</span> <span class="s1">&#39;test_detail.xml&#39;</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">GTestXMLTestCase</span><span class="p">(</span><span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Base class for tests of Google Test&#39;s XML output functionality.&quot;&quot;&quot;</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">AssertEquivalentNodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expected_node</span><span class="p">,</span> <span class="n">actual_node</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Asserts that actual_node is equivalent to expected_node.</span>
+
+<span class="sd">    Asserts that actual_node (a DOM node object) is equivalent to</span>
+<span class="sd">    expected_node (another DOM node object), in that either both of</span>
+<span class="sd">    them are CDATA nodes and have the same value, or both are DOM</span>
+<span class="sd">    elements and actual_node meets all of the following conditions:</span>
+
+<span class="sd">    *  It has the same tag name as expected_node.</span>
+<span class="sd">    *  It has the same set of attributes as expected_node, each with</span>
+<span class="sd">       the same value as the corresponding attribute of expected_node.</span>
+<span class="sd">       Exceptions are any attribute named &quot;time&quot;, which needs only be</span>
+<span class="sd">       convertible to a floating-point number and any attribute named</span>
+<span class="sd">       &quot;type_param&quot; which only has to be non-empty.</span>
+<span class="sd">    *  It has an equivalent set of child nodes (including elements and</span>
+<span class="sd">       CDATA sections) as expected_node.  Note that we ignore the</span>
+<span class="sd">       order of the children as they are not guaranteed to be in any</span>
+<span class="sd">       particular order.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      expected_node: expected DOM node object</span>
+<span class="sd">      actual_node: actual DOM node object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">expected_node</span><span class="o">.</span><span class="n">nodeType</span> <span class="o">==</span> <span class="n">Node</span><span class="o">.</span><span class="n">CDATA_SECTION_NODE</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">Node</span><span class="o">.</span><span class="n">CDATA_SECTION_NODE</span><span class="p">,</span> <span class="n">actual_node</span><span class="o">.</span><span class="n">nodeType</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">expected_node</span><span class="o">.</span><span class="n">nodeValue</span><span class="p">,</span> <span class="n">actual_node</span><span class="o">.</span><span class="n">nodeValue</span><span class="p">)</span>
+      <span class="k">return</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">Node</span><span class="o">.</span><span class="n">ELEMENT_NODE</span><span class="p">,</span> <span class="n">actual_node</span><span class="o">.</span><span class="n">nodeType</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">Node</span><span class="o">.</span><span class="n">ELEMENT_NODE</span><span class="p">,</span> <span class="n">expected_node</span><span class="o">.</span><span class="n">nodeType</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">expected_node</span><span class="o">.</span><span class="n">tagName</span><span class="p">,</span> <span class="n">actual_node</span><span class="o">.</span><span class="n">tagName</span><span class="p">)</span>
+
+    <span class="n">expected_attributes</span> <span class="o">=</span> <span class="n">expected_node</span><span class="o">.</span><span class="n">attributes</span>
+    <span class="n">actual_attributes</span> <span class="o">=</span> <span class="n">actual_node</span><span class="o">.</span><span class="n">attributes</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span>
+        <span class="n">expected_attributes</span><span class="o">.</span><span class="n">length</span><span class="p">,</span>
+        <span class="n">actual_attributes</span><span class="o">.</span><span class="n">length</span><span class="p">,</span>
+        <span class="s1">&#39;attribute numbers differ in element </span><span class="si">%s</span><span class="s1">:</span><span class="se">\n</span><span class="s1">Expected: </span><span class="si">%r</span><span class="se">\n</span><span class="s1">Actual: </span><span class="si">%r</span><span class="s1">&#39;</span>
+        <span class="o">%</span> <span class="p">(</span>
+            <span class="n">actual_node</span><span class="o">.</span><span class="n">tagName</span><span class="p">,</span>
+            <span class="n">expected_attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
+            <span class="n">actual_attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">expected_attributes</span><span class="o">.</span><span class="n">length</span><span class="p">):</span>
+      <span class="n">expected_attr</span> <span class="o">=</span> <span class="n">expected_attributes</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+      <span class="n">actual_attr</span> <span class="o">=</span> <span class="n">actual_attributes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">expected_attr</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+          <span class="n">actual_attr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span>
+          <span class="s1">&#39;expected attribute </span><span class="si">%s</span><span class="s1"> not found in element </span><span class="si">%s</span><span class="s1">&#39;</span>
+          <span class="o">%</span> <span class="p">(</span><span class="n">expected_attr</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">actual_node</span><span class="o">.</span><span class="n">tagName</span><span class="p">),</span>
+      <span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span>
+          <span class="n">expected_attr</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+          <span class="n">actual_attr</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+          <span class="s1">&#39; values of attribute </span><span class="si">%s</span><span class="s1"> in element </span><span class="si">%s</span><span class="s1"> differ: </span><span class="si">%s</span><span class="s1"> vs </span><span class="si">%s</span><span class="s1">&#39;</span>
+          <span class="o">%</span> <span class="p">(</span>
+              <span class="n">expected_attr</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+              <span class="n">actual_node</span><span class="o">.</span><span class="n">tagName</span><span class="p">,</span>
+              <span class="n">expected_attr</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+              <span class="n">actual_attr</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+          <span class="p">),</span>
+      <span class="p">)</span>
+
+    <span class="n">expected_children</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_GetChildren_GetChildren</span><span class="p">(</span><span class="n">expected_node</span><span class="p">)</span>
+    <span class="n">actual_children</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_GetChildren_GetChildren</span><span class="p">(</span><span class="n">actual_node</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">expected_children</span><span class="p">),</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">actual_children</span><span class="p">),</span>
+        <span class="s1">&#39;number of child elements differ in element &#39;</span> <span class="o">+</span> <span class="n">actual_node</span><span class="o">.</span><span class="n">tagName</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">child_id</span><span class="p">,</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">expected_children</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+          <span class="n">child_id</span> <span class="ow">in</span> <span class="n">actual_children</span><span class="p">,</span>
+          <span class="s1">&#39;&lt;</span><span class="si">%s</span><span class="s1">&gt; is not in &lt;</span><span class="si">%s</span><span class="s1">&gt; (in element </span><span class="si">%s</span><span class="s1">)&#39;</span>
+          <span class="o">%</span> <span class="p">(</span><span class="n">child_id</span><span class="p">,</span> <span class="n">actual_children</span><span class="p">,</span> <span class="n">actual_node</span><span class="o">.</span><span class="n">tagName</span><span class="p">),</span>
+      <span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">AssertEquivalentNodesAssertEquivalentNodes</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">actual_children</span><span class="p">[</span><span class="n">child_id</span><span class="p">])</span>
+
+  <span class="n">identifying_attribute</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">&#39;testsuites&#39;</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;testsuite&#39;</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;testcase&#39;</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;failure&#39;</span><span class="p">:</span> <span class="s1">&#39;message&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;skipped&#39;</span><span class="p">:</span> <span class="s1">&#39;message&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;property&#39;</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+  <span class="p">}</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">_GetChildren</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetches all of the child nodes of element, a DOM Element object.</span>
+
+<span class="sd">    Returns them as the values of a dictionary keyed by the IDs of the children.</span>
+<span class="sd">    For &lt;testsuites&gt;, &lt;testsuite&gt;, &lt;testcase&gt;, and &lt;property&gt; elements, the ID</span>
+<span class="sd">    is the value of their &quot;name&quot; attribute; for &lt;failure&gt; elements, it is the</span>
+<span class="sd">    value of the &quot;message&quot; attribute; for &lt;properties&gt; elements, it is the value</span>
+<span class="sd">    of their parent&#39;s &quot;name&quot; attribute plus the literal string &quot;properties&quot;;</span>
+<span class="sd">    CDATA sections and non-whitespace text nodes are concatenated into a single</span>
+<span class="sd">    CDATA section with ID &quot;detail&quot;.  An exception is raised if any element other</span>
+<span class="sd">    than the above four is encountered, if two child elements with the same</span>
+<span class="sd">    identifying attributes are encountered, or if any other type of node is</span>
+<span class="sd">    encountered.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      element: DOM Element object</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      Dictionary where keys are the IDs of the children.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">children</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">childNodes</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">nodeType</span> <span class="o">==</span> <span class="n">Node</span><span class="o">.</span><span class="n">ELEMENT_NODE</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">tagName</span> <span class="o">==</span> <span class="s1">&#39;properties&#39;</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+              <span class="n">child</span><span class="o">.</span><span class="n">parentNode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span>
+              <span class="s1">&#39;Encountered &lt;properties&gt; element without a parent&#39;</span><span class="p">,</span>
+          <span class="p">)</span>
+          <span class="n">child_id</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">parentNode</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;-properties&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+              <span class="n">child</span><span class="o">.</span><span class="n">tagName</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">identifying_attributeidentifying_attribute</span><span class="p">,</span>
+              <span class="s1">&#39;Encountered unknown element &lt;</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="n">child</span><span class="o">.</span><span class="n">tagName</span><span class="p">,</span>
+          <span class="p">)</span>
+          <span class="n">child_id</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span>
+              <span class="bp">self</span><span class="o">.</span><span class="n">identifying_attributeidentifying_attribute</span><span class="p">[</span><span class="n">child</span><span class="o">.</span><span class="n">tagName</span><span class="p">]</span>
+          <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertNotIn</span><span class="p">(</span><span class="n">child_id</span><span class="p">,</span> <span class="n">children</span><span class="p">)</span>
+        <span class="n">children</span><span class="p">[</span><span class="n">child_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">child</span>
+      <span class="k">elif</span> <span class="n">child</span><span class="o">.</span><span class="n">nodeType</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Node</span><span class="o">.</span><span class="n">TEXT_NODE</span><span class="p">,</span> <span class="n">Node</span><span class="o">.</span><span class="n">CDATA_SECTION_NODE</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="s1">&#39;detail&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+          <span class="k">if</span> <span class="p">(</span>
+              <span class="n">child</span><span class="o">.</span><span class="n">nodeType</span> <span class="o">==</span> <span class="n">Node</span><span class="o">.</span><span class="n">CDATA_SECTION_NODE</span>
+              <span class="ow">or</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">nodeValue</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span>
+          <span class="p">):</span>
+            <span class="n">children</span><span class="p">[</span><span class="s1">&#39;detail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">ownerDocument</span><span class="o">.</span><span class="n">createCDATASection</span><span class="p">(</span>
+                <span class="n">child</span><span class="o">.</span><span class="n">nodeValue</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">children</span><span class="p">[</span><span class="s1">&#39;detail&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nodeValue</span> <span class="o">+=</span> <span class="n">child</span><span class="o">.</span><span class="n">nodeValue</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="s1">&#39;Encountered unexpected node type </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">child</span><span class="o">.</span><span class="n">nodeType</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">children</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">NormalizeXml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Normalizes XML that may change from run to run.</span>
+
+<span class="sd">    Normalizes Google Test&#39;s XML output to eliminate references to transient</span>
+<span class="sd">    information that may change from run to run.</span>
+
+<span class="sd">    *  The &quot;time&quot; attribute of &lt;testsuites&gt;, &lt;testsuite&gt; and &lt;testcase&gt;</span>
+<span class="sd">       elements is replaced with a single asterisk, if it contains</span>
+<span class="sd">       only digit characters.</span>
+<span class="sd">    *  The &quot;timestamp&quot; attribute of &lt;testsuites&gt; elements is replaced with a</span>
+<span class="sd">       single asterisk, if it contains a valid ISO8601 datetime value.</span>
+<span class="sd">    *  The &quot;type_param&quot; attribute of &lt;testcase&gt; elements is replaced with a</span>
+<span class="sd">       single asterisk (if it sn non-empty) as it is the type name returned</span>
+<span class="sd">       by the compiler and is platform dependent.</span>
+<span class="sd">    *  The line info reported in the first line of the &quot;message&quot;</span>
+<span class="sd">       attribute and CDATA section of &lt;failure&gt; elements is replaced with the</span>
+<span class="sd">       file&#39;s basename and a single asterisk for the line number.</span>
+<span class="sd">    *  The directory names in file paths are removed.</span>
+<span class="sd">    *  The stack traces are removed.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      element: DOM element to normalize</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">tagName</span> <span class="o">==</span> <span class="s1">&#39;testcase&#39;</span><span class="p">:</span>
+      <span class="n">source_file</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">getAttributeNode</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">source_file</span><span class="p">:</span>
+        <span class="n">source_file</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^.*[/</span><span class="se">\\</span><span class="s1">](.*)&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">1&#39;</span><span class="p">,</span> <span class="n">source_file</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">tagName</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;testsuites&#39;</span><span class="p">,</span> <span class="s1">&#39;testsuite&#39;</span><span class="p">,</span> <span class="s1">&#39;testcase&#39;</span><span class="p">):</span>
+      <span class="n">timestamp</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">getAttributeNode</span><span class="p">(</span><span class="s1">&#39;timestamp&#39;</span><span class="p">)</span>
+      <span class="n">timestamp</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+          <span class="sa">r</span><span class="s1">&#39;^\d</span><span class="si">{4}</span><span class="s1">-\d\d-\d\dT\d\d:\d\d:\d\d\.\d\d\d$&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">timestamp</span><span class="o">.</span><span class="n">value</span>
+      <span class="p">)</span>
+    <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">tagName</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;testsuites&#39;</span><span class="p">,</span> <span class="s1">&#39;testsuite&#39;</span><span class="p">,</span> <span class="s1">&#39;testcase&#39;</span><span class="p">):</span>
+      <span class="n">time</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">getAttributeNode</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+      <span class="c1"># The value for exact N seconds has a trailing decimal point (e.g., &quot;10.&quot;</span>
+      <span class="c1"># instead of &quot;10&quot;)</span>
+      <span class="n">time</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^\d+\.(\d+)?$&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+      <span class="n">type_param</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">getAttributeNode</span><span class="p">(</span><span class="s1">&#39;type_param&#39;</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">type_param</span> <span class="ow">and</span> <span class="n">type_param</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+        <span class="n">type_param</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
+    <span class="k">elif</span> <span class="n">element</span><span class="o">.</span><span class="n">tagName</span> <span class="o">==</span> <span class="s1">&#39;failure&#39;</span> <span class="ow">or</span> <span class="n">element</span><span class="o">.</span><span class="n">tagName</span> <span class="o">==</span> <span class="s1">&#39;skipped&#39;</span><span class="p">:</span>
+      <span class="n">source_line_pat</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^.*[/</span><span class="se">\\</span><span class="s1">](.*:)\d+\n&#39;</span>
+      <span class="c1"># Replaces the source line information with a normalized form.</span>
+      <span class="n">message</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">getAttributeNode</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">)</span>
+      <span class="n">message</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">source_line_pat</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">1*</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+      <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">childNodes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">nodeType</span> <span class="o">==</span> <span class="n">Node</span><span class="o">.</span><span class="n">CDATA_SECTION_NODE</span><span class="p">:</span>
+          <span class="c1"># Replaces the source line information with a normalized form.</span>
+          <span class="n">cdata</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">source_line_pat</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">1*</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">child</span><span class="o">.</span><span class="n">nodeValue</span><span class="p">)</span>
+          <span class="c1"># Removes the actual stack trace.</span>
+          <span class="n">child</span><span class="o">.</span><span class="n">nodeValue</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+              <span class="sa">r</span><span class="s1">&#39;Stack trace:\n(.|\n)*&#39;</span><span class="p">,</span> <span class="s1">&#39;Stack trace:</span><span class="se">\n</span><span class="s1">*&#39;</span><span class="p">,</span> <span class="n">cdata</span>
+          <span class="p">)</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">childNodes</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">nodeType</span> <span class="o">==</span> <span class="n">Node</span><span class="o">.</span><span class="n">ELEMENT_NODE</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">NormalizeXmlNormalizeXml</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

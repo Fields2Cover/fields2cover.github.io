@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegoogletest-uninitialized-test_1a70d1a3c3521654597facb5344ee1c968:
+
+Function googletest-uninitialized-test::TestExitCodeAndOutput
+=============================================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-uninitialized-test.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: googletest-uninitialized-test::TestExitCodeAndOutput(command)
+   :project: Fields2Cover

@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class GTestHelpTest &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/classgtest__help__test_1_1GTestHelpTest.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class GTestListTestsOutputUnitTest" href="classgtest__list__output__unittest_1_1GTestListTestsOutputUnitTest.html" />
+    <link rel="prev" title="Class GTestUninitializedTest" href="classgoogletest-uninitialized-test_1_1GTestUninitializedTest.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="f2c_library.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#page-hierarchy">Page Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="f2c_library.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="f2c_library.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1Options.html">Struct Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cell.html">Struct Cell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cells.html">Struct Cells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Field.html">Struct Field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries.html">Template Struct Geometries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1ConstIterator_1_1Private.html">Struct ConstIterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1Iterator_1_1Private.html">Struct Iterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometry.html">Template Struct Geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LinearRing.html">Struct LinearRing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LineString.html">Struct LineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiLineString.html">Struct MultiLineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiPoint.html">Struct MultiPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Path.html">Struct Path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1PathState.html">Struct PathState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Point.html">Struct Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Robot.html">Struct Robot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Route.html">Struct Route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Strip.html">Struct Strip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swath.html">Struct Swath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html">Struct Swaths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1SwathsByCells.html">Struct SwathsByCells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structstd_1_1hash_3_01f2c_1_1types_1_1Point_01_4.html">Template Struct hash&lt; f2c::types::Point &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structtesting_1_1gmock__matchers__test_1_1ContainerHelper.html">Struct ContainerHelper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structtesting_1_1gmock__matchers__test_1_1GtestGreaterThanMatcher.html">Template Struct GtestGreaterThanMatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structtesting_1_1internal_1_1TraceInfo.html">Struct TraceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structtesting_1_1internal_1_1UnitTestImpl_1_1CompareTestSuitesByPointer.html">Struct UnitTestImpl::CompareTestSuitesByPointer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classContainerTest.html">Template Class ContainerTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCounter.html">Class Counter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classExternalInstantiationTest.html">Class ExternalInstantiationTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1CubicSpline.html">Class CubicSpline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1BoustrophedonDecomp.html">Class BoustrophedonDecomp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1DecompositionBase.html">Class DecompositionBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1TrapezoidalDecomp.html">Class TrapezoidalDecomp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1ConstHL.html">Class ConstHL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html">Class HeadlandGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1BaseObjective.html">Template Class BaseObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1CompleteTurnPathObj.html">Template Class CompleteTurnPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1DecompObjective.html">Class DecompObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1DirectDistPathObj.html">Class DirectDistPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1FieldCoverage.html">Class FieldCoverage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1HGObjective.html">Class HGObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1NSwath.html">Class NSwath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1NSwathModified.html">Class NSwathModified</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1Overlaps.html">Class Overlaps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1PathLength.html">Class PathLength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1PPObjective.html">Class PPObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1RemArea.html">Class RemArea</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1RPObjective.html">Class RPObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1SGObjective.html">Class SGObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1SwathLength.html">Class SwathLength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Parser.html">Class Parser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurves.html">Class DubinsCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurvesCC.html">Class DubinsCurvesCC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1PathPlanning.html">Class PathPlanning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurves.html">Class ReedsSheppCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurvesHC.html">Class ReedsSheppCurvesHC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1TurningBase.html">Class TurningBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Random.html">Class Random</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1BoustrophedonOrder.html">Class BoustrophedonOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1CustomOrder.html">Class CustomOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1RoutePlannerBase.html">Class RoutePlannerBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SingleCellSwathsOrderBase.html">Class SingleCellSwathsOrderBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SnakeOrder.html">Class SnakeOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SpiralOrder.html">Class SpiralOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1BruteForce.html">Class BruteForce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1SwathGeneratorBase.html">Class SwathGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Transform.html">Class Transform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1EmptyDestructor.html">Class EmptyDestructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1ConstIterator.html">Class Geometries::ConstIterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1Iterator.html">Class Geometries::Iterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Graph.html">Class Graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Graph2D.html">Class Graph2D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Visualizer.html">Class Visualizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFieldHelper.html">Class FieldHelper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgmock__leak__test_1_1GMockLeakTest.html">Class GMockLeakTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgmock__output__test_1_1GMockOutputTest.html">Class GMockOutputTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-break-on-failure-unittest_1_1GTestBreakOnFailureUnitTest.html">Class GTestBreakOnFailureUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest.html">Class CatchCxxExceptionsTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-catch-exceptions-test_1_1CatchSehExceptionsTest.html">Class CatchSehExceptionsTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-color-test_1_1GTestColorTest.html">Class GTestColorTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-env-var-test_1_1GTestEnvVarTest.html">Class GTestEnvVarTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest.html">Class GTestFailFastUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-filter-unittest_1_1GTestFilterUnitTest.html">Class GTestFilterUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-global-environment-unittest_1_1GTestGlobalEnvironmentUnitTest.html">Class GTestGlobalEnvironmentUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-json-outfiles-test_1_1GTestJsonOutFilesTest.html">Class GTestJsonOutFilesTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-json-output-unittest_1_1GTestJsonOutputUnitTest.html">Class GTestJsonOutputUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-list-tests-unittest_1_1GTestListTestsUnitTest.html">Class GTestListTestsUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-output-test_1_1GTestOutputTest.html">Class GTestOutputTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-param-test-invalid-name1-test_1_1GTestParamTestInvalidName1Test.html">Class GTestParamTestInvalidName1Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-param-test-invalid-name2-test_1_1GTestParamTestInvalidName2Test.html">Class GTestParamTestInvalidName2Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-setuptestsuite-test_1_1GTestSetUpTestSuiteTest.html">Class GTestSetUpTestSuiteTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-shuffle-test_1_1GTestShuffleUnitTest.html">Class GTestShuffleUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-throw-on-failure-test_1_1ThrowOnFailureTest.html">Class ThrowOnFailureTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-uninitialized-test_1_1GTestUninitializedTest.html">Class GTestUninitializedTest</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Class GTestHelpTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__list__output__unittest_1_1GTestListTestsOutputUnitTest.html">Class GTestListTestsOutputUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__skip__check__output__test_1_1SkipEntireEnvironmentTest.html">Class SkipEntireEnvironmentTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__skip__environment__check__output__test_1_1SkipEntireEnvironmentTest.html">Class SkipEntireEnvironmentTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__test__utils_1_1Subprocess.html">Class Subprocess</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__testbridge__test_1_1GTestTestFilterTest.html">Class GTestTestFilterTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__xml__outfiles__test_1_1GTestXMLOutFilesTest.html">Class GTestXMLOutFilesTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__xml__output__unittest_1_1GTestXMLOutputUnitTest.html">Class GTestXMLOutputUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__xml__test__utils_1_1GTestXMLTestCase.html">Class GTestXMLTestCase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classInstantiationInMultipleTranslationUnitsTest.html">Class InstantiationInMultipleTranslationUnitsTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classInterface.html">Class Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classInvokeHelper.html">Class InvokeHelper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMatcherInterface.html">Class MatcherInterface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMock.html">Class Mock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMyString.html">Class MyString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classOnTheFlyPrimeTable.html">Class OnTheFlyPrimeTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPreCalculatedPrimeTable.html">Class PreCalculatedPrimeTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPrimeTable.html">Class PrimeTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPrivateCode.html">Class PrivateCode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQueue.html">Template Class Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQueueNode.html">Template Class QueueNode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1gmock__matchers__test_1_1GreaterThanMatcher.html">Template Class GreaterThanMatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1gmock__matchers__test_1_1GTestMatcherTestP.html">Class GTestMatcherTestP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1DefaultGlobalTestPartResultReporter.html">Class DefaultGlobalTestPartResultReporter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1DefaultPerThreadTestPartResultReporter.html">Class DefaultPerThreadTestPartResultReporter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1GTestFlagSaver.html">Class GTestFlagSaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1OsStackTraceGetter.html">Class OsStackTraceGetter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1OsStackTraceGetterInterface.html">Class OsStackTraceGetterInterface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1TestPropertyKeyIs.html">Class TestPropertyKeyIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1TestResultAccessor.html">Class TestResultAccessor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1UnitTestImpl.html">Class UnitTestImpl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1UnitTestOptions.html">Class UnitTestOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTestPartResultReporterInterface.html">Class TestPartResultReporterInterface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#defines">Defines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="f2c_library.html">API</a></li>
+      <li class="breadcrumb-item active">Class GTestHelpTest</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/classgtest__help__test_1_1GTestHelpTest.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="class-gtesthelptest">
+<span id="exhale-class-classgtest-help-test-1-1gtesthelptest"></span><h1>Class GTestHelpTest<a class="headerlink" href="#class-gtesthelptest" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_googletest_googletest_test_gtest_help_test.py.html#file-googletest-googletest-test-gtest-help-test-py"><span class="std std-ref">File gtest_help_test.py</span></a></p></li>
+</ul>
+<section id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Link to this heading"></a></h2>
+<section id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">gtest_test_utils.TestCase</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="classgtest__help__test_1_1GTestHelpTest"></span><span class="sig-name descname"><span class="pre">gtest_help_test.GTestHelpTest</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">gtest_test_utils.TestCase</span></span></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="o">--</span><span class="n">help</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">its</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">forms</span><span class="p">.</span>
+</pre></div>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="test_prints_help_with_full_flag">
+<span class="target" id="classgtest__help__test_1_1GTestHelpTest_1a74c433add31ea93060668aff46eaf9bc"></span><span class="sig-name descname"><span class="pre">test_prints_help_with_full_flag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#test_prints_help_with_full_flag" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Verifies</span><span class="w"> </span><span class="n">correct</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">when</span><span class="w"> </span><span class="n">help</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">specified</span><span class="p">.</span>
+
+<span class="n">The</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">printed</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">tests</span><span class="w"> </span><span class="n">must</span>
+<span class="n">skipped</span><span class="w"> </span><span class="n">when</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">given</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">specified</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="test_runs_tests_without_help_flag">
+<span class="target" id="classgtest__help__test_1_1GTestHelpTest_1a1f9a5c73e25e66f9b8bf42f7dee11be9"></span><span class="sig-name descname"><span class="pre">test_runs_tests_without_help_flag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#test_runs_tests_without_help_flag" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Verifies</span><span class="w"> </span><span class="n">correct</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">when</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">help</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">specified</span><span class="p">.</span>
+
+<span class="n">Verifies</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">when</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">help</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">specified</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">tests</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">run</span>
+<span class="k">and</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">help</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">printed</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="test_runs_tests_with_gtest_internal_flag">
+<span class="target" id="classgtest__help__test_1_1GTestHelpTest_1ad15939700d2896b93127c78b6b0d7655"></span><span class="sig-name descname"><span class="pre">test_runs_tests_with_gtest_internal_flag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#test_runs_tests_with_gtest_internal_flag" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Verifies</span><span class="w"> </span><span class="n">correct</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">when</span><span class="w"> </span><span class="n">internal</span><span class="w"> </span><span class="n">testing</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">specified</span><span class="p">.</span>
+
+<span class="n">Verifies</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">tests</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">help</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">printed</span><span class="w"> </span><span class="n">when</span>
+<span class="n">a</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">Google</span><span class="w"> </span><span class="n">Test</span><span class="w"> </span><span class="n">prefix</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="err">&#39;</span><span class="n">internal_</span><span class="err">&#39;</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">supplied</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classgoogletest-uninitialized-test_1_1GTestUninitializedTest.html" class="btn btn-neutral float-left" title="Class GTestUninitializedTest" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classgtest__list__output__unittest_1_1GTestListTestsOutputUnitTest.html" class="btn btn-neutral float-right" title="Class GTestListTestsOutputUnitTest" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

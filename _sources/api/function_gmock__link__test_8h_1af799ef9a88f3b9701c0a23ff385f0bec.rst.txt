@@ -1,0 +1,14 @@
+.. _exhale_function_gmock__link__test_8h_1af799ef9a88f3b9701c0a23ff385f0bec:
+
+Function GTEST_DISABLE_MSC_WARNINGS_POP_
+========================================
+
+- Defined in :ref:`file_googletest_googlemock_test_gmock_link_test.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GTEST_DISABLE_MSC_WARNINGS_POP_()
+   :project: Fields2Cover

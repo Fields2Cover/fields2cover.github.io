@@ -1,0 +1,26 @@
+.. _exhale_class_classgoogletest-global-environment-unittest_1_1GTestGlobalEnvironmentUnitTest:
+
+Class GTestGlobalEnvironmentUnitTest
+====================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-global-environment-unittest.py`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public gtest_test_utils.TestCase``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: googletest-global-environment-unittest::GTestGlobalEnvironmentUnitTest
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegtest__xml__outfiles__test_1acf82219e56619aab5c114b6f0a7c3a5e:
+
+Variable gtest_xml_outfiles_test::GTEST_OUTPUT_2_TEST
+=====================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: gtest_xml_outfiles_test::GTEST_OUTPUT_2_TEST
+   :project: Fields2Cover

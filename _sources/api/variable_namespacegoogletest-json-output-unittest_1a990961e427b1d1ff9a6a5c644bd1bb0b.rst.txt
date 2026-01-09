@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-json-output-unittest_1a990961e427b1d1ff9a6a5c644bd1bb0b:
+
+Variable googletest-json-output-unittest::SUPPORTS_TYPED_TESTS
+==============================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-json-output-unittest::SUPPORTS_TYPED_TESTS
+   :project: Fields2Cover

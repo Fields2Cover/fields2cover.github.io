@@ -1,0 +1,24 @@
+.. _dir____w_Fields2Cover_Fields2Cover_googletest_googletest:
+
+
+Directory googletest
+====================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_googletest>` (``googletest``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``/__w/Fields2Cover/Fields2Cover/googletest/googletest``
+
+Subdirectories
+--------------
+
+- :ref:`dir____w_Fields2Cover_Fields2Cover_googletest_googletest_docs`
+- :ref:`dir____w_Fields2Cover_Fields2Cover_googletest_googletest_samples`
+- :ref:`dir____w_Fields2Cover_Fields2Cover_googletest_googletest_src`
+- :ref:`dir____w_Fields2Cover_Fields2Cover_googletest_googletest_test`
+
+
+

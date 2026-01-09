@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegmock__output__test_1a2ebfc0abfb0ed307021ecaa9da465c55:
+
+Function gmock_output_test::RemoveReportHeaderAndFooter
+=======================================================
+
+- Defined in :ref:`file_googletest_googlemock_test_gmock_output_test.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: gmock_output_test::RemoveReportHeaderAndFooter(output)
+   :project: Fields2Cover

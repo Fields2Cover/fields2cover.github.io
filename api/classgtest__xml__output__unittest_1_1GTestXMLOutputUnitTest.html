@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class GTestXMLOutputUnitTest &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/classgtest__xml__output__unittest_1_1GTestXMLOutputUnitTest.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class GTestXMLTestCase" href="classgtest__xml__test__utils_1_1GTestXMLTestCase.html" />
+    <link rel="prev" title="Class GTestXMLOutFilesTest" href="classgtest__xml__outfiles__test_1_1GTestXMLOutFilesTest.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="f2c_library.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#page-hierarchy">Page Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="f2c_library.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="f2c_library.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1Options.html">Struct Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cell.html">Struct Cell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cells.html">Struct Cells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Field.html">Struct Field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries.html">Template Struct Geometries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1ConstIterator_1_1Private.html">Struct ConstIterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1Iterator_1_1Private.html">Struct Iterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometry.html">Template Struct Geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LinearRing.html">Struct LinearRing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LineString.html">Struct LineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiLineString.html">Struct MultiLineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiPoint.html">Struct MultiPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Path.html">Struct Path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1PathState.html">Struct PathState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Point.html">Struct Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Robot.html">Struct Robot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Route.html">Struct Route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Strip.html">Struct Strip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swath.html">Struct Swath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html">Struct Swaths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1SwathsByCells.html">Struct SwathsByCells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structstd_1_1hash_3_01f2c_1_1types_1_1Point_01_4.html">Template Struct hash&lt; f2c::types::Point &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structtesting_1_1gmock__matchers__test_1_1ContainerHelper.html">Struct ContainerHelper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structtesting_1_1gmock__matchers__test_1_1GtestGreaterThanMatcher.html">Template Struct GtestGreaterThanMatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structtesting_1_1internal_1_1TraceInfo.html">Struct TraceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structtesting_1_1internal_1_1UnitTestImpl_1_1CompareTestSuitesByPointer.html">Struct UnitTestImpl::CompareTestSuitesByPointer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classContainerTest.html">Template Class ContainerTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCounter.html">Class Counter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classExternalInstantiationTest.html">Class ExternalInstantiationTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1CubicSpline.html">Class CubicSpline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1BoustrophedonDecomp.html">Class BoustrophedonDecomp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1DecompositionBase.html">Class DecompositionBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1TrapezoidalDecomp.html">Class TrapezoidalDecomp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1ConstHL.html">Class ConstHL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html">Class HeadlandGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1BaseObjective.html">Template Class BaseObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1CompleteTurnPathObj.html">Template Class CompleteTurnPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1DecompObjective.html">Class DecompObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1DirectDistPathObj.html">Class DirectDistPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1FieldCoverage.html">Class FieldCoverage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1HGObjective.html">Class HGObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1NSwath.html">Class NSwath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1NSwathModified.html">Class NSwathModified</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1Overlaps.html">Class Overlaps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1PathLength.html">Class PathLength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1PPObjective.html">Class PPObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1RemArea.html">Class RemArea</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1RPObjective.html">Class RPObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1SGObjective.html">Class SGObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1SwathLength.html">Class SwathLength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Parser.html">Class Parser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurves.html">Class DubinsCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurvesCC.html">Class DubinsCurvesCC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1PathPlanning.html">Class PathPlanning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurves.html">Class ReedsSheppCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurvesHC.html">Class ReedsSheppCurvesHC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1TurningBase.html">Class TurningBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Random.html">Class Random</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1BoustrophedonOrder.html">Class BoustrophedonOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1CustomOrder.html">Class CustomOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1RoutePlannerBase.html">Class RoutePlannerBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SingleCellSwathsOrderBase.html">Class SingleCellSwathsOrderBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SnakeOrder.html">Class SnakeOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SpiralOrder.html">Class SpiralOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1BruteForce.html">Class BruteForce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1SwathGeneratorBase.html">Class SwathGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Transform.html">Class Transform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1EmptyDestructor.html">Class EmptyDestructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1ConstIterator.html">Class Geometries::ConstIterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1Iterator.html">Class Geometries::Iterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Graph.html">Class Graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Graph2D.html">Class Graph2D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Visualizer.html">Class Visualizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFieldHelper.html">Class FieldHelper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgmock__leak__test_1_1GMockLeakTest.html">Class GMockLeakTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgmock__output__test_1_1GMockOutputTest.html">Class GMockOutputTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-break-on-failure-unittest_1_1GTestBreakOnFailureUnitTest.html">Class GTestBreakOnFailureUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest.html">Class CatchCxxExceptionsTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-catch-exceptions-test_1_1CatchSehExceptionsTest.html">Class CatchSehExceptionsTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-color-test_1_1GTestColorTest.html">Class GTestColorTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-env-var-test_1_1GTestEnvVarTest.html">Class GTestEnvVarTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest.html">Class GTestFailFastUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-filter-unittest_1_1GTestFilterUnitTest.html">Class GTestFilterUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-global-environment-unittest_1_1GTestGlobalEnvironmentUnitTest.html">Class GTestGlobalEnvironmentUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-json-outfiles-test_1_1GTestJsonOutFilesTest.html">Class GTestJsonOutFilesTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-json-output-unittest_1_1GTestJsonOutputUnitTest.html">Class GTestJsonOutputUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-list-tests-unittest_1_1GTestListTestsUnitTest.html">Class GTestListTestsUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-output-test_1_1GTestOutputTest.html">Class GTestOutputTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-param-test-invalid-name1-test_1_1GTestParamTestInvalidName1Test.html">Class GTestParamTestInvalidName1Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-param-test-invalid-name2-test_1_1GTestParamTestInvalidName2Test.html">Class GTestParamTestInvalidName2Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-setuptestsuite-test_1_1GTestSetUpTestSuiteTest.html">Class GTestSetUpTestSuiteTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-shuffle-test_1_1GTestShuffleUnitTest.html">Class GTestShuffleUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-throw-on-failure-test_1_1ThrowOnFailureTest.html">Class ThrowOnFailureTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-uninitialized-test_1_1GTestUninitializedTest.html">Class GTestUninitializedTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__help__test_1_1GTestHelpTest.html">Class GTestHelpTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__list__output__unittest_1_1GTestListTestsOutputUnitTest.html">Class GTestListTestsOutputUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__skip__check__output__test_1_1SkipEntireEnvironmentTest.html">Class SkipEntireEnvironmentTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__skip__environment__check__output__test_1_1SkipEntireEnvironmentTest.html">Class SkipEntireEnvironmentTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__test__utils_1_1Subprocess.html">Class Subprocess</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__testbridge__test_1_1GTestTestFilterTest.html">Class GTestTestFilterTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__xml__outfiles__test_1_1GTestXMLOutFilesTest.html">Class GTestXMLOutFilesTest</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Class GTestXMLOutputUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__xml__test__utils_1_1GTestXMLTestCase.html">Class GTestXMLTestCase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classInstantiationInMultipleTranslationUnitsTest.html">Class InstantiationInMultipleTranslationUnitsTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classInterface.html">Class Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classInvokeHelper.html">Class InvokeHelper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMatcherInterface.html">Class MatcherInterface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMock.html">Class Mock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMyString.html">Class MyString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classOnTheFlyPrimeTable.html">Class OnTheFlyPrimeTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPreCalculatedPrimeTable.html">Class PreCalculatedPrimeTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPrimeTable.html">Class PrimeTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPrivateCode.html">Class PrivateCode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQueue.html">Template Class Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQueueNode.html">Template Class QueueNode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1gmock__matchers__test_1_1GreaterThanMatcher.html">Template Class GreaterThanMatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1gmock__matchers__test_1_1GTestMatcherTestP.html">Class GTestMatcherTestP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1DefaultGlobalTestPartResultReporter.html">Class DefaultGlobalTestPartResultReporter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1DefaultPerThreadTestPartResultReporter.html">Class DefaultPerThreadTestPartResultReporter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1GTestFlagSaver.html">Class GTestFlagSaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1OsStackTraceGetter.html">Class OsStackTraceGetter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1OsStackTraceGetterInterface.html">Class OsStackTraceGetterInterface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1TestPropertyKeyIs.html">Class TestPropertyKeyIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1TestResultAccessor.html">Class TestResultAccessor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1UnitTestImpl.html">Class UnitTestImpl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1UnitTestOptions.html">Class UnitTestOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTestPartResultReporterInterface.html">Class TestPartResultReporterInterface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#defines">Defines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="f2c_library.html">API</a></li>
+      <li class="breadcrumb-item active">Class GTestXMLOutputUnitTest</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/classgtest__xml__output__unittest_1_1GTestXMLOutputUnitTest.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="class-gtestxmloutputunittest">
+<span id="exhale-class-classgtest-xml-output-unittest-1-1gtestxmloutputunittest"></span><h1>Class GTestXMLOutputUnitTest<a class="headerlink" href="#class-gtestxmloutputunittest" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_googletest_googletest_test_gtest_xml_output_unittest.py.html#file-googletest-googletest-test-gtest-xml-output-unittest-py"><span class="std std-ref">File gtest_xml_output_unittest.py</span></a></p></li>
+</ul>
+<section id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Link to this heading"></a></h2>
+<section id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">gtest_xml_test_utils.GTestXMLTestCase</span></code> (<a class="reference internal" href="classgtest__xml__test__utils_1_1GTestXMLTestCase.html#exhale-class-classgtest-xml-test-utils-1-1gtestxmltestcase"><span class="std std-ref">Class GTestXMLTestCase</span></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="classgtest__xml__output__unittest_1_1GTestXMLOutputUnitTest"></span><span class="sig-name descname"><span class="pre">gtest_xml_output_unittest.GTestXMLOutputUnitTest</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">gtest_xml_test_utils.GTestXMLTestCase</span></span></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Unit</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Google</span><span class="w"> </span><span class="n">Test</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">functionality</span><span class="p">.</span>
+</pre></div>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="testNonEmptyXmlOutput">
+<span class="target" id="classgtest__xml__output__unittest_1_1GTestXMLOutputUnitTest_1a310c136c1eb2b421f57651a7d358b17a"></span><span class="sig-name descname"><span class="pre">testNonEmptyXmlOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testNonEmptyXmlOutput" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Generates</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">empty</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">verifies</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="n">output</span><span class="p">.</span>
+
+<span class="n">Runs</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="n">program</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">generates</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">empty</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="k">and</span>
+<span class="n">tests</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">expected</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testNoTestXmlOutput">
+<span class="target" id="classgtest__xml__output__unittest_1_1GTestXMLOutputUnitTest_1a016acebcc8c1f05877986f95278c126b"></span><span class="sig-name descname"><span class="pre">testNoTestXmlOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testNoTestXmlOutput" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Verifies</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">Google</span><span class="w"> </span><span class="n">Test</span><span class="w"> </span><span class="n">binary</span><span class="w"> </span><span class="n">without</span><span class="w"> </span><span class="n">actual</span><span class="w"> </span><span class="n">tests</span><span class="p">.</span>
+
+<span class="n">Runs</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="n">program</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">generates</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">binary</span><span class="w"> </span><span class="n">without</span><span class="w"> </span><span class="n">tests</span><span class="p">,</span>
+<span class="k">and</span><span class="w"> </span><span class="n">tests</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">expected</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testTimestampValue">
+<span class="target" id="classgtest__xml__output__unittest_1_1GTestXMLOutputUnitTest_1a828521a7ae57f650e1e9ca4beb34336a"></span><span class="sig-name descname"><span class="pre">testTimestampValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testTimestampValue" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Checks</span><span class="w"> </span><span class="n">whether</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">valid</span><span class="p">.</span>
+
+<span class="n">Runs</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="n">program</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">generates</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">checks</span><span class="w"> </span><span class="k">if</span>
+<span class="n">the</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">testsuites</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">valid</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testDefaultOutputFile">
+<span class="target" id="classgtest__xml__output__unittest_1_1GTestXMLOutputUnitTest_1a01ca66e14468028e5c4eb809987113cf"></span><span class="sig-name descname"><span class="pre">testDefaultOutputFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testDefaultOutputFile" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="n">when</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">specified</span><span class="p">.</span>
+
+<span class="n">Confirms</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">Google</span><span class="w"> </span><span class="n">Test</span><span class="w"> </span><span class="n">produces</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">expected</span>
+<span class="k">default</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">explicitly</span><span class="w"> </span><span class="n">specified</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testSuppressedXmlOutput">
+<span class="target" id="classgtest__xml__output__unittest_1_1GTestXMLOutputUnitTest_1ac6df46d6831892e4c14dbdfae0049618"></span><span class="sig-name descname"><span class="pre">testSuppressedXmlOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testSuppressedXmlOutput" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Verifies</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">suppressed</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="n">listener</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">shut</span><span class="w"> </span><span class="n">down</span><span class="p">.</span>
+
+<span class="n">Tests</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">generated</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">listener</span><span class="w"> </span><span class="n">is</span>
+<span class="n">shut</span><span class="w"> </span><span class="n">down</span><span class="w"> </span><span class="n">before</span><span class="w"> </span><span class="n">RUN_ALL_TESTS</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">invoked</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testFilteredTestXmlOutput">
+<span class="target" id="classgtest__xml__output__unittest_1_1GTestXMLOutputUnitTest_1a572b6d49e8f4d646ebdadcced3d260ef"></span><span class="sig-name descname"><span class="pre">testFilteredTestXmlOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testFilteredTestXmlOutput" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Verifies</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">when</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">applied</span><span class="p">.</span>
+
+<span class="n">Runs</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="n">program</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">executes</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">tests</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">verifies</span><span class="w"> </span><span class="n">that</span>
+<span class="n">non</span><span class="o">-</span><span class="n">selected</span><span class="w"> </span><span class="n">tests</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">show</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testShardedTestXmlOutput">
+<span class="target" id="classgtest__xml__output__unittest_1_1GTestXMLOutputUnitTest_1adc6a611bd7c433ecd84876dcb2ac1df1"></span><span class="sig-name descname"><span class="pre">testShardedTestXmlOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testShardedTestXmlOutput" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Verifies</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">when</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">multiple</span><span class="w"> </span><span class="n">shards</span><span class="p">.</span>
+
+<span class="n">Runs</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="n">program</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">executes</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">shard</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">verifies</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">tests</span>
+<span class="n">from</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">shards</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">show</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AssertEquivalentNodes">
+<span class="target" id="classgtest__xml__test__utils_1_1GTestXMLTestCase_1a977273e8863f4f41d121bb5a64b08d32"></span><span class="sig-name descname"><span class="pre">AssertEquivalentNodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected_node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actual_node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AssertEquivalentNodes" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Asserts</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">actual_node</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">expected_node</span><span class="p">.</span>
+
+<span class="n">Asserts</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">actual_node</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="n">DOM</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="n">object</span><span class="p">)</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">to</span>
+<span class="n">expected_node</span><span class="w"> </span><span class="p">(</span><span class="n">another</span><span class="w"> </span><span class="n">DOM</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="n">object</span><span class="p">),</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">either</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="n">of</span>
+<span class="n">them</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">CDATA</span><span class="w"> </span><span class="n">nodes</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">DOM</span>
+<span class="n">elements</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">actual_node</span><span class="w"> </span><span class="n">meets</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">conditions</span><span class="o">:</span>
+
+<span class="o">*</span><span class="w">  </span><span class="n">It</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">expected_node</span><span class="p">.</span>
+<span class="o">*</span><span class="w">  </span><span class="n">It</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">attributes</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">expected_node</span><span class="p">,</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">with</span>
+<span class="w">   </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">corresponding</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">expected_node</span><span class="p">.</span>
+<span class="w">   </span><span class="n">Exceptions</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="n">named</span><span class="w"> </span><span class="s">&quot;time&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">needs</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="n">be</span>
+<span class="w">   </span><span class="n">convertible</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">floating</span><span class="o">-</span><span class="n">point</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">any</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="n">named</span>
+<span class="w">   </span><span class="s">&quot;type_param&quot;</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">empty</span><span class="p">.</span>
+<span class="o">*</span><span class="w">  </span><span class="n">It</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">child</span><span class="w"> </span><span class="n">nodes</span><span class="w"> </span><span class="p">(</span><span class="n">including</span><span class="w"> </span><span class="n">elements</span><span class="w"> </span><span class="k">and</span>
+<span class="w">   </span><span class="n">CDATA</span><span class="w"> </span><span class="n">sections</span><span class="p">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">expected_node</span><span class="p">.</span><span class="w">  </span><span class="n">Note</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">ignore</span><span class="w"> </span><span class="n">the</span>
+<span class="w">   </span><span class="n">order</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">children</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">they</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">guaranteed</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">any</span>
+<span class="w">   </span><span class="n">particular</span><span class="w"> </span><span class="n">order</span><span class="p">.</span>
+
+<span class="nl">Args</span><span class="p">:</span>
+<span class="w">  </span><span class="nl">expected_node</span><span class="p">:</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="n">DOM</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="n">object</span>
+<span class="w">  </span><span class="nl">actual_node</span><span class="p">:</span><span class="w"> </span><span class="n">actual</span><span class="w"> </span><span class="n">DOM</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="n">object</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="NormalizeXml">
+<span class="target" id="classgtest__xml__test__utils_1_1GTestXMLTestCase_1ac4823e96c3b5327b25a340a3605447d9"></span><span class="sig-name descname"><span class="pre">NormalizeXml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#NormalizeXml" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Normalizes</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">change</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">run</span><span class="p">.</span>
+
+<span class="n">Normalizes</span><span class="w"> </span><span class="n">Google</span><span class="w"> </span><span class="n">Test</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">eliminate</span><span class="w"> </span><span class="n">references</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">transient</span>
+<span class="n">information</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">change</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">run</span><span class="p">.</span>
+
+<span class="o">*</span><span class="w">  </span><span class="n">The</span><span class="w"> </span><span class="s">&quot;time&quot;</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="o">&lt;</span><span class="n">testsuites</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">testsuite</span><span class="o">&gt;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="o">&lt;</span><span class="n">testcase</span><span class="o">&gt;</span>
+<span class="w">   </span><span class="n">elements</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">replaced</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">single</span><span class="w"> </span><span class="n">asterisk</span><span class="p">,</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">contains</span>
+<span class="w">   </span><span class="n">only</span><span class="w"> </span><span class="n">digit</span><span class="w"> </span><span class="n">characters</span><span class="p">.</span>
+<span class="o">*</span><span class="w">  </span><span class="n">The</span><span class="w"> </span><span class="s">&quot;timestamp&quot;</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="o">&lt;</span><span class="n">testsuites</span><span class="o">&gt;</span><span class="w"> </span><span class="n">elements</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">replaced</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">a</span>
+<span class="w">   </span><span class="n">single</span><span class="w"> </span><span class="n">asterisk</span><span class="p">,</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">contains</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">valid</span><span class="w"> </span><span class="n">ISO8601</span><span class="w"> </span><span class="n">datetime</span><span class="w"> </span><span class="n">value</span><span class="p">.</span>
+<span class="o">*</span><span class="w">  </span><span class="n">The</span><span class="w"> </span><span class="s">&quot;type_param&quot;</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="o">&lt;</span><span class="n">testcase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">elements</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">replaced</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">a</span>
+<span class="w">   </span><span class="n">single</span><span class="w"> </span><span class="n">asterisk</span><span class="w"> </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">sn</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">empty</span><span class="p">)</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">returned</span>
+<span class="w">   </span><span class="n">by</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">compiler</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">platform</span><span class="w"> </span><span class="n">dependent</span><span class="p">.</span>
+<span class="o">*</span><span class="w">  </span><span class="n">The</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="n">reported</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="s">&quot;message&quot;</span>
+<span class="w">   </span><span class="n">attribute</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">CDATA</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="o">&lt;</span><span class="n">failure</span><span class="o">&gt;</span><span class="w"> </span><span class="n">elements</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">replaced</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">the</span>
+<span class="w">   </span><span class="n">file</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">basename</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">single</span><span class="w"> </span><span class="n">asterisk</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="n">number</span><span class="p">.</span>
+<span class="o">*</span><span class="w">  </span><span class="n">The</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">paths</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">removed</span><span class="p">.</span>
+<span class="o">*</span><span class="w">  </span><span class="n">The</span><span class="w"> </span><span class="n">stack</span><span class="w"> </span><span class="n">traces</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">removed</span><span class="p">.</span>
+
+<span class="nl">Args</span><span class="p">:</span>
+<span class="w">  </span><span class="nl">element</span><span class="p">:</span><span class="w"> </span><span class="n">DOM</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">normalize</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="identifying_attribute">
+<span class="target" id="classgtest__xml__test__utils_1_1GTestXMLTestCase_1a0e3a4e84e18f29d2248dcd670a0a6ae6"></span><span class="sig-name descname"><span class="pre">identifying_attribute</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'testsuites':</span> <span class="pre">'name','testsuite':</span> <span class="pre">'name','testcase':</span> <span class="pre">'name','failure':</span> <span class="pre">'message','skipped':</span> <span class="pre">'message','property':</span> <span class="pre">'name',}</span></em><a class="headerlink" href="#identifying_attribute" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classgtest__xml__outfiles__test_1_1GTestXMLOutFilesTest.html" class="btn btn-neutral float-left" title="Class GTestXMLOutFilesTest" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classgtest__xml__test__utils_1_1GTestXMLTestCase.html" class="btn btn-neutral float-right" title="Class GTestXMLTestCase" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

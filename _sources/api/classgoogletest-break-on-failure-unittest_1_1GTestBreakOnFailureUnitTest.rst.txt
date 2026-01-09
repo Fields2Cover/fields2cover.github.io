@@ -1,0 +1,26 @@
+.. _exhale_class_classgoogletest-break-on-failure-unittest_1_1GTestBreakOnFailureUnitTest:
+
+Class GTestBreakOnFailureUnitTest
+=================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-break-on-failure-unittest.py`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public gtest_test_utils.TestCase``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: googletest-break-on-failure-unittest::GTestBreakOnFailureUnitTest
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

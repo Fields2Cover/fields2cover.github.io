@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gMock for Dummies &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/page_md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_for_dummies.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">gMock for Dummies</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/page_md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_for_dummies.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gmock-for-dummies">
+<span id="page-md-w-fields2cover-fields2cover-googletest-docs-gmock-for-dummies"></span><h1>gMock for Dummies<a class="headerlink" href="#gmock-for-dummies" title="Link to this heading"></a></h1>
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_for_dummies"></span><em><span class="pre">page</span></em> <span class="sig-name descname"><span class="pre">gMock</span> <span class="pre">for</span> <span class="pre">Dummies</span></span></dt>
+<dd><p><em>What Is gMock?</em></p>
+<p>When you write a prototype or test, often it’s not feasible or wise to rely on real objects entirely. A <strong>mock object</strong> implements the same interface as a real object (so it can be used as one), but lets you specify at run time how it will be used and what it should do (which methods will be called? in which order? how many times? with what arguments? what will they return? etc).</p>
+<p>It is easy to confuse the term <em>fake objects</em> with mock objects. Fakes and mocks actually mean very different things in the Test-Driven Development (TDD) community:</p>
+<p><ul class="simple">
+<li><p><strong>Fake</strong> objects have working implementations, but usually take some shortcut (perhaps to make the operations less expensive), which makes them not suitable for production. An in-memory file system would be an example of a fake.</p></li>
+<li><p><strong>Mocks</strong> are objects pre-programmed with <em>expectations</em>, which form a specification of the calls they are expected to receive.</p></li>
+</ul>
+</p>
+<p>If all this seems too abstract for you, don’t worry - the most important thing to remember is that a mock allows you to check the <em>interaction</em> between itself and code that uses it. The difference between fakes and mocks shall become much clearer once you start to use mocks.</p>
+<p><strong>gMock</strong> is a library (sometimes we also call it a “framework” to make it sound cool) for creating mock classes and using them. It does to C++ what jMock/EasyMock does to Java (well, more or less).</p>
+<p>When using gMock,</p>
+<p><ol class="arabic simple">
+<li><p>first, you use some simple macros to describe the interface you want to mock, and they will expand to the implementation of your mock class;</p></li>
+<li><p>next, you create some mock objects and specify its expectations and behavior using an intuitive syntax;</p></li>
+<li><p>then you exercise code that uses the mock objects. gMock will catch any violation to the expectations as soon as it arises.</p></li>
+</ol>
+</p>
+<p><em>Why gMock?</em></p>
+<p>While mock objects help you remove unnecessary dependencies in tests and make them fast and reliable, using mocks manually in C++ is <em>hard</em>:</p>
+<p><ul class="simple">
+<li><p>Someone has to implement the mocks. The job is usually tedious and error-prone. No wonder people go great distance to avoid it.</p></li>
+<li><p>The quality of those manually written mocks is a bit, uh, unpredictable. You may see some really polished ones, but you may also see some that were hacked up in a hurry and have all sorts of ad hoc restrictions.</p></li>
+<li><p>The knowledge you gained from using one mock doesn’t transfer to the next one.</p></li>
+</ul>
+</p>
+<p>In contrast, Java and Python programmers have some fine mock frameworks (jMock, EasyMock, etc), which automate the creation of mocks. As a result, mocking is a proven effective technique and widely adopted practice in those communities. Having the right tool absolutely makes the difference.</p>
+<p>gMock was built to help C++ programmers. It was inspired by jMock and EasyMock, but designed with C++’s specifics in mind. It is your friend if any of the following problems is bothering you:</p>
+<p><ul class="simple">
+<li><p>You are stuck with a sub-optimal design and wish you had done more prototyping before it was too late, but prototyping in C++ is by no means “rapid”.</p></li>
+<li><p>Your tests are slow as they depend on too many libraries or use expensive resources (e.g. a database).</p></li>
+<li><p>Your tests are brittle as some resources they use are unreliable (e.g. the network).</p></li>
+<li><p>You want to test how your code handles a failure (e.g. a file checksum error), but it’s not easy to cause one.</p></li>
+<li><p>You need to make sure that your module interacts with other modules in the right way, but it’s hard to observe the interaction; therefore you resort to observing the side effects at the end of the action, but it’s awkward at best.</p></li>
+<li><p>You want to “mock out” your dependencies, except that they don’t have mock implementations yet; and, frankly, you aren’t thrilled by some of those hand-written mocks.</p></li>
+</ul>
+</p>
+<p>We encourage you to use gMock as</p>
+<p><ul class="simple">
+<li><p>a <em>design</em> tool, for it lets you experiment with your interface design early and often. More iterations lead to better designs!</p></li>
+<li><p>a <em>testing</em> tool to cut your tests’ outbound dependencies and probe the interaction between your module and its collaborators.</p></li>
+</ul>
+</p>
+<p><em>Getting Started</em></p>
+<p>gMock is bundled with googletest.</p>
+<p><em>A Case for  Turtles</em></p>
+<p>Let’s look at an example. Suppose you are developing a graphics program that relies on a <a class="reference external" href="https://en.wikipedia.org/wiki/Logo_programming_language">LOGO</a>-like API for drawing. How would you test that it does the right thing? Well, you can run it and compare the screen with a golden screen snapshot, but let’s admit it: tests like this are expensive to run and fragile (What if you just upgraded to a shiny new graphics card that has better anti-aliasing? Suddenly you have to update all your golden images.). It would be too painful if all your tests are like this. Fortunately, you learned about <a class="reference external" href="https://en.wikipedia.org/wiki/Dependency_injection">Dependency Injection</a> and know the right thing to do: instead of having your application talk to the system API directly, wrap the API in an interface (say, <code class="docutils literal notranslate"><span class="pre">Turtle</span></code>) and code to that interface:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Turtle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">Turtle</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">PenUp</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">PenDown</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Forward</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">distance</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Turn</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">degrees</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">GoTo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">GetX</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">GetY</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>(Note that the destructor of <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> <strong>must</strong> be virtual, as is the case for <strong>all</strong> classes you intend to inherit from - otherwise the destructor of the derived class will not be called when you delete an object through a base pointer, and you’ll get corrupted program states like memory leaks.)</p>
+<p>You can control whether the turtle’s movement will leave a trace using <code class="docutils literal notranslate"><span class="pre">PenUp()</span></code> and <code class="docutils literal notranslate"><span class="pre">PenDown()</span></code>, and control its movement using <code class="docutils literal notranslate"><span class="pre">Forward()</span></code>, <code class="docutils literal notranslate"><span class="pre">Turn()</span></code>, and <code class="docutils literal notranslate"><span class="pre">GoTo()</span></code>. Finally, <code class="docutils literal notranslate"><span class="pre">GetX()</span></code> and <code class="docutils literal notranslate"><span class="pre">GetY()</span></code> tell you the current position of the turtle.</p>
+<p>Your program will normally use a real implementation of this interface. In tests, you can use a mock implementation instead. This allows you to easily check what drawing primitives your program is calling, with what arguments, and in which order. Tests written this way are much more robust (they won’t break because your new machine does anti-aliasing differently), easier to read and maintain (the intent of a test is expressed in the code, not in some binary images), and run <em>much, much faster</em>.</p>
+<p><em>Writing the  Class</em></p>
+<p>If you are lucky, the mocks you need to use have already been implemented by some nice people. If, however, you find yourself in the position to write a mock class, relax - gMock turns this task into a fun game! (Well, almost.)</p>
+<p><em>How to Define It</em></p>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> interface as example, here are the simple steps you need to follow:</p>
+<p><ul class="simple">
+<li><p>Derive a class <code class="docutils literal notranslate"><span class="pre">MockTurtle</span></code> from <code class="docutils literal notranslate"><span class="pre">Turtle</span></code>.</p></li>
+<li><p>Take a <em>virtual</em> function of <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> (while it’s possible to <a class="reference external" href="gmock_cook_book.md#MockingNonVirtualMethods">mock non-virtual methods using templates</a>, it’s much more involved).</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">public:</span></code> section of the child class, write <code class="docutils literal notranslate"><span class="pre">MOCK_METHOD();</span></code></p></li>
+<li><p>Now comes the fun part: you take the function signature, cut-and-paste it into the macro, and add two commas - one between the return type and the name, another between the name and the argument list.</p></li>
+<li><p>If you’re mocking a const method, add a 4th parameter containing <code class="docutils literal notranslate"><span class="pre">(const)</span></code> (the parentheses are required).</p></li>
+<li><p>Since you’re overriding a virtual method, we suggest adding the <code class="docutils literal notranslate"><span class="pre">override</span></code> keyword. For const methods the 4th parameter becomes <code class="docutils literal notranslate"><span class="pre">(const,</span> <span class="pre">override)</span></code>, for non-const methods just <code class="docutils literal notranslate"><span class="pre">(override)</span></code>. This isn’t mandatory.</p></li>
+<li><p>Repeat until all virtual functions you want to mock are done. (It goes without saying that <em>all</em> pure virtual methods in your abstract class must be either mocked or overridden.)</p></li>
+</ul>
+</p>
+<p>After the process, you should have something like:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gmock/gmock.h&gt;</span><span class="c1">  // Brings in gMock.</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MockTurtle</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Turtle</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">void</span><span class="p">,</span><span class="w"> </span><span class="n">PenUp</span><span class="p">,</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">void</span><span class="p">,</span><span class="w"> </span><span class="n">PenDown</span><span class="p">,</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">void</span><span class="p">,</span><span class="w"> </span><span class="n">Forward</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">distance</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">void</span><span class="p">,</span><span class="w"> </span><span class="n">Turn</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">degrees</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">void</span><span class="p">,</span><span class="w"> </span><span class="n">GoTo</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">GetX</span><span class="p">,</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="p">,</span><span class="w"> </span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">GetY</span><span class="p">,</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="p">,</span><span class="w"> </span><span class="k">override</span><span class="p">));</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>You don’t need to define these mock methods somewhere else - the <code class="docutils literal notranslate"><span class="pre">MOCK_METHOD</span></code> macro will generate the definitions for you. It’s that simple!</p>
+<p><em>Where to Put It</em></p>
+<p>When you define a mock class, you need to decide where to put its definition. Some people put it in a <code class="docutils literal notranslate"><span class="pre">_test.cc</span></code>. This is fine when the interface being mocked (say, <code class="docutils literal notranslate"><span class="pre">Foo</span></code>) is owned by the same person or team. Otherwise, when the owner of <code class="docutils literal notranslate"><span class="pre">Foo</span></code> changes it, your test could break. (You can’t really expect <code class="docutils literal notranslate"><span class="pre">Foo</span></code>’s maintainer to fix every test that uses <code class="docutils literal notranslate"><span class="pre">Foo</span></code>, can you?)</p>
+<p>Generally, you should not mock classes you don’t own. If you must mock such a class owned by others, define the mock class in <code class="docutils literal notranslate"><span class="pre">Foo</span></code>’s Bazel package (usually the same directory or a <code class="docutils literal notranslate"><span class="pre">testing</span></code> sub-directory), and put it in a <code class="docutils literal notranslate"><span class="pre">.h</span></code> and a <code class="docutils literal notranslate"><span class="pre">cc_library</span></code> with <code class="docutils literal notranslate"><span class="pre">testonly=True</span></code>. Then everyone can reference them from their tests. If <code class="docutils literal notranslate"><span class="pre">Foo</span></code> ever changes, there is only one copy of <code class="docutils literal notranslate"><span class="pre">MockFoo</span></code> to change, and only tests that depend on the changed methods need to be fixed.</p>
+<p>Another way to do it: you can introduce a thin layer <code class="docutils literal notranslate"><span class="pre">FooAdaptor</span></code> on top of <code class="docutils literal notranslate"><span class="pre">Foo</span></code> and code to this new interface. Since you own <code class="docutils literal notranslate"><span class="pre">FooAdaptor</span></code>, you can absorb changes in <code class="docutils literal notranslate"><span class="pre">Foo</span></code> much more easily. While this is more work initially, carefully choosing the adaptor interface can make your code easier to write and more readable (a net win in the long run), as you can choose <code class="docutils literal notranslate"><span class="pre">FooAdaptor</span></code> to fit your specific domain much better than <code class="docutils literal notranslate"><span class="pre">Foo</span></code> does.</p>
+<p><em>Using Mocks in Tests</em></p>
+<p>Once you have a mock class, using it is easy. The typical work flow is:</p>
+<p><ol class="arabic simple">
+<li><p>Import the gMock names from the <code class="docutils literal notranslate"><span class="pre">testing</span></code> namespace such that you can use them unqualified (You only have to do it once per file). Remember that namespaces are a good idea.</p></li>
+<li><p>Create some mock objects.</p></li>
+<li><p>Specify your expectations on them (How many times will a method be called? With what arguments? What should it do? etc.).</p></li>
+<li><p>Exercise some code that uses the mocks; optionally, check the result using googletest assertions. If a mock method is called more than expected or with wrong arguments, you’ll get an error immediately.</p></li>
+<li><p>When a mock is destructed, gMock will automatically check whether all expectations on it have been satisfied.</p></li>
+</ol>
+</p>
+<p>Here’s an example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;path/to/mock-turtle.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gmock/gmock.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gtest/gtest.h&gt;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">AtLeast</span><span class="p">;</span><span class="w">                         </span><span class="c1">// #1</span>
+
+<span class="n">TEST</span><span class="p">(</span><span class="n">PainterTest</span><span class="p">,</span><span class="w"> </span><span class="n">CanDrawSomething</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">MockTurtle</span><span class="w"> </span><span class="n">turtle</span><span class="p">;</span><span class="w">                              </span><span class="c1">// #2</span>
+<span class="w">  </span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span><span class="w"> </span><span class="n">PenDown</span><span class="p">())</span><span class="w">                  </span><span class="c1">// #3</span>
+<span class="w">      </span><span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="n">AtLeast</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+
+<span class="w">  </span><span class="n">Painter</span><span class="w"> </span><span class="nf">painter</span><span class="p">(</span><span class="o">&amp;</span><span class="n">turtle</span><span class="p">);</span><span class="w">                       </span><span class="c1">// #4</span>
+
+<span class="w">  </span><span class="n">EXPECT_TRUE</span><span class="p">(</span><span class="n">painter</span><span class="p">.</span><span class="n">DrawCircle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">));</span><span class="w">      </span><span class="c1">// #5</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>As you might have guessed, this test checks that <code class="docutils literal notranslate"><span class="pre">PenDown()</span></code> is called at least once. If the <code class="docutils literal notranslate"><span class="pre">painter</span></code> object didn’t call this method, your test will fail with a message like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>path/to/my_test.cc:119: Failure
+Actual function call count doesn&#39;t match this expectation:
+Actually: never called;
+Expected: called at least once.
+Stack trace:
+...
+</pre></div>
+</div>
+<p><strong>Tip 1:</strong> If you run the test from an Emacs buffer, you can hit <code class="docutils literal notranslate"><span class="pre">&lt;Enter&gt;</span></code> on the line number to jump right to the failed expectation.</p>
+<p><strong>Tip 2:</strong> If your mock objects are never deleted, the final verification won’t happen. Therefore it’s a good idea to turn on the heap checker in your tests when you allocate mocks on the heap. You get that automatically if you use the <code class="docutils literal notranslate"><span class="pre">gtest_main</span></code> library already.</p>
+<p><em>Expectation Ordering</em></p>
+<p><strong>Important note:</strong> gMock requires expectations to be set <strong>before</strong> the mock functions are called, otherwise the behavior is <strong>undefined</strong>. Do not alternate between calls to <code class="docutils literal notranslate"><span class="pre">EXPECT_CALL()</span></code> and calls to the mock functions, and do not set any expectations on a mock after passing the mock to an API.</p>
+<p>This means <code class="docutils literal notranslate"><span class="pre">EXPECT_CALL()</span></code> should be read as expecting that a call will occur <em>in the future</em>, not that a call has occurred. Why does gMock work like that? Well, specifying the expectation beforehand allows gMock to report a violation as soon as it rises, when the context (stack trace, etc) is still available. This makes debugging much easier.</p>
+<p>Admittedly, this test is contrived and doesn’t do much. You can easily achieve the same effect without using gMock. However, as we shall reveal soon, gMock allows you to do <em>so much more</em> with the mocks.</p>
+<p><em>Setting Expectations</em></p>
+<p>The key to using a mock object successfully is to set the <em>right expectations</em><p>on it. If you set the expectations too strict, your test will fail as the result of unrelated changes. If you set them too loose, bugs can slip through. You want to do it just right such that your test can catch exactly the kind of bugs you intend it to catch. gMock provides the necessary means for you to do it “just</p>
+<p>right.”</p>
+</p>
+<p><em>General Syntax</em></p>
+<p>In gMock we use the <code class="docutils literal notranslate"><span class="pre">EXPECT_CALL()</span></code> macro to set an expectation on a mock method. The general syntax is:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">mock_object</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="p">(</span><span class="n">matchers</span><span class="p">))</span>
+<span class="w">    </span><span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="n">cardinality</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">WillRepeatedly</span><span class="p">(</span><span class="n">action</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The macro has two arguments: first the mock object, and then the method and its arguments. Note that the two are separated by a comma (<code class="docutils literal notranslate"><span class="pre">,</span></code>), not a period (<code class="docutils literal notranslate"><span class="pre">.</span></code>). (Why using a comma? The answer is that it was necessary for technical reasons.) If the method is not overloaded, the macro can also be called without matchers:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">mock_object</span><span class="p">,</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">overloaded</span><span class="o">-</span><span class="n">method</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="n">cardinality</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">WillRepeatedly</span><span class="p">(</span><span class="n">action</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This syntax allows the test writer to specify “called with any arguments” without explicitly specifying the number or types of arguments. To avoid unintended ambiguity, this syntax may only be used for methods that are not overloaded.</p>
+<p>Either form of the macro can be followed by some optional <em>clauses</em> that provide more information about the expectation. We’ll discuss how each clause works in the coming sections.</p>
+<p>This syntax is designed to make an expectation read like English. For example, you can probably guess that</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Return</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span><span class="w"> </span><span class="n">GetX</span><span class="p">())</span>
+<span class="w">    </span><span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+<span class="w">    </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">150</span><span class="p">))</span>
+<span class="w">    </span><span class="p">.</span><span class="n">WillRepeatedly</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">200</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>says that the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> object’s <code class="docutils literal notranslate"><span class="pre">GetX()</span></code> method will be called five times, it will return 100 the first time, 150 the second time, and then 200 every time. Some people like to call this style of syntax a Domain-Specific Language (DSL).</p>
+<p>{: .callout .note} <strong>Note:</strong> Why do we use a macro to do this? Well it serves two purposes: first it makes expectations easily identifiable (either by <code class="docutils literal notranslate"><span class="pre">grep</span></code> or by a human reader), and second it allows gMock to include the source file location of a failed expectation in messages, making debugging easier.</p>
+<p><em>Matchers: What Arguments Do We Expect?</em></p>
+<p>When a mock function takes arguments, we may specify what arguments we are expecting, for example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Expects the turtle to move forward by 100 units.</span>
+<span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span><span class="w"> </span><span class="n">Forward</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Oftentimes you do not want to be too specific. Remember that talk about tests being too rigid? Over specification leads to brittle tests and obscures the intent of tests. Therefore we encourage you to specify only what’s necessary—no more, no less. If you aren’t interested in the value of an argument, write <code class="docutils literal notranslate"><span class="pre">_</span></code> as the argument, which means “anything goes”:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">_</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="c1">// Expects that the turtle jumps to somewhere on the x=50 line.</span>
+<span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span><span class="w"> </span><span class="n">GoTo</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">_</span></code> is an instance of what we call <strong>matchers</strong>. A matcher is like a predicate and can test whether an argument is what we’d expect. You can use a matcher inside <code class="docutils literal notranslate"><span class="pre">EXPECT_CALL()</span></code> wherever a function argument is expected. <code class="docutils literal notranslate"><span class="pre">_</span></code> is a convenient way of saying “any value”.</p>
+<p>In the above examples, <code class="docutils literal notranslate"><span class="pre">100</span></code> and <code class="docutils literal notranslate"><span class="pre">50</span></code> are also matchers; implicitly, they are the same as <code class="docutils literal notranslate"><span class="pre">Eq(100)</span></code> and <code class="docutils literal notranslate"><span class="pre">Eq(50)</span></code>, which specify that the argument must be equal (using <code class="docutils literal notranslate"><span class="pre">operator==</span></code>) to the matcher argument. There are many <a class="reference internal" href="page_md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers.html#md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers"><span class="std std-ref">built-in matchers</span></a> for common types (as well as <a class="reference external" href="gmock_cook_book.md#NewMatchers">custom matchers</a>); for example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Ge</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="c1">// Expects the turtle moves forward by at least 100.</span>
+<span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span><span class="w"> </span><span class="n">Forward</span><span class="p">(</span><span class="n">Ge</span><span class="p">(</span><span class="mi">100</span><span class="p">)));</span>
+</pre></div>
+</div>
+<p>If you don’t care about <em>any</em> arguments, rather than specify <code class="docutils literal notranslate"><span class="pre">_</span></code> for each of them you may instead omit the parameter list:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Expects the turtle to move forward.</span>
+<span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span><span class="w"> </span><span class="n">Forward</span><span class="p">);</span>
+<span class="c1">// Expects the turtle to jump somewhere.</span>
+<span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span><span class="w"> </span><span class="n">GoTo</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This works for all non-overloaded methods; if a method is overloaded, you need to help gMock resolve which overload is expected by specifying the number of arguments and possibly also the <a class="reference external" href="gmock_cook_book.md#SelectOverload">types of the arguments</a>.</p>
+<p><em>Cardinalities: How Many Times Will It Be Called?</em></p>
+<p>The first clause we can specify following an <code class="docutils literal notranslate"><span class="pre">EXPECT_CALL()</span></code> is <code class="docutils literal notranslate"><span class="pre">Times()</span></code>. We call its argument a <strong>cardinality</strong> as it tells <em>how many times</em> the call should occur. It allows us to repeat an expectation many times without actually writing it as many times. More importantly, a cardinality can be “fuzzy”, just like a matcher can be. This allows a user to express the intent of a test exactly.</p>
+<p>An interesting special case is when we say <code class="docutils literal notranslate"><span class="pre">Times(0)</span></code>. You may have guessed - it means that the function shouldn’t be called with the given arguments at all, and gMock will report a googletest failure whenever the function is (wrongfully) called.</p>
+<p>We’ve seen <code class="docutils literal notranslate"><span class="pre">AtLeast(n)</span></code> as an example of fuzzy cardinalities earlier. For the list of built-in cardinalities you can use, see <a class="reference external" href="gmock_cheat_sheet.md#CardinalityList">here</a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Times()</span></code> clause can be omitted. <strong>If you omit , gMock will infer the cardinality for you.</strong> The rules are easy to remember:</p>
+<p><ul class="simple">
+<li><p>If <strong>neither</strong> <code class="docutils literal notranslate"><span class="pre">WillOnce()</span></code> <strong>nor</strong> <code class="docutils literal notranslate"><span class="pre">WillRepeatedly()</span></code> is in the <code class="docutils literal notranslate"><span class="pre">EXPECT_CALL()</span></code>, the inferred cardinality is <code class="docutils literal notranslate"><span class="pre">Times(1)</span></code>.</p></li>
+<li><p>If there are <em>n</em> <code class="docutils literal notranslate"><span class="pre">WillOnce()</span></code>’s but <strong>no</strong> <code class="docutils literal notranslate"><span class="pre">WillRepeatedly()</span></code>, where <em>n</em> &gt;= 1, the cardinality is <code class="docutils literal notranslate"><span class="pre">Times(n)</span></code>.</p></li>
+<li><p>If there are <em>n</em> <code class="docutils literal notranslate"><span class="pre">WillOnce()</span></code>’s and <strong>one</strong> <code class="docutils literal notranslate"><span class="pre">WillRepeatedly()</span></code>, where <em>n</em> &gt;= 0, the cardinality is <code class="docutils literal notranslate"><span class="pre">Times(AtLeast(n))</span></code>.</p></li>
+</ul>
+</p>
+<p><strong>Quick quiz:</strong> what do you think will happen if a function is expected to be called twice but actually called four times?</p>
+<p><em>Actions: What Should It Do?</em></p>
+<p>Remember that a mock object doesn’t really have a working implementation? We as users have to tell it what to do when a method is invoked. This is easy in gMock.</p>
+<p>First, if the return type of a mock function is a built-in type or a pointer, the function has a <strong>default action</strong> (a <code class="docutils literal notranslate"><span class="pre">void</span></code> function will just return, a <code class="docutils literal notranslate"><span class="pre">bool</span></code> function will return <code class="docutils literal notranslate"><span class="pre">false</span></code>, and other functions will return 0). In addition, in C++ 11 and above, a mock function whose return type is default-constructible (i.e. has a default constructor) has a default action of returning a default-constructed value. If you don’t say anything, this behavior will be used.</p>
+<p>Second, if a mock function doesn’t have a default action, or the default action doesn’t suit you, you can specify the action to be taken each time the expectation matches using a series of <code class="docutils literal notranslate"><span class="pre">WillOnce()</span></code> clauses followed by an optional <code class="docutils literal notranslate"><span class="pre">WillRepeatedly()</span></code>. For example,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Return</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span><span class="w"> </span><span class="n">GetX</span><span class="p">())</span>
+<span class="w">     </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+<span class="w">     </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">200</span><span class="p">))</span>
+<span class="w">     </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">300</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>says that <code class="docutils literal notranslate"><span class="pre">turtle.GetX()</span></code> will be called <em>exactly three times</em> (gMock inferred this from how many <code class="docutils literal notranslate"><span class="pre">WillOnce()</span></code> clauses we’ve written, since we didn’t explicitly write <code class="docutils literal notranslate"><span class="pre">Times()</span></code>), and will return 100, 200, and 300 respectively.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Return</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span><span class="w"> </span><span class="n">GetY</span><span class="p">())</span>
+<span class="w">     </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+<span class="w">     </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">200</span><span class="p">))</span>
+<span class="w">     </span><span class="p">.</span><span class="n">WillRepeatedly</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">300</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>says that <code class="docutils literal notranslate"><span class="pre">turtle.GetY()</span></code> will be called <em>at least twice</em> (gMock knows this as we’ve written two <code class="docutils literal notranslate"><span class="pre">WillOnce()</span></code> clauses and a <code class="docutils literal notranslate"><span class="pre">WillRepeatedly()</span></code> while having no explicit <code class="docutils literal notranslate"><span class="pre">Times()</span></code>), will return 100 and 200 respectively the first two times, and 300 from the third time on.</p>
+<p>Of course, if you explicitly write a <code class="docutils literal notranslate"><span class="pre">Times()</span></code>, gMock will not try to infer the cardinality itself. What if the number you specified is larger than there are <code class="docutils literal notranslate"><span class="pre">WillOnce()</span></code> clauses? Well, after all <code class="docutils literal notranslate"><span class="pre">WillOnce()</span></code>s are used up, gMock will do the <em>default</em> action for the function every time (unless, of course, you have a <code class="docutils literal notranslate"><span class="pre">WillRepeatedly()</span></code>.).</p>
+<p>What can we do inside <code class="docutils literal notranslate"><span class="pre">WillOnce()</span></code> besides <code class="docutils literal notranslate"><span class="pre">Return()</span></code>? You can return a reference using <code class="docutils literal notranslate"><span class="pre">ReturnRef(</span></code>*<code class="docutils literal notranslate"><span class="pre">variable</span></code>*<code class="docutils literal notranslate"><span class="pre">)</span></code>, or invoke a pre-defined function, among <a class="reference external" href="gmock_cook_book.md#using-actions">others</a>.</p>
+<p><strong>Important note:</strong> The <code class="docutils literal notranslate"><span class="pre">EXPECT_CALL()</span></code> statement evaluates the action clause only once, even though the action may be performed many times. Therefore you must be careful about side effects. The following may not do what you want:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Return</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span><span class="w"> </span><span class="n">GetX</span><span class="p">())</span>
+<span class="w">    </span><span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">WillRepeatedly</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="n">n</span><span class="o">++</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Instead of returning 100, 101, 102, …, consecutively, this mock function will always return 100 as <code class="docutils literal notranslate"><span class="pre">n++</span></code> is only evaluated once. Similarly, <code class="docutils literal notranslate"><span class="pre">Return(new</span> <span class="pre">Foo)</span></code> will create a new <code class="docutils literal notranslate"><span class="pre">Foo</span></code> object when the <code class="docutils literal notranslate"><span class="pre">EXPECT_CALL()</span></code> is executed, and will return the same pointer every time. If you want the side effect to happen every time, you need to define a custom action, which we’ll teach in the <a class="reference internal" href="page_md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_cook_book.html#md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_cook_book"><span class="std std-ref">cook book</span></a>.</p>
+<p>Time for another quiz! What do you think the following means?</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Return</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span><span class="w"> </span><span class="n">GetY</span><span class="p">())</span>
+<span class="w">    </span><span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Obviously <code class="docutils literal notranslate"><span class="pre">turtle.GetY()</span></code> is expected to be called four times. But if you think it will return 100 every time, think twice! Remember that one <code class="docutils literal notranslate"><span class="pre">WillOnce()</span></code> clause will be consumed each time the function is invoked and the default action will be taken afterwards. So the right answer is that <code class="docutils literal notranslate"><span class="pre">turtle.GetY()</span></code> will return 100 the first time, but <strong>return 0 from the second time on</strong>, as returning 0 is the default action for <code class="docutils literal notranslate"><span class="pre">int</span></code> functions.</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

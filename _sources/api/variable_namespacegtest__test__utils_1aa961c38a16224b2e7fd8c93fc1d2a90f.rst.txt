@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegtest__test__utils_1aa961c38a16224b2e7fd8c93fc1d2a90f:
+
+Variable gtest_test_utils::PREMATURE_EXIT_FILE_ENV_VAR
+======================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: gtest_test_utils::PREMATURE_EXIT_FILE_ENV_VAR
+   :project: Fields2Cover

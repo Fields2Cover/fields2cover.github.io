@@ -1,0 +1,26 @@
+.. _exhale_class_classgoogletest-catch-exceptions-test_1_1CatchSehExceptionsTest:
+
+Class CatchSehExceptionsTest
+============================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-catch-exceptions-test.py`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public gtest_test_utils.TestCase``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: googletest-catch-exceptions-test::CatchSehExceptionsTest
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

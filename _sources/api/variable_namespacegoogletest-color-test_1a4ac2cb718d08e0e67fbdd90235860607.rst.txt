@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-color-test_1a4ac2cb718d08e0e67fbdd90235860607:
+
+Variable googletest-color-test::COLOR_ENV_VAR
+=============================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-color-test::COLOR_ENV_VAR
+   :project: Fields2Cover

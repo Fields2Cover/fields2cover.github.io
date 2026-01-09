@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegmock__output__test_1a590ba3b918e5599eeabc2cbf597e2ce1:
+
+Function gmock_output_test::GetNormalizedOutputAndLeakyTests
+============================================================
+
+- Defined in :ref:`file_googletest_googlemock_test_gmock_output_test.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: gmock_output_test::GetNormalizedOutputAndLeakyTests(output)
+   :project: Fields2Cover

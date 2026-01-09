@@ -1,0 +1,35 @@
+
+.. _namespace_googletest-json-outfiles-test:
+
+Namespace googletest-json-outfiles-test
+=======================================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classgoogletest-json-outfiles-test_1_1GTestJsonOutFilesTest`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespacegoogletest-json-outfiles-test_1abf0c05f9a69a87f8625d3dd90cc16ed8`
+
+- :ref:`exhale_variable_namespacegoogletest-json-outfiles-test_1a4340a105b9ff2d4a132e85a8b6af7d61`
+
+- :ref:`exhale_variable_namespacegoogletest-json-outfiles-test_1ace9d5d61931b94cde9f088c67c08089d`
+
+- :ref:`exhale_variable_namespacegoogletest-json-outfiles-test_1af99178050ea2a9feaf2d569fcb5c3dae`
+
+- :ref:`exhale_variable_namespacegoogletest-json-outfiles-test_1a0f92f4080118c9ed4fce7412abfabf57`

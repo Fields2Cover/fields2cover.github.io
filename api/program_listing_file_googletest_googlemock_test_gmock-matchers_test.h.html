@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File gmock-matchers_test.h &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_googletest_googlemock_test_gmock-matchers_test.h.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File gmock-matchers_test.h</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_googletest_googlemock_test_gmock-matchers_test.h.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-gmock-matchers-test-h">
+<span id="program-listing-file-googletest-googlemock-test-gmock-matchers-test-h"></span><h1>Program Listing for File gmock-matchers_test.h<a class="headerlink" href="#program-listing-for-file-gmock-matchers-test-h" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_googletest_googlemock_test_gmock-matchers_test.h.html#file-googletest-googlemock-test-gmock-matchers-test-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">googletest/googlemock/test/gmock-matchers_test.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Copyright 2007, Google Inc.</span>
+<span class="c1">// All rights reserved.</span>
+<span class="c1">//</span>
+<span class="c1">// Redistribution and use in source and binary forms, with or without</span>
+<span class="c1">// modification, are permitted provided that the following conditions are</span>
+<span class="c1">// met:</span>
+<span class="c1">//</span>
+<span class="c1">//     * Redistributions of source code must retain the above copyright</span>
+<span class="c1">// notice, this list of conditions and the following disclaimer.</span>
+<span class="c1">//     * Redistributions in binary form must reproduce the above</span>
+<span class="c1">// copyright notice, this list of conditions and the following disclaimer</span>
+<span class="c1">// in the documentation and/or other materials provided with the</span>
+<span class="c1">// distribution.</span>
+<span class="c1">//     * Neither the name of Google Inc. nor the names of its</span>
+<span class="c1">// contributors may be used to endorse or promote products derived from</span>
+<span class="c1">// this software without specific prior written permission.</span>
+<span class="c1">//</span>
+<span class="c1">// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<span class="c1">// &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span>
+<span class="c1">// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</span>
+<span class="c1">// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</span>
+<span class="c1">// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span>
+<span class="c1">// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</span>
+<span class="c1">// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</span>
+<span class="c1">// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</span>
+<span class="c1">// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span>
+<span class="c1">// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span>
+<span class="c1">// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+
+<span class="c1">// Google Mock - a framework for writing C++ mock classes.</span>
+<span class="c1">//</span>
+<span class="c1">// This file tests some commonly used argument matchers.</span>
+
+<span class="cp">#ifndef GOOGLEMOCK_TEST_GMOCK_MATCHERS_TEST_H_</span>
+<span class="cp">#define GOOGLEMOCK_TEST_GMOCK_MATCHERS_TEST_H_</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;time.h&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;array&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdint&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;deque&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;forward_list&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;functional&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iterator&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;limits&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;list&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;map&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;set&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;type_traits&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unordered_map&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unordered_set&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utility&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;gmock/gmock-matchers.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;gmock/gmock-more-matchers.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;gmock/gmock.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;gtest/gtest-spi.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;gtest/gtest.h&quot;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">testing</span><span class="w"> </span><span class="p">{</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">gmock_matchers_test</span><span class="w"> </span><span class="p">{</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">greater</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">less</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">multimap</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">multiset</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">stringstream</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">testing</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">DummyMatchResultListener</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">testing</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">ElementMatcherPair</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">testing</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">ElementMatcherPairs</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">testing</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">ElementsAreArrayMatcher</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">testing</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">ExplainMatchFailureTupleTo</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">testing</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">FloatingEqMatcher</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">testing</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">FormatMatcherDescription</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">testing</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">IsReadableTypeName</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">testing</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">MatchMatrix</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">testing</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">PredicateFormatterFromMatcher</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">testing</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">RE</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">testing</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">StreamMatchResultListener</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">testing</span><span class="o">::</span><span class="n">internal</span><span class="o">::</span><span class="n">Strings</span><span class="p">;</span>
+
+<span class="c1">// Helper for testing container-valued matchers in mock method context. It is</span>
+<span class="c1">// important to test matchers in this context, since it requires additional type</span>
+<span class="c1">// deduction beyond what EXPECT_THAT does, thus making it more restrictive.</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">ContainerHelper</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">MOCK_METHOD1</span><span class="p">(</span><span class="n">Call</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="p">));</span>
+<span class="p">};</span>
+
+<span class="c1">// For testing ExplainMatchResultTo().</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">GtestGreaterThanMatcher</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">is_gtest_matcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">void</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">DescribeTo</span><span class="p">(</span><span class="n">ostream</span><span class="o">*</span><span class="w"> </span><span class="n">os</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">*</span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;is &gt; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">DescribeNegationTo</span><span class="p">(</span><span class="n">ostream</span><span class="o">*</span><span class="w"> </span><span class="n">os</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">*</span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;is &lt;= &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="nf">MatchAndExplain</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">MatchResultListener</span><span class="o">*</span><span class="w"> </span><span class="n">listener</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lhs</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="o">*</span><span class="n">listener</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;which is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">lhs</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; more than &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lhs</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="o">*</span><span class="n">listener</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;which is the same as &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="o">*</span><span class="n">listener</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;which is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">rhs</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lhs</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; less than &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">lhs</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="n">T</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="n">GtestGreaterThanMatcher</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">std</span><span class="o">::</span><span class="n">decay</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GtestGreaterThan</span><span class="p">(</span>
+<span class="w">    </span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">rhs</span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// As the matcher above, but using the base class with virtual functions.</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">GreaterThanMatcher</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">MatcherInterface</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">GreaterThanMatcher</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">impl_</span><span class="p">{</span><span class="n">rhs</span><span class="p">}</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">DescribeTo</span><span class="p">(</span><span class="n">ostream</span><span class="o">*</span><span class="w"> </span><span class="n">os</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">impl_</span><span class="p">.</span><span class="n">DescribeTo</span><span class="p">(</span><span class="n">os</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">DescribeNegationTo</span><span class="p">(</span><span class="n">ostream</span><span class="o">*</span><span class="w"> </span><span class="n">os</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">impl_</span><span class="p">.</span><span class="n">DescribeNegationTo</span><span class="p">(</span><span class="n">os</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">MatchAndExplain</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">MatchResultListener</span><span class="o">*</span><span class="w"> </span><span class="n">listener</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">impl_</span><span class="p">.</span><span class="n">MatchAndExplain</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">listener</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w"> </span><span class="k">private</span><span class="o">:</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">GtestGreaterThanMatcher</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">impl_</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// Names and instantiates a new instance of GTestMatcherTestP.</span>
+<span class="cp">#define INSTANTIATE_GTEST_MATCHER_TEST_P(TestSuite)                        \</span>
+<span class="cp">  using TestSuite##P = GTestMatcherTestP;                                  \</span>
+<span class="cp">  INSTANTIATE_TEST_SUITE_P(MatcherInterface, TestSuite##P, Values(false)); \</span>
+<span class="cp">  INSTANTIATE_TEST_SUITE_P(GtestMatcher, TestSuite##P, Values(true))</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">GTestMatcherTestP</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">testing</span><span class="o">::</span><span class="n">TestWithParam</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="n">Matcher</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GreaterThan</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">use_gtest_matcher_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">GtestGreaterThan</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">MakeMatcher</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GreaterThanMatcher</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">use_gtest_matcher_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetParam</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="c1">// Returns the description of the given matcher.</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">Describe</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Matcher</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">DescribeMatcher</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Returns the description of the negation of the given matcher.</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">DescribeNegation</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Matcher</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">DescribeMatcher</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Returns the reason why x matches, or doesn&#39;t match, m.</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">MatcherType</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">Value</span><span class="o">&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">Explain</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MatcherType</span><span class="o">&amp;</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Value</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">StringMatchResultListener</span><span class="w"> </span><span class="n">listener</span><span class="p">;</span>
+<span class="w">  </span><span class="n">ExplainMatchResult</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">listener</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">listener</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace gmock_matchers_test</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace testing</span>
+
+<span class="cp">#endif  </span><span class="c1">// GOOGLEMOCK_TEST_GMOCK_MATCHERS_TEST_H_</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

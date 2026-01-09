@@ -1,0 +1,35 @@
+
+.. _namespace_gtest_xml_outfiles_test:
+
+Namespace gtest_xml_outfiles_test
+=================================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classgtest__xml__outfiles__test_1_1GTestXMLOutFilesTest`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespacegtest__xml__outfiles__test_1a9d7b71e2d97dc7705cbe6e4882824c14`
+
+- :ref:`exhale_variable_namespacegtest__xml__outfiles__test_1a765455244a8cd7b3f32a51f0cda4157e`
+
+- :ref:`exhale_variable_namespacegtest__xml__outfiles__test_1a92ab09e944d010f8abfaa3ca453fa68c`
+
+- :ref:`exhale_variable_namespacegtest__xml__outfiles__test_1acf82219e56619aab5c114b6f0a7c3a5e`
+
+- :ref:`exhale_variable_namespacegtest__xml__outfiles__test_1a6b3b62791305e64ec137b33bd9351b1a`

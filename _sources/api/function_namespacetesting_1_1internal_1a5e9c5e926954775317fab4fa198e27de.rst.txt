@@ -1,0 +1,14 @@
+.. _exhale_function_namespacetesting_1_1internal_1a5e9c5e926954775317fab4fa198e27de:
+
+Function testing::internal::WideStringToUtf8
+============================================
+
+- Defined in :ref:`file_googletest_googletest_src_gtest-internal-inl.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: testing::internal::WideStringToUtf8(const wchar_t *, int)
+   :project: Fields2Cover

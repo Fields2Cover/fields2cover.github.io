@@ -1,0 +1,14 @@
+.. _exhale_function_gmock__link__test_8h_1a3f39bdcd5e11abe967d40fa209a5fbfc:
+
+Function TEST(LinkTest, TestWithArgs)
+=====================================
+
+- Defined in :ref:`file_googletest_googlemock_test_gmock_link_test.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: TEST(LinkTest, TestWithArgs)
+   :project: Fields2Cover

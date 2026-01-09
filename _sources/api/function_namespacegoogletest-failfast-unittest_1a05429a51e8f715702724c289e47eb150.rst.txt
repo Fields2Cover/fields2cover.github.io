@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegoogletest-failfast-unittest_1a05429a51e8f715702724c289e47eb150:
+
+Function googletest-failfast-unittest::RunAndReturnOutput
+=========================================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-failfast-unittest.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: googletest-failfast-unittest::RunAndReturnOutput(test_suite, fail_fast, run_disabled)
+   :project: Fields2Cover

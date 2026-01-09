@@ -1,0 +1,27 @@
+
+.. _file_googletest_docs_platforms.md:
+
+File platforms.md
+=================
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``googletest/docs/platforms.md``)
+---------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_googletest_docs_platforms.md.rst
+
+
+
+
+
+
+
+
+

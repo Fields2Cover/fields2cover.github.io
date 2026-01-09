@@ -1,0 +1,14 @@
+.. _exhale_function_namespacetesting_1_1internal_1a10478461b61435d2b97e74e8a16aa993:
+
+Function testing::internal::Int32FromEnvOrDie
+=============================================
+
+- Defined in :ref:`file_googletest_googletest_src_gtest-internal-inl.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: testing::internal::Int32FromEnvOrDie(const char *, int32_t)
+   :project: Fields2Cover

@@ -1,0 +1,112 @@
+
+.. _file_googletest_googlemock_test_gmock-matchers_test.h:
+
+File gmock-matchers_test.h
+==========================
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``googletest/googlemock/test/gmock-matchers_test.h``)
+-----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_googletest_googlemock_test_gmock-matchers_test.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``array``
+
+- ``cstdint``
+
+- ``deque``
+
+- ``forward_list``
+
+- ``functional``
+
+- ``gmock/gmock-matchers.h``
+
+- ``gmock/gmock-more-matchers.h``
+
+- ``gmock/gmock.h``
+
+- ``gtest/gtest-spi.h``
+
+- ``gtest/gtest.h``
+
+- ``iostream``
+
+- ``iterator``
+
+- ``limits``
+
+- ``list`` (:ref:`file_googletest_googletest_test_googletest-list-tests-unittest.py`)
+
+- ``map``
+
+- ``memory``
+
+- ``set`` (:ref:`file_googletest_googletest_test_googletest-setuptestsuite-test.py`)
+
+- ``sstream``
+
+- ``string``
+
+- ``string.h``
+
+- ``time.h``
+
+- ``type_traits``
+
+- ``unordered_map``
+
+- ``unordered_set``
+
+- ``utility``
+
+- ``vector``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_testing`
+
+- :ref:`namespace_testing__gmock_matchers_test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structtesting_1_1gmock__matchers__test_1_1ContainerHelper`
+
+- :ref:`exhale_struct_structtesting_1_1gmock__matchers__test_1_1GtestGreaterThanMatcher`
+
+- :ref:`exhale_class_classtesting_1_1gmock__matchers__test_1_1GreaterThanMatcher`
+
+- :ref:`exhale_class_classtesting_1_1gmock__matchers__test_1_1GTestMatcherTestP`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_gmock-matchers__test_8h_1a6e10ba92fad898b691bd6e796da73bb8`
+

@@ -1,0 +1,14 @@
+.. _exhale_function_namespacetesting_1_1internal_1ac9e85a7935e804edc91be3222505b2af:
+
+Function testing::internal::ShouldShard
+=======================================
+
+- Defined in :ref:`file_googletest_googletest_src_gtest-internal-inl.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: testing::internal::ShouldShard(const char *, const char *, bool)
+   :project: Fields2Cover

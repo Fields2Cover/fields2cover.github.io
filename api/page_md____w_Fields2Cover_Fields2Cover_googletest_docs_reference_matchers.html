@@ -1,0 +1,632 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matchers Reference &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/page_md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Matchers Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/page_md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="matchers-reference">
+<span id="page-md-w-fields2cover-fields2cover-googletest-docs-reference-matchers"></span><h1>Matchers Reference<a class="headerlink" href="#matchers-reference" title="Link to this heading"></a></h1>
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers"></span><em><span class="pre">page</span></em> <span class="sig-name descname"><span class="pre">Matchers</span> <span class="pre">Reference</span></span></dt>
+<dd><p>A <strong>matcher</strong> matches a <em>single</em> argument. You can use it inside <code class="docutils literal notranslate"><span class="pre">ON_CALL()</span></code> or <code class="docutils literal notranslate"><span class="pre">EXPECT_CALL()</span></code>, or use it to validate a value directly using two macros:</p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Macro   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">EXPECT_THAT(actual_value,</span> <span class="pre">matcher)</span></code></p></td>
+<td><p>Asserts that <code class="docutils literal notranslate"><span class="pre">actual_value</span></code> matches <code class="docutils literal notranslate"><span class="pre">matcher</span></code>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ASSERT_THAT(actual_value,</span> <span class="pre">matcher)</span></code></p></td>
+<td><p>The same as <code class="docutils literal notranslate"><span class="pre">EXPECT_THAT(actual_value,</span> <span class="pre">matcher)</span></code>, except that it generates a <strong>fatal</strong> failure.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>{: .callout .warning} <strong>WARNING:</strong> Equality matching via <code class="docutils literal notranslate"><span class="pre">EXPECT_THAT(actual_value,</span> <span class="pre">expected_value)</span></code> is supported, however note that implicit conversions can cause surprising results. For example, <code class="docutils literal notranslate"><span class="pre">EXPECT_THAT(some_bool,</span> <span class="pre">&quot;some</span> <span class="pre">string&quot;)</span></code> will compile and may pass unintentionally.</p>
+<p><strong>BEST PRACTICE:</strong> Prefer to make the comparison explicit via <code class="docutils literal notranslate"><span class="pre">EXPECT_THAT(actual_value,</span> <span class="pre">Eq(expected_value))</span></code> or <code class="docutils literal notranslate"><span class="pre">EXPECT_EQ(actual_value,</span> <span class="pre">expected_value)</span></code>.</p>
+<p>Built-in matchers (where <code class="docutils literal notranslate"><span class="pre">argument</span></code> is the function argument, e.g. <code class="docutils literal notranslate"><span class="pre">actual_value</span></code> in the example above, or when used in the context of <code class="docutils literal notranslate"><span class="pre">EXPECT_CALL(mock_object,</span> <span class="pre">method(matchers))</span></code>, the arguments of <code class="docutils literal notranslate"><span class="pre">method</span></code>) are divided into several categories. All matchers are defined in the <code class="docutils literal notranslate"><span class="pre">testing</span></code> namespace unless otherwise noted.</p>
+<p><em>Wildcard</em></p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Matcher   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">_</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> can be any value of the correct type.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">A&lt;type&gt;()</span></code> or <code class="docutils literal notranslate"><span class="pre">An&lt;type&gt;()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> can be any value of type <code class="docutils literal notranslate"><span class="pre">type</span></code>.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><em>Generic Comparison</em></p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Matcher   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Eq(value)</span></code> or <code class="docutils literal notranslate"><span class="pre">value</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span> <span class="pre">==</span> <span class="pre">value</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Ge(value)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span> <span class="pre">&gt;=</span> <span class="pre">value</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Gt(value)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span> <span class="pre">&gt;</span> <span class="pre">value</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Le(value)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span> <span class="pre">&lt;=</span> <span class="pre">value</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Lt(value)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span> <span class="pre">&lt;</span> <span class="pre">value</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Ne(value)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span> <span class="pre">!=</span> <span class="pre">value</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IsFalse()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code> in a Boolean context.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">IsTrue()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code> in a Boolean context.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IsNull()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a <code class="docutils literal notranslate"><span class="pre">NULL</span></code> pointer (raw or smart).    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NotNull()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a non-null pointer (raw or smart).    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Optional(m)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is <code class="docutils literal notranslate"><span class="pre">optional&lt;&gt;</span></code> that contains a value matching <code class="docutils literal notranslate"><span class="pre">m</span></code>. (For testing whether an <code class="docutils literal notranslate"><span class="pre">optional&lt;&gt;</span></code> is set, check for equality with <code class="docutils literal notranslate"><span class="pre">nullopt</span></code>. You may need to use <code class="docutils literal notranslate"><span class="pre">Eq(nullopt)</span></code> if the inner type doesn’t have <code class="docutils literal notranslate"><span class="pre">==</span></code>.)    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VariantWith&lt;T&gt;(m)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is <code class="docutils literal notranslate"><span class="pre">variant&lt;&gt;</span></code> that holds the alternative of type T with a value matching <code class="docutils literal notranslate"><span class="pre">m</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Ref(variable)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a reference to <code class="docutils literal notranslate"><span class="pre">variable</span></code>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TypedEq&lt;type&gt;(value)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> has type <code class="docutils literal notranslate"><span class="pre">type</span></code> and is equal to <code class="docutils literal notranslate"><span class="pre">value</span></code>. You may need to use this instead of <code class="docutils literal notranslate"><span class="pre">Eq(value)</span></code> when the mock function is overloaded.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>Except <code class="docutils literal notranslate"><span class="pre">Ref()</span></code>, these matchers make a <em>copy</em> of <code class="docutils literal notranslate"><span class="pre">value</span></code> in case it’s modified or destructed later. If the compiler complains that <code class="docutils literal notranslate"><span class="pre">value</span></code> doesn’t have a public copy constructor, try wrap it in <code class="docutils literal notranslate"><span class="pre">std::ref()</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">Eq(std::ref(non_copyable_value))</span></code>. If you do that, make sure <code class="docutils literal notranslate"><span class="pre">non_copyable_value</span></code> is not changed afterwards, or the meaning of your matcher will be changed.</p>
+<p><code class="docutils literal notranslate"><span class="pre">IsTrue</span></code> and <code class="docutils literal notranslate"><span class="pre">IsFalse</span></code> are useful when you need to use a matcher, or for types that can be explicitly converted to Boolean, but are not implicitly converted to Boolean. In other cases, you can use the basic <a class="reference external" href="assertions.md#boolean"> and </a> assertions.</p>
+<section id="md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers_1FpMatchers">
+<h2>Floating-Point Matchers<a class="headerlink" href="#md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers_1FpMatchers" title="Link to this heading"></a></h2>
+<p id="md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers_1FpMatchers"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Matcher   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DoubleEq(a_double)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a <code class="docutils literal notranslate"><span class="pre">double</span></code> value approximately equal to <code class="docutils literal notranslate"><span class="pre">a_double</span></code>, treating two NaNs as unequal.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FloatEq(a_float)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a <code class="docutils literal notranslate"><span class="pre">float</span></code> value approximately equal to <code class="docutils literal notranslate"><span class="pre">a_float</span></code>, treating two NaNs as unequal.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NanSensitiveDoubleEq(a_double)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a <code class="docutils literal notranslate"><span class="pre">double</span></code> value approximately equal to <code class="docutils literal notranslate"><span class="pre">a_double</span></code>, treating two NaNs as equal.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NanSensitiveFloatEq(a_float)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a <code class="docutils literal notranslate"><span class="pre">float</span></code> value approximately equal to <code class="docutils literal notranslate"><span class="pre">a_float</span></code>, treating two NaNs as equal.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IsNan()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is any floating-point type with a NaN value.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>The above matchers use ULP-based comparison (the same as used in googletest). They automatically pick a reasonable error bound based on the absolute value of the expected value. <code class="docutils literal notranslate"><span class="pre">DoubleEq()</span></code> and <code class="docutils literal notranslate"><span class="pre">FloatEq()</span></code> conform to the IEEE standard, which requires comparing two NaNs for equality to return false. The <code class="docutils literal notranslate"><span class="pre">NanSensitive*</span></code> version instead treats two NaNs as equal, which is often what a user wants.</p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Matcher   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DoubleNear(a_double,</span> <span class="pre">max_abs_error)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a <code class="docutils literal notranslate"><span class="pre">double</span></code> value close to <code class="docutils literal notranslate"><span class="pre">a_double</span></code> (absolute error &lt;= <code class="docutils literal notranslate"><span class="pre">max_abs_error</span></code>), treating two NaNs as unequal.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FloatNear(a_float,</span> <span class="pre">max_abs_error)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a <code class="docutils literal notranslate"><span class="pre">float</span></code> value close to <code class="docutils literal notranslate"><span class="pre">a_float</span></code> (absolute error &lt;= <code class="docutils literal notranslate"><span class="pre">max_abs_error</span></code>), treating two NaNs as unequal.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NanSensitiveDoubleNear(a_double,</span> <span class="pre">max_abs_error)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a <code class="docutils literal notranslate"><span class="pre">double</span></code> value close to <code class="docutils literal notranslate"><span class="pre">a_double</span></code> (absolute error &lt;= <code class="docutils literal notranslate"><span class="pre">max_abs_error</span></code>), treating two NaNs as equal.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NanSensitiveFloatNear(a_float,</span> <span class="pre">max_abs_error)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a <code class="docutils literal notranslate"><span class="pre">float</span></code> value close to <code class="docutils literal notranslate"><span class="pre">a_float</span></code> (absolute error &lt;= <code class="docutils literal notranslate"><span class="pre">max_abs_error</span></code>), treating two NaNs as equal.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><em>String Matchers</em></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">argument</span></code> can be either a C string or a C++ string object:</p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Matcher   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ContainsRegex(string)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> matches the given regular expression.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">EndsWith(suffix)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> ends with string <code class="docutils literal notranslate"><span class="pre">suffix</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">HasSubstr(string)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> contains <code class="docutils literal notranslate"><span class="pre">string</span></code> as a sub-string.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">IsEmpty()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is an empty string.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MatchesRegex(string)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> matches the given regular expression with the match starting at the first character and ending at the last character.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">StartsWith(prefix)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> starts with string <code class="docutils literal notranslate"><span class="pre">prefix</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">StrCaseEq(string)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">string</span></code>, ignoring case.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">StrCaseNe(string)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is not equal to <code class="docutils literal notranslate"><span class="pre">string</span></code>, ignoring case.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">StrEq(string)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">string</span></code>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">StrNe(string)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is not equal to <code class="docutils literal notranslate"><span class="pre">string</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">WhenBase64Unescaped(m)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a base-64 escaped string whose unescaped string matches <code class="docutils literal notranslate"><span class="pre">m</span></code>. The web-safe format from <a class="reference external" href="https://www.rfc-editor.org/rfc/rfc4648#section-5">RFC 4648</a> is supported.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><code class="docutils literal notranslate"><span class="pre">ContainsRegex()</span></code> and <code class="docutils literal notranslate"><span class="pre">MatchesRegex()</span></code> take ownership of the <code class="docutils literal notranslate"><span class="pre">RE</span></code> object. They use the regular expression syntax defined <a class="reference external" href="../advanced.md#regular-expression-syntax">here</a>. All of these matchers, except <code class="docutils literal notranslate"><span class="pre">ContainsRegex()</span></code> and <code class="docutils literal notranslate"><span class="pre">MatchesRegex()</span></code> work for wide strings as well.</p>
+<p><em>Container Matchers</em></p>
+<p>Most STL-style containers support <code class="docutils literal notranslate"><span class="pre">==</span></code>, so you can use <code class="docutils literal notranslate"><span class="pre">Eq(expected_container)</span></code> or simply <code class="docutils literal notranslate"><span class="pre">expected_container</span></code> to match a container exactly. If you want to write the elements in-line, match them more flexibly, or get more informative messages, you can use:</p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Matcher   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BeginEndDistanceIs(m)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a container whose <code class="docutils literal notranslate"><span class="pre">begin()</span></code> and <code class="docutils literal notranslate"><span class="pre">end()</span></code> iterators are separated by a number of increments matching <code class="docutils literal notranslate"><span class="pre">m</span></code>. E.g. <code class="docutils literal notranslate"><span class="pre">BeginEndDistanceIs(2)</span></code> or <code class="docutils literal notranslate"><span class="pre">BeginEndDistanceIs(Lt(2))</span></code>. For containers that define a <code class="docutils literal notranslate"><span class="pre">size()</span></code> method, <code class="docutils literal notranslate"><span class="pre">SizeIs(m)</span></code> may be more efficient.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ContainerEq(container)</span></code></p></td>
+<td><p>The same as <code class="docutils literal notranslate"><span class="pre">Eq(container)</span></code> except that the failure message also includes which elements are in one container but not the other.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Contains(e)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> contains an element that matches <code class="docutils literal notranslate"><span class="pre">e</span></code>, which can be either a value or a matcher.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Contains(e).Times(n)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> contains elements that match <code class="docutils literal notranslate"><span class="pre">e</span></code>, which can be either a value or a matcher, and the number of matches is <code class="docutils literal notranslate"><span class="pre">n</span></code>, which can be either a value or a matcher. Unlike the plain <code class="docutils literal notranslate"><span class="pre">Contains</span></code> and <code class="docutils literal notranslate"><span class="pre">Each</span></code> this allows to check for arbitrary occurrences including testing for absence with <code class="docutils literal notranslate"><span class="pre">Contains(e).Times(0)</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Each(e)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a container where <em>every</em> element matches <code class="docutils literal notranslate"><span class="pre">e</span></code>, which can be either a value or a matcher.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ElementsAre(e0,</span> <span class="pre">e1,</span> <span class="pre">...,</span> <span class="pre">en)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> has <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code> elements, where the <em>i</em>-th element matches <code class="docutils literal notranslate"><span class="pre">ei</span></code>, which can be a value or a matcher.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ElementsAreArray({e0,</span> <span class="pre">e1,</span> <span class="pre">...,</span> <span class="pre">en})</span></code>, <code class="docutils literal notranslate"><span class="pre">ElementsAreArray(a_container)</span></code>, <code class="docutils literal notranslate"><span class="pre">ElementsAreArray(begin,</span> <span class="pre">end)</span></code>, <code class="docutils literal notranslate"><span class="pre">ElementsAreArray(array)</span></code>, or <code class="docutils literal notranslate"><span class="pre">ElementsAreArray(array,</span> <span class="pre">count)</span></code></p></td>
+<td><p>The same as <code class="docutils literal notranslate"><span class="pre">ElementsAre()</span></code> except that the expected element values/matchers come from an initializer list, STL-style container, iterator range, or C-style array.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">IsEmpty()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is an empty container (<code class="docutils literal notranslate"><span class="pre">container.empty()</span></code>).    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IsSubsetOf({e0,</span> <span class="pre">e1,</span> <span class="pre">...,</span> <span class="pre">en})</span></code>, <code class="docutils literal notranslate"><span class="pre">IsSubsetOf(a_container)</span></code>, <code class="docutils literal notranslate"><span class="pre">IsSubsetOf(begin,</span> <span class="pre">end)</span></code>, <code class="docutils literal notranslate"><span class="pre">IsSubsetOf(array)</span></code>, or <code class="docutils literal notranslate"><span class="pre">IsSubsetOf(array,</span> <span class="pre">count)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> matches <code class="docutils literal notranslate"><span class="pre">UnorderedElementsAre(x0,</span> <span class="pre">x1,</span> <span class="pre">...,</span> <span class="pre">xk)</span></code> for some subset <code class="docutils literal notranslate"><span class="pre">{x0,</span> <span class="pre">x1,</span> <span class="pre">...,</span> <span class="pre">xk}</span></code> of the expected matchers.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">IsSupersetOf({e0,</span> <span class="pre">e1,</span> <span class="pre">...,</span> <span class="pre">en})</span></code>, <code class="docutils literal notranslate"><span class="pre">IsSupersetOf(a_container)</span></code>, <code class="docutils literal notranslate"><span class="pre">IsSupersetOf(begin,</span> <span class="pre">end)</span></code>, <code class="docutils literal notranslate"><span class="pre">IsSupersetOf(array)</span></code>, or <code class="docutils literal notranslate"><span class="pre">IsSupersetOf(array,</span> <span class="pre">count)</span></code></p></td>
+<td><p>Some subset of <code class="docutils literal notranslate"><span class="pre">argument</span></code> matches <code class="docutils literal notranslate"><span class="pre">UnorderedElementsAre(</span></code>expected matchers<code class="docutils literal notranslate"><span class="pre">)</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Pointwise(m,</span> <span class="pre">container)</span></code>, <code class="docutils literal notranslate"><span class="pre">Pointwise(m,</span> <span class="pre">{e0,</span> <span class="pre">e1,</span> <span class="pre">...,</span> <span class="pre">en})</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> contains the same number of elements as in <code class="docutils literal notranslate"><span class="pre">container</span></code>, and for all i, (the i-th element in <code class="docutils literal notranslate"><span class="pre">argument</span></code>, the i-th element in <code class="docutils literal notranslate"><span class="pre">container</span></code>) match <code class="docutils literal notranslate"><span class="pre">m</span></code>, which is a matcher on 2-tuples. E.g. <code class="docutils literal notranslate"><span class="pre">Pointwise(Le(),</span> <span class="pre">upper_bounds)</span></code> verifies that each element in <code class="docutils literal notranslate"><span class="pre">argument</span></code> doesn’t exceed the corresponding element in <code class="docutils literal notranslate"><span class="pre">upper_bounds</span></code>. See more detail below.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SizeIs(m)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a container whose size matches <code class="docutils literal notranslate"><span class="pre">m</span></code>. E.g. <code class="docutils literal notranslate"><span class="pre">SizeIs(2)</span></code> or <code class="docutils literal notranslate"><span class="pre">SizeIs(Lt(2))</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">UnorderedElementsAre(e0,</span> <span class="pre">e1,</span> <span class="pre">...,</span> <span class="pre">en)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> has <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">1</span></code> elements, and under <em>some</em> permutation of the elements, each element matches an <code class="docutils literal notranslate"><span class="pre">ei</span></code> (for a different <code class="docutils literal notranslate"><span class="pre">i</span></code>), which can be a value or a matcher.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">UnorderedElementsAreArray({e0,</span> <span class="pre">e1,</span> <span class="pre">...,</span> <span class="pre">en})</span></code>, <code class="docutils literal notranslate"><span class="pre">UnorderedElementsAreArray(a_container)</span></code>, <code class="docutils literal notranslate"><span class="pre">UnorderedElementsAreArray(begin,</span> <span class="pre">end)</span></code>, <code class="docutils literal notranslate"><span class="pre">UnorderedElementsAreArray(array)</span></code>, or <code class="docutils literal notranslate"><span class="pre">UnorderedElementsAreArray(array,</span> <span class="pre">count)</span></code></p></td>
+<td><p>The same as <code class="docutils literal notranslate"><span class="pre">UnorderedElementsAre()</span></code> except that the expected element values/matchers come from an initializer list, STL-style container, iterator range, or C-style array.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">UnorderedPointwise(m,</span> <span class="pre">container)</span></code>, <code class="docutils literal notranslate"><span class="pre">UnorderedPointwise(m,</span> <span class="pre">{e0,</span> <span class="pre">e1,</span> <span class="pre">...,</span> <span class="pre">en})</span></code></p></td>
+<td><p>Like <code class="docutils literal notranslate"><span class="pre">Pointwise(m,</span> <span class="pre">container)</span></code>, but ignores the order of elements.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">WhenSorted(m)</span></code></p></td>
+<td><p>When <code class="docutils literal notranslate"><span class="pre">argument</span></code> is sorted using the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator, it matches container matcher <code class="docutils literal notranslate"><span class="pre">m</span></code>. E.g. <code class="docutils literal notranslate"><span class="pre">WhenSorted(ElementsAre(1,</span> <span class="pre">2,</span> <span class="pre">3))</span></code> verifies that <code class="docutils literal notranslate"><span class="pre">argument</span></code> contains elements 1, 2, and 3, ignoring order.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">WhenSortedBy(comparator,</span> <span class="pre">m)</span></code></p></td>
+<td><p>The same as <code class="docutils literal notranslate"><span class="pre">WhenSorted(m)</span></code>, except that the given comparator instead of <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> is used to sort <code class="docutils literal notranslate"><span class="pre">argument</span></code>. E.g. <code class="docutils literal notranslate"><span class="pre">WhenSortedBy(std::greater(),</span> <span class="pre">ElementsAre(3,</span> <span class="pre">2,</span> <span class="pre">1))</span></code>.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><strong>Notes:</strong></p>
+<p><ul>
+<li><p>These matchers can also match:<ol class="arabic simple">
+<li><p>a native array passed by reference (e.g. in <code class="docutils literal notranslate"><span class="pre">Foo(const</span> <span class="pre">int</span> <span class="pre">(&amp;a)[5])</span></code>), and</p></li>
+<li><p>an array passed as a pointer and a count (e.g. in <code class="docutils literal notranslate"><span class="pre">Bar(const</span> <span class="pre">T*</span> <span class="pre">buffer,</span> <span class="pre">int</span> <span class="pre">len)</span></code> &amp;#8212; see <a class="reference external" href="#MultiArgMatchers">Multi-argument Matchers</a>).</p></li>
+</ol>
+</p></li>
+<li><p>The array being matched may be multi-dimensional (i.e. its elements can be arrays).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code> in <code class="docutils literal notranslate"><span class="pre">Pointwise(m,</span> <span class="pre">...)</span></code> and <code class="docutils literal notranslate"><span class="pre">UnorderedPointwise(m,</span> <span class="pre">...)</span></code> should be a matcher for <code class="docutils literal notranslate"><span class="pre">::std::tuple&lt;T,</span> <span class="pre">U&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">T</span></code> and <code class="docutils literal notranslate"><span class="pre">U</span></code> are the element type of the actual container and the expected container, respectively. For example, to compare two <code class="docutils literal notranslate"><span class="pre">Foo</span></code> containers where <code class="docutils literal notranslate"><span class="pre">Foo</span></code> doesn’t support <code class="docutils literal notranslate"><span class="pre">operator==</span></code>, one might write:</p>
+<p>```cpp MATCHER(FooEq, “”) { return std::get&lt;0&gt;(arg).Equals(std::get&lt;1&gt;(arg)); } … EXPECT_THAT(actual_foos, Pointwise(FooEq(), expected_foos)); ```</p>
+</li>
+</ul>
+</p>
+<p><em>Member Matchers</em></p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Matcher   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Field(&amp;class::field,</span> <span class="pre">m)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument.field</span></code> (or <code class="docutils literal notranslate"><span class="pre">argument-&gt;field</span></code> when <code class="docutils literal notranslate"><span class="pre">argument</span></code> is a plain pointer) matches matcher <code class="docutils literal notranslate"><span class="pre">m</span></code>, where <code class="docutils literal notranslate"><span class="pre">argument</span></code> is an object of type <em>class</em>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Field(field_name,</span> <span class="pre">&amp;class::field,</span> <span class="pre">m)</span></code></p></td>
+<td><p>The same as the two-parameter version, but provides a better error message.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Key(e)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument.first</span></code> matches <code class="docutils literal notranslate"><span class="pre">e</span></code>, which can be either a value or a matcher. E.g. <code class="docutils literal notranslate"><span class="pre">Contains(Key(Le(5)))</span></code> can verify that a <code class="docutils literal notranslate"><span class="pre">map</span></code> contains a key <code class="docutils literal notranslate"><span class="pre">&lt;=</span> <span class="pre">5</span></code>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Pair(m1,</span> <span class="pre">m2)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is an <code class="docutils literal notranslate"><span class="pre">std::pair</span></code> whose <code class="docutils literal notranslate"><span class="pre">first</span></code> field matches <code class="docutils literal notranslate"><span class="pre">m1</span></code> and <code class="docutils literal notranslate"><span class="pre">second</span></code> field matches <code class="docutils literal notranslate"><span class="pre">m2</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FieldsAre(m...)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> is a compatible object where each field matches piecewise with the matchers <code class="docutils literal notranslate"><span class="pre">m...</span></code>. A compatible object is any that supports the <code class="docutils literal notranslate"><span class="pre">std::tuple_size&lt;Obj&gt;</span></code>+<code class="docutils literal notranslate"><span class="pre">get&lt;I&gt;(obj)</span></code> protocol. In C++17 and up this also supports types compatible with structured bindings, like aggregates.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Property(&amp;class::property,</span> <span class="pre">m)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument.property()</span></code> (or <code class="docutils literal notranslate"><span class="pre">argument-&gt;property()</span></code> when <code class="docutils literal notranslate"><span class="pre">argument</span></code> is a plain pointer) matches matcher <code class="docutils literal notranslate"><span class="pre">m</span></code>, where <code class="docutils literal notranslate"><span class="pre">argument</span></code> is an object of type <em>class</em>. The method <code class="docutils literal notranslate"><span class="pre">property()</span></code> must take no argument and be declared as <code class="docutils literal notranslate"><span class="pre">const</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Property(property_name,</span> <span class="pre">&amp;class::property,</span> <span class="pre">m)</span></code></p></td>
+<td><p>The same as the two-parameter version, but provides a better error message.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><strong>Notes:</strong></p>
+<p><ul>
+<li><p>You can use <code class="docutils literal notranslate"><span class="pre">FieldsAre()</span></code> to match any type that supports structured bindings, such as <code class="docutils literal notranslate"><span class="pre">std::tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">std::pair</span></code>, <code class="docutils literal notranslate"><span class="pre">std::array</span></code>, and aggregate types. For example:</p>
+<p>```cpp std::tuple&lt;int, std::string&gt; my_tuple{7, “hello world”}; EXPECT_THAT(my_tuple, FieldsAre(Ge(0), HasSubstr(“hello”)));</p>
+<p>struct MyStruct { int value = 42; std::string greeting = “aloha”; }; MyStruct s; EXPECT_THAT(s, FieldsAre(42, “aloha”)); ```</p>
+</li>
+<li><p>Don’t use <code class="docutils literal notranslate"><span class="pre">Property()</span></code> against member functions that you do not own, because taking addresses of functions is fragile and generally not part of the contract of the function.</p></li>
+</ul>
+</p>
+<p><em>Matching the Result of a Function, Functor, or Callback</em></p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Matcher   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ResultOf(f,</span> <span class="pre">m)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">f(argument)</span></code> matches matcher <code class="docutils literal notranslate"><span class="pre">m</span></code>, where <code class="docutils literal notranslate"><span class="pre">f</span></code> is a function or functor.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ResultOf(result_description,</span> <span class="pre">f,</span> <span class="pre">m)</span></code></p></td>
+<td><p>The same as the two-parameter version, but provides a better error message.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><em>Pointer Matchers</em></p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Matcher   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Address(m)</span></code></p></td>
+<td><p>the result of <code class="docutils literal notranslate"><span class="pre">std::addressof(argument)</span></code> matches <code class="docutils literal notranslate"><span class="pre">m</span></code>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Pointee(m)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> (either a smart pointer or a raw pointer) points to a value that matches matcher <code class="docutils literal notranslate"><span class="pre">m</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Pointer(m)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> (either a smart pointer or a raw pointer) contains a pointer that matches <code class="docutils literal notranslate"><span class="pre">m</span></code>. <code class="docutils literal notranslate"><span class="pre">m</span></code> will match against the raw pointer regardless of the type of <code class="docutils literal notranslate"><span class="pre">argument</span></code>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">WhenDynamicCastTo&lt;T&gt;(m)</span></code></p></td>
+<td><p>when <code class="docutils literal notranslate"><span class="pre">argument</span></code> is passed through <code class="docutils literal notranslate"><span class="pre">dynamic_cast&lt;T&gt;()</span></code>, it matches matcher <code class="docutils literal notranslate"><span class="pre">m</span></code>.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+</section>
+<section id="md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers_1MultiArgMatchers">
+<h2>Multi-argument Matchers<a class="headerlink" href="#md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers_1MultiArgMatchers" title="Link to this heading"></a></h2>
+<p id="md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers_1MultiArgMatchers">Technically, all matchers match a <em>single</em> value. A “multi-argument” matcher is just one that matches a <em>tuple</em>. The following matchers can be used to match a tuple <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>:</p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Matcher   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Eq()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Ge()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">y</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Gt()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Le()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">y</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Lt()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">y</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Ne()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">!=</span> <span class="pre">y</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>You can use the following selectors to pick a subset of the arguments (or reorder them) to participate in the matching:</p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Matcher   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AllArgs(m)</span></code></p></td>
+<td><p>Equivalent to <code class="docutils literal notranslate"><span class="pre">m</span></code>. Useful as syntactic sugar in <code class="docutils literal notranslate"><span class="pre">.With(AllArgs(m))</span></code>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Args&lt;N1,</span> <span class="pre">N2,</span> <span class="pre">...,</span> <span class="pre">Nk&gt;(m)</span></code></p></td>
+<td><p>The tuple of the <code class="docutils literal notranslate"><span class="pre">k</span></code> selected (using 0-based indices) arguments matches <code class="docutils literal notranslate"><span class="pre">m</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">Args&lt;1,</span> <span class="pre">2&gt;(Eq())</span></code>.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><em>Composite Matchers</em></p>
+<p>You can make a matcher from one or more other matchers:</p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Matcher   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AllOf(m1,</span> <span class="pre">m2,</span> <span class="pre">...,</span> <span class="pre">mn)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> matches all of the matchers <code class="docutils literal notranslate"><span class="pre">m1</span></code> to <code class="docutils literal notranslate"><span class="pre">mn</span></code>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AllOfArray({m0,</span> <span class="pre">m1,</span> <span class="pre">...,</span> <span class="pre">mn})</span></code>, <code class="docutils literal notranslate"><span class="pre">AllOfArray(a_container)</span></code>, <code class="docutils literal notranslate"><span class="pre">AllOfArray(begin,</span> <span class="pre">end)</span></code>, <code class="docutils literal notranslate"><span class="pre">AllOfArray(array)</span></code>, or <code class="docutils literal notranslate"><span class="pre">AllOfArray(array,</span> <span class="pre">count)</span></code></p></td>
+<td><p>The same as <code class="docutils literal notranslate"><span class="pre">AllOf()</span></code> except that the matchers come from an initializer list, STL-style container, iterator range, or C-style array.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AnyOf(m1,</span> <span class="pre">m2,</span> <span class="pre">...,</span> <span class="pre">mn)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> matches at least one of the matchers <code class="docutils literal notranslate"><span class="pre">m1</span></code> to <code class="docutils literal notranslate"><span class="pre">mn</span></code>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AnyOfArray({m0,</span> <span class="pre">m1,</span> <span class="pre">...,</span> <span class="pre">mn})</span></code>, <code class="docutils literal notranslate"><span class="pre">AnyOfArray(a_container)</span></code>, <code class="docutils literal notranslate"><span class="pre">AnyOfArray(begin,</span> <span class="pre">end)</span></code>, <code class="docutils literal notranslate"><span class="pre">AnyOfArray(array)</span></code>, or <code class="docutils literal notranslate"><span class="pre">AnyOfArray(array,</span> <span class="pre">count)</span></code></p></td>
+<td><p>The same as <code class="docutils literal notranslate"><span class="pre">AnyOf()</span></code> except that the matchers come from an initializer list, STL-style container, iterator range, or C-style array.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Not(m)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">argument</span></code> doesn’t match matcher <code class="docutils literal notranslate"><span class="pre">m</span></code>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Conditional(cond,</span> <span class="pre">m1,</span> <span class="pre">m2)</span></code></p></td>
+<td><p>Matches matcher <code class="docutils literal notranslate"><span class="pre">m1</span></code> if <code class="docutils literal notranslate"><span class="pre">cond</span></code> evaluates to true, else matches <code class="docutils literal notranslate"><span class="pre">m2</span></code>.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><em>Adapters for Matchers</em></p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Matcher   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MatcherCast&lt;T&gt;(m)</span></code></p></td>
+<td><p>casts matcher <code class="docutils literal notranslate"><span class="pre">m</span></code> to type <code class="docutils literal notranslate"><span class="pre">Matcher&lt;T&gt;</span></code>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SafeMatcherCast&lt;T&gt;(m)</span></code></p></td>
+<td><p><a class="reference external" href="../gmock_cook_book.md#SafeMatcherCast">safely casts</a> matcher <code class="docutils literal notranslate"><span class="pre">m</span></code> to type <code class="docutils literal notranslate"><span class="pre">Matcher&lt;T&gt;</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Truly(predicate)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">predicate(argument)</span></code> returns something considered by C++ to be true, where <code class="docutils literal notranslate"><span class="pre">predicate</span></code> is a function or functor.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><code class="docutils literal notranslate"><span class="pre">AddressSatisfies(callback)</span></code> and <code class="docutils literal notranslate"><span class="pre">Truly(callback)</span></code> take ownership of <code class="docutils literal notranslate"><span class="pre">callback</span></code>, which must be a permanent callback.</p>
+</section>
+<section id="md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers_1MatchersAsPredicatesCheat">
+<h2>Using Matchers as Predicates<a class="headerlink" href="#md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers_1MatchersAsPredicatesCheat" title="Link to this heading"></a></h2>
+<p id="md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers_1MatchersAsPredicatesCheat"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Matcher   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Matches(m)(value)</span></code></p></td>
+<td><p>evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code> if <code class="docutils literal notranslate"><span class="pre">value</span></code> matches <code class="docutils literal notranslate"><span class="pre">m</span></code>. You can use <code class="docutils literal notranslate"><span class="pre">Matches(m)</span></code> alone as a unary functor.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ExplainMatchResult(m,</span> <span class="pre">value,</span> <span class="pre">result_listener)</span></code></p></td>
+<td><p>evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code> if <code class="docutils literal notranslate"><span class="pre">value</span></code> matches <code class="docutils literal notranslate"><span class="pre">m</span></code>, explaining the result to <code class="docutils literal notranslate"><span class="pre">result_listener</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Value(value,</span> <span class="pre">m)</span></code></p></td>
+<td><p>evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code> if <code class="docutils literal notranslate"><span class="pre">value</span></code> matches <code class="docutils literal notranslate"><span class="pre">m</span></code>.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><em>Defining Matchers</em></p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Macro   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MATCHER(IsEven,</span> <span class="pre">&quot;&quot;)</span> <span class="pre">{</span> <span class="pre">return</span> <span class="pre">(arg</span> <span class="pre">%</span> <span class="pre">2)</span> <span class="pre">==</span> <span class="pre">0;</span> <span class="pre">}</span></code></p></td>
+<td><p>Defines a matcher <code class="docutils literal notranslate"><span class="pre">IsEven()</span></code> to match an even number.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MATCHER_P(IsDivisibleBy,</span> <span class="pre">n,</span> <span class="pre">&quot;&quot;)</span> <span class="pre">{</span> <span class="pre">*result_listener</span> <span class="pre">&lt;&lt;</span> <span class="pre">&quot;where</span> <span class="pre">the</span> <span class="pre">remainder</span> <span class="pre">is</span> <span class="pre">&quot;</span> <span class="pre">&lt;&lt;</span> <span class="pre">(arg</span> <span class="pre">%</span> <span class="pre">n);</span> <span class="pre">return</span> <span class="pre">(arg</span> <span class="pre">%</span> <span class="pre">n)</span> <span class="pre">==</span> <span class="pre">0;</span> <span class="pre">}</span></code></p></td>
+<td><p>Defines a matcher <code class="docutils literal notranslate"><span class="pre">IsDivisibleBy(n)</span></code> to match a number divisible by <code class="docutils literal notranslate"><span class="pre">n</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MATCHER_P2(IsBetween,</span> <span class="pre">a,</span> <span class="pre">b,</span> <span class="pre">absl::StrCat(negation</span> <span class="pre">?</span> <span class="pre">&quot;isn't&quot;</span> <span class="pre">:</span> <span class="pre">&quot;is&quot;,</span> <span class="pre">&quot;</span> <span class="pre">between</span> <span class="pre">&quot;,</span> <span class="pre">PrintToString(a),</span> <span class="pre">&quot;</span> <span class="pre">and</span> <span class="pre">&quot;,</span> <span class="pre">PrintToString(b)))</span> <span class="pre">{</span> <span class="pre">return</span> <span class="pre">a</span> <span class="pre">&lt;=</span> <span class="pre">arg</span> <span class="pre">&amp;&amp;</span> <span class="pre">arg</span> <span class="pre">&lt;=</span> <span class="pre">b;</span> <span class="pre">}</span></code></p></td>
+<td><p>Defines a matcher <code class="docutils literal notranslate"><span class="pre">IsBetween(a,</span> <span class="pre">b)</span></code> to match a value in the range [<code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>].   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><strong>Notes:</strong></p>
+<p><ol class="arabic">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">MATCHER*</span></code> macros cannot be used inside a function or class.</p></li>
+<li><p>The matcher body must be <em>purely functional</em> (i.e. it cannot have any side effect, and the result must not depend on anything other than the value being matched and the matcher parameters).</p></li>
+<li><p>You can use <code class="docutils literal notranslate"><span class="pre">PrintToString(x)</span></code> to convert a value <code class="docutils literal notranslate"><span class="pre">x</span></code> of any type to a string.</p></li>
+<li><p>You can use <code class="docutils literal notranslate"><span class="pre">ExplainMatchResult()</span></code> in a custom matcher to wrap another matcher, for example:</p>
+<p>```cpp MATCHER_P(NestedPropertyMatches, matcher, “”) { return ExplainMatchResult(matcher, arg.nested().property(), result_listener); } ```</p>
+</li>
+<li><p>You can use <code class="docutils literal notranslate"><span class="pre">DescribeMatcher&lt;&gt;</span></code> to describe another matcher. For example:</p>
+<p>```cpp MATCHER_P(XAndYThat, matcher, “X that “ + DescribeMatcher&lt;int&gt;(matcher, negation) + (negation ? “ or” : “ and”) + “ Y that “ + DescribeMatcher&lt;double&gt;(matcher, negation)) { return ExplainMatchResult(matcher, arg.x(), result_listener) &amp;&amp; ExplainMatchResult(matcher, arg.y(), result_listener); } ``` </p>
+</li>
+</ol>
+</p>
+</section>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

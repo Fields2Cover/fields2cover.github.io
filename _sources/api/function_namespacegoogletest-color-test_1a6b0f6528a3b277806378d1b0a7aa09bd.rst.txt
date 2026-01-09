@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegoogletest-color-test_1a6b0f6528a3b277806378d1b0a7aa09bd:
+
+Function googletest-color-test::UsesColor
+=========================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-color-test.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: googletest-color-test::UsesColor(term, color_env_var, color_flag)
+   :project: Fields2Cover

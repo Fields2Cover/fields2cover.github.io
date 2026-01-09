@@ -1,0 +1,26 @@
+.. _exhale_class_classContainerTest:
+
+Template Class ContainerTest
+============================
+
+- Defined in :ref:`file_googletest_googletest_test_gtest-typed-test_test.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public Test``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ContainerTest
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

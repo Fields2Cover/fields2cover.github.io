@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegtest__xml__output__unittest_1a649d7ae8d6afe1bf4a2131672624c838:
+
+Variable gtest_xml_output_unittest::STACK_TRACE_ENTITY_TEMPLATE
+===============================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: gtest_xml_output_unittest::STACK_TRACE_ENTITY_TEMPLATE
+   :project: Fields2Cover

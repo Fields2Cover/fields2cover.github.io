@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-failfast-unittest_1abc9d45c8e716fe519a5e80eea7eca7fa:
+
+Variable googletest-failfast-unittest::SUPPORTS_DEATH_TESTS
+===========================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-failfast-unittest::SUPPORTS_DEATH_TESTS
+   :project: Fields2Cover

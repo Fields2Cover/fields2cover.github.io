@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegmock__output__test_1a632c0fbf08500e4ed3c0e33f5e2ac771:
+
+Variable gmock_output_test::GOLDEN_PATH
+=======================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: gmock_output_test::GOLDEN_PATH
+   :project: Fields2Cover

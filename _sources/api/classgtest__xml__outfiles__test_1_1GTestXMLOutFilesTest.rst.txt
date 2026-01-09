@@ -1,0 +1,26 @@
+.. _exhale_class_classgtest__xml__outfiles__test_1_1GTestXMLOutFilesTest:
+
+Class GTestXMLOutFilesTest
+==========================
+
+- Defined in :ref:`file_googletest_googletest_test_gtest_xml_outfiles_test.py`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public gtest_xml_test_utils.GTestXMLTestCase`` (:ref:`exhale_class_classgtest__xml__test__utils_1_1GTestXMLTestCase`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: gtest_xml_outfiles_test::GTestXMLOutFilesTest
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

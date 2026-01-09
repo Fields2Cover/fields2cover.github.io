@@ -1,0 +1,27 @@
+
+.. _file_googletest_docs_pkgconfig.md:
+
+File pkgconfig.md
+=================
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``googletest/docs/pkgconfig.md``)
+---------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_googletest_docs_pkgconfig.md.rst
+
+
+
+
+
+
+
+
+

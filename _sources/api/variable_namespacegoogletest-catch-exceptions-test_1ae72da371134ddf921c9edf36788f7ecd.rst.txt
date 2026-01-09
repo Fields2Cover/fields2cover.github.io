@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-catch-exceptions-test_1ae72da371134ddf921c9edf36788f7ecd:
+
+Variable googletest-catch-exceptions-test::SUPPORTS_SEH_EXCEPTIONS
+==================================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-catch-exceptions-test::SUPPORTS_SEH_EXCEPTIONS
+   :project: Fields2Cover

@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File gmock_cheat_sheet.md &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_googletest_docs_gmock_cheat_sheet.md.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File gmock_cheat_sheet.md</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_googletest_docs_gmock_cheat_sheet.md.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-gmock-cheat-sheet-md">
+<span id="program-listing-file-googletest-docs-gmock-cheat-sheet-md"></span><h1>Program Listing for File gmock_cheat_sheet.md<a class="headerlink" href="#program-listing-for-file-gmock-cheat-sheet-md" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_googletest_docs_gmock_cheat_sheet.md.html#file-googletest-docs-gmock-cheat-sheet-md"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">googletest/docs/gmock_cheat_sheet.md</span></code>)</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># gMock Cheat Sheet</span>
+
+<span class="gu">## Defining a Mock Class</span>
+
+<span class="gu">### Mocking a Normal Class {#MockClass}</span>
+
+Given
+
+<span class="sb">```cpp</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">Foo</span><span class="p">();</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">GetSize</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="nf">Describe</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="nf">Describe</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Process</span><span class="p">(</span><span class="n">Bar</span><span class="w"> </span><span class="n">elem</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="sb">```</span>
+
+(note that <span class="sb">`~Foo()`</span> <span class="gs">**must**</span> be virtual) we can define its mock as
+
+<span class="sb">```cpp</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gmock/gmock.h&gt;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MockFoo</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">GetSize</span><span class="p">,</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="p">,</span><span class="w"> </span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">Describe</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">Describe</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">type</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="n">Process</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">Bar</span><span class="w"> </span><span class="n">elem</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="p">};</span>
+<span class="sb">```</span>
+
+To create a &quot;nice&quot; mock, which ignores all uninteresting calls, a &quot;naggy&quot; mock,
+which warns on all uninteresting calls, or a &quot;strict&quot; mock, which treats them as
+failures:
+
+<span class="sb">```cpp</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">NiceMock</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">NaggyMock</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">StrictMock</span><span class="p">;</span>
+
+<span class="n">NiceMock</span><span class="o">&lt;</span><span class="n">MockFoo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nice_foo</span><span class="p">;</span><span class="w">      </span><span class="c1">// The type is a subclass of MockFoo.</span>
+<span class="n">NaggyMock</span><span class="o">&lt;</span><span class="n">MockFoo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">naggy_foo</span><span class="p">;</span><span class="w">    </span><span class="c1">// The type is a subclass of MockFoo.</span>
+<span class="n">StrictMock</span><span class="o">&lt;</span><span class="n">MockFoo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">strict_foo</span><span class="p">;</span><span class="w">  </span><span class="c1">// The type is a subclass of MockFoo.</span>
+<span class="sb">```</span>
+
+{: .callout .note}
+<span class="gs">**Note:**</span> A mock object is currently naggy by default. We may make it nice by
+default in the future.
+
+<span class="gu">### Mocking a Class Template {#MockTemplate}</span>
+
+Class templates can be mocked just like any class.
+
+To mock
+
+<span class="sb">```cpp</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Elem</span><span class="o">&gt;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">StackInterface</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">StackInterface</span><span class="p">();</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">GetSize</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Push</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Elem</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="sb">```</span>
+
+(note that all member functions that are mocked, including <span class="sb">`~StackInterface()`</span>
+<span class="gs">**must**</span> be virtual).
+
+<span class="sb">```cpp</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Elem</span><span class="o">&gt;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MockStack</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">StackInterface</span><span class="o">&lt;</span><span class="n">Elem</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">GetSize</span><span class="p">,</span><span class="w"> </span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="p">,</span><span class="w"> </span><span class="k">override</span><span class="p">));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">void</span><span class="p">,</span><span class="w"> </span><span class="n">Push</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Elem</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="p">};</span>
+<span class="sb">```</span>
+
+<span class="gu">### Specifying Calling Conventions for Mock Functions</span>
+
+If your mock function doesn&#39;t use the default calling convention, you can
+specify it by adding <span class="sb">`Calltype(convention)`</span> to <span class="sb">`MOCK_METHOD`</span>&#39;s 4th parameter.
+For example,
+
+<span class="sb">```cpp</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="n">Foo</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">Calltype</span><span class="p">(</span><span class="n">STDMETHODCALLTYPE</span><span class="p">)));</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">),</span>
+<span class="w">              </span><span class="p">(</span><span class="k">const</span><span class="p">,</span><span class="w"> </span><span class="n">Calltype</span><span class="p">(</span><span class="n">STDMETHODCALLTYPE</span><span class="p">)));</span>
+<span class="sb">```</span>
+
+where <span class="sb">`STDMETHODCALLTYPE`</span> is defined by <span class="sb">`&lt;objbase.h&gt;`</span> on Windows.
+
+<span class="gu">## Using Mocks in Tests {#UsingMocks}</span>
+
+The typical work flow is:
+
+<span class="k">1.</span>  Import the gMock names you need to use. All gMock symbols are in the
+    <span class="sb">`testing`</span> namespace unless they are macros or otherwise noted.
+<span class="k">2.</span>  Create the mock objects.
+<span class="k">3.</span>  Optionally, set the default actions of the mock objects.
+<span class="k">4.</span>  Set your expectations on the mock objects (How will they be called? What
+    will they do?).
+<span class="k">5.</span>  Exercise code that uses the mock objects; if necessary, check the result
+    using googletest assertions.
+<span class="k">6.</span>  When a mock object is destructed, gMock automatically verifies that all
+    expectations on it have been satisfied.
+
+Here&#39;s an example:
+
+<span class="sb">```cpp</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Return</span><span class="p">;</span><span class="w">                          </span><span class="c1">// #1</span>
+
+<span class="n">TEST</span><span class="p">(</span><span class="n">BarTest</span><span class="p">,</span><span class="w"> </span><span class="n">DoesThis</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">MockFoo</span><span class="w"> </span><span class="n">foo</span><span class="p">;</span><span class="w">                                    </span><span class="c1">// #2</span>
+
+<span class="w">  </span><span class="n">ON_CALL</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span><span class="w"> </span><span class="n">GetSize</span><span class="p">())</span><span class="w">                         </span><span class="c1">// #3</span>
+<span class="w">      </span><span class="p">.</span><span class="n">WillByDefault</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="w">  </span><span class="c1">// ... other default actions ...</span>
+
+<span class="w">  </span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span><span class="w"> </span><span class="n">Describe</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="w">                   </span><span class="c1">// #4</span>
+<span class="w">      </span><span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">      </span><span class="p">.</span><span class="n">WillRepeatedly</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="s">&quot;Category 5&quot;</span><span class="p">));</span>
+<span class="w">  </span><span class="c1">// ... other expectations ...</span>
+
+<span class="w">  </span><span class="n">EXPECT_EQ</span><span class="p">(</span><span class="n">MyProductionFunction</span><span class="p">(</span><span class="o">&amp;</span><span class="n">foo</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;good&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// #5</span>
+<span class="p">}</span><span class="w">                                                 </span><span class="c1">// #6</span>
+<span class="sb">```</span>
+
+<span class="gu">## Setting Default Actions {#OnCall}</span>
+
+gMock has a <span class="gs">**built-in default action**</span> for any function that returns <span class="sb">`void`</span>,
+<span class="sb">`bool`</span>, a numeric value, or a pointer. In C++11, it will additionally returns
+the default-constructed value, if one exists for the given type.
+
+To customize the default action for functions with return type <span class="sb">`T`</span>, use
+[<span class="sb">`DefaultValue&lt;T&gt;`</span>](reference/mocking.md#DefaultValue). For example:
+
+<span class="sb">```cpp</span>
+<span class="w">  </span><span class="c1">// Sets the default action for return type std::unique_ptr&lt;Buzz&gt; to</span>
+<span class="w">  </span><span class="c1">// creating a new Buzz every time.</span>
+<span class="w">  </span><span class="n">DefaultValue</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Buzz</span><span class="o">&gt;&gt;::</span><span class="n">SetFactory</span><span class="p">(</span>
+<span class="w">      </span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Buzz</span><span class="o">&gt;</span><span class="p">(</span><span class="n">AccessLevel</span><span class="o">::</span><span class="n">kInternal</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+
+<span class="w">  </span><span class="c1">// When this fires, the default action of MakeBuzz() will run, which</span>
+<span class="w">  </span><span class="c1">// will return a new Buzz object.</span>
+<span class="w">  </span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">mock_buzzer_</span><span class="p">,</span><span class="w"> </span><span class="n">MakeBuzz</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">)).</span><span class="n">Times</span><span class="p">(</span><span class="n">AnyNumber</span><span class="p">());</span>
+
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">buzz1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_buzzer_</span><span class="p">.</span><span class="n">MakeBuzz</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">buzz2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock_buzzer_</span><span class="p">.</span><span class="n">MakeBuzz</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">EXPECT_NE</span><span class="p">(</span><span class="n">buzz1</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+<span class="w">  </span><span class="n">EXPECT_NE</span><span class="p">(</span><span class="n">buzz2</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+<span class="w">  </span><span class="n">EXPECT_NE</span><span class="p">(</span><span class="n">buzz1</span><span class="p">,</span><span class="w"> </span><span class="n">buzz2</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Resets the default action for return type std::unique_ptr&lt;Buzz&gt;,</span>
+<span class="w">  </span><span class="c1">// to avoid interfere with other tests.</span>
+<span class="w">  </span><span class="n">DefaultValue</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Buzz</span><span class="o">&gt;&gt;::</span><span class="n">Clear</span><span class="p">();</span>
+<span class="sb">```</span>
+
+To customize the default action for a particular method of a specific mock
+object, use [<span class="sb">`ON_CALL`</span>](reference/mocking.md#ON_CALL). <span class="sb">`ON_CALL`</span> has a similar
+syntax to <span class="sb">`EXPECT_CALL`</span>, but it is used for setting default behaviors when you
+do not require that the mock method is called. See
+[<span class="nt">Knowing When to Expect</span>](<span class="na">gmock_cook_book.md#UseOnCall</span>) for a more detailed
+discussion.
+
+<span class="gu">## Setting Expectations {#ExpectCall}</span>
+
+See [<span class="sb">`EXPECT_CALL`</span>](reference/mocking.md#EXPECT_CALL) in the Mocking Reference.
+
+<span class="gu">## Matchers {#MatcherList}</span>
+
+See the [<span class="nt">Matchers Reference</span>](<span class="na">reference/matchers.md</span>).
+
+<span class="gu">## Actions {#ActionList}</span>
+
+See the [<span class="nt">Actions Reference</span>](<span class="na">reference/actions.md</span>).
+
+<span class="gu">## Cardinalities {#CardinalityList}</span>
+
+See the [<span class="sb">`Times`</span> clause](reference/mocking.md#EXPECT_CALL.Times) of
+<span class="sb">`EXPECT_CALL`</span> in the Mocking Reference.
+
+<span class="gu">## Expectation Order</span>
+
+By default, expectations can be matched in <span class="ge">*any*</span> order. If some or all
+expectations must be matched in a given order, you can use the
+[<span class="sb">`After`</span> clause](reference/mocking.md#EXPECT_CALL.After) or
+[<span class="sb">`InSequence`</span> clause](reference/mocking.md#EXPECT_CALL.InSequence) of
+<span class="sb">`EXPECT_CALL`</span>, or use an [<span class="sb">`InSequence`</span> object](reference/mocking.md#InSequence).
+
+<span class="gu">## Verifying and Resetting a Mock</span>
+
+gMock will verify the expectations on a mock object when it is destructed, or
+you can do it earlier:
+
+<span class="sb">```cpp</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Mock</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="c1">// Verifies and removes the expectations on mock_obj;</span>
+<span class="c1">// returns true if and only if successful.</span>
+<span class="n">Mock</span><span class="o">::</span><span class="n">VerifyAndClearExpectations</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mock_obj</span><span class="p">);</span>
+<span class="p">...</span>
+<span class="c1">// Verifies and removes the expectations on mock_obj;</span>
+<span class="c1">// also removes the default actions set by ON_CALL();</span>
+<span class="c1">// returns true if and only if successful.</span>
+<span class="n">Mock</span><span class="o">::</span><span class="n">VerifyAndClear</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mock_obj</span><span class="p">);</span>
+<span class="sb">```</span>
+
+Do not set new expectations after verifying and clearing a mock after its use.
+Setting expectations after code that exercises the mock has undefined behavior.
+See [<span class="nt">Using Mocks in Tests</span>](<span class="na">gmock_for_dummies.md#using-mocks-in-tests</span>) for more
+information.
+
+You can also tell gMock that a mock object can be leaked and doesn&#39;t need to be
+verified:
+
+<span class="sb">```cpp</span>
+<span class="n">Mock</span><span class="o">::</span><span class="n">AllowLeak</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mock_obj</span><span class="p">);</span>
+<span class="sb">```</span>
+
+<span class="gu">## Mock Classes</span>
+
+gMock defines a convenient mock class template
+
+<span class="sb">```cpp</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MockFunction</span><span class="o">&lt;</span><span class="n">R</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">Call</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span><span class="p">));</span>
+<span class="p">};</span>
+<span class="sb">```</span>
+
+See this [<span class="nt">recipe</span>](<span class="na">gmock_cook_book.md#UsingCheckPoints</span>) for one application of
+it.
+
+<span class="gu">## Flags</span>
+
+| Flag                           | Description                               |
+| :----------------------------- | :---------------------------------------- |
+| <span class="sb">`--gmock_catch_leaked_mocks=0`</span> | Don&#39;t report leaked mock objects as failures. |
+| <span class="sb">`--gmock_verbose=LEVEL`</span> | Sets the default verbosity level (<span class="sb">`info`</span>, <span class="sb">`warning`</span>, or <span class="sb">`error`</span>) of Google Mock messages. |
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

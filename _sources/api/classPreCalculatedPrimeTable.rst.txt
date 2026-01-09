@@ -1,0 +1,26 @@
+.. _exhale_class_classPreCalculatedPrimeTable:
+
+Class PreCalculatedPrimeTable
+=============================
+
+- Defined in :ref:`file_googletest_googletest_samples_prime_tables.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public PrimeTable`` (:ref:`exhale_class_classPrimeTable`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: PreCalculatedPrimeTable
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,27 @@
+.. _exhale_class_classTestPartResultReporterInterface:
+
+Class TestPartResultReporterInterface
+=====================================
+
+.. did not find file this was defined in
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public testing::internal::DefaultGlobalTestPartResultReporter`` (:ref:`exhale_class_classtesting_1_1internal_1_1DefaultGlobalTestPartResultReporter`)
+- ``public testing::internal::DefaultPerThreadTestPartResultReporter`` (:ref:`exhale_class_classtesting_1_1internal_1_1DefaultPerThreadTestPartResultReporter`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: TestPartResultReporterInterface
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegoogletest-failfast-unittest_1a61d1a06e42187f65a3d2bc40f0533106:
+
+Function googletest-failfast-unittest::SetEnvVar
+================================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-failfast-unittest.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: googletest-failfast-unittest::SetEnvVar(env_var, value)
+   :project: Fields2Cover

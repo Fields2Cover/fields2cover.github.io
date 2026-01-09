@@ -1,0 +1,14 @@
+.. _exhale_function_namespacetesting_1_1internal_1a6e07a655cb987d131cd8fbeba9a7f1eb:
+
+Function testing::internal::GetNextRandomSeed
+=============================================
+
+- Defined in :ref:`file_googletest_googletest_src_gtest-internal-inl.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: testing::internal::GetNextRandomSeed(int)
+   :project: Fields2Cover

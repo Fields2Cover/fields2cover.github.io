@@ -101,6 +101,9 @@
 <span class="w"> </span><span class="k">public</span><span class="o">:</span>
 <span class="w">  </span><span class="n">F2CMultiLineString</span><span class="w"> </span><span class="n">genSplitLines</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CCells</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cells</span><span class="p">,</span>
 <span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">obj</span><span class="o">::</span><span class="n">DecompObjective</span><span class="o">&amp;</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obj</span><span class="o">::</span><span class="n">DecompObjective</span><span class="p">())</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+
+<span class="w"> </span><span class="k">private</span><span class="o">:</span>
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">isLinePartOfLinearRing</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">F2CLinearRing</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ring</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">F2CLineString</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">line</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c::decomp</span>

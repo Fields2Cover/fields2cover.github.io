@@ -1,0 +1,14 @@
+.. _exhale_function_namespacetesting_1_1internal_1a1e7045e09392aece10aea4517458b7ed:
+
+Template Function testing::internal::Delete
+===========================================
+
+- Defined in :ref:`file_googletest_googletest_src_gtest-internal-inl.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: testing::internal::Delete(T *)
+   :project: Fields2Cover

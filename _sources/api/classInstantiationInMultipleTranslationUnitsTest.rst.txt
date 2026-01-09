@@ -1,0 +1,26 @@
+.. _exhale_class_classInstantiationInMultipleTranslationUnitsTest:
+
+Class InstantiationInMultipleTranslationUnitsTest
+=================================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-param-test-test.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public testing::TestWithParam< int >``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: InstantiationInMultipleTranslationUnitsTest
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

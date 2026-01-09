@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-break-on-failure-unittest_1a5eefbed4865e8a71c4bdbd5ecb016f53:
+
+Variable googletest-break-on-failure-unittest::THROW_ON_FAILURE_ENV_VAR
+=======================================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-break-on-failure-unittest::THROW_ON_FAILURE_ENV_VAR
+   :project: Fields2Cover

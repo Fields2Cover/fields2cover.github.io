@@ -1,0 +1,14 @@
+.. _exhale_function_namespacetesting_1_1internal_1a71fdd20a0686bea3dc0cdcd95e0bca1c:
+
+Template Function testing::internal::GetElementOr
+=================================================
+
+- Defined in :ref:`file_googletest_googletest_src_gtest-internal-inl.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: testing::internal::GetElementOr(const std::vector<E>&, int, E)
+   :project: Fields2Cover

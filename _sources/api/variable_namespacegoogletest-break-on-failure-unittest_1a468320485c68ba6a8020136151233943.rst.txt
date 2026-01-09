@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-break-on-failure-unittest_1a468320485c68ba6a8020136151233943:
+
+Variable googletest-break-on-failure-unittest::CATCH_EXCEPTIONS_ENV_VAR
+=======================================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-break-on-failure-unittest::CATCH_EXCEPTIONS_ENV_VAR
+   :project: Fields2Cover

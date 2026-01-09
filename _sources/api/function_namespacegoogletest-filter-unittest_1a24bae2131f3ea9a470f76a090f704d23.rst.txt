@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegoogletest-filter-unittest_1a24bae2131f3ea9a470f76a090f704d23:
+
+Function googletest-filter-unittest::RunAndReturnOutput
+=======================================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-filter-unittest.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: googletest-filter-unittest::RunAndReturnOutput(args)
+   :project: Fields2Cover

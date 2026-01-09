@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using GoogleTest from various build systems &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/page_md____w_Fields2Cover_Fields2Cover_googletest_docs_pkgconfig.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Using GoogleTest from various build systems</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/page_md____w_Fields2Cover_Fields2Cover_googletest_docs_pkgconfig.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-googletest-from-various-build-systems">
+<span id="page-md-w-fields2cover-fields2cover-googletest-docs-pkgconfig"></span><h1>Using GoogleTest from various build systems<a class="headerlink" href="#using-googletest-from-various-build-systems" title="Link to this heading"></a></h1>
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="md____w_Fields2Cover_Fields2Cover_googletest_docs_pkgconfig"></span><em><span class="pre">page</span></em> <span class="sig-name descname"><span class="pre">Using</span> <span class="pre">GoogleTest</span> <span class="pre">from</span> <span class="pre">various</span> <span class="pre">build</span> <span class="pre">systems</span></span></dt>
+<dd><p>GoogleTest comes with pkg-config files that can be used to determine all necessary flags for compiling and linking to GoogleTest (and GoogleMock). Pkg-config is a standardised plain-text format containing</p>
+<p><ul class="simple">
+<li><p>the includedir (-I) path</p></li>
+<li><p>necessary macro (-D) definitions</p></li>
+<li><p>further required flags (-pthread)</p></li>
+<li><p>the library (-L) path</p></li>
+<li><p>the library (-l) to link to</p></li>
+</ul>
+</p>
+<p>All current build systems support pkg-config in one way or another. For all examples here we assume you want to compile the sample <code class="docutils literal notranslate"><span class="pre">samples/sample3_unittest.cc</span></code>.</p>
+<p><em>CMake</em></p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> in CMake is fairly easy:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">PkgConfig</span><span class="p">)</span>
+<span class="nb">pkg_search_module</span><span class="p">(</span><span class="s">GTEST</span><span class="w"> </span><span class="s">REQUIRED</span><span class="w"> </span><span class="s">gtest_main</span><span class="p">)</span>
+
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">testapp</span><span class="p">)</span>
+<span class="nb">target_sources</span><span class="p">(</span><span class="s">testapp</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">samples/sample3_unittest.cc</span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">testapp</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="o">${</span><span class="nv">GTEST_LDFLAGS</span><span class="o">}</span><span class="p">)</span>
+<span class="nb">target_compile_options</span><span class="p">(</span><span class="s">testapp</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="o">${</span><span class="nv">GTEST_CFLAGS</span><span class="o">}</span><span class="p">)</span>
+
+<span class="nb">enable_testing</span><span class="p">()</span>
+<span class="nb">add_test</span><span class="p">(</span><span class="s">first_and_only_test</span><span class="w"> </span><span class="s">testapp</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is generally recommended that you use <code class="docutils literal notranslate"><span class="pre">target_compile_options</span></code> + <code class="docutils literal notranslate"><span class="pre">_CFLAGS</span></code> over <code class="docutils literal notranslate"><span class="pre">target_include_directories</span></code> + <code class="docutils literal notranslate"><span class="pre">_INCLUDE_DIRS</span></code> as the former includes not just -I flags (GoogleTest might require a macro indicating to internal headers that all libraries have been compiled with threading enabled. In addition, GoogleTest might also require <code class="docutils literal notranslate"><span class="pre">-pthread</span></code> in the compiling step, and as such splitting the pkg-config <code class="docutils literal notranslate"><span class="pre">Cflags</span></code> variable into include dirs and macros for <code class="docutils literal notranslate"><span class="pre">target_compile_definitions()</span></code> might still miss this). The same recommendation goes for using <code class="docutils literal notranslate"><span class="pre">_LDFLAGS</span></code> over the more commonplace <code class="docutils literal notranslate"><span class="pre">_LIBRARIES</span></code>, which happens to discard <code class="docutils literal notranslate"><span class="pre">-L</span></code> flags and <code class="docutils literal notranslate"><span class="pre">-pthread</span></code>.</p>
+<p><em>Help! pkg-config can’t find GoogleTest!</em></p>
+<p>Let’s say you have a <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> along the lines of the one in this tutorial and you try to run <code class="docutils literal notranslate"><span class="pre">cmake</span></code>. It is very possible that you get a failure along the lines of:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="w"> </span><span class="n">Checking</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">modules</span><span class="w"> </span><span class="err">&#39;</span><span class="n">gtest_main</span><span class="err">&#39;</span>
+<span class="n">CMake</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">cmake</span><span class="o">/</span><span class="n">Modules</span><span class="o">/</span><span class="n">FindPkgConfig</span><span class="p">.</span><span class="n">cmake</span><span class="o">:</span><span class="mi">640</span><span class="w"> </span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">:</span>
+<span class="w">  </span><span class="n">None</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="err">&#39;</span><span class="n">gtest_main</span><span class="err">&#39;</span><span class="w"> </span><span class="n">found</span>
+</pre></div>
+</div>
+<p>These failures are common if you installed GoogleTest yourself and have not sourced it from a distro or other package manager. If so, you need to tell pkg-config where it can find the <code class="docutils literal notranslate"><span class="pre">.pc</span></code> files containing the information. Say you installed GoogleTest to <code class="docutils literal notranslate"><span class="pre">/usr/local</span></code>, then it might be that the <code class="docutils literal notranslate"><span class="pre">.pc</span></code> files are installed under <code class="docutils literal notranslate"><span class="pre">/usr/local/lib64/pkgconfig</span></code>. If you set</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="n">PKG_CONFIG_PATH</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">pkgconfig</span>
+</pre></div>
+</div>
+<p>pkg-config will also try to look in <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_PATH</span></code> to find <code class="docutils literal notranslate"><span class="pre">gtest_main.pc</span></code>.</p>
+<p><em>Using pkg-config in a cross-compilation setting</em></p>
+<p>Pkg-config can be used in a cross-compilation setting too. To do this, let’s assume the final prefix of the cross-compiled installation will be <code class="docutils literal notranslate"><span class="pre">/usr</span></code>, and your sysroot is <code class="docutils literal notranslate"><span class="pre">/home/MYUSER/sysroot</span></code>. Configure and install GTest using</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">cmake</span><span class="w"> </span><span class="o">-</span><span class="n">DCMAKE_INSTALL_PREFIX</span><span class="o">=/</span><span class="n">usr</span><span class="w"> </span><span class="p">..</span>
+</pre></div>
+</div>
+<p>Install into the sysroot using <code class="docutils literal notranslate"><span class="pre">DESTDIR</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">make</span><span class="w"> </span><span class="o">-</span><span class="n">j</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">DESTDIR</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">MYUSER</span><span class="o">/</span><span class="n">sysroot</span>
+</pre></div>
+</div>
+<p>Before we continue, it is recommended to <strong>always</strong> define the following two variables for pkg-config in a cross-compilation setting:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="n">PKG_CONFIG_ALLOW_SYSTEM_CFLAGS</span><span class="o">=</span><span class="n">yes</span>
+<span class="k">export</span><span class="w"> </span><span class="n">PKG_CONFIG_ALLOW_SYSTEM_LIBS</span><span class="o">=</span><span class="n">yes</span>
+</pre></div>
+</div>
+<p>otherwise <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> will filter <code class="docutils literal notranslate"><span class="pre">-I</span></code> and <code class="docutils literal notranslate"><span class="pre">-L</span></code> flags against standard prefixes such as <code class="docutils literal notranslate"><span class="pre">/usr</span></code> (see <a class="reference external" href="https://bugs.freedesktop.org/show_bug.cgi?id=28264#c3">https://bugs.freedesktop.org/show_bug.cgi?id=28264#c3</a> for reasons why this stripping needs to occur usually).</p>
+<p>If you look at the generated pkg-config file, it will look something like</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">libdir</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib64</span>
+<span class="n">includedir</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span>
+
+<span class="nl">Name</span><span class="p">:</span><span class="w"> </span><span class="n">gtest</span>
+<span class="nl">Description</span><span class="p">:</span><span class="w"> </span><span class="n">GoogleTest</span><span class="w"> </span><span class="p">(</span><span class="n">without</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="n">function</span><span class="p">)</span>
+<span class="nl">Version</span><span class="p">:</span><span class="w"> </span><span class="mf">1.11.0</span>
+<span class="nl">URL</span><span class="p">:</span><span class="w"> </span><span class="n">https</span><span class="o">:</span><span class="c1">//github.com/google/googletest</span>
+<span class="nl">Libs</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="n">L$</span><span class="p">{</span><span class="n">libdir</span><span class="p">}</span><span class="w"> </span><span class="o">-</span><span class="n">lgtest</span><span class="w"> </span><span class="o">-</span><span class="n">lpthread</span>
+<span class="nl">Cflags</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="n">I$</span><span class="p">{</span><span class="n">includedir</span><span class="p">}</span><span class="w"> </span><span class="o">-</span><span class="n">DGTEST_HAS_PTHREAD</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="n">lpthread</span>
+</pre></div>
+</div>
+<p>Notice that the sysroot is not included in <code class="docutils literal notranslate"><span class="pre">libdir</span></code> and <code class="docutils literal notranslate"><span class="pre">includedir</span></code>! If you try to run <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> with the correct <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_LIBDIR=/home/MYUSER/sysroot/usr/lib64/pkgconfig</span></code> against this <code class="docutils literal notranslate"><span class="pre">.pc</span></code> file, you will get</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">$</span><span class="w"> </span><span class="n">pkg</span><span class="o">-</span><span class="n">config</span><span class="w"> </span><span class="o">--</span><span class="n">cflags</span><span class="w"> </span><span class="n">gtest</span>
+<span class="o">-</span><span class="n">DGTEST_HAS_PTHREAD</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="n">lpthread</span><span class="w"> </span><span class="o">-</span><span class="n">I</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span>
+<span class="n">$</span><span class="w"> </span><span class="n">pkg</span><span class="o">-</span><span class="n">config</span><span class="w"> </span><span class="o">--</span><span class="n">libs</span><span class="w"> </span><span class="n">gtest</span>
+<span class="o">-</span><span class="n">L</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib64</span><span class="w"> </span><span class="o">-</span><span class="n">lgtest</span><span class="w"> </span><span class="o">-</span><span class="n">lpthread</span>
+</pre></div>
+</div>
+<p>which is obviously wrong and points to the <code class="docutils literal notranslate"><span class="pre">CBUILD</span></code> and not <code class="docutils literal notranslate"><span class="pre">CHOST</span></code> root. In order to use this in a cross-compilation setting, we need to tell pkg-config to inject the actual sysroot into <code class="docutils literal notranslate"><span class="pre">-I</span></code> and <code class="docutils literal notranslate"><span class="pre">-L</span></code> variables. Let us now tell pkg-config about the actual sysroot</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="n">PKG_CONFIG_DIR</span><span class="o">=</span>
+<span class="k">export</span><span class="w"> </span><span class="n">PKG_CONFIG_SYSROOT_DIR</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">MYUSER</span><span class="o">/</span><span class="n">sysroot</span>
+<span class="k">export</span><span class="w"> </span><span class="n">PKG_CONFIG_LIBDIR</span><span class="o">=</span><span class="n">$</span><span class="p">{</span><span class="n">PKG_CONFIG_SYSROOT_DIR</span><span class="p">}</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">pkgconfig</span>
+</pre></div>
+</div>
+<p>and running <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> again we get</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">$</span><span class="w"> </span><span class="n">pkg</span><span class="o">-</span><span class="n">config</span><span class="w"> </span><span class="o">--</span><span class="n">cflags</span><span class="w"> </span><span class="n">gtest</span>
+<span class="o">-</span><span class="n">DGTEST_HAS_PTHREAD</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="n">lpthread</span><span class="w"> </span><span class="o">-</span><span class="n">I</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">MYUSER</span><span class="o">/</span><span class="n">sysroot</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span>
+<span class="n">$</span><span class="w"> </span><span class="n">pkg</span><span class="o">-</span><span class="n">config</span><span class="w"> </span><span class="o">--</span><span class="n">libs</span><span class="w"> </span><span class="n">gtest</span>
+<span class="o">-</span><span class="n">L</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">MYUSER</span><span class="o">/</span><span class="n">sysroot</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib64</span><span class="w"> </span><span class="o">-</span><span class="n">lgtest</span><span class="w"> </span><span class="o">-</span><span class="n">lpthread</span>
+</pre></div>
+</div>
+<p>which contains the correct sysroot now. For a more comprehensive guide to also including <code class="docutils literal notranslate"><span class="pre">${CHOST}</span></code> in build system calls, see the excellent tutorial by Diego Elio Pettenò: <a class="reference external" href="https://autotools.io/pkgconfig/cross-compiling.html">https://autotools.io/pkgconfig/cross-compiling.html</a></p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegtest__xml__output__unittest_1ae142e1cf52c8d9b76d98a2a7376a2649:
+
+Variable gtest_xml_output_unittest::TOTAL_SHARDS_ENV_VAR
+========================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: gtest_xml_output_unittest::TOTAL_SHARDS_ENV_VAR
+   :project: Fields2Cover

@@ -1,0 +1,26 @@
+.. _exhale_class_classgoogletest-param-test-invalid-name1-test_1_1GTestParamTestInvalidName1Test:
+
+Class GTestParamTestInvalidName1Test
+====================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-param-test-invalid-name1-test.py`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public gtest_test_utils.TestCase``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: googletest-param-test-invalid-name1-test::GTestParamTestInvalidName1Test
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

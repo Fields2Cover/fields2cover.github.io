@@ -1,0 +1,2581 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File advanced.md &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_googletest_docs_advanced.md.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File advanced.md</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_googletest_docs_advanced.md.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-advanced-md">
+<span id="program-listing-file-googletest-docs-advanced-md"></span><h1>Program Listing for File advanced.md<a class="headerlink" href="#program-listing-for-file-advanced-md" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_googletest_docs_advanced.md.html#file-googletest-docs-advanced-md"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">googletest/docs/advanced.md</span></code>)</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Advanced GoogleTest Topics</span>
+
+<span class="gu">## Introduction</span>
+
+Now that you have read the [<span class="nt">GoogleTest Primer</span>](<span class="na">primer.md</span>) and learned how to
+write tests using GoogleTest, it&#39;s time to learn some new tricks. This document
+will show you more assertions as well as how to construct complex failure
+messages, propagate fatal failures, reuse and speed up your test fixtures, and
+use various flags with your tests.
+
+<span class="gu">## More Assertions</span>
+
+This section covers some less frequently used, but still significant,
+assertions.
+
+<span class="gu">### Explicit Success and Failure</span>
+
+See [<span class="nt">Explicit Success and Failure</span>](<span class="na">reference/assertions.md#success-failure</span>) in
+the Assertions Reference.
+
+<span class="gu">### Exception Assertions</span>
+
+See [<span class="nt">Exception Assertions</span>](<span class="na">reference/assertions.md#exceptions</span>) in the Assertions
+Reference.
+
+<span class="gu">### Predicate Assertions for Better Error Messages</span>
+
+Even though GoogleTest has a rich set of assertions, they can never be complete,
+as it&#39;s impossible (nor a good idea) to anticipate all scenarios a user might
+run into. Therefore, sometimes a user has to use <span class="sb">`EXPECT_TRUE()`</span> to check a
+complex expression, for lack of a better macro. This has the problem of not
+showing you the values of the parts of the expression, making it hard to
+understand what went wrong. As a workaround, some users choose to construct the
+failure message by themselves, streaming it into <span class="sb">`EXPECT_TRUE()`</span>. However, this
+is awkward especially when the expression has side-effects or is expensive to
+evaluate.
+
+GoogleTest gives you three different options to solve this problem:
+
+<span class="gu">#### Using an Existing Boolean Function</span>
+
+If you already have a function or functor that returns <span class="sb">`bool`</span> (or a type that
+can be implicitly converted to <span class="sb">`bool`</span>), you can use it in a *predicate
+assertion* to get the function arguments printed for free. See
+[<span class="sb">`EXPECT_PRED*`</span>](reference/assertions.md#EXPECT_PRED) in the Assertions
+Reference for details.
+
+<span class="gu">#### Using a Function That Returns an AssertionResult</span>
+
+While <span class="sb">`EXPECT_PRED*()`</span> and friends are handy for a quick job, the syntax is not
+satisfactory: you have to use different macros for different arities, and it
+feels more like Lisp than C++. The <span class="sb">`::testing::AssertionResult`</span> class solves
+this problem.
+
+An <span class="sb">`AssertionResult`</span> object represents the result of an assertion (whether it&#39;s
+a success or a failure, and an associated message). You can create an
+<span class="sb">`AssertionResult`</span> using one of these factory functions:
+
+```c++
+namespace testing {
+
+// Returns an AssertionResult object to indicate that an assertion has
+// succeeded.
+AssertionResult AssertionSuccess();
+
+// Returns an AssertionResult object to indicate that an assertion has
+// failed.
+AssertionResult AssertionFailure();
+
+}
+<span class="sb">```</span>
+
+<span class="sb">You can then use the `&lt;&lt;` operator to stream messages to the `AssertionResult`</span>
+<span class="sb">object.</span>
+
+<span class="sb">To provide more readable messages in Boolean assertions (e.g. `EXPECT_TRUE()`),</span>
+<span class="sb">write a predicate function that returns `AssertionResult` instead of `bool`. For</span>
+<span class="sb">example, if you define `IsEven()` as:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">testing::AssertionResult IsEven(int n) {</span>
+<span class="sb">  if ((n % 2) == 0)</span>
+<span class="sb">    return testing::AssertionSuccess();</span>
+<span class="sb">  else</span>
+<span class="sb">    return testing::AssertionFailure() &lt;&lt; n &lt;&lt; &quot; is odd&quot;;</span>
+<span class="sb">}</span>
+<span class="sb">```</span>
+
+instead of:
+
+```c++
+bool IsEven(int n) {
+  return (n % 2) == 0;
+}
+<span class="sb">```</span>
+
+<span class="sb">the failed assertion `EXPECT_TRUE(IsEven(Fib(4)))` will print:</span>
+
+<span class="sb">```none</span>
+<span class="sb">Value of: IsEven(Fib(4))</span>
+<span class="sb">  Actual: false (3 is odd)</span>
+<span class="sb">Expected: true</span>
+<span class="sb">```</span>
+
+instead of a more opaque
+
+<span class="sb">```none</span>
+<span class="s">Value of: IsEven(Fib(4))</span>
+<span class="s">  Actual: false</span>
+<span class="s">Expected: true</span>
+<span class="sb">```</span>
+
+If you want informative messages in <span class="sb">`EXPECT_FALSE`</span> and <span class="sb">`ASSERT_FALSE`</span> as well
+(one third of Boolean assertions in the Google code base are negative ones), and
+are fine with making the predicate slower in the success case, you can supply a
+success message:
+
+```c++
+testing::AssertionResult IsEven(int n) {
+  if ((n % 2) == 0)
+    return testing::AssertionSuccess() &lt;&lt; n &lt;&lt; &quot; is even&quot;;
+  else
+    return testing::AssertionFailure() &lt;&lt; n &lt;&lt; &quot; is odd&quot;;
+}
+<span class="sb">```</span>
+
+<span class="sb">Then the statement `EXPECT_FALSE(IsEven(Fib(6)))` will print</span>
+
+<span class="sb">```none</span>
+<span class="sb">  Value of: IsEven(Fib(6))</span>
+<span class="sb">     Actual: true (8 is even)</span>
+<span class="sb">  Expected: false</span>
+<span class="sb">```</span>
+
+<span class="gu">#### Using a Predicate-Formatter</span>
+
+If you find the default message generated by
+[<span class="sb">`EXPECT_PRED*`</span>](reference/assertions.md#EXPECT_PRED) and
+[<span class="sb">`EXPECT_TRUE`</span>](reference/assertions.md#EXPECT_TRUE) unsatisfactory, or some
+arguments to your predicate do not support streaming to <span class="sb">`ostream`</span>, you can
+instead use <span class="ge">*predicate-formatter assertions*</span> to <span class="ge">*fully*</span> customize how the
+message is formatted. See
+[<span class="sb">`EXPECT_PRED_FORMAT*`</span>](reference/assertions.md#EXPECT_PRED_FORMAT) in the
+Assertions Reference for details.
+
+<span class="gu">### Floating-Point Comparison</span>
+
+See [<span class="nt">Floating-Point Comparison</span>](<span class="na">reference/assertions.md#floating-point</span>) in the
+Assertions Reference.
+
+<span class="gu">#### Floating-Point Predicate-Format Functions</span>
+
+Some floating-point operations are useful, but not that often used. In order to
+avoid an explosion of new macros, we provide them as predicate-format functions
+that can be used in the predicate assertion macro
+[<span class="sb">`EXPECT_PRED_FORMAT2`</span>](reference/assertions.md#EXPECT_PRED_FORMAT), for
+example:
+
+```c++
+using ::testing::FloatLE;
+using ::testing::DoubleLE;
+...
+EXPECT_PRED_FORMAT2(FloatLE, val1, val2);
+EXPECT_PRED_FORMAT2(DoubleLE, val1, val2);
+<span class="sb">```</span>
+
+<span class="sb">The above code verifies that `val1` is less than, or approximately equal to,</span>
+<span class="sb">`val2`.</span>
+
+<span class="sb">### Asserting Using gMock Matchers</span>
+
+<span class="sb">See [`EXPECT_THAT`](reference/assertions.md#EXPECT_THAT) in the Assertions</span>
+<span class="sb">Reference.</span>
+
+<span class="sb">### More String Assertions</span>
+
+<span class="sb">(Please read the [previous](#asserting-using-gmock-matchers) section first if</span>
+<span class="sb">you haven&#39;t.)</span>
+
+<span class="sb">You can use the gMock [string matchers](reference/matchers.md#string-matchers)</span>
+<span class="sb">with [`EXPECT_THAT`](reference/assertions.md#EXPECT_THAT) to do more string</span>
+<span class="sb">comparison tricks (sub-string, prefix, suffix, regular expression, and etc). For</span>
+<span class="sb">example,</span>
+
+<span class="sb">```c++</span>
+<span class="sb">using ::testing::HasSubstr;</span>
+<span class="sb">using ::testing::MatchesRegex;</span>
+<span class="sb">...</span>
+<span class="sb">  ASSERT_THAT(foo_string, HasSubstr(&quot;needle&quot;));</span>
+<span class="sb">  EXPECT_THAT(bar_string, MatchesRegex(&quot;\\w*\\d+&quot;));</span>
+<span class="sb">```</span>
+
+<span class="gu">### Windows HRESULT assertions</span>
+
+See [<span class="nt">Windows HRESULT Assertions</span>](<span class="na">reference/assertions.md#HRESULT</span>) in the
+Assertions Reference.
+
+<span class="gu">### Type Assertions</span>
+
+You can call the function
+
+```c++
+::testing::StaticAssertTypeEq&lt;T1, T2&gt;();
+<span class="sb">```</span>
+
+<span class="sb">to assert that types `T1` and `T2` are the same. The function does nothing if</span>
+<span class="sb">the assertion is satisfied. If the types are different, the function call will</span>
+<span class="sb">fail to compile, the compiler error message will say that `T1 and T2 are not the</span>
+<span class="sb">same type` and most likely (depending on the compiler) show you the actual</span>
+<span class="sb">values of `T1` and `T2`. This is mainly useful inside template code.</span>
+
+<span class="sb">**Caveat**: When used inside a member function of a class template or a function</span>
+<span class="sb">template, `StaticAssertTypeEq&lt;T1, T2&gt;()` is effective only if the function is</span>
+<span class="sb">instantiated. For example, given:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">template &lt;typename T&gt; class Foo {</span>
+<span class="sb"> public:</span>
+<span class="sb">  void Bar() { testing::StaticAssertTypeEq&lt;int, T&gt;(); }</span>
+<span class="sb">};</span>
+<span class="sb">```</span>
+
+the code:
+
+```c++
+void Test1() { Foo&lt;bool&gt; foo; }
+<span class="sb">```</span>
+
+<span class="sb">will not generate a compiler error, as `Foo&lt;bool&gt;::Bar()` is never actually</span>
+<span class="sb">instantiated. Instead, you need:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">void Test2() { Foo&lt;bool&gt; foo; foo.Bar(); }</span>
+<span class="sb">```</span>
+
+to cause a compiler error.
+
+<span class="gu">### Assertion Placement</span>
+
+You can use assertions in any C++ function. In particular, it doesn&#39;t have to be
+a method of the test fixture class. The one constraint is that assertions that
+generate a fatal failure (<span class="sb">`FAIL*`</span> and <span class="sb">`ASSERT_*`</span>) can only be used in
+void-returning functions. This is a consequence of Google&#39;s not using
+exceptions. By placing it in a non-void function you&#39;ll get a confusing compile
+error like <span class="sb">`&quot;error: void value not ignored as it ought to be&quot;`</span> or `&quot;cannot
+initialize return object of type &#39;bool&#39; with an rvalue of type &#39;void&#39;&quot;` or
+<span class="sb">`&quot;error: no viable conversion from &#39;void&#39; to &#39;string&#39;&quot;`</span>.
+
+If you need to use fatal assertions in a function that returns non-void, one
+option is to make the function return the value in an out parameter instead. For
+example, you can rewrite <span class="sb">`T2 Foo(T1 x)`</span> to <span class="sb">`void Foo(T1 x, T2* result)`</span>. You
+need to make sure that <span class="sb">`*result`</span> contains some sensible value even when the
+function returns prematurely. As the function now returns <span class="sb">`void`</span>, you can use
+any assertion inside of it.
+
+If changing the function&#39;s type is not an option, you should just use assertions
+that generate non-fatal failures, such as <span class="sb">`ADD_FAILURE*`</span> and <span class="sb">`EXPECT_*`</span>.
+
+{: .callout .note}
+NOTE: Constructors and destructors are not considered void-returning functions,
+according to the C++ language specification, and so you may not use fatal
+assertions in them; you&#39;ll get a compilation error if you try. Instead, either
+call <span class="sb">`abort`</span> and crash the entire test executable, or put the fatal assertion in
+a <span class="sb">`SetUp`</span>/<span class="sb">`TearDown`</span> function; see
+[<span class="nt">constructor/destructor vs. `SetUp`/`TearDown`</span>](<span class="na">faq.md#CtorVsSetUp</span>)
+
+{: .callout .warning}
+WARNING: A fatal assertion in a helper function (private void-returning method)
+called from a constructor or destructor does not terminate the current test, as
+your intuition might suggest: it merely returns from the constructor or
+destructor early, possibly leaving your object in a partially-constructed or
+partially-destructed state! You almost certainly want to <span class="sb">`abort`</span> or use
+<span class="sb">`SetUp`</span>/<span class="sb">`TearDown`</span> instead.
+
+<span class="gu">## Skipping test execution</span>
+
+Related to the assertions <span class="sb">`SUCCEED()`</span> and <span class="sb">`FAIL()`</span>, you can prevent further test
+execution at runtime with the <span class="sb">`GTEST_SKIP()`</span> macro. This is useful when you need
+to check for preconditions of the system under test during runtime and skip
+tests in a meaningful way.
+
+<span class="sb">`GTEST_SKIP()`</span> can be used in individual test cases or in the <span class="sb">`SetUp()`</span> methods
+of classes derived from either <span class="sb">`::testing::Environment`</span> or <span class="sb">`::testing::Test`</span>.
+For example:
+
+```c++
+TEST(SkipTest, DoesSkip) {
+  GTEST_SKIP() &lt;&lt; &quot;Skipping single test&quot;;
+  FAIL();  // Won&#39;t fail; it won&#39;t be executed
+}
+
+class SkipFixture : public ::testing::Test {
+ protected:
+  void SetUp() override {
+    GTEST_SKIP() &lt;&lt; &quot;Skipping all tests for this fixture&quot;;
+  }
+};
+
+// Tests for SkipFixture won&#39;t be executed.
+TEST_F(SkipFixture, SkipsOneTest) {
+  FAIL();  // Won&#39;t fail; it won&#39;t be executed
+}
+<span class="sb">```</span>
+
+<span class="sb">As with assertion macros, you can stream a custom message into `GTEST_SKIP()`.</span>
+
+<span class="sb">## Teaching GoogleTest How to Print Your Values</span>
+
+<span class="sb">When a test assertion such as `EXPECT_EQ` fails, GoogleTest prints the argument</span>
+<span class="sb">values to help you debug. It does this using a user-extensible value printer.</span>
+
+<span class="sb">This printer knows how to print built-in C++ types, native arrays, STL</span>
+<span class="sb">containers, and any type that supports the `&lt;&lt;` operator. For other types, it</span>
+<span class="sb">prints the raw bytes in the value and hopes that you the user can figure it out.</span>
+
+<span class="sb">As mentioned earlier, the printer is *extensible*. That means you can teach it</span>
+<span class="sb">to do a better job at printing your particular type than to dump the bytes. To</span>
+<span class="sb">do that, define an `AbslStringify()` overload as a `friend` function template</span>
+<span class="sb">for your type:</span>
+
+<span class="sb">```cpp</span>
+<span class="sb">namespace foo {</span>
+
+<span class="sb">class Point {  // We want GoogleTest to be able to print instances of this.</span>
+<span class="sb">  ...</span>
+<span class="sb">  // Provide a friend overload.</span>
+<span class="sb">  template &lt;typename Sink&gt;</span>
+<span class="sb">  friend void AbslStringify(Sink&amp; sink, const Point&amp; point) {</span>
+<span class="sb">    absl::Format(&amp;sink, &quot;(%d, %d)&quot;, point.x, point.y);</span>
+<span class="sb">  }</span>
+
+<span class="sb">  int x;</span>
+<span class="sb">  int y;</span>
+<span class="sb">};</span>
+
+<span class="sb">// If you can&#39;t declare the function in the class it&#39;s important that the</span>
+<span class="sb">// AbslStringify overload is defined in the SAME namespace that defines Point.</span>
+<span class="sb">// C++&#39;s look-up rules rely on that.</span>
+<span class="sb">enum class EnumWithStringify { kMany = 0, kChoices = 1 };</span>
+
+<span class="sb">template &lt;typename Sink&gt;</span>
+<span class="sb">void AbslStringify(Sink&amp; sink, EnumWithStringify e) {</span>
+<span class="sb">  absl::Format(&amp;sink, &quot;%s&quot;, e == EnumWithStringify::kMany ? &quot;Many&quot; : &quot;Choices&quot;);</span>
+<span class="sb">}</span>
+
+<span class="sb">}  // namespace foo</span>
+<span class="sb">```</span>
+
+{: .callout .note}
+Note: <span class="sb">`AbslStringify()`</span> utilizes a generic &quot;sink&quot; buffer to construct its
+string. For more information about supported operations on <span class="sb">`AbslStringify()`</span>&#39;s
+sink, see go/abslstringify.
+
+<span class="sb">`AbslStringify()`</span> can also use <span class="sb">`absl::StrFormat`</span>&#39;s catch-all <span class="sb">`%v`</span> type specifier
+within its own format strings to perform type deduction. <span class="sb">`Point`</span> above could be
+formatted as <span class="sb">`&quot;(%v, %v)&quot;`</span> for example, and deduce the <span class="sb">`int`</span> values as <span class="sb">`%d`</span>.
+
+Sometimes, <span class="sb">`AbslStringify()`</span> might not be an option: your team may wish to print
+types with extra debugging information for testing purposes only. If so, you can
+instead define a <span class="sb">`PrintTo()`</span> function like this:
+
+```c++
+<span class="gh">#include &lt;ostream&gt;</span>
+
+namespace foo {
+
+class Point {
+  ...
+  friend void PrintTo(const Point&amp; point, std::ostream* os) {
+    *os &lt;&lt; &quot;(&quot; &lt;&lt; point.x &lt;&lt; &quot;,&quot; &lt;&lt; point.y &lt;&lt; &quot;)&quot;;
+  }
+
+  int x;
+  int y;
+};
+
+// If you can&#39;t declare the function in the class it&#39;s important that PrintTo()
+// is defined in the SAME namespace that defines Point.  C++&#39;s look-up rules
+// rely on that.
+void PrintTo(const Point&amp; point, std::ostream* os) {
+    *os &lt;&lt; &quot;(&quot; &lt;&lt; point.x &lt;&lt; &quot;,&quot; &lt;&lt; point.y &lt;&lt; &quot;)&quot;;
+}
+
+}  // namespace foo
+<span class="sb">```</span>
+
+<span class="sb">If you have defined both `AbslStringify()` and `PrintTo()`, the latter will be</span>
+<span class="sb">used by GoogleTest. This allows you to customize how the value appears in</span>
+<span class="sb">GoogleTest&#39;s output without affecting code that relies on the behavior of</span>
+<span class="sb">`AbslStringify()`.</span>
+
+<span class="sb">If you have an existing `&lt;&lt;` operator and would like to define an</span>
+<span class="sb">`AbslStringify()`, the latter will be used for GoogleTest printing.</span>
+
+<span class="sb">If you want to print a value `x` using GoogleTest&#39;s value printer yourself, just</span>
+<span class="sb">call `::testing::PrintToString(x)`, which returns an `std::string`:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">vector&lt;pair&lt;Point, int&gt; &gt; point_ints = GetPointIntVector();</span>
+
+<span class="sb">EXPECT_TRUE(IsCorrectPointIntVector(point_ints))</span>
+<span class="sb">    &lt;&lt; &quot;point_ints = &quot; &lt;&lt; testing::PrintToString(point_ints);</span>
+<span class="sb">```</span>
+
+For more details regarding <span class="sb">`AbslStringify()`</span> and its integration with other
+libraries, see go/abslstringify.
+
+<span class="gu">## Regular Expression Syntax</span>
+
+When built with Bazel and using Abseil, GoogleTest uses the
+[<span class="nt">RE2</span>](<span class="na">https://github.com/google/re2/wiki/Syntax</span>) syntax. Otherwise, for POSIX
+systems (Linux, Cygwin, Mac), GoogleTest uses the
+[<span class="nt">POSIX extended regular expression</span>](<span class="na">https://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html#tag_09_04</span>)
+syntax. To learn about POSIX syntax, you may want to read this
+[<span class="nt">Wikipedia entry</span>](<span class="na">https://en.wikipedia.org/wiki/Regular_expression#POSIX_extended</span>).
+
+On Windows, GoogleTest uses its own simple regular expression implementation. It
+lacks many features. For example, we don&#39;t support union (<span class="sb">`&quot;x|y&quot;`</span>), grouping
+(<span class="sb">`&quot;(xy)&quot;`</span>), brackets (<span class="sb">`&quot;[xy]&quot;`</span>), and repetition count (<span class="sb">`&quot;x{5,7}&quot;`</span>), among
+others. Below is what we do support (<span class="sb">`A`</span> denotes a literal character, period
+(<span class="sb">`.`</span>), or a single <span class="sb">`\\ `</span> escape sequence; <span class="sb">`x`</span> and <span class="sb">`y`</span> denote regular
+expressions.):
+
+Expression | Meaning
+---------- | --------------------------------------------------------------
+<span class="sb">`c`</span>        | matches any literal character <span class="sb">`c`</span>
+<span class="sb">`\\d`</span>      | matches any decimal digit
+<span class="sb">`\\D`</span>      | matches any character that&#39;s not a decimal digit
+<span class="sb">`\\f`</span>      | matches <span class="sb">`\f`</span>
+<span class="sb">`\\n`</span>      | matches <span class="sb">`\n`</span>
+<span class="sb">`\\r`</span>      | matches <span class="sb">`\r`</span>
+<span class="sb">`\\s`</span>      | matches any ASCII whitespace, including <span class="sb">`\n`</span>
+<span class="sb">`\\S`</span>      | matches any character that&#39;s not a whitespace
+<span class="sb">`\\t`</span>      | matches <span class="sb">`\t`</span>
+<span class="sb">`\\v`</span>      | matches <span class="sb">`\v`</span>
+<span class="sb">`\\w`</span>      | matches any letter, <span class="sb">`_`</span>, or decimal digit
+<span class="sb">`\\W`</span>      | matches any character that <span class="sb">`\\w`</span> doesn&#39;t match
+<span class="sb">`\\c`</span>      | matches any literal character <span class="sb">`c`</span>, which must be a punctuation
+<span class="sb">`.`</span>        | matches any single character except <span class="sb">`\n`</span>
+<span class="sb">`A?`</span>       | matches 0 or 1 occurrences of <span class="sb">`A`</span>
+<span class="sb">`A*`</span>       | matches 0 or many occurrences of <span class="sb">`A`</span>
+<span class="sb">`A+`</span>       | matches 1 or many occurrences of <span class="sb">`A`</span>
+<span class="sb">`^`</span>        | matches the beginning of a string (not that of each line)
+<span class="sb">`$`</span>        | matches the end of a string (not that of each line)
+<span class="sb">`xy`</span>       | matches <span class="sb">`x`</span> followed by <span class="sb">`y`</span>
+
+To help you determine which capability is available on your system, GoogleTest
+defines macros to govern which regular expression it is using. The macros are:
+<span class="sb">`GTEST_USES_SIMPLE_RE=1`</span> or <span class="sb">`GTEST_USES_POSIX_RE=1`</span>. If you want your death
+tests to work in all cases, you can either <span class="sb">`#if`</span> on these macros or use the more
+limited syntax only.
+
+<span class="gu">## Death Tests</span>
+
+In many applications, there are assertions that can cause application failure if
+a condition is not met. These consistency checks, which ensure that the program
+is in a known good state, are there to fail at the earliest possible time after
+some program state is corrupted. If the assertion checks the wrong condition,
+then the program may proceed in an erroneous state, which could lead to memory
+corruption, security holes, or worse. Hence it is vitally important to test that
+such assertion statements work as expected.
+
+Since these precondition checks cause the processes to die, we call such tests
+<span class="ge">*death tests*</span>. More generally, any test that checks that a program terminates
+(except by throwing an exception) in an expected fashion is also a death test.
+
+Note that if a piece of code throws an exception, we don&#39;t consider it &quot;death&quot;
+for the purpose of death tests, as the caller of the code could catch the
+exception and avoid the crash. If you want to verify exceptions thrown by your
+code, see [<span class="nt">Exception Assertions</span>](<span class="na">#ExceptionAssertions</span>).
+
+If you want to test <span class="sb">`EXPECT_*()/ASSERT_*()`</span> failures in your test code, see
+[<span class="nt">&quot;Catching&quot; Failures</span>](<span class="na">#catching-failures</span>).
+
+<span class="gu">### How to Write a Death Test</span>
+
+GoogleTest provides assertion macros to support death tests. See
+[<span class="nt">Death Assertions</span>](<span class="na">reference/assertions.md#death</span>) in the Assertions Reference
+for details.
+
+To write a death test, simply use one of the macros inside your test function.
+For example,
+
+```c++
+TEST(MyDeathTest, Foo) {
+  // This death test uses a compound statement.
+  ASSERT_DEATH({
+    int n = 5;
+    Foo(&amp;n);
+  }, &quot;Error on line .* of Foo()&quot;);
+}
+
+TEST(MyDeathTest, NormalExit) {
+  EXPECT_EXIT(NormalExit(), testing::ExitedWithCode(0), &quot;Success&quot;);
+}
+
+TEST(MyDeathTest, KillProcess) {
+  EXPECT_EXIT(KillProcess(), testing::KilledBySignal(SIGKILL),
+              &quot;Sending myself unblockable signal&quot;);
+}
+<span class="sb">```</span>
+
+<span class="sb">verifies that:</span>
+
+<span class="sb">*   calling `Foo(5)` causes the process to die with the given error message,</span>
+<span class="sb">*   calling `NormalExit()` causes the process to print `&quot;Success&quot;` to stderr and</span>
+<span class="sb">    exit with exit code 0, and</span>
+<span class="sb">*   calling `KillProcess()` kills the process with signal `SIGKILL`.</span>
+
+<span class="sb">{: .callout .warning}</span>
+<span class="sb">Warning: If your death test contains mocks and is expecting a specific exit</span>
+<span class="sb">code, then you must allow the mock objects to be leaked via `Mock::AllowLeak`.</span>
+<span class="sb">This is because the mock leak detector will exit with its own error code if it</span>
+<span class="sb">detects a leak.</span>
+
+<span class="sb">The test function body may contain other assertions and statements as well, if</span>
+<span class="sb">necessary.</span>
+
+<span class="sb">Note that a death test only cares about three things:</span>
+
+<span class="sb">1.  does `statement` abort or exit the process?</span>
+<span class="sb">2.  (in the case of `ASSERT_EXIT` and `EXPECT_EXIT`) does the exit status</span>
+<span class="sb">    satisfy `predicate`? Or (in the case of `ASSERT_DEATH` and `EXPECT_DEATH`)</span>
+<span class="sb">    is the exit status non-zero? And</span>
+<span class="sb">3.  does the stderr output match `matcher`?</span>
+
+<span class="sb">In particular, if `statement` generates an `ASSERT_*` or `EXPECT_*` failure, it</span>
+<span class="sb">will **not** cause the death test to fail, as GoogleTest assertions don&#39;t abort</span>
+<span class="sb">the process.</span>
+
+<span class="sb">### Death Test Naming</span>
+
+<span class="sb">{: .callout .important}</span>
+<span class="sb">IMPORTANT: We strongly recommend you to follow the convention of naming your</span>
+<span class="sb">**test suite** (not test) `*DeathTest` when it contains a death test, as</span>
+<span class="sb">demonstrated in the above example. The</span>
+<span class="sb">[Death Tests And Threads](#death-tests-and-threads) section below explains why.</span>
+
+<span class="sb">If a test fixture class is shared by normal tests and death tests, you can use</span>
+<span class="sb">`using` or `typedef` to introduce an alias for the fixture class and avoid</span>
+<span class="sb">duplicating its code:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">class FooTest : public testing::Test { ... };</span>
+
+<span class="sb">using FooDeathTest = FooTest;</span>
+
+<span class="sb">TEST_F(FooTest, DoesThis) {</span>
+<span class="sb">  // normal test</span>
+<span class="sb">}</span>
+
+<span class="sb">TEST_F(FooDeathTest, DoesThat) {</span>
+<span class="sb">  // death test</span>
+<span class="sb">}</span>
+<span class="sb">```</span>
+
+<span class="gu">### How It Works</span>
+
+See [<span class="nt">Death Assertions</span>](<span class="na">reference/assertions.md#death</span>) in the Assertions
+Reference.
+
+<span class="gu">### Death Tests And Threads</span>
+
+The reason for the two death test styles has to do with thread safety. Due to
+well-known problems with forking in the presence of threads, death tests should
+be run in a single-threaded context. Sometimes, however, it isn&#39;t feasible to
+arrange that kind of environment. For example, statically-initialized modules
+may start threads before main is ever reached. Once threads have been created,
+it may be difficult or impossible to clean them up.
+
+GoogleTest has three features intended to raise awareness of threading issues.
+
+<span class="k">1.</span>  A warning is emitted if multiple threads are running when a death test is
+    encountered.
+<span class="k">2.</span>  Test suites with a name ending in &quot;DeathTest&quot; are run before all other
+    tests.
+<span class="k">3.</span>  It uses <span class="sb">`clone()`</span> instead of <span class="sb">`fork()`</span> to spawn the child process on Linux
+    (<span class="sb">`clone()`</span> is not available on Cygwin and Mac), as <span class="sb">`fork()`</span> is more likely
+    to cause the child to hang when the parent process has multiple threads.
+
+It&#39;s perfectly fine to create threads inside a death test statement; they are
+executed in a separate process and cannot affect the parent.
+
+<span class="gu">### Death Test Styles</span>
+
+The &quot;threadsafe&quot; death test style was introduced in order to help mitigate the
+risks of testing in a possibly multithreaded environment. It trades increased
+test execution time (potentially dramatically so) for improved thread safety.
+
+The automated testing framework does not set the style flag. You can choose a
+particular style of death tests by setting the flag programmatically:
+
+```c++
+GTEST_FLAG_SET(death_test_style, &quot;threadsafe&quot;);
+<span class="sb">```</span>
+
+<span class="sb">You can do this in `main()` to set the style for all death tests in the binary,</span>
+<span class="sb">or in individual tests. Recall that flags are saved before running each test and</span>
+<span class="sb">restored afterwards, so you need not do that yourself. For example:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">int main(int argc, char** argv) {</span>
+<span class="sb">  testing::InitGoogleTest(&amp;argc, argv);</span>
+<span class="sb">  GTEST_FLAG_SET(death_test_style, &quot;fast&quot;);</span>
+<span class="sb">  return RUN_ALL_TESTS();</span>
+<span class="sb">}</span>
+
+<span class="sb">TEST(MyDeathTest, TestOne) {</span>
+<span class="sb">  GTEST_FLAG_SET(death_test_style, &quot;threadsafe&quot;);</span>
+<span class="sb">  // This test is run in the &quot;threadsafe&quot; style:</span>
+<span class="sb">  ASSERT_DEATH(ThisShouldDie(), &quot;&quot;);</span>
+<span class="sb">}</span>
+
+<span class="sb">TEST(MyDeathTest, TestTwo) {</span>
+<span class="sb">  // This test is run in the &quot;fast&quot; style:</span>
+<span class="sb">  ASSERT_DEATH(ThisShouldDie(), &quot;&quot;);</span>
+<span class="sb">}</span>
+<span class="sb">```</span>
+
+<span class="gu">### Caveats</span>
+
+The <span class="sb">`statement`</span> argument of <span class="sb">`ASSERT_EXIT()`</span> can be any valid C++ statement. If
+it leaves the current function via a <span class="sb">`return`</span> statement or by throwing an
+exception, the death test is considered to have failed. Some GoogleTest macros
+may return from the current function (e.g. <span class="sb">`ASSERT_TRUE()`</span>), so be sure to avoid
+them in <span class="sb">`statement`</span>.
+
+Since <span class="sb">`statement`</span> runs in the child process, any in-memory side effect (e.g.
+modifying a variable, releasing memory, etc) it causes will <span class="ge">*not*</span> be observable
+in the parent process. In particular, if you release memory in a death test,
+your program will fail the heap check as the parent process will never see the
+memory reclaimed. To solve this problem, you can
+
+<span class="k">1.</span>  try not to free memory in a death test;
+<span class="k">2.</span>  free the memory again in the parent process; or
+<span class="k">3.</span>  do not use the heap checker in your program.
+
+Due to an implementation detail, you cannot place multiple death test assertions
+on the same line; otherwise, compilation will fail with an unobvious error
+message.
+
+Despite the improved thread safety afforded by the &quot;threadsafe&quot; style of death
+test, thread problems such as deadlock are still possible in the presence of
+handlers registered with <span class="sb">`pthread_atfork(3)`</span>.
+
+<span class="gu">## Using Assertions in Sub-routines</span>
+
+{: .callout .note}
+Note: If you want to put a series of test assertions in a subroutine to check
+for a complex condition, consider using
+[<span class="nt">a custom GMock matcher</span>](<span class="na">gmock_cook_book.md#NewMatchers</span>) instead. This lets you
+provide a more readable error message in case of failure and avoid all of the
+issues described below.
+
+<span class="gu">### Adding Traces to Assertions</span>
+
+If a test sub-routine is called from several places, when an assertion inside it
+fails, it can be hard to tell which invocation of the sub-routine the failure is
+from. You can alleviate this problem using extra logging or custom failure
+messages, but that usually clutters up your tests. A better solution is to use
+the <span class="sb">`SCOPED_TRACE`</span> macro or the <span class="sb">`ScopedTrace`</span> utility:
+
+```c++
+SCOPED_TRACE(message);
+<span class="sb">```</span>
+
+<span class="sb">```c++</span>
+<span class="sb">ScopedTrace trace(&quot;file_path&quot;, line_number, message);</span>
+<span class="sb">```</span>
+
+where <span class="sb">`message`</span> can be anything streamable to <span class="sb">`std::ostream`</span>. <span class="sb">`SCOPED_TRACE`</span>
+macro will cause the current file name, line number, and the given message to be
+added in every failure message. <span class="sb">`ScopedTrace`</span> accepts explicit file name and
+line number in arguments, which is useful for writing test helpers. The effect
+will be undone when the control leaves the current lexical scope.
+
+For example,
+
+```c++
+10: void Sub1(int n) {
+11:   EXPECT_EQ(Bar(n), 1);
+12:   EXPECT_EQ(Bar(n + 1), 2);
+13: }
+14:
+15: TEST(FooTest, Bar) {
+16:   {
+17:     SCOPED_TRACE(&quot;A&quot;);  // This trace point will be included in
+18:                         // every failure in this scope.
+19:     Sub1(1);
+20:   }
+21:   // Now it won&#39;t.
+22:   Sub1(9);
+23: }
+<span class="sb">```</span>
+
+<span class="sb">could result in messages like these:</span>
+
+<span class="sb">```none</span>
+<span class="sb">path/to/foo_test.cc:11: Failure</span>
+<span class="sb">Value of: Bar(n)</span>
+<span class="sb">Expected: 1</span>
+<span class="sb">  Actual: 2</span>
+<span class="sb">Google Test trace:</span>
+<span class="sb">path/to/foo_test.cc:17: A</span>
+
+<span class="sb">path/to/foo_test.cc:12: Failure</span>
+<span class="sb">Value of: Bar(n + 1)</span>
+<span class="sb">Expected: 2</span>
+<span class="sb">  Actual: 3</span>
+<span class="sb">```</span>
+
+Without the trace, it would&#39;ve been difficult to know which invocation of
+<span class="sb">`Sub1()`</span> the two failures come from respectively. (You could add an extra
+message to each assertion in <span class="sb">`Sub1()`</span> to indicate the value of <span class="sb">`n`</span>, but that&#39;s
+tedious.)
+
+Some tips on using <span class="sb">`SCOPED_TRACE`</span>:
+
+<span class="k">1.</span>  With a suitable message, it&#39;s often enough to use <span class="sb">`SCOPED_TRACE`</span> at the
+    beginning of a sub-routine, instead of at each call site.
+<span class="k">2.</span>  When calling sub-routines inside a loop, make the loop iterator part of the
+    message in <span class="sb">`SCOPED_TRACE`</span> such that you can know which iteration the failure
+    is from.
+<span class="k">3.</span>  Sometimes the line number of the trace point is enough for identifying the
+    particular invocation of a sub-routine. In this case, you don&#39;t have to
+    choose a unique message for <span class="sb">`SCOPED_TRACE`</span>. You can simply use <span class="sb">`&quot;&quot;`</span>.
+<span class="k">4.</span>  You can use <span class="sb">`SCOPED_TRACE`</span> in an inner scope when there is one in the outer
+    scope. In this case, all active trace points will be included in the failure
+    messages, in reverse order they are encountered.
+<span class="k">5.</span>  The trace dump is clickable in Emacs - hit <span class="sb">`return`</span> on a line number and
+    you&#39;ll be taken to that line in the source file!
+
+<span class="gu">### Propagating Fatal Failures</span>
+
+A common pitfall when using <span class="sb">`ASSERT_*`</span> and <span class="sb">`FAIL*`</span> is not understanding that
+when they fail they only abort the <span class="ge">*current function*</span>, not the entire test. For
+example, the following test will segfault:
+
+```c++
+void Subroutine() {
+  // Generates a fatal failure and aborts the current function.
+  ASSERT_EQ(1, 2);
+
+  // The following won&#39;t be executed.
+  ...
+}
+
+TEST(FooTest, Bar) {
+  Subroutine();  // The intended behavior is for the fatal failure
+                 // in Subroutine() to abort the entire test.
+
+  // The actual behavior: the function goes on after Subroutine() returns.
+  int* p = nullptr;
+  *p = 3;  // Segfault!
+}
+<span class="sb">```</span>
+
+<span class="sb">To alleviate this, GoogleTest provides three different solutions. You could use</span>
+<span class="sb">either exceptions, the `(ASSERT|EXPECT)_NO_FATAL_FAILURE` assertions or the</span>
+<span class="sb">`HasFatalFailure()` function. They are described in the following two</span>
+<span class="sb">subsections.</span>
+
+<span class="sb">#### Asserting on Subroutines with an exception</span>
+
+<span class="sb">The following code can turn ASSERT-failure into an exception:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">class ThrowListener : public testing::EmptyTestEventListener {</span>
+<span class="sb">  void OnTestPartResult(const testing::TestPartResult&amp; result) override {</span>
+<span class="sb">    if (result.type() == testing::TestPartResult::kFatalFailure) {</span>
+<span class="sb">      throw testing::AssertionException(result);</span>
+<span class="sb">    }</span>
+<span class="sb">  }</span>
+<span class="sb">};</span>
+<span class="sb">int main(int argc, char** argv) {</span>
+<span class="sb">  ...</span>
+<span class="sb">  testing::UnitTest::GetInstance()-&gt;listeners().Append(new ThrowListener);</span>
+<span class="sb">  return RUN_ALL_TESTS();</span>
+<span class="sb">}</span>
+<span class="sb">```</span>
+
+This listener should be added after other listeners if you have any, otherwise
+they won&#39;t see failed <span class="sb">`OnTestPartResult`</span>.
+
+<span class="gu">#### Asserting on Subroutines</span>
+
+As shown above, if your test calls a subroutine that has an <span class="sb">`ASSERT_*`</span> failure
+in it, the test will continue after the subroutine returns. This may not be what
+you want.
+
+Often people want fatal failures to propagate like exceptions. For that
+GoogleTest offers the following macros:
+
+Fatal assertion                       | Nonfatal assertion                    | Verifies
+------------------------------------- | ------------------------------------- | --------
+<span class="sb">`ASSERT_NO_FATAL_FAILURE(statement);`</span> | <span class="sb">`EXPECT_NO_FATAL_FAILURE(statement);`</span> | <span class="sb">`statement`</span> doesn&#39;t generate any new fatal failures in the current thread.
+
+Only failures in the thread that executes the assertion are checked to determine
+the result of this type of assertions. If <span class="sb">`statement`</span> creates new threads,
+failures in these threads are ignored.
+
+Examples:
+
+```c++
+ASSERT_NO_FATAL_FAILURE(Foo());
+
+int i;
+EXPECT_NO_FATAL_FAILURE({
+  i = Bar();
+});
+<span class="sb">```</span>
+
+<span class="sb">Assertions from multiple threads are currently not supported on Windows.</span>
+
+<span class="sb">#### Checking for Failures in the Current Test</span>
+
+<span class="sb">`HasFatalFailure()` in the `::testing::Test` class returns `true` if an</span>
+<span class="sb">assertion in the current test has suffered a fatal failure. This allows</span>
+<span class="sb">functions to catch fatal failures in a sub-routine and return early.</span>
+
+<span class="sb">```c++</span>
+<span class="sb">class Test {</span>
+<span class="sb"> public:</span>
+<span class="sb">  ...</span>
+<span class="sb">  static bool HasFatalFailure();</span>
+<span class="sb">};</span>
+<span class="sb">```</span>
+
+The typical usage, which basically simulates the behavior of a thrown exception,
+is:
+
+```c++
+TEST(FooTest, Bar) {
+  Subroutine();
+  // Aborts if Subroutine() had a fatal failure.
+  if (HasFatalFailure()) return;
+
+  // The following won&#39;t be executed.
+  ...
+}
+<span class="sb">```</span>
+
+<span class="sb">If `HasFatalFailure()` is used outside of `TEST()` , `TEST_F()` , or a test</span>
+<span class="sb">fixture, you must add the `::testing::Test::` prefix, as in:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">if (testing::Test::HasFatalFailure()) return;</span>
+<span class="sb">```</span>
+
+Similarly, <span class="sb">`HasNonfatalFailure()`</span> returns <span class="sb">`true`</span> if the current test has at
+least one non-fatal failure, and <span class="sb">`HasFailure()`</span> returns <span class="sb">`true`</span> if the current
+test has at least one failure of either kind.
+
+<span class="gu">## Logging Additional Information</span>
+
+In your test code, you can call <span class="sb">`RecordProperty(&quot;key&quot;, value)`</span> to log additional
+information, where <span class="sb">`value`</span> can be either a string or an <span class="sb">`int`</span>. The <span class="ge">*last*</span> value
+recorded for a key will be emitted to the
+[<span class="nt">XML output</span>](<span class="na">#generating-an-xml-report</span>) if you specify one. For example, the
+test
+
+```c++
+TEST_F(WidgetUsageTest, MinAndMaxWidgets) {
+  RecordProperty(&quot;MaximumWidgets&quot;, ComputeMaxUsage());
+  RecordProperty(&quot;MinimumWidgets&quot;, ComputeMinUsage());
+}
+<span class="sb">```</span>
+
+<span class="sb">will output XML like this:</span>
+
+<span class="sb">```xml</span>
+<span class="sb">  ...</span>
+<span class="sb">    &lt;testcase name=&quot;MinAndMaxWidgets&quot; file=&quot;test.cpp&quot; line=&quot;1&quot; status=&quot;run&quot; time=&quot;0.006&quot; classname=&quot;WidgetUsageTest&quot; MaximumWidgets=&quot;12&quot; MinimumWidgets=&quot;9&quot; /&gt;</span>
+<span class="sb">  ...</span>
+<span class="sb">```</span>
+
+{: .callout .note}
+<span class="k">&gt; </span><span class="ge">NOTE:</span>
+<span class="k">&gt;</span>
+<span class="ge">&gt; *   `RecordProperty()` is a static member of the `Test` class. Therefore it</span>
+<span class="k">&gt; </span><span class="ge">    needs to be prefixed with `::testing::Test::` if used outside of the</span>
+<span class="k">&gt; </span><span class="ge">    `TEST` body and the test fixture class.</span>
+<span class="k">&gt; </span><span class="ge">*   *`key`* must be a valid XML attribute name, and cannot conflict with the</span>
+<span class="k">&gt; </span><span class="ge">    ones already used by GoogleTest (`name`, `status`, `time`, `classname`,</span>
+<span class="k">&gt; </span><span class="ge">    `type_param`, and `value_param`).</span>
+<span class="k">&gt; </span><span class="ge">*   Calling `RecordProperty()` outside of the lifespan of a test is allowed.</span>
+<span class="k">&gt; </span><span class="ge">    If it&#39;s called outside of a test but between a test suite&#39;s</span>
+<span class="k">&gt; </span><span class="ge">    `SetUpTestSuite()` and `TearDownTestSuite()` methods, it will be</span>
+<span class="k">&gt; </span><span class="ge">    attributed to the XML element for the test suite. If it&#39;s called outside</span>
+<span class="k">&gt; </span><span class="ge">    of all test suites (e.g. in a test environment), it will be attributed to</span>
+<span class="k">&gt; </span><span class="ge">    the top-level XML element.</span>
+
+<span class="gu">## Sharing Resources Between Tests in the Same Test Suite</span>
+
+GoogleTest creates a new test fixture object for each test in order to make
+tests independent and easier to debug. However, sometimes tests use resources
+that are expensive to set up, making the one-copy-per-test model prohibitively
+expensive.
+
+If the tests don&#39;t change the resource, there&#39;s no harm in their sharing a
+single resource copy. So, in addition to per-test set-up/tear-down, GoogleTest
+also supports per-test-suite set-up/tear-down. To use it:
+
+<span class="k">1.</span>  In your test fixture class (say <span class="sb">`FooTest`</span> ), declare as <span class="sb">`static`</span> some member
+    variables to hold the shared resources.
+<span class="k">2.</span>  Outside your test fixture class (typically just below it), define those
+    member variables, optionally giving them initial values.
+<span class="k">3.</span>  In the same test fixture class, define a public member function `static void
+    SetUpTestSuite()` (remember not to spell it as <span class="gs">**`SetupTestSuite`**</span> with a
+    small <span class="sb">`u`</span>!) to set up the shared resources and a `static void
+    TearDownTestSuite()` function to tear them down.
+
+That&#39;s it! GoogleTest automatically calls <span class="sb">`SetUpTestSuite()`</span> before running the
+<span class="ge">*first test*</span> in the <span class="sb">`FooTest`</span> test suite (i.e. before creating the first
+<span class="sb">`FooTest`</span> object), and calls <span class="sb">`TearDownTestSuite()`</span> after running the <span class="ge">*last test*</span>
+in it (i.e. after deleting the last <span class="sb">`FooTest`</span> object). In between, the tests can
+use the shared resources.
+
+Remember that the test order is undefined, so your code can&#39;t depend on a test
+preceding or following another. Also, the tests must either not modify the state
+of any shared resource, or, if they do modify the state, they must restore the
+state to its original value before passing control to the next test.
+
+Note that <span class="sb">`SetUpTestSuite()`</span> may be called multiple times for a test fixture
+class that has derived classes, so you should not expect code in the function
+body to be run only once. Also, derived classes still have access to shared
+resources defined as static members, so careful consideration is needed when
+managing shared resources to avoid memory leaks if shared resources are not
+properly cleaned up in <span class="sb">`TearDownTestSuite()`</span>.
+
+Here&#39;s an example of per-test-suite set-up and tear-down:
+
+```c++
+class FooTest : public testing::Test {
+ protected:
+  // Per-test-suite set-up.
+  // Called before the first test in this test suite.
+  // Can be omitted if not needed.
+  static void SetUpTestSuite() {
+    shared_resource_ = new ...;
+
+    // If <span class="sb">`shared_resource_`</span> is <span class="gs">**not deleted**</span> in <span class="sb">`TearDownTestSuite()`</span>,
+    // reallocation should be prevented because <span class="sb">`SetUpTestSuite()`</span> may be called
+    // in subclasses of FooTest and lead to memory leak.
+    //
+    // if (shared_resource_ == nullptr) {
+    //   shared_resource_ = new ...;
+    // }
+  }
+
+  // Per-test-suite tear-down.
+  // Called after the last test in this test suite.
+  // Can be omitted if not needed.
+  static void TearDownTestSuite() {
+    delete shared_resource_;
+    shared_resource_ = nullptr;
+  }
+
+  // You can define per-test set-up logic as usual.
+  void SetUp() override { ... }
+
+  // You can define per-test tear-down logic as usual.
+  void TearDown() override { ... }
+
+  // Some expensive resource shared by all tests.
+  static T* shared_resource_;
+};
+
+T* FooTest::shared_resource_ = nullptr;
+
+TEST_F(FooTest, Test1) {
+  ... you can refer to shared_resource_ here ...
+}
+
+TEST_F(FooTest, Test2) {
+  ... you can refer to shared_resource_ here ...
+}
+<span class="sb">```</span>
+
+<span class="sb">{: .callout .note}</span>
+<span class="sb">NOTE: Though the above code declares `SetUpTestSuite()` protected, it may</span>
+<span class="sb">sometimes be necessary to declare it public, such as when using it with</span>
+<span class="sb">`TEST_P`.</span>
+
+<span class="sb">## Global Set-Up and Tear-Down</span>
+
+<span class="sb">Just as you can do set-up and tear-down at the test level and the test suite</span>
+<span class="sb">level, you can also do it at the test program level. Here&#39;s how.</span>
+
+<span class="sb">First, you subclass the `::testing::Environment` class to define a test</span>
+<span class="sb">environment, which knows how to set-up and tear-down:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">class Environment : public ::testing::Environment {</span>
+<span class="sb"> public:</span>
+<span class="sb">  ~Environment() override {}</span>
+
+<span class="sb">  // Override this to define how to set up the environment.</span>
+<span class="sb">  void SetUp() override {}</span>
+
+<span class="sb">  // Override this to define how to tear down the environment.</span>
+<span class="sb">  void TearDown() override {}</span>
+<span class="sb">};</span>
+<span class="sb">```</span>
+
+Then, you register an instance of your environment class with GoogleTest by
+calling the <span class="sb">`::testing::AddGlobalTestEnvironment()`</span> function:
+
+```c++
+Environment* AddGlobalTestEnvironment(Environment* env);
+<span class="sb">```</span>
+
+<span class="sb">Now, when `RUN_ALL_TESTS()` is invoked, it first calls the `SetUp()` method. The</span>
+<span class="sb">tests are then executed, provided that none of the environments have reported</span>
+<span class="sb">fatal failures and `GTEST_SKIP()` has not been invoked. Finally, `TearDown()` is</span>
+<span class="sb">called.</span>
+
+<span class="sb">Note that `SetUp()` and `TearDown()` are only invoked if there is at least one</span>
+<span class="sb">test to be performed. Importantly, `TearDown()` is executed even if the test is</span>
+<span class="sb">not run due to a fatal failure or `GTEST_SKIP()`.</span>
+
+<span class="sb">Calling `SetUp()` and `TearDown()` for each iteration depends on the flag</span>
+<span class="sb">`gtest_recreate_environments_when_repeating`. `SetUp()` and `TearDown()` are</span>
+<span class="sb">called for each environment object when the object is recreated for each</span>
+<span class="sb">iteration. However, if test environments are not recreated for each iteration,</span>
+<span class="sb">`SetUp()` is called only on the first iteration, and `TearDown()` is called only</span>
+<span class="sb">on the last iteration.</span>
+
+<span class="sb">It&#39;s OK to register multiple environment objects. In this suite, their `SetUp()`</span>
+<span class="sb">will be called in the order they are registered, and their `TearDown()` will be</span>
+<span class="sb">called in the reverse order.</span>
+
+<span class="sb">Note that GoogleTest takes ownership of the registered environment objects.</span>
+<span class="sb">Therefore **do not delete them** by yourself.</span>
+
+<span class="sb">You should call `AddGlobalTestEnvironment()` before `RUN_ALL_TESTS()` is called,</span>
+<span class="sb">probably in `main()`. If you use `gtest_main`, you need to call this before</span>
+<span class="sb">`main()` starts for it to take effect. One way to do this is to define a global</span>
+<span class="sb">variable like this:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">testing::Environment* const foo_env =</span>
+<span class="sb">    testing::AddGlobalTestEnvironment(new FooEnvironment);</span>
+<span class="sb">```</span>
+
+However, we strongly recommend you to write your own <span class="sb">`main()`</span> and call
+<span class="sb">`AddGlobalTestEnvironment()`</span> there, as relying on initialization of global
+variables makes the code harder to read and may cause problems when you register
+multiple environments from different translation units and the environments have
+dependencies among them (remember that the compiler doesn&#39;t guarantee the order
+in which global variables from different translation units are initialized).
+
+<span class="gu">## Value-Parameterized Tests</span>
+
+<span class="ge">*Value-parameterized tests*</span> allow you to test your code with different
+parameters without writing multiple copies of the same test. This is useful in a
+number of situations, for example:
+
+<span class="k">*</span><span class="w"> </span>  You have a piece of code whose behavior is affected by one or more
+    command-line flags. You want to make sure your code performs correctly for
+    various values of those flags.
+<span class="k">*</span><span class="w"> </span>  You want to test different implementations of an OO interface.
+<span class="k">*</span><span class="w"> </span>  You want to test your code over various inputs (a.k.a. data-driven testing).
+    This feature is easy to abuse, so please exercise your good sense when doing
+    it!
+
+<span class="gu">### How to Write Value-Parameterized Tests</span>
+
+To write value-parameterized tests, first you should define a fixture class. It
+must be derived from both <span class="sb">`testing::Test`</span> and <span class="sb">`testing::WithParamInterface&lt;T&gt;`</span>
+(the latter is a pure interface), where <span class="sb">`T`</span> is the type of your parameter
+values. For convenience, you can just derive the fixture class from
+<span class="sb">`testing::TestWithParam&lt;T&gt;`</span>, which itself is derived from both <span class="sb">`testing::Test`</span>
+and <span class="sb">`testing::WithParamInterface&lt;T&gt;`</span>. <span class="sb">`T`</span> can be any copyable type. If it&#39;s a
+raw pointer, you are responsible for managing the lifespan of the pointed
+values.
+
+{: .callout .note}
+NOTE: If your test fixture defines <span class="sb">`SetUpTestSuite()`</span> or <span class="sb">`TearDownTestSuite()`</span>
+they must be declared <span class="gs">**public**</span> rather than <span class="gs">**protected**</span> in order to use
+<span class="sb">`TEST_P`</span>.
+
+```c++
+class FooTest :
+    public testing::TestWithParam&lt;absl::string_view&gt; {
+  // You can implement all the usual fixture class members here.
+  // To access the test parameter, call GetParam() from class
+  // TestWithParam&lt;T&gt;.
+};
+
+// Or, when you want to add parameters to a pre-existing fixture class:
+class BaseTest : public testing::Test {
+  ...
+};
+class BarTest : public BaseTest,
+                public testing::WithParamInterface&lt;absl::string_view&gt; {
+  ...
+};
+<span class="sb">```</span>
+
+<span class="sb">Then, use the `TEST_P` macro to define as many test patterns using this fixture</span>
+<span class="sb">as you want. The `_P` suffix is for &quot;parameterized&quot; or &quot;pattern&quot;, whichever you</span>
+<span class="sb">prefer to think.</span>
+
+<span class="sb">```c++</span>
+<span class="sb">TEST_P(FooTest, DoesBlah) {</span>
+<span class="sb">  // Inside a test, access the test parameter with the GetParam() method</span>
+<span class="sb">  // of the TestWithParam&lt;T&gt; class:</span>
+<span class="sb">  EXPECT_TRUE(foo.Blah(GetParam()));</span>
+<span class="sb">  ...</span>
+<span class="sb">}</span>
+
+<span class="sb">TEST_P(FooTest, HasBlahBlah) {</span>
+<span class="sb">  ...</span>
+<span class="sb">}</span>
+<span class="sb">```</span>
+
+Finally, you can use the <span class="sb">`INSTANTIATE_TEST_SUITE_P`</span> macro to instantiate the
+test suite with any set of parameters you want. GoogleTest defines a number of
+functions for generating test parameters—see details at
+[<span class="sb">`INSTANTIATE_TEST_SUITE_P`</span>](reference/testing.md#INSTANTIATE_TEST_SUITE_P) in
+the Testing Reference.
+
+For example, the following statement will instantiate tests from the <span class="sb">`FooTest`</span>
+test suite each with parameter values <span class="sb">`&quot;meeny&quot;`</span>, <span class="sb">`&quot;miny&quot;`</span>, and <span class="sb">`&quot;moe&quot;`</span> using the
+[<span class="sb">`Values`</span>](reference/testing.md#param-generators) parameter generator:
+
+```c++
+INSTANTIATE_TEST_SUITE_P(MeenyMinyMoe,
+                         FooTest,
+                         testing::Values(&quot;meeny&quot;, &quot;miny&quot;, &quot;moe&quot;));
+<span class="sb">```</span>
+
+<span class="sb">{: .callout .note}</span>
+<span class="sb">NOTE: The code above must be placed at global or namespace scope, not at</span>
+<span class="sb">function scope.</span>
+
+<span class="sb">The first argument to `INSTANTIATE_TEST_SUITE_P` is a unique name for the</span>
+<span class="sb">instantiation of the test suite. The next argument is the name of the test</span>
+<span class="sb">pattern, and the last is the</span>
+<span class="sb">[parameter generator](reference/testing.md#param-generators).</span>
+
+<span class="sb">The parameter generator expression is not evaluated until GoogleTest is</span>
+<span class="sb">initialized (via `InitGoogleTest()`). Any prior initialization done in the</span>
+<span class="sb">`main` function will be accessible from the parameter generator, for example,</span>
+<span class="sb">the results of flag parsing.</span>
+
+<span class="sb">You can instantiate a test pattern more than once, so to distinguish different</span>
+<span class="sb">instances of the pattern, the instantiation name is added as a prefix to the</span>
+<span class="sb">actual test suite name. Remember to pick unique prefixes for different</span>
+<span class="sb">instantiations. The tests from the instantiation above will have these names:</span>
+
+<span class="sb">*   `MeenyMinyMoe/FooTest.DoesBlah/0` for `&quot;meeny&quot;`</span>
+<span class="sb">*   `MeenyMinyMoe/FooTest.DoesBlah/1` for `&quot;miny&quot;`</span>
+<span class="sb">*   `MeenyMinyMoe/FooTest.DoesBlah/2` for `&quot;moe&quot;`</span>
+<span class="sb">*   `MeenyMinyMoe/FooTest.HasBlahBlah/0` for `&quot;meeny&quot;`</span>
+<span class="sb">*   `MeenyMinyMoe/FooTest.HasBlahBlah/1` for `&quot;miny&quot;`</span>
+<span class="sb">*   `MeenyMinyMoe/FooTest.HasBlahBlah/2` for `&quot;moe&quot;`</span>
+
+<span class="sb">You can use these names in [`--gtest_filter`](#running-a-subset-of-the-tests).</span>
+
+<span class="sb">The following statement will instantiate all tests from `FooTest` again, each</span>
+<span class="sb">with parameter values `&quot;cat&quot;` and `&quot;dog&quot;` using the</span>
+<span class="sb">[`ValuesIn`](reference/testing.md#param-generators) parameter generator:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">constexpr absl::string_view kPets[] = {&quot;cat&quot;, &quot;dog&quot;};</span>
+<span class="sb">INSTANTIATE_TEST_SUITE_P(Pets, FooTest, testing::ValuesIn(kPets));</span>
+<span class="sb">```</span>
+
+The tests from the instantiation above will have these names:
+
+<span class="k">*</span><span class="w"> </span>  <span class="sb">`Pets/FooTest.DoesBlah/0`</span> for <span class="sb">`&quot;cat&quot;`</span>
+<span class="k">*</span><span class="w"> </span>  <span class="sb">`Pets/FooTest.DoesBlah/1`</span> for <span class="sb">`&quot;dog&quot;`</span>
+<span class="k">*</span><span class="w"> </span>  <span class="sb">`Pets/FooTest.HasBlahBlah/0`</span> for <span class="sb">`&quot;cat&quot;`</span>
+<span class="k">*</span><span class="w"> </span>  <span class="sb">`Pets/FooTest.HasBlahBlah/1`</span> for <span class="sb">`&quot;dog&quot;`</span>
+
+Please note that <span class="sb">`INSTANTIATE_TEST_SUITE_P`</span> will instantiate <span class="ge">*all*</span> tests in the
+given test suite, whether their definitions come before or <span class="ge">*after*</span> the
+<span class="sb">`INSTANTIATE_TEST_SUITE_P`</span> statement.
+
+Additionally, by default, every <span class="sb">`TEST_P`</span> without a corresponding
+<span class="sb">`INSTANTIATE_TEST_SUITE_P`</span> causes a failing test in test suite
+<span class="sb">`GoogleTestVerification`</span>. If you have a test suite where that omission is not an
+error, for example it is in a library that may be linked in for other reasons or
+where the list of test cases is dynamic and may be empty, then this check can be
+suppressed by tagging the test suite:
+
+```c++
+GTEST_ALLOW_UNINSTANTIATED_PARAMETERIZED_TEST(FooTest);
+<span class="sb">```</span>
+
+<span class="sb">You can see [sample7_unittest.cc] and [sample8_unittest.cc] for more examples.</span>
+
+<span class="sb">[sample7_unittest.cc]: https://github.com/google/googletest/blob/main/googletest/samples/sample7_unittest.cc &quot;Parameterized Test example&quot;</span>
+<span class="sb">[sample8_unittest.cc]: https://github.com/google/googletest/blob/main/googletest/samples/sample8_unittest.cc &quot;Parameterized Test example with multiple parameters&quot;</span>
+
+<span class="sb">### Creating Value-Parameterized Abstract Tests</span>
+
+<span class="sb">In the above, we define and instantiate `FooTest` in the *same* source file.</span>
+<span class="sb">Sometimes you may want to define value-parameterized tests in a library and let</span>
+<span class="sb">other people instantiate them later. This pattern is known as *abstract tests*.</span>
+<span class="sb">As an example of its application, when you are designing an interface you can</span>
+<span class="sb">write a standard suite of abstract tests (perhaps using a factory function as</span>
+<span class="sb">the test parameter) that all implementations of the interface are expected to</span>
+<span class="sb">pass. When someone implements the interface, they can instantiate your suite to</span>
+<span class="sb">get all the interface-conformance tests for free.</span>
+
+<span class="sb">To define abstract tests, you should organize your code like this:</span>
+
+<span class="sb">1.  Put the definition of the parameterized test fixture class (e.g. `FooTest`)</span>
+<span class="sb">    in a header file, say `foo_param_test.h`. Think of this as *declaring* your</span>
+<span class="sb">    abstract tests.</span>
+<span class="sb">2.  Put the `TEST_P` definitions in `foo_param_test.cc`, which includes</span>
+<span class="sb">    `foo_param_test.h`. Think of this as *implementing* your abstract tests.</span>
+
+<span class="sb">Once they are defined, you can instantiate them by including `foo_param_test.h`,</span>
+<span class="sb">invoking `INSTANTIATE_TEST_SUITE_P()`, and depending on the library target that</span>
+<span class="sb">contains `foo_param_test.cc`. You can instantiate the same abstract test suite</span>
+<span class="sb">multiple times, possibly in different source files.</span>
+
+<span class="sb">### Specifying Names for Value-Parameterized Test Parameters</span>
+
+<span class="sb">The optional last argument to `INSTANTIATE_TEST_SUITE_P()` allows the user to</span>
+<span class="sb">specify a function or functor that generates custom test name suffixes based on</span>
+<span class="sb">the test parameters. The function should accept one argument of type</span>
+<span class="sb">`testing::TestParamInfo&lt;class ParamType&gt;`, and return `std::string`.</span>
+
+<span class="sb">`testing::PrintToStringParamName` is a builtin test suffix generator that</span>
+<span class="sb">returns the value of `testing::PrintToString(GetParam())`. It does not work for</span>
+<span class="sb">`std::string` or C strings.</span>
+
+<span class="sb">{: .callout .note}</span>
+<span class="sb">NOTE: test names must be non-empty, unique, and may only contain ASCII</span>
+<span class="sb">alphanumeric characters. In particular, they</span>
+<span class="sb">[should not contain underscores](faq.md#why-should-test-suite-names-and-test-names-not-contain-underscore)</span>
+
+<span class="sb">```c++</span>
+<span class="sb">class MyTestSuite : public testing::TestWithParam&lt;int&gt; {};</span>
+
+<span class="sb">TEST_P(MyTestSuite, MyTest)</span>
+<span class="sb">{</span>
+<span class="sb">  std::cout &lt;&lt; &quot;Example Test Param: &quot; &lt;&lt; GetParam() &lt;&lt; std::endl;</span>
+<span class="sb">}</span>
+
+<span class="sb">INSTANTIATE_TEST_SUITE_P(MyGroup, MyTestSuite, testing::Range(0, 10),</span>
+<span class="sb">                         testing::PrintToStringParamName());</span>
+<span class="sb">```</span>
+
+Providing a custom functor allows for more control over test parameter name
+generation, especially for types where the automatic conversion does not
+generate helpful parameter names (e.g. strings as demonstrated above). The
+following example illustrates this for multiple parameters, an enumeration type
+and a string, and also demonstrates how to combine generators. It uses a lambda
+for conciseness:
+
+```c++
+enum class MyType { MY_FOO = 0, MY_BAR = 1 };
+
+class MyTestSuite : public testing::TestWithParam&lt;std::tuple&lt;MyType, std::string&gt;&gt; {
+};
+
+INSTANTIATE_TEST_SUITE_P(
+    MyGroup, MyTestSuite,
+    testing::Combine(
+        testing::Values(MyType::MY_FOO, MyType::MY_BAR),
+        testing::Values(&quot;A&quot;, &quot;B&quot;)),
+    [](const testing::TestParamInfo&lt;MyTestSuite::ParamType&gt;&amp; info) {
+      std::string name = absl::StrCat(
+          std::get&lt;0&gt;(info.param) == MyType::MY_FOO ? &quot;Foo&quot; : &quot;Bar&quot;,
+          std::get&lt;1&gt;(info.param));
+      absl::c_replace_if(name, [](char c) { return !std::isalnum(c); }, &#39;_&#39;);
+      return name;
+    });
+<span class="sb">```</span>
+
+<span class="sb">## Typed Tests</span>
+
+<span class="sb">Suppose you have multiple implementations of the same interface and want to make</span>
+<span class="sb">sure that all of them satisfy some common requirements. Or, you may have defined</span>
+<span class="sb">several types that are supposed to conform to the same &quot;concept&quot; and you want to</span>
+<span class="sb">verify it. In both cases, you want the same test logic repeated for different</span>
+<span class="sb">types.</span>
+
+<span class="sb">While you can write one `TEST` or `TEST_F` for each type you want to test (and</span>
+<span class="sb">you may even factor the test logic into a function template that you invoke from</span>
+<span class="sb">the `TEST`), it&#39;s tedious and doesn&#39;t scale: if you want `m` tests over `n`</span>
+<span class="sb">types, you&#39;ll end up writing `m*n` `TEST`s.</span>
+
+<span class="sb">*Typed tests* allow you to repeat the same test logic over a list of types. You</span>
+<span class="sb">only need to write the test logic once, although you must know the type list</span>
+<span class="sb">when writing typed tests. Here&#39;s how you do it:</span>
+
+<span class="sb">First, define a fixture class template. It should be parameterized by a type.</span>
+<span class="sb">Remember to derive it from `::testing::Test`:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">template &lt;typename T&gt;</span>
+<span class="sb">class FooTest : public testing::Test {</span>
+<span class="sb"> public:</span>
+<span class="sb">  ...</span>
+<span class="sb">  using List = std::list&lt;T&gt;;</span>
+<span class="sb">  static T shared_;</span>
+<span class="sb">  T value_;</span>
+<span class="sb">};</span>
+<span class="sb">```</span>
+
+Next, associate a list of types with the test suite, which will be repeated for
+each type in the list:
+
+```c++
+using MyTypes = ::testing::Types&lt;char, int, unsigned int&gt;;
+TYPED_TEST_SUITE(FooTest, MyTypes);
+<span class="sb">```</span>
+
+<span class="sb">The type alias (`using` or `typedef`) is necessary for the `TYPED_TEST_SUITE`</span>
+<span class="sb">macro to parse correctly. Otherwise the compiler will think that each comma in</span>
+<span class="sb">the type list introduces a new macro argument.</span>
+
+<span class="sb">Then, use `TYPED_TEST()` instead of `TEST_F()` to define a typed test for this</span>
+<span class="sb">test suite. You can repeat this as many times as you want:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">TYPED_TEST(FooTest, DoesBlah) {</span>
+<span class="sb">  // Inside a test, refer to the special name TypeParam to get the type</span>
+<span class="sb">  // parameter.  Since we are inside a derived class template, C++ requires</span>
+<span class="sb">  // us to visit the members of FooTest via &#39;this&#39;.</span>
+<span class="sb">  TypeParam n = this-&gt;value_;</span>
+
+<span class="sb">  // To visit static members of the fixture, add the &#39;TestFixture::&#39;</span>
+<span class="sb">  // prefix.</span>
+<span class="sb">  n += TestFixture::shared_;</span>
+
+<span class="sb">  // To refer to typedefs in the fixture, add the &#39;typename TestFixture::&#39;</span>
+<span class="sb">  // prefix.  The &#39;typename&#39; is required to satisfy the compiler.</span>
+<span class="sb">  typename TestFixture::List values;</span>
+
+<span class="sb">  values.push_back(n);</span>
+<span class="sb">  ...</span>
+<span class="sb">}</span>
+
+<span class="sb">TYPED_TEST(FooTest, HasPropertyA) { ... }</span>
+<span class="sb">```</span>
+
+You can see [sample6_unittest.cc] for a complete example.
+
+[<span class="nl">sample6_unittest.cc</span>]: <span class="na">https://github.com/google/googletest/blob/main/googletest/samples/sample6_unittest.cc &quot;Typed Test example&quot;</span>
+
+<span class="gu">## Type-Parameterized Tests</span>
+
+<span class="ge">*Type-parameterized tests*</span> are like typed tests, except that they don&#39;t require
+you to know the list of types ahead of time. Instead, you can define the test
+logic first and instantiate it with different type lists later. You can even
+instantiate it more than once in the same program.
+
+If you are designing an interface or concept, you can define a suite of
+type-parameterized tests to verify properties that any valid implementation of
+the interface/concept should have. Then, the author of each implementation can
+just instantiate the test suite with their type to verify that it conforms to
+the requirements, without having to write similar tests repeatedly. Here&#39;s an
+example:
+
+First, define a fixture class template, as we did with typed tests:
+
+```c++
+template &lt;typename T&gt;
+class FooTest : public testing::Test {
+  void DoSomethingInteresting();
+  ...
+};
+<span class="sb">```</span>
+
+<span class="sb">Next, declare that you will define a type-parameterized test suite:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">TYPED_TEST_SUITE_P(FooTest);</span>
+<span class="sb">```</span>
+
+Then, use <span class="sb">`TYPED_TEST_P()`</span> to define a type-parameterized test. You can repeat
+this as many times as you want:
+
+```c++
+TYPED_TEST_P(FooTest, DoesBlah) {
+  // Inside a test, refer to TypeParam to get the type parameter.
+  TypeParam n = 0;
+
+  // You will need to use <span class="sb">`this`</span> explicitly to refer to fixture members.
+  this-&gt;DoSomethingInteresting()
+  ...
+}
+
+TYPED_TEST_P(FooTest, HasPropertyA) { ... }
+<span class="sb">```</span>
+
+<span class="sb">Now the tricky part: you need to register all test patterns using the</span>
+<span class="sb">`REGISTER_TYPED_TEST_SUITE_P` macro before you can instantiate them. The first</span>
+<span class="sb">argument of the macro is the test suite name; the rest are the names of the</span>
+<span class="sb">tests in this test suite:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">REGISTER_TYPED_TEST_SUITE_P(FooTest,</span>
+<span class="sb">                            DoesBlah, HasPropertyA);</span>
+<span class="sb">```</span>
+
+Finally, you are free to instantiate the pattern with the types you want. If you
+put the above code in a header file, you can <span class="sb">`#include`</span> it in multiple C++
+source files and instantiate it multiple times.
+
+```c++
+using MyTypes = ::testing::Types&lt;char, int, unsigned int&gt;;
+INSTANTIATE_TYPED_TEST_SUITE_P(My, FooTest, MyTypes);
+<span class="sb">```</span>
+
+<span class="sb">To distinguish different instances of the pattern, the first argument to the</span>
+<span class="sb">`INSTANTIATE_TYPED_TEST_SUITE_P` macro is a prefix that will be added to the</span>
+<span class="sb">actual test suite name. Remember to pick unique prefixes for different</span>
+<span class="sb">instances.</span>
+
+<span class="sb">In the special case where the type list contains only one type, you can write</span>
+<span class="sb">that type directly without `::testing::Types&lt;...&gt;`, like this:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">INSTANTIATE_TYPED_TEST_SUITE_P(My, FooTest, int);</span>
+<span class="sb">```</span>
+
+You can see [sample6_unittest.cc] for a complete example.
+
+<span class="gu">## Testing Private Code</span>
+
+If you change your software&#39;s internal implementation, your tests should not
+break as long as the change is not observable by users. Therefore, **per the
+black-box testing principle, most of the time you should test your code through
+its public interfaces.**
+
+**If you still find yourself needing to test internal implementation code,
+consider if there&#39;s a better design.** The desire to test internal
+implementation is often a sign that the class is doing too much. Consider
+extracting an implementation class, and testing it. Then use that implementation
+class in the original class.
+
+If you absolutely have to test non-public interface code though, you can. There
+are two cases to consider:
+
+<span class="k">*</span><span class="w"> </span>  Static functions ( <span class="ge">*not*</span> the same as static member functions!) or unnamed
+    namespaces, and
+<span class="k">*</span><span class="w"> </span>  Private or protected class members
+
+To test them, we use the following special techniques:
+
+<span class="k">*</span><span class="w"> </span>  Both static functions and definitions/declarations in an unnamed namespace
+    are only visible within the same translation unit. To test them, you can
+    <span class="sb">`#include`</span> the entire <span class="sb">`.cc`</span> file being tested in your <span class="sb">`*_test.cc`</span> file.
+    (#including <span class="sb">`.cc`</span> files is not a good way to reuse code - you should not do
+    this in production code!)
+
+    However, a better approach is to move the private code into the
+    <span class="sb">`foo::internal`</span> namespace, where <span class="sb">`foo`</span> is the namespace your project
+    normally uses, and put the private declarations in a <span class="sb">`*-internal.h`</span> file.
+    Your production <span class="sb">`.cc`</span> files and your tests are allowed to include this
+    internal header, but your clients are not. This way, you can fully test your
+    internal implementation without leaking it to your clients.
+
+<span class="k">*</span><span class="w"> </span>  Private class members are only accessible from within the class or by
+    friends. To access a class&#39; private members, you can declare your test
+    fixture as a friend to the class and define accessors in your fixture. Tests
+    using the fixture can then access the private members of your production
+    class via the accessors in the fixture. Note that even though your fixture
+    is a friend to your production class, your tests are not automatically
+    friends to it, as they are technically defined in sub-classes of the
+    fixture.
+
+    Another way to test private members is to refactor them into an
+    implementation class, which is then declared in a <span class="sb">`*-internal.h`</span> file. Your
+    clients aren&#39;t allowed to include this header but your tests can. Such is
+    called the
+    [<span class="nt">Pimpl</span>](<span class="na">https://www.gamedev.net/articles/programming/general-and-gameplay-programming/the-c-pimpl-r1794/</span>)
+    (Private Implementation) idiom.
+
+    Or, you can declare an individual test as a friend of your class by adding
+    this line in the class body:
+
+    ```c++
+        FRIEND_TEST(TestSuiteName, TestName);
+<span class="sb">    ```</span>
+
+<span class="sb">    For example,</span>
+
+<span class="sb">    ```c++</span>
+<span class="sb">    // foo.h</span>
+<span class="sb">    class Foo {</span>
+<span class="sb">      ...</span>
+<span class="sb">     private:</span>
+<span class="sb">      FRIEND_TEST(FooTest, BarReturnsZeroOnNull);</span>
+
+<span class="sb">      int Bar(void* x);</span>
+<span class="sb">    };</span>
+
+<span class="sb">    // foo_test.cc</span>
+<span class="sb">    ...</span>
+<span class="sb">    TEST(FooTest, BarReturnsZeroOnNull) {</span>
+<span class="sb">      Foo foo;</span>
+<span class="sb">      EXPECT_EQ(foo.Bar(NULL), 0);  // Uses Foo&#39;s private member Bar().</span>
+<span class="sb">    }</span>
+<span class="sb">    ```</span>
+
+    Pay special attention when your class is defined in a namespace. If you want
+    your test fixtures and tests to be friends of your class, then they must be
+    defined in the exact same namespace (no anonymous or inline namespaces).
+
+    For example, if the code to be tested looks like:
+
+    ```c++
+    namespace my_namespace {
+
+    class Foo {
+      friend class FooTest;
+      FRIEND_TEST(FooTest, Bar);
+      FRIEND_TEST(FooTest, Baz);
+      ... definition of the class Foo ...
+    };
+
+    }  // namespace my_namespace
+<span class="sb">    ```</span>
+
+<span class="sb">    Your test code should be something like:</span>
+
+<span class="sb">    ```c++</span>
+<span class="sb">    namespace my_namespace {</span>
+
+<span class="sb">    class FooTest : public testing::Test {</span>
+<span class="sb">     protected:</span>
+<span class="sb">      ...</span>
+<span class="sb">    };</span>
+
+<span class="sb">    TEST_F(FooTest, Bar) { ... }</span>
+<span class="sb">    TEST_F(FooTest, Baz) { ... }</span>
+
+<span class="sb">    }  // namespace my_namespace</span>
+<span class="sb">    ```</span>
+
+<span class="gu">## &quot;Catching&quot; Failures</span>
+
+If you are building a testing utility on top of GoogleTest, you&#39;ll want to test
+your utility. What framework would you use to test it? GoogleTest, of course.
+
+The challenge is to verify that your testing utility reports failures correctly.
+In frameworks that report a failure by throwing an exception, you could catch
+the exception and assert on it. But GoogleTest doesn&#39;t use exceptions, so how do
+we test that a piece of code generates an expected failure?
+
+<span class="sb">`&quot;gtest/gtest-spi.h&quot;`</span> contains some constructs to do this.
+After <span class="ni">#including</span> this header, you can use
+
+```c++
+  EXPECT_FATAL_FAILURE(statement, substring);
+<span class="sb">```</span>
+
+<span class="sb">to assert that `statement` generates a fatal (e.g. `ASSERT_*`) failure in the</span>
+<span class="sb">current thread whose message contains the given `substring`, or use</span>
+
+<span class="sb">```c++</span>
+<span class="sb">  EXPECT_NONFATAL_FAILURE(statement, substring);</span>
+<span class="sb">```</span>
+
+if you are expecting a non-fatal (e.g. <span class="sb">`EXPECT_*`</span>) failure.
+
+Only failures in the current thread are checked to determine the result of this
+type of expectations. If <span class="sb">`statement`</span> creates new threads, failures in these
+threads are also ignored. If you want to catch failures in other threads as
+well, use one of the following macros instead:
+
+```c++
+  EXPECT_FATAL_FAILURE_ON_ALL_THREADS(statement, substring);
+  EXPECT_NONFATAL_FAILURE_ON_ALL_THREADS(statement, substring);
+<span class="sb">```</span>
+
+<span class="sb">{: .callout .note}</span>
+<span class="sb">NOTE: Assertions from multiple threads are currently not supported on Windows.</span>
+
+<span class="sb">For technical reasons, there are some caveats:</span>
+
+<span class="sb">1.  You cannot stream a failure message to either macro.</span>
+
+<span class="sb">2.  `statement` in `EXPECT_FATAL_FAILURE{_ON_ALL_THREADS}()` cannot reference</span>
+<span class="sb">    local non-static variables or non-static members of `this` object.</span>
+
+<span class="sb">3.  `statement` in `EXPECT_FATAL_FAILURE{_ON_ALL_THREADS}()` cannot return a</span>
+<span class="sb">    value.</span>
+
+<span class="sb">## Registering tests programmatically</span>
+
+<span class="sb">The `TEST` macros handle the vast majority of all use cases, but there are few</span>
+<span class="sb">where runtime registration logic is required. For those cases, the framework</span>
+<span class="sb">provides the `::testing::RegisterTest` that allows callers to register arbitrary</span>
+<span class="sb">tests dynamically.</span>
+
+<span class="sb">This is an advanced API only to be used when the `TEST` macros are insufficient.</span>
+<span class="sb">The macros should be preferred when possible, as they avoid most of the</span>
+<span class="sb">complexity of calling this function.</span>
+
+<span class="sb">It provides the following signature:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">template &lt;typename Factory&gt;</span>
+<span class="sb">TestInfo* RegisterTest(const char* test_suite_name, const char* test_name,</span>
+<span class="sb">                       const char* type_param, const char* value_param,</span>
+<span class="sb">                       const char* file, int line, Factory factory);</span>
+<span class="sb">```</span>
+
+The <span class="sb">`factory`</span> argument is a factory callable (move-constructible) object or
+function pointer that creates a new instance of the Test object. It handles
+ownership to the caller. The signature of the callable is <span class="sb">`Fixture*()`</span>, where
+<span class="sb">`Fixture`</span> is the test fixture class for the test. All tests registered with the
+same <span class="sb">`test_suite_name`</span> must return the same fixture type. This is checked at
+runtime.
+
+The framework will infer the fixture class from the factory and will call the
+<span class="sb">`SetUpTestSuite`</span> and <span class="sb">`TearDownTestSuite`</span> for it.
+
+Must be called before <span class="sb">`RUN_ALL_TESTS()`</span> is invoked, otherwise behavior is
+undefined.
+
+Use case example:
+
+```c++
+class MyFixture : public testing::Test {
+ public:
+  // All of these optional, just like in regular macro usage.
+  static void SetUpTestSuite() { ... }
+  static void TearDownTestSuite() { ... }
+  void SetUp() override { ... }
+  void TearDown() override { ... }
+};
+
+class MyTest : public MyFixture {
+ public:
+  explicit MyTest(int data) : data_(data) {}
+  void TestBody() override { ... }
+
+ private:
+  int data_;
+};
+
+void RegisterMyTests(const std::vector&lt;int&gt;&amp; values) {
+  for (int v : values) {
+    testing::RegisterTest(
+        &quot;MyFixture&quot;, (&quot;Test&quot; + std::to_string(v)).c_str(), nullptr,
+        std::to_string(v).c_str(),
+        <span class="gs">__FILE__</span>, <span class="gs">__LINE__</span>,
+        // Important to use the fixture type as the return type here.
+        [=]() -&gt; MyFixture* { return new MyTest(v); });
+  }
+}
+...
+int main(int argc, char** argv) {
+  testing::InitGoogleTest(&amp;argc, argv);
+  std::vector&lt;int&gt; values_to_test = LoadValuesFromConfig();
+  RegisterMyTests(values_to_test);
+  ...
+  return RUN_ALL_TESTS();
+}
+<span class="sb">```</span>
+
+<span class="sb">## Getting the Current Test&#39;s Name</span>
+
+<span class="sb">Sometimes a function may need to know the name of the currently running test.</span>
+<span class="sb">For example, you may be using the `SetUp()` method of your test fixture to set</span>
+<span class="sb">the golden file name based on which test is running. The</span>
+<span class="sb">[`TestInfo`](reference/testing.md#TestInfo) class has this information.</span>
+
+<span class="sb">To obtain a `TestInfo` object for the currently running test, call</span>
+<span class="sb">`current_test_info()` on the [`UnitTest`](reference/testing.md#UnitTest)</span>
+<span class="sb">singleton object:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">  // Gets information about the currently running test.</span>
+<span class="sb">  // Do NOT delete the returned object - it&#39;s managed by the UnitTest class.</span>
+<span class="sb">  const testing::TestInfo* const test_info =</span>
+<span class="sb">      testing::UnitTest::GetInstance()-&gt;current_test_info();</span>
+
+<span class="sb">  printf(&quot;We are in test %s of test suite %s.\n&quot;,</span>
+<span class="sb">         test_info-&gt;name(),</span>
+<span class="sb">         test_info-&gt;test_suite_name());</span>
+<span class="sb">```</span>
+
+<span class="sb">`current_test_info()`</span> returns a null pointer if no test is running. In
+particular, you cannot find the test suite name in <span class="sb">`SetUpTestSuite()`</span>,
+<span class="sb">`TearDownTestSuite()`</span> (where you know the test suite name implicitly), or
+functions called from them.
+
+<span class="gu">## Extending GoogleTest by Handling Test Events</span>
+
+GoogleTest provides an <span class="gs">**event listener API**</span> to let you receive notifications
+about the progress of a test program and test failures. The events you can
+listen to include the start and end of the test program, a test suite, or a test
+method, among others. You may use this API to augment or replace the standard
+console output, replace the XML output, or provide a completely different form
+of output, such as a GUI or a database. You can also use test events as
+checkpoints to implement a resource leak checker, for example.
+
+<span class="gu">### Defining Event Listeners</span>
+
+To define a event listener, you subclass either
+[<span class="sb">`testing::TestEventListener`</span>](reference/testing.md#TestEventListener) or
+[<span class="sb">`testing::EmptyTestEventListener`</span>](reference/testing.md#EmptyTestEventListener)
+The former is an (abstract) interface, where *each pure virtual method can be
+overridden to handle a test event* (For example, when a test starts, the
+<span class="sb">`OnTestStart()`</span> method will be called.). The latter provides an empty
+implementation of all methods in the interface, such that a subclass only needs
+to override the methods it cares about.
+
+When an event is fired, its context is passed to the handler function as an
+argument. The following argument types are used:
+
+<span class="k">*</span><span class="w"> </span>  UnitTest reflects the state of the entire test program,
+<span class="k">*</span><span class="w"> </span>  TestSuite has information about a test suite, which can contain one or more
+    tests,
+<span class="k">*</span><span class="w"> </span>  TestInfo contains the state of a test, and
+<span class="k">*</span><span class="w"> </span>  TestPartResult represents the result of a test assertion.
+
+An event handler function can examine the argument it receives to find out
+interesting information about the event and the test program&#39;s state.
+
+Here&#39;s an example:
+
+```c++
+  class MinimalistPrinter : public testing::EmptyTestEventListener {
+    // Called before a test starts.
+    void OnTestStart(const testing::TestInfo&amp; test_info) override {
+      printf(&quot;*** Test %s.%s starting.\n&quot;,
+             test_info.test_suite_name(), test_info.name());
+    }
+
+    // Called after a failed assertion or a SUCCESS().
+    void OnTestPartResult(const testing::TestPartResult&amp; test_part_result) override {
+      printf(&quot;%s in %s:%d\n%s\n&quot;,
+             test_part_result.failed() ? &quot;*** Failure&quot; : &quot;Success&quot;,
+             test_part_result.file_name(),
+             test_part_result.line_number(),
+             test_part_result.summary());
+    }
+
+    // Called after a test ends.
+    void OnTestEnd(const testing::TestInfo&amp; test_info) override {
+      printf(&quot;*** Test %s.%s ending.\n&quot;,
+             test_info.test_suite_name(), test_info.name());
+    }
+  };
+<span class="sb">```</span>
+
+<span class="sb">### Using Event Listeners</span>
+
+<span class="sb">To use the event listener you have defined, add an instance of it to the</span>
+<span class="sb">GoogleTest event listener list (represented by class</span>
+<span class="sb">[`TestEventListeners`](reference/testing.md#TestEventListeners) - note the &quot;s&quot;</span>
+<span class="sb">at the end of the name) in your `main()` function, before calling</span>
+<span class="sb">`RUN_ALL_TESTS()`:</span>
+
+<span class="sb">```c++</span>
+<span class="sb">int main(int argc, char** argv) {</span>
+<span class="sb">  testing::InitGoogleTest(&amp;argc, argv);</span>
+<span class="sb">  // Gets hold of the event listener list.</span>
+<span class="sb">  testing::TestEventListeners&amp; listeners =</span>
+<span class="sb">      testing::UnitTest::GetInstance()-&gt;listeners();</span>
+<span class="sb">  // Adds a listener to the end.  GoogleTest takes the ownership.</span>
+<span class="sb">  listeners.Append(new MinimalistPrinter);</span>
+<span class="sb">  return RUN_ALL_TESTS();</span>
+<span class="sb">}</span>
+<span class="sb">```</span>
+
+There&#39;s only one problem: the default test result printer is still in effect, so
+its output will mingle with the output from your minimalist printer. To suppress
+the default printer, just release it from the event listener list and delete it.
+You can do so by adding one line:
+
+```c++
+  ...
+  delete listeners.Release(listeners.default_result_printer());
+  listeners.Append(new MinimalistPrinter);
+  return RUN_ALL_TESTS();
+<span class="sb">```</span>
+
+<span class="sb">Now, sit back and enjoy a completely different output from your tests. For more</span>
+<span class="sb">details, see [sample9_unittest.cc].</span>
+
+<span class="sb">[sample9_unittest.cc]: https://github.com/google/googletest/blob/main/googletest/samples/sample9_unittest.cc &quot;Event listener example&quot;</span>
+
+<span class="sb">You may append more than one listener to the list. When an `On*Start()` or</span>
+<span class="sb">`OnTestPartResult()` event is fired, the listeners will receive it in the order</span>
+<span class="sb">they appear in the list (since new listeners are added to the end of the list,</span>
+<span class="sb">the default text printer and the default XML generator will receive the event</span>
+<span class="sb">first). An `On*End()` event will be received by the listeners in the *reverse*</span>
+<span class="sb">order. This allows output by listeners added later to be framed by output from</span>
+<span class="sb">listeners added earlier.</span>
+
+<span class="sb">### Generating Failures in Listeners</span>
+
+<span class="sb">You may use failure-raising macros (`EXPECT_*()`, `ASSERT_*()`, `FAIL()`, etc)</span>
+<span class="sb">when processing an event. There are some restrictions:</span>
+
+<span class="sb">1.  You cannot generate any failure in `OnTestPartResult()` (otherwise it will</span>
+<span class="sb">    cause `OnTestPartResult()` to be called recursively).</span>
+<span class="sb">2.  A listener that handles `OnTestPartResult()` is not allowed to generate any</span>
+<span class="sb">    failure.</span>
+
+<span class="sb">When you add listeners to the listener list, you should put listeners that</span>
+<span class="sb">handle `OnTestPartResult()` *before* listeners that can generate failures. This</span>
+<span class="sb">ensures that failures generated by the latter are attributed to the right test</span>
+<span class="sb">by the former.</span>
+
+<span class="sb">See [sample10_unittest.cc] for an example of a failure-raising listener.</span>
+
+<span class="sb">[sample10_unittest.cc]: https://github.com/google/googletest/blob/main/googletest/samples/sample10_unittest.cc &quot;Failure-raising listener example&quot;</span>
+
+<span class="sb">## Running Test Programs: Advanced Options</span>
+
+<span class="sb">GoogleTest test programs are ordinary executables. Once built, you can run them</span>
+<span class="sb">directly and affect their behavior via the following environment variables</span>
+<span class="sb">and/or command line flags. For the flags to work, your programs must call</span>
+<span class="sb">`::testing::InitGoogleTest()` before calling `RUN_ALL_TESTS()`.</span>
+
+<span class="sb">To see a list of supported flags and their usage, please run your test program</span>
+<span class="sb">with the `--help` flag.</span>
+
+<span class="sb">If an option is specified both by an environment variable and by a flag, the</span>
+<span class="sb">latter takes precedence.</span>
+
+<span class="sb">### Selecting Tests</span>
+
+<span class="sb">#### Listing Test Names</span>
+
+<span class="sb">Sometimes it is necessary to list the available tests in a program before</span>
+<span class="sb">running them so that a filter may be applied if needed. Including the flag</span>
+<span class="sb">`--gtest_list_tests` overrides all other flags and lists tests in the following</span>
+<span class="sb">format:</span>
+
+<span class="sb">```none</span>
+<span class="sb">TestSuite1.</span>
+<span class="sb">  TestName1</span>
+<span class="sb">  TestName2</span>
+<span class="sb">TestSuite2.</span>
+<span class="sb">  TestName</span>
+<span class="sb">```</span>
+
+None of the tests listed are actually run if the flag is provided. There is no
+corresponding environment variable for this flag.
+
+<span class="gu">#### Running a Subset of the Tests</span>
+
+By default, a GoogleTest program runs all tests the user has defined. Sometimes,
+you want to run only a subset of the tests (e.g. for debugging or quickly
+verifying a change). If you set the <span class="sb">`GTEST_FILTER`</span> environment variable or the
+<span class="sb">`--gtest_filter`</span> flag to a filter string, GoogleTest will only run the tests
+whose full names (in the form of <span class="sb">`TestSuiteName.TestName`</span>) match the filter.
+
+The format of a filter is a &#39;<span class="sb">`:`</span>&#39;-separated list of wildcard patterns (called
+the <span class="ge">*positive patterns*</span>) optionally followed by a &#39;<span class="sb">`-`</span>&#39; and another
+&#39;<span class="sb">`:`</span>&#39;-separated pattern list (called the <span class="ge">*negative patterns*</span>). A test matches
+the filter if and only if it matches any of the positive patterns but does not
+match any of the negative patterns.
+
+A pattern may contain <span class="sb">`&#39;*&#39;`</span> (matches any string) or <span class="sb">`&#39;?&#39;`</span> (matches any single
+character). For convenience, the filter <span class="sb">`&#39;*-NegativePatterns&#39;`</span> can be also
+written as <span class="sb">`&#39;-NegativePatterns&#39;`</span>.
+
+For example:
+
+<span class="k">*</span><span class="w"> </span>  <span class="sb">`./foo_test`</span> Has no flag, and thus runs all its tests.
+<span class="k">*</span><span class="w"> </span>  <span class="sb">`./foo_test --gtest_filter=*`</span> Also runs everything, due to the single
+    match-everything <span class="sb">`*`</span> value.
+<span class="k">*</span><span class="w"> </span>  <span class="sb">`./foo_test --gtest_filter=FooTest.*`</span> Runs everything in test suite
+    <span class="sb">`FooTest`</span> .
+<span class="k">*</span><span class="w"> </span>  <span class="sb">`./foo_test --gtest_filter=*Null*:*Constructor*`</span> Runs any test whose full
+    name contains either <span class="sb">`&quot;Null&quot;`</span> or <span class="sb">`&quot;Constructor&quot;`</span> .
+<span class="k">*</span><span class="w"> </span>  <span class="sb">`./foo_test --gtest_filter=-*DeathTest.*`</span> Runs all non-death tests.
+<span class="k">*</span><span class="w"> </span>  <span class="sb">`./foo_test --gtest_filter=FooTest.*-FooTest.Bar`</span> Runs everything in test
+    suite <span class="sb">`FooTest`</span> except <span class="sb">`FooTest.Bar`</span>.
+<span class="k">*</span><span class="w"> </span>  <span class="sb">`./foo_test --gtest_filter=FooTest.*:BarTest.*-FooTest.Bar:BarTest.Foo`</span> Runs
+    everything in test suite <span class="sb">`FooTest`</span> except <span class="sb">`FooTest.Bar`</span> and everything in
+    test suite <span class="sb">`BarTest`</span> except <span class="sb">`BarTest.Foo`</span>.
+
+<span class="gu">#### Stop test execution upon first failure</span>
+
+By default, a GoogleTest program runs all tests the user has defined. In some
+cases (e.g. iterative test development &amp; execution) it may be desirable stop
+test execution upon first failure (trading improved latency for completeness).
+If <span class="sb">`GTEST_FAIL_FAST`</span> environment variable or <span class="sb">`--gtest_fail_fast`</span> flag is set,
+the test runner will stop execution as soon as the first test failure is found.
+
+<span class="gu">#### Temporarily Disabling Tests</span>
+
+If you have a broken test that you cannot fix right away, you can add the
+<span class="sb">`DISABLED_`</span> prefix to its name. This will exclude it from execution. This is
+better than commenting out the code or using <span class="sb">`#if 0`</span>, as disabled tests are
+still compiled (and thus won&#39;t rot).
+
+If you need to disable all tests in a test suite, you can either add <span class="sb">`DISABLED_`</span>
+to the front of the name of each test, or alternatively add it to the front of
+the test suite name.
+
+For example, the following tests won&#39;t be run by GoogleTest, even though they
+will still be compiled:
+
+```c++
+// Tests that Foo does Abc.
+TEST(FooTest, DISABLED_DoesAbc) { ... }
+
+class DISABLED_BarTest : public testing::Test { ... };
+
+// Tests that Bar does Xyz.
+TEST_F(DISABLED_BarTest, DoesXyz) { ... }
+<span class="sb">```</span>
+
+<span class="sb">{: .callout .note}</span>
+<span class="sb">NOTE: This feature should only be used for temporary pain-relief. You still have</span>
+<span class="sb">to fix the disabled tests at a later date. As a reminder, GoogleTest will print</span>
+<span class="sb">a banner warning you if a test program contains any disabled tests.</span>
+
+<span class="sb">{: .callout .tip}</span>
+<span class="sb">TIP: You can easily count the number of disabled tests you have using</span>
+<span class="sb">`grep`. This number can be used as a metric for</span>
+<span class="sb">improving your test quality.</span>
+
+<span class="sb">#### Temporarily Enabling Disabled Tests</span>
+
+<span class="sb">To include disabled tests in test execution, just invoke the test program with</span>
+<span class="sb">the `--gtest_also_run_disabled_tests` flag or set the</span>
+<span class="sb">`GTEST_ALSO_RUN_DISABLED_TESTS` environment variable to a value other than `0`.</span>
+<span class="sb">You can combine this with the `--gtest_filter` flag to further select which</span>
+<span class="sb">disabled tests to run.</span>
+
+<span class="sb">### Repeating the Tests</span>
+
+<span class="sb">Once in a while you&#39;ll run into a test whose result is hit-or-miss. Perhaps it</span>
+<span class="sb">will fail only 1% of the time, making it rather hard to reproduce the bug under</span>
+<span class="sb">a debugger. This can be a major source of frustration.</span>
+
+<span class="sb">The `--gtest_repeat` flag allows you to repeat all (or selected) test methods in</span>
+<span class="sb">a program many times. Hopefully, a flaky test will eventually fail and give you</span>
+<span class="sb">a chance to debug. Here&#39;s how to use it:</span>
+
+<span class="sb">```none</span>
+<span class="sb">$ foo_test --gtest_repeat=1000</span>
+<span class="sb">Repeat foo_test 1000 times and don&#39;t stop at failures.</span>
+
+<span class="sb">$ foo_test --gtest_repeat=-1</span>
+<span class="sb">A negative count means repeating forever.</span>
+
+<span class="sb">$ foo_test --gtest_repeat=1000 --gtest_break_on_failure</span>
+<span class="sb">Repeat foo_test 1000 times, stopping at the first failure.  This</span>
+<span class="sb">is especially useful when running under a debugger: when the test</span>
+<span class="sb">fails, it will drop into the debugger and you can then inspect</span>
+<span class="sb">variables and stacks.</span>
+
+<span class="sb">$ foo_test --gtest_repeat=1000 --gtest_filter=FooBar.*</span>
+<span class="sb">Repeat the tests whose name matches the filter 1000 times.</span>
+<span class="sb">```</span>
+
+If your test program contains
+[<span class="nt">global set-up/tear-down</span>](<span class="na">#global-set-up-and-tear-down</span>) code, it will be
+repeated in each iteration as well, as the flakiness may be in it. To avoid
+repeating global set-up/tear-down, specify
+<span class="sb">`--gtest_recreate_environments_when_repeating=false`</span>{.nowrap}.
+
+You can also specify the repeat count by setting the <span class="sb">`GTEST_REPEAT`</span> environment
+variable.
+
+<span class="gu">### Shuffling the Tests</span>
+
+You can specify the <span class="sb">`--gtest_shuffle`</span> flag (or set the <span class="sb">`GTEST_SHUFFLE`</span>
+environment variable to <span class="sb">`1`</span>) to run the tests in a program in a random order.
+This helps to reveal bad dependencies between tests.
+
+By default, GoogleTest uses a random seed calculated from the current time.
+Therefore you&#39;ll get a different order every time. The console output includes
+the random seed value, such that you can reproduce an order-related test failure
+later. To specify the random seed explicitly, use the <span class="sb">`--gtest_random_seed=SEED`</span>
+flag (or set the <span class="sb">`GTEST_RANDOM_SEED`</span> environment variable), where <span class="sb">`SEED`</span> is an
+integer in the range [0, 99999]. The seed value 0 is special: it tells
+GoogleTest to do the default behavior of calculating the seed from the current
+time.
+
+If you combine this with <span class="sb">`--gtest_repeat=N`</span>, GoogleTest will pick a different
+random seed and re-shuffle the tests in each iteration.
+
+<span class="gu">### Distributing Test Functions to Multiple Machines</span>
+
+If you have more than one machine you can use to run a test program, you might
+want to run the test functions in parallel and get the result faster. We call
+this technique <span class="ge">*sharding*</span>, where each machine is called a <span class="ge">*shard*</span>.
+
+GoogleTest is compatible with test sharding. To take advantage of this feature,
+your test runner (not part of GoogleTest) needs to do the following:
+
+<span class="k">1.</span>  Allocate a number of machines (shards) to run the tests.
+<span class="k">1.</span>  On each shard, set the <span class="sb">`GTEST_TOTAL_SHARDS`</span> environment variable to the total
+    number of shards. It must be the same for all shards.
+<span class="k">1.</span>  On each shard, set the <span class="sb">`GTEST_SHARD_INDEX`</span> environment variable to the index
+    of the shard. Different shards must be assigned different indices, which
+    must be in the range <span class="sb">`[0, GTEST_TOTAL_SHARDS - 1]`</span>.
+<span class="k">1.</span>  Run the same test program on all shards. When GoogleTest sees the above two
+    environment variables, it will select a subset of the test functions to run.
+    Across all shards, each test function in the program will be run exactly
+    once.
+<span class="k">1.</span>  Wait for all shards to finish, then collect and report the results.
+
+Your project may have tests that were written without GoogleTest and thus don&#39;t
+understand this protocol. In order for your test runner to figure out which test
+supports sharding, it can set the environment variable <span class="sb">`GTEST_SHARD_STATUS_FILE`</span>
+to a non-existent file path. If a test program supports sharding, it will create
+this file to acknowledge that fact; otherwise it will not create it. The actual
+contents of the file are not important at this time, although we may put some
+useful information in it in the future.
+
+Here&#39;s an example to make it clear. Suppose you have a test program <span class="sb">`foo_test`</span>
+that contains the following 5 test functions:
+
+<span class="sb">```</span>
+<span class="sb">TEST(A, V)</span>
+<span class="sb">TEST(A, W)</span>
+<span class="sb">TEST(B, X)</span>
+<span class="sb">TEST(B, Y)</span>
+<span class="sb">TEST(B, Z)</span>
+<span class="sb">```</span>
+
+Suppose you have 3 machines at your disposal. To run the test functions in
+parallel, you would set <span class="sb">`GTEST_TOTAL_SHARDS`</span> to 3 on all machines, and set
+<span class="sb">`GTEST_SHARD_INDEX`</span> to 0, 1, and 2 on the machines respectively. Then you would
+run the same <span class="sb">`foo_test`</span> on each machine.
+
+GoogleTest reserves the right to change how the work is distributed across the
+shards, but here&#39;s one possible scenario:
+
+<span class="k">*</span><span class="w"> </span>  Machine <span class="ni">#0</span> runs <span class="sb">`A.V`</span> and <span class="sb">`B.X`</span>.
+<span class="k">*</span><span class="w"> </span>  Machine <span class="ni">#1</span> runs <span class="sb">`A.W`</span> and <span class="sb">`B.Y`</span>.
+<span class="k">*</span><span class="w"> </span>  Machine <span class="ni">#2</span> runs <span class="sb">`B.Z`</span>.
+
+<span class="gu">### Controlling Test Output</span>
+
+<span class="gu">#### Colored Terminal Output</span>
+
+GoogleTest can use colors in its terminal output to make it easier to spot the
+important information:
+
+&lt;pre&gt;...
+&lt;font color=&quot;green&quot;&gt;[----------]&lt;/font&gt; 1 test from FooTest
+&lt;font color=&quot;green&quot;&gt;[ RUN      ]&lt;/font&gt; FooTest.DoesAbc
+&lt;font color=&quot;green&quot;&gt;[       OK ]&lt;/font&gt; FooTest.DoesAbc
+&lt;font color=&quot;green&quot;&gt;[----------]&lt;/font&gt; 2 tests from BarTest
+&lt;font color=&quot;green&quot;&gt;[ RUN      ]&lt;/font&gt; BarTest.HasXyzProperty
+&lt;font color=&quot;green&quot;&gt;[       OK ]&lt;/font&gt; BarTest.HasXyzProperty
+&lt;font color=&quot;green&quot;&gt;[ RUN      ]&lt;/font&gt; BarTest.ReturnsTrueOnSuccess
+... some error messages ...
+&lt;font color=&quot;red&quot;&gt;[   FAILED ]&lt;/font&gt; BarTest.ReturnsTrueOnSuccess
+...
+&lt;font color=&quot;green&quot;&gt;[==========]&lt;/font&gt; 30 tests from 14 test suites ran.
+&lt;font color=&quot;green&quot;&gt;[   PASSED ]&lt;/font&gt; 28 tests.
+&lt;font color=&quot;red&quot;&gt;[   FAILED ]&lt;/font&gt; 2 tests, listed below:
+&lt;font color=&quot;red&quot;&gt;[   FAILED ]&lt;/font&gt; BarTest.ReturnsTrueOnSuccess
+&lt;font color=&quot;red&quot;&gt;[   FAILED ]&lt;/font&gt; AnotherTest.DoesXyz
+
+ 2 FAILED TESTS
+&lt;/pre&gt;
+
+You can set the <span class="sb">`GTEST_COLOR`</span> environment variable or the <span class="sb">`--gtest_color`</span>
+command line flag to <span class="sb">`yes`</span>, <span class="sb">`no`</span>, or <span class="sb">`auto`</span> (the default) to enable colors,
+disable colors, or let GoogleTest decide. When the value is <span class="sb">`auto`</span>, GoogleTest
+will use colors if and only if the output goes to a terminal and (on non-Windows
+platforms) the <span class="sb">`TERM`</span> environment variable is set to <span class="sb">`xterm`</span> or <span class="sb">`xterm-color`</span>.
+
+<span class="gu">#### Suppressing test passes</span>
+
+By default, GoogleTest prints 1 line of output for each test, indicating if it
+passed or failed. To show only test failures, run the test program with
+<span class="sb">`--gtest_brief=1`</span>, or set the GTEST_BRIEF environment variable to <span class="sb">`1`</span>.
+
+<span class="gu">#### Suppressing the Elapsed Time</span>
+
+By default, GoogleTest prints the time it takes to run each test. To disable
+that, run the test program with the <span class="sb">`--gtest_print_time=0`</span> command line flag, or
+set the GTEST_PRINT_TIME environment variable to <span class="sb">`0`</span>.
+
+<span class="gu">#### Suppressing UTF-8 Text Output</span>
+
+In case of assertion failures, GoogleTest prints expected and actual values of
+type <span class="sb">`string`</span> both as hex-encoded strings as well as in readable UTF-8 text if
+they contain valid non-ASCII UTF-8 characters. If you want to suppress the UTF-8
+text because, for example, you don&#39;t have an UTF-8 compatible output medium, run
+the test program with <span class="sb">`--gtest_print_utf8=0`</span> or set the <span class="sb">`GTEST_PRINT_UTF8`</span>
+environment variable to <span class="sb">`0`</span>.
+
+<span class="gu">#### Generating an XML Report</span>
+
+GoogleTest can emit a detailed XML report to a file in addition to its normal
+textual output. The report contains the duration of each test, and thus can help
+you identify slow tests.
+
+To generate the XML report, set the <span class="sb">`GTEST_OUTPUT`</span> environment variable or the
+<span class="sb">`--gtest_output`</span> flag to the string <span class="sb">`&quot;xml:path_to_output_file&quot;`</span>, which will
+create the file at the given location. You can also just use the string <span class="sb">`&quot;xml&quot;`</span>,
+in which case the output can be found in the <span class="sb">`test_detail.xml`</span> file in the
+current directory.
+
+If you specify a directory (for example, <span class="sb">`&quot;xml:output/directory/&quot;`</span> on Linux or
+<span class="sb">`&quot;xml:output\directory\&quot;`</span> on Windows), GoogleTest will create the XML file in
+that directory, named after the test executable (e.g. <span class="sb">`foo_test.xml`</span> for test
+program <span class="sb">`foo_test`</span> or <span class="sb">`foo_test.exe`</span>). If the file already exists (perhaps left
+over from a previous run), GoogleTest will pick a different name (e.g.
+<span class="sb">`foo_test_1.xml`</span>) to avoid overwriting it.
+
+The report is based on the <span class="sb">`junitreport`</span> Ant task. Since that format was
+originally intended for Java, a little interpretation is required to make it
+apply to GoogleTest tests, as shown here:
+
+<span class="sb">```xml</span>
+<span class="nt">&lt;testsuites</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;AllTests&quot;</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;testsuite</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;test_case_name&quot;</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;testcase</span><span class="w">    </span><span class="na">name=</span><span class="s">&quot;test_name&quot;</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;failure</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;...&quot;</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;failure</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;...&quot;</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;failure</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;...&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/testcase&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/testsuite&gt;</span>
+<span class="nt">&lt;/testsuites&gt;</span>
+<span class="sb">```</span>
+
+<span class="k">*</span><span class="w"> </span>  The root <span class="sb">`&lt;testsuites&gt;`</span> element corresponds to the entire test program.
+<span class="k">*</span><span class="w"> </span>  <span class="sb">`&lt;testsuite&gt;`</span> elements correspond to GoogleTest test suites.
+<span class="k">*</span><span class="w"> </span>  <span class="sb">`&lt;testcase&gt;`</span> elements correspond to GoogleTest test functions.
+
+For instance, the following program
+
+```c++
+TEST(MathTest, Addition) { ... }
+TEST(MathTest, Subtraction) { ... }
+TEST(LogicTest, NonContradiction) { ... }
+<span class="sb">```</span>
+
+<span class="sb">could generate this report:</span>
+
+<span class="sb">```xml</span>
+<span class="sb">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="sb">&lt;testsuites tests=&quot;3&quot; failures=&quot;1&quot; errors=&quot;0&quot; time=&quot;0.035&quot; timestamp=&quot;2011-10-31T18:52:42&quot; name=&quot;AllTests&quot;&gt;</span>
+<span class="sb">  &lt;testsuite name=&quot;MathTest&quot; tests=&quot;2&quot; failures=&quot;1&quot; errors=&quot;0&quot; time=&quot;0.015&quot;&gt;</span>
+<span class="sb">    &lt;testcase name=&quot;Addition&quot; file=&quot;test.cpp&quot; line=&quot;1&quot; status=&quot;run&quot; time=&quot;0.007&quot; classname=&quot;&quot;&gt;</span>
+<span class="sb">      &lt;failure message=&quot;Value of: add(1, 1)&amp;#x0A;  Actual: 3&amp;#x0A;Expected: 2&quot; type=&quot;&quot;&gt;...&lt;/failure&gt;</span>
+<span class="sb">      &lt;failure message=&quot;Value of: add(1, -1)&amp;#x0A;  Actual: 1&amp;#x0A;Expected: 0&quot; type=&quot;&quot;&gt;...&lt;/failure&gt;</span>
+<span class="sb">    &lt;/testcase&gt;</span>
+<span class="sb">    &lt;testcase name=&quot;Subtraction&quot; file=&quot;test.cpp&quot; line=&quot;2&quot; status=&quot;run&quot; time=&quot;0.005&quot; classname=&quot;&quot;&gt;</span>
+<span class="sb">    &lt;/testcase&gt;</span>
+<span class="sb">  &lt;/testsuite&gt;</span>
+<span class="sb">  &lt;testsuite name=&quot;LogicTest&quot; tests=&quot;1&quot; failures=&quot;0&quot; errors=&quot;0&quot; time=&quot;0.005&quot;&gt;</span>
+<span class="sb">    &lt;testcase name=&quot;NonContradiction&quot; file=&quot;test.cpp&quot; line=&quot;3&quot; status=&quot;run&quot; time=&quot;0.005&quot; classname=&quot;&quot;&gt;</span>
+<span class="sb">    &lt;/testcase&gt;</span>
+<span class="sb">  &lt;/testsuite&gt;</span>
+<span class="sb">&lt;/testsuites&gt;</span>
+<span class="sb">```</span>
+
+Things to note:
+
+<span class="k">*</span><span class="w"> </span>  The <span class="sb">`tests`</span> attribute of a <span class="sb">`&lt;testsuites&gt;`</span> or <span class="sb">`&lt;testsuite&gt;`</span> element tells how
+    many test functions the GoogleTest program or test suite contains, while the
+    <span class="sb">`failures`</span> attribute tells how many of them failed.
+
+<span class="k">*</span><span class="w"> </span>  The <span class="sb">`time`</span> attribute expresses the duration of the test, test suite, or
+    entire test program in seconds.
+
+<span class="k">*</span><span class="w"> </span>  The <span class="sb">`timestamp`</span> attribute records the local date and time of the test
+    execution.
+
+<span class="k">*</span><span class="w"> </span>  The <span class="sb">`file`</span> and <span class="sb">`line`</span> attributes record the source file location, where the
+    test was defined.
+
+<span class="k">*</span><span class="w"> </span>  Each <span class="sb">`&lt;failure&gt;`</span> element corresponds to a single failed GoogleTest
+    assertion.
+
+<span class="gu">#### Generating a JSON Report</span>
+
+GoogleTest can also emit a JSON report as an alternative format to XML. To
+generate the JSON report, set the <span class="sb">`GTEST_OUTPUT`</span> environment variable or the
+<span class="sb">`--gtest_output`</span> flag to the string <span class="sb">`&quot;json:path_to_output_file&quot;`</span>, which will
+create the file at the given location. You can also just use the string
+<span class="sb">`&quot;json&quot;`</span>, in which case the output can be found in the <span class="sb">`test_detail.json`</span> file
+in the current directory.
+
+The report format conforms to the following JSON Schema:
+
+<span class="sb">```json</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://json-schema.org/schema#&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;definitions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;TestCase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;tests&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;failures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;disabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;testsuite&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/definitions/TestInfo&quot;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;TestInfo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;line&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;enum&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;RUN&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;NOTRUN&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;classname&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;failures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/definitions/Failure&quot;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;Failure&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;failures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;tests&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;failures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;disabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;errors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;date-time&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;testsuites&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/definitions/TestCase&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="sb">```</span>
+
+The report uses the format that conforms to the following Proto3 using the
+[<span class="nt">JSON encoding</span>](<span class="na">https://developers.google.com/protocol-buffers/docs/proto3#json</span>):
+
+<span class="sb">```proto</span>
+<span class="k">syntax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;proto3&quot;</span><span class="p">;</span>
+
+<span class="kn">package</span><span class="w"> </span><span class="nn">googletest</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="s">&quot;google/protobuf/timestamp.proto&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s">&quot;google/protobuf/duration.proto&quot;</span><span class="p">;</span>
+
+<span class="kd">message</span><span class="w"> </span><span class="nc">UnitTest</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int32</span><span class="w"> </span><span class="na">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int32</span><span class="w"> </span><span class="na">failures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int32</span><span class="w"> </span><span class="na">disabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int32</span><span class="w"> </span><span class="na">errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="w">  </span><span class="n">google.protobuf.Timestamp</span><span class="w"> </span><span class="na">timestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">  </span><span class="n">google.protobuf.Duration</span><span class="w"> </span><span class="na">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">string</span><span class="w"> </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<span class="w">  </span><span class="k">repeated</span><span class="w"> </span><span class="n">TestCase</span><span class="w"> </span><span class="na">testsuites</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span><span class="w"> </span><span class="nc">TestCase</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">string</span><span class="w"> </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int32</span><span class="w"> </span><span class="na">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int32</span><span class="w"> </span><span class="na">failures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int32</span><span class="w"> </span><span class="na">disabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int32</span><span class="w"> </span><span class="na">errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">  </span><span class="n">google.protobuf.Duration</span><span class="w"> </span><span class="na">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+<span class="w">  </span><span class="k">repeated</span><span class="w"> </span><span class="n">TestInfo</span><span class="w"> </span><span class="na">testsuite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span><span class="w"> </span><span class="nc">TestInfo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">string</span><span class="w"> </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">string</span><span class="w"> </span><span class="na">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int32</span><span class="w"> </span><span class="na">line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">enum</span><span class="w"> </span><span class="n">Status</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="na">RUN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="na">NOTRUN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">Status</span><span class="w"> </span><span class="na">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="n">google.protobuf.Duration</span><span class="w"> </span><span class="na">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">string</span><span class="w"> </span><span class="na">classname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">message</span><span class="w"> </span><span class="nc">Failure</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="na">failures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="na">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">repeated</span><span class="w"> </span><span class="n">Failure</span><span class="w"> </span><span class="na">failures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="sb">```</span>
+
+For instance, the following program
+
+```c++
+TEST(MathTest, Addition) { ... }
+TEST(MathTest, Subtraction) { ... }
+TEST(LogicTest, NonContradiction) { ... }
+<span class="sb">```</span>
+
+<span class="sb">could generate this report:</span>
+
+<span class="sb">```json</span>
+<span class="sb">{</span>
+<span class="sb">  &quot;tests&quot;: 3,</span>
+<span class="sb">  &quot;failures&quot;: 1,</span>
+<span class="sb">  &quot;errors&quot;: 0,</span>
+<span class="sb">  &quot;time&quot;: &quot;0.035s&quot;,</span>
+<span class="sb">  &quot;timestamp&quot;: &quot;2011-10-31T18:52:42Z&quot;,</span>
+<span class="sb">  &quot;name&quot;: &quot;AllTests&quot;,</span>
+<span class="sb">  &quot;testsuites&quot;: [</span>
+<span class="sb">    {</span>
+<span class="sb">      &quot;name&quot;: &quot;MathTest&quot;,</span>
+<span class="sb">      &quot;tests&quot;: 2,</span>
+<span class="sb">      &quot;failures&quot;: 1,</span>
+<span class="sb">      &quot;errors&quot;: 0,</span>
+<span class="sb">      &quot;time&quot;: &quot;0.015s&quot;,</span>
+<span class="sb">      &quot;testsuite&quot;: [</span>
+<span class="sb">        {</span>
+<span class="sb">          &quot;name&quot;: &quot;Addition&quot;,</span>
+<span class="sb">          &quot;file&quot;: &quot;test.cpp&quot;,</span>
+<span class="sb">          &quot;line&quot;: 1,</span>
+<span class="sb">          &quot;status&quot;: &quot;RUN&quot;,</span>
+<span class="sb">          &quot;time&quot;: &quot;0.007s&quot;,</span>
+<span class="sb">          &quot;classname&quot;: &quot;&quot;,</span>
+<span class="sb">          &quot;failures&quot;: [</span>
+<span class="sb">            {</span>
+<span class="sb">              &quot;message&quot;: &quot;Value of: add(1, 1)\n  Actual: 3\nExpected: 2&quot;,</span>
+<span class="sb">              &quot;type&quot;: &quot;&quot;</span>
+<span class="sb">            },</span>
+<span class="sb">            {</span>
+<span class="sb">              &quot;message&quot;: &quot;Value of: add(1, -1)\n  Actual: 1\nExpected: 0&quot;,</span>
+<span class="sb">              &quot;type&quot;: &quot;&quot;</span>
+<span class="sb">            }</span>
+<span class="sb">          ]</span>
+<span class="sb">        },</span>
+<span class="sb">        {</span>
+<span class="sb">          &quot;name&quot;: &quot;Subtraction&quot;,</span>
+<span class="sb">          &quot;file&quot;: &quot;test.cpp&quot;,</span>
+<span class="sb">          &quot;line&quot;: 2,</span>
+<span class="sb">          &quot;status&quot;: &quot;RUN&quot;,</span>
+<span class="sb">          &quot;time&quot;: &quot;0.005s&quot;,</span>
+<span class="sb">          &quot;classname&quot;: &quot;&quot;</span>
+<span class="sb">        }</span>
+<span class="sb">      ]</span>
+<span class="sb">    },</span>
+<span class="sb">    {</span>
+<span class="sb">      &quot;name&quot;: &quot;LogicTest&quot;,</span>
+<span class="sb">      &quot;tests&quot;: 1,</span>
+<span class="sb">      &quot;failures&quot;: 0,</span>
+<span class="sb">      &quot;errors&quot;: 0,</span>
+<span class="sb">      &quot;time&quot;: &quot;0.005s&quot;,</span>
+<span class="sb">      &quot;testsuite&quot;: [</span>
+<span class="sb">        {</span>
+<span class="sb">          &quot;name&quot;: &quot;NonContradiction&quot;,</span>
+<span class="sb">          &quot;file&quot;: &quot;test.cpp&quot;,</span>
+<span class="sb">          &quot;line&quot;: 3,</span>
+<span class="sb">          &quot;status&quot;: &quot;RUN&quot;,</span>
+<span class="sb">          &quot;time&quot;: &quot;0.005s&quot;,</span>
+<span class="sb">          &quot;classname&quot;: &quot;&quot;</span>
+<span class="sb">        }</span>
+<span class="sb">      ]</span>
+<span class="sb">    }</span>
+<span class="sb">  ]</span>
+<span class="sb">}</span>
+<span class="sb">```</span>
+
+{: .callout .important}
+IMPORTANT: The exact format of the JSON document is subject to change.
+
+<span class="gu">### Controlling How Failures Are Reported</span>
+
+<span class="gu">#### Detecting Test Premature Exit</span>
+
+Google Test implements the <span class="ge">*premature-exit-file*</span> protocol for test runners to
+catch any kind of unexpected exits of test programs. Upon start, Google Test
+creates the file which will be automatically deleted after all work has been
+finished. Then, the test runner can check if this file exists. In case the file
+remains undeleted, the inspected test has exited prematurely.
+
+This feature is enabled only if the <span class="sb">`TEST_PREMATURE_EXIT_FILE`</span> environment
+variable has been set.
+
+<span class="gu">#### Turning Assertion Failures into Break-Points</span>
+
+When running test programs under a debugger, it&#39;s very convenient if the
+debugger can catch an assertion failure and automatically drop into interactive
+mode. GoogleTest&#39;s <span class="ge">*break-on-failure*</span> mode supports this behavior.
+
+To enable it, set the <span class="sb">`GTEST_BREAK_ON_FAILURE`</span> environment variable to a value
+other than <span class="sb">`0`</span>. Alternatively, you can use the <span class="sb">`--gtest_break_on_failure`</span>
+command line flag.
+
+<span class="gu">#### Disabling Catching Test-Thrown Exceptions</span>
+
+GoogleTest can be used either with or without exceptions enabled. If a test
+throws a C++ exception or (on Windows) a structured exception (SEH), by default
+GoogleTest catches it, reports it as a test failure, and continues with the next
+test method. This maximizes the coverage of a test run. Also, on Windows an
+uncaught exception will cause a pop-up window, so catching the exceptions allows
+you to run the tests automatically.
+
+When debugging the test failures, however, you may instead want the exceptions
+to be handled by the debugger, such that you can examine the call stack when an
+exception is thrown. To achieve that, set the <span class="sb">`GTEST_CATCH_EXCEPTIONS`</span>
+environment variable to <span class="sb">`0`</span>, or use the <span class="sb">`--gtest_catch_exceptions=0`</span> flag when
+running the tests.
+
+<span class="gu">### Sanitizer Integration</span>
+
+The
+[<span class="nt">Undefined Behavior Sanitizer</span>](<span class="na">https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html</span>),
+[<span class="nt">Address Sanitizer</span>](<span class="na">https://github.com/google/sanitizers/wiki/AddressSanitizer</span>),
+and
+[<span class="nt">Thread Sanitizer</span>](<span class="na">https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual</span>)
+all provide weak functions that you can override to trigger explicit failures
+when they detect sanitizer errors, such as creating a reference from <span class="sb">`nullptr`</span>.
+To override these functions, place definitions for them in a source file that
+you compile as part of your main binary:
+
+<span class="sb">```</span>
+<span class="sb">extern &quot;C&quot; {</span>
+<span class="sb">void __ubsan_on_report() {</span>
+<span class="sb">  FAIL() &lt;&lt; &quot;Encountered an undefined behavior sanitizer error&quot;;</span>
+<span class="sb">}</span>
+<span class="sb">void __asan_on_error() {</span>
+<span class="sb">  FAIL() &lt;&lt; &quot;Encountered an address sanitizer error&quot;;</span>
+<span class="sb">}</span>
+<span class="sb">void __tsan_on_report() {</span>
+<span class="sb">  FAIL() &lt;&lt; &quot;Encountered a thread sanitizer error&quot;;</span>
+<span class="sb">}</span>
+<span class="sb">}  // extern &quot;C&quot;</span>
+<span class="sb">```</span>
+
+After compiling your project with one of the sanitizers enabled, if a particular
+test triggers a sanitizer error, GoogleTest will report that it failed.
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+.. _exhale_class_classgoogletest-color-test_1_1GTestColorTest:
+
+Class GTestColorTest
+====================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-color-test.py`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public gtest_test_utils.TestCase``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: googletest-color-test::GTestColorTest
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

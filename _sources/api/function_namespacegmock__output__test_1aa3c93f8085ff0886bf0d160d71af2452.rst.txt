@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegmock__output__test_1aa3c93f8085ff0886bf0d160d71af2452:
+
+Function gmock_output_test::RemoveLocations
+===========================================
+
+- Defined in :ref:`file_googletest_googlemock_test_gmock_output_test.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: gmock_output_test::RemoveLocations(output)
+   :project: Fields2Cover

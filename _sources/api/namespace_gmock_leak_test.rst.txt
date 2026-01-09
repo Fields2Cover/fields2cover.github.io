@@ -1,0 +1,37 @@
+
+.. _namespace_gmock_leak_test:
+
+Namespace gmock_leak_test
+=========================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classgmock__leak__test_1_1GMockLeakTest`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespacegmock__leak__test_1a9437a2d2e3bde77354e5c6443ef129f8`
+
+- :ref:`exhale_variable_namespacegmock__leak__test_1ace925116117368cd02a7b45571f5133d`
+
+- :ref:`exhale_variable_namespacegmock__leak__test_1a1ab1da2afb1748500a059d59660330cb`
+
+- :ref:`exhale_variable_namespacegmock__leak__test_1a9a529935171ee6ab369902d9a77ffbf5`
+
+- :ref:`exhale_variable_namespacegmock__leak__test_1aa03214d2fad1ee0fd3f3101da688ebfc`
+
+- :ref:`exhale_variable_namespacegmock__leak__test_1a5b7e5890b4022a37ef82bdf4eb22ef44`

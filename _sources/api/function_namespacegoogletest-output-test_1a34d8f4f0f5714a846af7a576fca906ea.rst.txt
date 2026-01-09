@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegoogletest-output-test_1a34d8f4f0f5714a846af7a576fca906ea:
+
+Function googletest-output-test::NormalizeOutput
+================================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-output-test.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: googletest-output-test::NormalizeOutput(output)
+   :project: Fields2Cover

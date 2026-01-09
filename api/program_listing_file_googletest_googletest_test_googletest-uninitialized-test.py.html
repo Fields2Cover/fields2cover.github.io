@@ -1,0 +1,199 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File googletest-uninitialized-test.py &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_googletest_googletest_test_googletest-uninitialized-test.py.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File googletest-uninitialized-test.py</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_googletest_googletest_test_googletest-uninitialized-test.py.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-googletest-uninitialized-test-py">
+<span id="program-listing-file-googletest-googletest-test-googletest-uninitialized-test-py"></span><h1>Program Listing for File googletest-uninitialized-test.py<a class="headerlink" href="#program-listing-for-file-googletest-uninitialized-test-py" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_googletest_googletest_test_googletest-uninitialized-test.py.html#file-googletest-googletest-test-googletest-uninitialized-test-py"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">googletest/googletest/test/googletest-uninitialized-test.py</span></code>)</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright 2008, Google Inc.</span>
+<span class="c1"># All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Redistribution and use in source and binary forms, with or without</span>
+<span class="c1"># modification, are permitted provided that the following conditions are</span>
+<span class="c1"># met:</span>
+<span class="c1">#</span>
+<span class="c1">#     * Redistributions of source code must retain the above copyright</span>
+<span class="c1"># notice, this list of conditions and the following disclaimer.</span>
+<span class="c1">#     * Redistributions in binary form must reproduce the above</span>
+<span class="c1"># copyright notice, this list of conditions and the following disclaimer</span>
+<span class="c1"># in the documentation and/or other materials provided with the</span>
+<span class="c1"># distribution.</span>
+<span class="c1">#     * Neither the name of Google Inc. nor the names of its</span>
+<span class="c1"># contributors may be used to endorse or promote products derived from</span>
+<span class="c1"># this software without specific prior written permission.</span>
+<span class="c1">#</span>
+<span class="c1"># THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<span class="c1"># &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span>
+<span class="c1"># LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</span>
+<span class="c1"># A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</span>
+<span class="c1"># OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span>
+<span class="c1"># SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</span>
+<span class="c1"># LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</span>
+<span class="c1"># DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</span>
+<span class="c1"># THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span>
+<span class="c1"># (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span>
+<span class="c1"># OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+
+<span class="sd">&quot;&quot;&quot;Verifies that Google Test warns the user when not initialized properly.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">googletest.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">gtest_test_utils</span>
+
+<span class="n">COMMAND</span> <span class="o">=</span> <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">GetTestExecutablePath</span><span class="p">(</span>
+    <span class="s1">&#39;googletest-uninitialized-test_&#39;</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">Assert</span><span class="p">(</span><span class="n">condition</span><span class="p">):</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">AssertionError</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">AssertEq</span><span class="p">(</span><span class="n">expected</span><span class="p">,</span> <span class="n">actual</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">expected</span> <span class="o">!=</span> <span class="n">actual</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Expected: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">expected</span><span class="p">,))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  Actual: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">actual</span><span class="p">,))</span>
+    <span class="k">raise</span> <span class="ne">AssertionError</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">TestExitCodeAndOutput</span><span class="p">(</span><span class="n">command</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Runs the given command and verifies its exit code and output.&quot;&quot;&quot;</span>
+
+  <span class="c1"># Verifies that &#39;command&#39; exits with code 1.</span>
+  <span class="n">p</span> <span class="o">=</span> <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">Subprocess</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">exited</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">exit_code</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">Assert</span><span class="p">(</span><span class="s1">&#39;IMPORTANT NOTICE&#39;</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">Assert</span><span class="p">(</span><span class="s1">&#39;InitGoogleTest&#39;</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">GTestUninitializedTest</span><span class="p">(</span><span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testExitCodeAndOutput</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">TestExitCodeAndOutput</span><span class="p">(</span><span class="n">COMMAND</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">Main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

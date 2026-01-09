@@ -1,0 +1,14 @@
+.. _exhale_function_gmock__link__test_8h_1ac35b16985b69c6aee820e850a90a3a92:
+
+Function TEST(LinkTest, TestMatcherIsSupersetOf)
+================================================
+
+- Defined in :ref:`file_googletest_googlemock_test_gmock_link_test.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: TEST(LinkTest, TestMatcherIsSupersetOf)
+   :project: Fields2Cover

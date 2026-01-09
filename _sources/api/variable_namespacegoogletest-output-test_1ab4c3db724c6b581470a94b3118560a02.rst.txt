@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-output-test_1ab4c3db724c6b581470a94b3118560a02:
+
+Variable googletest-output-test::COMMAND_WITH_COLOR
+===================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-output-test::COMMAND_WITH_COLOR
+   :project: Fields2Cover

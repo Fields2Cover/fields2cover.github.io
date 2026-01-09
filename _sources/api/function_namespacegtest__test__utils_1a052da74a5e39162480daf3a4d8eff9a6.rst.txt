@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegtest__test__utils_1a052da74a5e39162480daf3a4d8eff9a6:
+
+Function gtest_test_utils::GetFlag
+==================================
+
+- Defined in :ref:`file_googletest_googletest_test_gtest_test_utils.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: gtest_test_utils::GetFlag(flag)
+   :project: Fields2Cover

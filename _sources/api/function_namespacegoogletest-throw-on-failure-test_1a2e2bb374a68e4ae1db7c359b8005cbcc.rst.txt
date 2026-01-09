@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegoogletest-throw-on-failure-test_1a2e2bb374a68e4ae1db7c359b8005cbcc:
+
+Function googletest-throw-on-failure-test::SetEnvVar
+====================================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-throw-on-failure-test.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: googletest-throw-on-failure-test::SetEnvVar(env_var, value)
+   :project: Fields2Cover

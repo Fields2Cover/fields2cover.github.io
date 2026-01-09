@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegoogletest-output-test_1a6641ac66a197c6d17b38e5ed3f9bf92e:
+
+Function googletest-output-test::NormalizeToCurrentPlatform
+===========================================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-output-test.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: googletest-output-test::NormalizeToCurrentPlatform(test_output)
+   :project: Fields2Cover

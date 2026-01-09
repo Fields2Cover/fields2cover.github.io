@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-break-on-failure-unittest_1abc1b16aef18f9120cbfa46f044a8b05e:
+
+Variable googletest-break-on-failure-unittest::SetEnvVar
+========================================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-break-on-failure-unittest.py`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-break-on-failure-unittest::SetEnvVar
+   :project: Fields2Cover

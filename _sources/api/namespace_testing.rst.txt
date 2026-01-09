@@ -1,0 +1,22 @@
+
+.. _namespace_testing:
+
+Namespace testing
+=================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_testing__gmock_matchers_test`
+
+- :ref:`namespace_testing__internal`

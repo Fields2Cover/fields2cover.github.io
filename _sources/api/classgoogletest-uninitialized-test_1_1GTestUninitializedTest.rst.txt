@@ -1,0 +1,26 @@
+.. _exhale_class_classgoogletest-uninitialized-test_1_1GTestUninitializedTest:
+
+Class GTestUninitializedTest
+============================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-uninitialized-test.py`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public gtest_test_utils.TestCase``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: googletest-uninitialized-test::GTestUninitializedTest
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

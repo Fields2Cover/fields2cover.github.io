@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-output-test_1a7f642ce6ab89839d2ea88a438ef6b1f3:
+
+Variable googletest-output-test::CAN_GENERATE_GOLDEN_FILE
+=========================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-output-test::CAN_GENERATE_GOLDEN_FILE
+   :project: Fields2Cover

@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class GTestFailFastUnitTest &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class GTestFilterUnitTest" href="classgoogletest-filter-unittest_1_1GTestFilterUnitTest.html" />
+    <link rel="prev" title="Class GTestEnvVarTest" href="classgoogletest-env-var-test_1_1GTestEnvVarTest.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="f2c_library.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#page-hierarchy">Page Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="f2c_library.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="f2c_library.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="f2c_library.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1Options.html">Struct Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cell.html">Struct Cell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cells.html">Struct Cells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Field.html">Struct Field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries.html">Template Struct Geometries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1ConstIterator_1_1Private.html">Struct ConstIterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometries_1_1Iterator_1_1Private.html">Struct Iterator::Private</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Geometry.html">Template Struct Geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LinearRing.html">Struct LinearRing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1LineString.html">Struct LineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiLineString.html">Struct MultiLineString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1MultiPoint.html">Struct MultiPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Path.html">Struct Path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1PathState.html">Struct PathState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Point.html">Struct Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Robot.html">Struct Robot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Route.html">Struct Route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Strip.html">Struct Strip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swath.html">Struct Swath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Swaths.html">Struct Swaths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1SwathsByCells.html">Struct SwathsByCells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structstd_1_1hash_3_01f2c_1_1types_1_1Point_01_4.html">Template Struct hash&lt; f2c::types::Point &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structtesting_1_1gmock__matchers__test_1_1ContainerHelper.html">Struct ContainerHelper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structtesting_1_1gmock__matchers__test_1_1GtestGreaterThanMatcher.html">Template Struct GtestGreaterThanMatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structtesting_1_1internal_1_1TraceInfo.html">Struct TraceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structtesting_1_1internal_1_1UnitTestImpl_1_1CompareTestSuitesByPointer.html">Struct UnitTestImpl::CompareTestSuitesByPointer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classContainerTest.html">Template Class ContainerTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCounter.html">Class Counter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classExternalInstantiationTest.html">Class ExternalInstantiationTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1CubicSpline.html">Class CubicSpline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1BoustrophedonDecomp.html">Class BoustrophedonDecomp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1DecompositionBase.html">Class DecompositionBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1TrapezoidalDecomp.html">Class TrapezoidalDecomp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1ConstHL.html">Class ConstHL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html">Class HeadlandGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1BaseObjective.html">Template Class BaseObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1CompleteTurnPathObj.html">Template Class CompleteTurnPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1DecompObjective.html">Class DecompObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1DirectDistPathObj.html">Class DirectDistPathObj</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1FieldCoverage.html">Class FieldCoverage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1HGObjective.html">Class HGObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1NSwath.html">Class NSwath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1NSwathModified.html">Class NSwathModified</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1Overlaps.html">Class Overlaps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1PathLength.html">Class PathLength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1PPObjective.html">Class PPObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1RemArea.html">Class RemArea</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1RPObjective.html">Class RPObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1SGObjective.html">Class SGObjective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1SwathLength.html">Class SwathLength</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Parser.html">Class Parser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurves.html">Class DubinsCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1DubinsCurvesCC.html">Class DubinsCurvesCC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1PathPlanning.html">Class PathPlanning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurves.html">Class ReedsSheppCurves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1ReedsSheppCurvesHC.html">Class ReedsSheppCurvesHC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1pp_1_1TurningBase.html">Class TurningBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Random.html">Class Random</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1BoustrophedonOrder.html">Class BoustrophedonOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1CustomOrder.html">Class CustomOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1RoutePlannerBase.html">Class RoutePlannerBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SingleCellSwathsOrderBase.html">Class SingleCellSwathsOrderBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SnakeOrder.html">Class SnakeOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1rp_1_1SpiralOrder.html">Class SpiralOrder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1BruteForce.html">Class BruteForce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1sg_1_1SwathGeneratorBase.html">Class SwathGeneratorBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Transform.html">Class Transform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1EmptyDestructor.html">Class EmptyDestructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1ConstIterator.html">Class Geometries::ConstIterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Geometries_1_1Iterator.html">Class Geometries::Iterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Graph.html">Class Graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1types_1_1Graph2D.html">Class Graph2D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1Visualizer.html">Class Visualizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFieldHelper.html">Class FieldHelper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgmock__leak__test_1_1GMockLeakTest.html">Class GMockLeakTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgmock__output__test_1_1GMockOutputTest.html">Class GMockOutputTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-break-on-failure-unittest_1_1GTestBreakOnFailureUnitTest.html">Class GTestBreakOnFailureUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest.html">Class CatchCxxExceptionsTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-catch-exceptions-test_1_1CatchSehExceptionsTest.html">Class CatchSehExceptionsTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-color-test_1_1GTestColorTest.html">Class GTestColorTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-env-var-test_1_1GTestEnvVarTest.html">Class GTestEnvVarTest</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Class GTestFailFastUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-filter-unittest_1_1GTestFilterUnitTest.html">Class GTestFilterUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-global-environment-unittest_1_1GTestGlobalEnvironmentUnitTest.html">Class GTestGlobalEnvironmentUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-json-outfiles-test_1_1GTestJsonOutFilesTest.html">Class GTestJsonOutFilesTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-json-output-unittest_1_1GTestJsonOutputUnitTest.html">Class GTestJsonOutputUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-list-tests-unittest_1_1GTestListTestsUnitTest.html">Class GTestListTestsUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-output-test_1_1GTestOutputTest.html">Class GTestOutputTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-param-test-invalid-name1-test_1_1GTestParamTestInvalidName1Test.html">Class GTestParamTestInvalidName1Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-param-test-invalid-name2-test_1_1GTestParamTestInvalidName2Test.html">Class GTestParamTestInvalidName2Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-setuptestsuite-test_1_1GTestSetUpTestSuiteTest.html">Class GTestSetUpTestSuiteTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-shuffle-test_1_1GTestShuffleUnitTest.html">Class GTestShuffleUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-throw-on-failure-test_1_1ThrowOnFailureTest.html">Class ThrowOnFailureTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgoogletest-uninitialized-test_1_1GTestUninitializedTest.html">Class GTestUninitializedTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__help__test_1_1GTestHelpTest.html">Class GTestHelpTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__list__output__unittest_1_1GTestListTestsOutputUnitTest.html">Class GTestListTestsOutputUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__skip__check__output__test_1_1SkipEntireEnvironmentTest.html">Class SkipEntireEnvironmentTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__skip__environment__check__output__test_1_1SkipEntireEnvironmentTest.html">Class SkipEntireEnvironmentTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__test__utils_1_1Subprocess.html">Class Subprocess</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__testbridge__test_1_1GTestTestFilterTest.html">Class GTestTestFilterTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__xml__outfiles__test_1_1GTestXMLOutFilesTest.html">Class GTestXMLOutFilesTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__xml__output__unittest_1_1GTestXMLOutputUnitTest.html">Class GTestXMLOutputUnitTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classgtest__xml__test__utils_1_1GTestXMLTestCase.html">Class GTestXMLTestCase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classInstantiationInMultipleTranslationUnitsTest.html">Class InstantiationInMultipleTranslationUnitsTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classInterface.html">Class Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classInvokeHelper.html">Class InvokeHelper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMatcherInterface.html">Class MatcherInterface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMock.html">Class Mock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMyString.html">Class MyString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classOnTheFlyPrimeTable.html">Class OnTheFlyPrimeTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPreCalculatedPrimeTable.html">Class PreCalculatedPrimeTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPrimeTable.html">Class PrimeTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPrivateCode.html">Class PrivateCode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQueue.html">Template Class Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQueueNode.html">Template Class QueueNode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1gmock__matchers__test_1_1GreaterThanMatcher.html">Template Class GreaterThanMatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1gmock__matchers__test_1_1GTestMatcherTestP.html">Class GTestMatcherTestP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1DefaultGlobalTestPartResultReporter.html">Class DefaultGlobalTestPartResultReporter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1DefaultPerThreadTestPartResultReporter.html">Class DefaultPerThreadTestPartResultReporter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1GTestFlagSaver.html">Class GTestFlagSaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1OsStackTraceGetter.html">Class OsStackTraceGetter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1OsStackTraceGetterInterface.html">Class OsStackTraceGetterInterface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1TestPropertyKeyIs.html">Class TestPropertyKeyIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1TestResultAccessor.html">Class TestResultAccessor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1UnitTestImpl.html">Class UnitTestImpl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classtesting_1_1internal_1_1UnitTestOptions.html">Class UnitTestOptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTestPartResultReporterInterface.html">Class TestPartResultReporterInterface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#defines">Defines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f2c_library.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="f2c_library.html">API</a></li>
+      <li class="breadcrumb-item active">Class GTestFailFastUnitTest</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="class-gtestfailfastunittest">
+<span id="exhale-class-classgoogletest-failfast-unittest-1-1gtestfailfastunittest"></span><h1>Class GTestFailFastUnitTest<a class="headerlink" href="#class-gtestfailfastunittest" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_googletest_googletest_test_googletest-failfast-unittest.py.html#file-googletest-googletest-test-googletest-failfast-unittest-py"><span class="std std-ref">File googletest-failfast-unittest.py</span></a></p></li>
+</ul>
+<section id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Link to this heading"></a></h2>
+<section id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">gtest_test_utils.TestCase</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest"></span><span class="sig-name descname"><span class="pre">googletest-failfast-unittest.GTestFailFastUnitTest</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">gtest_test_utils.TestCase</span></span></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">fail_fast</span><span class="p">.</span>
+</pre></div>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="testDefaultBehavior">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1ad3089094d4accf5ed4e45263133255bf"></span><span class="sig-name descname"><span class="pre">testDefaultBehavior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testDefaultBehavior" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">specifying</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">fail_fast</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testGoogletestFlag">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1a8868f9e55d8ee268276d64656865441f"></span><span class="sig-name descname"><span class="pre">testGoogletestFlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testGoogletestFlag" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testGoogletestEnvVar">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1a51e0d6947e2fc6e143e8bd060e45b6e3"></span><span class="sig-name descname"><span class="pre">testGoogletestEnvVar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testGoogletestEnvVar" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">specifying</span><span class="w"> </span><span class="n">fail_fast</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">Googletest</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="n">var</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testBazelEnvVar">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1a8eb621eff4b0d5738376907eba783634"></span><span class="sig-name descname"><span class="pre">testBazelEnvVar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testBazelEnvVar" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">specifying</span><span class="w"> </span><span class="n">fail_fast</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">Bazel</span><span class="w"> </span><span class="n">testbridge</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testFlagOverridesEnvVar">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1a3a89aed053602baadb9bb32a46e6cfd3"></span><span class="sig-name descname"><span class="pre">testFlagOverridesEnvVar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testFlagOverridesEnvVar" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">precedence</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="n">over</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="n">var</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testGoogletestEnvVarOverridesBazelEnvVar">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1ad998af915c456cda96a09816223585f5"></span><span class="sig-name descname"><span class="pre">testGoogletestEnvVarOverridesBazelEnvVar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testGoogletestEnvVarOverridesBazelEnvVar" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Googletest</span><span class="w"> </span><span class="n">native</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="n">over</span><span class="w"> </span><span class="n">Bazel</span><span class="w"> </span><span class="n">testbridge</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testEventListener">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1a1475e3d7f80ce772c1f46e113a607f87"></span><span class="sig-name descname"><span class="pre">testEventListener</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testEventListener" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="assertXmlResultCount">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1a9e253ee370a45c0fd976f1618bccab75"></span><span class="sig-name descname"><span class="pre">assertXmlResultCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xml</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#assertXmlResultCount" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="assertXmlStatusCount">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1acbfb5e6a69ab38fb0fb05166f736d6d9"></span><span class="sig-name descname"><span class="pre">assertXmlStatusCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xml</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#assertXmlStatusCount" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="assertFailFastXmlAndTxtOutput">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1a752c45c96a6daa7efc47edb1f494b400"></span><span class="sig-name descname"><span class="pre">assertFailFastXmlAndTxtOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fail_fast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_suite</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passed_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">failure_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipped_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppressed_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_disabled</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#assertFailFastXmlAndTxtOutput" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Assert</span><span class="w"> </span><span class="n">XML</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="n">execution</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="assertFailFastBehavior">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1ad0305a6ba4982f90ec3ddedf2a81369f"></span><span class="sig-name descname"><span class="pre">assertFailFastBehavior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_suite</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passed_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">failure_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipped_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppressed_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_disabled</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#assertFailFastBehavior" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Assert</span><span class="w"> </span><span class="o">--</span><span class="n">fail_fast</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">flag</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="assertNotFailFastBehavior">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1a7c2f4c49ee6ff969b7373a3cec08ffe2"></span><span class="sig-name descname"><span class="pre">assertNotFailFastBehavior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_suite</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passed_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">failure_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipped_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppressed_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_disabled</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#assertNotFailFastBehavior" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Assert</span><span class="w"> </span><span class="o">--</span><span class="n">nofail_fast</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">flag</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testFlag_HasFixtureTest">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1af95aac2efeb297b78be0a3d28f3b3285"></span><span class="sig-name descname"><span class="pre">testFlag_HasFixtureTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testFlag_HasFixtureTest" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">fail_fast</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">TEST_F</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testFlag_HasSimpleTest">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1a0912f4b1d91586ef5e4d73b0e915c40e"></span><span class="sig-name descname"><span class="pre">testFlag_HasSimpleTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testFlag_HasSimpleTest" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">fail_fast</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">TEST</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testFlag_HasParametersTest">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1abbfff1ef73c601860f46361dae18d65a"></span><span class="sig-name descname"><span class="pre">testFlag_HasParametersTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testFlag_HasParametersTest" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">fail_fast</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">TEST_P</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testFlag_HasDisabledTest">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1a879f6fdc7c5c1bed898e59e44c9e4ac8"></span><span class="sig-name descname"><span class="pre">testFlag_HasDisabledTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testFlag_HasDisabledTest" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">fail_fast</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">Disabled</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="n">cases</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testFlag_HasDisabledRunDisabledTest">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1a740cee36272084c7948b1ebf64f652ae"></span><span class="sig-name descname"><span class="pre">testFlag_HasDisabledRunDisabledTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testFlag_HasDisabledRunDisabledTest" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">fail_fast</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">Disabled</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="n">cases</span><span class="w"> </span><span class="n">enabled</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testFlag_HasDisabledSuiteTest">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1aad063354b4cf7fd600d3dfeef4c6653a"></span><span class="sig-name descname"><span class="pre">testFlag_HasDisabledSuiteTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testFlag_HasDisabledSuiteTest" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">fail_fast</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">Disabled</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="n">suites</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testFlag_HasDisabledSuiteRunDisabledTest">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1ab2194792adbb0121f66506be70b71698"></span><span class="sig-name descname"><span class="pre">testFlag_HasDisabledSuiteRunDisabledTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testFlag_HasDisabledSuiteRunDisabledTest" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">fail_fast</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">Disabled</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="n">suites</span><span class="w"> </span><span class="n">enabled</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="testFlag_HasDeathTest">
+<span class="target" id="classgoogletest-failfast-unittest_1_1GTestFailFastUnitTest_1aaece76802795e2116b8af727b70e14e9"></span><span class="sig-name descname"><span class="pre">testFlag_HasDeathTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#testFlag_HasDeathTest" title="Link to this definition"></a></dt>
+<dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">fail_fast</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">death</span><span class="w"> </span><span class="n">tests</span><span class="p">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classgoogletest-env-var-test_1_1GTestEnvVarTest.html" class="btn btn-neutral float-left" title="Class GTestEnvVarTest" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classgoogletest-filter-unittest_1_1GTestFilterUnitTest.html" class="btn btn-neutral float-right" title="Class GTestFilterUnitTest" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

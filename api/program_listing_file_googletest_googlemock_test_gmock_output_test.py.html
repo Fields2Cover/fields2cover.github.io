@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File gmock_output_test.py &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_googletest_googlemock_test_gmock_output_test.py.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File gmock_output_test.py</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_googletest_googlemock_test_gmock_output_test.py.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-gmock-output-test-py">
+<span id="program-listing-file-googletest-googlemock-test-gmock-output-test-py"></span><h1>Program Listing for File gmock_output_test.py<a class="headerlink" href="#program-listing-for-file-gmock-output-test-py" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_googletest_googlemock_test_gmock_output_test.py.html#file-googletest-googlemock-test-gmock-output-test-py"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">googletest/googlemock/test/gmock_output_test.py</span></code>)</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright 2008, Google Inc.</span>
+<span class="c1"># All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Redistribution and use in source and binary forms, with or without</span>
+<span class="c1"># modification, are permitted provided that the following conditions are</span>
+<span class="c1"># met:</span>
+<span class="c1">#</span>
+<span class="c1">#     * Redistributions of source code must retain the above copyright</span>
+<span class="c1"># notice, this list of conditions and the following disclaimer.</span>
+<span class="c1">#     * Redistributions in binary form must reproduce the above</span>
+<span class="c1"># copyright notice, this list of conditions and the following disclaimer</span>
+<span class="c1"># in the documentation and/or other materials provided with the</span>
+<span class="c1"># distribution.</span>
+<span class="c1">#     * Neither the name of Google Inc. nor the names of its</span>
+<span class="c1"># contributors may be used to endorse or promote products derived from</span>
+<span class="c1"># this software without specific prior written permission.</span>
+<span class="c1">#</span>
+<span class="c1"># THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<span class="c1"># &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span>
+<span class="c1"># LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</span>
+<span class="c1"># A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</span>
+<span class="c1"># OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span>
+<span class="c1"># SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</span>
+<span class="c1"># LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</span>
+<span class="c1"># DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</span>
+<span class="c1"># THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span>
+<span class="c1"># (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span>
+<span class="c1"># OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;Tests the text output of Google C++ Mocking Framework.</span>
+
+<span class="sd">To update the golden file:</span>
+<span class="sd">gmock_output_test.py --build_dir=BUILD/DIR --gengolden</span>
+<span class="sd">where BUILD/DIR contains the built gmock_output_test_ file.</span>
+<span class="sd">gmock_output_test.py --gengolden</span>
+<span class="sd">gmock_output_test.py</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="nb">open</span>  <span class="c1"># pylint: disable=redefined-builtin, g-importing-member</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">googlemock.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">gmock_test_utils</span>
+
+
+<span class="c1"># The flag for generating the golden file</span>
+<span class="n">GENGOLDEN_FLAG</span> <span class="o">=</span> <span class="s1">&#39;--gengolden&#39;</span>
+
+<span class="n">PROGRAM_PATH</span> <span class="o">=</span> <span class="n">gmock_test_utils</span><span class="o">.</span><span class="n">GetTestExecutablePath</span><span class="p">(</span><span class="s1">&#39;gmock_output_test_&#39;</span><span class="p">)</span>
+<span class="n">COMMAND</span> <span class="o">=</span> <span class="p">[</span><span class="n">PROGRAM_PATH</span><span class="p">,</span> <span class="s1">&#39;--gtest_stack_trace_depth=0&#39;</span><span class="p">,</span> <span class="s1">&#39;--gtest_print_time=0&#39;</span><span class="p">]</span>
+<span class="n">GOLDEN_NAME</span> <span class="o">=</span> <span class="s1">&#39;gmock_output_test_golden.txt&#39;</span>
+<span class="n">GOLDEN_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gmock_test_utils</span><span class="o">.</span><span class="n">GetSourceDir</span><span class="p">(),</span> <span class="n">GOLDEN_NAME</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ToUnixLineEnding</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Changes all Windows/Mac line endings in s to UNIX line endings.&quot;&quot;&quot;</span>
+
+  <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">RemoveReportHeaderAndFooter</span><span class="p">(</span><span class="n">output</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Removes Google Test result report&#39;s header and footer from the output.&quot;&quot;&quot;</span>
+
+  <span class="n">output</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;.*gtest_main.*\n&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+  <span class="n">output</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\[.*\d+ tests.*\n&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+  <span class="n">output</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\[.* test environment .*\n&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+  <span class="n">output</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\[=+\] \d+ tests .* ran.*&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+  <span class="n">output</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;.* FAILED TESTS\n&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">output</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">RemoveLocations</span><span class="p">(</span><span class="n">output</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Removes all file location info from a Google Test program&#39;s output.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">       output:  the output of a Google Test program.</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">       output with all file location info (in the form of</span>
+<span class="sd">       &#39;DIRECTORY/FILE_NAME:LINE_NUMBER: &#39;or</span>
+<span class="sd">       &#39;DIRECTORY\\FILE_NAME(LINE_NUMBER): &#39;) replaced by</span>
+<span class="sd">       &#39;FILE:#: &#39;.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;.*[/</span><span class="se">\\</span><span class="s1">](.+)(\:\d+|\(\d+\))\:&#39;</span><span class="p">,</span> <span class="s1">&#39;FILE:#:&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">NormalizeErrorMarker</span><span class="p">(</span><span class="n">output</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Normalizes the error marker, which is different on Windows vs on Linux.&quot;&quot;&quot;</span>
+
+  <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39; error: &#39;</span><span class="p">,</span> <span class="s1">&#39; Failure</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">RemoveMemoryAddresses</span><span class="p">(</span><span class="n">output</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Removes memory addresses from the test output.&quot;&quot;&quot;</span>
+
+  <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;@\w+&#39;</span><span class="p">,</span> <span class="s1">&#39;@0x#&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">RemoveTestNamesOfLeakedMocks</span><span class="p">(</span><span class="n">output</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Removes the test names of leaked mock objects from the test output.&quot;&quot;&quot;</span>
+
+  <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\(used in test .+\) &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">GetLeakyTests</span><span class="p">(</span><span class="n">output</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Returns a list of test names that leak mock objects.&quot;&quot;&quot;</span>
+
+  <span class="c1"># findall() returns a list of all matches of the regex in output.</span>
+  <span class="c1"># For example, if &#39;(used in test FooTest.Bar)&#39; is in output, the</span>
+  <span class="c1"># list will contain &#39;FooTest.Bar&#39;.</span>
+  <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\(used in test (.+)\)&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">GetNormalizedOutputAndLeakyTests</span><span class="p">(</span><span class="n">output</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Normalizes the output of gmock_output_test_.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    output: The test output.</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    A tuple (the normalized test output, the list of test names that have</span>
+<span class="sd">    leaked mocks).</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">output</span> <span class="o">=</span> <span class="n">ToUnixLineEnding</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">output</span> <span class="o">=</span> <span class="n">RemoveReportHeaderAndFooter</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">output</span> <span class="o">=</span> <span class="n">NormalizeErrorMarker</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">output</span> <span class="o">=</span> <span class="n">RemoveLocations</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+  <span class="n">output</span> <span class="o">=</span> <span class="n">RemoveMemoryAddresses</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">RemoveTestNamesOfLeakedMocks</span><span class="p">(</span><span class="n">output</span><span class="p">),</span> <span class="n">GetLeakyTests</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">GetShellCommandOutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Runs a command in a sub-process, and returns its STDOUT in a string.&quot;&quot;&quot;</span>
+
+  <span class="k">return</span> <span class="n">gmock_test_utils</span><span class="o">.</span><span class="n">Subprocess</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">capture_stderr</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">output</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">GetNormalizedCommandOutputAndLeakyTests</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Runs a command and returns its normalized output and a list of leaky tests.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    cmd:  the shell command.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="c1"># Disables exception pop-ups on Windows.</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;GTEST_CATCH_EXCEPTIONS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
+  <span class="k">return</span> <span class="n">GetNormalizedOutputAndLeakyTests</span><span class="p">(</span><span class="n">GetShellCommandOutput</span><span class="p">(</span><span class="n">cmd</span><span class="p">))</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">GMockOutputTest</span><span class="p">(</span><span class="n">gmock_test_utils</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testOutput</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">leaky_tests</span><span class="p">)</span> <span class="o">=</span> <span class="n">GetNormalizedCommandOutputAndLeakyTests</span><span class="p">(</span><span class="n">COMMAND</span><span class="p">)</span>
+    <span class="n">golden_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">GOLDEN_PATH</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+    <span class="n">golden</span> <span class="o">=</span> <span class="n">golden_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="n">golden_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="c1"># On Windows the repository might have been checked out with \r\n line</span>
+    <span class="c1"># endings, so normalize it here.</span>
+    <span class="n">golden</span> <span class="o">=</span> <span class="n">ToUnixLineEnding</span><span class="p">(</span><span class="n">golden</span><span class="p">)</span>
+
+    <span class="c1"># The normalized output should match the golden file.</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">golden</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+
+    <span class="c1"># The raw output should contain 2 leaked mock object errors for</span>
+    <span class="c1"># test GMockOutputTest.CatchesLeakedMocks.</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;GMockOutputTest.CatchesLeakedMocks&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;GMockOutputTest.CatchesLeakedMocks&#39;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">leaky_tests</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">==</span> <span class="p">[</span><span class="n">GENGOLDEN_FLAG</span><span class="p">]:</span>
+    <span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">GetNormalizedCommandOutputAndLeakyTests</span><span class="p">(</span><span class="n">COMMAND</span><span class="p">)</span>
+    <span class="n">golden_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">GOLDEN_PATH</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
+    <span class="n">golden_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+    <span class="n">golden_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="c1"># Suppress the error &quot;googletest was imported but a call to its main()</span>
+    <span class="c1"># was never detected.&quot;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">_exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">gmock_test_utils</span><span class="o">.</span><span class="n">Main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

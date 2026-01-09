@@ -1,0 +1,7 @@
+.. _page_md____w_Fields2Cover_Fields2Cover_googletest_CONTRIBUTING:
+
+How to become a contributor and submit your own code
+====================================================
+
+.. doxygenpage:: md____w_Fields2Cover_Fields2Cover_googletest_CONTRIBUTING
+   :project: Fields2Cover

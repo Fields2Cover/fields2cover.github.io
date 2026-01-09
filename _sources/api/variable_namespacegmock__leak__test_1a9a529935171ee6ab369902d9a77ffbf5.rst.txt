@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegmock__leak__test_1a9a529935171ee6ab369902d9a77ffbf5:
+
+Variable gmock_leak_test::TEST_MULTIPLE_LEAKS
+=============================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: gmock_leak_test::TEST_MULTIPLE_LEAKS
+   :project: Fields2Cover

@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-json-output-unittest_1a6ddd6eb87b18fe709a35787ad5a2cceb:
+
+Variable googletest-json-output-unittest::NO_STACKTRACE_SUPPORT_FLAG
+====================================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-json-output-unittest::NO_STACKTRACE_SUPPORT_FLAG
+   :project: Fields2Cover

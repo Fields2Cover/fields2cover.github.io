@@ -1,0 +1,14 @@
+.. _exhale_function_gmock__link__test_8h_1aef5c583c3e024858d646fd49cb26d38b:
+
+Function TEST(LinkTest, TestSetErrnoAndReturn)
+==============================================
+
+- Defined in :ref:`file_googletest_googlemock_test_gmock_link_test.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: TEST(LinkTest, TestSetErrnoAndReturn)
+   :project: Fields2Cover

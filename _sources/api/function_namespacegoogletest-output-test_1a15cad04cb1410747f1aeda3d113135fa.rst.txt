@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegoogletest-output-test_1a15cad04cb1410747f1aeda3d113135fa:
+
+Function googletest-output-test::RemoveStackTraces
+==================================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-output-test.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: googletest-output-test::RemoveStackTraces(output)
+   :project: Fields2Cover

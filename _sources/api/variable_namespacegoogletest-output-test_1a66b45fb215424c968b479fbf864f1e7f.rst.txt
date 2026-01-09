@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-output-test_1a66b45fb215424c968b479fbf864f1e7f:
+
+Variable googletest-output-test::GOLDEN_NAME
+============================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-output-test::GOLDEN_NAME
+   :project: Fields2Cover

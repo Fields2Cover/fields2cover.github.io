@@ -1,0 +1,61 @@
+
+.. _namespace_gtest_xml_output_unittest:
+
+Namespace gtest_xml_output_unittest
+===================================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classgtest__xml__output__unittest_1_1GTestXMLOutputUnitTest`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1a1adb060422f833cb8b99403d13144399`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1aa4d9515671479801658b30d28e135f02`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1ab6a01b4b81a702e476f53b1b3c4983c0`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1a6414d0bcac5f56ef1b709e312b976b1e`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1a5591d7d52a46da09d06ed3e9ec18711a`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1ab914acfbfbc3f6f5ee3f1e83134c7204`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1aafe4dd234e72bbb61f4f34689fbca5c4`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1a96dc60b3ea1b2ced315835227f77e10d`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1ab89cc5b402310ef67bcaf38fa5017461`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1a8c4cf6e9b6a184278a1b2759e5eaec6b`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1a1e97a1796a1c452a4ab5fc2f8d422914`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1a694b1514d77c5903d21a834a38eb3aef`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1ac9dcd4fb8221494dd29d00bdf41f4e80`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1a649d7ae8d6afe1bf4a2131672624c838`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1abd57c1a4124b74d2ba63d03734df491d`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1a44c65b6262eb7d1a0f561dafb0819e47`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1afd8f69b881759fd121eb187037f0aef8`
+
+- :ref:`exhale_variable_namespacegtest__xml__output__unittest_1ae142e1cf52c8d9b76d98a2a7376a2649`

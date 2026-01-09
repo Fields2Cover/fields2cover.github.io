@@ -1,0 +1,17 @@
+.. _exhale_class_classtesting_1_1internal_1_1UnitTestOptions:
+
+Class UnitTestOptions
+=====================
+
+- Defined in :ref:`file_googletest_googletest_src_gtest-internal-inl.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: testing::internal::UnitTestOptions
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

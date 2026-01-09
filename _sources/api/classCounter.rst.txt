@@ -1,0 +1,17 @@
+.. _exhale_class_classCounter:
+
+Class Counter
+=============
+
+- Defined in :ref:`file_googletest_googletest_samples_sample4.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: Counter
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

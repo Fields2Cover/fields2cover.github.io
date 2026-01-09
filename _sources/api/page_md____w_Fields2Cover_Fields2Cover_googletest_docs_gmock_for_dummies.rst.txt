@@ -1,0 +1,7 @@
+.. _page_md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_for_dummies:
+
+gMock for Dummies
+=================
+
+.. doxygenpage:: md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_for_dummies
+   :project: Fields2Cover

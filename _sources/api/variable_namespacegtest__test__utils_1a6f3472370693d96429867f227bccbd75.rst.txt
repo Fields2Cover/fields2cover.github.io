@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegtest__test__utils_1a6f3472370693d96429867f227bccbd75:
+
+Variable gtest_test_utils::IS_OS2
+=================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: gtest_test_utils::IS_OS2
+   :project: Fields2Cover

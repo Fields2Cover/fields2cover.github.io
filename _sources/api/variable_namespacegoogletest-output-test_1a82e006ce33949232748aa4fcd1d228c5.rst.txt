@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-output-test_1a82e006ce33949232748aa4fcd1d228c5:
+
+Variable googletest-output-test::SUPPORTS_STACK_TRACES
+======================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-output-test::SUPPORTS_STACK_TRACES
+   :project: Fields2Cover

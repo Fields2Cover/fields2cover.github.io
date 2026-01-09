@@ -1,0 +1,26 @@
+.. _exhale_class_classgoogletest-setuptestsuite-test_1_1GTestSetUpTestSuiteTest:
+
+Class GTestSetUpTestSuiteTest
+=============================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-setuptestsuite-test.py`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public gtest_test_utils.TestCase``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: googletest-setuptestsuite-test::GTestSetUpTestSuiteTest
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

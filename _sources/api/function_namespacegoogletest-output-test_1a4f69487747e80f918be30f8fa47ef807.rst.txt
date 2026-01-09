@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegoogletest-output-test_1a4f69487747e80f918be30f8fa47ef807:
+
+Function googletest-output-test::RemoveTime
+===========================================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-output-test.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: googletest-output-test::RemoveTime(output)
+   :project: Fields2Cover

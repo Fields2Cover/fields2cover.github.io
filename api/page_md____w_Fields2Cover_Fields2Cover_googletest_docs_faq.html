@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoogleTest FAQ &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/page_md____w_Fields2Cover_Fields2Cover_googletest_docs_faq.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">GoogleTest FAQ</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/page_md____w_Fields2Cover_Fields2Cover_googletest_docs_faq.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="googletest-faq">
+<span id="page-md-w-fields2cover-fields2cover-googletest-docs-faq"></span><h1>GoogleTest FAQ<a class="headerlink" href="#googletest-faq" title="Link to this heading"></a></h1>
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="md____w_Fields2Cover_Fields2Cover_googletest_docs_faq"></span><em><span class="pre">page</span></em> <span class="sig-name descname"><span class="pre">GoogleTest</span> <span class="pre">FAQ</span></span></dt>
+<dd><p><em>Why should test suite names and test names not contain underscore?</em></p>
+<p>{: .callout .note} Note: GoogleTest reserves underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>) for special-purpose keywords, such as <a class="reference external" href="advanced.md#temporarily-disabling-tests">the  prefix</a>, in addition to the following rationale.</p>
+<p>Underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>) is special, as C++ reserves the following to be used by the compiler and the standard library:</p>
+<p><ol class="arabic simple">
+<li><p>any identifier that starts with an <code class="docutils literal notranslate"><span class="pre">_</span></code> followed by an upper-case letter, and</p></li>
+<li><p>any identifier that contains two consecutive underscores (i.e. <code class="docutils literal notranslate"><span class="pre">__</span></code>) <em>anywhere</em> in its name.</p></li>
+</ol>
+</p>
+<p>User code is <em>prohibited</em> from using such identifiers.</p>
+<p>Now let’s look at what this means for <code class="docutils literal notranslate"><span class="pre">TEST</span></code> and <code class="docutils literal notranslate"><span class="pre">TEST_F</span></code>.</p>
+<p>Currently <code class="docutils literal notranslate"><span class="pre">TEST(TestSuiteName,</span> <span class="pre">TestName)</span></code> generates a class named <code class="docutils literal notranslate"><span class="pre">TestSuiteName_TestName_Test</span></code>. What happens if <code class="docutils literal notranslate"><span class="pre">TestSuiteName</span></code> or <code class="docutils literal notranslate"><span class="pre">TestName</span></code> contains <code class="docutils literal notranslate"><span class="pre">_</span></code>?</p>
+<p><ol class="arabic simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">TestSuiteName</span></code> starts with an <code class="docutils literal notranslate"><span class="pre">_</span></code> followed by an upper-case letter (say, <code class="docutils literal notranslate"><span class="pre">_Foo</span></code>), we end up with <code class="docutils literal notranslate"><span class="pre">_Foo_TestName_Test</span></code>, which is reserved and thus invalid.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">TestSuiteName</span></code> ends with an <code class="docutils literal notranslate"><span class="pre">_</span></code> (say, <code class="docutils literal notranslate"><span class="pre">Foo_</span></code>), we get <code class="docutils literal notranslate"><span class="pre">Foo__TestName_Test</span></code>, which is invalid.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">TestName</span></code> starts with an <code class="docutils literal notranslate"><span class="pre">_</span></code> (say, <code class="docutils literal notranslate"><span class="pre">_Bar</span></code>), we get <code class="docutils literal notranslate"><span class="pre">TestSuiteName__Bar_Test</span></code>, which is invalid.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">TestName</span></code> ends with an <code class="docutils literal notranslate"><span class="pre">_</span></code> (say, <code class="docutils literal notranslate"><span class="pre">Bar_</span></code>), we get <code class="docutils literal notranslate"><span class="pre">TestSuiteName_Bar__Test</span></code>, which is invalid.</p></li>
+</ol>
+</p>
+<p>So clearly <code class="docutils literal notranslate"><span class="pre">TestSuiteName</span></code> and <code class="docutils literal notranslate"><span class="pre">TestName</span></code> cannot start or end with <code class="docutils literal notranslate"><span class="pre">_</span></code> (Actually, <code class="docutils literal notranslate"><span class="pre">TestSuiteName</span></code> can start with <code class="docutils literal notranslate"><span class="pre">_</span></code>—as long as the <code class="docutils literal notranslate"><span class="pre">_</span></code> isn’t followed by an upper-case letter. But that’s getting complicated. So for simplicity we just say that it cannot start with <code class="docutils literal notranslate"><span class="pre">_</span></code>.).</p>
+<p>It may seem fine for <code class="docutils literal notranslate"><span class="pre">TestSuiteName</span></code> and <code class="docutils literal notranslate"><span class="pre">TestName</span></code> to contain <code class="docutils literal notranslate"><span class="pre">_</span></code> in the middle. However, consider this:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="n">TEST</span><span class="p">(</span><span class="n">Time</span><span class="p">,</span><span class="w"> </span><span class="n">Flies_Like_An_Arrow</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="n">TEST</span><span class="p">(</span><span class="n">Time_Flies</span><span class="p">,</span><span class="w"> </span><span class="n">Like_An_Arrow</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Now, the two <code class="docutils literal notranslate"><span class="pre">TEST</span></code>s will both generate the same class (<code class="docutils literal notranslate"><span class="pre">Time_Flies_Like_An_Arrow_Test</span></code>). That’s not good.</p>
+<p>So for simplicity, we just ask the users to avoid <code class="docutils literal notranslate"><span class="pre">_</span></code> in <code class="docutils literal notranslate"><span class="pre">TestSuiteName</span></code> and <code class="docutils literal notranslate"><span class="pre">TestName</span></code>. The rule is more constraining than necessary, but it’s simple and easy to remember. It also gives GoogleTest some wiggle room in case its implementation needs to change in the future.</p>
+<p>If you violate the rule, there may not be immediate consequences, but your test may (just may) break with a new compiler (or a new version of the compiler you are using) or with a new version of GoogleTest. Therefore it’s best to follow the rule.</p>
+<p><em>Why does GoogleTest support <code class="docutils literal notranslate"><span class="pre">EXPECT_EQ(NULL,</span> <span class="pre">ptr)</span></code> and <code class="docutils literal notranslate"><span class="pre">ASSERT_EQ(NULL,</span> <span class="pre">ptr)</span></code> but not <code class="docutils literal notranslate"><span class="pre">EXPECT_NE(NULL,</span> <span class="pre">ptr)</span></code> and <code class="docutils literal notranslate"><span class="pre">ASSERT_NE(NULL,</span> <span class="pre">ptr)</span></code>?</em></p>
+<p>First of all, you can use <code class="docutils literal notranslate"><span class="pre">nullptr</span></code> with each of these macros, e.g. <code class="docutils literal notranslate"><span class="pre">EXPECT_EQ(ptr,</span> <span class="pre">nullptr)</span></code>, <code class="docutils literal notranslate"><span class="pre">EXPECT_NE(ptr,</span> <span class="pre">nullptr)</span></code>, <code class="docutils literal notranslate"><span class="pre">ASSERT_EQ(ptr,</span> <span class="pre">nullptr)</span></code>, <code class="docutils literal notranslate"><span class="pre">ASSERT_NE(ptr,</span> <span class="pre">nullptr)</span></code>. This is the preferred syntax in the style guide because <code class="docutils literal notranslate"><span class="pre">nullptr</span></code> does not have the type problems that <code class="docutils literal notranslate"><span class="pre">NULL</span></code> does.</p>
+<p>Due to some peculiarity of C++, it requires some non-trivial template meta programming tricks to support using <code class="docutils literal notranslate"><span class="pre">NULL</span></code> as an argument of the <code class="docutils literal notranslate"><span class="pre">EXPECT_XX()</span></code> and <code class="docutils literal notranslate"><span class="pre">ASSERT_XX()</span></code> macros. Therefore we only do it where it’s most needed (otherwise we make the implementation of GoogleTest harder to maintain and more error-prone than necessary).</p>
+<p>Historically, the <code class="docutils literal notranslate"><span class="pre">EXPECT_EQ()</span></code> macro took the <em>expected</em> value as its first argument and the <em>actual</em> value as the second, though this argument order is now discouraged. It was reasonable that someone wanted to write <code class="docutils literal notranslate"><span class="pre">EXPECT_EQ(NULL,</span> <span class="pre">some_expression)</span></code>, and this indeed was requested several times. Therefore we implemented it.</p>
+<p>The need for <code class="docutils literal notranslate"><span class="pre">EXPECT_NE(NULL,</span> <span class="pre">ptr)</span></code> wasn’t nearly as strong. When the assertion fails, you already know that <code class="docutils literal notranslate"><span class="pre">ptr</span></code> must be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, so it doesn’t add any information to print <code class="docutils literal notranslate"><span class="pre">ptr</span></code> in this case. That means <code class="docutils literal notranslate"><span class="pre">EXPECT_TRUE(ptr</span> <span class="pre">!=</span> <span class="pre">NULL)</span></code> works just as well.</p>
+<p>If we were to support <code class="docutils literal notranslate"><span class="pre">EXPECT_NE(NULL,</span> <span class="pre">ptr)</span></code>, for consistency we’d have to support <code class="docutils literal notranslate"><span class="pre">EXPECT_NE(ptr,</span> <span class="pre">NULL)</span></code> as well. This means using the template meta programming tricks twice in the implementation, making it even harder to understand and maintain. We believe the benefit doesn’t justify the cost.</p>
+<p>Finally, with the growth of the gMock matcher library, we are encouraging people to use the unified <code class="docutils literal notranslate"><span class="pre">EXPECT_THAT(value,</span> <span class="pre">matcher)</span></code> syntax more often in tests. One significant advantage of the matcher approach is that matchers can be easily combined to form new matchers, while the <code class="docutils literal notranslate"><span class="pre">EXPECT_NE</span></code>, etc, macros cannot be easily combined. Therefore we want to invest more in the matchers than in the <code class="docutils literal notranslate"><span class="pre">EXPECT_XX()</span></code> macros.</p>
+<p><em>I need to test that different implementations of an interface satisfy some common requirements. Should I use typed tests or value-parameterized tests?</em></p>
+<p>For testing various implementations of the same interface, either typed tests or value-parameterized tests can get it done. It’s really up to you the user to decide which is more convenient for you, depending on your particular case. Some rough guidelines:</p>
+<p><ul class="simple">
+<li><p>Typed tests can be easier to write if instances of the different implementations can be created the same way, modulo the type. For example, if all these implementations have a public default constructor (such that you can write <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">TypeParam</span></code>), or if their factory functions have the same form (e.g. <code class="docutils literal notranslate"><span class="pre">CreateInstance&lt;TypeParam&gt;()</span></code>).</p></li>
+<li><p>Value-parameterized tests can be easier to write if you need different code patterns to create different implementations’ instances, e.g. <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Foo</span></code> vs <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Bar(5)</span></code>. To accommodate for the differences, you can write factory function wrappers and pass these function pointers to the tests as their parameters.</p></li>
+<li><p>When a typed test fails, the default output includes the name of the type, which can help you quickly identify which implementation is wrong. Value-parameterized tests only show the number of the failed iteration by default. You will need to define a function that returns the iteration name and pass it as the third parameter to INSTANTIATE_TEST_SUITE_P to have more useful output.</p></li>
+<li><p>When using typed tests, you need to make sure you are testing against the interface type, not the concrete types (in other words, you want to make sure <code class="docutils literal notranslate"><span class="pre">implicit_cast&lt;MyInterface*&gt;(my_concrete_impl)</span></code> works, not just that <code class="docutils literal notranslate"><span class="pre">my_concrete_impl</span></code> works). It’s less likely to make mistakes in this area when using value-parameterized tests.</p></li>
+</ul>
+</p>
+<p>I hope I didn’t confuse you more. :-) If you don’t mind, I’d suggest you to give both approaches a try. Practice is a much better way to grasp the subtle differences between the two tools. Once you have some concrete experience, you can much more easily decide which one to use the next time.</p>
+<p><em>My death test modifies some state, but the change seems lost after the death test finishes. Why?</em></p>
+<p>Death tests (<code class="docutils literal notranslate"><span class="pre">EXPECT_DEATH</span></code>, etc.) are executed in a sub-process s.t. the expected crash won’t kill the test program (i.e. the parent process). As a result, any in-memory side effects they incur are observable in their respective sub-processes, but not in the parent process. You can think of them as running in a parallel universe, more or less.</p>
+<p>In particular, if you use mocking and the death test statement invokes some mock methods, the parent process will think the calls have never occurred. Therefore, you may want to move your <code class="docutils literal notranslate"><span class="pre">EXPECT_CALL</span></code> statements inside the <code class="docutils literal notranslate"><span class="pre">EXPECT_DEATH</span></code> macro.</p>
+<p><em>EXPECT_EQ(htonl(blah), blah_blah) generates weird compiler errors in opt mode. Is this a GoogleTest bug?</em></p>
+<p>Actually, the bug is in <code class="docutils literal notranslate"><span class="pre">htonl()</span></code>.</p>
+<p>According to ‘man htonl<code class="docutils literal notranslate"><span class="pre">,</span></code>htonl()<code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">a</span> <span class="pre">*function*,</span> <span class="pre">which</span> <span class="pre">means</span> <span class="pre">it's</span> <span class="pre">valid</span> <span class="pre">to</span> <span class="pre">use</span></code>htonl<code class="docutils literal notranslate"><span class="pre">as</span> <span class="pre">a</span> <span class="pre">function</span> <span class="pre">pointer.</span> <span class="pre">However,</span> <span class="pre">in</span> <span class="pre">opt</span> <span class="pre">mode</span></code>htonl()` is defined as a <em>macro</em>, which breaks this usage.</p>
+<p>Worse, the macro definition of <code class="docutils literal notranslate"><span class="pre">htonl()</span></code> uses a <code class="docutils literal notranslate"><span class="pre">gcc</span></code> extension and is <em>not</em> standard C++. That hacky implementation has some ad hoc limitations. In particular, it prevents you from writing <code class="docutils literal notranslate"><span class="pre">Foo&lt;sizeof(htonl(x))&gt;()</span></code>, where <code class="docutils literal notranslate"><span class="pre">Foo</span></code> is a template that has an integral argument.</p>
+<p>The implementation of <code class="docutils literal notranslate"><span class="pre">EXPECT_EQ(a,</span> <span class="pre">b)</span></code> uses <code class="docutils literal notranslate"><span class="pre">sizeof(...</span> <span class="pre">a</span> <span class="pre">...)</span></code> inside a template argument, and thus doesn’t compile in opt mode when <code class="docutils literal notranslate"><span class="pre">a</span></code> contains a call to <code class="docutils literal notranslate"><span class="pre">htonl()</span></code>. It is difficult to make <code class="docutils literal notranslate"><span class="pre">EXPECT_EQ</span></code> bypass the <code class="docutils literal notranslate"><span class="pre">htonl()</span></code> bug, as the solution must work with different compilers on various platforms.</p>
+<p><em>The compiler complains about “undefined references” to some static const member variables, but I did define them in the class body. What’s wrong?</em></p>
+<p>If your class has a static data member:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="c1">// foo.h</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">kBar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>you also need to define it <em>outside</em> of the class body in <code class="docutils literal notranslate"><span class="pre">foo.cc</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Foo</span><span class="o">::</span><span class="n">kBar</span><span class="p">;</span><span class="w">  </span><span class="c1">// No initializer here.</span>
+</pre></div>
+</div>
+<p>Otherwise your code is <strong>invalid C++</strong>, and may break in unexpected ways. In particular, using it in GoogleTest comparison assertions (<code class="docutils literal notranslate"><span class="pre">EXPECT_EQ</span></code><p>, etc.) will generate an “undefined reference” linker error. The fact that “it used to</p>
+<p>work” doesn’t mean it’s valid. It just means that you were lucky. :-)</p>
+</p>
+<p>If the declaration of the static data member is <code class="docutils literal notranslate"><span class="pre">constexpr</span></code> then it is implicitly an <code class="docutils literal notranslate"><span class="pre">inline</span></code> definition, and a separate definition in <code class="docutils literal notranslate"><span class="pre">foo.cc</span></code> is not needed:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="c1">// foo.h</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">kBar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">  </span><span class="c1">// Defines kBar, no need to do it in foo.cc.</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><em>Can I derive a test fixture from another?</em></p>
+<p>Yes.</p>
+<p>Each test fixture has a corresponding and same named test suite. This means only one test suite can use a particular fixture. Sometimes, however, multiple test cases may want to use the same or slightly different fixtures. For example, you may want to make sure that all of a GUI library’s test suites don’t leak important system resources like fonts and brushes.</p>
+<p>In GoogleTest, you share a fixture among test suites by putting the shared logic in a base test fixture, then deriving from that base a separate fixture for each test suite that wants to use this common logic. You then use <code class="docutils literal notranslate"><span class="pre">TEST_F()</span></code> to write tests using each derived fixture.</p>
+<p>Typically, your code looks like this:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="c1">// Defines a base test fixture.</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">BaseTest</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Test</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">protected</span><span class="o">:</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="p">};</span>
+
+<span class="c1">// Derives a fixture FooTest from BaseTest.</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FooTest</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">BaseTest</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">protected</span><span class="o">:</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">SetUp</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">BaseTest</span><span class="o">::</span><span class="n">SetUp</span><span class="p">();</span><span class="w">  </span><span class="c1">// Sets up the base fixture first.</span>
+<span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="n">additional</span><span class="w"> </span><span class="n">set</span><span class="o">-</span><span class="n">up</span><span class="w"> </span><span class="n">work</span><span class="w"> </span><span class="p">...</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">TearDown</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="n">clean</span><span class="o">-</span><span class="n">up</span><span class="w"> </span><span class="n">work</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">FooTest</span><span class="w"> </span><span class="p">...</span>
+<span class="w">    </span><span class="n">BaseTest</span><span class="o">::</span><span class="n">TearDown</span><span class="p">();</span><span class="w">  </span><span class="c1">// Remember to tear down the base fixture</span>
+<span class="w">                           </span><span class="c1">// after cleaning up FooTest!</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="p">...</span><span class="w"> </span><span class="n">functions</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">FooTest</span><span class="w"> </span><span class="p">...</span>
+<span class="p">};</span>
+
+<span class="c1">// Tests that use the fixture FooTest.</span>
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">FooTest</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">FooTest</span><span class="p">,</span><span class="w"> </span><span class="n">Baz</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+
+<span class="p">...</span><span class="w"> </span><span class="n">additional</span><span class="w"> </span><span class="n">fixtures</span><span class="w"> </span><span class="n">derived</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">BaseTest</span><span class="w"> </span><span class="p">...</span>
+</pre></div>
+</div>
+<p>If necessary, you can continue to derive test fixtures from a derived fixture. GoogleTest has no limit on how deep the hierarchy can be.</p>
+<p>For a complete example using derived test fixtures, see <a class="reference external" href="https://github.com/google/googletest/blob/main/googletest/samples/sample5_unittest.cc">sample5_unittest.cc</a>.</p>
+<p><em>My compiler complains “void value not ignored as it ought to be.” What does this mean?</em></p>
+<p>You’re probably using an <code class="docutils literal notranslate"><span class="pre">ASSERT_*()</span></code> in a function that doesn’t return <code class="docutils literal notranslate"><span class="pre">void</span></code>. <code class="docutils literal notranslate"><span class="pre">ASSERT_*()</span></code> can only be used in <code class="docutils literal notranslate"><span class="pre">void</span></code> functions, due to exceptions being disabled by our build system. Please see more details <a class="reference external" href="advanced.md#assertion-placement">here</a>.</p>
+<p><em>My death test hangs (or seg-faults). How do I fix it?</em></p>
+<p>In GoogleTest, death tests are run in a child process and the way they work is delicate. To write death tests you really need to understand how they work—see the details at <a class="reference external" href="reference/assertions.md#death">Death Assertions</a> in the Assertions Reference.</p>
+<p>In particular, death tests don’t like having multiple threads in the parent process. So the first thing you can try is to eliminate creating threads outside of <code class="docutils literal notranslate"><span class="pre">EXPECT_DEATH()</span></code>. For example, you may want to use mocks or fake objects instead of real ones in your tests.</p>
+<p>Sometimes this is impossible as some library you must use may be creating threads before <code class="docutils literal notranslate"><span class="pre">main()</span></code> is even reached. In this case, you can try to minimize the chance of conflicts by either moving as many activities as possible inside <code class="docutils literal notranslate"><span class="pre">EXPECT_DEATH()</span></code> (in the extreme case, you want to move everything inside), or leaving as few things as possible in it. Also, you can try to set the death test style to <code class="docutils literal notranslate"><span class="pre">&quot;threadsafe&quot;</span></code>, which is safer but slower, and see if it helps.</p>
+<p>If you go with thread-safe death tests, remember that they rerun the test program from the beginning in the child process. Therefore make sure your program can run side-by-side with itself and is deterministic.</p>
+<p>In the end, this boils down to good concurrent programming. You have to make sure that there are no race conditions or deadlocks in your program. No silver bullet - sorry!</p>
+<section id="md____w_Fields2Cover_Fields2Cover_googletest_docs_faq_1CtorVsSetUp">
+<h2>Should I use the constructor/destructor of the test fixture or SetUp()/TearDown()?<a class="headerlink" href="#md____w_Fields2Cover_Fields2Cover_googletest_docs_faq_1CtorVsSetUp" title="Link to this heading"></a></h2>
+<p id="md____w_Fields2Cover_Fields2Cover_googletest_docs_faq_1CtorVsSetUp">The first thing to remember is that GoogleTest does <strong>not</strong> reuse the same test fixture object across multiple tests. For each <code class="docutils literal notranslate"><span class="pre">TEST_F</span></code>, GoogleTest will create a <strong>fresh</strong> test fixture object, immediately call <code class="docutils literal notranslate"><span class="pre">SetUp()</span></code>, run the test body, call <code class="docutils literal notranslate"><span class="pre">TearDown()</span></code>, and then delete the test fixture object.</p>
+<p>When you need to write per-test set-up and tear-down logic, you have the choice between using the test fixture constructor/destructor or <code class="docutils literal notranslate"><span class="pre">SetUp()</span></code>/<code class="docutils literal notranslate"><span class="pre">TearDown()</span></code>. The former is usually preferred, as it has the following benefits:</p>
+<p><ul class="simple">
+<li><p>By initializing a member variable in the constructor, we have the option to make it <code class="docutils literal notranslate"><span class="pre">const</span></code>, which helps prevent accidental changes to its value and makes the tests more obviously correct.</p></li>
+<li><p>In case we need to subclass the test fixture class, the subclass’ constructor is guaranteed to call the base class’ constructor <em>first</em>, and the subclass’ destructor is guaranteed to call the base class’ destructor <em>afterward</em>. With <code class="docutils literal notranslate"><span class="pre">SetUp()/TearDown()</span></code>, a subclass may make the mistake of forgetting to call the base class’ <code class="docutils literal notranslate"><span class="pre">SetUp()/TearDown()</span></code> or call them at the wrong time.</p></li>
+</ul>
+</p>
+<p>You may still want to use <code class="docutils literal notranslate"><span class="pre">SetUp()/TearDown()</span></code> in the following cases:</p>
+<p><ul class="simple">
+<li><p>C++ does not allow virtual function calls in constructors and destructors. You can call a method declared as virtual, but it will not use dynamic dispatch. It will use the definition from the class the constructor of which is currently executing. This is because calling a virtual method before the derived class constructor has a chance to run is very dangerous - the virtual method might operate on uninitialized data. Therefore, if you need to call a method that will be overridden in a derived class, you have to use <code class="docutils literal notranslate"><span class="pre">SetUp()/TearDown()</span></code>.</p></li>
+<li><p>In the body of a constructor (or destructor), it’s not possible to use the <code class="docutils literal notranslate"><span class="pre">ASSERT_xx</span></code> macros. Therefore, if the set-up operation could cause a fatal test failure that should prevent the test from running, it’s necessary to use <code class="docutils literal notranslate"><span class="pre">abort</span></code> and abort the whole test executable, or to use <code class="docutils literal notranslate"><span class="pre">SetUp()</span></code> instead of a constructor.</p></li>
+<li><p>If the tear-down operation could throw an exception, you must use <code class="docutils literal notranslate"><span class="pre">TearDown()</span></code> as opposed to the destructor, as throwing in a destructor leads to undefined behavior and usually will kill your program right away. Note that many standard libraries (like STL) may throw when exceptions are enabled in the compiler. Therefore you should prefer <code class="docutils literal notranslate"><span class="pre">TearDown()</span></code> if you want to write portable tests that work with or without exceptions.</p></li>
+<li><p>The GoogleTest team is considering making the assertion macros throw on platforms where exceptions are enabled (e.g. Windows, Mac OS, and Linux client-side), which will eliminate the need for the user to propagate failures from a subroutine to its caller. Therefore, you shouldn’t use GoogleTest assertions in a destructor if your code could run on such a platform.</p></li>
+</ul>
+</p>
+<p><em>The compiler complains “no matching function to call” when I use <code class="docutils literal notranslate"><span class="pre">ASSERT_PRED*</span></code>. How do I fix it?</em></p>
+<p>See details for <a class="reference external" href="reference/assertions.md#EXPECT_PRED"></a> in the Assertions Reference.</p>
+<p><em>My compiler complains about “ignoring return value” when I call RUN_ALL_TESTS(). Why?</em></p>
+<p>Some people had been ignoring the return value of <code class="docutils literal notranslate"><span class="pre">RUN_ALL_TESTS()</span></code>. That is, instead of</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">RUN_ALL_TESTS</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>they write</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="w"> </span><span class="n">RUN_ALL_TESTS</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>This is <strong>wrong and dangerous</strong>. The testing services needs to see the return value of <code class="docutils literal notranslate"><span class="pre">RUN_ALL_TESTS()</span></code> in order to determine if a test has passed. If your <code class="docutils literal notranslate"><span class="pre">main()</span></code> function ignores it, your test will be considered successful even if it has a GoogleTest assertion failure. Very bad.</p>
+<p>We have decided to fix this (thanks to Michael Chastain for the idea). Now, your code will no longer be able to ignore <code class="docutils literal notranslate"><span class="pre">RUN_ALL_TESTS()</span></code> when compiled with <code class="docutils literal notranslate"><span class="pre">gcc</span></code>. If you do so, you’ll get a compiler error.</p>
+<p>If you see the compiler complaining about you ignoring the return value of <code class="docutils literal notranslate"><span class="pre">RUN_ALL_TESTS()</span></code>, the fix is simple: just make sure its value is used as the return value of <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p>
+<p>But how could we introduce a change that breaks existing tests? Well, in this case, the code was already broken in the first place, so we didn’t break it. :-)</p>
+<p><em>My compiler complains that a constructor (or destructor) cannot return a value. What’s going on?</em></p>
+<p>Due to a peculiarity of C++, in order to support the syntax for streaming messages to an <code class="docutils literal notranslate"><span class="pre">ASSERT_*</span></code>, e.g.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="w"> </span><span class="n">ASSERT_EQ</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Foo</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;blah blah&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">foo</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>we had to give up using <code class="docutils literal notranslate"><span class="pre">ASSERT*</span></code> and <code class="docutils literal notranslate"><span class="pre">FAIL*</span></code> (but not <code class="docutils literal notranslate"><span class="pre">EXPECT*</span></code> and <code class="docutils literal notranslate"><span class="pre">ADD_FAILURE*</span></code>) in constructors and destructors. The workaround is to move the content of your constructor/destructor to a private void member function, or switch to <code class="docutils literal notranslate"><span class="pre">EXPECT_*()</span></code> if that works. This <a class="reference external" href="advanced.md#assertion-placement">section</a> in the user’s guide explains it.</p>
+<p><em>My SetUp() function is not called. Why?</em></p>
+<p>C++ is case-sensitive. Did you spell it as <code class="docutils literal notranslate"><span class="pre">Setup()</span></code>?</p>
+<p>Similarly, sometimes people spell <code class="docutils literal notranslate"><span class="pre">SetUpTestSuite()</span></code> as <code class="docutils literal notranslate"><span class="pre">SetupTestSuite()</span></code> and wonder why it’s never called.</p>
+<p><em>I have several test suites which share the same test fixture logic; do I have to define a new test fixture class for each of them? This seems pretty tedious.</em></p>
+<p>You don’t have to. Instead of</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FooTest</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">BaseTest</span><span class="w"> </span><span class="p">{};</span>
+
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">FooTest</span><span class="p">,</span><span class="w"> </span><span class="n">Abc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">FooTest</span><span class="p">,</span><span class="w"> </span><span class="n">Def</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BarTest</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">BaseTest</span><span class="w"> </span><span class="p">{};</span>
+
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">BarTest</span><span class="p">,</span><span class="w"> </span><span class="n">Abc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">BarTest</span><span class="p">,</span><span class="w"> </span><span class="n">Def</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>you can simply <code class="docutils literal notranslate"><span class="pre">typedef</span></code> the test fixtures:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="k">typedef</span><span class="w"> </span><span class="n">BaseTest</span><span class="w"> </span><span class="n">FooTest</span><span class="p">;</span>
+
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">FooTest</span><span class="p">,</span><span class="w"> </span><span class="n">Abc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">FooTest</span><span class="p">,</span><span class="w"> </span><span class="n">Def</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="n">BaseTest</span><span class="w"> </span><span class="n">BarTest</span><span class="p">;</span>
+
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">BarTest</span><span class="p">,</span><span class="w"> </span><span class="n">Abc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">BarTest</span><span class="p">,</span><span class="w"> </span><span class="n">Def</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p><em>GoogleTest output is buried in a whole bunch of LOG messages. What do I do?</em></p>
+<p>The GoogleTest output is meant to be a concise and human-friendly report. If your test generates textual output itself, it will mix with the GoogleTest output, making it hard to read. However, there is an easy solution to this problem.</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">LOG</span></code> messages go to stderr, we decided to let GoogleTest output go to stdout. This way, you can easily separate the two using redirection. For example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./my_test<span class="w"> </span>&gt;<span class="w"> </span>gtest_output.txt
+</pre></div>
+</div>
+<p><em>Why should I prefer test fixtures over global variables?</em></p>
+<p>There are several good reasons:</p>
+<p><ol class="arabic simple">
+<li><p>It’s likely your test needs to change the states of its global variables. This makes it difficult to keep side effects from escaping one test and contaminating others, making debugging difficult. By using fixtures, each test has a fresh set of variables that’s different (but with the same names). Thus, tests are kept independent of each other.</p></li>
+<li><p>Global variables pollute the global namespace.</p></li>
+<li><p>Test fixtures can be reused via subclassing, which cannot be done easily with global variables. This is useful if many test suites have something in common.</p></li>
+</ol>
+</p>
+<p><em>What can the statement argument in ASSERT_DEATH() be?</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">ASSERT_DEATH(statement,</span> <span class="pre">matcher)</span></code> (or any death assertion macro) can be used wherever *<code class="docutils literal notranslate"><span class="pre">statement</span></code>* is valid. So basically *<code class="docutils literal notranslate"><span class="pre">statement</span></code>* can be any C++ statement that makes sense in the current context. In particular, it can reference global and/or local variables, and can be:</p>
+<p><ul class="simple">
+<li><p>a simple function call (often the case),</p></li>
+<li><p>a complex expression, or</p></li>
+<li><p>a compound statement.</p></li>
+</ul>
+</p>
+<p>Some examples are shown here:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="c1">// A death test can be a simple function call.</span>
+<span class="n">TEST</span><span class="p">(</span><span class="n">MyDeathTest</span><span class="p">,</span><span class="w"> </span><span class="n">FunctionCall</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">ASSERT_DEATH</span><span class="p">(</span><span class="n">Xyz</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;Xyz failed&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Or a complex expression that references variables and functions.</span>
+<span class="n">TEST</span><span class="p">(</span><span class="n">MyDeathTest</span><span class="p">,</span><span class="w"> </span><span class="n">ComplexExpression</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Condition</span><span class="p">();</span>
+<span class="w">  </span><span class="n">ASSERT_DEATH</span><span class="p">((</span><span class="n">c</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Func1</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">object2</span><span class="p">.</span><span class="n">Method</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">)),</span>
+<span class="w">               </span><span class="s">&quot;(Func1|Method) failed&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Death assertions can be used anywhere in a function.  In</span>
+<span class="c1">// particular, they can be inside a loop.</span>
+<span class="n">TEST</span><span class="p">(</span><span class="n">MyDeathTest</span><span class="p">,</span><span class="w"> </span><span class="n">InsideLoop</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Verifies that Foo(0), Foo(1), ..., and Foo(4) all die.</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">EXPECT_DEATH_M</span><span class="p">(</span><span class="n">Foo</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;Foo has </span><span class="se">\\</span><span class="s">d+ errors&quot;</span><span class="p">,</span>
+<span class="w">                   </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Message</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;where i is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// A death assertion can contain a compound statement.</span>
+<span class="n">TEST</span><span class="p">(</span><span class="n">MyDeathTest</span><span class="p">,</span><span class="w"> </span><span class="n">CompoundStatement</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Verifies that at lease one of Bar(0), Bar(1), ..., and</span>
+<span class="w">  </span><span class="c1">// Bar(4) dies.</span>
+<span class="w">  </span><span class="n">ASSERT_DEATH</span><span class="p">({</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">Bar</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="s">&quot;Bar has </span><span class="se">\\</span><span class="s">d+ errors&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>I have a fixture class <code class="docutils literal notranslate"><span class="pre">FooTest</span></code>, but <code class="docutils literal notranslate"><span class="pre">TEST_F(FooTest,</span> <span class="pre">Bar)</span></code> gives me error <code class="docutils literal notranslate"><span class="pre">&quot;no</span> <span class="pre">matching</span> <span class="pre">function</span> <span class="pre">for</span> <span class="pre">call</span> <span class="pre">to</span> <span class="pre">`FooTest::FooTest()'&quot;</span></code>. Why?</em></p>
+<p>GoogleTest needs to be able to create objects of your test fixture class, so it must have a default constructor. Normally the compiler will define one for you. However, there are cases where you have to define your own:</p>
+<p><ul class="simple">
+<li><p>If you explicitly declare a non-default constructor for class <code class="docutils literal notranslate"><span class="pre">FooTest</span></code> (<code class="docutils literal notranslate"><span class="pre">DISALLOW_EVIL_CONSTRUCTORS()</span></code> does this), then you need to define a default constructor, even if it would be empty.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">FooTest</span></code> has a const non-static data member, then you have to define the default constructor <em>and</em> initialize the const member in the initializer list of the constructor. (Early versions of <code class="docutils literal notranslate"><span class="pre">gcc</span></code> doesn’t force you to initialize the const member. It’s a bug that has been fixed in <code class="docutils literal notranslate"><span class="pre">gcc</span> <span class="pre">4</span></code>.)</p></li>
+</ul>
+</p>
+<p><em>Why does ASSERT_DEATH complain about previous threads that were already joined?</em></p>
+<p>With the Linux pthread library, there is no turning back once you cross the line from a single thread to multiple threads. The first time you create a thread, a manager thread is created in addition, so you get 3, not 2, threads. Later when the thread you create joins the main thread, the thread count decrements by 1, but the manager thread will never be killed, so you still have 2 threads, which means you cannot safely run a death test.</p>
+<p>The new NPTL thread library doesn’t suffer from this problem, as it doesn’t create a manager thread. However, if you don’t control which machine your test runs on, you shouldn’t depend on this.</p>
+<p><em>Why does GoogleTest require the entire test suite, instead of individual tests, to be named <code class="docutils literal notranslate"><span class="pre">*DeathTest</span></code> when it uses <code class="docutils literal notranslate"><span class="pre">ASSERT_DEATH</span></code>?</em></p>
+<p>GoogleTest does not interleave tests from different test suites. That is, it runs all tests in one test suite first, and then runs all tests in the next test suite, and so on. GoogleTest does this because it needs to set up a test suite before the first test in it is run, and tear it down afterwards. Splitting up the test case would require multiple set-up and tear-down processes, which is inefficient and makes the semantics unclean.</p>
+<p>If we were to determine the order of tests based on test name instead of test case name, then we would have a problem with the following situation:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">FooTest</span><span class="p">,</span><span class="w"> </span><span class="n">AbcDeathTest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">FooTest</span><span class="p">,</span><span class="w"> </span><span class="n">Uvw</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">BarTest</span><span class="p">,</span><span class="w"> </span><span class="n">DefDeathTest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">BarTest</span><span class="p">,</span><span class="w"> </span><span class="n">Xyz</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">FooTest.AbcDeathTest</span></code> needs to run before <code class="docutils literal notranslate"><span class="pre">BarTest.Xyz</span></code>, and we don’t interleave tests from different test suites, we need to run all tests in the <code class="docutils literal notranslate"><span class="pre">FooTest</span></code> case before running any test in the <code class="docutils literal notranslate"><span class="pre">BarTest</span></code> case. This contradicts with the requirement to run <code class="docutils literal notranslate"><span class="pre">BarTest.DefDeathTest</span></code> before <code class="docutils literal notranslate"><span class="pre">FooTest.Uvw</span></code>.</p>
+<p><em>But I don’t like calling my entire test suite <code class="docutils literal notranslate"><span class="pre">*DeathTest</span></code> when it contains both death tests and non-death tests. What do I do?</em></p>
+<p>You don’t have to, but if you like, you may split up the test suite into <code class="docutils literal notranslate"><span class="pre">FooTest</span></code> and <code class="docutils literal notranslate"><span class="pre">FooDeathTest</span></code>, where the names make it clear that they are related:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FooTest</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Test</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">};</span>
+
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">FooTest</span><span class="p">,</span><span class="w"> </span><span class="n">Abc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">FooTest</span><span class="p">,</span><span class="w"> </span><span class="n">Def</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">FooDeathTest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FooTest</span><span class="p">;</span>
+
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">FooDeathTest</span><span class="p">,</span><span class="w"> </span><span class="n">Uvw</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">EXPECT_DEATH</span><span class="p">(...)</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">FooDeathTest</span><span class="p">,</span><span class="w"> </span><span class="n">Xyz</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">ASSERT_DEATH</span><span class="p">(...)</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p><em>GoogleTest prints the LOG messages in a death test’s child process only when the test fails. How can I see the LOG messages when the death test succeeds?</em></p>
+<p>Printing the LOG messages generated by the statement inside <code class="docutils literal notranslate"><span class="pre">EXPECT_DEATH()</span></code> makes it harder to search for real problems in the parent’s log. Therefore, GoogleTest only prints them when the death test has failed.</p>
+<p>If you really need to see such LOG messages, a workaround is to temporarily break the death test (e.g. by changing the regex pattern it is expected to match). Admittedly, this is a hack. We’ll consider a more permanent solution after the fork-and-exec-style death tests are implemented.</p>
+<p><em>The compiler complains about no match for ‘operator&lt;&lt;` when I use an assertion. What gives?</em></p>
+<p>If you use a user-defined type <code class="docutils literal notranslate"><span class="pre">FooType</span></code> in an assertion, you must make sure there is an <code class="docutils literal notranslate"><span class="pre">std::ostream&amp;</span> <span class="pre">operator&lt;&lt;(std::ostream&amp;,</span> <span class="pre">const</span> <span class="pre">FooType&amp;)</span></code> function defined such that we can print a value of <code class="docutils literal notranslate"><span class="pre">FooType</span></code>.</p>
+<p>In addition, if <code class="docutils literal notranslate"><span class="pre">FooType</span></code> is declared in a name space, the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> operator also needs to be defined in the <em>same</em> name space. See <a class="reference external" href="https://abseil.io/tips/49">Tip of the Week #49</a> for details.</p>
+<p><em>How do I suppress the memory leak messages on Windows?</em></p>
+<p>Since the statically initialized GoogleTest singleton requires allocations on the heap, the Visual C++ memory leak detector will report memory leaks at the end of the program run. The easiest way to avoid this is to use the <code class="docutils literal notranslate"><span class="pre">_CrtMemCheckpoint</span></code> and <code class="docutils literal notranslate"><span class="pre">_CrtMemDumpAllObjectsSince</span></code> calls to not report any statically initialized heap objects. See MSDN for more details and additional heap check/debug routines.</p>
+<p><em>How can my code detect if it is running in a test?</em></p>
+<p>If you write code that sniffs whether it’s running in a test and does different things accordingly, you are leaking test-only logic into production code and there is no easy way to ensure that the test-only code paths aren’t run by mistake in production. Such cleverness also leads to <a class="reference external" href="https://en.wikipedia.org/wiki/Heisenbug">Heisenbugs</a>. Therefore we strongly advise against the practice, and GoogleTest doesn’t provide a way to do it.</p>
+<p>In general, the recommended way to cause the code to behave differently under test is <a class="reference external" href="https://en.wikipedia.org/wiki/Dependency_injection">Dependency Injection</a>. You can inject different functionality from the test and from the production code. Since your production code doesn’t link in the for-test logic at all (the <a class="reference external" href="https://docs.bazel.build/versions/master/be/common-definitions.html#common.testonly"></a> attribute for BUILD targets helps to ensure that), there is no danger in accidentally running it.</p>
+<p>However, if you <em>really</em>, <em>really</em>, <em>really</em> have no choice, and if you follow the rule of ending your test program names with <code class="docutils literal notranslate"><span class="pre">_test</span></code>, you can use the <em>horrible</em> hack of sniffing your executable name (<code class="docutils literal notranslate"><span class="pre">argv[0]</span></code> in <code class="docutils literal notranslate"><span class="pre">main()</span></code>) to know whether the code is under test.</p>
+<p><em>How do I temporarily disable a test?</em></p>
+<p>If you have a broken test that you cannot fix right away, you can add the <code class="docutils literal notranslate"><span class="pre">DISABLED_</span></code> prefix to its name. This will exclude it from execution. This is better than commenting out the code or using <code class="docutils literal notranslate"><span class="pre">#if</span> <span class="pre">0</span></code>, as disabled tests are still compiled (and thus won’t rot).</p>
+<p>To include disabled tests in test execution, just invoke the test program with the <code class="docutils literal notranslate"><span class="pre">--gtest_also_run_disabled_tests</span></code> flag.</p>
+<p><em>Is it OK if I have two separate <code class="docutils literal notranslate"><span class="pre">TEST(Foo,</span> <span class="pre">Bar)</span></code> test methods defined in different namespaces?</em></p>
+<p>Yes.</p>
+<p>The rule is <strong>all test methods in the same test suite must use the same fixture class</strong>. This means that the following is <strong>allowed</strong> because both tests use the same fixture class (<code class="docutils literal notranslate"><span class="pre">::testing::Test</span></code>).</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="p">{</span>
+<span class="n">TEST</span><span class="p">(</span><span class="n">CoolTest</span><span class="p">,</span><span class="w"> </span><span class="n">DoSomething</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">SUCCEED</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace foo</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">bar</span><span class="w"> </span><span class="p">{</span>
+<span class="n">TEST</span><span class="p">(</span><span class="n">CoolTest</span><span class="p">,</span><span class="w"> </span><span class="n">DoSomething</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">SUCCEED</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace bar</span>
+</pre></div>
+</div>
+<p>However, the following code is <strong>not allowed</strong> and will produce a runtime error from GoogleTest because the test methods are using different test fixture classes with the same test suite name.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">{</span><span class="n">c</span><span class="o">++</span><span class="p">}</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="p">{</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CoolTest</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Test</span><span class="w"> </span><span class="p">{};</span><span class="w">  </span><span class="c1">// Fixture foo::CoolTest</span>
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">CoolTest</span><span class="p">,</span><span class="w"> </span><span class="n">DoSomething</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">SUCCEED</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace foo</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">bar</span><span class="w"> </span><span class="p">{</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CoolTest</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Test</span><span class="w"> </span><span class="p">{};</span><span class="w">  </span><span class="c1">// Fixture: bar::CoolTest</span>
+<span class="n">TEST_F</span><span class="p">(</span><span class="n">CoolTest</span><span class="p">,</span><span class="w"> </span><span class="n">DoSomething</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">SUCCEED</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace bar</span>
+</pre></div>
+</div>
+</section>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

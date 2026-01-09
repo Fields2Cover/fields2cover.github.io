@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actions Reference &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/page_md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_actions.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Actions Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/page_md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_actions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="actions-reference">
+<span id="page-md-w-fields2cover-fields2cover-googletest-docs-reference-actions"></span><h1>Actions Reference<a class="headerlink" href="#actions-reference" title="Link to this heading"></a></h1>
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_actions"></span><em><span class="pre">page</span></em> <span class="sig-name descname"><span class="pre">Actions</span> <span class="pre">Reference</span></span></dt>
+<dd><p><a class="reference external" href="../gmock_for_dummies.md#actions-what-should-it-do"></a> specify what a mock function should do when invoked. This page lists the built-in actions provided by GoogleTest. All actions are defined in the <code class="docutils literal notranslate"><span class="pre">testing</span></code> namespace.</p>
+<p><em>Returning a Value</em></p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Return()</span></code></p></td>
+<td><p>Return from a <code class="docutils literal notranslate"><span class="pre">void</span></code> mock function.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Return(value)</span></code></p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">value</span></code>. If the type of <code class="docutils literal notranslate"><span class="pre">value</span></code> is different to the mock function’s return type, <code class="docutils literal notranslate"><span class="pre">value</span></code> is converted to the latter type <em>at the time the expectation is set</em>, not when the action is executed.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ReturnArg&lt;N&gt;()</span></code></p></td>
+<td><p>Return the <code class="docutils literal notranslate"><span class="pre">N</span></code>-th (0-based) argument.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ReturnNew&lt;T&gt;(a1,</span> <span class="pre">...,</span> <span class="pre">ak)</span></code></p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">T(a1,</span> <span class="pre">...,</span> <span class="pre">ak)</span></code>; a different object is created each time.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ReturnNull()</span></code></p></td>
+<td><p>Return a null pointer.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ReturnPointee(ptr)</span></code></p></td>
+<td><p>Return the value pointed to by <code class="docutils literal notranslate"><span class="pre">ptr</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ReturnRef(variable)</span></code></p></td>
+<td><p>Return a reference to <code class="docutils literal notranslate"><span class="pre">variable</span></code>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ReturnRefOfCopy(value)</span></code></p></td>
+<td><p>Return a reference to a copy of <code class="docutils literal notranslate"><span class="pre">value</span></code>; the copy lives as long as the action.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ReturnRoundRobin({a1,</span> <span class="pre">...,</span> <span class="pre">ak})</span></code></p></td>
+<td><p>Each call will return the next <code class="docutils literal notranslate"><span class="pre">ai</span></code> in the list, starting at the beginning when the end of the list is reached.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><em>Side Effects</em></p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Assign(&amp;variable,</span> <span class="pre">value)</span></code></p></td>
+<td><p>Assign <code class="docutils literal notranslate"><span class="pre">value</span></code> to variable.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DeleteArg&lt;N&gt;()</span></code></p></td>
+<td><p>Delete the <code class="docutils literal notranslate"><span class="pre">N</span></code>-th (0-based) argument, which must be a pointer.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SaveArg&lt;N&gt;(pointer)</span></code></p></td>
+<td><p>Save the <code class="docutils literal notranslate"><span class="pre">N</span></code>-th (0-based) argument to <code class="docutils literal notranslate"><span class="pre">*pointer</span></code>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SaveArgPointee&lt;N&gt;(pointer)</span></code></p></td>
+<td><p>Save the value pointed to by the <code class="docutils literal notranslate"><span class="pre">N</span></code>-th (0-based) argument to <code class="docutils literal notranslate"><span class="pre">*pointer</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SetArgReferee&lt;N&gt;(value)</span></code></p></td>
+<td><p>Assign <code class="docutils literal notranslate"><span class="pre">value</span></code> to the variable referenced by the <code class="docutils literal notranslate"><span class="pre">N</span></code>-th (0-based) argument.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SetArgPointee&lt;N&gt;(value)</span></code></p></td>
+<td><p>Assign <code class="docutils literal notranslate"><span class="pre">value</span></code> to the variable pointed by the <code class="docutils literal notranslate"><span class="pre">N</span></code>-th (0-based) argument.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SetArgumentPointee&lt;N&gt;(value)</span></code></p></td>
+<td><p>Same as <code class="docutils literal notranslate"><span class="pre">SetArgPointee&lt;N&gt;(value)</span></code>. Deprecated. Will be removed in v1.7.0.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SetArrayArgument&lt;N&gt;(first,</span> <span class="pre">last)</span></code></p></td>
+<td><p>Copies the elements in source range [<code class="docutils literal notranslate"><span class="pre">first</span></code>, <code class="docutils literal notranslate"><span class="pre">last</span></code>) to the array pointed to by the <code class="docutils literal notranslate"><span class="pre">N</span></code>-th (0-based) argument, which can be either a pointer or an iterator. The action does not take ownership of the elements in the source range.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SetErrnoAndReturn(error,</span> <span class="pre">value)</span></code></p></td>
+<td><p>Set <code class="docutils literal notranslate"><span class="pre">errno</span></code> to <code class="docutils literal notranslate"><span class="pre">error</span></code> and return <code class="docutils literal notranslate"><span class="pre">value</span></code>.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Throw(exception)</span></code></p></td>
+<td><p>Throws the given exception, which can be any copyable value. Available since v1.1.0.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><em>Using a Function, Functor, or Lambda as an Action</em></p>
+<p>In the following, by “callable” we mean a free function, <code class="docutils literal notranslate"><span class="pre">std::function</span></code>, functor, or lambda.</p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">f</span></code></p></td>
+<td><p>Invoke <code class="docutils literal notranslate"><span class="pre">f</span></code> with the arguments passed to the mock function, where <code class="docutils literal notranslate"><span class="pre">f</span></code> is a callable.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Invoke(f)</span></code></p></td>
+<td><p>Invoke <code class="docutils literal notranslate"><span class="pre">f</span></code> with the arguments passed to the mock function, where <code class="docutils literal notranslate"><span class="pre">f</span></code> can be a global/static function or a functor.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Invoke(object_pointer,</span> <span class="pre">&amp;class::method)</span></code></p></td>
+<td><p>Invoke the method on the object with the arguments passed to the mock function.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">InvokeWithoutArgs(f)</span></code></p></td>
+<td><p>Invoke <code class="docutils literal notranslate"><span class="pre">f</span></code>, which can be a global/static function or a functor. <code class="docutils literal notranslate"><span class="pre">f</span></code> must take no arguments.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">InvokeWithoutArgs(object_pointer,</span> <span class="pre">&amp;class::method)</span></code></p></td>
+<td><p>Invoke the method on the object, which takes no arguments.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">InvokeArgument&lt;N&gt;(arg1,</span> <span class="pre">arg2,</span> <span class="pre">...,</span> <span class="pre">argk)</span></code></p></td>
+<td><p>Invoke the mock function’s <code class="docutils literal notranslate"><span class="pre">N</span></code>-th (0-based) argument, which must be a function or a functor, with the <code class="docutils literal notranslate"><span class="pre">k</span></code> arguments.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>The return value of the invoked function is used as the return value of the action.</p>
+<p>When defining a callable to be used with <code class="docutils literal notranslate"><span class="pre">Invoke*()</span></code>, you can declare any unused parameters as <code class="docutils literal notranslate"><span class="pre">Unused</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Invoke</span><span class="p">;</span>
+<span class="kt">double</span><span class="w"> </span><span class="nf">Distance</span><span class="p">(</span><span class="n">Unused</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">...</span>
+<span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">mock</span><span class="p">,</span><span class="w"> </span><span class="n">Foo</span><span class="p">(</span><span class="s">&quot;Hi&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">)).</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Invoke</span><span class="p">(</span><span class="n">Distance</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Invoke(callback)</span></code> and <code class="docutils literal notranslate"><span class="pre">InvokeWithoutArgs(callback)</span></code> take ownership of <code class="docutils literal notranslate"><span class="pre">callback</span></code>, which must be permanent. The type of <code class="docutils literal notranslate"><span class="pre">callback</span></code> must be a base callback type instead of a derived one, e.g.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">BlockingClosure</span><span class="o">*</span><span class="w"> </span><span class="n">done</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BlockingClosure</span><span class="p">;</span>
+<span class="p">...</span><span class="w"> </span><span class="n">Invoke</span><span class="p">(</span><span class="n">done</span><span class="p">)</span><span class="w"> </span><span class="p">...;</span><span class="w">  </span><span class="c1">// This won&#39;t compile!</span>
+
+<span class="n">Closure</span><span class="o">*</span><span class="w"> </span><span class="n">done2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BlockingClosure</span><span class="p">;</span>
+<span class="p">...</span><span class="w"> </span><span class="n">Invoke</span><span class="p">(</span><span class="n">done2</span><span class="p">)</span><span class="w"> </span><span class="p">...;</span><span class="w">  </span><span class="c1">// This works.</span>
+</pre></div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">InvokeArgument&lt;N&gt;(...)</span></code>, if an argument needs to be passed by reference, wrap it inside <code class="docutils literal notranslate"><span class="pre">std::ref()</span></code>. For example,</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">InvokeArgument</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="n">InvokeArgument</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="p">(</span><span class="s">&quot;Hi&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ref</span><span class="p">(</span><span class="n">foo</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>calls the mock function’s #2 argument, passing to it <code class="docutils literal notranslate"><span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">string(&quot;Hi&quot;)</span></code> by value, and <code class="docutils literal notranslate"><span class="pre">foo</span></code> by reference.</p>
+<p><em>Default Action</em></p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DoDefault()</span></code></p></td>
+<td><p>Do the default action (specified by <code class="docutils literal notranslate"><span class="pre">ON_CALL()</span></code> or the built-in one).   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>{: .callout .note} <strong>Note:</strong> due to technical reasons, <code class="docutils literal notranslate"><span class="pre">DoDefault()</span></code> cannot be used inside a composite action - trying to do so will result in a run-time error.</p>
+<p><em>Composite Actions</em></p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DoAll(a1,</span> <span class="pre">a2,</span> <span class="pre">...,</span> <span class="pre">an)</span></code></p></td>
+<td><p>Do all actions <code class="docutils literal notranslate"><span class="pre">a1</span></code> to <code class="docutils literal notranslate"><span class="pre">an</span></code> and return the result of <code class="docutils literal notranslate"><span class="pre">an</span></code> in each invocation. The first <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code> sub-actions must return void and will receive a readonly view of the arguments.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">IgnoreResult(a)</span></code></p></td>
+<td><p>Perform action <code class="docutils literal notranslate"><span class="pre">a</span></code> and ignore its result. <code class="docutils literal notranslate"><span class="pre">a</span></code> must not return void.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">WithArg&lt;N&gt;(a)</span></code></p></td>
+<td><p>Pass the <code class="docutils literal notranslate"><span class="pre">N</span></code>-th (0-based) argument of the mock function to action <code class="docutils literal notranslate"><span class="pre">a</span></code> and perform it.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">WithArgs&lt;N1,</span> <span class="pre">N2,</span> <span class="pre">...,</span> <span class="pre">Nk&gt;(a)</span></code></p></td>
+<td><p>Pass the selected (0-based) arguments of the mock function to action <code class="docutils literal notranslate"><span class="pre">a</span></code> and perform it.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">WithoutArgs(a)</span></code></p></td>
+<td><p>Perform action <code class="docutils literal notranslate"><span class="pre">a</span></code> without any arguments.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><em>Defining Actions</em></p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Macro   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ACTION(Sum)</span> <span class="pre">{</span> <span class="pre">return</span> <span class="pre">arg0</span> <span class="pre">+</span> <span class="pre">arg1;</span> <span class="pre">}</span></code></p></td>
+<td><p>Defines an action <code class="docutils literal notranslate"><span class="pre">Sum()</span></code> to return the sum of the mock function’s argument #0 and #1.    </p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ACTION_P(Plus,</span> <span class="pre">n)</span> <span class="pre">{</span> <span class="pre">return</span> <span class="pre">arg0</span> <span class="pre">+</span> <span class="pre">n;</span> <span class="pre">}</span></code></p></td>
+<td><p>Defines an action <code class="docutils literal notranslate"><span class="pre">Plus(n)</span></code> to return the sum of the mock function’s argument #0 and <code class="docutils literal notranslate"><span class="pre">n</span></code>.    </p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ACTION_Pk(Foo,</span> <span class="pre">p1,</span> <span class="pre">...,</span> <span class="pre">pk)</span> <span class="pre">{</span> <span class="pre">statements;</span> <span class="pre">}</span></code></p></td>
+<td><p>Defines a parameterized action <code class="docutils literal notranslate"><span class="pre">Foo(p1,</span> <span class="pre">...,</span> <span class="pre">pk)</span></code> to execute the given <code class="docutils literal notranslate"><span class="pre">statements</span></code>.   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ACTION*</span></code> macros cannot be used inside a function or class. </p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

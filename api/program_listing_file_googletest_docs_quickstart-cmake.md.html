@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File quickstart-cmake.md &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_googletest_docs_quickstart-cmake.md.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File quickstart-cmake.md</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_googletest_docs_quickstart-cmake.md.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-quickstart-cmake-md">
+<span id="program-listing-file-googletest-docs-quickstart-cmake-md"></span><h1>Program Listing for File quickstart-cmake.md<a class="headerlink" href="#program-listing-for-file-quickstart-cmake-md" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_googletest_docs_quickstart-cmake.md.html#file-googletest-docs-quickstart-cmake-md"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">googletest/docs/quickstart-cmake.md</span></code>)</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Quickstart: Building with CMake</span>
+
+This tutorial aims to get you up and running with GoogleTest using CMake. If
+you&#39;re using GoogleTest for the first time or need a refresher, we recommend
+this tutorial as a starting point. If your project uses Bazel, see the
+[<span class="nt">Quickstart for Bazel</span>](<span class="na">quickstart-bazel.md</span>) instead.
+
+<span class="gu">## Prerequisites</span>
+
+To complete this tutorial, you&#39;ll need:
+
+<span class="k">*</span><span class="w"> </span>  A compatible operating system (e.g. Linux, macOS, Windows).
+<span class="k">*</span><span class="w"> </span>  A compatible C++ compiler that supports at least C++14.
+<span class="k">*</span><span class="w"> </span>  [<span class="nt">CMake</span>](<span class="na">https://cmake.org/</span>) and a compatible build tool for building the
+    project.
+<span class="w">    </span><span class="k">*</span><span class="w"> </span>  Compatible build tools include
+        [<span class="nt">Make</span>](<span class="na">https://www.gnu.org/software/make/</span>),
+        [<span class="nt">Ninja</span>](<span class="na">https://ninja-build.org/</span>), and others - see
+        [<span class="nt">CMake Generators</span>](<span class="na">https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html</span>)
+        for more information.
+
+See [<span class="nt">Supported Platforms</span>](<span class="na">platforms.md</span>) for more information about platforms
+compatible with GoogleTest.
+
+If you don&#39;t already have CMake installed, see the
+[<span class="nt">CMake installation guide</span>](<span class="na">https://cmake.org/install</span>).
+
+{: .callout .note}
+Note: The terminal commands in this tutorial show a Unix shell prompt, but the
+commands work on the Windows command line as well.
+
+<span class="gu">## Set up a project</span>
+
+CMake uses a file named <span class="sb">`CMakeLists.txt`</span> to configure the build system for a
+project. You&#39;ll use this file to set up your project and declare a dependency on
+GoogleTest.
+
+First, create a directory for your project:
+
+<span class="sb">```</span>
+<span class="sb">$ mkdir my_project &amp;&amp; cd my_project</span>
+<span class="sb">```</span>
+
+Next, you&#39;ll create the <span class="sb">`CMakeLists.txt`</span> file and declare a dependency on
+GoogleTest. There are many ways to express dependencies in the CMake ecosystem;
+in this quickstart, you&#39;ll use the
+[<span class="sb">`FetchContent`</span> CMake module](https://cmake.org/cmake/help/latest/module/FetchContent.html).
+To do this, in your project directory (<span class="sb">`my_project`</span>), create a file named
+<span class="sb">`CMakeLists.txt`</span> with the following contents:
+
+<span class="sb">```cmake</span>
+<span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.14</span><span class="p">)</span>
+<span class="nb">project</span><span class="p">(</span><span class="s">my_project</span><span class="p">)</span>
+
+<span class="c"># GoogleTest requires at least C++14</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_STANDARD</span><span class="w"> </span><span class="s">14</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_STANDARD_REQUIRED</span><span class="w"> </span><span class="s">ON</span><span class="p">)</span>
+
+<span class="nb">include</span><span class="p">(</span><span class="s">FetchContent</span><span class="p">)</span>
+<span class="nb">FetchContent_Declare</span><span class="p">(</span>
+<span class="w">  </span><span class="s">googletest</span>
+<span class="w">  </span><span class="s">URL</span><span class="w"> </span><span class="s">https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip</span>
+<span class="p">)</span>
+<span class="c"># For Windows: Prevent overriding the parent project&#39;s compiler/linker settings</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">gtest_force_shared_crt</span><span class="w"> </span><span class="s">ON</span><span class="w"> </span><span class="s">CACHE</span><span class="w"> </span><span class="s">BOOL</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="s">FORCE</span><span class="p">)</span>
+<span class="nb">FetchContent_MakeAvailable</span><span class="p">(</span><span class="s">googletest</span><span class="p">)</span>
+<span class="sb">```</span>
+
+The above configuration declares a dependency on GoogleTest which is downloaded
+from GitHub. In the above example, <span class="sb">`03597a01ee50ed33e9dfd640b249b4be3799d395`</span> is
+the Git commit hash of the GoogleTest version to use; we recommend updating the
+hash often to point to the latest version.
+
+For more information about how to create <span class="sb">`CMakeLists.txt`</span> files, see the
+[<span class="nt">CMake Tutorial</span>](<span class="na">https://cmake.org/cmake/help/latest/guide/tutorial/index.html</span>).
+
+<span class="gu">## Create and run a binary</span>
+
+With GoogleTest declared as a dependency, you can use GoogleTest code within
+your own project.
+
+As an example, create a file named <span class="sb">`hello_test.cc`</span> in your <span class="sb">`my_project`</span>
+directory with the following contents:
+
+<span class="sb">```cpp</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gtest/gtest.h&gt;</span>
+
+<span class="c1">// Demonstrate some basic assertions.</span>
+<span class="n">TEST</span><span class="p">(</span><span class="n">HelloTest</span><span class="p">,</span><span class="w"> </span><span class="n">BasicAssertions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Expect two strings not to be equal.</span>
+<span class="w">  </span><span class="n">EXPECT_STRNE</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Expect equality.</span>
+<span class="w">  </span><span class="n">EXPECT_EQ</span><span class="p">(</span><span class="mi">7</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="sb">```</span>
+
+GoogleTest provides [<span class="nt">assertions</span>](<span class="na">primer.md#assertions</span>) that you use to test the
+behavior of your code. The above sample includes the main GoogleTest header file
+and demonstrates some basic assertions.
+
+To build the code, add the following to the end of your <span class="sb">`CMakeLists.txt`</span> file:
+
+<span class="sb">```cmake</span>
+<span class="nb">enable_testing</span><span class="p">()</span>
+
+<span class="nb">add_executable</span><span class="p">(</span>
+<span class="w">  </span><span class="s">hello_test</span>
+<span class="w">  </span><span class="s">hello_test.cc</span>
+<span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span>
+<span class="w">  </span><span class="s">hello_test</span>
+<span class="w">  </span><span class="s">GTest::gtest_main</span>
+<span class="p">)</span>
+
+<span class="nb">include</span><span class="p">(</span><span class="s">GoogleTest</span><span class="p">)</span>
+<span class="nb">gtest_discover_tests</span><span class="p">(</span><span class="s">hello_test</span><span class="p">)</span>
+<span class="sb">```</span>
+
+The above configuration enables testing in CMake, declares the C++ test binary
+you want to build (<span class="sb">`hello_test`</span>), and links it to GoogleTest (<span class="sb">`gtest_main`</span>). The
+last two lines enable CMake&#39;s test runner to discover the tests included in the
+binary, using the
+[<span class="sb">`GoogleTest`</span> CMake module](https://cmake.org/cmake/help/git-stage/module/GoogleTest.html).
+
+Now you can build and run your test:
+
+&lt;pre&gt;
+&lt;strong&gt;my_project$ cmake -S . -B build&lt;/strong&gt;
+-- The C compiler identification is GNU 10.2.1
+-- The CXX compiler identification is GNU 10.2.1
+...
+-- Build files have been written to: .../my_project/build
+
+&lt;strong&gt;my_project$ cmake --build build&lt;/strong&gt;
+Scanning dependencies of target gtest
+...
+[100%] Built target gmock_main
+
+&lt;strong&gt;my_project$ cd build &amp;&amp; ctest&lt;/strong&gt;
+Test project .../my_project/build
+    Start 1: HelloTest.BasicAssertions
+1/1 Test <span class="ni">#1:</span> HelloTest.BasicAssertions ........   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.01 sec
+&lt;/pre&gt;
+
+Congratulations! You&#39;ve successfully built and run a test binary using
+GoogleTest.
+
+<span class="gu">## Next steps</span>
+
+<span class="k">*</span><span class="w"> </span>  [<span class="nt">Check out the Primer</span>](<span class="na">primer.md</span>) to start learning how to write simple
+    tests.
+<span class="k">*</span><span class="w"> </span>  [<span class="nt">See the code samples</span>](<span class="na">samples.md</span>) for more examples showing how to use a
+    variety of GoogleTest features.
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

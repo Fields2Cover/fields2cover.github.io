@@ -1,0 +1,195 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quickstart: Building with Bazel &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/page_md____w_Fields2Cover_Fields2Cover_googletest_docs_quickstart_bazel.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Quickstart: Building with Bazel</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/page_md____w_Fields2Cover_Fields2Cover_googletest_docs_quickstart_bazel.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quickstart-building-with-bazel">
+<span id="page-md-w-fields2cover-fields2cover-googletest-docs-quickstart-bazel"></span><h1>Quickstart: Building with Bazel<a class="headerlink" href="#quickstart-building-with-bazel" title="Link to this heading"></a></h1>
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="md____w_Fields2Cover_Fields2Cover_googletest_docs_quickstart_bazel"></span><em><span class="pre">page</span></em> <span class="sig-name descname"><span class="pre">Quickstart:</span> <span class="pre">Building</span> <span class="pre">with</span> <span class="pre">Bazel</span></span></dt>
+<dd><p>This tutorial aims to get you up and running with GoogleTest using the Bazel build system. If you’re using GoogleTest for the first time or need a refresher, we recommend this tutorial as a starting point.</p>
+<p><em>Prerequisites</em></p>
+<p>To complete this tutorial, you’ll need:</p>
+<p><ul class="simple">
+<li><p>A compatible operating system (e.g. Linux, macOS, Windows).</p></li>
+<li><p>A compatible C++ compiler that supports at least C++14.</p></li>
+<li><p><a class="reference external" href="https://bazel.build/">Bazel</a> 7.0 or higher, the preferred build system used by the GoogleTest team.</p></li>
+</ul>
+</p>
+<p>See <a class="reference internal" href="page_md____w_Fields2Cover_Fields2Cover_googletest_docs_platforms.html#md____w_Fields2Cover_Fields2Cover_googletest_docs_platforms"><span class="std std-ref">Supported Platforms</span></a> for more information about platforms compatible with GoogleTest.</p>
+<p>If you don’t already have Bazel installed, see the <a class="reference external" href="https://bazel.build/install">Bazel installation guide</a>.</p>
+<p>{: .callout .note} Note: The terminal commands in this tutorial show a Unix shell prompt, but the commands work on the Windows command line as well.</p>
+<p><em>Set up a Bazel workspace</em></p>
+<p>A <a class="reference external" href="https://docs.bazel.build/versions/main/build-ref.html#workspace">Bazel workspace</a> is a directory on your filesystem that you use to manage source files for the software you want to build. Each workspace directory has a text file named <code class="docutils literal notranslate"><span class="pre">MODULE.bazel</span></code> which may be empty, or may contain references to external dependencies required to build the outputs.</p>
+<p>First, create a directory for your workspace:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">$</span><span class="w"> </span><span class="n">mkdir</span><span class="w"> </span><span class="n">my_workspace</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="n">my_workspace</span>
+</pre></div>
+</div>
+<p>Next, you’ll create the <code class="docutils literal notranslate"><span class="pre">MODULE.bazel</span></code> file to specify dependencies. As of Bazel 7.0, the recommended way to consume GoogleTest is through the <a class="reference external" href="https://registry.bazel.build/modules/googletest">Bazel Central Registry</a>. To do this, create a <code class="docutils literal notranslate"><span class="pre">MODULE.bazel</span></code> file in the root directory of your Bazel workspace with the following content:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp"># MODULE.bazel</span>
+
+<span class="cp"># Choose the most recent version available at</span>
+<span class="cp"># https:</span><span class="c1">//registry.bazel.build/modules/googletest</span>
+<span class="n">bazel_dep</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;googletest&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1.15.2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now you’re ready to build C++ code that uses GoogleTest.</p>
+<p><em>Create and run a binary</em></p>
+<p>With your Bazel workspace set up, you can now use GoogleTest code within your own project.</p>
+<p>As an example, create a file named <code class="docutils literal notranslate"><span class="pre">hello_test.cc</span></code> in your <code class="docutils literal notranslate"><span class="pre">my_workspace</span></code> directory with the following contents:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gtest/gtest.h&gt;</span>
+
+<span class="c1">// Demonstrate some basic assertions.</span>
+<span class="n">TEST</span><span class="p">(</span><span class="n">HelloTest</span><span class="p">,</span><span class="w"> </span><span class="n">BasicAssertions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Expect two strings not to be equal.</span>
+<span class="w">  </span><span class="n">EXPECT_STRNE</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Expect equality.</span>
+<span class="w">  </span><span class="n">EXPECT_EQ</span><span class="p">(</span><span class="mi">7</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>GoogleTest provides <a class="reference external" href="primer.md#assertions">assertions</a> that you use to test the behavior of your code. The above sample includes the main GoogleTest header file and demonstrates some basic assertions.</p>
+<p>To build the code, create a file named <code class="docutils literal notranslate"><span class="pre">BUILD</span></code> in the same directory with the following contents:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">cc_test</span><span class="p">(</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello_test&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;small&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">srcs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;hello_test.cc&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="n">deps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s">&quot;@googletest//:gtest&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;@googletest//:gtest_main&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This <code class="docutils literal notranslate"><span class="pre">cc_test</span></code> rule declares the C++ test binary you want to build, and links to the GoogleTest library (<code class="docutils literal notranslate"><span class="pre">&#64;googletest//:gtest&quot;</span></code>) and the GoogleTest <code class="docutils literal notranslate"><span class="pre">main()</span></code> function (<code class="docutils literal notranslate"><span class="pre">&#64;googletest//:gtest_main</span></code>). For more information about Bazel <code class="docutils literal notranslate"><span class="pre">BUILD</span></code> files, see the <a class="reference external" href="https://docs.bazel.build/versions/main/tutorial/cpp.html">Bazel C++ Tutorial</a>.</p>
+<p>{: .callout .note} NOTE: In the example below, we assume Clang or GCC and set <code class="docutils literal notranslate"><span class="pre">--cxxopt=-std=c++14</span></code> to ensure that GoogleTest is compiled as C++14 instead of the compiler’s default setting (which could be C++11). For MSVC, the equivalent would be <code class="docutils literal notranslate"><span class="pre">--cxxopt=/std:c++14</span></code>. See <a class="reference internal" href="page_md____w_Fields2Cover_Fields2Cover_googletest_docs_platforms.html#md____w_Fields2Cover_Fields2Cover_googletest_docs_platforms"><span class="std std-ref">Supported Platforms</span></a> for more details on supported language versions.</p>
+<p>Now you can build and run your test:</p>
+<p>Congratulations! You’ve successfully built and run a test binary using GoogleTest.</p>
+<p><em>Next steps</em></p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="page_md____w_Fields2Cover_Fields2Cover_googletest_docs_primer.html#md____w_Fields2Cover_Fields2Cover_googletest_docs_primer"><span class="std std-ref">Check out the Primer</span></a> to start learning how to write simple tests.</p></li>
+<li><p><a class="reference internal" href="page_md____w_Fields2Cover_Fields2Cover_googletest_docs_samples.html#md____w_Fields2Cover_Fields2Cover_googletest_docs_samples"><span class="std std-ref">See the code samples</span></a> for more examples showing how to use a variety of GoogleTest features. </p></li>
+</ul>
+</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

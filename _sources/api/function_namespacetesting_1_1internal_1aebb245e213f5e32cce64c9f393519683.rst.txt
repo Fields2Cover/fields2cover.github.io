@@ -1,0 +1,14 @@
+.. _exhale_function_namespacetesting_1_1internal_1aebb245e213f5e32cce64c9f393519683:
+
+Function testing::internal::ParseGoogleTestFlagsOnly(int \*, wchar_t \*\*)
+==========================================================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: testing::internal::ParseGoogleTestFlagsOnly(int *, wchar_t **)
+   :project: Fields2Cover

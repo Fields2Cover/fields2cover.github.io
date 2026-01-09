@@ -1,0 +1,14 @@
+.. _exhale_function_namespacetesting_1_1internal_1a1ca3266e0f2b004fc1b91f04b71139b7:
+
+Function testing::internal::CodePointToUtf8
+===========================================
+
+- Defined in :ref:`file_googletest_googletest_src_gtest-internal-inl.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: testing::internal::CodePointToUtf8(uint32_t)
+   :project: Fields2Cover

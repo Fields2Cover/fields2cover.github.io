@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegtest__testbridge__test_1a4cadaae26d75cafe8979fb17059b928e:
+
+Function gtest_testbridge_test::Assert
+======================================
+
+- Defined in :ref:`file_googletest_googletest_test_gtest_testbridge_test.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: gtest_testbridge_test::Assert(condition)
+   :project: Fields2Cover

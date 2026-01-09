@@ -1,0 +1,26 @@
+.. _exhale_class_classgoogletest-json-output-unittest_1_1GTestJsonOutputUnitTest:
+
+Class GTestJsonOutputUnitTest
+=============================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-json-output-unittest.py`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public gtest_test_utils.TestCase``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: googletest-json-output-unittest::GTestJsonOutputUnitTest
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

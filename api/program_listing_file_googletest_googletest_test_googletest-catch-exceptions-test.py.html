@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File googletest-catch-exceptions-test.py &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_googletest_googletest_test_googletest-catch-exceptions-test.py.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File googletest-catch-exceptions-test.py</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_googletest_googletest_test_googletest-catch-exceptions-test.py.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-googletest-catch-exceptions-test-py">
+<span id="program-listing-file-googletest-googletest-test-googletest-catch-exceptions-test-py"></span><h1>Program Listing for File googletest-catch-exceptions-test.py<a class="headerlink" href="#program-listing-for-file-googletest-catch-exceptions-test-py" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_googletest_googletest_test_googletest-catch-exceptions-test.py.html#file-googletest-googletest-test-googletest-catch-exceptions-test-py"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">googletest/googletest/test/googletest-catch-exceptions-test.py</span></code>)</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright 2010 Google Inc.  All Rights Reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Redistribution and use in source and binary forms, with or without</span>
+<span class="c1"># modification, are permitted provided that the following conditions are</span>
+<span class="c1"># met:</span>
+<span class="c1">#</span>
+<span class="c1">#     * Redistributions of source code must retain the above copyright</span>
+<span class="c1"># notice, this list of conditions and the following disclaimer.</span>
+<span class="c1">#     * Redistributions in binary form must reproduce the above</span>
+<span class="c1"># copyright notice, this list of conditions and the following disclaimer</span>
+<span class="c1"># in the documentation and/or other materials provided with the</span>
+<span class="c1"># distribution.</span>
+<span class="c1">#     * Neither the name of Google Inc. nor the names of its</span>
+<span class="c1"># contributors may be used to endorse or promote products derived from</span>
+<span class="c1"># this software without specific prior written permission.</span>
+<span class="c1">#</span>
+<span class="c1"># THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<span class="c1"># &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span>
+<span class="c1"># LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</span>
+<span class="c1"># A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</span>
+<span class="c1"># OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span>
+<span class="c1"># SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</span>
+<span class="c1"># LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</span>
+<span class="c1"># DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</span>
+<span class="c1"># THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span>
+<span class="c1"># (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span>
+<span class="c1"># OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+
+<span class="sd">&quot;&quot;&quot;Tests Google Test&#39;s exception catching behavior.</span>
+
+<span class="sd">This script invokes googletest-catch-exceptions-test_ and</span>
+<span class="sd">googletest-catch-exceptions-ex-test_ (programs written with</span>
+<span class="sd">Google Test) and verifies their output.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">googletest.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">gtest_test_utils</span>
+
+<span class="c1"># Constants.</span>
+<span class="n">FLAG_PREFIX</span> <span class="o">=</span> <span class="s1">&#39;--gtest_&#39;</span>
+<span class="n">LIST_TESTS_FLAG</span> <span class="o">=</span> <span class="n">FLAG_PREFIX</span> <span class="o">+</span> <span class="s1">&#39;list_tests&#39;</span>
+<span class="n">NO_CATCH_EXCEPTIONS_FLAG</span> <span class="o">=</span> <span class="n">FLAG_PREFIX</span> <span class="o">+</span> <span class="s1">&#39;catch_exceptions=0&#39;</span>
+<span class="n">FILTER_FLAG</span> <span class="o">=</span> <span class="n">FLAG_PREFIX</span> <span class="o">+</span> <span class="s1">&#39;filter&#39;</span>
+
+<span class="c1"># Path to the googletest-catch-exceptions-ex-test_ binary, compiled with</span>
+<span class="c1"># exceptions enabled.</span>
+<span class="n">EX_EXE_PATH</span> <span class="o">=</span> <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">GetTestExecutablePath</span><span class="p">(</span>
+    <span class="s1">&#39;googletest-catch-exceptions-ex-test_&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># Path to the googletest-catch-exceptions-test_ binary, compiled with</span>
+<span class="c1"># exceptions disabled.</span>
+<span class="n">EXE_PATH</span> <span class="o">=</span> <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">GetTestExecutablePath</span><span class="p">(</span>
+    <span class="s1">&#39;googletest-catch-exceptions-no-ex-test_&#39;</span>
+<span class="p">)</span>
+
+<span class="n">environ</span> <span class="o">=</span> <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">environ</span>
+<span class="n">SetEnvVar</span> <span class="o">=</span> <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">SetEnvVar</span>
+
+<span class="c1"># Tests in this file run a Google-Test-based test program and expect it</span>
+<span class="c1"># to terminate prematurely.  Therefore they are incompatible with</span>
+<span class="c1"># the premature-exit-file protocol by design.  Unset the</span>
+<span class="c1"># premature-exit filepath to prevent Google Test from creating</span>
+<span class="c1"># the file.</span>
+<span class="n">SetEnvVar</span><span class="p">(</span><span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">PREMATURE_EXIT_FILE_ENV_VAR</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="n">TEST_LIST</span> <span class="o">=</span> <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">Subprocess</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">EXE_PATH</span><span class="p">,</span> <span class="n">LIST_TESTS_FLAG</span><span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">environ</span>
+<span class="p">)</span><span class="o">.</span><span class="n">output</span>
+
+<span class="n">SUPPORTS_SEH_EXCEPTIONS</span> <span class="o">=</span> <span class="s1">&#39;ThrowsSehException&#39;</span> <span class="ow">in</span> <span class="n">TEST_LIST</span>
+
+<span class="k">if</span> <span class="n">SUPPORTS_SEH_EXCEPTIONS</span><span class="p">:</span>
+  <span class="n">BINARY_OUTPUT</span> <span class="o">=</span> <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">Subprocess</span><span class="p">([</span><span class="n">EXE_PATH</span><span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">environ</span><span class="p">)</span><span class="o">.</span><span class="n">output</span>
+
+<span class="n">EX_BINARY_OUTPUT</span> <span class="o">=</span> <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">Subprocess</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">EX_EXE_PATH</span><span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">environ</span>
+<span class="p">)</span><span class="o">.</span><span class="n">output</span>
+
+
+<span class="c1"># The tests.</span>
+<span class="k">if</span> <span class="n">SUPPORTS_SEH_EXCEPTIONS</span><span class="p">:</span>
+
+  <span class="k">class</span><span class="w"> </span><span class="nc">CatchSehExceptionsTest</span><span class="p">(</span><span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tests exception-catching behavior.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">TestSehExceptions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test_output</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span>
+          <span class="p">(</span>
+              <span class="s1">&#39;SEH exception with code 0x2a thrown &#39;</span>
+              <span class="s2">&quot;in the test fixture&#39;s constructor&quot;</span>
+          <span class="p">),</span>
+          <span class="n">test_output</span><span class="p">,</span>
+      <span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span>
+          <span class="p">(</span>
+              <span class="s1">&#39;SEH exception with code 0x2a thrown &#39;</span>
+              <span class="s2">&quot;in the test fixture&#39;s destructor&quot;</span>
+          <span class="p">),</span>
+          <span class="n">test_output</span><span class="p">,</span>
+      <span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span>
+          <span class="s1">&#39;SEH exception with code 0x2a thrown in SetUpTestSuite()&#39;</span><span class="p">,</span> <span class="n">test_output</span>
+      <span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span>
+          <span class="s1">&#39;SEH exception with code 0x2a thrown in TearDownTestSuite()&#39;</span><span class="p">,</span>
+          <span class="n">test_output</span><span class="p">,</span>
+      <span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span>
+          <span class="s1">&#39;SEH exception with code 0x2a thrown in SetUp()&#39;</span><span class="p">,</span> <span class="n">test_output</span>
+      <span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span>
+          <span class="s1">&#39;SEH exception with code 0x2a thrown in TearDown()&#39;</span><span class="p">,</span> <span class="n">test_output</span>
+      <span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span>
+          <span class="s1">&#39;SEH exception with code 0x2a thrown in the test body&#39;</span><span class="p">,</span> <span class="n">test_output</span>
+      <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">testCatchesSehExceptionsWithCxxExceptionsEnabled</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">TestSehExceptionsTestSehExceptions</span><span class="p">(</span><span class="n">EX_BINARY_OUTPUT</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">testCatchesSehExceptionsWithCxxExceptionsDisabled</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">TestSehExceptionsTestSehExceptions</span><span class="p">(</span><span class="n">BINARY_OUTPUT</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CatchCxxExceptionsTest</span><span class="p">(</span><span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Tests C++ exception-catching behavior.</span>
+
+<span class="sd">  Tests in this test case verify that:</span>
+<span class="sd">  * C++ exceptions are caught and logged as C++ (not SEH) exceptions</span>
+<span class="sd">  * Exception thrown affect the remainder of the test work flow in the</span>
+<span class="sd">    expected manner.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testCatchesCxxExceptionsInFixtureConstructor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;C++ exception with description &#39;</span>
+        <span class="s1">&#39;&quot;Standard C++ exception&quot; thrown &#39;</span>
+        <span class="s2">&quot;in the test fixture&#39;s constructor&quot;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;unexpected&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="p">(</span>
+            <span class="s1">&#39;This failure belongs in this test only if &#39;</span>
+            <span class="s1">&#39;&quot;CxxExceptionInConstructorTest&quot; (no quotes) &#39;</span>
+            <span class="s1">&#39;appears on the same line as words &quot;called unexpectedly&quot;&#39;</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+
+  <span class="k">if</span> <span class="p">(</span>
+      <span class="s1">&#39;CxxExceptionInDestructorTest.ThrowsExceptionInDestructor&#39;</span>
+      <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span>
+  <span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">testCatchesCxxExceptionsInFixtureDestructor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+          <span class="s1">&#39;C++ exception with description &#39;</span>
+          <span class="s1">&#39;&quot;Standard C++ exception&quot; thrown &#39;</span>
+          <span class="s2">&quot;in the test fixture&#39;s destructor&quot;</span>
+          <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+          <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+      <span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+          <span class="s1">&#39;CxxExceptionInDestructorTest::TearDownTestSuite() &#39;</span>
+          <span class="s1">&#39;called as expected.&#39;</span>
+          <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+          <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+      <span class="p">)</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testCatchesCxxExceptionsInSetUpTestCase</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;C++ exception with description &quot;Standard C++ exception&quot;&#39;</span>
+        <span class="s1">&#39; thrown in SetUpTestSuite()&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;CxxExceptionInConstructorTest::TearDownTestSuite() called as expected.&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span>
+        <span class="s1">&#39;CxxExceptionInSetUpTestSuiteTest constructor called as expected.&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span>
+        <span class="s1">&#39;CxxExceptionInSetUpTestSuiteTest destructor called as expected.&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span>
+        <span class="s1">&#39;CxxExceptionInSetUpTestSuiteTest::SetUp() called as expected.&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span>
+        <span class="s1">&#39;CxxExceptionInSetUpTestSuiteTest::TearDown() called as expected.&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span>
+        <span class="s1">&#39;CxxExceptionInSetUpTestSuiteTest test body called as expected.&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testCatchesCxxExceptionsInTearDownTestCase</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;C++ exception with description &quot;Standard C++ exception&quot;&#39;</span>
+        <span class="s1">&#39; thrown in TearDownTestSuite()&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testCatchesCxxExceptionsInSetUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;C++ exception with description &quot;Standard C++ exception&quot;&#39;</span>
+        <span class="s1">&#39; thrown in SetUp()&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;CxxExceptionInSetUpTest::TearDownTestSuite() called as expected.&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;CxxExceptionInSetUpTest destructor called as expected.&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;CxxExceptionInSetUpTest::TearDown() called as expected.&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;unexpected&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="p">(</span>
+            <span class="s1">&#39;This failure belongs in this test only if &#39;</span>
+            <span class="s1">&#39;&quot;CxxExceptionInSetUpTest&quot; (no quotes) &#39;</span>
+            <span class="s1">&#39;appears on the same line as words &quot;called unexpectedly&quot;&#39;</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testCatchesCxxExceptionsInTearDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;C++ exception with description &quot;Standard C++ exception&quot;&#39;</span>
+        <span class="s1">&#39; thrown in TearDown()&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;CxxExceptionInTearDownTest::TearDownTestSuite() called as expected.&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;CxxExceptionInTearDownTest destructor called as expected.&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testCatchesCxxExceptionsInTestBody</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;C++ exception with description &quot;Standard C++ exception&quot;&#39;</span>
+        <span class="s1">&#39; thrown in the test body&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;CxxExceptionInTestBodyTest::TearDownTestSuite() called as expected.&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;CxxExceptionInTestBodyTest destructor called as expected.&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;CxxExceptionInTestBodyTest::TearDown() called as expected.&#39;</span>
+        <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testCatchesNonStdCxxExceptions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+        <span class="s1">&#39;Unknown C++ exception thrown in the test body&#39;</span> <span class="ow">in</span> <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+        <span class="n">EX_BINARY_OUTPUT</span><span class="p">,</span>
+    <span class="p">)</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testUnhandledCxxExceptionsAbortTheProgram</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Filters out SEH exception tests on Windows. Unhandled SEH exceptions</span>
+    <span class="c1"># cause tests to show pop-up windows there.</span>
+    <span class="n">filter_out_seh_tests_flag</span> <span class="o">=</span> <span class="n">FILTER_FLAG</span> <span class="o">+</span> <span class="s1">&#39;=-*Seh*&#39;</span>
+    <span class="c1"># By default, Google Test doesn&#39;t catch the exceptions.</span>
+    <span class="n">uncaught_exceptions_ex_binary_output</span> <span class="o">=</span> <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">Subprocess</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">EX_EXE_PATH</span><span class="p">,</span> <span class="n">NO_CATCH_EXCEPTIONS_FLAG</span><span class="p">,</span> <span class="n">filter_out_seh_tests_flag</span><span class="p">],</span>
+        <span class="n">env</span><span class="o">=</span><span class="n">environ</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">output</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span>
+        <span class="s1">&#39;Unhandled C++ exception terminating the program&#39;</span><span class="p">,</span>
+        <span class="n">uncaught_exceptions_ex_binary_output</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertNotIn</span><span class="p">(</span><span class="s1">&#39;unexpected&#39;</span><span class="p">,</span> <span class="n">uncaught_exceptions_ex_binary_output</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">Main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegtest__test__utils_1a1eacd9a471dfa6133028923ea755d22c:
+
+Function gtest_test_utils::GetBuildDir
+======================================
+
+- Defined in :ref:`file_googletest_googletest_test_gtest_test_utils.py`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: gtest_test_utils::GetBuildDir()
+   :project: Fields2Cover

@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacetesting_1_1internal_1ac120a034e353314c12edd11538aee309:
+
+Variable testing::internal::kTestTypeIdInGoogleTest
+===================================================
+
+- Defined in :ref:`file_googletest_googletest_src_gtest-internal-inl.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: testing::internal::kTestTypeIdInGoogleTest
+   :project: Fields2Cover

@@ -36,7 +36,8 @@ Program Listing for File route_planner_base.h
     public:
      virtual F2CRoute genRoute(
          const F2CCells& cells, const F2CSwathsByCells& swaths_by_cells,
-         bool show_log = false, double d_tol = 1e-4, bool redirect_swaths = true);
+         bool show_log = false, double d_tol = 1e-4, bool redirect_swaths = true,
+         long int time_limit_seconds = 1, bool search_for_optimum = false);
    
      void setStartAndEndPoint(const F2CPoint& p);
    
@@ -52,12 +53,12 @@ Program Listing for File route_planner_base.h
    
      virtual ~RoutePlannerBase() = default;
    
-    protected:
-     virtual std::vector<int64_t> computeBestRoute(
-         const F2CGraph2D& cov_graph, bool show_log) const;
+     virtual std::vector<long long int> computeBestRoute(
+         const F2CGraph2D& cov_graph, bool show_log, long int time_limit_seconds,
+         bool use_guided_local_search = true) const;
    
      virtual F2CRoute transformSolutionToRoute(
-         const std::vector<int64_t>& route_ids,
+         const std::vector<long long int>& route_ids,
          const F2CSwathsByCells& swaths_by_cells,
          const F2CGraph2D& coverage_graph,
          F2CGraph2D& shortest_graph) const;

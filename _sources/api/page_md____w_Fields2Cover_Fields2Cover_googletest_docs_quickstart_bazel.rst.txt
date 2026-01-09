@@ -1,0 +1,7 @@
+.. _page_md____w_Fields2Cover_Fields2Cover_googletest_docs_quickstart_bazel:
+
+Quickstart: Building with Bazel
+===============================
+
+.. doxygenpage:: md____w_Fields2Cover_Fields2Cover_googletest_docs_quickstart_bazel
+   :project: Fields2Cover

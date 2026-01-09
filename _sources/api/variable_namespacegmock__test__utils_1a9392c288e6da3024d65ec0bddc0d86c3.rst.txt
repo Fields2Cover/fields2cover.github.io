@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegmock__test__utils_1a9392c288e6da3024d65ec0bddc0d86c3:
+
+Variable gmock_test_utils::PREMATURE_EXIT_FILE_ENV_VAR
+======================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: gmock_test_utils::PREMATURE_EXIT_FILE_ENV_VAR
+   :project: Fields2Cover

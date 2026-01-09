@@ -1,0 +1,27 @@
+
+.. _file_googletest_googletest_test_googletest-color-test.py:
+
+File googletest-color-test.py
+=============================
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``googletest/googletest/test/googletest-color-test.py``)
+--------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_googletest_googletest_test_googletest-color-test.py.rst
+
+
+
+
+
+
+
+
+

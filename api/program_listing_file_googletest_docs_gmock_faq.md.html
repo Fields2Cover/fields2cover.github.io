@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File gmock_faq.md &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_googletest_docs_gmock_faq.md.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File gmock_faq.md</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_googletest_docs_gmock_faq.md.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-gmock-faq-md">
+<span id="program-listing-file-googletest-docs-gmock-faq-md"></span><h1>Program Listing for File gmock_faq.md<a class="headerlink" href="#program-listing-for-file-gmock-faq-md" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_googletest_docs_gmock_faq.md.html#file-googletest-docs-gmock-faq-md"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">googletest/docs/gmock_faq.md</span></code>)</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Legacy gMock FAQ</span>
+
+<span class="gu">### When I call a method on my mock object, the method for the real object is invoked instead. What&#39;s the problem?</span>
+
+In order for a method to be mocked, it must be <span class="ge">*virtual*</span>, unless you use the
+[<span class="nt">high-perf dependency injection technique</span>](<span class="na">gmock_cook_book.md#MockingNonVirtualMethods</span>).
+
+<span class="gu">### Can I mock a variadic function?</span>
+
+You cannot mock a variadic function (i.e. a function taking ellipsis (<span class="sb">`...`</span>)
+arguments) directly in gMock.
+
+The problem is that in general, there is <span class="ge">*no way*</span> for a mock object to know how
+many arguments are passed to the variadic method, and what the arguments&#39; types
+are. Only the <span class="ge">*author of the base class*</span> knows the protocol, and we cannot look
+into his or her head.
+
+Therefore, to mock such a function, the <span class="ge">*user*</span> must teach the mock object how to
+figure out the number of arguments and their types. One way to do it is to
+provide overloaded versions of the function.
+
+Ellipsis arguments are inherited from C and not really a C++ feature. They are
+unsafe to use and don&#39;t work with arguments that have constructors or
+destructors. Therefore we recommend to avoid them in C++ as much as possible.
+
+<span class="gu">### MSVC gives me warning C4301 or C4373 when I define a mock method with a const parameter. Why?</span>
+
+If you compile this using Microsoft Visual C++ 2005 SP1:
+
+<span class="sb">```cpp</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">Bar</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MockFoo</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">void</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">override</span><span class="p">));</span>
+<span class="p">};</span>
+<span class="sb">```</span>
+
+You may get the following warning:
+
+<span class="sb">```shell</span>
+warning<span class="w"> </span>C4301:<span class="w"> </span><span class="s1">&#39;MockFoo::Bar&#39;</span>:<span class="w"> </span>overriding<span class="w"> </span>virtual<span class="w"> </span><span class="k">function</span><span class="w"> </span>only<span class="w"> </span>differs<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;Foo::Bar&#39;</span><span class="w"> </span>by<span class="w"> </span>const/volatile<span class="w"> </span>qualifier
+<span class="sb">```</span>
+
+This is a MSVC bug. The same code compiles fine with gcc, for example. If you
+use Visual C++ 2008 SP1, you would get the warning:
+
+<span class="sb">```shell</span>
+warning<span class="w"> </span>C4373:<span class="w"> </span><span class="s1">&#39;MockFoo::Bar&#39;</span>:<span class="w"> </span>virtual<span class="w"> </span><span class="k">function</span><span class="w"> </span>overrides<span class="w"> </span><span class="s1">&#39;Foo::Bar&#39;</span>,<span class="w"> </span>previous<span class="w"> </span>versions<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>compiler<span class="w"> </span>did<span class="w"> </span>not<span class="w"> </span>override<span class="w"> </span>when<span class="w"> </span>parameters<span class="w"> </span>only<span class="w"> </span>differed<span class="w"> </span>by<span class="w"> </span>const/volatile<span class="w"> </span>qualifiers
+<span class="sb">```</span>
+
+In C++, if you <span class="ge">*declare*</span> a function with a <span class="sb">`const`</span> parameter, the <span class="sb">`const`</span>
+modifier is ignored. Therefore, the <span class="sb">`Foo`</span> base class above is equivalent to:
+
+<span class="sb">```cpp</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">Bar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// int or const int?  Makes no difference.</span>
+<span class="p">};</span>
+<span class="sb">```</span>
+
+In fact, you can <span class="ge">*declare*</span> <span class="sb">`Bar()`</span> with an <span class="sb">`int`</span> parameter, and define it with a
+<span class="sb">`const int`</span> parameter. The compiler will still match them up.
+
+Since making a parameter <span class="sb">`const`</span> is meaningless in the method declaration, we
+recommend to remove it in both <span class="sb">`Foo`</span> and <span class="sb">`MockFoo`</span>. That should workaround the
+VC bug.
+
+Note that we are talking about the <span class="ge">*top-level*</span> <span class="sb">`const`</span> modifier here. If the
+function parameter is passed by pointer or reference, declaring the pointee or
+referee as <span class="sb">`const`</span> is still meaningful. For example, the following two
+declarations are <span class="ge">*not*</span> equivalent:
+
+<span class="sb">```cpp</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Bar</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">);</span><span class="w">         </span><span class="c1">// Neither p nor *p is const.</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">Bar</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">);</span><span class="w">  </span><span class="c1">// p is not const, but *p is.</span>
+<span class="sb">```</span>
+
+<span class="gu">### I can&#39;t figure out why gMock thinks my expectations are not satisfied. What should I do?</span>
+
+You might want to run your test with <span class="sb">`--gmock_verbose=info`</span>. This flag lets
+gMock print a trace of every mock function call it receives. By studying the
+trace, you&#39;ll gain insights on why the expectations you set are not met.
+
+If you see the message &quot;The mock function has no default action set, and its
+return type has no default value set.&quot;, then try
+[<span class="nt">adding a default action</span>](<span class="na">gmock_cheat_sheet.md#OnCall</span>). Due to a known issue,
+unexpected calls on mocks without default actions don&#39;t print out a detailed
+comparison between the actual arguments and the expected arguments.
+
+<span class="gu">### My program crashed and `ScopedMockLog` spit out tons of messages. Is it a gMock bug?</span>
+
+gMock and <span class="sb">`ScopedMockLog`</span> are likely doing the right thing here.
+
+When a test crashes, the failure signal handler will try to log a lot of
+information (the stack trace, and the address map, for example). The messages
+are compounded if you have many threads with depth stacks. When <span class="sb">`ScopedMockLog`</span>
+intercepts these messages and finds that they don&#39;t match any expectations, it
+prints an error for each of them.
+
+You can learn to ignore the errors, or you can rewrite your expectations to make
+your test more robust, for example, by adding something like:
+
+<span class="sb">```cpp</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">AnyNumber</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Not</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="w">  </span><span class="c1">// Ignores any log not done by us.</span>
+<span class="w">  </span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">log</span><span class="p">,</span><span class="w"> </span><span class="n">Log</span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">Not</span><span class="p">(</span><span class="n">EndsWith</span><span class="p">(</span><span class="s">&quot;/my_file.cc&quot;</span><span class="p">)),</span><span class="w"> </span><span class="n">_</span><span class="p">))</span>
+<span class="w">      </span><span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="n">AnyNumber</span><span class="p">());</span>
+<span class="sb">```</span>
+
+<span class="gu">### How can I assert that a function is NEVER called?</span>
+
+<span class="sb">```cpp</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">_</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="w">  </span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">(</span><span class="n">_</span><span class="p">))</span>
+<span class="w">      </span><span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="sb">```</span>
+
+<span class="gu">### I have a failed test where gMock tells me TWICE that a particular expectation is not satisfied. Isn&#39;t this redundant?</span>
+
+When gMock detects a failure, it prints relevant information (the mock function
+arguments, the state of relevant expectations, and etc) to help the user debug.
+If another failure is detected, gMock will do the same, including printing the
+state of relevant expectations.
+
+Sometimes an expectation&#39;s state didn&#39;t change between two failures, and you&#39;ll
+see the same description of the state twice. They are however <span class="ge">*not*</span> redundant,
+as they refer to <span class="ge">*different points in time*</span>. The fact they are the same <span class="ge">*is*</span>
+interesting information.
+
+<span class="gu">### I get a heapcheck failure when using a mock object, but using a real object is fine. What can be wrong?</span>
+
+Does the class (hopefully a pure interface) you are mocking have a virtual
+destructor?
+
+Whenever you derive from a base class, make sure its destructor is virtual.
+Otherwise Bad Things will happen. Consider the following code:
+
+<span class="sb">```cpp</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="c1">// Not virtual, but should be.</span>
+<span class="w">  </span><span class="o">~</span><span class="n">Base</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="p">};</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Derived</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w"> </span><span class="k">private</span><span class="o">:</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">value_</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="p">...</span>
+<span class="w">  </span><span class="n">Base</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Derived</span><span class="p">;</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="k">delete</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w">  </span><span class="c1">// Surprise! ~Base() will be called, but ~Derived() will not</span>
+<span class="w">                 </span><span class="c1">// - value_ is leaked.</span>
+<span class="sb">```</span>
+
+By changing <span class="sb">`~Base()`</span> to virtual, <span class="sb">`~Derived()`</span> will be correctly called when
+<span class="sb">`delete p`</span> is executed, and the heap checker will be happy.
+
+<span class="gu">### The &quot;newer expectations override older ones&quot; rule makes writing expectations awkward. Why does gMock do that?</span>
+
+When people complain about this, often they are referring to code like:
+
+<span class="sb">```cpp</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Return</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="w">  </span><span class="c1">// foo.Bar() should be called twice, return 1 the first time, and return</span>
+<span class="w">  </span><span class="c1">// 2 the second time.  However, I have to write the expectations in the</span>
+<span class="w">  </span><span class="c1">// reverse order.  This sucks big time!!!</span>
+<span class="w">  </span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">())</span>
+<span class="w">      </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">      </span><span class="p">.</span><span class="n">RetiresOnSaturation</span><span class="p">();</span>
+<span class="w">  </span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">())</span>
+<span class="w">      </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="w">      </span><span class="p">.</span><span class="n">RetiresOnSaturation</span><span class="p">();</span>
+<span class="sb">```</span>
+
+The problem, is that they didn&#39;t pick the <span class="gs">**best**</span> way to express the test&#39;s
+intent.
+
+By default, expectations don&#39;t have to be matched in <span class="ge">*any*</span> particular order. If
+you want them to match in a certain order, you need to be explicit. This is
+gMock&#39;s (and jMock&#39;s) fundamental philosophy: it&#39;s easy to accidentally
+over-specify your tests, and we want to make it harder to do so.
+
+There are two better ways to write the test spec. You could either put the
+expectations in sequence:
+
+<span class="sb">```cpp</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Return</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="w">  </span><span class="c1">// foo.Bar() should be called twice, return 1 the first time, and return</span>
+<span class="w">  </span><span class="c1">// 2 the second time.  Using a sequence, we can write the expectations</span>
+<span class="w">  </span><span class="c1">// in their natural order.</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="n">InSequence</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">())</span>
+<span class="w">        </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="w">        </span><span class="p">.</span><span class="n">RetiresOnSaturation</span><span class="p">();</span>
+<span class="w">    </span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">())</span>
+<span class="w">        </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">        </span><span class="p">.</span><span class="n">RetiresOnSaturation</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="sb">```</span>
+
+or you can put the sequence of actions in the same expectation:
+
+<span class="sb">```cpp</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Return</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="w">  </span><span class="c1">// foo.Bar() should be called twice, return 1 the first time, and return</span>
+<span class="w">  </span><span class="c1">// 2 the second time.</span>
+<span class="w">  </span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">())</span>
+<span class="w">      </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="w">      </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="w">      </span><span class="p">.</span><span class="n">RetiresOnSaturation</span><span class="p">();</span>
+<span class="sb">```</span>
+
+Back to the original questions: why does gMock search the expectations (and
+<span class="sb">`ON_CALL`</span>s) from back to front? Because this allows a user to set up a mock&#39;s
+behavior for the common case early (e.g. in the mock&#39;s constructor or the test
+fixture&#39;s set-up phase) and customize it with more specific rules later. If
+gMock searches from front to back, this very useful pattern won&#39;t be possible.
+
+<span class="gu">### gMock prints a warning when a function without EXPECT_CALL is called, even if I have set its behavior using ON_CALL. Would it be reasonable not to show the warning in this case?</span>
+
+When choosing between being neat and being safe, we lean toward the latter. So
+the answer is that we think it&#39;s better to show the warning.
+
+Often people write <span class="sb">`ON_CALL`</span>s in the mock object&#39;s constructor or <span class="sb">`SetUp()`</span>, as
+the default behavior rarely changes from test to test. Then in the test body
+they set the expectations, which are often different for each test. Having an
+<span class="sb">`ON_CALL`</span> in the set-up part of a test doesn&#39;t mean that the calls are expected.
+If there&#39;s no <span class="sb">`EXPECT_CALL`</span> and the method is called, it&#39;s possibly an error. If
+we quietly let the call go through without notifying the user, bugs may creep in
+unnoticed.
+
+If, however, you are sure that the calls are OK, you can write
+
+<span class="sb">```cpp</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">_</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="w">  </span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">(</span><span class="n">_</span><span class="p">))</span>
+<span class="w">      </span><span class="p">.</span><span class="n">WillRepeatedly</span><span class="p">(...);</span>
+<span class="sb">```</span>
+
+instead of
+
+<span class="sb">```cpp</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">_</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="w">  </span><span class="n">ON_CALL</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">(</span><span class="n">_</span><span class="p">))</span>
+<span class="w">      </span><span class="p">.</span><span class="n">WillByDefault</span><span class="p">(...);</span>
+<span class="sb">```</span>
+
+This tells gMock that you do expect the calls and no warning should be printed.
+
+Also, you can control the verbosity by specifying <span class="sb">`--gmock_verbose=error`</span>. Other
+values are <span class="sb">`info`</span> and <span class="sb">`warning`</span>. If you find the output too noisy when
+debugging, just choose a less verbose level.
+
+<span class="gu">### How can I delete the mock function&#39;s argument in an action?</span>
+
+If your mock function takes a pointer argument and you want to delete that
+argument, you can use testing::DeleteArg&lt;N&gt;() to delete the N&#39;th (zero-indexed)
+argument:
+
+<span class="sb">```cpp</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">_</span><span class="p">;</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">void</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">X</span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Y</span><span class="o">&amp;</span><span class="w"> </span><span class="n">y</span><span class="p">));</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">mock_foo_</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">))</span>
+<span class="w">      </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">testing</span><span class="o">::</span><span class="n">DeleteArg</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">()));</span>
+<span class="sb">```</span>
+
+<span class="gu">### How can I perform an arbitrary action on a mock function&#39;s argument?</span>
+
+If you find yourself needing to perform some action that&#39;s not supported by
+gMock directly, remember that you can define your own actions using
+[<span class="sb">`MakeAction()`</span>](#NewMonoActions) or
+[<span class="sb">`MakePolymorphicAction()`</span>](#NewPolyActions), or you can write a stub function
+and invoke it using [<span class="sb">`Invoke()`</span>](#FunctionsAsActions).
+
+<span class="sb">```cpp</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">_</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Invoke</span><span class="p">;</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="n">MOCK_METHOD</span><span class="p">(</span><span class="kt">void</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">X</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">));</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">mock_foo_</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="p">(</span><span class="n">_</span><span class="p">))</span>
+<span class="w">      </span><span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Invoke</span><span class="p">(</span><span class="n">MyAction</span><span class="p">(...)));</span>
+<span class="sb">```</span>
+
+<span class="gu">### My code calls a static/global function. Can I mock it?</span>
+
+You can, but you need to make some changes.
+
+In general, if you find yourself needing to mock a static function, it&#39;s a sign
+that your modules are too tightly coupled (and less flexible, less reusable,
+less testable, etc). You are probably better off defining a small interface and
+call the function through that interface, which then can be easily mocked. It&#39;s
+a bit of work initially, but usually pays for itself quickly.
+
+This Google Testing Blog
+[<span class="nt">post</span>](<span class="na">https://testing.googleblog.com/2008/06/defeat-static-cling.html</span>) says it
+excellently. Check it out.
+
+<span class="gu">### My mock object needs to do complex stuff. It&#39;s a lot of pain to specify the actions. gMock sucks!</span>
+
+I know it&#39;s not a question, but you get an answer for free any way. :-)
+
+With gMock, you can create mocks in C++ easily. And people might be tempted to
+use them everywhere. Sometimes they work great, and sometimes you may find them,
+well, a pain to use. So, what&#39;s wrong in the latter case?
+
+When you write a test without using mocks, you exercise the code and assert that
+it returns the correct value or that the system is in an expected state. This is
+sometimes called &quot;state-based testing&quot;.
+
+Mocks are great for what some call &quot;interaction-based&quot; testing: instead of
+checking the system state at the very end, mock objects verify that they are
+invoked the right way and report an error as soon as it arises, giving you a
+handle on the precise context in which the error was triggered. This is often
+more effective and economical to do than state-based testing.
+
+If you are doing state-based testing and using a test double just to simulate
+the real object, you are probably better off using a fake. Using a mock in this
+case causes pain, as it&#39;s not a strong point for mocks to perform complex
+actions. If you experience this and think that mocks suck, you are just not
+using the right tool for your problem. Or, you might be trying to solve the
+wrong problem. :-)
+
+<span class="gu">### I got a warning &quot;Uninteresting function call encountered - default action taken..&quot; Should I panic?</span>
+
+By all means, NO! It&#39;s just an FYI. :-)
+
+What it means is that you have a mock function, you haven&#39;t set any expectations
+on it (by gMock&#39;s rule this means that you are not interested in calls to this
+function and therefore it can be called any number of times), and it is called.
+That&#39;s OK - you didn&#39;t say it&#39;s not OK to call the function!
+
+What if you actually meant to disallow this function to be called, but forgot to
+write <span class="sb">`EXPECT_CALL(foo, Bar()).Times(0)`</span>? While one can argue that it&#39;s the
+user&#39;s fault, gMock tries to be nice and prints you a note.
+
+So, when you see the message and believe that there shouldn&#39;t be any
+uninteresting calls, you should investigate what&#39;s going on. To make your life
+easier, gMock dumps the stack trace when an uninteresting call is encountered.
+From that you can figure out which mock function it is, and how it is called.
+
+<span class="gu">### I want to define a custom action. Should I use Invoke() or implement the ActionInterface interface?</span>
+
+Either way is fine - you want to choose the one that&#39;s more convenient for your
+circumstance.
+
+Usually, if your action is for a particular function type, defining it using
+<span class="sb">`Invoke()`</span> should be easier; if your action can be used in functions of
+different types (e.g. if you are defining <span class="sb">`Return(*value*)`</span>),
+<span class="sb">`MakePolymorphicAction()`</span> is easiest. Sometimes you want precise control on what
+types of functions the action can be used in, and implementing <span class="sb">`ActionInterface`</span>
+is the way to go here. See the implementation of <span class="sb">`Return()`</span> in <span class="sb">`gmock-actions.h`</span>
+for an example.
+
+<span class="gu">### I use SetArgPointee() in WillOnce(), but gcc complains about &quot;conflicting return type specified&quot;. What does it mean?</span>
+
+You got this error as gMock has no idea what value it should return when the
+mock method is called. <span class="sb">`SetArgPointee()`</span> says what the side effect is, but
+doesn&#39;t say what the return value should be. You need <span class="sb">`DoAll()`</span> to chain a
+<span class="sb">`SetArgPointee()`</span> with a <span class="sb">`Return()`</span> that provides a value appropriate to the API
+being mocked.
+
+See this [<span class="nt">recipe</span>](<span class="na">gmock_cook_book.md#mocking-side-effects</span>) for more details and
+an example.
+
+<span class="gu">### I have a huge mock class, and Microsoft Visual C++ runs out of memory when compiling it. What can I do?</span>
+
+We&#39;ve noticed that when the <span class="sb">`/clr`</span> compiler flag is used, Visual C++ uses 5~6
+times as much memory when compiling a mock class. We suggest to avoid <span class="sb">`/clr`</span>
+when compiling native C++ mocks.
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

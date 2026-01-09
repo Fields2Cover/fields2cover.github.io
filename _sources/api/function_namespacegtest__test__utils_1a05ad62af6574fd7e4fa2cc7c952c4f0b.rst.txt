@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegtest__test__utils_1a05ad62af6574fd7e4fa2cc7c952c4f0b:
+
+Function gtest_test_utils::_ParseAndStripGTestFlags
+===================================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: gtest_test_utils::_ParseAndStripGTestFlags(argv)
+   :project: Fields2Cover

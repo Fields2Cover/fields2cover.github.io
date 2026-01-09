@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-throw-on-failure-test_1a7c90464af153ebb6f0e221d66dbc71f1:
+
+Variable googletest-throw-on-failure-test::THROW_ON_FAILURE
+===========================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-throw-on-failure-test::THROW_ON_FAILURE
+   :project: Fields2Cover

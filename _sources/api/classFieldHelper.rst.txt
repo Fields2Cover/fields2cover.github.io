@@ -1,0 +1,17 @@
+.. _exhale_class_classFieldHelper:
+
+Class FieldHelper
+=================
+
+- Defined in :ref:`file_googletest_googlemock_test_gmock_link_test.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: FieldHelper
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

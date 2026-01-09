@@ -1,0 +1,14 @@
+.. _exhale_function_namespacegmock__test__utils_1ab7217591e655e80392c9db6b99d04765:
+
+Function gmock_test_utils::GetSourceDir
+=======================================
+
+.. did not find file this was defined in
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: gmock_test_utils::GetSourceDir()
+   :project: Fields2Cover

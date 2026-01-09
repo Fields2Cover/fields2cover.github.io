@@ -1,0 +1,39 @@
+
+.. _namespace_testing__gmock_matchers_test:
+
+Namespace testing::gmock_matchers_test
+======================================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structtesting_1_1gmock__matchers__test_1_1ContainerHelper`
+
+- :ref:`exhale_struct_structtesting_1_1gmock__matchers__test_1_1GtestGreaterThanMatcher`
+
+- :ref:`exhale_class_classtesting_1_1gmock__matchers__test_1_1GreaterThanMatcher`
+
+- :ref:`exhale_class_classtesting_1_1gmock__matchers__test_1_1GTestMatcherTestP`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacetesting_1_1gmock__matchers__test_1a738a538e1705ea49670aeb3ed25108e6`
+
+- :ref:`exhale_function_namespacetesting_1_1gmock__matchers__test_1a96c18b92dede79060a7303fe5d178faf`
+
+- :ref:`exhale_function_namespacetesting_1_1gmock__matchers__test_1a54e38d7df891801181af4c2acc38c3d5`
+
+- :ref:`exhale_function_namespacetesting_1_1gmock__matchers__test_1adc4be8833ea974698c1bd9e11613c31a`

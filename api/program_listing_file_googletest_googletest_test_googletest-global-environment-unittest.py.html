@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File googletest-global-environment-unittest.py &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_googletest_googletest_test_googletest-global-environment-unittest.py.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File googletest-global-environment-unittest.py</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_googletest_googletest_test_googletest-global-environment-unittest.py.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-googletest-global-environment-unittest-py">
+<span id="program-listing-file-googletest-googletest-test-googletest-global-environment-unittest-py"></span><h1>Program Listing for File googletest-global-environment-unittest.py<a class="headerlink" href="#program-listing-for-file-googletest-global-environment-unittest-py" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_googletest_googletest_test_googletest-global-environment-unittest.py.html#file-googletest-googletest-test-googletest-global-environment-unittest-py"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">googletest/googletest/test/googletest-global-environment-unittest.py</span></code>)</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copyright 2021 Google Inc. All Rights Reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Redistribution and use in source and binary forms, with or without</span>
+<span class="c1"># modification, are permitted provided that the following conditions are</span>
+<span class="c1"># met:</span>
+<span class="c1">#</span>
+<span class="c1">#     * Redistributions of source code must retain the above copyright</span>
+<span class="c1"># notice, this list of conditions and the following disclaimer.</span>
+<span class="c1">#     * Redistributions in binary form must reproduce the above</span>
+<span class="c1"># copyright notice, this list of conditions and the following disclaimer</span>
+<span class="c1"># in the documentation and/or other materials provided with the</span>
+<span class="c1"># distribution.</span>
+<span class="c1">#     * Neither the name of Google Inc. nor the names of its</span>
+<span class="c1"># contributors may be used to endorse or promote products derived from</span>
+<span class="c1"># this software without specific prior written permission.</span>
+<span class="c1">#</span>
+<span class="c1"># THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<span class="c1"># &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span>
+<span class="c1"># LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</span>
+<span class="c1"># A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</span>
+<span class="c1"># OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span>
+<span class="c1"># SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</span>
+<span class="c1"># LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</span>
+<span class="c1"># DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</span>
+<span class="c1"># THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span>
+<span class="c1"># (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span>
+<span class="c1"># OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<span class="sd">&quot;&quot;&quot;Unit test for Google Test&#39;s global test environment behavior.</span>
+
+<span class="sd">A user can specify a global test environment via</span>
+<span class="sd">testing::AddGlobalTestEnvironment. Failures in the global environment should</span>
+<span class="sd">result in all unit tests being skipped.</span>
+
+<span class="sd">This script tests such functionality by invoking</span>
+<span class="sd">googletest-global-environment-unittest_ (a program written with Google Test).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">googletest.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">gtest_test_utils</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">RunAndReturnOutput</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Runs the test program and returns its output.&quot;&quot;&quot;</span>
+
+  <span class="k">return</span> <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">Subprocess</span><span class="p">(</span>
+      <span class="p">[</span>
+          <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">GetTestExecutablePath</span><span class="p">(</span>
+              <span class="s1">&#39;googletest-global-environment-unittest_&#39;</span>
+          <span class="p">)</span>
+      <span class="p">]</span>
+      <span class="o">+</span> <span class="p">(</span><span class="n">args</span> <span class="ow">or</span> <span class="p">[])</span>
+  <span class="p">)</span><span class="o">.</span><span class="n">output</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">GTestGlobalEnvironmentUnitTest</span><span class="p">(</span><span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Tests global test environment failures.&quot;&quot;&quot;</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testEnvironmentSetUpFails</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tests the behavior of not specifying the fail_fast.&quot;&quot;&quot;</span>
+
+    <span class="c1"># Run the test.</span>
+    <span class="n">txt</span> <span class="o">=</span> <span class="n">RunAndReturnOutput</span><span class="p">()</span>
+
+    <span class="c1"># We should see the text of the global environment setup error.</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s1">&#39;Canned environment setup error&#39;</span><span class="p">,</span> <span class="n">txt</span><span class="p">)</span>
+
+    <span class="c1"># Our test should have been skipped due to the error, and not treated as a</span>
+    <span class="c1"># pass.</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s1">&#39;[  SKIPPED ] 1 test&#39;</span><span class="p">,</span> <span class="n">txt</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s1">&#39;[  PASSED  ] 0 tests&#39;</span><span class="p">,</span> <span class="n">txt</span><span class="p">)</span>
+
+    <span class="c1"># The test case shouldn&#39;t have been run.</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertNotIn</span><span class="p">(</span><span class="s1">&#39;Unexpected call&#39;</span><span class="p">,</span> <span class="n">txt</span><span class="p">)</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testEnvironmentSetUpAndTornDownForEachRepeat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tests the behavior of test environments and gtest_repeat.&quot;&quot;&quot;</span>
+
+    <span class="c1"># When --gtest_recreate_environments_when_repeating is true, the global test</span>
+    <span class="c1"># environment should be set up and torn down for each iteration.</span>
+    <span class="n">txt</span> <span class="o">=</span> <span class="n">RunAndReturnOutput</span><span class="p">([</span>
+        <span class="s1">&#39;--gtest_repeat=2&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;--gtest_recreate_environments_when_repeating=true&#39;</span><span class="p">,</span>
+    <span class="p">])</span>
+
+    <span class="n">expected_pattern</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+        <span class="sa">r</span><span class="s1">&#39;Repeating all tests \(iteration 1\)&#39;</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+        <span class="s1">&#39;Global test environment set-up.&#39;</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+        <span class="s1">&#39;SomeTest.DoesFoo&#39;</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+        <span class="s1">&#39;Global test environment tear-down&#39;</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+        <span class="sa">r</span><span class="s1">&#39;Repeating all tests \(iteration 2\)&#39;</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+        <span class="s1">&#39;Global test environment set-up.&#39;</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+        <span class="s1">&#39;SomeTest.DoesFoo&#39;</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+        <span class="s1">&#39;Global test environment tear-down&#39;</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertRegex</span><span class="p">(</span><span class="n">txt</span><span class="p">,</span> <span class="n">expected_pattern</span><span class="p">)</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testEnvironmentSetUpAndTornDownOnce</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tests environment and --gtest_recreate_environments_when_repeating.&quot;&quot;&quot;</span>
+
+    <span class="c1"># By default the environment should only be set up and torn down once, at</span>
+    <span class="c1"># the start and end of the test respectively.</span>
+    <span class="n">txt</span> <span class="o">=</span> <span class="n">RunAndReturnOutput</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;--gtest_repeat=2&#39;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">expected_pattern</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+        <span class="sa">r</span><span class="s1">&#39;Repeating all tests \(iteration 1\)&#39;</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+        <span class="s1">&#39;Global test environment set-up.&#39;</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+        <span class="s1">&#39;SomeTest.DoesFoo&#39;</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+        <span class="sa">r</span><span class="s1">&#39;Repeating all tests \(iteration 2\)&#39;</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+        <span class="s1">&#39;SomeTest.DoesFoo&#39;</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+        <span class="s1">&#39;Global test environment tear-down&#39;</span>
+        <span class="s1">&#39;(.|</span><span class="se">\n</span><span class="s1">)*&#39;</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertRegex</span><span class="p">(</span><span class="n">txt</span><span class="p">,</span> <span class="n">expected_pattern</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;Global test environment set-up&#39;</span><span class="p">,</span> <span class="n">txt</span><span class="p">)),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;Global test environment tear-down&#39;</span><span class="p">,</span> <span class="n">txt</span><span class="p">)),</span> <span class="mi">1</span>
+    <span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">Main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegtest__help__test_1acdf47774c6062d450b120404e2935bae:
+
+Variable gtest_help_test::NETBSD
+================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: gtest_help_test::NETBSD
+   :project: Fields2Cover

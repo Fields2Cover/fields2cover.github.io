@@ -1,0 +1,26 @@
+.. _exhale_class_classgoogletest-throw-on-failure-test_1_1ThrowOnFailureTest:
+
+Class ThrowOnFailureTest
+========================
+
+- Defined in :ref:`file_googletest_googletest_test_googletest-throw-on-failure-test.py`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public gtest_test_utils.TestCase``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: googletest-throw-on-failure-test::ThrowOnFailureTest
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

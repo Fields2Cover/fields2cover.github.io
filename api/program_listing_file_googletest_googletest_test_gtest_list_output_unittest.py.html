@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File gtest_list_output_unittest.py &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_googletest_googletest_test_gtest_list_output_unittest.py.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File gtest_list_output_unittest.py</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_googletest_googletest_test_gtest_list_output_unittest.py.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-gtest-list-output-unittest-py">
+<span id="program-listing-file-googletest-googletest-test-gtest-list-output-unittest-py"></span><h1>Program Listing for File gtest_list_output_unittest.py<a class="headerlink" href="#program-listing-for-file-gtest-list-output-unittest-py" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_googletest_googletest_test_gtest_list_output_unittest.py.html#file-googletest-googletest-test-gtest-list-output-unittest-py"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">googletest/googletest/test/gtest_list_output_unittest.py</span></code>)</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright 2006, Google Inc.</span>
+<span class="c1"># All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Redistribution and use in source and binary forms, with or without</span>
+<span class="c1"># modification, are permitted provided that the following conditions are</span>
+<span class="c1"># met:</span>
+<span class="c1">#</span>
+<span class="c1">#     * Redistributions of source code must retain the above copyright</span>
+<span class="c1"># notice, this list of conditions and the following disclaimer.</span>
+<span class="c1">#     * Redistributions in binary form must reproduce the above</span>
+<span class="c1"># copyright notice, this list of conditions and the following disclaimer</span>
+<span class="c1"># in the documentation and/or other materials provided with the</span>
+<span class="c1"># distribution.</span>
+<span class="c1">#     * Neither the name of Google Inc. nor the names of its</span>
+<span class="c1"># contributors may be used to endorse or promote products derived from</span>
+<span class="c1"># this software without specific prior written permission.</span>
+<span class="c1">#</span>
+<span class="c1"># THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<span class="c1"># &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span>
+<span class="c1"># LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</span>
+<span class="c1"># A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</span>
+<span class="c1"># OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span>
+<span class="c1"># SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</span>
+<span class="c1"># LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</span>
+<span class="c1"># DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</span>
+<span class="c1"># THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span>
+<span class="c1"># (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span>
+<span class="c1"># OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<span class="sd">&quot;&quot;&quot;Unit test for Google Test&#39;s --gtest_list_tests flag.</span>
+
+<span class="sd">A user can ask Google Test to list all tests by specifying the</span>
+<span class="sd">--gtest_list_tests flag. If output is requested, via --gtest_output=xml</span>
+<span class="sd">or --gtest_output=json, the tests are listed, with extra information in the</span>
+<span class="sd">output file.</span>
+<span class="sd">This script tests such functionality by invoking gtest_list_output_unittest_</span>
+<span class="sd"> (a program written with Google Test) the command line flags.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">googletest.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">gtest_test_utils</span>
+
+<span class="n">GTEST_LIST_TESTS_FLAG</span> <span class="o">=</span> <span class="s1">&#39;--gtest_list_tests&#39;</span>
+<span class="n">GTEST_OUTPUT_FLAG</span> <span class="o">=</span> <span class="s1">&#39;--gtest_output&#39;</span>
+
+<span class="n">EXPECTED_XML</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&lt;\?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;\?&gt;</span>
+<span class="s2">&lt;testsuites tests=&quot;16&quot; name=&quot;AllTests&quot;&gt;</span>
+<span class="s2">  &lt;testsuite name=&quot;FooTest&quot; tests=&quot;2&quot;&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test1&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;43&quot; /&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test2&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;45&quot; /&gt;</span>
+<span class="s2">  &lt;/testsuite&gt;</span>
+<span class="s2">  &lt;testsuite name=&quot;FooTestFixture&quot; tests=&quot;2&quot;&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test3&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;48&quot; /&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test4&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;49&quot; /&gt;</span>
+<span class="s2">  &lt;/testsuite&gt;</span>
+<span class="s2">  &lt;testsuite name=&quot;TypedTest/0&quot; tests=&quot;2&quot;&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test7&quot; type_param=&quot;int&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;60&quot; /&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test8&quot; type_param=&quot;int&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;61&quot; /&gt;</span>
+<span class="s2">  &lt;/testsuite&gt;</span>
+<span class="s2">  &lt;testsuite name=&quot;TypedTest/1&quot; tests=&quot;2&quot;&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test7&quot; type_param=&quot;bool&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;60&quot; /&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test8&quot; type_param=&quot;bool&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;61&quot; /&gt;</span>
+<span class="s2">  &lt;/testsuite&gt;</span>
+<span class="s2">  &lt;testsuite name=&quot;Single/TypeParameterizedTestSuite/0&quot; tests=&quot;2&quot;&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test9&quot; type_param=&quot;int&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;66&quot; /&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test10&quot; type_param=&quot;int&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;67&quot; /&gt;</span>
+<span class="s2">  &lt;/testsuite&gt;</span>
+<span class="s2">  &lt;testsuite name=&quot;Single/TypeParameterizedTestSuite/1&quot; tests=&quot;2&quot;&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test9&quot; type_param=&quot;bool&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;66&quot; /&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test10&quot; type_param=&quot;bool&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;67&quot; /&gt;</span>
+<span class="s2">  &lt;/testsuite&gt;</span>
+<span class="s2">  &lt;testsuite name=&quot;ValueParam/ValueParamTest&quot; tests=&quot;4&quot;&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test5/0&quot; value_param=&quot;33&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;52&quot; /&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test5/1&quot; value_param=&quot;42&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;52&quot; /&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test6/0&quot; value_param=&quot;33&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;53&quot; /&gt;</span>
+<span class="s2">    &lt;testcase name=&quot;Test6/1&quot; value_param=&quot;42&quot; file=&quot;.*gtest_list_output_unittest_.cc&quot; line=&quot;53&quot; /&gt;</span>
+<span class="s2">  &lt;/testsuite&gt;</span>
+<span class="s2">&lt;/testsuites&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">EXPECTED_JSON</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;{</span>
+<span class="s2">  &quot;tests&quot;: 16,</span>
+<span class="s2">  &quot;name&quot;: &quot;AllTests&quot;,</span>
+<span class="s2">  &quot;testsuites&quot;: \[</span>
+<span class="s2">    {</span>
+<span class="s2">      &quot;name&quot;: &quot;FooTest&quot;,</span>
+<span class="s2">      &quot;tests&quot;: 2,</span>
+<span class="s2">      &quot;testsuite&quot;: \[</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test1&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 43</span>
+<span class="s2">        },</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test2&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 45</span>
+<span class="s2">        }</span>
+<span class="s2">      \]</span>
+<span class="s2">    },</span>
+<span class="s2">    {</span>
+<span class="s2">      &quot;name&quot;: &quot;FooTestFixture&quot;,</span>
+<span class="s2">      &quot;tests&quot;: 2,</span>
+<span class="s2">      &quot;testsuite&quot;: \[</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test3&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 48</span>
+<span class="s2">        },</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test4&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 49</span>
+<span class="s2">        }</span>
+<span class="s2">      \]</span>
+<span class="s2">    },</span>
+<span class="s2">    {</span>
+<span class="s2">      &quot;name&quot;: &quot;TypedTest</span><span class="se">\\\\</span><span class="s2">/0&quot;,</span>
+<span class="s2">      &quot;tests&quot;: 2,</span>
+<span class="s2">      &quot;testsuite&quot;: \[</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test7&quot;,</span>
+<span class="s2">          &quot;type_param&quot;: &quot;int&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 60</span>
+<span class="s2">        },</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test8&quot;,</span>
+<span class="s2">          &quot;type_param&quot;: &quot;int&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 61</span>
+<span class="s2">        }</span>
+<span class="s2">      \]</span>
+<span class="s2">    },</span>
+<span class="s2">    {</span>
+<span class="s2">      &quot;name&quot;: &quot;TypedTest</span><span class="se">\\\\</span><span class="s2">/1&quot;,</span>
+<span class="s2">      &quot;tests&quot;: 2,</span>
+<span class="s2">      &quot;testsuite&quot;: \[</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test7&quot;,</span>
+<span class="s2">          &quot;type_param&quot;: &quot;bool&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 60</span>
+<span class="s2">        },</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test8&quot;,</span>
+<span class="s2">          &quot;type_param&quot;: &quot;bool&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 61</span>
+<span class="s2">        }</span>
+<span class="s2">      \]</span>
+<span class="s2">    },</span>
+<span class="s2">    {</span>
+<span class="s2">      &quot;name&quot;: &quot;Single</span><span class="se">\\\\</span><span class="s2">/TypeParameterizedTestSuite</span><span class="se">\\\\</span><span class="s2">/0&quot;,</span>
+<span class="s2">      &quot;tests&quot;: 2,</span>
+<span class="s2">      &quot;testsuite&quot;: \[</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test9&quot;,</span>
+<span class="s2">          &quot;type_param&quot;: &quot;int&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 66</span>
+<span class="s2">        },</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test10&quot;,</span>
+<span class="s2">          &quot;type_param&quot;: &quot;int&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 67</span>
+<span class="s2">        }</span>
+<span class="s2">      \]</span>
+<span class="s2">    },</span>
+<span class="s2">    {</span>
+<span class="s2">      &quot;name&quot;: &quot;Single</span><span class="se">\\\\</span><span class="s2">/TypeParameterizedTestSuite</span><span class="se">\\\\</span><span class="s2">/1&quot;,</span>
+<span class="s2">      &quot;tests&quot;: 2,</span>
+<span class="s2">      &quot;testsuite&quot;: \[</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test9&quot;,</span>
+<span class="s2">          &quot;type_param&quot;: &quot;bool&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 66</span>
+<span class="s2">        },</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test10&quot;,</span>
+<span class="s2">          &quot;type_param&quot;: &quot;bool&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 67</span>
+<span class="s2">        }</span>
+<span class="s2">      \]</span>
+<span class="s2">    },</span>
+<span class="s2">    {</span>
+<span class="s2">      &quot;name&quot;: &quot;ValueParam</span><span class="se">\\\\</span><span class="s2">/ValueParamTest&quot;,</span>
+<span class="s2">      &quot;tests&quot;: 4,</span>
+<span class="s2">      &quot;testsuite&quot;: \[</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test5</span><span class="se">\\\\</span><span class="s2">/0&quot;,</span>
+<span class="s2">          &quot;value_param&quot;: &quot;33&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 52</span>
+<span class="s2">        },</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test5</span><span class="se">\\\\</span><span class="s2">/1&quot;,</span>
+<span class="s2">          &quot;value_param&quot;: &quot;42&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 52</span>
+<span class="s2">        },</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test6</span><span class="se">\\\\</span><span class="s2">/0&quot;,</span>
+<span class="s2">          &quot;value_param&quot;: &quot;33&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 53</span>
+<span class="s2">        },</span>
+<span class="s2">        {</span>
+<span class="s2">          &quot;name&quot;: &quot;Test6</span><span class="se">\\\\</span><span class="s2">/1&quot;,</span>
+<span class="s2">          &quot;value_param&quot;: &quot;42&quot;,</span>
+<span class="s2">          &quot;file&quot;: &quot;.*gtest_list_output_unittest_.cc&quot;,</span>
+<span class="s2">          &quot;line&quot;: 53</span>
+<span class="s2">        }</span>
+<span class="s2">      \]</span>
+<span class="s2">    }</span>
+<span class="s2">  \]</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">GTestListTestsOutputUnitTest</span><span class="p">(</span><span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Unit test for Google Test&#39;s list tests with output to file functionality.&quot;&quot;&quot;</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testXml</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Verifies XML output for listing tests in a Google Test binary.</span>
+
+<span class="sd">    Runs a test program that generates an empty XML output, and</span>
+<span class="sd">    tests that the XML output is expected.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_TestOutput_TestOutput</span><span class="p">(</span><span class="s1">&#39;xml&#39;</span><span class="p">,</span> <span class="n">EXPECTED_XML</span><span class="p">)</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">testJSON</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Verifies XML output for listing tests in a Google Test binary.</span>
+
+<span class="sd">    Runs a test program that generates an empty XML output, and</span>
+<span class="sd">    tests that the XML output is expected.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_TestOutput_TestOutput</span><span class="p">(</span><span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="n">EXPECTED_JSON</span><span class="p">)</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">_GetOutput</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out_format</span><span class="p">):</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">GetTempDir</span><span class="p">(),</span> <span class="s1">&#39;test_out.&#39;</span> <span class="o">+</span> <span class="n">out_format</span>
+    <span class="p">)</span>
+    <span class="n">gtest_prog_path</span> <span class="o">=</span> <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">GetTestExecutablePath</span><span class="p">(</span>
+        <span class="s1">&#39;gtest_list_output_unittest_&#39;</span>
+    <span class="p">)</span>
+
+    <span class="n">command</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">gtest_prog_path</span><span class="p">,</span>
+        <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">=</span><span class="si">%s</span><span class="s1">:</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">GTEST_OUTPUT_FLAG</span><span class="p">,</span> <span class="n">out_format</span><span class="p">,</span> <span class="n">file_path</span><span class="p">),</span>
+        <span class="s1">&#39;--gtest_list_tests&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">environ_copy</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">Subprocess</span><span class="p">(</span>
+        <span class="n">command</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">environ_copy</span><span class="p">,</span> <span class="n">working_dir</span><span class="o">=</span><span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">GetTempDir</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">exited</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">exit_code</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">_TestOutput</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test_format</span><span class="p">,</span> <span class="n">expected_output</span><span class="p">):</span>
+    <span class="n">actual</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_GetOutput_GetOutput</span><span class="p">(</span><span class="n">test_format</span><span class="p">)</span>
+    <span class="n">actual_lines</span> <span class="o">=</span> <span class="n">actual</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="n">expected_lines</span> <span class="o">=</span> <span class="n">expected_output</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="n">line_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">actual_line</span> <span class="ow">in</span> <span class="n">actual_lines</span><span class="p">:</span>
+      <span class="n">expected_line</span> <span class="o">=</span> <span class="n">expected_lines</span><span class="p">[</span><span class="n">line_count</span><span class="p">]</span>
+      <span class="n">expected_line_re</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expected_line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span>
+          <span class="n">expected_line_re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">actual_line</span><span class="o">.</span><span class="n">strip</span><span class="p">()),</span>
+          <span class="s1">&#39;actual output of &quot;</span><span class="si">%s</span><span class="s1">&quot;,</span><span class="se">\n</span><span class="s1">&#39;</span>
+          <span class="s1">&#39;which does not match expected regex of &quot;</span><span class="si">%s</span><span class="s1">&quot;</span><span class="se">\n</span><span class="s1">&#39;</span>
+          <span class="s1">&#39;on line </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="n">expected_output</span><span class="p">,</span> <span class="n">line_count</span><span class="p">),</span>
+      <span class="p">)</span>
+      <span class="n">line_count</span> <span class="o">=</span> <span class="n">line_count</span> <span class="o">+</span> <span class="mi">1</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;GTEST_STACK_TRACE_DEPTH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
+  <span class="n">gtest_test_utils</span><span class="o">.</span><span class="n">Main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

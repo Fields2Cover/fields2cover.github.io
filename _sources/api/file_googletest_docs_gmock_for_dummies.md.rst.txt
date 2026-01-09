@@ -1,0 +1,27 @@
+
+.. _file_googletest_docs_gmock_for_dummies.md:
+
+File gmock_for_dummies.md
+=========================
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``googletest/docs/gmock_for_dummies.md``)
+-----------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_googletest_docs_gmock_for_dummies.md.rst
+
+
+
+
+
+
+
+
+

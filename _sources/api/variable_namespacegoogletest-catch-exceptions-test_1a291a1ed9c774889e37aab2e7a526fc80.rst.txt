@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-catch-exceptions-test_1a291a1ed9c774889e37aab2e7a526fc80:
+
+Variable googletest-catch-exceptions-test::EX_BINARY_OUTPUT
+===========================================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-catch-exceptions-test::EX_BINARY_OUTPUT
+   :project: Fields2Cover

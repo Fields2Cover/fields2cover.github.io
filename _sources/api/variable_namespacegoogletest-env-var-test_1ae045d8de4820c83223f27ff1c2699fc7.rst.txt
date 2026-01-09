@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegoogletest-env-var-test_1ae045d8de4820c83223f27ff1c2699fc7:
+
+Variable googletest-env-var-test::IS_WINDOWS
+============================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: googletest-env-var-test::IS_WINDOWS
+   :project: Fields2Cover

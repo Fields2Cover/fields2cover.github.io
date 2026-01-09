@@ -1,0 +1,26 @@
+.. _exhale_class_classtesting_1_1internal_1_1DefaultGlobalTestPartResultReporter:
+
+Class DefaultGlobalTestPartResultReporter
+=========================================
+
+- Defined in :ref:`file_googletest_googletest_src_gtest-internal-inl.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public TestPartResultReporterInterface`` (:ref:`exhale_class_classTestPartResultReporterInterface`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: testing::internal::DefaultGlobalTestPartResultReporter
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

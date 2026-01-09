@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File matchers.md &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/program_listing_file_googletest_docs_reference_matchers.md.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File matchers.md</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_googletest_docs_reference_matchers.md.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-matchers-md">
+<span id="program-listing-file-googletest-docs-reference-matchers-md"></span><h1>Program Listing for File matchers.md<a class="headerlink" href="#program-listing-for-file-matchers-md" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_googletest_docs_reference_matchers.md.html#file-googletest-docs-reference-matchers-md"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">googletest/docs/reference/matchers.md</span></code>)</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Matchers Reference</span>
+
+A <span class="gs">**matcher**</span> matches a <span class="ge">*single*</span> argument. You can use it inside <span class="sb">`ON_CALL()`</span> or
+<span class="sb">`EXPECT_CALL()`</span>, or use it to validate a value directly using two macros:
+
+| Macro                                | Description                           |
+| :----------------------------------- | :------------------------------------ |
+| <span class="sb">`EXPECT_THAT(actual_value, matcher)`</span> | Asserts that <span class="sb">`actual_value`</span> matches <span class="sb">`matcher`</span>. |
+| <span class="sb">`ASSERT_THAT(actual_value, matcher)`</span> | The same as <span class="sb">`EXPECT_THAT(actual_value, matcher)`</span>, except that it generates a <span class="gs">**fatal**</span> failure. |
+
+{: .callout .warning}
+<span class="gs">**WARNING:**</span> Equality matching via <span class="sb">`EXPECT_THAT(actual_value, expected_value)`</span>
+is supported, however note that implicit conversions can cause surprising
+results. For example, <span class="sb">`EXPECT_THAT(some_bool, &quot;some string&quot;)`</span> will compile and
+may pass unintentionally.
+
+<span class="gs">**BEST PRACTICE:**</span> Prefer to make the comparison explicit via
+<span class="sb">`EXPECT_THAT(actual_value, Eq(expected_value))`</span> or `EXPECT_EQ(actual_value,
+expected_value)`.
+
+Built-in matchers (where <span class="sb">`argument`</span> is the function argument, e.g.
+<span class="sb">`actual_value`</span> in the example above, or when used in the context of
+<span class="sb">`EXPECT_CALL(mock_object, method(matchers))`</span>, the arguments of <span class="sb">`method`</span>) are
+divided into several categories. All matchers are defined in the <span class="sb">`::testing`</span>
+namespace unless otherwise noted.
+
+<span class="gu">## Wildcard</span>
+
+Matcher                     | Description
+:-------------------------- | :-----------------------------------------------
+<span class="sb">`_`</span>                         | <span class="sb">`argument`</span> can be any value of the correct type.
+<span class="sb">`A&lt;type&gt;()`</span> or <span class="sb">`An&lt;type&gt;()`</span> | <span class="sb">`argument`</span> can be any value of type <span class="sb">`type`</span>.
+
+<span class="gu">## Generic Comparison</span>
+
+| Matcher                | Description                                         |
+| :--------------------- | :-------------------------------------------------- |
+| <span class="sb">`Eq(value)`</span> or <span class="sb">`value`</span> | <span class="sb">`argument == value`</span>                                 |
+| <span class="sb">`Ge(value)`</span>            | <span class="sb">`argument &gt;= value`</span>                                 |
+| <span class="sb">`Gt(value)`</span>            | <span class="sb">`argument &gt; value`</span>                                  |
+| <span class="sb">`Le(value)`</span>            | <span class="sb">`argument &lt;= value`</span>                                 |
+| <span class="sb">`Lt(value)`</span>            | <span class="sb">`argument &lt; value`</span>                                  |
+| <span class="sb">`Ne(value)`</span>            | <span class="sb">`argument != value`</span>                                 |
+| <span class="sb">`IsFalse()`</span>            | <span class="sb">`argument`</span> evaluates to <span class="sb">`false`</span> in a Boolean context. |
+| <span class="sb">`IsTrue()`</span>             | <span class="sb">`argument`</span> evaluates to <span class="sb">`true`</span> in a Boolean context. |
+| <span class="sb">`IsNull()`</span>             | <span class="sb">`argument`</span> is a <span class="sb">`NULL`</span> pointer (raw or smart).      |
+| <span class="sb">`NotNull()`</span>            | <span class="sb">`argument`</span> is a non-null pointer (raw or smart).    |
+| <span class="sb">`Optional(m)`</span>          | <span class="sb">`argument`</span> is <span class="sb">`optional&lt;&gt;`</span> that contains a value matching <span class="sb">`m`</span>. (For testing whether an <span class="sb">`optional&lt;&gt;`</span> is set, check for equality with <span class="sb">`nullopt`</span>. You may need to use <span class="sb">`Eq(nullopt)`</span> if the inner type doesn&#39;t have <span class="sb">`==`</span>.)|
+| <span class="sb">`VariantWith&lt;T&gt;(m)`</span>    | <span class="sb">`argument`</span> is <span class="sb">`variant&lt;&gt;`</span> that holds the alternative of type T with a value matching <span class="sb">`m`</span>. |
+| <span class="sb">`Ref(variable)`</span>        | <span class="sb">`argument`</span> is a reference to <span class="sb">`variable`</span>.            |
+| <span class="sb">`TypedEq&lt;type&gt;(value)`</span> | <span class="sb">`argument`</span> has type <span class="sb">`type`</span> and is equal to <span class="sb">`value`</span>. You may need to use this instead of <span class="sb">`Eq(value)`</span> when the mock function is overloaded. |
+
+Except <span class="sb">`Ref()`</span>, these matchers make a <span class="ge">*copy*</span> of <span class="sb">`value`</span> in case it&#39;s modified or
+destructed later. If the compiler complains that <span class="sb">`value`</span> doesn&#39;t have a public
+copy constructor, try wrap it in <span class="sb">`std::ref()`</span>, e.g.
+<span class="sb">`Eq(std::ref(non_copyable_value))`</span>. If you do that, make sure
+<span class="sb">`non_copyable_value`</span> is not changed afterwards, or the meaning of your matcher
+will be changed.
+
+<span class="sb">`IsTrue`</span> and <span class="sb">`IsFalse`</span> are useful when you need to use a matcher, or for types
+that can be explicitly converted to Boolean, but are not implicitly converted to
+Boolean. In other cases, you can use the basic
+[<span class="sb">`EXPECT_TRUE`</span> and <span class="sb">`EXPECT_FALSE`</span>](assertions.md#boolean) assertions.
+
+<span class="gu">## Floating-Point Matchers {#FpMatchers}</span>
+
+| Matcher                          | Description                        |
+| :------------------------------- | :--------------------------------- |
+| <span class="sb">`DoubleEq(a_double)`</span>             | <span class="sb">`argument`</span> is a <span class="sb">`double`</span> value approximately equal to <span class="sb">`a_double`</span>, treating two NaNs as unequal. |
+| <span class="sb">`FloatEq(a_float)`</span>               | <span class="sb">`argument`</span> is a <span class="sb">`float`</span> value approximately equal to <span class="sb">`a_float`</span>, treating two NaNs as unequal. |
+| <span class="sb">`NanSensitiveDoubleEq(a_double)`</span> | <span class="sb">`argument`</span> is a <span class="sb">`double`</span> value approximately equal to <span class="sb">`a_double`</span>, treating two NaNs as equal. |
+| <span class="sb">`NanSensitiveFloatEq(a_float)`</span>   | <span class="sb">`argument`</span> is a <span class="sb">`float`</span> value approximately equal to <span class="sb">`a_float`</span>, treating two NaNs as equal. |
+| <span class="sb">`IsNan()`</span>   | <span class="sb">`argument`</span> is any floating-point type with a NaN value. |
+
+The above matchers use ULP-based comparison (the same as used in googletest).
+They automatically pick a reasonable error bound based on the absolute value of
+the expected value. <span class="sb">`DoubleEq()`</span> and <span class="sb">`FloatEq()`</span> conform to the IEEE standard,
+which requires comparing two NaNs for equality to return false. The
+<span class="sb">`NanSensitive*`</span> version instead treats two NaNs as equal, which is often what a
+user wants.
+
+| Matcher                                           | Description              |
+| :------------------------------------------------ | :----------------------- |
+| <span class="sb">`DoubleNear(a_double, max_abs_error)`</span>             | <span class="sb">`argument`</span> is a <span class="sb">`double`</span> value close to <span class="sb">`a_double`</span> (absolute error &lt;= <span class="sb">`max_abs_error`</span>), treating two NaNs as unequal. |
+| <span class="sb">`FloatNear(a_float, max_abs_error)`</span>               | <span class="sb">`argument`</span> is a <span class="sb">`float`</span> value close to <span class="sb">`a_float`</span> (absolute error &lt;= <span class="sb">`max_abs_error`</span>), treating two NaNs as unequal. |
+| <span class="sb">`NanSensitiveDoubleNear(a_double, max_abs_error)`</span> | <span class="sb">`argument`</span> is a <span class="sb">`double`</span> value close to <span class="sb">`a_double`</span> (absolute error &lt;= <span class="sb">`max_abs_error`</span>), treating two NaNs as equal. |
+| <span class="sb">`NanSensitiveFloatNear(a_float, max_abs_error)`</span>   | <span class="sb">`argument`</span> is a <span class="sb">`float`</span> value close to <span class="sb">`a_float`</span> (absolute error &lt;= <span class="sb">`max_abs_error`</span>), treating two NaNs as equal. |
+
+<span class="gu">## String Matchers</span>
+
+The <span class="sb">`argument`</span> can be either a C string or a C++ string object:
+
+| Matcher                 | Description                                        |
+| :---------------------- | :------------------------------------------------- |
+| <span class="sb">`ContainsRegex(string)`</span>  | <span class="sb">`argument`</span> matches the given regular expression.  |
+| <span class="sb">`EndsWith(suffix)`</span>       | <span class="sb">`argument`</span> ends with string <span class="sb">`suffix`</span>.             |
+| <span class="sb">`HasSubstr(string)`</span>      | <span class="sb">`argument`</span> contains <span class="sb">`string`</span> as a sub-string.     |
+| <span class="sb">`IsEmpty()`</span>              | <span class="sb">`argument`</span> is an empty string.                    |
+| <span class="sb">`MatchesRegex(string)`</span>   | <span class="sb">`argument`</span> matches the given regular expression with the match starting at the first character and ending at the last character. |
+| <span class="sb">`StartsWith(prefix)`</span>     | <span class="sb">`argument`</span> starts with string <span class="sb">`prefix`</span>.           |
+| <span class="sb">`StrCaseEq(string)`</span>      | <span class="sb">`argument`</span> is equal to <span class="sb">`string`</span>, ignoring case.   |
+| <span class="sb">`StrCaseNe(string)`</span>      | <span class="sb">`argument`</span> is not equal to <span class="sb">`string`</span>, ignoring case. |
+| <span class="sb">`StrEq(string)`</span>          | <span class="sb">`argument`</span> is equal to <span class="sb">`string`</span>.                  |
+| <span class="sb">`StrNe(string)`</span>          | <span class="sb">`argument`</span> is not equal to <span class="sb">`string`</span>.              |
+| <span class="sb">`WhenBase64Unescaped(m)`</span> | <span class="sb">`argument`</span> is a base-64 escaped string whose unescaped string matches <span class="sb">`m`</span>.  The web-safe format from [<span class="nt">RFC 4648</span>](<span class="na">https://www.rfc-editor.org/rfc/rfc4648#section-5</span>) is supported. |
+
+<span class="sb">`ContainsRegex()`</span> and <span class="sb">`MatchesRegex()`</span> take ownership of the <span class="sb">`RE`</span> object. They
+use the regular expression syntax defined
+[<span class="nt">here</span>](<span class="na">../advanced.md#regular-expression-syntax</span>). All of these matchers, except
+<span class="sb">`ContainsRegex()`</span> and <span class="sb">`MatchesRegex()`</span> work for wide strings as well.
+
+<span class="gu">## Container Matchers</span>
+
+Most STL-style containers support <span class="sb">`==`</span>, so you can use <span class="sb">`Eq(expected_container)`</span>
+or simply <span class="sb">`expected_container`</span> to match a container exactly. If you want to
+write the elements in-line, match them more flexibly, or get more informative
+messages, you can use:
+
+| Matcher                                   | Description                      |
+| :---------------------------------------- | :------------------------------- |
+| <span class="sb">`BeginEndDistanceIs(m)`</span> | <span class="sb">`argument`</span> is a container whose <span class="sb">`begin()`</span> and <span class="sb">`end()`</span> iterators are separated by a number of increments matching <span class="sb">`m`</span>. E.g. <span class="sb">`BeginEndDistanceIs(2)`</span> or <span class="sb">`BeginEndDistanceIs(Lt(2))`</span>. For containers that define a <span class="sb">`size()`</span> method, <span class="sb">`SizeIs(m)`</span> may be more efficient. |
+| <span class="sb">`ContainerEq(container)`</span> | The same as <span class="sb">`Eq(container)`</span> except that the failure message also includes which elements are in one container but not the other. |
+| <span class="sb">`Contains(e)`</span> | <span class="sb">`argument`</span> contains an element that matches <span class="sb">`e`</span>, which can be either a value or a matcher. |
+| <span class="sb">`Contains(e).Times(n)`</span> | <span class="sb">`argument`</span> contains elements that match <span class="sb">`e`</span>, which can be either a value or a matcher, and the number of matches is <span class="sb">`n`</span>, which can be either a value or a matcher. Unlike the plain <span class="sb">`Contains`</span> and <span class="sb">`Each`</span> this allows to check for arbitrary occurrences including testing for absence with <span class="sb">`Contains(e).Times(0)`</span>. |
+| <span class="sb">`Each(e)`</span> | <span class="sb">`argument`</span> is a container where <span class="ge">*every*</span> element matches <span class="sb">`e`</span>, which can be either a value or a matcher. |
+| <span class="sb">`ElementsAre(e0, e1, ..., en)`</span> | <span class="sb">`argument`</span> has <span class="sb">`n + 1`</span> elements, where the <span class="ge">*i*</span>-th element matches <span class="sb">`ei`</span>, which can be a value or a matcher. |
+| <span class="sb">`ElementsAreArray({e0, e1, ..., en})`</span>, <span class="sb">`ElementsAreArray(a_container)`</span>, <span class="sb">`ElementsAreArray(begin, end)`</span>, <span class="sb">`ElementsAreArray(array)`</span>, or <span class="sb">`ElementsAreArray(array, count)`</span> | The same as <span class="sb">`ElementsAre()`</span> except that the expected element values/matchers come from an initializer list, STL-style container, iterator range, or C-style array. |
+| <span class="sb">`IsEmpty()`</span> | <span class="sb">`argument`</span> is an empty container (<span class="sb">`container.empty()`</span>). |
+| <span class="sb">`IsSubsetOf({e0, e1, ..., en})`</span>, <span class="sb">`IsSubsetOf(a_container)`</span>, <span class="sb">`IsSubsetOf(begin, end)`</span>, <span class="sb">`IsSubsetOf(array)`</span>, or <span class="sb">`IsSubsetOf(array, count)`</span> | <span class="sb">`argument`</span> matches <span class="sb">`UnorderedElementsAre(x0, x1, ..., xk)`</span> for some subset <span class="sb">`{x0, x1, ..., xk}`</span> of the expected matchers. |
+| <span class="sb">`IsSupersetOf({e0, e1, ..., en})`</span>, <span class="sb">`IsSupersetOf(a_container)`</span>, <span class="sb">`IsSupersetOf(begin, end)`</span>, <span class="sb">`IsSupersetOf(array)`</span>, or <span class="sb">`IsSupersetOf(array, count)`</span> | Some subset of <span class="sb">`argument`</span> matches <span class="sb">`UnorderedElementsAre(`</span>expected matchers`)`. |
+| <span class="sb">`Pointwise(m, container)`</span>, <span class="sb">`Pointwise(m, {e0, e1, ..., en})`</span> | <span class="sb">`argument`</span> contains the same number of elements as in <span class="sb">`container`</span>, and for all i, (the i-th element in <span class="sb">`argument`</span>, the i-th element in <span class="sb">`container`</span>) match <span class="sb">`m`</span>, which is a matcher on 2-tuples. E.g. <span class="sb">`Pointwise(Le(), upper_bounds)`</span> verifies that each element in <span class="sb">`argument`</span> doesn&#39;t exceed the corresponding element in <span class="sb">`upper_bounds`</span>. See more detail below. |
+| <span class="sb">`SizeIs(m)`</span> | <span class="sb">`argument`</span> is a container whose size matches <span class="sb">`m`</span>. E.g. <span class="sb">`SizeIs(2)`</span> or <span class="sb">`SizeIs(Lt(2))`</span>. |
+| <span class="sb">`UnorderedElementsAre(e0, e1, ..., en)`</span> | <span class="sb">`argument`</span> has <span class="sb">`n + 1`</span> elements, and under <span class="ge">*some*</span> permutation of the elements, each element matches an <span class="sb">`ei`</span> (for a different <span class="sb">`i`</span>), which can be a value or a matcher. |
+| <span class="sb">`UnorderedElementsAreArray({e0, e1, ..., en})`</span>, <span class="sb">`UnorderedElementsAreArray(a_container)`</span>, <span class="sb">`UnorderedElementsAreArray(begin, end)`</span>, <span class="sb">`UnorderedElementsAreArray(array)`</span>, or <span class="sb">`UnorderedElementsAreArray(array, count)`</span> | The same as <span class="sb">`UnorderedElementsAre()`</span> except that the expected element values/matchers come from an initializer list, STL-style container, iterator range, or C-style array. |
+| <span class="sb">`UnorderedPointwise(m, container)`</span>, <span class="sb">`UnorderedPointwise(m, {e0, e1, ..., en})`</span> | Like <span class="sb">`Pointwise(m, container)`</span>, but ignores the order of elements. |
+| <span class="sb">`WhenSorted(m)`</span> | When <span class="sb">`argument`</span> is sorted using the <span class="sb">`&lt;`</span> operator, it matches container matcher <span class="sb">`m`</span>. E.g. <span class="sb">`WhenSorted(ElementsAre(1, 2, 3))`</span> verifies that <span class="sb">`argument`</span> contains elements 1, 2, and 3, ignoring order. |
+| <span class="sb">`WhenSortedBy(comparator, m)`</span> | The same as <span class="sb">`WhenSorted(m)`</span>, except that the given comparator instead of <span class="sb">`&lt;`</span> is used to sort <span class="sb">`argument`</span>. E.g. <span class="sb">`WhenSortedBy(std::greater(), ElementsAre(3, 2, 1))`</span>. |
+
+<span class="gs">**Notes:**</span>
+
+<span class="k">*</span><span class="w"> </span>  These matchers can also match:
+<span class="w">    </span><span class="k">1.</span>  a native array passed by reference (e.g. in <span class="sb">`Foo(const int (&amp;a)[5])`</span>),
+        and
+<span class="w">    </span><span class="k">2.</span>  an array passed as a pointer and a count (e.g. in `Bar(const T* buffer,
+        int len)` -- see [<span class="nt">Multi-argument Matchers</span>](<span class="na">#MultiArgMatchers</span>)).
+<span class="k">*</span><span class="w"> </span>  The array being matched may be multi-dimensional (i.e. its elements can be
+    arrays).
+<span class="k">*</span><span class="w"> </span>  <span class="sb">`m`</span> in <span class="sb">`Pointwise(m, ...)`</span> and <span class="sb">`UnorderedPointwise(m, ...)`</span> should be a
+    matcher for <span class="sb">`::std::tuple&lt;T, U&gt;`</span> where <span class="sb">`T`</span> and <span class="sb">`U`</span> are the element type of
+    the actual container and the expected container, respectively. For example,
+    to compare two <span class="sb">`Foo`</span> containers where <span class="sb">`Foo`</span> doesn&#39;t support <span class="sb">`operator==`</span>,
+    one might write:
+
+<span class="sb">    ```cpp</span>
+<span class="w">    </span><span class="n">MATCHER</span><span class="p">(</span><span class="n">FooEq</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">arg</span><span class="p">).</span><span class="n">Equals</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">arg</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="n">EXPECT_THAT</span><span class="p">(</span><span class="n">actual_foos</span><span class="p">,</span><span class="w"> </span><span class="n">Pointwise</span><span class="p">(</span><span class="n">FooEq</span><span class="p">(),</span><span class="w"> </span><span class="n">expected_foos</span><span class="p">));</span>
+<span class="sb">    ```</span>
+
+<span class="gu">## Member Matchers</span>
+
+| Matcher                         | Description                                |
+| :------------------------------ | :----------------------------------------- |
+| <span class="sb">`Field(&amp;class::field, m)`</span>       | <span class="sb">`argument.field`</span> (or <span class="sb">`argument-&gt;field`</span> when <span class="sb">`argument`</span> is a plain pointer) matches matcher <span class="sb">`m`</span>, where <span class="sb">`argument`</span> is an object of type <span class="ge">_class_</span>. |
+| <span class="sb">`Field(field_name, &amp;class::field, m)`</span> | The same as the two-parameter version, but provides a better error message. |
+| <span class="sb">`Key(e)`</span>                        | <span class="sb">`argument.first`</span> matches <span class="sb">`e`</span>, which can be either a value or a matcher. E.g. <span class="sb">`Contains(Key(Le(5)))`</span> can verify that a <span class="sb">`map`</span> contains a key <span class="sb">`&lt;= 5`</span>. |
+| <span class="sb">`Pair(m1, m2)`</span>                  | <span class="sb">`argument`</span> is an <span class="sb">`std::pair`</span> whose <span class="sb">`first`</span> field matches <span class="sb">`m1`</span> and <span class="sb">`second`</span> field matches <span class="sb">`m2`</span>. |
+| <span class="sb">`FieldsAre(m...)`</span>                   | <span class="sb">`argument`</span> is a compatible object where each field matches piecewise with the matchers <span class="sb">`m...`</span>. A compatible object is any that supports the <span class="sb">`std::tuple_size&lt;Obj&gt;`</span>+<span class="sb">`get&lt;I&gt;(obj)`</span> protocol. In C++17 and up this also supports types compatible with structured bindings, like aggregates. |
+| <span class="sb">`Property(&amp;class::property, m)`</span> | <span class="sb">`argument.property()`</span> (or <span class="sb">`argument-&gt;property()`</span> when <span class="sb">`argument`</span> is a plain pointer) matches matcher <span class="sb">`m`</span>, where <span class="sb">`argument`</span> is an object of type <span class="ge">_class_</span>. The method <span class="sb">`property()`</span> must take no argument and be declared as <span class="sb">`const`</span>. |
+| <span class="sb">`Property(property_name, &amp;class::property, m)`</span> | The same as the two-parameter version, but provides a better error message.
+
+<span class="gs">**Notes:**</span>
+
+<span class="k">*</span><span class="w"> </span>  You can use <span class="sb">`FieldsAre()`</span> to match any type that supports structured
+    bindings, such as <span class="sb">`std::tuple`</span>, <span class="sb">`std::pair`</span>, <span class="sb">`std::array`</span>, and aggregate
+    types. For example:
+
+<span class="sb">    ```cpp</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">my_tuple</span><span class="p">{</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hello world&quot;</span><span class="p">};</span>
+<span class="w">    </span><span class="n">EXPECT_THAT</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">,</span><span class="w"> </span><span class="n">FieldsAre</span><span class="p">(</span><span class="n">Ge</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">HasSubstr</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">)));</span>
+
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">MyStruct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
+<span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;aloha&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="n">MyStruct</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="n">EXPECT_THAT</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">FieldsAre</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;aloha&quot;</span><span class="p">));</span>
+<span class="sb">    ```</span>
+
+<span class="k">*</span><span class="w"> </span>  Don&#39;t use <span class="sb">`Property()`</span> against member functions that you do not own, because
+    taking addresses of functions is fragile and generally not part of the
+    contract of the function.
+
+<span class="gu">## Matching the Result of a Function, Functor, or Callback</span>
+
+| Matcher          | Description                                       |
+| :--------------- | :------------------------------------------------ |
+| <span class="sb">`ResultOf(f, m)`</span> | <span class="sb">`f(argument)`</span> matches matcher <span class="sb">`m`</span>, where <span class="sb">`f`</span> is a function or functor. |
+| <span class="sb">`ResultOf(result_description, f, m)`</span> | The same as the two-parameter version, but provides a better error message.
+
+<span class="gu">## Pointer Matchers</span>
+
+| Matcher                   | Description                                     |
+| :------------------------ | :---------------------------------------------- |
+| <span class="sb">`Address(m)`</span>              | the result of <span class="sb">`std::addressof(argument)`</span> matches <span class="sb">`m`</span>. |
+| <span class="sb">`Pointee(m)`</span>              | <span class="sb">`argument`</span> (either a smart pointer or a raw pointer) points to a value that matches matcher <span class="sb">`m`</span>. |
+| <span class="sb">`Pointer(m)`</span>              | <span class="sb">`argument`</span> (either a smart pointer or a raw pointer) contains a pointer that matches <span class="sb">`m`</span>. <span class="sb">`m`</span> will match against the raw pointer regardless of the type of <span class="sb">`argument`</span>. |
+| <span class="sb">`WhenDynamicCastTo&lt;T&gt;(m)`</span> | when <span class="sb">`argument`</span> is passed through <span class="sb">`dynamic_cast&lt;T&gt;()`</span>, it matches matcher <span class="sb">`m`</span>. |
+
+<span class="gu">## Multi-argument Matchers {#MultiArgMatchers}</span>
+
+Technically, all matchers match a <span class="ge">*single*</span> value. A &quot;multi-argument&quot; matcher is
+just one that matches a <span class="ge">*tuple*</span>. The following matchers can be used to match a
+tuple <span class="sb">`(x, y)`</span>:
+
+Matcher | Description
+:------ | :----------
+<span class="sb">`Eq()`</span>  | <span class="sb">`x == y`</span>
+<span class="sb">`Ge()`</span>  | <span class="sb">`x &gt;= y`</span>
+<span class="sb">`Gt()`</span>  | <span class="sb">`x &gt; y`</span>
+<span class="sb">`Le()`</span>  | <span class="sb">`x &lt;= y`</span>
+<span class="sb">`Lt()`</span>  | <span class="sb">`x &lt; y`</span>
+<span class="sb">`Ne()`</span>  | <span class="sb">`x != y`</span>
+
+You can use the following selectors to pick a subset of the arguments (or
+reorder them) to participate in the matching:
+
+| Matcher                    | Description                                     |
+| :------------------------- | :---------------------------------------------- |
+| <span class="sb">`AllArgs(m)`</span>               | Equivalent to <span class="sb">`m`</span>. Useful as syntactic sugar in <span class="sb">`.With(AllArgs(m))`</span>. |
+| <span class="sb">`Args&lt;N1, N2, ..., Nk&gt;(m)`</span> | The tuple of the <span class="sb">`k`</span> selected (using 0-based indices) arguments matches <span class="sb">`m`</span>, e.g. <span class="sb">`Args&lt;1, 2&gt;(Eq())`</span>. |
+
+<span class="gu">## Composite Matchers</span>
+
+You can make a matcher from one or more other matchers:
+
+| Matcher                          | Description                             |
+| :------------------------------- | :-------------------------------------- |
+| <span class="sb">`AllOf(m1, m2, ..., mn)`</span> | <span class="sb">`argument`</span> matches all of the matchers <span class="sb">`m1`</span> to <span class="sb">`mn`</span>. |
+| <span class="sb">`AllOfArray({m0, m1, ..., mn})`</span>, <span class="sb">`AllOfArray(a_container)`</span>, <span class="sb">`AllOfArray(begin, end)`</span>, <span class="sb">`AllOfArray(array)`</span>, or <span class="sb">`AllOfArray(array, count)`</span> | The same as <span class="sb">`AllOf()`</span> except that the matchers come from an initializer list, STL-style container, iterator range, or C-style array. |
+| <span class="sb">`AnyOf(m1, m2, ..., mn)`</span> | <span class="sb">`argument`</span> matches at least one of the matchers <span class="sb">`m1`</span> to <span class="sb">`mn`</span>. |
+| <span class="sb">`AnyOfArray({m0, m1, ..., mn})`</span>, <span class="sb">`AnyOfArray(a_container)`</span>, <span class="sb">`AnyOfArray(begin, end)`</span>, <span class="sb">`AnyOfArray(array)`</span>, or <span class="sb">`AnyOfArray(array, count)`</span> | The same as <span class="sb">`AnyOf()`</span> except that the matchers come from an initializer list, STL-style container, iterator range, or C-style array. |
+| <span class="sb">`Not(m)`</span> | <span class="sb">`argument`</span> doesn&#39;t match matcher <span class="sb">`m`</span>. |
+| <span class="sb">`Conditional(cond, m1, m2)`</span> | Matches matcher <span class="sb">`m1`</span> if <span class="sb">`cond`</span> evaluates to true, else matches <span class="sb">`m2`</span>.|
+
+<span class="gu">## Adapters for Matchers</span>
+
+| Matcher                 | Description                           |
+| :---------------------- | :------------------------------------ |
+| <span class="sb">`MatcherCast&lt;T&gt;(m)`</span>     | casts matcher <span class="sb">`m`</span> to type <span class="sb">`Matcher&lt;T&gt;`</span>. |
+| <span class="sb">`SafeMatcherCast&lt;T&gt;(m)`</span> | [<span class="nt">safely casts</span>](<span class="na">../gmock_cook_book.md#SafeMatcherCast</span>) matcher <span class="sb">`m`</span> to type <span class="sb">`Matcher&lt;T&gt;`</span>. |
+| <span class="sb">`Truly(predicate)`</span>      | <span class="sb">`predicate(argument)`</span> returns something considered by C++ to be true, where <span class="sb">`predicate`</span> is a function or functor. |
+
+<span class="sb">`AddressSatisfies(callback)`</span> and <span class="sb">`Truly(callback)`</span> take ownership of <span class="sb">`callback`</span>,
+which must be a permanent callback.
+
+<span class="gu">## Using Matchers as Predicates {#MatchersAsPredicatesCheat}</span>
+
+| Matcher                       | Description                                 |
+| :---------------------------- | :------------------------------------------ |
+| <span class="sb">`Matches(m)(value)`</span> | evaluates to <span class="sb">`true`</span> if <span class="sb">`value`</span> matches <span class="sb">`m`</span>. You can use <span class="sb">`Matches(m)`</span> alone as a unary functor. |
+| <span class="sb">`ExplainMatchResult(m, value, result_listener)`</span> | evaluates to <span class="sb">`true`</span> if <span class="sb">`value`</span> matches <span class="sb">`m`</span>, explaining the result to <span class="sb">`result_listener`</span>. |
+| <span class="sb">`Value(value, m)`</span> | evaluates to <span class="sb">`true`</span> if <span class="sb">`value`</span> matches <span class="sb">`m`</span>. |
+
+<span class="gu">## Defining Matchers</span>
+
+| Macro                                | Description                           |
+| :----------------------------------- | :------------------------------------ |
+| <span class="sb">`MATCHER(IsEven, &quot;&quot;) { return (arg % 2) == 0; }`</span> | Defines a matcher <span class="sb">`IsEven()`</span> to match an even number. |
+| <span class="sb">`MATCHER_P(IsDivisibleBy, n, &quot;&quot;) { *result_listener &lt;&lt; &quot;where the remainder is &quot; &lt;&lt; (arg % n); return (arg % n) == 0; }`</span> | Defines a matcher <span class="sb">`IsDivisibleBy(n)`</span> to match a number divisible by <span class="sb">`n`</span>. |
+| <span class="sb">`MATCHER_P2(IsBetween, a, b, absl::StrCat(negation ? &quot;isn&#39;t&quot; : &quot;is&quot;, &quot; between &quot;, PrintToString(a), &quot; and &quot;, PrintToString(b))) { return a &lt;= arg &amp;&amp; arg &lt;= b; }`</span> | Defines a matcher <span class="sb">`IsBetween(a, b)`</span> to match a value in the range [<span class="sb">`a`</span>, <span class="sb">`b`</span>]. |
+
+<span class="gs">**Notes:**</span>
+
+<span class="k">1.</span>  The <span class="sb">`MATCHER*`</span> macros cannot be used inside a function or class.
+<span class="k">2.</span>  The matcher body must be <span class="ge">*purely functional*</span> (i.e. it cannot have any side
+    effect, and the result must not depend on anything other than the value
+    being matched and the matcher parameters).
+<span class="k">3.</span>  You can use <span class="sb">`PrintToString(x)`</span> to convert a value <span class="sb">`x`</span> of any type to a
+    string.
+<span class="k">4.</span>  You can use <span class="sb">`ExplainMatchResult()`</span> in a custom matcher to wrap another
+    matcher, for example:
+
+<span class="sb">    ```cpp</span>
+<span class="w">    </span><span class="n">MATCHER_P</span><span class="p">(</span><span class="n">NestedPropertyMatches</span><span class="p">,</span><span class="w"> </span><span class="n">matcher</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">ExplainMatchResult</span><span class="p">(</span><span class="n">matcher</span><span class="p">,</span><span class="w"> </span><span class="n">arg</span><span class="p">.</span><span class="n">nested</span><span class="p">().</span><span class="n">property</span><span class="p">(),</span><span class="w"> </span><span class="n">result_listener</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="sb">    ```</span>
+
+<span class="k">5.</span>  You can use <span class="sb">`DescribeMatcher&lt;&gt;`</span> to describe another matcher. For example:
+
+<span class="sb">    ```cpp</span>
+<span class="w">    </span><span class="n">MATCHER_P</span><span class="p">(</span><span class="n">XAndYThat</span><span class="p">,</span><span class="w"> </span><span class="n">matcher</span><span class="p">,</span>
+<span class="w">              </span><span class="s">&quot;X that &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">DescribeMatcher</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">matcher</span><span class="p">,</span><span class="w"> </span><span class="n">negation</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                  </span><span class="p">(</span><span class="n">negation</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot; or&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot; and&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; Y that &quot;</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                  </span><span class="n">DescribeMatcher</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">matcher</span><span class="p">,</span><span class="w"> </span><span class="n">negation</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">ExplainMatchResult</span><span class="p">(</span><span class="n">matcher</span><span class="p">,</span><span class="w"> </span><span class="n">arg</span><span class="p">.</span><span class="n">x</span><span class="p">(),</span><span class="w"> </span><span class="n">result_listener</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">             </span><span class="n">ExplainMatchResult</span><span class="p">(</span><span class="n">matcher</span><span class="p">,</span><span class="w"> </span><span class="n">arg</span><span class="p">.</span><span class="n">y</span><span class="p">(),</span><span class="w"> </span><span class="n">result_listener</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="sb">    ```</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>

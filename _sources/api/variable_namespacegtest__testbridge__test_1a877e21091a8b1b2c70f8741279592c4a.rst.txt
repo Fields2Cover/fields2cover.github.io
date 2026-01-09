@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacegtest__testbridge__test_1a877e21091a8b1b2c70f8741279592c4a:
+
+Variable gtest_testbridge_test::COMMAND
+=======================================
+
+.. did not find file this was defined in
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: gtest_testbridge_test::COMMAND
+   :project: Fields2Cover
