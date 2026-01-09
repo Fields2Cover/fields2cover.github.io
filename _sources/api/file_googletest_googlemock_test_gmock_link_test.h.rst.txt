@@ -61,6 +61,10 @@ Functions
 
 - :ref:`exhale_function_gmock__link__test_8h_1af799ef9a88f3b9701c0a23ff385f0bec`
 
+- :ref:`exhale_function_gmock__link__test_8h_1a3f3f7a915ecbf4ed9480e7689ac3be1e`
+
+- :ref:`exhale_function_gmock__link__test_8h_1a8e87d7c7853fa49506556f9e05487021`
+
 - :ref:`exhale_function_gmock__link__test_8h_1a56eb072fc6793f17991c4b9453cb57f9`
 
 - :ref:`exhale_function_gmock__link__test_8h_1a0e54493b534daa8c40db27f11c1fa47c`
@@ -148,10 +152,6 @@ Functions
 - :ref:`exhale_function_gmock__link__test_8h_1a2918d5abf4d84037728f3c1bbc5c4fca`
 
 - :ref:`exhale_function_gmock__link__test_8h_1aaaae4940e8dd1c9ba7342163248ff86f`
-
-- :ref:`exhale_function_gmock__link__test_8h_1a3f3f7a915ecbf4ed9480e7689ac3be1e`
-
-- :ref:`exhale_function_gmock__link__test_8h_1a8e87d7c7853fa49506556f9e05487021`
 
 - :ref:`exhale_function_gmock__link__test_8h_1a541f200e4f422050bbd5e424dc3d01a1`
 
