@@ -34,7 +34,7 @@ Includes
 
 - ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
 
-- ``set`` (:ref:`file_googletest_googletest_test_googletest-setuptestsuite-test.py`)
+- ``set``
 
 - ``stdexcept``
 

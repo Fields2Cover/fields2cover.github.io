@@ -1,7 +1,0 @@
-.. _page_md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_faq:
-
-Legacy gMock FAQ
-================
-
-.. doxygenpage:: md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_faq
-   :project: Fields2Cover

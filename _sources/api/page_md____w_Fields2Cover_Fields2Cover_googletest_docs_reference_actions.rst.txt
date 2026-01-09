@@ -1,7 +1,0 @@
-.. _page_md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_actions:
-
-Actions Reference
-=================
-
-.. doxygenpage:: md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_actions
-   :project: Fields2Cover

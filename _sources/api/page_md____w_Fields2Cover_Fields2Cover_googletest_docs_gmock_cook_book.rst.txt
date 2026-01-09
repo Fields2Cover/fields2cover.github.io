@@ -1,7 +1,0 @@
-.. _page_md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_cook_book:
-
-gMock Cookbook
-==============
-
-.. doxygenpage:: md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_cook_book
-   :project: Fields2Cover

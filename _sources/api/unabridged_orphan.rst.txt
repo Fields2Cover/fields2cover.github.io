@@ -11,56 +11,6 @@ Directories
 .. toctree::
    :maxdepth: 5
 
-   dir____w_Fields2Cover_Fields2Cover_googletest_docs.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   dir____w_Fields2Cover_Fields2Cover_googletest_docs_reference.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   dir____w_Fields2Cover_Fields2Cover_googletest_googlemock.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   dir____w_Fields2Cover_Fields2Cover_googletest_googlemock_docs.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   dir____w_Fields2Cover_Fields2Cover_googletest_googlemock_test.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   dir____w_Fields2Cover_Fields2Cover_googletest_googletest.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   dir____w_Fields2Cover_Fields2Cover_googletest_googletest_docs.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   dir____w_Fields2Cover_Fields2Cover_googletest_googletest_samples.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   dir____w_Fields2Cover_Fields2Cover_googletest_googletest_src.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   dir____w_Fields2Cover_Fields2Cover_googletest_googletest_test.rst
-
-.. toctree::
-   :maxdepth: 5
-
    dir_fields2cover.rst
 
 .. toctree::
@@ -128,29 +78,9 @@ Directories
 
    dir_fields2cover_utils.rst
 
-.. toctree::
-   :maxdepth: 5
-
-   dir_googletest.rst
-
 Files
 *****
 
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_docs_reference_actions.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_docs_advanced.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_docs_reference_assertions.md.rst
 
 .. toctree::
    :maxdepth: 5
@@ -200,22 +130,12 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_googletest_docs_community_created_documentation.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
    file_fields2cover_objectives_rp_obj_complete_turn_path_obj.h.rst
 
 .. toctree::
    :maxdepth: 5
 
    file_fields2cover_headland_generator_constant_headland.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_CONTRIBUTING.md.rst
 
 .. toctree::
    :maxdepth: 5
@@ -250,11 +170,6 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_googletest_docs_faq.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
    file_fields2cover_types_Field.h.rst
 
 .. toctree::
@@ -280,207 +195,12 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_googletest_googlemock_test_gmock-matchers_test.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_docs_gmock_cheat_sheet.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_docs_gmock_cook_book.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_docs_gmock_faq.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_docs_gmock_for_dummies.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googlemock_test_gmock_leak_test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googlemock_test_gmock_link_test.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googlemock_test_gmock_output_test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googlemock_test_gmock_test_utils.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-break-on-failure-unittest.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-catch-exceptions-test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-color-test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-env-var-test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-failfast-unittest.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-filter-unittest.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-global-environment-unittest.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-json-outfiles-test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-json-output-unittest.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-list-tests-unittest.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-output-test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-param-test-invalid-name1-test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-param-test-invalid-name2-test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-param-test-test.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-setuptestsuite-test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-shuffle-test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-throw-on-failure-test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_googletest-uninitialized-test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
    file_fields2cover_types_Graph.h.rst
 
 .. toctree::
    :maxdepth: 5
 
    file_fields2cover_types_Graph2D.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_src_gtest-internal-inl.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_gtest-typed-test_test.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_gtest_help_test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_gtest_json_test_utils.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_gtest_list_output_unittest.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_gtest_skip_check_output_test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_gtest_skip_environment_check_output_test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_gtest_test_utils.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_gtest_testbridge_test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_gtest_xml_outfiles_test.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_gtest_xml_output_unittest.py.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_gtest_xml_test_utils.py.rst
 
 .. toctree::
    :maxdepth: 5
@@ -495,27 +215,12 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_googletest_docs_index.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
    file_fields2cover_types_LinearRing.h.rst
 
 .. toctree::
    :maxdepth: 5
 
    file_fields2cover_types_LineString.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_docs_reference_matchers.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_docs_reference_mocking.md.rst
 
 .. toctree::
    :maxdepth: 5
@@ -570,16 +275,6 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_googletest_docs_pkgconfig.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_docs_platforms.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
    file_fields2cover_types_Point.h.rst
 
 .. toctree::
@@ -590,57 +285,7 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_googletest_googletest_samples_prime_tables.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_docs_primer.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_test_production.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_docs_quickstart-bazel.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_docs_quickstart-cmake.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
    file_fields2cover_utils_random.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googlemock_docs_README.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googlemock_README.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_docs_README.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_README.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_README.md.rst
 
 .. toctree::
    :maxdepth: 5
@@ -676,31 +321,6 @@ Files
    :maxdepth: 5
 
    file_fields2cover_objectives_rp_obj_rp_objective.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_samples_sample1.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_samples_sample2.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_samples_sample3-inl.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_googletest_samples_sample4.h.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   file_googletest_docs_samples.md.rst
 
 .. toctree::
    :maxdepth: 5
@@ -760,11 +380,6 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_googletest_docs_reference_testing.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
    file_fields2cover_utils_transformation.h.rst
 
 .. toctree::
@@ -805,131 +420,6 @@ Pages
    :maxdepth: 5
 
    page_md____w_Fields2Cover_Fields2Cover_CODE_OF_CONDUCT.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_CONTRIBUTING.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_advanced.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_community_created_documentation.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_faq.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_cheat_sheet.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_cook_book.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_faq.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_for_dummies.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_index.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_pkgconfig.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_platforms.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_primer.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_quickstart_bazel.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_quickstart_cmake.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_actions.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_assertions.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_matchers.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_mocking.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_reference_testing.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_docs_samples.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_googlemock_docs_README.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_googlemock_README.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_googletest_docs_README.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_googletest_README.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_googletest_README.rst
 
 .. toctree::
    :maxdepth: 5

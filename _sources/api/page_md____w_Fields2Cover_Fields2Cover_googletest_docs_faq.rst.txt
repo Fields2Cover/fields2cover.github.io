@@ -1,7 +1,0 @@
-.. _page_md____w_Fields2Cover_Fields2Cover_googletest_docs_faq:
-
-GoogleTest FAQ
-==============
-
-.. doxygenpage:: md____w_Fields2Cover_Fields2Cover_googletest_docs_faq
-   :project: Fields2Cover

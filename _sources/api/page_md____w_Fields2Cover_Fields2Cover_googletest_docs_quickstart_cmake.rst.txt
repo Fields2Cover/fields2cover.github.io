@@ -1,7 +1,0 @@
-.. _page_md____w_Fields2Cover_Fields2Cover_googletest_docs_quickstart_cmake:
-
-Quickstart: Building with CMake
-===============================
-
-.. doxygenpage:: md____w_Fields2Cover_Fields2Cover_googletest_docs_quickstart_cmake
-   :project: Fields2Cover

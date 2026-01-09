@@ -1,7 +1,0 @@
-.. _page_md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_cheat_sheet:
-
-gMock Cheat Sheet
-=================
-
-.. doxygenpage:: md____w_Fields2Cover_Fields2Cover_googletest_docs_gmock_cheat_sheet
-   :project: Fields2Cover
