@@ -34,9 +34,9 @@ Includes
 
 - ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
 
-- ``gdal/ogr_spatialref.h``
-
 - ``memory``
+
+- ``ogr_spatialref.h``
 
 - ``string``
 

@@ -42,7 +42,7 @@ Includes
 
 - ``fields2cover/types/Point.h`` (:ref:`file_fields2cover_types_Point.h`)
 
-- ``gdal/ogr_geometry.h``
+- ``ogr_geometry.h``
 
 - ``optional``
 

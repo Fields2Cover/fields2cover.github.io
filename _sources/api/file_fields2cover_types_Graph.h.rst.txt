@@ -82,5 +82,5 @@ Typedefs
 
 - :ref:`exhale_typedef_namespacef2c_1_1types_1a50ebad52177c0f9fc713080e134531cd`
 
-- :ref:`exhale_typedef_namespacef2c_1_1types_1aae66ccae67ea08edb6cd3c4bb0514a11`
+- :ref:`exhale_typedef_namespacef2c_1_1types_1afe2fe8d3571b7b08470a40bf4a0cbd13`
 

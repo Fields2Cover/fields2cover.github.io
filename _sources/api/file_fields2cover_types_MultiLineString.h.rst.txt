@@ -34,7 +34,7 @@ Includes
 
 - ``fields2cover/types/LineString.h`` (:ref:`file_fields2cover_types_LineString.h`)
 
-- ``gdal/ogr_geometry.h``
+- ``ogr_geometry.h``
 
 - ``utility``
 

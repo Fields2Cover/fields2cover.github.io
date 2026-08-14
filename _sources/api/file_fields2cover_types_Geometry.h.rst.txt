@@ -36,13 +36,13 @@ Includes
 
 - ``functional``
 
-- ``gdal/ogr_core.h``
-
-- ``gdal/ogr_geometry.h``
-
 - ``iostream``
 
 - ``memory``
+
+- ``ogr_core.h``
+
+- ``ogr_geometry.h``
 
 - ``string``
 

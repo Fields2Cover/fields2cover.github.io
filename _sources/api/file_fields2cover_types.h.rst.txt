@@ -64,7 +64,7 @@ Includes
 
 - ``fields2cover/types/SwathsByCells.h`` (:ref:`file_fields2cover_types_SwathsByCells.h`)
 
-- ``gdal/ogr_geometry.h``
+- ``ogr_geometry.h``
 
 - ``vector``
 

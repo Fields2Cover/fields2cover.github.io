@@ -40,9 +40,9 @@ Includes
 
 - ``fields2cover/types/Swaths.h`` (:ref:`file_fields2cover_types_Swaths.h`)
 
-- ``gdal/ogr_geometry.h``
-
 - ``numeric``
+
+- ``ogr_geometry.h``
 
 - ``optional``
 

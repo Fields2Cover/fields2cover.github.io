@@ -42,7 +42,7 @@ Includes
 
 - ``fstream``
 
-- ``gdal/ogr_geometry.h``
+- ``ogr_geometry.h``
 
 - ``string``
 

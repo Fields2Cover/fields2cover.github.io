@@ -34,11 +34,11 @@ Includes
 
 - ``functional``
 
-- ``gdal/ogr_geometry.h``
-
 - ``iostream``
 
 - ``memory``
+
+- ``ogr_geometry.h``
 
 - ``utility``
 
