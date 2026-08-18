@@ -112,11 +112,11 @@ Working with them in Fields2Cover is also possible.</p>
 <li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
 C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
 Python</li></ul><div class="tab codetab selected" data-id="0">
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CField</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">Parser</span><span class="o">::</span><span class="n">importFieldGml</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">DATA_PATH</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;test1.xml&quot;</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CField</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f2c</span><span class="o">::</span><span class="n">Parser</span><span class="o">::</span><span class="n">importFieldGml</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">DATA_PATH</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"test1.xml"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div><div class="tab codetab" data-id="1">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">field</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Parser</span><span class="p">()</span><span class="o">.</span><span class="n">importFieldGml</span><span class="p">(</span><span class="n">DATA_PATH</span> <span class="o">+</span> <span class="s2">&quot;test1.xml&quot;</span><span class="p">);</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">field</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Parser</span><span class="p">()</span><span class="o">.</span><span class="n">importFieldGml</span><span class="p">(</span><span class="n">DATA_PATH</span> <span class="o">+</span> <span class="s2">"test1.xml"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></div><p><code class="docutils literal notranslate"><span class="pre">F2CField</span></code> constructor splits the data of the boundary of the field between a <code class="docutils literal notranslate"><span class="pre">F2CPoint</span></code> used as a reference point and a <code class="docutils literal notranslate"><span class="pre">F2CCells</span></code> with the boundaries in a local space (First point of it is (0, 0)). To obtain the field shape in absolute values, we have the function <code class="docutils literal notranslate"><span class="pre">getCellsAbsPosition()</span></code>.</p>
@@ -202,11 +202,11 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 <li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
 C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
 Python</li></ul><div class="tab codetab selected" data-id="0">
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">path_gps</span><span class="p">.</span><span class="n">saveToFile</span><span class="p">(</span><span class="s">&quot;path.csv&quot;</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">path_gps</span><span class="p">.</span><span class="n">saveToFile</span><span class="p">(</span><span class="s">"path.csv"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div><div class="tab codetab" data-id="1">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path_gps</span><span class="o">.</span><span class="n">saveToFile</span><span class="p">(</span><span class="s2">&quot;path.csv&quot;</span><span class="p">);</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path_gps</span><span class="o">.</span><span class="n">saveToFile</span><span class="p">(</span><span class="s2">"path.csv"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></div></section>

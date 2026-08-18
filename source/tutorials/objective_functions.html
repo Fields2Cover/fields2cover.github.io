@@ -141,9 +141,9 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 <span class="w">  </span><span class="p">{</span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)})));</span>
 
 <span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">RemArea</span><span class="w"> </span><span class="n">rem_area</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The remaining area is &quot;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"The remaining area is "</span>
 <span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rem_area</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">total_field</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The remaining area with sign is &quot;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"The remaining area with sign is "</span>
 <span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rem_area</span><span class="p">.</span><span class="n">computeCostWithMinimizingSign</span><span class="p">(</span><span class="n">total_field</span><span class="p">,</span><span class="w"> </span><span class="n">field</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -156,8 +156,8 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
     <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)]))));</span>
 
 <span class="n">rem_area</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">OBJ_RemArea</span><span class="p">();</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The remaining area is &quot;</span><span class="p">,</span>
-    <span class="n">rem_area</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">total_field</span><span class="p">,</span> <span class="n">field</span><span class="p">),</span> <span class="s2">&quot;, and with sign is &quot;</span><span class="p">,</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The remaining area is "</span><span class="p">,</span>
+    <span class="n">rem_area</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">total_field</span><span class="p">,</span> <span class="n">field</span><span class="p">),</span> <span class="s2">", and with sign is "</span><span class="p">,</span>
     <span class="n">rem_area</span><span class="o">.</span><span class="n">computeCostWithMinimizingSign</span><span class="p">(</span><span class="n">total_field</span><span class="p">,</span> <span class="n">field</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -188,8 +188,8 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 
 <span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">FieldCoverage</span><span class="w"> </span><span class="n">field_cov</span><span class="p">;</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The field coverage with swath1 is &quot;</span>
-<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">field_cov</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; and with all of the swaths &quot;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"The field coverage with swath1 is "</span>
+<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">field_cov</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" and with all of the swaths "</span>
 <span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">field_cov</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -208,8 +208,8 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 <span class="p">[</span><span class="n">swaths3</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">[</span><span class="n">swath1</span><span class="p">,</span> <span class="n">swath2</span><span class="p">,</span> <span class="n">swath3</span><span class="p">]];</span>
 
 <span class="n">field_cov</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">OBJ_FieldCoverage</span><span class="p">();</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The field coverage with swath1 is &quot;</span><span class="p">,</span>
-   <span class="n">field_cov</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">swaths1</span><span class="p">),</span> <span class="s2">&quot; and with all of the swaths &quot;</span><span class="p">,</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The field coverage with swath1 is "</span><span class="p">,</span>
+   <span class="n">field_cov</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">swaths1</span><span class="p">),</span> <span class="s2">" and with all of the swaths "</span><span class="p">,</span>
    <span class="n">field_cov</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">swaths3</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -222,12 +222,12 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 <li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
 C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
 Python</li></ul><div class="tab codetab selected" data-id="0">
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The field coverage with sign for all of the swaths is &quot;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"The field coverage with sign for all of the swaths is "</span>
 <span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">field_cov</span><span class="p">.</span><span class="n">computeCostWithMinimizingSign</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 </div><div class="tab codetab" data-id="1">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The field coverage with sign for all of the swaths is &quot;</span><span class="p">,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"The field coverage with sign for all of the swaths is "</span><span class="p">,</span>
    <span class="n">field_cov</span><span class="o">.</span><span class="n">computeCostWithMinimizingSign</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">swaths3</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -243,16 +243,16 @@ C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this
 Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">NSwath</span><span class="w"> </span><span class="n">n_swaths</span><span class="p">;</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The number of swaths with swath1 is &quot;</span>
-<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n_swaths</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; and with all of the swaths &quot;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"The number of swaths with swath1 is "</span>
+<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n_swaths</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" and with all of the swaths "</span>
 <span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n_swaths</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 </div><div class="tab codetab" data-id="1">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n_swaths</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">OBJ_NSwath</span><span class="p">();</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number of swaths with swath1 is &quot;</span><span class="p">,</span>
-  <span class="n">n_swaths</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths1</span><span class="p">),</span> <span class="s2">&quot; and with all of the swaths &quot;</span><span class="p">,</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The number of swaths with swath1 is "</span><span class="p">,</span>
+  <span class="n">n_swaths</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths1</span><span class="p">),</span> <span class="s2">" and with all of the swaths "</span><span class="p">,</span>
   <span class="n">n_swaths</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">swaths3</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -265,16 +265,16 @@ C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this
 Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">NSwathModified</span><span class="w"> </span><span class="n">n_swaths_mod</span><span class="p">;</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The number of swaths with swath1 is &quot;</span>
-<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n_swaths_mod</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; and with all of the swaths &quot;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"The number of swaths with swath1 is "</span>
+<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n_swaths_mod</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" and with all of the swaths "</span>
 <span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n_swaths_mod</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 </div><div class="tab codetab" data-id="1">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n_swaths_mod</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">OBJ_NSwathModified</span><span class="p">();</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number of swaths with swath1 is &quot;</span><span class="p">,</span>
-  <span class="n">n_swaths_mod</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths1</span><span class="p">),</span> <span class="s2">&quot; and with all of the swaths &quot;</span><span class="p">,</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The number of swaths with swath1 is "</span><span class="p">,</span>
+  <span class="n">n_swaths_mod</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths1</span><span class="p">),</span> <span class="s2">" and with all of the swaths "</span><span class="p">,</span>
   <span class="n">n_swaths_mod</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">swaths3</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -290,16 +290,16 @@ C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this
 Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">Overlaps</span><span class="w"> </span><span class="n">overlaps</span><span class="p">;</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The field overlapping with swath1 is &quot;</span>
-<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">overlaps</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; and with all of the swaths &quot;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"The field overlapping with swath1 is "</span>
+<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">overlaps</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" and with all of the swaths "</span>
 <span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">overlaps</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 </div><div class="tab codetab" data-id="1">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">overlaps</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">OBJ_Overlaps</span><span class="p">();</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The field overlapping with swath1 is &quot;</span><span class="p">,</span>
-    <span class="n">overlaps</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">swaths1</span><span class="p">),</span> <span class="s2">&quot; and with all of the swaths &quot;</span><span class="p">,</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The field overlapping with swath1 is "</span><span class="p">,</span>
+    <span class="n">overlaps</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">swaths1</span><span class="p">),</span> <span class="s2">" and with all of the swaths "</span><span class="p">,</span>
     <span class="n">overlaps</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">swaths3</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -315,15 +315,15 @@ C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this
 Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">SwathLength</span><span class="w"> </span><span class="n">swath_length</span><span class="p">;</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The swath length with swath1 is &quot;</span>
-<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">swath_length</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; and with all of the swaths &quot;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"The swath length with swath1 is "</span>
+<span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">swath_length</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" and with all of the swaths "</span>
 <span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">swath_length</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">F2CSwaths</span><span class="p">({</span><span class="n">swath1</span><span class="p">,</span><span class="w"> </span><span class="n">swath2</span><span class="p">,</span><span class="w"> </span><span class="n">swath3</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 </div><div class="tab codetab" data-id="1">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">swath_length</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">OBJ_SwathLength</span><span class="p">();</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The swath length with swath1 is &quot;</span>
-    <span class="n">swath_length</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">swaths1</span><span class="p">),</span> <span class="s2">&quot; and with all of the swaths &quot;</span><span class="p">,</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The swath length with swath1 is "</span>
+    <span class="n">swath_length</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">swaths1</span><span class="p">),</span> <span class="s2">" and with all of the swaths "</span><span class="p">,</span>
     <span class="n">swath_length</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">swaths3</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -348,8 +348,8 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 <span class="linenos"> 6</span>
 <span class="linenos"> 7</span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">CompleteTurnPathObj</span><span class="o">&lt;</span><span class="n">f2c</span><span class="o">::</span><span class="n">pp</span><span class="o">::</span><span class="n">DubinsCurves</span><span class="o">&gt;</span><span class="w"> </span><span class="n">complete_length</span><span class="p">(</span><span class="n">robot</span><span class="p">);</span>
 <span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The complete length is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">complete_length</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span>
-<span class="linenos">10</span><span class="w">  </span><span class="s">&quot; =~= &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">M_PI</span><span class="o">/</span><span class="mf">2.0</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos"> 9</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"The complete length is: "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">complete_length</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span>
+<span class="linenos">10</span><span class="w">  </span><span class="s">" =~= "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">M_PI</span><span class="o">/</span><span class="mf">2.0</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 </div><div class="tab codetab" data-id="1">
@@ -363,8 +363,8 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 <span class="linenos"> 8</span><span class="n">robot</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Robot</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">);</span>
 <span class="linenos"> 9</span><span class="n">robot</span><span class="o">.</span><span class="n">setMinTurningRadius</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span>
 <span class="linenos">10</span><span class="n">complete_length</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">OBJ_CompleteTurnPathObj_Dubins</span><span class="p">(</span><span class="n">robot</span><span class="p">);</span>
-<span class="linenos">11</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The complete length is: &quot;</span><span class="p">,</span> <span class="n">complete_length</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">),</span>
-<span class="linenos">12</span>  <span class="s2">&quot; =~= &quot;</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">);</span>
+<span class="linenos">11</span><span class="nb">print</span><span class="p">(</span><span class="s2">"The complete length is: "</span><span class="p">,</span> <span class="n">complete_length</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">),</span>
+<span class="linenos">12</span>  <span class="s2">" =~= "</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></div><p><em>The complete length is: 3.57166 =~= 3.5708</em></p>
@@ -381,13 +381,13 @@ C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this
 Python</li></ul><div class="tab codetab selected" data-id="0">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">DirectDistPathObj</span><span class="w"> </span><span class="n">direct_dist</span><span class="p">;</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The aproximated length is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"The aproximated length is: "</span><span class="w"> </span><span class="o">&lt;&lt;</span>
 <span class="w">  </span><span class="n">direct_dist</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 </div><div class="tab codetab" data-id="1">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">direct_dist</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">OBJ_DirectDistPathObj</span><span class="p">();</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The aproximated length is: &quot;</span><span class="p">,</span> <span class="n">direct_dist</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">));</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The aproximated length is: "</span><span class="p">,</span> <span class="n">direct_dist</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">));</span>
 </pre></div>
 </div>
 </div></div><p><em>The aproximated length is: 3</em></p>
@@ -408,7 +408,7 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 <span class="n">path</span><span class="p">.</span><span class="n">appendSwath</span><span class="p">(</span><span class="n">swaths_path</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
 
 <span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">PathLength</span><span class="w"> </span><span class="n">path_length</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The path length is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"The path length is: "</span><span class="w"> </span><span class="o">&lt;&lt;</span>
 <span class="w">    </span><span class="n">path_length</span><span class="p">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -418,7 +418,7 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 <span class="n">path</span><span class="o">.</span><span class="n">appendSwath</span><span class="p">(</span><span class="n">swaths_path</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
 
 <span class="n">path_length</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">OBJ_PathLength</span><span class="p">();</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The path length is: &quot;</span><span class="p">,</span> <span class="n">path_length</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">path</span><span class="p">));</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The path length is: "</span><span class="p">,</span> <span class="n">path_length</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">path</span><span class="p">));</span>
 </pre></div>
 </div>
 </div></div><p><em>The path length is: 3</em></p>
