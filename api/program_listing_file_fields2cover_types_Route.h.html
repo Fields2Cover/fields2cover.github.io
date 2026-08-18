@@ -93,6 +93,7 @@
 <span class="cp">#define FIELDS2COVER_TYPES_ROUTE_H_</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ogr_geometry.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numeric&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;optional&gt;</span>
@@ -143,6 +144,9 @@
 <span class="w">  </span><span class="n">LineString</span><span class="w"> </span><span class="nf">asLineString</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
 <span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">reverse</span><span class="p">();</span>
+
 <span class="w">  </span><span class="n">Route</span><span class="w"> </span><span class="nf">clone</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 
 <span class="w"> </span><span class="k">private</span><span class="o">:</span>

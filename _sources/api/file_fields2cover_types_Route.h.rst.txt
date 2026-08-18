@@ -30,6 +30,8 @@ Includes
 --------
 
 
+- ``algorithm``
+
 - ``fields2cover/types/Graph2D.h`` (:ref:`file_fields2cover_types_Graph2D.h`)
 
 - ``fields2cover/types/LineString.h`` (:ref:`file_fields2cover_types_LineString.h`)

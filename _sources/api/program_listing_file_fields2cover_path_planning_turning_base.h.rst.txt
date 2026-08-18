@@ -42,6 +42,8 @@ Program Listing for File turning_base.h
      virtual F2CPath createSimpleTurn(const F2CRobot& robot, double dist_start_pos,
          double start_angle, double end_angle) = 0;
    
+     virtual bool hasContinuousCurvature() const;
+   
      static std::vector<double> transformToNormalTurn(const F2CPoint& start_pos,
          double start_angle, const F2CPoint& end_pos, double end_angle);
    

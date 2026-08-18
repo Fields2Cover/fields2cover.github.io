@@ -21,6 +21,7 @@ Program Listing for File Route.h
    #define FIELDS2COVER_TYPES_ROUTE_H_
    
    #include <ogr_geometry.h>
+   #include <algorithm>
    #include <vector>
    #include <numeric>
    #include <optional>
@@ -71,6 +72,9 @@ Program Listing for File Route.h
      LineString asLineString() const;
    
      bool isEmpty() const;
+   
+     void reverse();
+   
      Route clone() const;
    
     private:
