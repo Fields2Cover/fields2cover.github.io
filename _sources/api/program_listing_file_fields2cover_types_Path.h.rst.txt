@@ -87,6 +87,12 @@ Program Listing for File Path.h
      double length(void) const;
    
      void appendSwath(const Swath& swath, double cruise_speed);
+     void appendSwath(const Swath& swath, double cruise_speed, PathSectionType type);
+   
+     void appendStraight(const Point& start, const Point& end,
+         double cruise_speed, PathSectionType type);
+   
+     double maxDistanceTo(const LineString& line) const;
    
      PathState at(double t) const;
      Point atStart() const;

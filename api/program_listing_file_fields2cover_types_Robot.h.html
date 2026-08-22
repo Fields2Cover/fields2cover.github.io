@@ -141,6 +141,45 @@
 <span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getMaxDiffCurv</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMaxDiffCurv</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
 
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getSmoothTurningRadius</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getTurnRadius</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">sweep</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">continuous</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getMaxCornerCut</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMaxCornerCut</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getDirectHopMaxDev</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setDirectHopMaxDev</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getUturnMaxHop</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setUturnMaxHop</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getTrackSimplifyTol</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTrackSimplifyTol</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getReversalSweep</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setReversalSweep</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getTurnSlack</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTurnSlack</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getMinSweep</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMinSweep</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getLegShare</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setLegShare</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getRadiusMargin</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setRadiusMargin</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getMinBackoffRadii</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMinBackoffRadii</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getUturnReachRadii</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setUturnReachRadii</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="nf">getMaxCornerSpan</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMaxCornerSpan</span><span class="p">(</span><span class="kt">size_t</span><span class="p">);</span>
+
 <span class="w"> </span><span class="k">private</span><span class="o">:</span>
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name_</span><span class="p">;</span>
 
@@ -154,6 +193,20 @@
 <span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">linear_curv_change_</span><span class="w"> </span><span class="p">{</span><span class="mf">0.3</span><span class="p">};</span><span class="w">  </span><span class="c1">// [1/m^2]</span>
 
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">turn_vel_</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">max_corner_cut_</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">direct_hop_max_dev_</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uturn_max_hop_</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">track_simplify_tol_</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">reversal_sweep_</span><span class="w"> </span><span class="p">{</span><span class="mf">2.0</span><span class="p">};</span><span class="w">  </span><span class="c1">// [rad]</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">turn_slack_</span><span class="w"> </span><span class="p">{</span><span class="mf">1.0</span><span class="p">};</span><span class="w">  </span><span class="c1">// [rad]</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">min_sweep_</span><span class="w"> </span><span class="p">{</span><span class="mf">0.05</span><span class="p">};</span><span class="w">  </span><span class="c1">// [rad]</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">leg_share_</span><span class="w"> </span><span class="p">{</span><span class="mf">0.5</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">radius_margin_</span><span class="w"> </span><span class="p">{</span><span class="mf">1.2</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">min_backoff_radii_</span><span class="w"> </span><span class="p">{</span><span class="mf">0.5</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">uturn_reach_radii_</span><span class="w"> </span><span class="p">{</span><span class="mf">4.0</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">max_corner_span_</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">};</span>
 <span class="p">};</span>
 
 <span class="p">}</span><span class="w">  </span><span class="c1">// namespace f2c::types</span>

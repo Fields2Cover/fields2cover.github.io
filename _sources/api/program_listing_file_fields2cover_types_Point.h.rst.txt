@@ -84,6 +84,7 @@ Program Listing for File Point.h
      static double getAngleFromPoints(
          const Point& p1, const Point& p2, const Point& p3);
      Point getPointFromAngle(double angle, double dist) const;
+     Point getPointAlong(const Point& to, double dist) const;
    
      Point rotateFromPoint(double angle, const Point& p_r) const;
    
