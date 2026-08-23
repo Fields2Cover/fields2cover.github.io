@@ -86,6 +86,18 @@
 <span class="target" id="md____w_Fields2Cover_Fields2Cover_CHANGELOG"></span><em><span class="pre">page</span></em> <span class="sig-name descname"><span class="pre">Changelog</span></span></dt>
 <dd><p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a class="reference external" href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>, and this project adheres to <a class="reference external" href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<p><em>[Unreleased]</em></p>
+<p><em>Added</em></p>
+<p><ul class="simple">
+<li><p>Python module is built as a proper package with scikit-build-core (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code>); version is taken from <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> and exposed as <code class="docutils literal notranslate"><span class="pre">fields2cover.__version__</span></code>.</p></li>
+</ul>
+</p>
+<p><em>Changed</em></p>
+<p><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--install</span></code> places the python module in the interpreter’s site-packages instead of calling <code class="docutils literal notranslate"><span class="pre">setup.py</span> <span class="pre">install</span></code>.</p></li>
+<li><p>Building the python module requires CMake &gt;= 3.18 and Python &gt;= 3.9.</p></li>
+</ul>
+</p>
 <p><em>[2.0.0] - 07-02-2024</em></p>
 <p><ul class="simple">
 <li><p>Route planner travelling through the headlands</p></li>

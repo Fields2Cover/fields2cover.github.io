@@ -88,6 +88,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [<span class="nt">Keep a Changelog</span>](<span class="na">https://keepachangelog.com/en/1.0.0/</span>),
 and this project adheres to [<span class="nt">Semantic Versioning</span>](<span class="na">https://semver.org/spec/v2.0.0.html</span>).
 
+<span class="gu">## [Unreleased]</span>
+
+<span class="gu">### Added</span>
+<span class="k">-</span><span class="w"> </span>Python module is built as a proper package with scikit-build-core (<span class="sb">`pip install .`</span>); version is taken from <span class="sb">`CMakeLists.txt`</span> and exposed as <span class="sb">`fields2cover.__version__`</span>.
+
+<span class="gu">### Changed</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`cmake --install`</span> places the python module in the interpreter's site-packages instead of calling <span class="sb">`setup.py install`</span>.
+<span class="k">-</span><span class="w"> </span>Building the python module requires CMake &gt;= 3.18 and Python &gt;= 3.9.
+
 <span class="gu">## [2.0.0] - 07-02-2024</span>
 
 <span class="k">-</span><span class="w"> </span>Route planner travelling through the headlands
