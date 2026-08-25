@@ -55,6 +55,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#compilation">Compilation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#add-it-to-your-projects">Add it to your projects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#compilation-with-python-interface">Compilation with python interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#macos-apple-silicon">macOS (Apple Silicon)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
@@ -89,7 +90,7 @@
              
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
-<p>The Fields2Cover package has only been tested on Ubuntu.
+<p>The Fields2Cover package has only been tested on Ubuntu and on macOS (Apple Silicon).
 If you are able to run it in other operative systems, open an issue/PR and it will be added to this guide</p>
 <section id="requirements-on-linux">
 <h2>Requirements on Linux<a class="headerlink" href="#requirements-on-linux" title="Link to this heading"></a></h2>
@@ -151,6 +152,40 @@ route below is still available.</p>
 </div>
 <p>To test if the compilation and installation of the python interface is correct, run on python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">fields2cover</span>
+</pre></div>
+</div>
+</section>
+<section id="macos-apple-silicon">
+<h2>macOS (Apple Silicon)<a class="headerlink" href="#macos-apple-silicon" title="Link to this heading"></a></h2>
+<p>Some packages are needed before compiling the package:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brew install cmake swig gdal geos or-tools tinyxml2 eigen tbb boost gnuplot googletest</span>
+</pre></div>
+</div>
+<p>Then, from the source code folder of the project:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir -p build;</span>
+<span class="go">cd build;</span>
+<span class="go">cmake -DCMAKE_PREFIX_PATH="$(brew --prefix)" -DPython_EXECUTABLE="$(which python3)" ..;</span>
+<span class="go">make -j$(sysctl -n hw.ncpu);</span>
+<span class="go">sudo make install;</span>
+</pre></div>
+</div>
+<p>For the python interface, either install with pip (or-tools must be discoverable through <code class="docutils literal notranslate"><span class="pre">CMAKE_PREFIX_PATH</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">CMAKE_PREFIX_PATH="$(brew --prefix)" pip install .</span>
+</pre></div>
+</div>
+<p>or use the manual cmake route, adjusting the BUILD_PYTHON option of the existing build:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd build;</span>
+<span class="go">cmake -DBUILD_PYTHON=ON -DPython_EXECUTABLE="$(which python3)" ..;</span>
+<span class="go">make -j$(sysctl -n hw.ncpu);</span>
+<span class="go">sudo make install;</span>
+</pre></div>
+</div>
+<p>To test if the compilation and installation of the python interface is correct, run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 -c "import fields2cover as f2c; print(f2c.__version__)"</span>
+</pre></div>
+</div>
+<p>Or run the tests on the main folder as:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 -m pytest tests/python/</span>
 </pre></div>
 </div>
 </section>
