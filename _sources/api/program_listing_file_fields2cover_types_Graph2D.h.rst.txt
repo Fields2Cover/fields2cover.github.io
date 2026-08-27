@@ -52,6 +52,8 @@ Program Listing for File Graph2D.h
      size_t numNodes() const;
      std::vector<Point> getNodes() const;
    
+     bool hasNode(const Point& p) const;
+   
      size_t nodeToIndex(const Point& p) const;
      Point indexToNode(size_t id) const;
    

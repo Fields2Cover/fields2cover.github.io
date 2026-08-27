@@ -22,6 +22,7 @@ Program Listing for File Graph.h
    
    #include <cstdint>
    #include <vector>
+   #include <unordered_set>
    #include <functional>
    #include <utility>
    #include <unordered_map>
@@ -42,7 +43,12 @@ Program Listing for File Graph.h
      Graph& removeDirectedEdge(size_t from, size_t to);
      Graph& removeEdge(size_t i, size_t j);
    
+     std::unordered_set<size_t> getNodes() const;
+   
      size_t numNodes() const;
+   
+     size_t matrixSize() const;
+   
      size_t numEdges() const;
      map_to_map_to_int getEdges() const;
    

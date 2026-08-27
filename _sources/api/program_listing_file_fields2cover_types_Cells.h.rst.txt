@@ -93,6 +93,8 @@ Program Listing for File Cells.h
    
      const Cell getCellWherePoint(const Point& p) const;
    
+     const Cell getCellWherePoint(const Point& p, double d_tol) const;
+   
      LineString createLineUntilBorder(
          const f2c::types::Point& p, double ang) const;
    
