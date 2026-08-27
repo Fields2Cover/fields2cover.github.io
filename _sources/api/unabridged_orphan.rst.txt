@@ -300,6 +300,11 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_RELEASING.md.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_fields2cover_objectives_hg_obj_rem_area.h.rst
 
 .. toctree::
@@ -420,6 +425,11 @@ Pages
    :maxdepth: 5
 
    page_md____w_Fields2Cover_Fields2Cover_CODE_OF_CONDUCT.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   page_md____w_Fields2Cover_Fields2Cover_RELEASING.rst
 
 .. toctree::
    :maxdepth: 5

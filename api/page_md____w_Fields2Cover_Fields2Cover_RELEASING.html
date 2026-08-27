@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Releasing &mdash; Fields2Cover latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/code-tabs.css?v=1bc26e2f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://fields2cover.github.io/api/page_md____w_Fields2Cover_Fields2Cover_RELEASING.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-tabs.js?v=c983d12e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_fields2cover.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Fields2Cover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../source/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="f2c_library.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fields2Cover</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Releasing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/page_md____w_Fields2Cover_Fields2Cover_RELEASING.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="releasing">
+<span id="page-md-w-fields2cover-fields2cover-releasing"></span><h1>Releasing<a class="headerlink" href="#releasing" title="Link to this heading"></a></h1>
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="md____w_Fields2Cover_Fields2Cover_RELEASING"></span><em><span class="pre">page</span></em> <span class="sig-name descname"><span class="pre">Releasing</span></span></dt>
+<dd><p><em>Python package on PyPI</em></p>
+<p>One-time setup (project owner):</p>
+<p><ol class="arabic simple">
+<li><p>Create the <code class="docutils literal notranslate"><span class="pre">fields2cover</span></code> project on <a class="reference external" href="https://pypi.org">https://pypi.org</a> and <a class="reference external" href="https://test.pypi.org">https://test.pypi.org</a> (first upload creates it; alternatively register a <em>pending publisher</em>).</p></li>
+<li><p>On both, add a <strong>Trusted Publisher</strong>: owner <code class="docutils literal notranslate"><span class="pre">Fields2Cover</span></code>, repository <code class="docutils literal notranslate"><span class="pre">Fields2Cover</span></code>, workflow <code class="docutils literal notranslate"><span class="pre">pypi.yml</span></code>, environment <code class="docutils literal notranslate"><span class="pre">pypi</span></code> (resp. <code class="docutils literal notranslate"><span class="pre">testpypi</span></code>).</p></li>
+<li><p>In the GitHub repository create the environments <code class="docutils literal notranslate"><span class="pre">pypi</span></code> and <code class="docutils literal notranslate"><span class="pre">testpypi</span></code> (Settings → Environments). Optionally require reviewers for <code class="docutils literal notranslate"><span class="pre">pypi</span></code>.</p></li>
+</ol>
+</p>
+<p>Per release:</p>
+<p><ol class="arabic simple">
+<li><p>Make sure <code class="docutils literal notranslate"><span class="pre">CHANGELOG.md</span></code> has an <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">[Unreleased]</span></code> section describing the release; it becomes the release notes.</p></li>
+<li><p>Optional dry run: <em>Actions → PyPI → Run workflow → target: testpypi</em>, then <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--index-url</span>  <span class="pre">fields2cover</span></code>.</p></li>
+<li><p>From an up-to-date, clean <code class="docutils literal notranslate"><span class="pre">main</span></code> run <code class="docutils literal notranslate"><span class="pre">./release.sh</span> <span class="pre">X.Y.Z</span></code> (needs the GitHub CLI, <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">auth</span> <span class="pre">login</span></code>). It bumps the version in <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">package.xml</span></code>, turns <code class="docutils literal notranslate"><span class="pre">[Unreleased]</span></code> into the <code class="docutils literal notranslate"><span class="pre">[X.Y.Z]</span></code> section, shows the diff and — after confirmation — commits, pushes and publishes the GitHub release <code class="docutils literal notranslate"><span class="pre">vX.Y.Z</span></code>. The same steps can be done by hand; publishing the release is what triggers the upload.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> workflow builds the sdist, installs it in a clean container and uploads it. If the <code class="docutils literal notranslate"><span class="pre">pypi</span></code> environment requires reviewers, approve the deployment in the running workflow. The workflow refuses to publish when <code class="docutils literal notranslate"><span class="pre">package.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> disagree or when the tag does not match <code class="docutils literal notranslate"><span class="pre">VERSION</span></code> in <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>.</p></li>
+<li><p>A published PyPI release cannot be replaced or re-uploaded. If a release turns out to be broken, release a patch version the same way. </p></li>
+</ol>
+</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2024, Wageningen University.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #D0F1C6; */
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      /* background: #ff0000; */
+    }
+  </style>
+
+
+</body>
+</html>
