@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fields2Cover &mdash; Fields2Cover latest documentation</title>
+  <title>Fields2Cover &mdash; Fields2Cover 2.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
@@ -17,7 +17,7 @@
     <link rel="canonical" href="https://fields2cover.github.io/index.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="_static/documentation_options.js?v=20623aea"></script>
       <script src="_static/doctools.js?v=888ff710"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/code-tabs.js?v=c983d12e"></script>
@@ -32,6 +32,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
+    
 
           
           
@@ -46,14 +47,30 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
+    <div class="version">v2.1.0</div>
+  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Fields2Cover</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="source/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source/quick_start.html">Quick Start</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="source/tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="source/migration_to_v2.html">Migration guide to version 2.0</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="source/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="api/f2c_library.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Migration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="source/migration_to_v2.html">Migration guide to version 2.0</a></li>
 </ul>
 
         </div>
@@ -86,45 +103,47 @@
 <div><p><strong>Robust and efficient coverage paths for autonomous agricultural vehicles</strong></p>
 </div></blockquote>
 <img alt="_images/logo_fields2cover.jpeg" class="align-center" src="_images/logo_fields2cover.jpeg" />
-<p><a class="reference external" href="https://github.com/Fields2Cover/Fields2Cover">The github repository is here</a>.</p>
-<p>The Coverage Path Planning problem (CPP) aims to create a path to cover an area with one or several vehicles.</p>
+<p>Fields2Cover is an open-source C++ library with Python bindings that solves
+the Coverage Path Planning problem for agriculture: given a field and a
+vehicle, it computes a complete coverage path — headlands, swaths, an
+optimized route, and a drivable path with feasible turns.</p>
+<p>It also provides a common, extensible framework to implement and compare
+coverage path planning algorithms: there are many papers on the topic, but
+almost no code, so anyone researching it has to re-implement every algorithm
+they want to compare against. Fields2Cover splits the problem into modules,
+each solving one part of it, so algorithms can be combined, replaced and
+benchmarked against each other:</p>
 <a class="reference internal image-reference" href="_images/diagram-F2C.jpg"><img alt="_images/diagram-F2C.jpg" class="align-center" src="_images/diagram-F2C.jpg" style="width: 500px;" /></a>
-<p>Although the development of this project is focused on offline planning of agricultural vehicles,
-the library accepts pull requests from other types of coverage planners.</p>
-<section id="f2c-version-2-0">
-<h2>F2C version 2.0<a class="headerlink" href="#f2c-version-2-0" title="Link to this heading"></a></h2>
-<p>The version 2.0 of Fields2Cover comes with support for non-convex fields and fields with obstacles!! This has been huge request from the community and finally it’s here.</p>
-<p>A quick list of new additions to the library:</p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="source/tutorials/decomposition.html#tutorial-decomp"><span class="std std-ref">Decomposition algorithms</span></a>:</p>
-<ul class="simple">
-<li><p>Trapezoidal and Boustrophedon decomposition. Those algorithms are useful to split any concave field into several convex sub-fields.</p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="source/tutorials/route_planning.html#tutorial-route"><span class="std std-ref">Route planner</span></a>:</p>
-<ul class="simple">
-<li><p>Route optimizer using <a class="reference external" href="https://developers.google.com/optimization">OR-tools</a> can be used to order the swaths, instead of just using a known pattern.</p></li>
-<li><p>Support for a point used as the start and end points of the route.</p></li>
-</ul>
-</li>
-<li><p>Path planner:</p>
-<ul class="simple">
-<li><p>Support for routes provided by the route optimizer.</p></li>
-</ul>
-</li>
-<li><p>Swath generator:</p>
-<ul class="simple">
-<li><p>Speed improvement on swath generation.</p></li>
-<li><p>New cost function: <code class="docutils literal notranslate"><span class="pre">NSwathModified</span></code>. It uses an approximation to compute the number of swaths, reducing computation costs.</p></li>
-</ul>
-</li>
-<li><p>Many bugs fixed.</p></li>
-</ol>
-<p>For a little guide about the migration, please check: <a class="reference internal" href="source/migration_to_v2.html#migration-guide"><span class="std std-ref">Migration guide to version 2.0</span></a>.</p>
+<p>Although the development of this project is focused on offline planning of
+agricultural vehicles, the library accepts pull requests from other types of
+coverage planners.</p>
+<p>The source code is hosted on <a class="reference external" href="https://github.com/Fields2Cover/Fields2Cover">GitHub</a>.</p>
+<p>New here? Start with the <a class="reference internal" href="source/installation.html"><span class="doc">installation guide</span></a> and
+the <a class="reference internal" href="source/quick_start.html"><span class="doc">Quick Start</span></a>, then work through the
+<a class="reference internal" href="source/tutorials.html"><span class="doc">tutorials</span></a>.</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<section id="contribute">
+<h2>Contribute<a class="headerlink" href="#contribute" title="Link to this heading"></a></h2>
+<p>If you find any issue/bug/proposal, <a class="reference external" href="https://github.com/Fields2Cover/Fields2Cover/issues">open an issue</a> and we will try to
+solve/discuss it. Pull requests are more than welcome. For major changes,
+please open an issue first to discuss what you would like to change. Please
+make sure to update tests as appropriate.</p>
 </section>
 <section id="citing">
 <h2>Citing<a class="headerlink" href="#citing" title="Link to this heading"></a></h2>
-<p>Please cite <a class="reference external" href="https://ieeexplore.ieee.org/document/10050562">the following paper</a> when using Fields2Cover for your research:</p>
+<p>Please cite <a class="reference external" href="https://ieeexplore.ieee.org/document/10050562">this paper</a>
+when using Fields2Cover for your research:</p>
 <div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">Mier_Fields2Cover_An_open-source_2023</span><span class="p">,</span>
 <span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Mier, Gonzalo and Valente, João and de Bruin, Sytze}</span><span class="p">,</span>
 <span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{IEEE Robotics and Automation Letters}</span><span class="p">,</span>
@@ -138,61 +157,9 @@ the library accepts pull requests from other types of coverage planners.</p>
 </pre></div>
 </div>
 </section>
-<section id="more-information">
-<h2>More information<a class="headerlink" href="#more-information" title="Link to this heading"></a></h2>
-<div class="toctree-wrapper compound">
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Fields2Cover</a></li>
-<li class="toctree-l1"><a class="reference internal" href="source/installation.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="source/installation.html#requirements-on-linux">Requirements on Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/installation.html#compilation">Compilation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/installation.html#add-it-to-your-projects">Add it to your projects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/installation.html#compilation-with-python-interface">Compilation with python interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/installation.html#macos-apple-silicon">macOS (Apple Silicon)</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="source/tutorials.html">Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="source/tutorials/basic_types.html">Part 1: Basic types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/tutorials/objective_functions.html">Part 2: Objective functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/tutorials/headland_generator.html">Part 3: Headland generator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/tutorials/swath_generator.html">Part 4: Swath generator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/tutorials/route_planning.html">Part 5: Route planning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/tutorials/path_planning.html">Part 6: Path planning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/tutorials/decomposition.html">Part 7: Cell Decomposition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/tutorials/complete_flow.html">Part 8: Complete flow</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="source/migration_to_v2.html">Migration guide to version 2.0</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="source/migration_to_v2.html#new-classes-and-new-functionalities">New classes and new functionalities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/migration_to_v2.html#renaming-functions">Renaming functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/migration_to_v2.html#renaming-files">Renaming files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/migration_to_v2.html#class-attributes-are-private-now">Class attributes are private now</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/migration_to_v2.html#visualizer">Visualizer</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="source/faq.html">FAQ</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="source/faq.html#is-fields2cover-only-focused-on-agriculture-ugv">Is Fields2Cover only focused on agriculture/UGV?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="source/faq.html#how-frequently-is-the-library-updated">How frequently is the library updated?</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="api/f2c_library.html">API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/f2c_library.html#page-hierarchy">Page Hierarchy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/f2c_library.html#class-hierarchy">Class Hierarchy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/f2c_library.html#file-hierarchy">File Hierarchy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/f2c_library.html#full-api">Full API</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</section>
-<section id="contribute">
-<h2>Contribute<a class="headerlink" href="#contribute" title="Link to this heading"></a></h2>
-<p>If you find any issue/bug/proposal, open an issue and we will try to solve/discuss it.</p>
-<p>Pull requests are more than welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropriate.</p>
-</section>
 <section id="license">
 <h2>License<a class="headerlink" href="#license" title="Link to this heading"></a></h2>
-<p>Fields2Cover project is under <a class="reference external" href="https://tldrlegal.com/license/bsd-3-clause-license-%28revised%29">BSD-3 license</a>.</p>
+<p>Fields2Cover is released under the <a class="reference external" href="https://github.com/Fields2Cover/Fields2Cover/blob/main/LICENSE">BSD-3 license</a>.</p>
 </section>
 </section>
 
@@ -229,6 +196,10 @@ the library accepts pull requests from other types of coverage planners.</p>
     /* Sidebar header (and topbar for mobile) */
     .wy-side-nav-search, .wy-nav-top {
       background: #D0F1C6; */
+    }
+    /* Version under the logo: black for contrast on the light background */
+    .wy-side-nav-search .version {
+      color: #000;
     }
     /* Sidebar */
     .wy-nav-side {

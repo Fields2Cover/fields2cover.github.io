@@ -90,11 +90,6 @@ Files
 .. toctree::
    :maxdepth: 5
 
-   file_blog_posts.md.rst
-
-.. toctree::
-   :maxdepth: 5
-
    file_fields2cover_decomposition_boustrophedon_decomp.h.rst
 
 .. toctree::
@@ -410,11 +405,6 @@ Files
 Pages
 *****
 
-
-.. toctree::
-   :maxdepth: 5
-
-   page_md____w_Fields2Cover_Fields2Cover_blog_posts.rst
 
 .. toctree::
    :maxdepth: 5
