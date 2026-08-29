@@ -9,10 +9,11 @@ Class HeadlandGeneratorBase
 Inheritance Relationships
 -------------------------
 
-Derived Type
-************
+Derived Types
+*************
 
 - ``public f2c::hg::ConstHL`` (:ref:`exhale_class_classf2c_1_1hg_1_1ConstHL`)
+- ``public f2c::hg::CorridorHL`` (:ref:`exhale_class_classf2c_1_1hg_1_1CorridorHL`)
 
 
 Class Documentation

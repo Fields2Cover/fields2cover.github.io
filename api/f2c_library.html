@@ -112,6 +112,7 @@
 <li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1DecompositionBase.html">Class DecompositionBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classf2c_1_1decomp_1_1TrapezoidalDecomp.html">Class TrapezoidalDecomp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1ConstHL.html">Class ConstHL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1CorridorHL.html">Class CorridorHL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html">Class HeadlandGeneratorBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1BaseObjective.html">Template Class BaseObjective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classf2c_1_1obj_1_1CompleteTurnPathObj.html">Template Class CompleteTurnPathObj</a></li>
@@ -192,6 +193,7 @@
 <li class="toctree-l4"><a class="reference internal" href="define_trapezoidal__decomp_8h_1a3ae18af43ca97ce447daf3ae91255290.html">Define FIELDS2COVER_DECOMPOSITION_TRAPEZOIDAL_DECOMP_H_</a></li>
 <li class="toctree-l4"><a class="reference internal" href="define_fields2cover_8h_1af7fc1cc1535da3b5fff4fd8e656ab01f.html">Define FIELDS2COVER_H_</a></li>
 <li class="toctree-l4"><a class="reference internal" href="define_constant__headland_8h_1a6b4e5db40f9da7cbe0987122bbba1f6a.html">Define FIELDS2COVER_HEADLAND_GENERATOR_CONSTANT_HEADLAND_H_</a></li>
+<li class="toctree-l4"><a class="reference internal" href="define_corridor__headland_8h_1af5bc7632ede9a93c04aac6fd12770fff.html">Define FIELDS2COVER_HEADLAND_GENERATOR_CORRIDOR_HEADLAND_H_</a></li>
 <li class="toctree-l4"><a class="reference internal" href="define_headland__generator__base_8h_1abeb813793f42074d9c9ce3cec13ad7e0.html">Define FIELDS2COVER_HEADLAND_GENERATOR_HEADLAND_GENERATOR_BASE_H_</a></li>
 <li class="toctree-l4"><a class="reference internal" href="define_base__objective_8h_1a0caa0d08c07d94284adcfe27b4189c01.html">Define FIELDS2COVER_OBJECTIVES_BASE_OBJECTIVE_H_</a></li>
 <li class="toctree-l4"><a class="reference internal" href="define_complete__turn__path__obj_8h_1a117f9c8677880459118d5897b8079edb.html">Define FIELDS2COVER_OBJECTIVES_COMPLETE_TURN_PATH_OBJ_H_</a></li>
@@ -337,6 +339,7 @@
 <li><dl class="simple">
 <dt><a class="reference internal" href="namespace_f2c__hg.html#namespace-f2c-hg"><span class="std std-ref">Namespace f2c::hg</span></a></dt><dd><ul>
 <li><p><a class="reference internal" href="classf2c_1_1hg_1_1ConstHL.html#exhale-class-classf2c-1-1hg-1-1consthl"><span class="std std-ref">Class ConstHL</span></a></p></li>
+<li><p><a class="reference internal" href="classf2c_1_1hg_1_1CorridorHL.html#exhale-class-classf2c-1-1hg-1-1corridorhl"><span class="std std-ref">Class CorridorHL</span></a></p></li>
 <li><p><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html#exhale-class-classf2c-1-1hg-1-1headlandgeneratorbase"><span class="std std-ref">Class HeadlandGeneratorBase</span></a></p></li>
 </ul>
 </dd>
@@ -397,9 +400,6 @@
 </li>
 <li><dl class="simple">
 <dt><a class="reference internal" href="namespace_f2c__types.html#namespace-f2c-types"><span class="std std-ref">Namespace f2c::types</span></a></dt><dd><ul>
-<li><p><a class="reference internal" href="enum_namespacef2c_1_1types_1a30a630bb463e5105d6c6f9cf554598b6.html#exhale-enum-namespacef2c-1-1types-1a30a630bb463e5105d6c6f9cf554598b6"><span class="std std-ref">Enum PathDirection</span></a></p></li>
-<li><p><a class="reference internal" href="enum_namespacef2c_1_1types_1a8078cfee08a9e4bb6b9a1d5ea1d867be.html#exhale-enum-namespacef2c-1-1types-1a8078cfee08a9e4bb6b9a1d5ea1d867be"><span class="std std-ref">Enum PathSectionType</span></a></p></li>
-<li><p><a class="reference internal" href="enum_namespacef2c_1_1types_1a2d51e58a920a3c08d60ac19440ad1249.html#exhale-enum-namespacef2c-1-1types-1a2d51e58a920a3c08d60ac19440ad1249"><span class="std std-ref">Enum SwathType</span></a></p></li>
 <li><p><a class="reference internal" href="structf2c_1_1types_1_1Cell.html#exhale-struct-structf2c-1-1types-1-1cell"><span class="std std-ref">Struct Cell</span></a></p></li>
 <li><p><a class="reference internal" href="structf2c_1_1types_1_1Cells.html#exhale-struct-structf2c-1-1types-1-1cells"><span class="std std-ref">Struct Cells</span></a></p></li>
 <li><p><a class="reference internal" href="structf2c_1_1types_1_1Field.html#exhale-struct-structf2c-1-1types-1-1field"><span class="std std-ref">Struct Field</span></a></p></li>
@@ -440,6 +440,9 @@
 <li><p><a class="reference internal" href="classf2c_1_1types_1_1EmptyDestructor.html#exhale-class-classf2c-1-1types-1-1emptydestructor"><span class="std std-ref">Class EmptyDestructor</span></a></p></li>
 <li><p><a class="reference internal" href="classf2c_1_1types_1_1Graph.html#exhale-class-classf2c-1-1types-1-1graph"><span class="std std-ref">Class Graph</span></a></p></li>
 <li><p><a class="reference internal" href="classf2c_1_1types_1_1Graph2D.html#exhale-class-classf2c-1-1types-1-1graph2d"><span class="std std-ref">Class Graph2D</span></a></p></li>
+<li><p><a class="reference internal" href="enum_namespacef2c_1_1types_1a30a630bb463e5105d6c6f9cf554598b6.html#exhale-enum-namespacef2c-1-1types-1a30a630bb463e5105d6c6f9cf554598b6"><span class="std std-ref">Enum PathDirection</span></a></p></li>
+<li><p><a class="reference internal" href="enum_namespacef2c_1_1types_1a8078cfee08a9e4bb6b9a1d5ea1d867be.html#exhale-enum-namespacef2c-1-1types-1a8078cfee08a9e4bb6b9a1d5ea1d867be"><span class="std std-ref">Enum PathSectionType</span></a></p></li>
+<li><p><a class="reference internal" href="enum_namespacef2c_1_1types_1a2d51e58a920a3c08d60ac19440ad1249.html#exhale-enum-namespacef2c-1-1types-1a2d51e58a920a3c08d60ac19440ad1249"><span class="std std-ref">Enum SwathType</span></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -486,6 +489,7 @@
 <li><dl class="simple">
 <dt><a class="reference internal" href="dir_fields2cover_headland_generator.html#dir-fields2cover-headland-generator"><span class="std std-ref">Directory headland_generator</span></a></dt><dd><ul>
 <li><p><a class="reference internal" href="file_fields2cover_headland_generator_constant_headland.h.html#file-fields2cover-headland-generator-constant-headland-h"><span class="std std-ref">File constant_headland.h</span></a></p></li>
+<li><p><a class="reference internal" href="file_fields2cover_headland_generator_corridor_headland.h.html#file-fields2cover-headland-generator-corridor-headland-h"><span class="std std-ref">File corridor_headland.h</span></a></p></li>
 <li><p><a class="reference internal" href="file_fields2cover_headland_generator_headland_generator_base.h.html#file-fields2cover-headland-generator-headland-generator-base-h"><span class="std std-ref">File headland_generator_base.h</span></a></p></li>
 </ul>
 </dd>
@@ -2004,9 +2008,27 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="classf2c_1_1hg_1_1CorridorHL.html">Class CorridorHL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classf2c_1_1hg_1_1CorridorHL.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classf2c_1_1hg_1_1CorridorHL.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classf2c_1_1hg_1_1CorridorHL.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classf2c_1_1hg_1_1CorridorHL.html#_CPPv4N3f2c2hg10CorridorHLE"><code class="docutils literal notranslate"><span class="pre">f2c::hg::CorridorHL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="classf2c_1_1hg_1_1CorridorHL.html#_CPPv4N3f2c2hg10CorridorHL17generateHeadlandsERK8F2CCellsd"><code class="docutils literal notranslate"><span class="pre">generateHeadlands()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="classf2c_1_1hg_1_1CorridorHL.html#_CPPv4N3f2c2hg10CorridorHL20generateHeadlandAreaERK8F2CCellsdi"><code class="docutils literal notranslate"><span class="pre">generateHeadlandArea()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="classf2c_1_1hg_1_1CorridorHL.html#_CPPv4N3f2c2hg10CorridorHL22generateHeadlandSwathsERK8F2CCellsdib"><code class="docutils literal notranslate"><span class="pre">generateHeadlandSwaths()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html">Class HeadlandGeneratorBase</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html#inheritance-relationships">Inheritance Relationships</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html#derived-type">Derived Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html#derived-types">Derived Types</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="classf2c_1_1hg_1_1HeadlandGeneratorBase.html#class-documentation">Class Documentation</a><ul>
@@ -3415,6 +3437,17 @@
 <li class="toctree-l1"><a class="reference internal" href="define_constant__headland_8h_1a6b4e5db40f9da7cbe0987122bbba1f6a.html">Define FIELDS2COVER_HEADLAND_GENERATOR_CONSTANT_HEADLAND_H_</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="define_constant__headland_8h_1a6b4e5db40f9da7cbe0987122bbba1f6a.html#define-documentation">Define Documentation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="define_constant__headland_8h_1a6b4e5db40f9da7cbe0987122bbba1f6a.html#c.FIELDS2COVER_HEADLAND_GENERATOR_CONSTANT_HEADLAND_H_"><code class="docutils literal notranslate"><span class="pre">FIELDS2COVER_HEADLAND_GENERATOR_CONSTANT_HEADLAND_H_</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="define_corridor__headland_8h_1af5bc7632ede9a93c04aac6fd12770fff.html">Define FIELDS2COVER_HEADLAND_GENERATOR_CORRIDOR_HEADLAND_H_</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="define_corridor__headland_8h_1af5bc7632ede9a93c04aac6fd12770fff.html#define-documentation">Define Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="define_corridor__headland_8h_1af5bc7632ede9a93c04aac6fd12770fff.html#c.FIELDS2COVER_HEADLAND_GENERATOR_CORRIDOR_HEADLAND_H_"><code class="docutils literal notranslate"><span class="pre">FIELDS2COVER_HEADLAND_GENERATOR_CORRIDOR_HEADLAND_H_</span></code></a></li>
 </ul>
 </li>
 </ul>

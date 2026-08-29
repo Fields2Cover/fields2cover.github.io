@@ -82,6 +82,8 @@ Included By
 
 - :ref:`file_fields2cover_headland_generator_constant_headland.h`
 
+- :ref:`file_fields2cover_headland_generator_corridor_headland.h`
+
 - :ref:`file_fields2cover_headland_generator_headland_generator_base.h`
 
 - :ref:`file_fields2cover_objectives_base_objective.h`

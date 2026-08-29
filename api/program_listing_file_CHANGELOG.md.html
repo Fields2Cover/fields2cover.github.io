@@ -108,10 +108,17 @@ and this project adheres to [<span class="nt">Semantic Versioning</span>](<span 
 <span class="gu">## [Unreleased]</span>
 
 <span class="gu">### Added</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`f2c::hg::CorridorHL`</span>, a headland generator that opens a corridor where cells border each other instead of shrinking every border. Only the part of an edge a neighbour actually touches is cut, and the corridor comes out of the smaller cell so the larger neighbour keeps its shape; cells of the same size split it evenly. Edges facing the outer boundary or a void are left untouched.
 <span class="k">-</span><span class="w"> </span>Python module is built as a proper package with scikit-build-core (<span class="sb">`pip install .`</span>); version is taken from <span class="sb">`CMakeLists.txt`</span> and exposed as <span class="sb">`fields2cover.__version__`</span>.
 <span class="k">-</span><span class="w"> </span>Source distribution published to PyPI (<span class="sb">`pip install fields2cover`</span>).
 
+<span class="gu">### Fixed</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`F2CCells::getCellBorder`</span>, <span class="sb">`getInteriorRing`</span> and <span class="sb">`addRing`</span> no longer segfault on an empty polygon or an out-of-range index; they throw <span class="sb">`std::out_of_range`</span> like <span class="sb">`getGeometry`</span> does.
+<span class="k">-</span><span class="w"> </span><span class="sb">`NSwathModified::computeCost`</span> read the wrong neighbouring point for the first edge: <span class="sb">`(i - 1) % ring.size()`</span> wraps a <span class="sb">`size_t`</span> to <span class="sb">`SIZE_MAX % n`</span>, which is not the previous vertex. The cost of a polygon now no longer depends on which vertex its ring starts from.
+<span class="k">-</span><span class="w"> </span><span class="sb">`generateBestSwaths`</span> no longer returns an angle that covers nothing. The objectives estimate the cost from the cell border alone, so a cell with a hairline spur could score best on an angle producing no swath at all and was silently left uncovered.
+
 <span class="gu">### Changed</span>
+<span class="k">-</span><span class="w"> </span>The decomposition tutorial carves a corridor between cells instead of running the headland generator a second time, which also shrank the outer boundary.
 <span class="k">-</span><span class="w"> </span><span class="sb">`cmake --install`</span> places the python module in the interpreter's site-packages instead of calling <span class="sb">`setup.py install`</span>.
 <span class="k">-</span><span class="w"> </span>Building the python module requires CMake &gt;= 3.18 and Python &gt;= 3.9.
 
