@@ -28,6 +28,8 @@ Program Listing for File constant_headland.h
    
    class ConstHL : public HeadlandGeneratorBase {
     public:
+     using HeadlandGeneratorBase::generateHeadlands;
+   
      F2CCells generateHeadlands(
        const F2CCells& field, double dist_headland) override;
    

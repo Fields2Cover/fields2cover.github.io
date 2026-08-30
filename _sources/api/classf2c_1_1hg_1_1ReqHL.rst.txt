@@ -1,0 +1,26 @@
+.. _exhale_class_classf2c_1_1hg_1_1ReqHL:
+
+Class ReqHL
+===========
+
+- Defined in :ref:`file_fields2cover_headland_generator_required_headland.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public f2c::hg::HeadlandGeneratorBase`` (:ref:`exhale_class_classf2c_1_1hg_1_1HeadlandGeneratorBase`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: f2c::hg::ReqHL
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

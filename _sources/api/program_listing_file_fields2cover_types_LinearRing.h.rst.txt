@@ -27,6 +27,8 @@ Program Listing for File LinearRing.h
    
    namespace f2c::types {
    
+   struct LineString;
+   
    struct LinearRing : public Geometries<LinearRing, OGRLinearRing, wkbLinearRing,
      Point> {
     public:
@@ -62,6 +64,23 @@ Program Listing for File LinearRing.h
      LinearRing& closeRing();
    
      Point closestPointTo(const Point& p) const;
+   
+     LinearRing& removePoint(size_t i);
+   
+     LineString getSegment(size_t i) const;
+     LineString getLastSegment() const;
+     double segmentLength(size_t i) const;
+     double segmentAng(size_t i) const;
+   
+     LinearRing& filterSelfIntersections();
+   
+     LinearRing getParallelLine(double d) const;
+   
+     LinearRing getParallelLine(const std::vector<double>& d) const;
+   
+     LinearRing& bufferOutwards(const std::vector<double>& d);
+   
+     LinearRing& bufferInwards(const std::vector<double>& d);
    };
    
    

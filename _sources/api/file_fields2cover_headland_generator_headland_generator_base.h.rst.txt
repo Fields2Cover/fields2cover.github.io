@@ -44,6 +44,8 @@ Included By
 
 - :ref:`file_fields2cover_headland_generator_corridor_headland.h`
 
+- :ref:`file_fields2cover_headland_generator_required_headland.h`
+
 - :ref:`file_fields2cover.h`
 
 

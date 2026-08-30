@@ -1,0 +1,58 @@
+
+.. _program_listing_file_fields2cover_headland_generator_required_headland.h:
+
+Program Listing for File required_headland.h
+============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_fields2cover_headland_generator_required_headland.h>` (``fields2cover/headland_generator/required_headland.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   //=============================================================================
+   //    Copyright (C) 2021-2024 Wageningen University - All Rights Reserved
+   //                     Author: Gonzalo Mier
+   //                        BSD-3 License
+   //=============================================================================
+   
+   #pragma once
+   #ifndef FIELDS2COVER_HEADLAND_GENERATOR_REQUIRED_HEADLAND_H_
+   #define FIELDS2COVER_HEADLAND_GENERATOR_REQUIRED_HEADLAND_H_
+   
+   #include <vector>
+   #include "fields2cover/types.h"
+   #include "fields2cover/headland_generator/headland_generator_base.h"
+   
+   namespace f2c::hg {
+   
+   class ReqHL : public HeadlandGeneratorBase {
+    public:
+     F2CCells generateHeadlands(
+       const F2CCell& field, const F2CRobot& robot, double track_ang) override;
+   
+     F2CCells generateHeadlands(
+       const F2CCells& field, const F2CRobot& robot,
+       const std::vector<double>& track_angs) override;
+   
+     F2CCells generateHeadlands(
+       const F2CCells& field, double dist_headland) override;
+   
+     F2CCells generateHeadlandArea(
+       const F2CCells& field, double swath_width, int n_swaths) override;
+   
+     std::vector<F2CCells> generateHeadlandSwaths(
+       const F2CCells& field, double swath_width, int n_swaths,
+       bool dir_out2in = true) override;
+   
+     double requiredHeadlandDist(const F2CRobot& robot,
+         double track_ang, double border_ang) const;
+   
+     std::vector<double> requiredHeadlandDist(const F2CRobot& robot,
+         double track_ang, const F2CLinearRing& ring) const;
+   };
+   
+   }  // namespace f2c::hg
+   
+   
+   #endif  // FIELDS2COVER_HEADLAND_GENERATOR_REQUIRED_HEADLAND_H_

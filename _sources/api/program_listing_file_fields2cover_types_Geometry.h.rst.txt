@@ -89,6 +89,9 @@ Program Listing for File Geometry.h
      bool within(const Geometry<T2, R2>& geom) const;
    
      template <class T2, OGRwkbGeometryType R2>
+     bool contains(const Geometry<T2, R2>& geom) const;
+   
+     template <class T2, OGRwkbGeometryType R2>
      bool intersects(const Geometry<T2, R2>& geom) const;
    
      static double mod_2pi(double val);

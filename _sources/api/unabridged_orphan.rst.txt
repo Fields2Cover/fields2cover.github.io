@@ -310,6 +310,11 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_fields2cover_headland_generator_required_headland.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_fields2cover_types_Robot.h.rst
 
 .. toctree::

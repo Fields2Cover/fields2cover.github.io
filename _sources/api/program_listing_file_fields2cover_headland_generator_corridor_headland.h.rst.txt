@@ -28,6 +28,8 @@ Program Listing for File corridor_headland.h
    
    class CorridorHL : public HeadlandGeneratorBase {
     public:
+     using HeadlandGeneratorBase::generateHeadlands;
+   
      F2CCells generateHeadlands(
        const F2CCells& field, double dist_headland) override;
    

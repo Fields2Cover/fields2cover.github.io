@@ -28,6 +28,15 @@ Program Listing for File headland_generator_base.h
    class HeadlandGeneratorBase {
     public:
      virtual F2CCells generateHeadlands(
+       const F2CCell& field, const F2CRobot& robot, double track_ang);
+   
+     virtual F2CCells generateHeadlands(
+       const F2CCells& field, const F2CRobot& robot,
+       const std::vector<double>& track_angs);
+   
+     double maxHLWidthRequired(const F2CRobot& robot) const;
+   
+     virtual F2CCells generateHeadlands(
        const F2CCells& field, double dist_headland) = 0;
    
      virtual F2CCells generateHeadlandArea(

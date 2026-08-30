@@ -65,6 +65,7 @@
 <li class="toctree-l2"><a class="reference internal" href="objective_functions.html">Part 2: Objective functions</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Part 3: Headland generator</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#constant-width-headland">Constant width headland</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required-width-headland">Required width headland</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="swath_generator.html">Part 4: Swath generator</a></li>
@@ -158,7 +159,41 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 </div>
 </div></div><p><em>The complete area is 10000, and the area without headlands is 7676.63</em></p>
 <img alt="../../_images/Tutorial_3_1_Const_width.png" src="../../_images/Tutorial_3_1_Const_width.png" />
-<p>On orange it is <code class="docutils literal notranslate"><span class="pre">cells</span></code> and in green it is <code class="docutils literal notranslate"><span class="pre">no_hl</span></code></p>
+<p>In blue it is <code class="docutils literal notranslate"><span class="pre">cells</span></code> and in orange it is <code class="docutils literal notranslate"><span class="pre">no_hl</span></code></p>
+</section>
+<section id="required-width-headland">
+<h2>Required width headland<a class="headerlink" href="#required-width-headland" title="Link to this heading"></a></h2>
+<p>A border the swaths run along is only entered, while a border they end on takes a whole turn.
+This class asks each border how much room the robot needs on it, given the angle of the swaths, and leaves the rest to the mainland.
+It takes the robot and one track angle per cell instead of a width.</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">robot</span><span class="p">.</span><span class="n">setMinTurningRadius</span><span class="p">(</span><span class="mf">8.0</span><span class="p">);</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">hg</span><span class="o">::</span><span class="n">ReqHL</span><span class="w"> </span><span class="n">req_hl</span><span class="p">;</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">req_no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">req_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="n">robot</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">});</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">const_no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">const_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="n">robot</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">});</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"With swaths at 0 rad, the area without headlands is "</span><span class="w"> </span><span class="o">&lt;&lt;</span>
+<span class="w">    </span><span class="n">req_no_hl</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">", while a constant headland leaves "</span><span class="w"> </span><span class="o">&lt;&lt;</span>
+<span class="w">    </span><span class="n">const_no_hl</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robot</span><span class="o">.</span><span class="n">setMinTurningRadius</span><span class="p">(</span><span class="mf">8.0</span><span class="p">);</span>
+<span class="n">req_hl</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">HG_Req_gen</span><span class="p">();</span>
+<span class="n">req_no_hl</span> <span class="o">=</span> <span class="n">req_hl</span><span class="o">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span> <span class="n">robot</span><span class="p">,</span> <span class="n">f2c</span><span class="o">.</span><span class="n">VectorDouble</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]));</span>
+<span class="n">const_no_hl</span> <span class="o">=</span> <span class="n">const_hl</span><span class="o">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span> <span class="n">robot</span><span class="p">,</span> <span class="n">f2c</span><span class="o">.</span><span class="n">VectorDouble</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]));</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"With swaths at 0 rad, the area without headlands is "</span><span class="p">,</span> <span class="n">req_no_hl</span><span class="o">.</span><span class="n">area</span><span class="p">(),</span>
+    <span class="s2">", while a constant headland leaves "</span><span class="p">,</span> <span class="n">const_no_hl</span><span class="o">.</span><span class="n">area</span><span class="p">());</span>
+</pre></div>
+</div>
+</div></div><p><em>With swaths at 0 rad, the area without headlands is 4958.6, while a constant headland leaves 4261.26</em></p>
+<img alt="../../_images/Tutorial_3_2_Req_width.png" src="../../_images/Tutorial_3_2_Req_width.png" />
+<p>In blue it is <code class="docutils literal notranslate"><span class="pre">cells</span></code>, in orange <code class="docutils literal notranslate"><span class="pre">const_no_hl</span></code> and in yellow <code class="docutils literal notranslate"><span class="pre">req_no_hl</span></code>.
+The borders the swaths end on keep the whole headland, so both mainlands meet
+there, while the borders they run along give theirs back.</p>
 </section>
 </section>
 

@@ -19,5 +19,6 @@ Files
 - :ref:`file_fields2cover_headland_generator_constant_headland.h`
 - :ref:`file_fields2cover_headland_generator_corridor_headland.h`
 - :ref:`file_fields2cover_headland_generator_headland_generator_base.h`
+- :ref:`file_fields2cover_headland_generator_required_headland.h`
 
 

@@ -14,6 +14,7 @@ Derived Types
 
 - ``public f2c::hg::ConstHL`` (:ref:`exhale_class_classf2c_1_1hg_1_1ConstHL`)
 - ``public f2c::hg::CorridorHL`` (:ref:`exhale_class_classf2c_1_1hg_1_1CorridorHL`)
+- ``public f2c::hg::ReqHL`` (:ref:`exhale_class_classf2c_1_1hg_1_1ReqHL`)
 
 
 Class Documentation

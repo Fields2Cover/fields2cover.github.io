@@ -1,0 +1,71 @@
+
+.. _file_fields2cover_headland_generator_required_headland.h:
+
+File required_headland.h
+========================
+
+|exhale_lsh| :ref:`Parent directory <dir_fields2cover_headland_generator>` (``fields2cover/headland_generator``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``fields2cover/headland_generator/required_headland.h``)
+--------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_fields2cover_headland_generator_required_headland.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``fields2cover/headland_generator/headland_generator_base.h`` (:ref:`file_fields2cover_headland_generator_headland_generator_base.h`)
+
+- ``fields2cover/types.h`` (:ref:`file_fields2cover_types.h`)
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_fields2cover.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_f2c`
+
+- :ref:`namespace_f2c__hg`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classf2c_1_1hg_1_1ReqHL`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_required__headland_8h_1a3bd9924f5ed5c693f103db16d1df30e9`
+
