@@ -66,6 +66,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Part 3: Headland generator</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#constant-width-headland">Constant width headland</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#required-width-headland">Required width headland</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#corridor-headland">Corridor headland</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="swath_generator.html">Part 4: Swath generator</a></li>
@@ -194,6 +195,169 @@ Python</li></ul><div class="tab codetab selected" data-id="0">
 <p>In blue it is <code class="docutils literal notranslate"><span class="pre">cells</span></code>, in orange <code class="docutils literal notranslate"><span class="pre">const_no_hl</span></code> and in yellow <code class="docutils literal notranslate"><span class="pre">req_no_hl</span></code>.
 The borders the swaths end on keep the whole headland, so both mainlands meet
 there, while the borders they run along give theirs back.</p>
+</section>
+<section id="corridor-headland">
+<h2>Corridor headland<a class="headerlink" href="#corridor-headland" title="Link to this heading"></a></h2>
+<p>A non-convex field is usually decomposed into simpler cells before planning a route, and
+that decomposition adds a new, artificial border wherever two cells meet.
+Widening that border with another <code class="docutils literal notranslate"><span class="pre">ConstHL</span></code> pass shrinks both cells, even though
+only one machine ever needs to turn there. <code class="docutils literal notranslate"><span class="pre">CorridorHL</span></code> opens a single corridor
+along that border instead, splitting it between the two cells with a
+<code class="docutils literal notranslate"><span class="pre">CorridorShareMode</span></code>: <code class="docutils literal notranslate"><span class="pre">ASYMMETRIC</span></code> (the default) takes the whole corridor out
+of whichever cell can spare it, and <code class="docutils literal notranslate"><span class="pre">SYMMETRIC</span></code> always splits it evenly.</p>
+<p>Lets use an L-shaped field, decomposed at the reflex corner into a tall and a wide cell,
+and plan a route on each version of the mainland to see the difference in practice.</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CCells</span><span class="w"> </span><span class="nf">l_cells</span><span class="p">(</span><span class="n">F2CCell</span><span class="p">(</span><span class="n">F2CLinearRing</span><span class="p">({</span>
+<span class="w">      </span><span class="n">F2CPoint</span><span class="p">(</span><span class="w">  </span><span class="mi">0</span><span class="p">,</span><span class="w">  </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">  </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">),</span>
+<span class="w">      </span><span class="n">F2CPoint</span><span class="p">(</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">),</span><span class="w"> </span><span class="n">F2CPoint</span><span class="p">(</span><span class="w">  </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">),</span>
+<span class="w">      </span><span class="n">F2CPoint</span><span class="p">(</span><span class="w">  </span><span class="mi">0</span><span class="p">,</span><span class="w">  </span><span class="mi">0</span><span class="p">)})));</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">hl_width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">getWidth</span><span class="p">();</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">r_w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">robot</span><span class="p">.</span><span class="n">getCovWidth</span><span class="p">();</span>
+
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">single_no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">const_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">l_cells</span><span class="p">,</span><span class="w"> </span><span class="n">hl_width</span><span class="p">);</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">decomp</span><span class="o">::</span><span class="n">TrapezoidalDecomp</span><span class="w"> </span><span class="n">decomp</span><span class="p">;</span>
+<span class="n">decomp</span><span class="p">.</span><span class="n">setSplitAngle</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">M_PI</span><span class="p">);</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">decomp_cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">decomp</span><span class="p">.</span><span class="n">decompose</span><span class="p">(</span><span class="n">single_no_hl</span><span class="p">);</span>
+
+<span class="n">f2c</span><span class="o">::</span><span class="n">sg</span><span class="o">::</span><span class="n">BruteForce</span><span class="w"> </span><span class="n">bf</span><span class="p">;</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">obj</span><span class="o">::</span><span class="n">NSwathModified</span><span class="w"> </span><span class="n">obj</span><span class="p">;</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">rp</span><span class="o">::</span><span class="n">RoutePlannerBase</span><span class="w"> </span><span class="n">route_planner</span><span class="p">;</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">hg</span><span class="o">::</span><span class="n">CorridorHL</span><span class="w"> </span><span class="n">corridor_hl</span><span class="p">;</span>
+<span class="n">robot</span><span class="p">.</span><span class="n">setMinTurningRadius</span><span class="p">(</span><span class="mf">2.0</span><span class="p">);</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">pp</span><span class="o">::</span><span class="n">PathPlanning</span><span class="w"> </span><span class="n">path_planner</span><span class="p">;</span>
+<span class="n">f2c</span><span class="o">::</span><span class="n">pp</span><span class="o">::</span><span class="n">DubinsCurvesCC</span><span class="w"> </span><span class="n">turn</span><span class="p">;</span>
+</pre></div>
+</div>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l_cells</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Cells</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">LinearRing</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">VectorPoint</span><span class="p">([</span>
+        <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span> <span class="mi">90</span><span class="p">,</span>  <span class="mi">0</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+        <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span> <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span>  <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span>
+        <span class="n">f2c</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">)]))));</span>
+<span class="n">hl_width</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">getWidth</span><span class="p">();</span>
+<span class="n">r_w</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">getCovWidth</span><span class="p">();</span>
+
+<span class="n">single_no_hl</span> <span class="o">=</span> <span class="n">const_hl</span><span class="o">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">l_cells</span><span class="p">,</span> <span class="n">hl_width</span><span class="p">);</span>
+<span class="n">decomp</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">DECOMP_TrapezoidalDecomp</span><span class="p">();</span>
+<span class="n">decomp</span><span class="o">.</span><span class="n">setSplitAngle</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">);</span>
+<span class="n">decomp_cells</span> <span class="o">=</span> <span class="n">decomp</span><span class="o">.</span><span class="n">decompose</span><span class="p">(</span><span class="n">single_no_hl</span><span class="p">);</span>
+
+<span class="n">bf</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">SG_BruteForce</span><span class="p">();</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">OBJ_NSwathModified</span><span class="p">();</span>
+<span class="n">route_planner</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">RP_RoutePlannerBase</span><span class="p">();</span>
+<span class="n">corridor_hl</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">HG_Corridor_gen</span><span class="p">();</span>
+<span class="n">robot</span><span class="o">.</span><span class="n">setMinTurningRadius</span><span class="p">(</span><span class="mf">2.0</span><span class="p">);</span>
+<span class="n">path_planner</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">PP_PathPlanning</span><span class="p">();</span>
+<span class="n">turn</span> <span class="o">=</span> <span class="n">f2c</span><span class="o">.</span><span class="n">PP_DubinsCurvesCC</span><span class="p">();</span>
+</pre></div>
+</div>
+</div></div><p>Headland every border again, the way a route planner would if it treated the new
+internal border like any other, and both cells lose a headland along it:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">F2CCells</span><span class="w"> </span><span class="n">double_no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">const_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">decomp_cells</span><span class="p">,</span><span class="w"> </span><span class="n">hl_width</span><span class="p">);</span>
+<span class="n">F2CSwathsByCells</span><span class="w"> </span><span class="n">double_swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bf</span><span class="p">.</span><span class="n">generateBestSwaths</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">r_w</span><span class="p">,</span><span class="w"> </span><span class="n">double_no_hl</span><span class="p">);</span>
+<span class="n">F2CRoute</span><span class="w"> </span><span class="n">double_route</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">route_planner</span><span class="p">.</span><span class="n">genRoute</span><span class="p">(</span><span class="n">single_no_hl</span><span class="p">,</span><span class="w"> </span><span class="n">double_swaths</span><span class="p">);</span>
+<span class="n">F2CPath</span><span class="w"> </span><span class="n">double_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path_planner</span><span class="p">.</span><span class="n">planPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span><span class="w"> </span><span class="n">double_route</span><span class="p">,</span><span class="w"> </span><span class="n">turn</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Double headland leaves "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">double_no_hl</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">double_no_hl</span> <span class="o">=</span> <span class="n">const_hl</span><span class="o">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">decomp_cells</span><span class="p">,</span> <span class="n">hl_width</span><span class="p">);</span>
+<span class="n">double_swaths</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">generateBestSwaths</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">r_w</span><span class="p">,</span> <span class="n">double_no_hl</span><span class="p">);</span>
+<span class="n">double_route</span> <span class="o">=</span> <span class="n">route_planner</span><span class="o">.</span><span class="n">genRoute</span><span class="p">(</span><span class="n">single_no_hl</span><span class="p">,</span> <span class="n">double_swaths</span><span class="p">);</span>
+<span class="n">double_path</span> <span class="o">=</span> <span class="n">path_planner</span><span class="o">.</span><span class="n">planPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">double_route</span><span class="p">,</span> <span class="n">turn</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Double headland leaves "</span><span class="p">,</span> <span class="n">double_no_hl</span><span class="o">.</span><span class="n">area</span><span class="p">());</span>
+</pre></div>
+</div>
+</div></div><p><em>Double headland leaves 1776</em></p>
+<img alt="../../_images/Tutorial_3_3_Double.png" src="../../_images/Tutorial_3_3_Double.png" />
+<p>In blue it is <code class="docutils literal notranslate"><span class="pre">l_cells</span></code>, in orange <code class="docutils literal notranslate"><span class="pre">double_no_hl</span></code> and the path shows where
+each swath is and how the robot turns between them. Both the tall and the wide
+cell gave up a headland along the border between them, so the area shrank far
+more than the outer headland alone would explain.</p>
+<p>Hand the same internal border to <code class="docutils literal notranslate"><span class="pre">CorridorHL</span></code> instead, in its default
+<code class="docutils literal notranslate"><span class="pre">ASYMMETRIC</span></code> mode:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">corridor_hl</span><span class="p">.</span><span class="n">setShareMode</span><span class="p">(</span><span class="n">f2c</span><span class="o">::</span><span class="n">hg</span><span class="o">::</span><span class="n">CorridorShareMode</span><span class="o">::</span><span class="n">ASYMMETRIC</span><span class="p">);</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">corridor_no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">corridor_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">decomp_cells</span><span class="p">,</span><span class="w"> </span><span class="n">hl_width</span><span class="p">);</span>
+<span class="n">F2CSwathsByCells</span><span class="w"> </span><span class="n">corridor_swaths</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="n">bf</span><span class="p">.</span><span class="n">generateBestSwaths</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">r_w</span><span class="p">,</span><span class="w"> </span><span class="n">corridor_no_hl</span><span class="p">);</span>
+<span class="n">F2CRoute</span><span class="w"> </span><span class="n">corridor_route</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">route_planner</span><span class="p">.</span><span class="n">genRoute</span><span class="p">(</span><span class="n">single_no_hl</span><span class="p">,</span><span class="w"> </span><span class="n">corridor_swaths</span><span class="p">);</span>
+<span class="n">F2CPath</span><span class="w"> </span><span class="n">corridor_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path_planner</span><span class="p">.</span><span class="n">planPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span><span class="w"> </span><span class="n">corridor_route</span><span class="p">,</span><span class="w"> </span><span class="n">turn</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Asymmetric corridor leaves "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">corridor_no_hl</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">share</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">corridor_hl</span><span class="p">.</span><span class="n">corridorShares</span><span class="p">(</span><span class="n">decomp_cells</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Cell "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">share</span><span class="p">.</span><span class="n">cell_i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" gives "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">share</span><span class="p">.</span><span class="n">share</span>
+<span class="w">    </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" of the corridor over "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">share</span><span class="p">.</span><span class="n">shared_length</span>
+<span class="w">    </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" m of border with cell "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">share</span><span class="p">.</span><span class="n">cell_k</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corridor_hl</span><span class="o">.</span><span class="n">setShareMode</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">CorridorShareMode_ASYMMETRIC</span><span class="p">);</span>
+<span class="n">corridor_no_hl</span> <span class="o">=</span> <span class="n">corridor_hl</span><span class="o">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">decomp_cells</span><span class="p">,</span> <span class="n">hl_width</span><span class="p">);</span>
+<span class="n">corridor_swaths</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">generateBestSwaths</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">r_w</span><span class="p">,</span> <span class="n">corridor_no_hl</span><span class="p">);</span>
+<span class="n">corridor_route</span> <span class="o">=</span> <span class="n">route_planner</span><span class="o">.</span><span class="n">genRoute</span><span class="p">(</span><span class="n">single_no_hl</span><span class="p">,</span> <span class="n">corridor_swaths</span><span class="p">);</span>
+<span class="n">corridor_path</span> <span class="o">=</span> <span class="n">path_planner</span><span class="o">.</span><span class="n">planPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">corridor_route</span><span class="p">,</span> <span class="n">turn</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Asymmetric corridor leaves "</span><span class="p">,</span> <span class="n">corridor_no_hl</span><span class="o">.</span><span class="n">area</span><span class="p">());</span>
+<span class="k">for</span> <span class="n">share</span> <span class="ow">in</span> <span class="n">corridor_hl</span><span class="o">.</span><span class="n">corridorShares</span><span class="p">(</span><span class="n">decomp_cells</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">"Cell"</span><span class="p">,</span> <span class="n">share</span><span class="o">.</span><span class="n">cell_i</span><span class="p">,</span> <span class="s2">"gives"</span><span class="p">,</span> <span class="n">share</span><span class="o">.</span><span class="n">share</span><span class="p">,</span>
+    <span class="s2">"of the corridor over"</span><span class="p">,</span> <span class="n">share</span><span class="o">.</span><span class="n">shared_length</span><span class="p">,</span>
+    <span class="s2">"m of border with cell"</span><span class="p">,</span> <span class="n">share</span><span class="o">.</span><span class="n">cell_k</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></div><p><em>Asymmetric corridor leaves 2464</em></p>
+<p><em>Cell 0 gives 1.0 of the corridor over 16.0 m of border with cell 1</em></p>
+<p><em>Cell 1 gives 0.0 of the corridor over 16.0 m of border with cell 0</em></p>
+<img alt="../../_images/Tutorial_3_3_Corridor.png" src="../../_images/Tutorial_3_3_Corridor.png" />
+<p>In blue it is <code class="docutils literal notranslate"><span class="pre">l_cells</span></code> and in orange <code class="docutils literal notranslate"><span class="pre">corridor_no_hl</span></code>. Cell 0, the wide
+cell, gives up the whole corridor; cell 1, the tall one, keeps its full width
+up to the border. <code class="docutils literal notranslate"><span class="pre">corridor_no_hl</span></code> ends up close to <code class="docutils literal notranslate"><span class="pre">single_no_hl</span></code> again,
+instead of the much smaller <code class="docutils literal notranslate"><span class="pre">double_no_hl</span></code>, because the border only had to
+give up its headland once, not twice.</p>
+<p>Switch to <code class="docutils literal notranslate"><span class="pre">SYMMETRIC</span></code> mode and both cells split the same corridor evenly instead:</p>
+<div class="tabs docutils container" data-tabgroup="lang">
+<ul class="tabbar">
+<li class="tabbutton selected" data-id="0" onclick="sphinx_code_tabs_onclick(this)">
+C++</li><li class="tabbutton" data-id="1" onclick="sphinx_code_tabs_onclick(this)">
+Python</li></ul><div class="tab codetab selected" data-id="0">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">corridor_hl</span><span class="p">.</span><span class="n">setShareMode</span><span class="p">(</span><span class="n">f2c</span><span class="o">::</span><span class="n">hg</span><span class="o">::</span><span class="n">CorridorShareMode</span><span class="o">::</span><span class="n">SYMMETRIC</span><span class="p">);</span>
+<span class="n">F2CCells</span><span class="w"> </span><span class="n">shared_no_hl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">corridor_hl</span><span class="p">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">decomp_cells</span><span class="p">,</span><span class="w"> </span><span class="n">hl_width</span><span class="p">);</span>
+<span class="n">F2CSwathsByCells</span><span class="w"> </span><span class="n">shared_swaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bf</span><span class="p">.</span><span class="n">generateBestSwaths</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">r_w</span><span class="p">,</span><span class="w"> </span><span class="n">shared_no_hl</span><span class="p">);</span>
+<span class="n">F2CRoute</span><span class="w"> </span><span class="n">shared_route</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">route_planner</span><span class="p">.</span><span class="n">genRoute</span><span class="p">(</span><span class="n">single_no_hl</span><span class="p">,</span><span class="w"> </span><span class="n">shared_swaths</span><span class="p">);</span>
+<span class="n">F2CPath</span><span class="w"> </span><span class="n">shared_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path_planner</span><span class="p">.</span><span class="n">planPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span><span class="w"> </span><span class="n">shared_route</span><span class="p">,</span><span class="w"> </span><span class="n">turn</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Symmetric shared corridor leaves "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shared_no_hl</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+</div><div class="tab codetab" data-id="1">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corridor_hl</span><span class="o">.</span><span class="n">setShareMode</span><span class="p">(</span><span class="n">f2c</span><span class="o">.</span><span class="n">CorridorShareMode_SYMMETRIC</span><span class="p">);</span>
+<span class="n">shared_no_hl</span> <span class="o">=</span> <span class="n">corridor_hl</span><span class="o">.</span><span class="n">generateHeadlands</span><span class="p">(</span><span class="n">decomp_cells</span><span class="p">,</span> <span class="n">hl_width</span><span class="p">);</span>
+<span class="n">shared_swaths</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">generateBestSwaths</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">r_w</span><span class="p">,</span> <span class="n">shared_no_hl</span><span class="p">);</span>
+<span class="n">shared_route</span> <span class="o">=</span> <span class="n">route_planner</span><span class="o">.</span><span class="n">genRoute</span><span class="p">(</span><span class="n">single_no_hl</span><span class="p">,</span> <span class="n">shared_swaths</span><span class="p">);</span>
+<span class="n">shared_path</span> <span class="o">=</span> <span class="n">path_planner</span><span class="o">.</span><span class="n">planPath</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">shared_route</span><span class="p">,</span> <span class="n">turn</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Symmetric shared corridor leaves "</span><span class="p">,</span> <span class="n">shared_no_hl</span><span class="o">.</span><span class="n">area</span><span class="p">());</span>
+</pre></div>
+</div>
+</div></div><p><em>Symmetric shared corridor leaves 2464</em></p>
+<img alt="../../_images/Tutorial_3_3_Shared.png" src="../../_images/Tutorial_3_3_Shared.png" />
+<p>In blue it is <code class="docutils literal notranslate"><span class="pre">l_cells</span></code> and in orange <code class="docutils literal notranslate"><span class="pre">shared_no_hl</span></code>. The total area lost
+is exactly the same as with <code class="docutils literal notranslate"><span class="pre">ASYMMETRIC</span></code>, since the corridor is the same
+width either way; only which cell it comes from changes. Here both the tall
+and the wide cell give up half the corridor, so the wide cell shrinks a little
+on this border instead of the tall cell shrinking a lot.</p>
 </section>
 </section>
 

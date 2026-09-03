@@ -74,6 +74,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="f2c_library.html#full-api">Full API</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="f2c_library.html#namespaces">Namespaces</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="f2c_library.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structf2c_1_1hg_1_1CorridorShare.html">Struct CorridorShare</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structf2c_1_1Options.html">Struct Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cell.html">Struct Cell</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structf2c_1_1types_1_1Cells.html">Struct Cells</a></li>
@@ -221,6 +222,37 @@
 <dd class="field-even"><p>Mainland area </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c2hg10CorridorHL14corridorSharesERK8F2CCells17CorridorShareMode">
+<span id="_CPPv3NK3f2c2hg10CorridorHL14corridorSharesERK8F2CCells17CorridorShareMode"></span><span id="_CPPv2NK3f2c2hg10CorridorHL14corridorSharesERK8F2CCells17CorridorShareMode"></span><span id="f2c::hg::CorridorHL::corridorShares__F2CCellsCR.CorridorShareModeC"></span><span class="target" id="classf2c_1_1hg_1_1CorridorHL_1a57b6865899cde3c730e4dcc7045e846f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="structf2c_1_1hg_1_1CorridorShare.html#_CPPv4N3f2c2hg13CorridorShareE" title="f2c::hg::CorridorShare"><span class="n"><span class="pre">CorridorShare</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">corridorShares</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef_types_8h_1a9d5a262fc29b26e27a8a26f667f4b9ac.html#_CPPv48F2CCells" title="F2CCells"><span class="n"><span class="pre">F2CCells</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">field</span></span>, <a class="reference internal" href="enum_namespacef2c_1_1hg_1a140200dbc6febbb3968a5ecb7a2aa4f2.html#_CPPv4N3f2c2hg17CorridorShareModeE" title="f2c::hg::CorridorShareMode"><span class="n"><span class="pre">CorridorShareMode</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">mode</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="enum_namespacef2c_1_1hg_1a140200dbc6febbb3968a5ecb7a2aa4f2.html#_CPPv4N3f2c2hg17CorridorShareModeE" title="f2c::hg::CorridorShareMode"><span class="n"><span class="pre">CorridorShareMode</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="enum_namespacef2c_1_1hg_1a140200dbc6febbb3968a5ecb7a2aa4f2.html#_CPPv4N3f2c2hg17CorridorShareMode10ASYMMETRICE" title="f2c::hg::CorridorShareMode::ASYMMETRIC"><span class="n"><span class="pre">ASYMMETRIC</span></span></a><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c2hg10CorridorHL14corridorSharesERK8F2CCells17CorridorShareMode" title="Link to this definition"></a><br /></dt>
+<dd><p>Split the corridor between each pair of cells that share a border. </p>
+<p>This is the rule <a class="reference internal" href="#classf2c_1_1hg_1_1CorridorHL_1aec273fbce8b60de2392605483e4a6b10"><span class="std std-ref">generateHeadlands()</span></a> applies, on its own: which cell gives the corridor, how much of it, and over which part of the border. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>field</strong> – Cells that share borders, usually from a decomposition. </p></li>
+<li><p><strong>mode</strong> – Rule to split the corridor with. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>One share per ordered pair of cells that touch along a border. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3f2c2hg10CorridorHL12setShareModeE17CorridorShareMode">
+<span id="_CPPv3N3f2c2hg10CorridorHL12setShareModeE17CorridorShareMode"></span><span id="_CPPv2N3f2c2hg10CorridorHL12setShareModeE17CorridorShareMode"></span><span id="f2c::hg::CorridorHL::setShareMode__CorridorShareMode"></span><span class="target" id="classf2c_1_1hg_1_1CorridorHL_1aa30ac3c0b4195f3067223ce58712b1ec"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setShareMode</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="enum_namespacef2c_1_1hg_1a140200dbc6febbb3968a5ecb7a2aa4f2.html#_CPPv4N3f2c2hg17CorridorShareModeE" title="f2c::hg::CorridorShareMode"><span class="n"><span class="pre">CorridorShareMode</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">mode</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3f2c2hg10CorridorHL12setShareModeE17CorridorShareMode" title="Link to this definition"></a><br /></dt>
+<dd><p>Rule <a class="reference internal" href="#classf2c_1_1hg_1_1CorridorHL_1aec273fbce8b60de2392605483e4a6b10"><span class="std std-ref">generateHeadlands()</span></a> uses to split the corridor. </p>
+<p>Defaults to ASYMMETRIC. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3f2c2hg10CorridorHL12getShareModeEv">
+<span id="_CPPv3NK3f2c2hg10CorridorHL12getShareModeEv"></span><span id="_CPPv2NK3f2c2hg10CorridorHL12getShareModeEv"></span><span id="f2c::hg::CorridorHL::getShareModeC"></span><span class="target" id="classf2c_1_1hg_1_1CorridorHL_1a6eb17e3ce80010e8b404e16c26e0b9b9"></span><a class="reference internal" href="enum_namespacef2c_1_1hg_1a140200dbc6febbb3968a5ecb7a2aa4f2.html#_CPPv4N3f2c2hg17CorridorShareModeE" title="f2c::hg::CorridorShareMode"><span class="n"><span class="pre">CorridorShareMode</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getShareMode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK3f2c2hg10CorridorHL12getShareModeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Rule <a class="reference internal" href="#classf2c_1_1hg_1_1CorridorHL_1aec273fbce8b60de2392605483e4a6b10"><span class="std std-ref">generateHeadlands()</span></a> currently uses to split the corridor. </p>
 </dd></dl>
 
 <dl class="cpp function">

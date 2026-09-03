@@ -26,6 +26,22 @@ Program Listing for File corridor_headland.h
    
    namespace f2c::hg {
    
+   enum class CorridorShareMode {
+     ASYMMETRIC,
+     SYMMETRIC,
+   };
+   
+   struct CorridorShare {
+     size_t cell_i {0};
+     size_t cell_k {0};
+     double perimeter_i {0.0};
+     double perimeter_k {0.0};
+     bool same_size {false};
+     double share {0.0};
+     double shared_length {0.0};
+     F2CMultiLineString shared_border;
+   };
+   
    class CorridorHL : public HeadlandGeneratorBase {
     public:
      using HeadlandGeneratorBase::generateHeadlands;
@@ -33,12 +49,28 @@ Program Listing for File corridor_headland.h
      F2CCells generateHeadlands(
        const F2CCells& field, double dist_headland) override;
    
+     std::vector<CorridorShare> corridorShares(
+         const F2CCells& field,
+         CorridorShareMode mode = CorridorShareMode::ASYMMETRIC) const;
+   
+     void setShareMode(CorridorShareMode mode);
+   
+     CorridorShareMode getShareMode() const;
+   
      F2CCells generateHeadlandArea(
        const F2CCells& field, double swath_width, int n_swaths) override;
    
      std::vector<F2CCells> generateHeadlandSwaths(
        const F2CCells& field, double swath_width, int n_swaths,
        bool dir_out2in = true) override;
+   
+    private:
+     CorridorShareMode share_mode_ {CorridorShareMode::ASYMMETRIC};
+   
+     double tol_ {1e-3};
+     double spur_ {1e-9};
+     double same_size_tol_ {1e-9};
+     double min_border_ {1e-2};
    };
    
    }  // namespace f2c::hg

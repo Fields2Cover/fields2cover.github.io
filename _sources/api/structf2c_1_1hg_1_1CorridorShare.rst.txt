@@ -1,0 +1,17 @@
+.. _exhale_struct_structf2c_1_1hg_1_1CorridorShare:
+
+Struct CorridorShare
+====================
+
+- Defined in :ref:`file_fields2cover_headland_generator_corridor_headland.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: f2c::hg::CorridorShare
+   :project: Fields2Cover
+   :members:
+   :protected-members:
+   :undoc-members:

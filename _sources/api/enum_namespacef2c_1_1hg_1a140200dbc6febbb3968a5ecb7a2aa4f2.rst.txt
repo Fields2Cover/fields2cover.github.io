@@ -1,0 +1,14 @@
+.. _exhale_enum_namespacef2c_1_1hg_1a140200dbc6febbb3968a5ecb7a2aa4f2:
+
+Enum CorridorShareMode
+======================
+
+- Defined in :ref:`file_fields2cover_headland_generator_corridor_headland.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: f2c::hg::CorridorShareMode
+   :project: Fields2Cover

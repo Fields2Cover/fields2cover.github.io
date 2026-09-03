@@ -60,7 +60,16 @@ Classes
 -------
 
 
+- :ref:`exhale_struct_structf2c_1_1hg_1_1CorridorShare`
+
 - :ref:`exhale_class_classf2c_1_1hg_1_1CorridorHL`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespacef2c_1_1hg_1a140200dbc6febbb3968a5ecb7a2aa4f2`
 
 
 Defines
