@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changelog &mdash; Fields2Cover 2.1.0 documentation</title>
+  <title>Changelog &mdash; Fields2Cover 2.1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
@@ -17,7 +17,7 @@
     <link rel="canonical" href="https://fields2cover.github.io/api/page_md____w_Fields2Cover_Fields2Cover_CHANGELOG.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=20623aea"></script>
+      <script src="../_static/documentation_options.js?v=841abef3"></script>
       <script src="../_static/doctools.js?v=888ff710"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/code-tabs.js?v=c983d12e"></script>
@@ -46,7 +46,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-    <div class="version">v2.1.0</div>
+    <div class="version">v2.1.1</div>
   
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
@@ -104,6 +104,12 @@
 <dd><p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a class="reference external" href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>, and this project adheres to <a class="reference external" href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
 <p><em>[Unreleased]</em></p>
+<p><em>[2.1.1] - 2026-09-21</em></p>
+<p><em>Fixed</em></p>
+<p><ul class="simple">
+<li><p>Install the Python bindings relative to <code class="docutils literal notranslate"><span class="pre">CMAKE_INSTALL_PREFIX</span></code>, so ROS RPM packages keep them under <code class="docutils literal notranslate"><span class="pre">/opt/ros/&lt;distro&gt;</span></code> instead of leaving unpackaged files in <code class="docutils literal notranslate"><span class="pre">/usr/lib64/pythonX.Y/site-packages</span></code>.</p></li>
+</ul>
+</p>
 <p><em>[2.1.0] - 2026-09-03</em></p>
 <p><em>Added</em></p>
 <p><ul class="simple">
